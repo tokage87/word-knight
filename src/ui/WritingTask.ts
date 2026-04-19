@@ -1,45 +1,30 @@
 import Phaser from 'phaser';
 import { BRANCH_DEFS, type BranchId, countWords, submitWritingTask } from '../systems/CityBranches';
-import { textJudge } from '../systems/TextJudge';
 import { deepJudge } from '../systems/DeepJudge';
 
 // Full-screen writing overlay: prompt + textarea + live meters +
 // optional deep feedback via WebLLM. Opens when the player clicks
 // [ROZPOCZNIJ] on a locked branch and closes when they submit or
-// cancel.
-//
-// Two asynchronous systems drive the meters:
-//   - TextJudge (Transformers.js embeddings, ~120MB) — always active
-//     once loaded; scores topic match live as the student types.
-//   - DeepJudge (WebLLM Llama-3.2-3B, ~2GB) — opt-in; student clicks
-//     "Sprawdź szczegółowo" to download + evaluate.
-// Progress bars for both downloads are rendered inline.
+// cancel. The embedding-based "topic match" score was removed — it
+// correlated too weakly with valid-but-creative A1-A2 answers and
+// only made students anxious. The submit gate is now:
+//   - Liczba słów ≥ UNLOCK_MIN_WORDS
+//   - Trafione słowa z listy podpowiedzi ≥ UNLOCK_MIN_HINTS
+// Optional WebLLM Llama-3.2-3B feedback stays behind the
+// "Sprawdź szczegółowo" button for deeper 1-5 evaluation.
 
 const UNLOCK_MIN_WORDS = 15;
-// Minimum number of hint-words that must appear in the text to prove
-// the student stayed on topic. Hand-curated hints per branch cover
-// the vocabulary a valid A1-A2 answer would naturally use, so hitting
-// 3 of them is a much more robust "on-topic" signal than embedding
-// similarity (which penalises creative but valid answers).
 const UNLOCK_MIN_HINTS = 3;
-// The embedding score (Transformers.js cosine vs reference) is still
-// computed and shown live as an extra info meter, but no longer gates
-// submission — it correlates too weakly with "is this text about
-// the prompt" on short, creative A1-A2 writing.
 
 export class WritingTask {
   private root?: HTMLElement;
   private branch?: BranchId;
   private text = '';
-  private topicScore = 0;
-  private topicScoring = false;
-  private scoreDebounceTimer?: number;
   private deepVerdict?: { score: number; feedback: string };
   private deepBusy = false;
   private onKey = (e: KeyboardEvent) => {
     if (e.key === 'Escape') this.close();
   };
-  private stopTextListener?: () => void;
   private stopDeepListener?: () => void;
 
   constructor(private readonly scene: Phaser.Scene) {}
@@ -55,7 +40,6 @@ export class WritingTask {
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.scene.game.events.off('writing:start', this.open, this);
       window.removeEventListener('keydown', this.onKey);
-      this.stopTextListener?.();
       this.stopDeepListener?.();
       if (this.root) this.root.innerHTML = '';
     });
@@ -65,19 +49,10 @@ export class WritingTask {
     if (!this.root) return;
     this.branch = payload.branchId;
     this.text = '';
-    this.topicScore = 0;
     this.deepVerdict = undefined;
     this.render();
     this.root.classList.add('writing-task--visible');
     window.addEventListener('keydown', this.onKey);
-
-    // Kick off the embeddings download (fire-and-forget). The
-    // progress callback re-renders the "🎯 Topic match" area with
-    // a bar while MB stream in; once ready we score live as the
-    // student types.
-    this.stopTextListener?.();
-    this.stopTextListener = textJudge.onProgress(() => this.refreshMetersOnly());
-    void textJudge.init().then(() => this.scoreNow());
   }
 
   private close() {
@@ -87,7 +62,6 @@ export class WritingTask {
     this.branch = undefined;
     this.text = '';
     window.removeEventListener('keydown', this.onKey);
-    this.stopTextListener?.();
     this.stopDeepListener?.();
   }
 
@@ -133,7 +107,6 @@ export class WritingTask {
     textarea.addEventListener('input', () => {
       this.text = textarea.value;
       this.refreshMetersOnly();
-      this.debouncedScore();
     });
 
     // Hint chips insert the word at the cursor and give focus back.
@@ -152,7 +125,6 @@ export class WritingTask {
         textarea.focus();
         this.text = textarea.value;
         this.refreshMetersOnly();
-        this.debouncedScore();
       });
     });
 
@@ -173,25 +145,10 @@ export class WritingTask {
     const branch = BRANCH_DEFS[this.branch];
     const { total, distinct } = countWords(this.text);
     const hintsHit = countHintWordsUsed(this.text, branch.task.hintWords);
-    const tj = textJudge.getLastProgress();
-    const topicReady = tj.phase === 'ready';
 
     const wordOk = total >= UNLOCK_MIN_WORDS;
     const hintsOk = hintsHit >= UNLOCK_MIN_HINTS;
-    const topicPct = Math.round(this.topicScore * 100);
     const canSubmit = wordOk && hintsOk;
-
-    const topicBlock = topicReady
-      ? `<div class="wt-meter wt-meter--info">
-           <div class="wt-meter-label">🎯 Trafienie w temat (informacyjnie)</div>
-           <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${topicPct}%"></div></div>
-           <div class="wt-meter-val">${topicPct}%${this.topicScoring ? ' …' : ''}</div>
-         </div>`
-      : `<div class="wt-meter wt-meter--loading">
-           <div class="wt-meter-label">🎯 Ładowanie oceniającego (~120 MB, raz na komputer)</div>
-           <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${Math.round((tj.percent ?? 0) * 100) || (tj.percent ?? 0)}%"></div></div>
-           <div class="wt-meter-val">${formatLoadLabel(tj)}</div>
-         </div>`;
 
     meters.innerHTML = `
       <div class="wt-meter ${wordOk ? 'wt-meter--ok' : 'wt-meter--bad'}">
@@ -205,31 +162,10 @@ export class WritingTask {
         <div class="wt-meter-val">${hintsHit} / ${UNLOCK_MIN_HINTS} ${hintsOk ? '✓' : ''}</div>
       </div>
       <div class="wt-meter-info">Różne słowa: <b>${distinct}</b></div>
-      ${topicBlock}
     `;
 
     const submit = this.root.querySelector<HTMLButtonElement>('.wt-submit');
     if (submit) submit.disabled = !canSubmit;
-  }
-
-  private debouncedScore() {
-    if (this.scoreDebounceTimer) window.clearTimeout(this.scoreDebounceTimer);
-    this.scoreDebounceTimer = window.setTimeout(() => this.scoreNow(), 700);
-  }
-
-  private async scoreNow() {
-    if (!this.branch || !textJudge.isReady()) return;
-    if (this.topicScoring) return;
-    const branch = this.branch;
-    this.topicScoring = true;
-    this.refreshMetersOnly();
-    try {
-      this.topicScore = await textJudge.scoreTopic(this.text, branch);
-    } catch {
-      this.topicScore = 0;
-    }
-    this.topicScoring = false;
-    this.refreshMetersOnly();
   }
 
   // ────── "Sprawdź szczegółowo" path (WebLLM) ──────
@@ -316,15 +252,6 @@ function countHintWordsUsed(text: string, hints: string[]): number {
     }
   }
   return hit.size;
-}
-
-function formatLoadLabel(p: ReturnType<typeof textJudge.getLastProgress>): string {
-  if (p.phase === 'ready') return 'Gotowe ✓';
-  if (p.percent && p.percent > 1) return `${Math.round(p.percent)}%`;
-  if (p.loadedBytes && p.totalBytes) {
-    return `${(p.loadedBytes / 1024 / 1024).toFixed(1)} / ${(p.totalBytes / 1024 / 1024).toFixed(1)} MB`;
-  }
-  return 'rozpoczynam…';
 }
 
 function escapeHtml(s: string): string {

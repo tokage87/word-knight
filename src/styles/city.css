@@ -340,8 +340,6 @@
 .wt-meter--ok .wt-meter-fill { background: #2b7a1f; }
 .wt-meter--bad .wt-meter-fill { background: #a84020; }
 .wt-meter--loading .wt-meter-fill { background: #2b6acc; }
-.wt-meter--info .wt-meter-fill { background: #8a7440; }
-.wt-meter--info .wt-meter-label { color: var(--paper-text-muted); }
 .wt-meter-info { font-size: 11px; color: var(--paper-text-muted); margin-left: 4px; }
 
 .wt-deep { margin-top: 10px; }
