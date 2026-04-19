@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+.vite
+*.log
+
+# Raw Tiny Swords sprite pack (12 MB of source art). Only the
+# processed copies under public/assets/ ship with the game — the
+# source pack is needed only to re-run scripts/repack-ui.cjs and
+# can be re-downloaded.
+sprites/
+
+# Local Claude Code settings (tokens, per-machine prefs).
+.claude/settings.local.json
+

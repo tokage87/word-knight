@@ -1,0 +1,147 @@
+/* Roguelite level-up picker. Shown when the Knight levels up; pauses
+   the game behind a dim backdrop and presents up to 3 cards. */
+
+#skill-picker-root.skill-picker--visible {
+  background: rgba(10, 14, 26, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Block interaction with HUD / quiz behind the modal, and force a
+     stacking context above the HUD/quiz siblings. */
+  pointer-events: auto;
+  z-index: 100;
+}
+
+#skill-picker-root:not(.skill-picker--visible) {
+  display: none;
+}
+
+.skill-picker {
+  position: relative;
+  width: min(82%, 600px);
+  padding: 22px 20px 20px 20px;
+  color: #f4e5b5;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  border-style: solid;
+  border-width: 28px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/paper-special-9s.png');
+  border-image-slice: 44 55 fill;
+  border-image-width: 28px;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.skill-picker-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffd75a;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 0 #3a2a10, 0 0 8px rgba(255, 215, 90, 0.5);
+  margin-bottom: 2px;
+}
+
+.skill-picker-subtitle {
+  font-size: 12px;
+  color: #d4c9a0;
+  margin-bottom: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 #0a0a0f;
+}
+
+.skill-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.skill-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 18px 10px 14px 10px;
+  min-height: 140px;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: #2e6b84;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  border-style: solid;
+  border-width: 16px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/button-blue-9s.png');
+  border-image-slice: 47 45 fill;
+  border-image-width: 16px;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  transition: transform 80ms, filter 80ms;
+}
+.skill-card:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+.skill-card:active {
+  transform: translateY(1px);
+}
+.skill-card--upgrade {
+  border-image-source: url('/assets/ui/button-red-9s.png');
+  background-color: #8b2a2e;
+}
+
+.skill-card-kind {
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #ffd75a;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+.skill-card-icon {
+  font-size: 34px;
+  line-height: 1;
+  filter: drop-shadow(0 0 4px #000);
+}
+.skill-card-icon-img {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 3px #000);
+}
+
+.skill-card-title {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.skill-card-desc {
+  font-size: 10px;
+  font-weight: bold;
+  color: #e8e2c8;
+  padding: 0 2px;
+  line-height: 1.25;
+}
+
+.skill-card-key {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  min-width: 16px;
+  padding: 0 5px;
+  font-size: 10px;
+  font-weight: bold;
+  background: #f4e5b5;
+  color: #3a2a10;
+  border: 1px solid #3a2a10;
+  border-radius: 3px;
+  line-height: 15px;
+  font-family: monospace;
+}

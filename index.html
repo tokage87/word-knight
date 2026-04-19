@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Knight</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #0a0a0f;
+        height: 100%;
+        overflow: hidden;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      #game {
+        width: 100vw;
+        height: 100vh;
+      }
+      canvas {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+      /* Overlay matches Phaser's Scale.FIT letterboxed canvas rect exactly,
+         so HUD/quiz elements anchored to its corners line up with the game. */
+      #overlay {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        z-index: 10;
+      }
+      #overlay-inner {
+        position: relative;
+        width: min(100vw, calc(100vh * 16 / 9));
+        height: min(100vh, calc(100vw * 9 / 16));
+      }
+      #hud-root, #quiz-root, #skill-picker-root, #sentence-root {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      #hud-root > *, #quiz-root > *, #skill-picker-root > *, #sentence-root > * {
+        pointer-events: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
+    <div id="overlay">
+      <div id="overlay-inner">
+        <div id="hud-root"></div>
+        <div id="quiz-root"></div>
+        <div id="skill-picker-root"></div>
+        <div id="sentence-root"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

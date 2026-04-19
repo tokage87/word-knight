@@ -1,0 +1,111 @@
+/* Compact 2-option quiz pinned to bottom-right of the overlay-inner box
+   (which matches the letterboxed Phaser canvas). Uses Tiny Swords packed
+   9-slice paper and button sources. */
+
+#quiz-root .quiz {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: min(34%, 340px);
+  padding: 14px 14px 12px 14px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #3a2a10;
+  border-style: solid;
+  border-width: 22px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/paper-9s.png');
+  border-image-slice: 44 52 45 52 fill;
+  border-image-width: 22px;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+}
+
+.quiz-prompt {
+  font-size: 11px;
+  color: #6a533a;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.quiz-word {
+  font-weight: bold;
+  font-size: 22px;
+  color: #2a1a08;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.quiz-opt {
+  position: relative;
+  min-height: 44px;
+  padding: 8px 22px 8px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+  transition: transform 60ms;
+  background: transparent;
+  border-style: solid;
+  border-width: 14px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/button-blue-9s.png');
+  border-image-slice: 47 45 fill;
+  border-image-width: 14px;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+}
+.quiz-opt:hover {
+  filter: brightness(1.15);
+}
+.quiz-opt:active {
+  transform: translateY(1px);
+}
+.quiz-opt.quiz-correct::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  background: rgba(70, 200, 90, 0.55);
+  pointer-events: none;
+  box-shadow: inset 0 0 0 3px #1f8a3b;
+}
+.quiz-opt.quiz-wrong {
+  border-image-source: url('/assets/ui/button-red-9s.png');
+}
+
+.quiz-opt-text {
+  display: block;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-opt-key {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  min-width: 14px;
+  padding: 0 4px;
+  font-size: 9px;
+  font-weight: bold;
+  background: #f4e5b5;
+  color: #3a2a10;
+  border: 1px solid #3a2a10;
+  border-radius: 3px;
+  line-height: 13px;
+  font-family: monospace;
+  z-index: 2;
+}

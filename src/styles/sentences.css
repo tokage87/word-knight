@@ -1,0 +1,161 @@
+/* Sentence-building mini-task (shown before SkillPicker on level-up).
+   Same dark paper-special panel as the reward screen, but centered text
+   with the Polish prompt up top and a progressive English preview. */
+
+#sentence-root.sentence--visible {
+  background: rgba(10, 14, 26, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 100;
+}
+
+#sentence-root:not(.sentence--visible) {
+  display: none;
+}
+
+.sentence {
+  position: relative;
+  width: min(82%, 600px);
+  padding: 20px 20px 18px 20px;
+  color: #f4e5b5;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  border-style: solid;
+  border-width: 28px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/paper-special-9s.png');
+  border-image-slice: 44 55 fill;
+  border-image-width: 28px;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.sentence-kind {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #ffd75a;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2px 10px;
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+
+.sentence-title {
+  font-size: 13px;
+  color: #d4c9a0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.sentence-pl {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffd75a;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 0 #3a2a10;
+}
+
+.sentence-preview {
+  min-height: 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f4e5b5;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+.sentence-word {
+  display: inline-block;
+  padding: 2px 4px;
+  margin: 0 2px;
+}
+.sentence-word--done {
+  color: #b8e5b3;
+}
+.sentence-word--active {
+  color: #ffd75a;
+  border-bottom: 2px solid #ffd75a;
+  animation: sentenceBlink 1s ease-in-out infinite alternate;
+}
+.sentence-word--pending {
+  color: #6a6a6a;
+}
+@keyframes sentenceBlink {
+  from { opacity: 1; }
+  to   { opacity: 0.55; }
+}
+
+.sentence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.sentence-opt {
+  position: relative;
+  min-height: 50px;
+  padding: 12px 30px 12px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: #2e6b84;
+  border-style: solid;
+  border-width: 14px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/button-blue-9s.png');
+  border-image-slice: 47 45 fill;
+  border-image-width: 14px;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  transition: transform 60ms, filter 60ms;
+}
+.sentence-opt:hover { filter: brightness(1.15); }
+.sentence-opt:active { transform: translateY(1px); }
+
+.sentence-opt.sentence-correct::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  background: rgba(70, 200, 90, 0.55);
+  pointer-events: none;
+  box-shadow: inset 0 0 0 3px #1f8a3b;
+}
+.sentence-opt.sentence-wrong {
+  border-image-source: url('/assets/ui/button-red-9s.png');
+  background-color: #8b2a2e;
+}
+
+.sentence-opt-text {
+  display: block;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sentence-opt-key {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  min-width: 16px;
+  padding: 0 5px;
+  font-size: 10px;
+  font-weight: bold;
+  background: #f4e5b5;
+  color: #3a2a10;
+  border: 1px solid #3a2a10;
+  border-radius: 3px;
+  line-height: 15px;
+  font-family: monospace;
+  z-index: 2;
+}

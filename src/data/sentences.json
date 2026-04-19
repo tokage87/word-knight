@@ -1,0 +1,199 @@
+[
+  {
+    "id": "my-brother",
+    "pl": "To jest mój brat.",
+    "steps": [
+      { "correct": "This", "distractor": "That" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "my", "distractor": "your" },
+      { "correct": "brother", "distractor": "sister" }
+    ]
+  },
+  {
+    "id": "have-dog",
+    "pl": "Mam psa.",
+    "steps": [
+      { "correct": "I", "distractor": "You" },
+      { "correct": "have", "distractor": "has" },
+      { "correct": "a", "distractor": "the" },
+      { "correct": "dog", "distractor": "cat" }
+    ]
+  },
+  {
+    "id": "like-football",
+    "pl": "Lubię piłkę nożną.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "like", "distractor": "love" },
+      { "correct": "football", "distractor": "tennis" }
+    ]
+  },
+  {
+    "id": "friend-nice",
+    "pl": "Mój przyjaciel jest miły.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "friend", "distractor": "teacher" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "nice", "distractor": "mean" }
+    ]
+  },
+  {
+    "id": "blue-eyes",
+    "pl": "Ona ma niebieskie oczy.",
+    "steps": [
+      { "correct": "She", "distractor": "He" },
+      { "correct": "has", "distractor": "have" },
+      { "correct": "blue", "distractor": "green" },
+      { "correct": "eyes", "distractor": "hair" }
+    ]
+  },
+  {
+    "id": "go-school",
+    "pl": "Idę do szkoły.",
+    "steps": [
+      { "correct": "I", "distractor": "You" },
+      { "correct": "go", "distractor": "come" },
+      { "correct": "to", "distractor": "from" },
+      { "correct": "school", "distractor": "park" }
+    ]
+  },
+  {
+    "id": "best-friend",
+    "pl": "On jest moim najlepszym przyjacielem.",
+    "steps": [
+      { "correct": "He", "distractor": "She" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "my", "distractor": "your" },
+      { "correct": "best", "distractor": "worst" },
+      { "correct": "friend", "distractor": "enemy" }
+    ]
+  },
+  {
+    "id": "house-big",
+    "pl": "Mój dom jest duży.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "house", "distractor": "room" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "big", "distractor": "small" }
+    ]
+  },
+  {
+    "id": "love-summer",
+    "pl": "Kocham lato.",
+    "steps": [
+      { "correct": "I", "distractor": "We" },
+      { "correct": "love", "distractor": "hate" },
+      { "correct": "summer", "distractor": "winter" }
+    ]
+  },
+  {
+    "id": "dances-every-day",
+    "pl": "Ona tańczy każdego dnia.",
+    "steps": [
+      { "correct": "She", "distractor": "He" },
+      { "correct": "dances", "distractor": "sings" },
+      { "correct": "every", "distractor": "some" },
+      { "correct": "day", "distractor": "night" }
+    ]
+  },
+  {
+    "id": "dad-tall",
+    "pl": "Mój tata jest wysoki.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "dad", "distractor": "mom" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "tall", "distractor": "short" }
+    ]
+  },
+  {
+    "id": "study-english",
+    "pl": "Uczę się angielskiego.",
+    "steps": [
+      { "correct": "I", "distractor": "She" },
+      { "correct": "study", "distractor": "teach" },
+      { "correct": "English", "distractor": "Polish" }
+    ]
+  },
+  {
+    "id": "read-book",
+    "pl": "Czytam książkę.",
+    "steps": [
+      { "correct": "I", "distractor": "We" },
+      { "correct": "read", "distractor": "write" },
+      { "correct": "a", "distractor": "the" },
+      { "correct": "book", "distractor": "letter" }
+    ]
+  },
+  {
+    "id": "at-the-sea",
+    "pl": "Byłem nad morzem.",
+    "steps": [
+      { "correct": "I", "distractor": "You" },
+      { "correct": "was", "distractor": "were" },
+      { "correct": "at", "distractor": "in" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "sea", "distractor": "mountain" }
+    ]
+  },
+  {
+    "id": "like-swimming",
+    "pl": "Lubię pływać.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "like", "distractor": "hate" },
+      { "correct": "swimming", "distractor": "running" }
+    ]
+  },
+  {
+    "id": "sister-smart",
+    "pl": "Moja siostra jest mądra.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "sister", "distractor": "brother" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "smart", "distractor": "lazy" }
+    ]
+  },
+  {
+    "id": "plays-tennis",
+    "pl": "On gra w tenisa.",
+    "steps": [
+      { "correct": "He", "distractor": "She" },
+      { "correct": "plays", "distractor": "play" },
+      { "correct": "tennis", "distractor": "football" }
+    ]
+  },
+  {
+    "id": "new-dog",
+    "pl": "Mamy nowego psa.",
+    "steps": [
+      { "correct": "We", "distractor": "They" },
+      { "correct": "have", "distractor": "has" },
+      { "correct": "a", "distractor": "the" },
+      { "correct": "new", "distractor": "old" },
+      { "correct": "dog", "distractor": "cat" }
+    ]
+  },
+  {
+    "id": "watch-movie",
+    "pl": "Oglądam film.",
+    "steps": [
+      { "correct": "I", "distractor": "You" },
+      { "correct": "watch", "distractor": "read" },
+      { "correct": "a", "distractor": "the" },
+      { "correct": "movie", "distractor": "book" }
+    ]
+  },
+  {
+    "id": "am-happy",
+    "pl": "Jestem szczęśliwy.",
+    "steps": [
+      { "correct": "I", "distractor": "She" },
+      { "correct": "am", "distractor": "is" },
+      { "correct": "happy", "distractor": "sad" }
+    ]
+  }
+]
