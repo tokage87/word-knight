@@ -16,7 +16,16 @@ import { deepJudge } from '../systems/DeepJudge';
 // Progress bars for both downloads are rendered inline.
 
 const UNLOCK_MIN_WORDS = 15;
-const UNLOCK_MIN_TOPIC = 0.55;
+// Minimum number of hint-words that must appear in the text to prove
+// the student stayed on topic. Hand-curated hints per branch cover
+// the vocabulary a valid A1-A2 answer would naturally use, so hitting
+// 3 of them is a much more robust "on-topic" signal than embedding
+// similarity (which penalises creative but valid answers).
+const UNLOCK_MIN_HINTS = 3;
+// The embedding score (Transformers.js cosine vs reference) is still
+// computed and shown live as an extra info meter, but no longer gates
+// submission — it correlates too weakly with "is this text about
+// the prompt" on short, creative A1-A2 writing.
 
 export class WritingTask {
   private root?: HTMLElement;
@@ -161,20 +170,22 @@ export class WritingTask {
     if (!this.root || !this.branch) return;
     const meters = this.root.querySelector<HTMLElement>('.wt-meters');
     if (!meters) return;
+    const branch = BRANCH_DEFS[this.branch];
     const { total, distinct } = countWords(this.text);
+    const hintsHit = countHintWordsUsed(this.text, branch.task.hintWords);
     const tj = textJudge.getLastProgress();
     const topicReady = tj.phase === 'ready';
 
     const wordOk = total >= UNLOCK_MIN_WORDS;
+    const hintsOk = hintsHit >= UNLOCK_MIN_HINTS;
     const topicPct = Math.round(this.topicScore * 100);
-    const topicOk = topicReady && this.topicScore >= UNLOCK_MIN_TOPIC;
-    const canSubmit = wordOk && topicOk;
+    const canSubmit = wordOk && hintsOk;
 
     const topicBlock = topicReady
-      ? `<div class="wt-meter ${topicOk ? 'wt-meter--ok' : 'wt-meter--bad'}">
-           <div class="wt-meter-label">🎯 Trafienie w temat</div>
+      ? `<div class="wt-meter wt-meter--info">
+           <div class="wt-meter-label">🎯 Trafienie w temat (informacyjnie)</div>
            <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${topicPct}%"></div></div>
-           <div class="wt-meter-val">${topicPct}% ${this.topicScoring ? '…' : topicOk ? '✓' : `(min. ${Math.round(UNLOCK_MIN_TOPIC * 100)}%)`}</div>
+           <div class="wt-meter-val">${topicPct}%${this.topicScoring ? ' …' : ''}</div>
          </div>`
       : `<div class="wt-meter wt-meter--loading">
            <div class="wt-meter-label">🎯 Ładowanie oceniającego (~120 MB, raz na komputer)</div>
@@ -187,6 +198,11 @@ export class WritingTask {
         <div class="wt-meter-label">📝 Liczba słów</div>
         <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${Math.min(100, (total / UNLOCK_MIN_WORDS) * 100)}%"></div></div>
         <div class="wt-meter-val">${total} / ${UNLOCK_MIN_WORDS} ${wordOk ? '✓' : ''}</div>
+      </div>
+      <div class="wt-meter ${hintsOk ? 'wt-meter--ok' : 'wt-meter--bad'}">
+        <div class="wt-meter-label">💡 Słowa z podpowiedzi</div>
+        <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${Math.min(100, (hintsHit / UNLOCK_MIN_HINTS) * 100)}%"></div></div>
+        <div class="wt-meter-val">${hintsHit} / ${UNLOCK_MIN_HINTS} ${hintsOk ? '✓' : ''}</div>
       </div>
       <div class="wt-meter-info">Różne słowa: <b>${distinct}</b></div>
       ${topicBlock}
@@ -280,6 +296,26 @@ export class WritingTask {
     this.scene.game.events.emit('writing:completed', { branchId: this.branch });
     this.close();
   }
+}
+
+// Count how many of the given hint words appear in the student's text
+// (case-insensitive, single-word match). Multi-word hints (e.g. "wake
+// up") are matched as substrings. De-duped, so writing "friend friend
+// friend" still counts as 1 hint used.
+function countHintWordsUsed(text: string, hints: string[]): number {
+  const lower = text.toLowerCase();
+  const hit = new Set<string>();
+  for (const raw of hints) {
+    const h = raw.toLowerCase();
+    if (h.includes(' ')) {
+      if (lower.includes(h)) hit.add(h);
+    } else {
+      // Word boundary match so "hair" doesn't match "chair".
+      const re = new RegExp(`\\b${h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`);
+      if (re.test(lower)) hit.add(h);
+    }
+  }
+  return hit.size;
 }
 
 function formatLoadLabel(p: ReturnType<typeof textJudge.getLastProgress>): string {
