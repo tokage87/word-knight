@@ -8,6 +8,7 @@ import './styles/hud.css';
 import './styles/quiz.css';
 import './styles/skillpicker.css';
 import './styles/sentences.css';
+import './styles/city.css';
 
 (window as unknown as { __game: unknown }).__game = new Phaser.Game({
   type: Phaser.AUTO,

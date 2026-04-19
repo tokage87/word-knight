@@ -67,12 +67,18 @@ export class GameScene extends Phaser.Scene {
   private distinctWords = new Set<string>();
   // Quiz answers are the primary XP source — kills give a smaller
   // trickle so progression is gated on vocabulary, not combat.
-  private readonly EXP_PER_KILL = 8;
-  private readonly EXP_PER_BOSS_KILL = 25;
+  // These become mutable so MetaStore branches (Scholar +XP/quiz,
+  // Writer +XP%, quiz-cooldown cut) can adjust them at run start. Base
+  // values restored in create() every time a new run begins.
+  private EXP_PER_KILL = 8;
+  private EXP_PER_BOSS_KILL = 25;
+  // Meta-driven run modifiers — baked from metaStore in create().
+  private quizCorrectCdCutMs = 5000;
+  private xpMultiplier = 1;
   // Nerfed from 30 to slow leveling — quiz answers used to rush the
   // player past the early spell pool; now the curve leans on kills +
   // deliberate correct answers instead of quiz spam.
-  private readonly EXP_PER_QUIZ_CORRECT = 5;
+  private EXP_PER_QUIZ_CORRECT = 5;
   // Wrong quiz answer penalty: every spell's current cooldown gets this
   // many ms added, capped at 2× base so it can't stack into oblivion.
   private readonly QUIZ_WRONG_PENALTY_MS = 5000;
@@ -158,6 +164,8 @@ export class GameScene extends Phaser.Scene {
     this.enemies = this.add.group();
     this.spawner = new WaveSpawner(this, this.enemies);
     this.spellCaster = new SpellCaster(this);
+
+    this.applyMetaProgression();
 
     this.registry.set('level', this.level);
     this.registry.set('expPct', 0);
@@ -391,7 +399,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private onQuizCorrect(payload?: { id?: string }) {
-    this.spellCaster.reduceAll(5000);
+    this.spellCaster.reduceAll(this.quizCorrectCdCutMs);
     this.gainExp(this.EXP_PER_QUIZ_CORRECT);
     this.stats.quizCorrect += 1;
     if (payload?.id) this.distinctWords.add(payload.id);
@@ -430,7 +438,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private gainExp(amount: number) {
-    this.exp += amount;
+    this.exp += Math.floor(amount * this.xpMultiplier);
     while (this.exp >= this.xpForNextLevel()) {
       this.exp -= this.xpForNextLevel();
       this.level += 1;
@@ -441,6 +449,47 @@ export class GameScene extends Phaser.Scene {
     }
     this.registry.set('expPct', (this.exp / this.xpForNextLevel()) * 100);
     this.maybeShowPicker();
+  }
+
+  // Read MetaStore branches and bake persistent bonuses into THIS run.
+  // Called once per create() after Knight + SpellCaster exist. Base
+  // stats are already at their fresh values thanks to the reset block
+  // at the top of create(), so we just add.
+  private applyMetaProgression() {
+    const meta = metaStore.get();
+    // Reset run-level modifiers to defaults first, then layer meta on.
+    this.EXP_PER_QUIZ_CORRECT = 5;
+    this.quizCorrectCdCutMs = 5000;
+    this.xpMultiplier = 1;
+
+    // Combat Hall — starting stats.
+    const c = meta.branches.combat.ranks;
+    if (c.hp > 0) {
+      this.knight.hpMax += 20 * c.hp;
+      this.knight.hp = this.knight.hpMax;
+    }
+    if (c.dmg > 0) {
+      this.knight.meleeDamage += 2 * c.dmg;
+    }
+    if (c.spd > 0) {
+      // Compounding 5% per rank to match the in-run Swift Strike card.
+      this.knight.meleeCooldownMs = Math.max(
+        200,
+        Math.round(this.knight.meleeCooldownMs * Math.pow(0.95, c.spd)),
+      );
+    }
+
+    // Spell Library — start with the chosen spell already unlocked.
+    if (meta.branches.spells.unlocked && meta.branches.spells.chosenStartSpell) {
+      this.spellCaster.unlock(meta.branches.spells.chosenStartSpell);
+    }
+
+    // Scholar's Circle — extra XP per quiz + bigger CD cut per quiz.
+    this.EXP_PER_QUIZ_CORRECT += 2 * meta.branches.scholar.ranks.xpPerQuiz;
+    this.quizCorrectCdCutMs += 1000 * meta.branches.scholar.ranks.cdCutPerQuiz;
+
+    // Writer's Guild — global XP multiplier.
+    this.xpMultiplier = 1 + 0.10 * meta.branches.writer.ranks.xpBonus;
   }
 
   private onKnightDied() {

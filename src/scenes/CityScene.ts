@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import { AK, ANIM, TILE, GRASS_CENTER_FRAME } from '../constants/assetKeys';
 import { LOGICAL_WIDTH, LOGICAL_HEIGHT } from '../constants/layout';
 import { metaStore } from '../systems/MetaStore';
+import { CityOverlay } from '../ui/CityOverlay';
 
 // MIASTO scene — aims to reproduce the Tiny Swords map reference as
 // closely as our asset set allows. Key visual beats from that image:
@@ -109,8 +110,18 @@ export class CityScene extends Phaser.Scene {
     this.drawTitleBanner();
     this.drawNewRunButton();
 
+    // Branch-detail HTML overlay — listens for city:branchClick and
+    // renders a paper panel with the challenge + upgrade scroll.
+    const overlay = new CityOverlay(this);
+    overlay.mount();
+
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.emit('city:closed');
+      // Wipe the overlay root so leaving the city doesn't leak DOM
+      // into the next scene. (The overlay also clears itself on
+      // scene shutdown, but double-safety is cheap.)
+      const overlayRoot = document.getElementById('city-overlay-root');
+      if (overlayRoot) overlayRoot.innerHTML = '';
     });
     this.game.events.emit('city:opened', { gold: metaStore.getGold() });
   }
