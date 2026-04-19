@@ -28,8 +28,14 @@ export class QuizManager {
     if (!root) return;
 
     // Freeze quiz input while the SentenceBuilder / SkillPicker modals
-    // are up; otherwise W/E would answer multiple things at once.
+    // are up; otherwise W/E would answer multiple things at once. The
+    // story gate reuses the sentence UI but emits a different event, so
+    // it needs its own pause trigger — otherwise W/E would register
+    // both as a story pick AND a quiz answer.
     this.scene.game.events.on('sentence:show', () => {
+      this.inputPaused = true;
+    });
+    this.scene.game.events.on('story:show', () => {
       this.inputPaused = true;
     });
     this.scene.game.events.on('skillpicker:show', () => {

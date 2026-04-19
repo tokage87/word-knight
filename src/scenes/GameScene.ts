@@ -451,16 +451,25 @@ export class GameScene extends Phaser.Scene {
     this.game.events.emit('skillpicker:show', options);
   }
 
-  private onStoryComplete(payload: { id: string; perfect: boolean }) {
+  private onStoryComplete(payload: {
+    id: string;
+    perfect: boolean;
+    weakened: boolean;
+  }) {
     let options = this.pendingCardOptions;
     if (!options) return;
     if (payload.perfect) this.stats.storiesPerfect += 1;
     else this.stats.storiesFailed += 1;
     this.publishStats();
+    // Any non-perfect story still loses the new-spell option; the
+    // −50% weaken penalty now kicks in ONLY when the player hit the
+    // 3-mistake abort path (SentenceBuilder sets weakened:true there).
+    // Stories finished with 1–2 mistakes keep full-strength upgrades.
     if (!payload.perfect) {
-      // Mistake in the story gate — drop new-spell cards AND weaken
-      // upgrades by 50%. Picker still shows 3 choices, all upgrades.
-      options = this.buildCardOptions(3, { allowNew: false, weakened: true });
+      options = this.buildCardOptions(3, {
+        allowNew: false,
+        weakened: payload.weakened,
+      });
       this.pendingCardOptions = options;
     }
     this.game.events.emit('skillpicker:show', options);

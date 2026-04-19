@@ -22,6 +22,21 @@ export interface Story {
 const SENTENCES: Sentence[] = SENTENCES_RAW as Sentence[];
 const STORIES: Story[] = STORIES_RAW as Story[];
 
+// Words that are treated as equivalent for story-mode scoring. Picking
+// "the" when the correct answer was "a" (or vice versa) does NOT count
+// as a mistake. Extend if we hit similar easy-confusion pairs later.
+const ARTICLE_EQUIVALENTS: ReadonlyArray<ReadonlySet<string>> = [
+  new Set(['a', 'the']),
+];
+
+function equivalentStoryWord(picked: string, correct: string): boolean {
+  if (picked === correct) return true;
+  const p = picked.toLowerCase();
+  const c = correct.toLowerCase();
+  if (p === c) return true;
+  return ARTICLE_EQUIVALENTS.some((group) => group.has(p) && group.has(c));
+}
+
 // Build-the-sentence mini-task. Shown on level-up BEFORE the SkillPicker
 // so the player has to translate the Polish prompt word-by-word before
 // claiming their reward. W = left option, E = right option (click also
@@ -178,7 +193,13 @@ export class SentenceBuilder {
   private pick(word: string, btn: HTMLButtonElement) {
     if (this.locked || !this.current) return;
     const step = this.current.steps[this.stepIndex];
-    const correct = word === step.correct;
+    // Story-mode leniency: treat "a" and "the" as interchangeable
+    // (case-insensitive) — kids at A1-A2 frequently swap definite /
+    // indefinite articles and we don't want to punish that in the
+    // narrative gate. Single-sentence gate stays strict.
+    const correct = this.story
+      ? equivalentStoryWord(word, step.correct)
+      : word === step.correct;
     this.locked = true;
 
     if (correct) {
@@ -220,19 +241,26 @@ export class SentenceBuilder {
   }
 
   // Called when the player hits the 3-mistake cap mid-story. Mirrors
-  // finish()'s story branch but marks completion non-perfect regardless
-  // of how far through the story the player got.
+  // finish()'s story branch but marks completion weakened so the picker
+  // halves upgrade amounts (per the "−50% only at 3 mistakes" rule).
   private abortStory() {
     if (!this.story) return;
     const id = this.story.id;
     this.story = undefined;
     this.hide();
-    this.scene.game.events.emit('story:complete', { id, perfect: false });
+    this.scene.game.events.emit('story:complete', {
+      id,
+      perfect: false,
+      weakened: true,
+    });
   }
 
   private finish() {
     // Story mode: advance to the next sentence in the story, or emit
-    // `story:complete` with the perfect flag once all sentences are done.
+    // `story:complete` with the perfect flag once all sentences are
+    // done. Natural completion means mistakes < 3 (else abortStory()
+    // would have fired), so `weakened` is always false here — the
+    // player only loses the new-skill option, not upgrade strength.
     if (this.story) {
       this.storyIndex += 1;
       if (this.storyIndex < this.story.sentences.length) {
@@ -247,7 +275,11 @@ export class SentenceBuilder {
       const perfect = this.mistakes === 0;
       this.story = undefined;
       this.hide();
-      this.scene.game.events.emit('story:complete', { id, perfect });
+      this.scene.game.events.emit('story:complete', {
+        id,
+        perfect,
+        weakened: false,
+      });
       return;
     }
 
