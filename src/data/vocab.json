@@ -1,321 +1,3853 @@
 [
-  { "id": "mom", "pl": "mama", "en": "mom", "distractors": ["dad", "sister", "aunt"] },
-  { "id": "dad", "pl": "tata", "en": "dad", "distractors": ["mom", "uncle", "brother"] },
-  { "id": "brother", "pl": "brat", "en": "brother", "distractors": ["sister", "cousin", "son"] },
-  { "id": "sister", "pl": "siostra", "en": "sister", "distractors": ["brother", "cousin", "daughter"] },
-  { "id": "grandma", "pl": "babcia", "en": "grandma", "distractors": ["grandpa", "aunt", "mom"] },
-  { "id": "grandpa", "pl": "dziadek", "en": "grandpa", "distractors": ["grandma", "uncle", "dad"] },
-  { "id": "family", "pl": "rodzina", "en": "family", "distractors": ["friend", "parent", "home"] },
-  { "id": "son", "pl": "syn", "en": "son", "distractors": ["daughter", "brother", "father"] },
-  { "id": "daughter", "pl": "córka", "en": "daughter", "distractors": ["son", "sister", "mother"] },
-  { "id": "uncle", "pl": "wujek", "en": "uncle", "distractors": ["aunt", "grandpa", "cousin"] },
-  { "id": "aunt", "pl": "ciocia", "en": "aunt", "distractors": ["uncle", "grandma", "cousin"] },
-  { "id": "cousin", "pl": "kuzyn", "en": "cousin", "distractors": ["brother", "sister", "uncle"] },
-  { "id": "child", "pl": "dziecko", "en": "child", "distractors": ["baby", "son", "daughter"] },
-  { "id": "friend", "pl": "przyjaciel", "en": "friend", "distractors": ["family", "brother", "classmate"] },
-  { "id": "classmate", "pl": "kolega", "en": "classmate", "distractors": ["friend", "teacher", "student"] },
-  { "id": "name", "pl": "imię", "en": "name", "distractors": ["word", "age", "day"] },
-
-  { "id": "nice", "pl": "miły", "en": "nice", "distractors": ["mean", "rude", "bad"] },
-  { "id": "funny", "pl": "śmieszny", "en": "funny", "distractors": ["sad", "boring", "serious"] },
-  { "id": "smart", "pl": "mądry", "en": "smart", "distractors": ["silly", "slow", "lazy"] },
-  { "id": "brave", "pl": "odważny", "en": "brave", "distractors": ["shy", "scared", "weak"] },
-  { "id": "shy", "pl": "nieśmiały", "en": "shy", "distractors": ["brave", "loud", "bold"] },
-  { "id": "polite", "pl": "grzeczny", "en": "polite", "distractors": ["rude", "mean", "naughty"] },
-  { "id": "helpful", "pl": "pomocny", "en": "helpful", "distractors": ["lazy", "mean", "useless"] },
-  { "id": "cool", "pl": "fajny", "en": "cool", "distractors": ["boring", "awful", "bad"] },
-  { "id": "lazy", "pl": "leniwy", "en": "lazy", "distractors": ["active", "busy", "quick"] },
-  { "id": "happy", "pl": "szczęśliwy", "en": "happy", "distractors": ["sad", "angry", "tired"] },
-  { "id": "sad", "pl": "smutny", "en": "sad", "distractors": ["happy", "angry", "bored"] },
-  { "id": "good", "pl": "dobry", "en": "good", "distractors": ["bad", "nice", "great"] },
-  { "id": "bad", "pl": "zły", "en": "bad", "distractors": ["good", "mean", "sad"] },
-  { "id": "cheerful", "pl": "wesoły", "en": "cheerful", "distractors": ["sad", "grumpy", "tired"] },
-  { "id": "quiet", "pl": "cichy", "en": "quiet", "distractors": ["loud", "noisy", "shy"] },
-  { "id": "loud", "pl": "głośny", "en": "loud", "distractors": ["quiet", "silent", "shy"] },
-  { "id": "friendly", "pl": "przyjacielski", "en": "friendly", "distractors": ["mean", "rude", "shy"] },
-  { "id": "kind", "pl": "serdeczny", "en": "kind", "distractors": ["mean", "rude", "cold"] },
-  { "id": "clever", "pl": "bystry", "en": "clever", "distractors": ["silly", "slow", "shy"] },
-
-  { "id": "tall", "pl": "wysoki", "en": "tall", "distractors": ["short", "small", "long"] },
-  { "id": "short", "pl": "niski", "en": "short", "distractors": ["tall", "long", "big"] },
-  { "id": "beautiful", "pl": "piękny", "en": "beautiful", "distractors": ["ugly", "plain", "pretty"] },
-  { "id": "pretty", "pl": "ładny", "en": "pretty", "distractors": ["ugly", "plain", "nice"] },
-  { "id": "young", "pl": "młody", "en": "young", "distractors": ["old", "new", "fresh"] },
-  { "id": "old", "pl": "stary", "en": "old", "distractors": ["young", "new", "ancient"] },
-  { "id": "big", "pl": "duży", "en": "big", "distractors": ["small", "tall", "large"] },
-  { "id": "small", "pl": "mały", "en": "small", "distractors": ["big", "tiny", "short"] },
-  { "id": "strong", "pl": "silny", "en": "strong", "distractors": ["weak", "big", "tough"] },
-  { "id": "weak", "pl": "słaby", "en": "weak", "distractors": ["strong", "sick", "small"] },
-  { "id": "thin", "pl": "szczupły", "en": "thin", "distractors": ["fat", "big", "tall"] },
-  { "id": "curly", "pl": "kręcony", "en": "curly", "distractors": ["straight", "short", "long"] },
-
-  { "id": "head", "pl": "głowa", "en": "head", "distractors": ["neck", "face", "hair"] },
-  { "id": "hand", "pl": "ręka", "en": "hand", "distractors": ["arm", "finger", "foot"] },
-  { "id": "leg", "pl": "noga", "en": "leg", "distractors": ["foot", "knee", "arm"] },
-  { "id": "eye", "pl": "oko", "en": "eye", "distractors": ["ear", "nose", "mouth"] },
-  { "id": "ear", "pl": "ucho", "en": "ear", "distractors": ["eye", "nose", "mouth"] },
-  { "id": "nose", "pl": "nos", "en": "nose", "distractors": ["eye", "ear", "mouth"] },
-  { "id": "mouth", "pl": "usta", "en": "mouth", "distractors": ["tooth", "lip", "nose"] },
-  { "id": "hair", "pl": "włosy", "en": "hair", "distractors": ["head", "face", "beard"] },
-  { "id": "face", "pl": "twarz", "en": "face", "distractors": ["head", "eye", "hair"] },
-  { "id": "tooth", "pl": "ząb", "en": "tooth", "distractors": ["mouth", "tongue", "lip"] },
-
-  { "id": "get-up", "pl": "wstawać", "en": "get up", "distractors": ["sit down", "lie down", "wake up"] },
-  { "id": "wake-up", "pl": "budzić się", "en": "wake up", "distractors": ["sleep", "dream", "get up"] },
-  { "id": "wash", "pl": "myć", "en": "wash", "distractors": ["clean", "dry", "rinse"] },
-  { "id": "brush", "pl": "szczotkować", "en": "brush", "distractors": ["wash", "clean", "comb"] },
-  { "id": "eat", "pl": "jeść", "en": "eat", "distractors": ["drink", "cook", "bite"] },
-  { "id": "drink", "pl": "pić", "en": "drink", "distractors": ["eat", "pour", "sip"] },
-  { "id": "sleep", "pl": "spać", "en": "sleep", "distractors": ["rest", "dream", "wake"] },
-  { "id": "go", "pl": "iść", "en": "go", "distractors": ["run", "walk", "come"] },
-  { "id": "come", "pl": "przychodzić", "en": "come", "distractors": ["go", "leave", "run"] },
-  { "id": "read", "pl": "czytać", "en": "read", "distractors": ["write", "learn", "study"] },
-  { "id": "write", "pl": "pisać", "en": "write", "distractors": ["read", "draw", "type"] },
-  { "id": "study", "pl": "uczyć się", "en": "study", "distractors": ["play", "rest", "work"] },
-  { "id": "work", "pl": "pracować", "en": "work", "distractors": ["play", "rest", "study"] },
-  { "id": "watch", "pl": "oglądać", "en": "watch", "distractors": ["listen", "see", "look"] },
-  { "id": "play", "pl": "grać", "en": "play", "distractors": ["run", "sing", "dance"] },
-  { "id": "help", "pl": "pomagać", "en": "help", "distractors": ["save", "teach", "give"] },
-  { "id": "do", "pl": "robić", "en": "do", "distractors": ["make", "have", "go"] },
-  { "id": "cook", "pl": "gotować", "en": "cook", "distractors": ["bake", "eat", "wash"] },
-  { "id": "clean", "pl": "sprzątać", "en": "clean", "distractors": ["wash", "cook", "dirty"] },
-  { "id": "travel", "pl": "podróżować", "en": "travel", "distractors": ["walk", "stay", "visit"] },
-  { "id": "visit", "pl": "odwiedzać", "en": "visit", "distractors": ["travel", "leave", "stay"] },
-  { "id": "learn", "pl": "uczyć", "en": "learn", "distractors": ["teach", "study", "read"] },
-  { "id": "speak", "pl": "mówić", "en": "speak", "distractors": ["listen", "sing", "talk"] },
-  { "id": "listen", "pl": "słuchać", "en": "listen", "distractors": ["speak", "hear", "watch"] },
-  { "id": "sing", "pl": "śpiewać", "en": "sing", "distractors": ["dance", "play", "speak"] },
-  { "id": "dance", "pl": "tańczyć", "en": "dance", "distractors": ["sing", "jump", "run"] },
-  { "id": "draw", "pl": "rysować", "en": "draw", "distractors": ["paint", "write", "color"] },
-  { "id": "paint", "pl": "malować", "en": "paint", "distractors": ["draw", "color", "write"] },
-
-  { "id": "football", "pl": "piłka nożna", "en": "football", "distractors": ["tennis", "basketball", "hockey"] },
-  { "id": "tennis", "pl": "tenis", "en": "tennis", "distractors": ["football", "basketball", "golf"] },
-  { "id": "basketball", "pl": "koszykówka", "en": "basketball", "distractors": ["football", "tennis", "volleyball"] },
-  { "id": "swimming", "pl": "pływanie", "en": "swimming", "distractors": ["running", "diving", "surfing"] },
-  { "id": "running", "pl": "bieganie", "en": "running", "distractors": ["walking", "swimming", "jumping"] },
-  { "id": "cycling", "pl": "jazda na rowerze", "en": "cycling", "distractors": ["running", "skating", "driving"] },
-  { "id": "skating", "pl": "jazda na łyżwach", "en": "skating", "distractors": ["skiing", "running", "cycling"] },
-  { "id": "dancing", "pl": "taniec", "en": "dancing", "distractors": ["singing", "jumping", "running"] },
-  { "id": "singing", "pl": "śpiewanie", "en": "singing", "distractors": ["dancing", "talking", "reading"] },
-  { "id": "drawing", "pl": "rysowanie", "en": "drawing", "distractors": ["painting", "writing", "reading"] },
-  { "id": "painting", "pl": "malowanie", "en": "painting", "distractors": ["drawing", "writing", "coloring"] },
-  { "id": "reading", "pl": "czytanie", "en": "reading", "distractors": ["writing", "drawing", "singing"] },
-  { "id": "music", "pl": "muzyka", "en": "music", "distractors": ["song", "art", "dance"] },
-  { "id": "song", "pl": "piosenka", "en": "song", "distractors": ["music", "poem", "story"] },
-  { "id": "game", "pl": "gra", "en": "game", "distractors": ["sport", "toy", "hobby"] },
-  { "id": "sport", "pl": "sport", "en": "sport", "distractors": ["game", "hobby", "activity"] },
-  { "id": "hobby", "pl": "hobby", "en": "hobby", "distractors": ["sport", "game", "activity"] },
-  { "id": "ball", "pl": "piłka", "en": "ball", "distractors": ["bat", "goal", "racket"] },
-  { "id": "team", "pl": "drużyna", "en": "team", "distractors": ["player", "coach", "match"] },
-  { "id": "movie", "pl": "film", "en": "movie", "distractors": ["book", "show", "music"] },
-  { "id": "computer", "pl": "komputer", "en": "computer", "distractors": ["phone", "tv", "tablet"] },
-  { "id": "art", "pl": "sztuka", "en": "art", "distractors": ["music", "sport", "hobby"] },
-
-  { "id": "holiday", "pl": "wakacje", "en": "holiday", "distractors": ["weekend", "school", "work"] },
-  { "id": "trip", "pl": "podróż", "en": "trip", "distractors": ["holiday", "walk", "visit"] },
-  { "id": "hotel", "pl": "hotel", "en": "hotel", "distractors": ["house", "camp", "tent"] },
-  { "id": "beach", "pl": "plaża", "en": "beach", "distractors": ["sea", "pool", "sand"] },
-  { "id": "sea", "pl": "morze", "en": "sea", "distractors": ["ocean", "lake", "river"] },
-  { "id": "ocean", "pl": "ocean", "en": "ocean", "distractors": ["sea", "lake", "river"] },
-  { "id": "mountain", "pl": "góra", "en": "mountain", "distractors": ["hill", "forest", "valley"] },
-  { "id": "summer", "pl": "lato", "en": "summer", "distractors": ["winter", "spring", "autumn"] },
-  { "id": "winter", "pl": "zima", "en": "winter", "distractors": ["summer", "spring", "autumn"] },
-  { "id": "spring", "pl": "wiosna", "en": "spring", "distractors": ["summer", "autumn", "winter"] },
-  { "id": "autumn", "pl": "jesień", "en": "autumn", "distractors": ["summer", "winter", "spring"] },
-  { "id": "memory", "pl": "wspomnienie", "en": "memory", "distractors": ["story", "dream", "idea"] },
-  { "id": "souvenir", "pl": "pamiątka", "en": "souvenir", "distractors": ["ticket", "gift", "photo"] },
-  { "id": "photo", "pl": "zdjęcie", "en": "photo", "distractors": ["picture", "drawing", "map"] },
-  { "id": "map", "pl": "mapa", "en": "map", "distractors": ["book", "photo", "ticket"] },
-  { "id": "ticket", "pl": "bilet", "en": "ticket", "distractors": ["map", "card", "pass"] },
-
-  { "id": "car", "pl": "samochód", "en": "car", "distractors": ["bus", "truck", "taxi"] },
-  { "id": "bus", "pl": "autobus", "en": "bus", "distractors": ["car", "train", "taxi"] },
-  { "id": "train", "pl": "pociąg", "en": "train", "distractors": ["bus", "subway", "car"] },
-  { "id": "bike", "pl": "rower", "en": "bike", "distractors": ["car", "motorbike", "scooter"] },
-  { "id": "plane", "pl": "samolot", "en": "plane", "distractors": ["train", "ship", "helicopter"] },
-  { "id": "ship", "pl": "statek", "en": "ship", "distractors": ["boat", "plane", "train"] },
-
-  { "id": "park", "pl": "park", "en": "park", "distractors": ["garden", "forest", "playground"] },
-  { "id": "playground", "pl": "plac zabaw", "en": "playground", "distractors": ["park", "garden", "gym"] },
-  { "id": "school", "pl": "szkoła", "en": "school", "distractors": ["class", "book", "teacher"] },
-  { "id": "house", "pl": "dom", "en": "house", "distractors": ["home", "room", "apartment"] },
-  { "id": "home", "pl": "dom rodzinny", "en": "home", "distractors": ["house", "room", "family"] },
-  { "id": "shop", "pl": "sklep", "en": "shop", "distractors": ["mall", "store", "market"] },
-  { "id": "restaurant", "pl": "restauracja", "en": "restaurant", "distractors": ["cafe", "shop", "kitchen"] },
-  { "id": "cinema", "pl": "kino", "en": "cinema", "distractors": ["theatre", "museum", "restaurant"] },
-  { "id": "library", "pl": "biblioteka", "en": "library", "distractors": ["bookshop", "school", "museum"] },
-  { "id": "museum", "pl": "muzeum", "en": "museum", "distractors": ["library", "gallery", "cinema"] },
-  { "id": "zoo", "pl": "zoo", "en": "zoo", "distractors": ["park", "farm", "museum"] },
-  { "id": "garden", "pl": "ogród", "en": "garden", "distractors": ["yard", "park", "forest"] },
-  { "id": "city", "pl": "miasto", "en": "city", "distractors": ["village", "town", "country"] },
-  { "id": "village", "pl": "wieś", "en": "village", "distractors": ["city", "town", "country"] },
-  { "id": "street", "pl": "ulica", "en": "street", "distractors": ["road", "avenue", "path"] },
-  { "id": "country", "pl": "kraj", "en": "country", "distractors": ["city", "town", "village"] },
-
-  { "id": "bread", "pl": "chleb", "en": "bread", "distractors": ["butter", "cheese", "rice"] },
-  { "id": "milk", "pl": "mleko", "en": "milk", "distractors": ["juice", "water", "tea"] },
-  { "id": "apple", "pl": "jabłko", "en": "apple", "distractors": ["banana", "pear", "peach"] },
-  { "id": "water", "pl": "woda", "en": "water", "distractors": ["milk", "juice", "tea"] },
-  { "id": "cheese", "pl": "ser", "en": "cheese", "distractors": ["bread", "butter", "milk"] },
-  { "id": "egg", "pl": "jajko", "en": "egg", "distractors": ["cheese", "bread", "meat"] },
-  { "id": "meat", "pl": "mięso", "en": "meat", "distractors": ["fish", "bread", "cheese"] },
-  { "id": "cake", "pl": "ciasto", "en": "cake", "distractors": ["bread", "cookie", "pie"] },
-  { "id": "pizza", "pl": "pizza", "en": "pizza", "distractors": ["sandwich", "pasta", "burger"] },
-  { "id": "soup", "pl": "zupa", "en": "soup", "distractors": ["salad", "pasta", "rice"] },
-  { "id": "fruit", "pl": "owoc", "en": "fruit", "distractors": ["vegetable", "meat", "candy"] },
-  { "id": "vegetable", "pl": "warzywo", "en": "vegetable", "distractors": ["fruit", "meat", "salad"] },
-  { "id": "tea", "pl": "herbata", "en": "tea", "distractors": ["coffee", "milk", "water"] },
-  { "id": "juice", "pl": "sok", "en": "juice", "distractors": ["water", "milk", "tea"] },
-  { "id": "ice-cream", "pl": "lody", "en": "ice cream", "distractors": ["cake", "candy", "chocolate"] },
-  { "id": "chocolate", "pl": "czekolada", "en": "chocolate", "distractors": ["candy", "cake", "cookie"] },
-  { "id": "breakfast", "pl": "śniadanie", "en": "breakfast", "distractors": ["lunch", "dinner", "snack"] },
-  { "id": "lunch", "pl": "obiad", "en": "lunch", "distractors": ["breakfast", "dinner", "snack"] },
-  { "id": "dinner", "pl": "kolacja", "en": "dinner", "distractors": ["breakfast", "lunch", "snack"] },
-
-  { "id": "monday", "pl": "poniedziałek", "en": "Monday", "distractors": ["Tuesday", "Sunday", "Friday"] },
-  { "id": "tuesday", "pl": "wtorek", "en": "Tuesday", "distractors": ["Monday", "Wednesday", "Thursday"] },
-  { "id": "wednesday", "pl": "środa", "en": "Wednesday", "distractors": ["Tuesday", "Thursday", "Friday"] },
-  { "id": "thursday", "pl": "czwartek", "en": "Thursday", "distractors": ["Wednesday", "Friday", "Saturday"] },
-  { "id": "friday", "pl": "piątek", "en": "Friday", "distractors": ["Thursday", "Saturday", "Monday"] },
-  { "id": "saturday", "pl": "sobota", "en": "Saturday", "distractors": ["Sunday", "Friday", "Monday"] },
-  { "id": "sunday", "pl": "niedziela", "en": "Sunday", "distractors": ["Saturday", "Monday", "Friday"] },
-  { "id": "day", "pl": "dzień", "en": "day", "distractors": ["night", "week", "hour"] },
-  { "id": "night", "pl": "noc", "en": "night", "distractors": ["day", "evening", "morning"] },
-  { "id": "morning", "pl": "rano", "en": "morning", "distractors": ["evening", "night", "day"] },
-  { "id": "afternoon", "pl": "popołudnie", "en": "afternoon", "distractors": ["morning", "evening", "night"] },
-  { "id": "evening", "pl": "wieczór", "en": "evening", "distractors": ["morning", "night", "afternoon"] },
-  { "id": "hour", "pl": "godzina", "en": "hour", "distractors": ["minute", "day", "week"] },
-  { "id": "year", "pl": "rok", "en": "year", "distractors": ["month", "day", "week"] },
-  { "id": "week", "pl": "tydzień", "en": "week", "distractors": ["day", "month", "year"] },
-  { "id": "month", "pl": "miesiąc", "en": "month", "distractors": ["week", "year", "day"] },
-  { "id": "weekend", "pl": "weekend", "en": "weekend", "distractors": ["week", "holiday", "day"] },
-
-  { "id": "always", "pl": "zawsze", "en": "always", "distractors": ["never", "often", "sometimes"] },
-  { "id": "often", "pl": "często", "en": "often", "distractors": ["rarely", "always", "never"] },
-  { "id": "sometimes", "pl": "czasami", "en": "sometimes", "distractors": ["always", "never", "usually"] },
-  { "id": "never", "pl": "nigdy", "en": "never", "distractors": ["always", "often", "sometimes"] },
-  { "id": "usually", "pl": "zwykle", "en": "usually", "distractors": ["rarely", "never", "always"] },
-  { "id": "now", "pl": "teraz", "en": "now", "distractors": ["then", "later", "soon"] },
-  { "id": "today", "pl": "dzisiaj", "en": "today", "distractors": ["yesterday", "tomorrow", "now"] },
-  { "id": "yesterday", "pl": "wczoraj", "en": "yesterday", "distractors": ["today", "tomorrow", "now"] },
-  { "id": "tomorrow", "pl": "jutro", "en": "tomorrow", "distractors": ["today", "yesterday", "now"] },
-
-  { "id": "book", "pl": "książka", "en": "book", "distractors": ["notebook", "magazine", "page"] },
-  { "id": "pen", "pl": "długopis", "en": "pen", "distractors": ["pencil", "eraser", "ruler"] },
-  { "id": "pencil", "pl": "ołówek", "en": "pencil", "distractors": ["pen", "eraser", "marker"] },
-  { "id": "notebook", "pl": "zeszyt", "en": "notebook", "distractors": ["book", "paper", "page"] },
-  { "id": "backpack", "pl": "plecak", "en": "backpack", "distractors": ["bag", "suitcase", "pocket"] },
-  { "id": "teacher", "pl": "nauczyciel", "en": "teacher", "distractors": ["student", "class", "school"] },
-  { "id": "student", "pl": "uczeń", "en": "student", "distractors": ["teacher", "class", "pupil"] },
-  { "id": "class", "pl": "klasa", "en": "class", "distractors": ["school", "lesson", "teacher"] },
-  { "id": "lesson", "pl": "lekcja", "en": "lesson", "distractors": ["class", "subject", "test"] },
-  { "id": "homework", "pl": "praca domowa", "en": "homework", "distractors": ["lesson", "test", "exam"] },
-  { "id": "exam", "pl": "egzamin", "en": "exam", "distractors": ["test", "homework", "quiz"] },
-  { "id": "math", "pl": "matematyka", "en": "math", "distractors": ["english", "science", "art"] },
-
-  { "id": "shirt", "pl": "koszula", "en": "shirt", "distractors": ["t-shirt", "blouse", "jacket"] },
-  { "id": "pants", "pl": "spodnie", "en": "pants", "distractors": ["jeans", "shorts", "skirt"] },
-  { "id": "shoes", "pl": "buty", "en": "shoes", "distractors": ["boots", "sandals", "slippers"] },
-  { "id": "hat", "pl": "czapka", "en": "hat", "distractors": ["cap", "scarf", "beanie"] },
-  { "id": "jacket", "pl": "kurtka", "en": "jacket", "distractors": ["coat", "sweater", "shirt"] },
-  { "id": "dress", "pl": "sukienka", "en": "dress", "distractors": ["skirt", "blouse", "gown"] },
-  { "id": "socks", "pl": "skarpetki", "en": "socks", "distractors": ["shoes", "gloves", "tights"] },
-  { "id": "scarf", "pl": "szalik", "en": "scarf", "distractors": ["hat", "gloves", "coat"] },
-  { "id": "sweater", "pl": "sweter", "en": "sweater", "distractors": ["hoodie", "jacket", "shirt"] },
-  { "id": "coat", "pl": "płaszcz", "en": "coat", "distractors": ["jacket", "sweater", "scarf"] },
-
-  { "id": "room", "pl": "pokój", "en": "room", "distractors": ["house", "bedroom", "kitchen"] },
-  { "id": "bed", "pl": "łóżko", "en": "bed", "distractors": ["chair", "sofa", "table"] },
-  { "id": "table", "pl": "stół", "en": "table", "distractors": ["desk", "chair", "bed"] },
-  { "id": "chair", "pl": "krzesło", "en": "chair", "distractors": ["table", "sofa", "bench"] },
-  { "id": "door", "pl": "drzwi", "en": "door", "distractors": ["window", "wall", "gate"] },
-  { "id": "window", "pl": "okno", "en": "window", "distractors": ["door", "wall", "mirror"] },
-  { "id": "kitchen", "pl": "kuchnia", "en": "kitchen", "distractors": ["bathroom", "bedroom", "garage"] },
-  { "id": "bathroom", "pl": "łazienka", "en": "bathroom", "distractors": ["kitchen", "bedroom", "toilet"] },
-  { "id": "bedroom", "pl": "sypialnia", "en": "bedroom", "distractors": ["living room", "kitchen", "bathroom"] },
-  { "id": "floor", "pl": "podłoga", "en": "floor", "distractors": ["wall", "ceiling", "roof"] },
-  { "id": "wall", "pl": "ściana", "en": "wall", "distractors": ["floor", "ceiling", "door"] },
-  { "id": "tv", "pl": "telewizor", "en": "TV", "distractors": ["radio", "computer", "phone"] },
-
-  { "id": "sun", "pl": "słońce", "en": "sun", "distractors": ["moon", "star", "sky"] },
-  { "id": "moon", "pl": "księżyc", "en": "moon", "distractors": ["sun", "star", "planet"] },
-  { "id": "sky", "pl": "niebo", "en": "sky", "distractors": ["cloud", "sun", "space"] },
-  { "id": "tree", "pl": "drzewo", "en": "tree", "distractors": ["flower", "bush", "grass"] },
-  { "id": "flower", "pl": "kwiat", "en": "flower", "distractors": ["tree", "grass", "leaf"] },
-  { "id": "forest", "pl": "las", "en": "forest", "distractors": ["park", "mountain", "tree"] },
-  { "id": "river", "pl": "rzeka", "en": "river", "distractors": ["lake", "sea", "stream"] },
-  { "id": "rain", "pl": "deszcz", "en": "rain", "distractors": ["snow", "storm", "wind"] },
-  { "id": "snow", "pl": "śnieg", "en": "snow", "distractors": ["rain", "ice", "cloud"] },
-  { "id": "cloud", "pl": "chmura", "en": "cloud", "distractors": ["sky", "rain", "fog"] },
-  { "id": "wind", "pl": "wiatr", "en": "wind", "distractors": ["storm", "rain", "air"] },
-  { "id": "weather", "pl": "pogoda", "en": "weather", "distractors": ["rain", "sun", "climate"] },
-
-  { "id": "dog", "pl": "pies", "en": "dog", "distractors": ["cat", "puppy", "wolf"] },
-  { "id": "cat", "pl": "kot", "en": "cat", "distractors": ["dog", "tiger", "mouse"] },
-  { "id": "bird", "pl": "ptak", "en": "bird", "distractors": ["fish", "butterfly", "duck"] },
-  { "id": "fish", "pl": "ryba", "en": "fish", "distractors": ["bird", "shark", "frog"] },
-  { "id": "horse", "pl": "koń", "en": "horse", "distractors": ["cow", "sheep", "zebra"] },
-  { "id": "rabbit", "pl": "królik", "en": "rabbit", "distractors": ["mouse", "fox", "squirrel"] },
-  { "id": "lion", "pl": "lew", "en": "lion", "distractors": ["tiger", "bear", "wolf"] },
-  { "id": "elephant", "pl": "słoń", "en": "elephant", "distractors": ["giraffe", "hippo", "rhino"] },
-
-  { "id": "red", "pl": "czerwony", "en": "red", "distractors": ["blue", "green", "pink"] },
-  { "id": "blue", "pl": "niebieski", "en": "blue", "distractors": ["red", "green", "purple"] },
-  { "id": "green", "pl": "zielony", "en": "green", "distractors": ["blue", "yellow", "brown"] },
-  { "id": "yellow", "pl": "żółty", "en": "yellow", "distractors": ["orange", "green", "gold"] },
-  { "id": "black", "pl": "czarny", "en": "black", "distractors": ["white", "gray", "brown"] },
-  { "id": "white", "pl": "biały", "en": "white", "distractors": ["black", "gray", "yellow"] },
-  { "id": "pink", "pl": "różowy", "en": "pink", "distractors": ["red", "purple", "orange"] },
-  { "id": "brown", "pl": "brązowy", "en": "brown", "distractors": ["black", "yellow", "gray"] },
-
-  { "id": "one", "pl": "jeden", "en": "one", "distractors": ["two", "ten", "zero"] },
-  { "id": "two", "pl": "dwa", "en": "two", "distractors": ["one", "three", "four"] },
-  { "id": "three", "pl": "trzy", "en": "three", "distractors": ["two", "four", "five"] },
-  { "id": "four", "pl": "cztery", "en": "four", "distractors": ["three", "five", "six"] },
-  { "id": "five", "pl": "pięć", "en": "five", "distractors": ["four", "six", "seven"] },
-  { "id": "six", "pl": "sześć", "en": "six", "distractors": ["five", "seven", "four"] },
-  { "id": "seven", "pl": "siedem", "en": "seven", "distractors": ["six", "eight", "nine"] },
-  { "id": "eight", "pl": "osiem", "en": "eight", "distractors": ["seven", "nine", "six"] },
-  { "id": "nine", "pl": "dziewięć", "en": "nine", "distractors": ["eight", "ten", "six"] },
-  { "id": "ten", "pl": "dziesięć", "en": "ten", "distractors": ["nine", "eleven", "one"] },
-
-  { "id": "hot", "pl": "gorący", "en": "hot", "distractors": ["cold", "warm", "cool"] },
-  { "id": "cold", "pl": "zimny", "en": "cold", "distractors": ["hot", "cool", "warm"] },
-  { "id": "new", "pl": "nowy", "en": "new", "distractors": ["old", "modern", "fresh"] },
-  { "id": "fast", "pl": "szybki", "en": "fast", "distractors": ["slow", "quick", "rapid"] },
-  { "id": "slow", "pl": "wolny", "en": "slow", "distractors": ["fast", "quick", "lazy"] },
-  { "id": "long", "pl": "długi", "en": "long", "distractors": ["short", "tall", "big"] },
-  { "id": "interesting", "pl": "ciekawy", "en": "interesting", "distractors": ["boring", "dull", "easy"] },
-  { "id": "boring", "pl": "nudny", "en": "boring", "distractors": ["fun", "cool", "interesting"] },
-  { "id": "easy", "pl": "łatwy", "en": "easy", "distractors": ["hard", "difficult", "simple"] },
-  { "id": "difficult", "pl": "trudny", "en": "difficult", "distractors": ["easy", "simple", "hard"] },
-  { "id": "amazing", "pl": "niesamowity", "en": "amazing", "distractors": ["boring", "normal", "awful"] },
-  { "id": "exciting", "pl": "ekscytujący", "en": "exciting", "distractors": ["boring", "calm", "slow"] },
-  { "id": "favourite", "pl": "ulubiony", "en": "favourite", "distractors": ["best", "good", "nice"] },
-  { "id": "best", "pl": "najlepszy", "en": "best", "distractors": ["worst", "good", "better"] },
-
-  { "id": "like", "pl": "lubić", "en": "like", "distractors": ["love", "hate", "want"] },
-  { "id": "love", "pl": "kochać", "en": "love", "distractors": ["like", "hate", "want"] },
-  { "id": "enjoy", "pl": "cieszyć się", "en": "enjoy", "distractors": ["like", "love", "want"] },
-  { "id": "hate", "pl": "nienawidzić", "en": "hate", "distractors": ["love", "like", "enjoy"] },
-  { "id": "want", "pl": "chcieć", "en": "want", "distractors": ["need", "like", "have"] },
-  { "id": "need", "pl": "potrzebować", "en": "need", "distractors": ["want", "have", "like"] },
-  { "id": "know", "pl": "wiedzieć", "en": "know", "distractors": ["think", "understand", "learn"] },
-  { "id": "think", "pl": "myśleć", "en": "think", "distractors": ["know", "feel", "believe"] },
-  { "id": "feel", "pl": "czuć", "en": "feel", "distractors": ["think", "know", "hear"] },
-  { "id": "remember", "pl": "pamiętać", "en": "remember", "distractors": ["forget", "know", "think"] },
-  { "id": "understand", "pl": "rozumieć", "en": "understand", "distractors": ["know", "think", "hear"] },
-  { "id": "see", "pl": "widzieć", "en": "see", "distractors": ["look", "watch", "hear"] },
-
-  { "id": "and", "pl": "i", "en": "and", "distractors": ["or", "but", "so"] },
-  { "id": "but", "pl": "ale", "en": "but", "distractors": ["and", "or", "because"] },
-  { "id": "or", "pl": "lub", "en": "or", "distractors": ["and", "but", "so"] },
-  { "id": "because", "pl": "ponieważ", "en": "because", "distractors": ["so", "but", "and"] },
-  { "id": "with", "pl": "z", "en": "with", "distractors": ["to", "for", "at"] },
-  { "id": "yes", "pl": "tak", "en": "yes", "distractors": ["no", "maybe", "okay"] },
-  { "id": "no", "pl": "nie", "en": "no", "distractors": ["yes", "maybe", "okay"] },
-  { "id": "please", "pl": "proszę", "en": "please", "distractors": ["thanks", "sorry", "hello"] },
-  { "id": "thanks", "pl": "dziękuję", "en": "thanks", "distractors": ["please", "sorry", "hello"] },
-  { "id": "sorry", "pl": "przepraszam", "en": "sorry", "distractors": ["please", "thanks", "hello"] }
+  {
+    "id": "mom",
+    "pl": "mama",
+    "en": "mom",
+    "distractors": [
+      "dad",
+      "sister",
+      "aunt"
+    ]
+  },
+  {
+    "id": "dad",
+    "pl": "tata",
+    "en": "dad",
+    "distractors": [
+      "mom",
+      "uncle",
+      "brother"
+    ]
+  },
+  {
+    "id": "brother",
+    "pl": "brat",
+    "en": "brother",
+    "distractors": [
+      "sister",
+      "cousin",
+      "son"
+    ]
+  },
+  {
+    "id": "sister",
+    "pl": "siostra",
+    "en": "sister",
+    "distractors": [
+      "brother",
+      "cousin",
+      "daughter"
+    ]
+  },
+  {
+    "id": "grandma",
+    "pl": "babcia",
+    "en": "grandma",
+    "distractors": [
+      "grandpa",
+      "aunt",
+      "mom"
+    ]
+  },
+  {
+    "id": "grandpa",
+    "pl": "dziadek",
+    "en": "grandpa",
+    "distractors": [
+      "grandma",
+      "uncle",
+      "dad"
+    ]
+  },
+  {
+    "id": "family",
+    "pl": "rodzina",
+    "en": "family",
+    "distractors": [
+      "friend",
+      "parent",
+      "home"
+    ]
+  },
+  {
+    "id": "son",
+    "pl": "syn",
+    "en": "son",
+    "distractors": [
+      "daughter",
+      "brother",
+      "father"
+    ]
+  },
+  {
+    "id": "daughter",
+    "pl": "córka",
+    "en": "daughter",
+    "distractors": [
+      "son",
+      "sister",
+      "mother"
+    ]
+  },
+  {
+    "id": "uncle",
+    "pl": "wujek",
+    "en": "uncle",
+    "distractors": [
+      "aunt",
+      "father",
+      "brother"
+    ]
+  },
+  {
+    "id": "aunt",
+    "pl": "ciocia",
+    "en": "aunt",
+    "distractors": [
+      "uncle",
+      "mother",
+      "sister"
+    ]
+  },
+  {
+    "id": "cousin",
+    "pl": "kuzyn",
+    "en": "cousin",
+    "distractors": [
+      "brother",
+      "friend",
+      "nephew"
+    ]
+  },
+  {
+    "id": "child",
+    "pl": "dziecko",
+    "en": "child",
+    "distractors": [
+      "baby",
+      "adult",
+      "teenager"
+    ]
+  },
+  {
+    "id": "friend",
+    "pl": "przyjaciel",
+    "en": "friend",
+    "distractors": [
+      "classmate",
+      "cousin",
+      "neighbor"
+    ]
+  },
+  {
+    "id": "classmate",
+    "pl": "kolega",
+    "en": "classmate",
+    "distractors": [
+      "friend",
+      "teacher",
+      "student"
+    ]
+  },
+  {
+    "id": "name",
+    "pl": "imię",
+    "en": "name",
+    "distractors": [
+      "word",
+      "age",
+      "day"
+    ]
+  },
+  {
+    "id": "nice",
+    "pl": "miły",
+    "en": "nice",
+    "distractors": [
+      "mean",
+      "rude",
+      "bad"
+    ]
+  },
+  {
+    "id": "funny",
+    "pl": "śmieszny",
+    "en": "funny",
+    "distractors": [
+      "sad",
+      "boring",
+      "serious"
+    ]
+  },
+  {
+    "id": "smart",
+    "pl": "mądry",
+    "en": "smart",
+    "distractors": [
+      "silly",
+      "slow",
+      "lazy"
+    ]
+  },
+  {
+    "id": "brave",
+    "pl": "odważny",
+    "en": "brave",
+    "distractors": [
+      "shy",
+      "scared",
+      "weak"
+    ]
+  },
+  {
+    "id": "shy",
+    "pl": "nieśmiały",
+    "en": "shy",
+    "distractors": [
+      "brave",
+      "loud",
+      "bold"
+    ]
+  },
+  {
+    "id": "polite",
+    "pl": "grzeczny",
+    "en": "polite",
+    "distractors": [
+      "rude",
+      "mean",
+      "naughty"
+    ]
+  },
+  {
+    "id": "helpful",
+    "pl": "pomocny",
+    "en": "helpful",
+    "distractors": [
+      "lazy",
+      "mean",
+      "useless"
+    ]
+  },
+  {
+    "id": "cool",
+    "pl": "fajny",
+    "en": "cool",
+    "distractors": [
+      "boring",
+      "awful",
+      "bad"
+    ]
+  },
+  {
+    "id": "lazy",
+    "pl": "leniwy",
+    "en": "lazy",
+    "distractors": [
+      "active",
+      "busy",
+      "quick"
+    ]
+  },
+  {
+    "id": "happy",
+    "pl": "szczęśliwy",
+    "en": "happy",
+    "distractors": [
+      "sad",
+      "angry",
+      "tired"
+    ]
+  },
+  {
+    "id": "sad",
+    "pl": "smutny",
+    "en": "sad",
+    "distractors": [
+      "happy",
+      "bored",
+      "angry"
+    ]
+  },
+  {
+    "id": "good",
+    "pl": "dobry",
+    "en": "good",
+    "distractors": [
+      "bad",
+      "nice",
+      "great"
+    ]
+  },
+  {
+    "id": "bad",
+    "pl": "zły",
+    "en": "bad",
+    "distractors": [
+      "good",
+      "sad",
+      "angry"
+    ]
+  },
+  {
+    "id": "cheerful",
+    "pl": "wesoły",
+    "en": "cheerful",
+    "distractors": [
+      "sad",
+      "grumpy",
+      "tired"
+    ]
+  },
+  {
+    "id": "quiet",
+    "pl": "cichy",
+    "en": "quiet",
+    "distractors": [
+      "loud",
+      "noisy",
+      "shy"
+    ]
+  },
+  {
+    "id": "loud",
+    "pl": "głośny",
+    "en": "loud",
+    "distractors": [
+      "quiet",
+      "silent",
+      "shy"
+    ]
+  },
+  {
+    "id": "friendly",
+    "pl": "przyjacielski",
+    "en": "friendly",
+    "distractors": [
+      "mean",
+      "rude",
+      "shy"
+    ]
+  },
+  {
+    "id": "kind",
+    "pl": "serdeczny",
+    "en": "kind",
+    "distractors": [
+      "mean",
+      "rude",
+      "cold"
+    ]
+  },
+  {
+    "id": "clever",
+    "pl": "bystry",
+    "en": "clever",
+    "distractors": [
+      "silly",
+      "slow",
+      "shy"
+    ]
+  },
+  {
+    "id": "tall",
+    "pl": "wysoki",
+    "en": "tall",
+    "distractors": [
+      "short",
+      "small",
+      "long"
+    ]
+  },
+  {
+    "id": "short",
+    "pl": "krótki",
+    "en": "short",
+    "distractors": [
+      "long",
+      "tall",
+      "high"
+    ]
+  },
+  {
+    "id": "beautiful",
+    "pl": "piękny",
+    "en": "beautiful",
+    "distractors": [
+      "ugly",
+      "plain",
+      "pretty"
+    ]
+  },
+  {
+    "id": "pretty",
+    "pl": "ładny",
+    "en": "pretty",
+    "distractors": [
+      "ugly",
+      "plain",
+      "nice"
+    ]
+  },
+  {
+    "id": "young",
+    "pl": "młody",
+    "en": "young",
+    "distractors": [
+      "old",
+      "new",
+      "fresh"
+    ]
+  },
+  {
+    "id": "old",
+    "pl": "stary",
+    "en": "old",
+    "distractors": [
+      "new",
+      "young",
+      "fresh"
+    ]
+  },
+  {
+    "id": "big",
+    "pl": "duży",
+    "en": "big",
+    "distractors": [
+      "small",
+      "long",
+      "tall"
+    ]
+  },
+  {
+    "id": "small",
+    "pl": "mały",
+    "en": "small",
+    "distractors": [
+      "big",
+      "short",
+      "tiny"
+    ]
+  },
+  {
+    "id": "strong",
+    "pl": "silny",
+    "en": "strong",
+    "distractors": [
+      "weak",
+      "big",
+      "tough"
+    ]
+  },
+  {
+    "id": "weak",
+    "pl": "słaby",
+    "en": "weak",
+    "distractors": [
+      "strong",
+      "sick",
+      "small"
+    ]
+  },
+  {
+    "id": "thin",
+    "pl": "szczupły",
+    "en": "thin",
+    "distractors": [
+      "fat",
+      "big",
+      "tall"
+    ]
+  },
+  {
+    "id": "curly",
+    "pl": "kręcony",
+    "en": "curly",
+    "distractors": [
+      "straight",
+      "short",
+      "long"
+    ]
+  },
+  {
+    "id": "head",
+    "pl": "głowa",
+    "en": "head",
+    "distractors": [
+      "face",
+      "neck",
+      "hair"
+    ]
+  },
+  {
+    "id": "hand",
+    "pl": "dłoń",
+    "en": "hand",
+    "distractors": [
+      "foot",
+      "finger",
+      "arm"
+    ]
+  },
+  {
+    "id": "leg",
+    "pl": "noga",
+    "en": "leg",
+    "distractors": [
+      "arm",
+      "foot",
+      "knee"
+    ]
+  },
+  {
+    "id": "eye",
+    "pl": "oko",
+    "en": "eye",
+    "distractors": [
+      "ear",
+      "nose",
+      "mouth"
+    ]
+  },
+  {
+    "id": "ear",
+    "pl": "ucho",
+    "en": "ear",
+    "distractors": [
+      "eye",
+      "nose",
+      "mouth"
+    ]
+  },
+  {
+    "id": "nose",
+    "pl": "nos",
+    "en": "nose",
+    "distractors": [
+      "mouth",
+      "ear",
+      "eye"
+    ]
+  },
+  {
+    "id": "mouth",
+    "pl": "usta",
+    "en": "mouth",
+    "distractors": [
+      "nose",
+      "lip",
+      "tooth"
+    ]
+  },
+  {
+    "id": "hair",
+    "pl": "włosy",
+    "en": "hair",
+    "distractors": [
+      "head",
+      "skin",
+      "beard"
+    ]
+  },
+  {
+    "id": "face",
+    "pl": "twarz",
+    "en": "face",
+    "distractors": [
+      "head",
+      "skin",
+      "neck"
+    ]
+  },
+  {
+    "id": "tooth",
+    "pl": "ząb",
+    "en": "tooth",
+    "distractors": [
+      "lip",
+      "tongue",
+      "mouth"
+    ]
+  },
+  {
+    "id": "get-up",
+    "pl": "wstawać",
+    "en": "get up",
+    "distractors": [
+      "sit down",
+      "lie down",
+      "wake up"
+    ]
+  },
+  {
+    "id": "wake-up",
+    "pl": "budzić się",
+    "en": "wake up",
+    "distractors": [
+      "sleep",
+      "dream",
+      "get up"
+    ]
+  },
+  {
+    "id": "wash",
+    "pl": "myć",
+    "en": "wash",
+    "distractors": [
+      "clean",
+      "dry",
+      "rinse"
+    ]
+  },
+  {
+    "id": "brush",
+    "pl": "szczotkować",
+    "en": "brush",
+    "distractors": [
+      "wash",
+      "clean",
+      "comb"
+    ]
+  },
+  {
+    "id": "eat",
+    "pl": "jeść",
+    "en": "eat",
+    "distractors": [
+      "drink",
+      "cook",
+      "bite"
+    ]
+  },
+  {
+    "id": "drink",
+    "pl": "pić",
+    "en": "drink",
+    "distractors": [
+      "eat",
+      "pour",
+      "sip"
+    ]
+  },
+  {
+    "id": "sleep",
+    "pl": "spać",
+    "en": "sleep",
+    "distractors": [
+      "rest",
+      "dream",
+      "wake"
+    ]
+  },
+  {
+    "id": "go",
+    "pl": "iść",
+    "en": "go",
+    "distractors": [
+      "run",
+      "walk",
+      "come"
+    ]
+  },
+  {
+    "id": "come",
+    "pl": "przychodzić",
+    "en": "come",
+    "distractors": [
+      "go",
+      "leave",
+      "run"
+    ]
+  },
+  {
+    "id": "read",
+    "pl": "czytać",
+    "en": "read",
+    "distractors": [
+      "write",
+      "learn",
+      "study"
+    ]
+  },
+  {
+    "id": "write",
+    "pl": "pisać",
+    "en": "write",
+    "distractors": [
+      "read",
+      "draw",
+      "type"
+    ]
+  },
+  {
+    "id": "study",
+    "pl": "uczyć się",
+    "en": "study",
+    "distractors": [
+      "play",
+      "rest",
+      "work"
+    ]
+  },
+  {
+    "id": "work",
+    "pl": "pracować",
+    "en": "work",
+    "distractors": [
+      "play",
+      "rest",
+      "study"
+    ]
+  },
+  {
+    "id": "watch",
+    "pl": "zegarek",
+    "en": "watch",
+    "distractors": [
+      "bracelet",
+      "ring",
+      "necklace"
+    ]
+  },
+  {
+    "id": "play",
+    "pl": "grać",
+    "en": "play",
+    "distractors": [
+      "run",
+      "sing",
+      "dance"
+    ]
+  },
+  {
+    "id": "help",
+    "pl": "pomagać",
+    "en": "help",
+    "distractors": [
+      "save",
+      "teach",
+      "give"
+    ]
+  },
+  {
+    "id": "do",
+    "pl": "robić",
+    "en": "do",
+    "distractors": [
+      "make",
+      "have",
+      "go"
+    ]
+  },
+  {
+    "id": "cook",
+    "pl": "gotować",
+    "en": "cook",
+    "distractors": [
+      "bake",
+      "eat",
+      "wash"
+    ]
+  },
+  {
+    "id": "clean",
+    "pl": "sprzątać",
+    "en": "clean",
+    "distractors": [
+      "wash",
+      "cook",
+      "dirty"
+    ]
+  },
+  {
+    "id": "travel",
+    "pl": "podróżować",
+    "en": "travel",
+    "distractors": [
+      "walk",
+      "stay",
+      "visit"
+    ]
+  },
+  {
+    "id": "visit",
+    "pl": "odwiedzać",
+    "en": "visit",
+    "distractors": [
+      "travel",
+      "leave",
+      "stay"
+    ]
+  },
+  {
+    "id": "learn",
+    "pl": "uczyć",
+    "en": "learn",
+    "distractors": [
+      "teach",
+      "study",
+      "read"
+    ]
+  },
+  {
+    "id": "speak",
+    "pl": "mówić",
+    "en": "speak",
+    "distractors": [
+      "listen",
+      "sing",
+      "talk"
+    ]
+  },
+  {
+    "id": "listen",
+    "pl": "słuchać",
+    "en": "listen",
+    "distractors": [
+      "speak",
+      "hear",
+      "watch"
+    ]
+  },
+  {
+    "id": "sing",
+    "pl": "śpiewać",
+    "en": "sing",
+    "distractors": [
+      "dance",
+      "play",
+      "speak"
+    ]
+  },
+  {
+    "id": "dance",
+    "pl": "tańczyć",
+    "en": "dance",
+    "distractors": [
+      "sing",
+      "jump",
+      "run"
+    ]
+  },
+  {
+    "id": "draw",
+    "pl": "rysować",
+    "en": "draw",
+    "distractors": [
+      "paint",
+      "write",
+      "color"
+    ]
+  },
+  {
+    "id": "paint",
+    "pl": "malować",
+    "en": "paint",
+    "distractors": [
+      "draw",
+      "color",
+      "write"
+    ]
+  },
+  {
+    "id": "football",
+    "pl": "piłka nożna",
+    "en": "football",
+    "distractors": [
+      "tennis",
+      "basketball",
+      "hockey"
+    ]
+  },
+  {
+    "id": "tennis",
+    "pl": "tenis",
+    "en": "tennis",
+    "distractors": [
+      "football",
+      "basketball",
+      "golf"
+    ]
+  },
+  {
+    "id": "basketball",
+    "pl": "koszykówka",
+    "en": "basketball",
+    "distractors": [
+      "football",
+      "tennis",
+      "volleyball"
+    ]
+  },
+  {
+    "id": "swimming",
+    "pl": "pływanie",
+    "en": "swimming",
+    "distractors": [
+      "running",
+      "diving",
+      "surfing"
+    ]
+  },
+  {
+    "id": "running",
+    "pl": "bieganie",
+    "en": "running",
+    "distractors": [
+      "walking",
+      "swimming",
+      "jumping"
+    ]
+  },
+  {
+    "id": "cycling",
+    "pl": "jazda na rowerze",
+    "en": "cycling",
+    "distractors": [
+      "running",
+      "skating",
+      "driving"
+    ]
+  },
+  {
+    "id": "skating",
+    "pl": "jazda na łyżwach",
+    "en": "skating",
+    "distractors": [
+      "skiing",
+      "running",
+      "cycling"
+    ]
+  },
+  {
+    "id": "dancing",
+    "pl": "taniec",
+    "en": "dancing",
+    "distractors": [
+      "singing",
+      "jumping",
+      "running"
+    ]
+  },
+  {
+    "id": "singing",
+    "pl": "śpiewanie",
+    "en": "singing",
+    "distractors": [
+      "dancing",
+      "talking",
+      "reading"
+    ]
+  },
+  {
+    "id": "drawing",
+    "pl": "rysowanie",
+    "en": "drawing",
+    "distractors": [
+      "painting",
+      "writing",
+      "reading"
+    ]
+  },
+  {
+    "id": "painting",
+    "pl": "malowanie",
+    "en": "painting",
+    "distractors": [
+      "drawing",
+      "writing",
+      "coloring"
+    ]
+  },
+  {
+    "id": "reading",
+    "pl": "czytanie",
+    "en": "reading",
+    "distractors": [
+      "writing",
+      "drawing",
+      "singing"
+    ]
+  },
+  {
+    "id": "music",
+    "pl": "muzyka",
+    "en": "music",
+    "distractors": [
+      "song",
+      "art",
+      "dance"
+    ]
+  },
+  {
+    "id": "song",
+    "pl": "piosenka",
+    "en": "song",
+    "distractors": [
+      "music",
+      "poem",
+      "story"
+    ]
+  },
+  {
+    "id": "game",
+    "pl": "gra",
+    "en": "game",
+    "distractors": [
+      "sport",
+      "toy",
+      "hobby"
+    ]
+  },
+  {
+    "id": "sport",
+    "pl": "sport",
+    "en": "sport",
+    "distractors": [
+      "game",
+      "hobby",
+      "activity"
+    ]
+  },
+  {
+    "id": "hobby",
+    "pl": "hobby",
+    "en": "hobby",
+    "distractors": [
+      "sport",
+      "game",
+      "activity"
+    ]
+  },
+  {
+    "id": "ball",
+    "pl": "piłka",
+    "en": "ball",
+    "distractors": [
+      "bat",
+      "goal",
+      "racket"
+    ]
+  },
+  {
+    "id": "team",
+    "pl": "drużyna",
+    "en": "team",
+    "distractors": [
+      "player",
+      "coach",
+      "match"
+    ]
+  },
+  {
+    "id": "movie",
+    "pl": "film",
+    "en": "movie",
+    "distractors": [
+      "book",
+      "show",
+      "music"
+    ]
+  },
+  {
+    "id": "computer",
+    "pl": "komputer",
+    "en": "computer",
+    "distractors": [
+      "phone",
+      "tv",
+      "tablet"
+    ]
+  },
+  {
+    "id": "art",
+    "pl": "sztuka",
+    "en": "art",
+    "distractors": [
+      "music",
+      "sport",
+      "hobby"
+    ]
+  },
+  {
+    "id": "holiday",
+    "pl": "wakacje",
+    "en": "holiday",
+    "distractors": [
+      "weekend",
+      "school",
+      "work"
+    ]
+  },
+  {
+    "id": "trip",
+    "pl": "podróż",
+    "en": "trip",
+    "distractors": [
+      "holiday",
+      "walk",
+      "visit"
+    ]
+  },
+  {
+    "id": "hotel",
+    "pl": "hotel",
+    "en": "hotel",
+    "distractors": [
+      "hostel",
+      "motel",
+      "house"
+    ]
+  },
+  {
+    "id": "beach",
+    "pl": "plaża",
+    "en": "beach",
+    "distractors": [
+      "sand",
+      "coast",
+      "sea"
+    ]
+  },
+  {
+    "id": "sea",
+    "pl": "morze",
+    "en": "sea",
+    "distractors": [
+      "ocean",
+      "lake",
+      "river"
+    ]
+  },
+  {
+    "id": "ocean",
+    "pl": "ocean",
+    "en": "ocean",
+    "distractors": [
+      "sea",
+      "lake",
+      "river"
+    ]
+  },
+  {
+    "id": "mountain",
+    "pl": "góra",
+    "en": "mountain",
+    "distractors": [
+      "hill",
+      "valley",
+      "rock"
+    ]
+  },
+  {
+    "id": "summer",
+    "pl": "lato",
+    "en": "summer",
+    "distractors": [
+      "winter",
+      "spring",
+      "autumn"
+    ]
+  },
+  {
+    "id": "winter",
+    "pl": "zima",
+    "en": "winter",
+    "distractors": [
+      "summer",
+      "spring",
+      "autumn"
+    ]
+  },
+  {
+    "id": "spring",
+    "pl": "wiosna",
+    "en": "spring",
+    "distractors": [
+      "summer",
+      "autumn",
+      "winter"
+    ]
+  },
+  {
+    "id": "autumn",
+    "pl": "jesień",
+    "en": "autumn",
+    "distractors": [
+      "summer",
+      "winter",
+      "spring"
+    ]
+  },
+  {
+    "id": "memory",
+    "pl": "wspomnienie",
+    "en": "memory",
+    "distractors": [
+      "story",
+      "dream",
+      "idea"
+    ]
+  },
+  {
+    "id": "souvenir",
+    "pl": "pamiątka",
+    "en": "souvenir",
+    "distractors": [
+      "ticket",
+      "gift",
+      "photo"
+    ]
+  },
+  {
+    "id": "photo",
+    "pl": "zdjęcie",
+    "en": "photo",
+    "distractors": [
+      "picture",
+      "drawing",
+      "map"
+    ]
+  },
+  {
+    "id": "map",
+    "pl": "mapa",
+    "en": "map",
+    "distractors": [
+      "poster",
+      "picture",
+      "board"
+    ]
+  },
+  {
+    "id": "ticket",
+    "pl": "bilet",
+    "en": "ticket",
+    "distractors": [
+      "map",
+      "card",
+      "pass"
+    ]
+  },
+  {
+    "id": "car",
+    "pl": "samochód",
+    "en": "car",
+    "distractors": [
+      "bus",
+      "train",
+      "bike"
+    ]
+  },
+  {
+    "id": "bus",
+    "pl": "autobus",
+    "en": "bus",
+    "distractors": [
+      "tram",
+      "train",
+      "car"
+    ]
+  },
+  {
+    "id": "train",
+    "pl": "pociąg",
+    "en": "train",
+    "distractors": [
+      "bus",
+      "tram",
+      "plane"
+    ]
+  },
+  {
+    "id": "bike",
+    "pl": "rower",
+    "en": "bike",
+    "distractors": [
+      "scooter",
+      "car",
+      "bus"
+    ]
+  },
+  {
+    "id": "plane",
+    "pl": "samolot",
+    "en": "plane",
+    "distractors": [
+      "helicopter",
+      "train",
+      "ship"
+    ]
+  },
+  {
+    "id": "ship",
+    "pl": "statek",
+    "en": "ship",
+    "distractors": [
+      "boat",
+      "ferry",
+      "plane"
+    ]
+  },
+  {
+    "id": "park",
+    "pl": "park",
+    "en": "park",
+    "distractors": [
+      "garden",
+      "forest",
+      "square"
+    ]
+  },
+  {
+    "id": "playground",
+    "pl": "plac zabaw",
+    "en": "playground",
+    "distractors": [
+      "park",
+      "garden",
+      "gym"
+    ]
+  },
+  {
+    "id": "school",
+    "pl": "szkoła",
+    "en": "school",
+    "distractors": [
+      "library",
+      "class",
+      "college"
+    ]
+  },
+  {
+    "id": "house",
+    "pl": "dom",
+    "en": "house",
+    "distractors": [
+      "flat",
+      "apartment",
+      "building"
+    ]
+  },
+  {
+    "id": "home",
+    "pl": "dom rodzinny",
+    "en": "home",
+    "distractors": [
+      "house",
+      "room",
+      "family"
+    ]
+  },
+  {
+    "id": "shop",
+    "pl": "sklep",
+    "en": "shop",
+    "distractors": [
+      "market",
+      "cafe",
+      "bank"
+    ]
+  },
+  {
+    "id": "restaurant",
+    "pl": "restauracja",
+    "en": "restaurant",
+    "distractors": [
+      "cafe",
+      "bar",
+      "pub"
+    ]
+  },
+  {
+    "id": "cinema",
+    "pl": "kino",
+    "en": "cinema",
+    "distractors": [
+      "theatre",
+      "museum",
+      "library"
+    ]
+  },
+  {
+    "id": "library",
+    "pl": "biblioteka",
+    "en": "library",
+    "distractors": [
+      "bookshop",
+      "school",
+      "museum"
+    ]
+  },
+  {
+    "id": "museum",
+    "pl": "muzeum",
+    "en": "museum",
+    "distractors": [
+      "gallery",
+      "cinema",
+      "theatre"
+    ]
+  },
+  {
+    "id": "zoo",
+    "pl": "zoo",
+    "en": "zoo",
+    "distractors": [
+      "park",
+      "farm",
+      "museum"
+    ]
+  },
+  {
+    "id": "garden",
+    "pl": "ogród",
+    "en": "garden",
+    "distractors": [
+      "yard",
+      "park",
+      "forest"
+    ]
+  },
+  {
+    "id": "city",
+    "pl": "miasto",
+    "en": "city",
+    "distractors": [
+      "village",
+      "town",
+      "country"
+    ]
+  },
+  {
+    "id": "village",
+    "pl": "wieś",
+    "en": "village",
+    "distractors": [
+      "city",
+      "town",
+      "country"
+    ]
+  },
+  {
+    "id": "street",
+    "pl": "ulica",
+    "en": "street",
+    "distractors": [
+      "road",
+      "path",
+      "square"
+    ]
+  },
+  {
+    "id": "country",
+    "pl": "kraj",
+    "en": "country",
+    "distractors": [
+      "city",
+      "town",
+      "village"
+    ]
+  },
+  {
+    "id": "bread",
+    "pl": "chleb",
+    "en": "bread",
+    "distractors": [
+      "butter",
+      "cheese",
+      "roll"
+    ]
+  },
+  {
+    "id": "milk",
+    "pl": "mleko",
+    "en": "milk",
+    "distractors": [
+      "water",
+      "juice",
+      "coffee"
+    ]
+  },
+  {
+    "id": "apple",
+    "pl": "jabłko",
+    "en": "apple",
+    "distractors": [
+      "pear",
+      "banana",
+      "orange"
+    ]
+  },
+  {
+    "id": "water",
+    "pl": "woda",
+    "en": "water",
+    "distractors": [
+      "juice",
+      "milk",
+      "tea"
+    ]
+  },
+  {
+    "id": "cheese",
+    "pl": "ser",
+    "en": "cheese",
+    "distractors": [
+      "butter",
+      "milk",
+      "yogurt"
+    ]
+  },
+  {
+    "id": "egg",
+    "pl": "jajko",
+    "en": "egg",
+    "distractors": [
+      "cheese",
+      "milk",
+      "bread"
+    ]
+  },
+  {
+    "id": "meat",
+    "pl": "mięso",
+    "en": "meat",
+    "distractors": [
+      "fish",
+      "chicken",
+      "pork"
+    ]
+  },
+  {
+    "id": "cake",
+    "pl": "ciasto",
+    "en": "cake",
+    "distractors": [
+      "cookie",
+      "pie",
+      "bread"
+    ]
+  },
+  {
+    "id": "pizza",
+    "pl": "pizza",
+    "en": "pizza",
+    "distractors": [
+      "sandwich",
+      "pasta",
+      "burger"
+    ]
+  },
+  {
+    "id": "soup",
+    "pl": "zupa",
+    "en": "soup",
+    "distractors": [
+      "salad",
+      "stew",
+      "pasta"
+    ]
+  },
+  {
+    "id": "fruit",
+    "pl": "owoc",
+    "en": "fruit",
+    "distractors": [
+      "vegetable",
+      "meat",
+      "candy"
+    ]
+  },
+  {
+    "id": "vegetable",
+    "pl": "warzywo",
+    "en": "vegetable",
+    "distractors": [
+      "fruit",
+      "meat",
+      "salad"
+    ]
+  },
+  {
+    "id": "tea",
+    "pl": "herbata",
+    "en": "tea",
+    "distractors": [
+      "coffee",
+      "water",
+      "juice"
+    ]
+  },
+  {
+    "id": "juice",
+    "pl": "sok",
+    "en": "juice",
+    "distractors": [
+      "water",
+      "tea",
+      "milk"
+    ]
+  },
+  {
+    "id": "ice-cream",
+    "pl": "lody",
+    "en": "ice cream",
+    "distractors": [
+      "cake",
+      "candy",
+      "chocolate"
+    ]
+  },
+  {
+    "id": "chocolate",
+    "pl": "czekolada",
+    "en": "chocolate",
+    "distractors": [
+      "candy",
+      "cake",
+      "cookie"
+    ]
+  },
+  {
+    "id": "breakfast",
+    "pl": "śniadanie",
+    "en": "breakfast",
+    "distractors": [
+      "lunch",
+      "dinner",
+      "snack"
+    ]
+  },
+  {
+    "id": "lunch",
+    "pl": "obiad",
+    "en": "lunch",
+    "distractors": [
+      "breakfast",
+      "dinner",
+      "snack"
+    ]
+  },
+  {
+    "id": "dinner",
+    "pl": "kolacja",
+    "en": "dinner",
+    "distractors": [
+      "breakfast",
+      "lunch",
+      "snack"
+    ]
+  },
+  {
+    "id": "monday",
+    "pl": "poniedziałek",
+    "en": "Monday",
+    "distractors": [
+      "Tuesday",
+      "Sunday",
+      "Friday"
+    ]
+  },
+  {
+    "id": "tuesday",
+    "pl": "wtorek",
+    "en": "Tuesday",
+    "distractors": [
+      "Monday",
+      "Wednesday",
+      "Thursday"
+    ]
+  },
+  {
+    "id": "wednesday",
+    "pl": "środa",
+    "en": "Wednesday",
+    "distractors": [
+      "Tuesday",
+      "Thursday",
+      "Friday"
+    ]
+  },
+  {
+    "id": "thursday",
+    "pl": "czwartek",
+    "en": "Thursday",
+    "distractors": [
+      "Wednesday",
+      "Friday",
+      "Saturday"
+    ]
+  },
+  {
+    "id": "friday",
+    "pl": "piątek",
+    "en": "Friday",
+    "distractors": [
+      "Thursday",
+      "Saturday",
+      "Monday"
+    ]
+  },
+  {
+    "id": "saturday",
+    "pl": "sobota",
+    "en": "Saturday",
+    "distractors": [
+      "Sunday",
+      "Friday",
+      "Monday"
+    ]
+  },
+  {
+    "id": "sunday",
+    "pl": "niedziela",
+    "en": "Sunday",
+    "distractors": [
+      "Saturday",
+      "Monday",
+      "Friday"
+    ]
+  },
+  {
+    "id": "day",
+    "pl": "dzień",
+    "en": "day",
+    "distractors": [
+      "night",
+      "week",
+      "hour"
+    ]
+  },
+  {
+    "id": "night",
+    "pl": "noc",
+    "en": "night",
+    "distractors": [
+      "day",
+      "evening",
+      "morning"
+    ]
+  },
+  {
+    "id": "morning",
+    "pl": "rano",
+    "en": "morning",
+    "distractors": [
+      "evening",
+      "night",
+      "day"
+    ]
+  },
+  {
+    "id": "afternoon",
+    "pl": "popołudnie",
+    "en": "afternoon",
+    "distractors": [
+      "morning",
+      "evening",
+      "night"
+    ]
+  },
+  {
+    "id": "evening",
+    "pl": "wieczór",
+    "en": "evening",
+    "distractors": [
+      "morning",
+      "night",
+      "afternoon"
+    ]
+  },
+  {
+    "id": "hour",
+    "pl": "godzina",
+    "en": "hour",
+    "distractors": [
+      "minute",
+      "day",
+      "week"
+    ]
+  },
+  {
+    "id": "year",
+    "pl": "rok",
+    "en": "year",
+    "distractors": [
+      "month",
+      "day",
+      "week"
+    ]
+  },
+  {
+    "id": "week",
+    "pl": "tydzień",
+    "en": "week",
+    "distractors": [
+      "day",
+      "month",
+      "year"
+    ]
+  },
+  {
+    "id": "month",
+    "pl": "miesiąc",
+    "en": "month",
+    "distractors": [
+      "week",
+      "year",
+      "day"
+    ]
+  },
+  {
+    "id": "weekend",
+    "pl": "weekend",
+    "en": "weekend",
+    "distractors": [
+      "week",
+      "holiday",
+      "day"
+    ]
+  },
+  {
+    "id": "always",
+    "pl": "zawsze",
+    "en": "always",
+    "distractors": [
+      "never",
+      "often",
+      "sometimes"
+    ]
+  },
+  {
+    "id": "often",
+    "pl": "często",
+    "en": "often",
+    "distractors": [
+      "rarely",
+      "always",
+      "never"
+    ]
+  },
+  {
+    "id": "sometimes",
+    "pl": "czasami",
+    "en": "sometimes",
+    "distractors": [
+      "always",
+      "never",
+      "usually"
+    ]
+  },
+  {
+    "id": "never",
+    "pl": "nigdy",
+    "en": "never",
+    "distractors": [
+      "always",
+      "often",
+      "sometimes"
+    ]
+  },
+  {
+    "id": "usually",
+    "pl": "zwykle",
+    "en": "usually",
+    "distractors": [
+      "rarely",
+      "never",
+      "always"
+    ]
+  },
+  {
+    "id": "now",
+    "pl": "teraz",
+    "en": "now",
+    "distractors": [
+      "then",
+      "later",
+      "soon"
+    ]
+  },
+  {
+    "id": "today",
+    "pl": "dzisiaj",
+    "en": "today",
+    "distractors": [
+      "yesterday",
+      "tomorrow",
+      "now"
+    ]
+  },
+  {
+    "id": "yesterday",
+    "pl": "wczoraj",
+    "en": "yesterday",
+    "distractors": [
+      "today",
+      "tomorrow",
+      "now"
+    ]
+  },
+  {
+    "id": "tomorrow",
+    "pl": "jutro",
+    "en": "tomorrow",
+    "distractors": [
+      "today",
+      "yesterday",
+      "now"
+    ]
+  },
+  {
+    "id": "book",
+    "pl": "książka",
+    "en": "book",
+    "distractors": [
+      "notebook",
+      "dictionary",
+      "magazine"
+    ]
+  },
+  {
+    "id": "pen",
+    "pl": "długopis",
+    "en": "pen",
+    "distractors": [
+      "pencil",
+      "marker",
+      "rubber"
+    ]
+  },
+  {
+    "id": "pencil",
+    "pl": "ołówek",
+    "en": "pencil",
+    "distractors": [
+      "pen",
+      "crayon",
+      "ruler"
+    ]
+  },
+  {
+    "id": "notebook",
+    "pl": "zeszyt",
+    "en": "notebook",
+    "distractors": [
+      "book",
+      "folder",
+      "paper"
+    ]
+  },
+  {
+    "id": "backpack",
+    "pl": "plecak",
+    "en": "backpack",
+    "distractors": [
+      "bag",
+      "pencil-case",
+      "folder"
+    ]
+  },
+  {
+    "id": "teacher",
+    "pl": "nauczyciel",
+    "en": "teacher",
+    "distractors": [
+      "student",
+      "pupil",
+      "doctor"
+    ]
+  },
+  {
+    "id": "student",
+    "pl": "uczeń",
+    "en": "student",
+    "distractors": [
+      "teacher",
+      "child",
+      "boy"
+    ]
+  },
+  {
+    "id": "class",
+    "pl": "klasa",
+    "en": "class",
+    "distractors": [
+      "school",
+      "lesson",
+      "teacher"
+    ]
+  },
+  {
+    "id": "lesson",
+    "pl": "lekcja",
+    "en": "lesson",
+    "distractors": [
+      "class",
+      "subject",
+      "test"
+    ]
+  },
+  {
+    "id": "homework",
+    "pl": "praca domowa",
+    "en": "homework",
+    "distractors": [
+      "lesson",
+      "test",
+      "exam"
+    ]
+  },
+  {
+    "id": "exam",
+    "pl": "egzamin",
+    "en": "exam",
+    "distractors": [
+      "test",
+      "homework",
+      "quiz"
+    ]
+  },
+  {
+    "id": "math",
+    "pl": "matematyka",
+    "en": "math",
+    "distractors": [
+      "english",
+      "science",
+      "art"
+    ]
+  },
+  {
+    "id": "shirt",
+    "pl": "koszula",
+    "en": "shirt",
+    "distractors": [
+      "t-shirt",
+      "blouse",
+      "coat"
+    ]
+  },
+  {
+    "id": "pants",
+    "pl": "spodnie",
+    "en": "pants",
+    "distractors": [
+      "jeans",
+      "shorts",
+      "skirt"
+    ]
+  },
+  {
+    "id": "shoes",
+    "pl": "buty",
+    "en": "shoes",
+    "distractors": [
+      "boots",
+      "sandals",
+      "slippers"
+    ]
+  },
+  {
+    "id": "hat",
+    "pl": "czapka",
+    "en": "hat",
+    "distractors": [
+      "cap",
+      "scarf",
+      "gloves"
+    ]
+  },
+  {
+    "id": "jacket",
+    "pl": "kurtka",
+    "en": "jacket",
+    "distractors": [
+      "coat",
+      "sweater",
+      "vest"
+    ]
+  },
+  {
+    "id": "dress",
+    "pl": "sukienka",
+    "en": "dress",
+    "distractors": [
+      "skirt",
+      "blouse",
+      "shirt"
+    ]
+  },
+  {
+    "id": "socks",
+    "pl": "skarpetki",
+    "en": "socks",
+    "distractors": [
+      "shoes",
+      "gloves",
+      "tights"
+    ]
+  },
+  {
+    "id": "scarf",
+    "pl": "szalik",
+    "en": "scarf",
+    "distractors": [
+      "hat",
+      "glove",
+      "tie"
+    ]
+  },
+  {
+    "id": "sweater",
+    "pl": "sweter",
+    "en": "sweater",
+    "distractors": [
+      "jacket",
+      "coat",
+      "hoodie"
+    ]
+  },
+  {
+    "id": "coat",
+    "pl": "płaszcz",
+    "en": "coat",
+    "distractors": [
+      "jacket",
+      "sweater",
+      "raincoat"
+    ]
+  },
+  {
+    "id": "room",
+    "pl": "pokój",
+    "en": "room",
+    "distractors": [
+      "hall",
+      "wall",
+      "floor"
+    ]
+  },
+  {
+    "id": "bed",
+    "pl": "łóżko",
+    "en": "bed",
+    "distractors": [
+      "sofa",
+      "couch",
+      "chair"
+    ]
+  },
+  {
+    "id": "table",
+    "pl": "stół",
+    "en": "table",
+    "distractors": [
+      "chair",
+      "desk",
+      "bed"
+    ]
+  },
+  {
+    "id": "chair",
+    "pl": "krzesło",
+    "en": "chair",
+    "distractors": [
+      "table",
+      "sofa",
+      "armchair"
+    ]
+  },
+  {
+    "id": "door",
+    "pl": "drzwi",
+    "en": "door",
+    "distractors": [
+      "window",
+      "wall",
+      "floor"
+    ]
+  },
+  {
+    "id": "window",
+    "pl": "okno",
+    "en": "window",
+    "distractors": [
+      "door",
+      "wall",
+      "roof"
+    ]
+  },
+  {
+    "id": "kitchen",
+    "pl": "kuchnia",
+    "en": "kitchen",
+    "distractors": [
+      "bathroom",
+      "bedroom",
+      "hall"
+    ]
+  },
+  {
+    "id": "bathroom",
+    "pl": "łazienka",
+    "en": "bathroom",
+    "distractors": [
+      "kitchen",
+      "bedroom",
+      "toilet"
+    ]
+  },
+  {
+    "id": "bedroom",
+    "pl": "sypialnia",
+    "en": "bedroom",
+    "distractors": [
+      "living-room",
+      "kitchen",
+      "bathroom"
+    ]
+  },
+  {
+    "id": "floor",
+    "pl": "podłoga",
+    "en": "floor",
+    "distractors": [
+      "wall",
+      "ceiling",
+      "roof"
+    ]
+  },
+  {
+    "id": "wall",
+    "pl": "ściana",
+    "en": "wall",
+    "distractors": [
+      "floor",
+      "roof",
+      "ceiling"
+    ]
+  },
+  {
+    "id": "tv",
+    "pl": "telewizor",
+    "en": "TV",
+    "distractors": [
+      "radio",
+      "computer",
+      "phone"
+    ]
+  },
+  {
+    "id": "sun",
+    "pl": "słońce",
+    "en": "sun",
+    "distractors": [
+      "moon",
+      "star",
+      "cloud"
+    ]
+  },
+  {
+    "id": "moon",
+    "pl": "księżyc",
+    "en": "moon",
+    "distractors": [
+      "sun",
+      "star",
+      "planet"
+    ]
+  },
+  {
+    "id": "sky",
+    "pl": "niebo",
+    "en": "sky",
+    "distractors": [
+      "cloud",
+      "space",
+      "air"
+    ]
+  },
+  {
+    "id": "tree",
+    "pl": "drzewo",
+    "en": "tree",
+    "distractors": [
+      "bush",
+      "plant",
+      "flower"
+    ]
+  },
+  {
+    "id": "flower",
+    "pl": "kwiat",
+    "en": "flower",
+    "distractors": [
+      "grass",
+      "leaf",
+      "tree"
+    ]
+  },
+  {
+    "id": "forest",
+    "pl": "las",
+    "en": "forest",
+    "distractors": [
+      "park",
+      "garden",
+      "wood"
+    ]
+  },
+  {
+    "id": "river",
+    "pl": "rzeka",
+    "en": "river",
+    "distractors": [
+      "lake",
+      "sea",
+      "pool"
+    ]
+  },
+  {
+    "id": "rain",
+    "pl": "deszcz",
+    "en": "rain",
+    "distractors": [
+      "snow",
+      "wind",
+      "cloud"
+    ]
+  },
+  {
+    "id": "snow",
+    "pl": "śnieg",
+    "en": "snow",
+    "distractors": [
+      "rain",
+      "ice",
+      "frost"
+    ]
+  },
+  {
+    "id": "cloud",
+    "pl": "chmura",
+    "en": "cloud",
+    "distractors": [
+      "rain",
+      "snow",
+      "sky"
+    ]
+  },
+  {
+    "id": "wind",
+    "pl": "wiatr",
+    "en": "wind",
+    "distractors": [
+      "rain",
+      "storm",
+      "breeze"
+    ]
+  },
+  {
+    "id": "weather",
+    "pl": "pogoda",
+    "en": "weather",
+    "distractors": [
+      "rain",
+      "sun",
+      "climate"
+    ]
+  },
+  {
+    "id": "dog",
+    "pl": "pies",
+    "en": "dog",
+    "distractors": [
+      "wolf",
+      "cat",
+      "fox"
+    ]
+  },
+  {
+    "id": "cat",
+    "pl": "kot",
+    "en": "cat",
+    "distractors": [
+      "dog",
+      "mouse",
+      "rabbit"
+    ]
+  },
+  {
+    "id": "bird",
+    "pl": "ptak",
+    "en": "bird",
+    "distractors": [
+      "bat",
+      "insect",
+      "fish"
+    ]
+  },
+  {
+    "id": "fish",
+    "pl": "ryba",
+    "en": "fish",
+    "distractors": [
+      "whale",
+      "shark",
+      "dolphin"
+    ]
+  },
+  {
+    "id": "horse",
+    "pl": "koń",
+    "en": "horse",
+    "distractors": [
+      "cow",
+      "donkey",
+      "pig"
+    ]
+  },
+  {
+    "id": "rabbit",
+    "pl": "królik",
+    "en": "rabbit",
+    "distractors": [
+      "hare",
+      "mouse",
+      "hamster"
+    ]
+  },
+  {
+    "id": "lion",
+    "pl": "lew",
+    "en": "lion",
+    "distractors": [
+      "tiger",
+      "leopard",
+      "bear"
+    ]
+  },
+  {
+    "id": "elephant",
+    "pl": "słoń",
+    "en": "elephant",
+    "distractors": [
+      "hippo",
+      "rhino",
+      "giraffe"
+    ]
+  },
+  {
+    "id": "red",
+    "pl": "czerwony",
+    "en": "red",
+    "distractors": [
+      "blue",
+      "green",
+      "yellow"
+    ]
+  },
+  {
+    "id": "blue",
+    "pl": "niebieski",
+    "en": "blue",
+    "distractors": [
+      "red",
+      "green",
+      "yellow"
+    ]
+  },
+  {
+    "id": "green",
+    "pl": "zielony",
+    "en": "green",
+    "distractors": [
+      "blue",
+      "yellow",
+      "brown"
+    ]
+  },
+  {
+    "id": "yellow",
+    "pl": "żółty",
+    "en": "yellow",
+    "distractors": [
+      "orange",
+      "red",
+      "green"
+    ]
+  },
+  {
+    "id": "black",
+    "pl": "czarny",
+    "en": "black",
+    "distractors": [
+      "white",
+      "grey",
+      "brown"
+    ]
+  },
+  {
+    "id": "white",
+    "pl": "biały",
+    "en": "white",
+    "distractors": [
+      "black",
+      "grey",
+      "pink"
+    ]
+  },
+  {
+    "id": "pink",
+    "pl": "różowy",
+    "en": "pink",
+    "distractors": [
+      "red",
+      "purple",
+      "orange"
+    ]
+  },
+  {
+    "id": "brown",
+    "pl": "brązowy",
+    "en": "brown",
+    "distractors": [
+      "black",
+      "yellow",
+      "gray"
+    ]
+  },
+  {
+    "id": "one",
+    "pl": "jeden",
+    "en": "one",
+    "distractors": [
+      "two",
+      "ten",
+      "zero"
+    ]
+  },
+  {
+    "id": "two",
+    "pl": "dwa",
+    "en": "two",
+    "distractors": [
+      "one",
+      "three",
+      "four"
+    ]
+  },
+  {
+    "id": "three",
+    "pl": "trzy",
+    "en": "three",
+    "distractors": [
+      "two",
+      "four",
+      "five"
+    ]
+  },
+  {
+    "id": "four",
+    "pl": "cztery",
+    "en": "four",
+    "distractors": [
+      "three",
+      "five",
+      "six"
+    ]
+  },
+  {
+    "id": "five",
+    "pl": "pięć",
+    "en": "five",
+    "distractors": [
+      "four",
+      "six",
+      "seven"
+    ]
+  },
+  {
+    "id": "six",
+    "pl": "sześć",
+    "en": "six",
+    "distractors": [
+      "five",
+      "seven",
+      "four"
+    ]
+  },
+  {
+    "id": "seven",
+    "pl": "siedem",
+    "en": "seven",
+    "distractors": [
+      "six",
+      "eight",
+      "nine"
+    ]
+  },
+  {
+    "id": "eight",
+    "pl": "osiem",
+    "en": "eight",
+    "distractors": [
+      "seven",
+      "nine",
+      "six"
+    ]
+  },
+  {
+    "id": "nine",
+    "pl": "dziewięć",
+    "en": "nine",
+    "distractors": [
+      "eight",
+      "ten",
+      "six"
+    ]
+  },
+  {
+    "id": "ten",
+    "pl": "dziesięć",
+    "en": "ten",
+    "distractors": [
+      "nine",
+      "eleven",
+      "one"
+    ]
+  },
+  {
+    "id": "hot",
+    "pl": "gorący",
+    "en": "hot",
+    "distractors": [
+      "cold",
+      "warm",
+      "cool"
+    ]
+  },
+  {
+    "id": "cold",
+    "pl": "zimny",
+    "en": "cold",
+    "distractors": [
+      "hot",
+      "warm",
+      "freezing"
+    ]
+  },
+  {
+    "id": "new",
+    "pl": "nowy",
+    "en": "new",
+    "distractors": [
+      "old",
+      "modern",
+      "clean"
+    ]
+  },
+  {
+    "id": "fast",
+    "pl": "szybki",
+    "en": "fast",
+    "distractors": [
+      "slow",
+      "quick",
+      "hard"
+    ]
+  },
+  {
+    "id": "slow",
+    "pl": "wolny",
+    "en": "slow",
+    "distractors": [
+      "fast",
+      "lazy",
+      "quiet"
+    ]
+  },
+  {
+    "id": "long",
+    "pl": "długi",
+    "en": "long",
+    "distractors": [
+      "short",
+      "tall",
+      "wide"
+    ]
+  },
+  {
+    "id": "interesting",
+    "pl": "ciekawy",
+    "en": "interesting",
+    "distractors": [
+      "boring",
+      "dull",
+      "easy"
+    ]
+  },
+  {
+    "id": "boring",
+    "pl": "nudny",
+    "en": "boring",
+    "distractors": [
+      "fun",
+      "cool",
+      "interesting"
+    ]
+  },
+  {
+    "id": "easy",
+    "pl": "łatwy",
+    "en": "easy",
+    "distractors": [
+      "hard",
+      "difficult",
+      "simple"
+    ]
+  },
+  {
+    "id": "difficult",
+    "pl": "trudny",
+    "en": "difficult",
+    "distractors": [
+      "easy",
+      "simple",
+      "hard"
+    ]
+  },
+  {
+    "id": "amazing",
+    "pl": "niesamowity",
+    "en": "amazing",
+    "distractors": [
+      "boring",
+      "normal",
+      "awful"
+    ]
+  },
+  {
+    "id": "exciting",
+    "pl": "ekscytujący",
+    "en": "exciting",
+    "distractors": [
+      "boring",
+      "calm",
+      "slow"
+    ]
+  },
+  {
+    "id": "favourite",
+    "pl": "ulubiony",
+    "en": "favourite",
+    "distractors": [
+      "best",
+      "good",
+      "nice"
+    ]
+  },
+  {
+    "id": "best",
+    "pl": "najlepszy",
+    "en": "best",
+    "distractors": [
+      "worst",
+      "good",
+      "better"
+    ]
+  },
+  {
+    "id": "like",
+    "pl": "lubić",
+    "en": "like",
+    "distractors": [
+      "love",
+      "hate",
+      "want"
+    ]
+  },
+  {
+    "id": "love",
+    "pl": "kochać",
+    "en": "love",
+    "distractors": [
+      "like",
+      "hate",
+      "want"
+    ]
+  },
+  {
+    "id": "enjoy",
+    "pl": "cieszyć się",
+    "en": "enjoy",
+    "distractors": [
+      "like",
+      "love",
+      "want"
+    ]
+  },
+  {
+    "id": "hate",
+    "pl": "nienawidzić",
+    "en": "hate",
+    "distractors": [
+      "love",
+      "like",
+      "enjoy"
+    ]
+  },
+  {
+    "id": "want",
+    "pl": "chcieć",
+    "en": "want",
+    "distractors": [
+      "need",
+      "like",
+      "have"
+    ]
+  },
+  {
+    "id": "need",
+    "pl": "potrzebować",
+    "en": "need",
+    "distractors": [
+      "want",
+      "have",
+      "like"
+    ]
+  },
+  {
+    "id": "know",
+    "pl": "wiedzieć",
+    "en": "know",
+    "distractors": [
+      "think",
+      "understand",
+      "learn"
+    ]
+  },
+  {
+    "id": "think",
+    "pl": "myśleć",
+    "en": "think",
+    "distractors": [
+      "know",
+      "feel",
+      "believe"
+    ]
+  },
+  {
+    "id": "feel",
+    "pl": "czuć",
+    "en": "feel",
+    "distractors": [
+      "think",
+      "know",
+      "hear"
+    ]
+  },
+  {
+    "id": "remember",
+    "pl": "pamiętać",
+    "en": "remember",
+    "distractors": [
+      "forget",
+      "know",
+      "think"
+    ]
+  },
+  {
+    "id": "understand",
+    "pl": "rozumieć",
+    "en": "understand",
+    "distractors": [
+      "know",
+      "think",
+      "hear"
+    ]
+  },
+  {
+    "id": "see",
+    "pl": "widzieć",
+    "en": "see",
+    "distractors": [
+      "look",
+      "watch",
+      "hear"
+    ]
+  },
+  {
+    "id": "and",
+    "pl": "i",
+    "en": "and",
+    "distractors": [
+      "or",
+      "but",
+      "so"
+    ]
+  },
+  {
+    "id": "but",
+    "pl": "ale",
+    "en": "but",
+    "distractors": [
+      "and",
+      "or",
+      "because"
+    ]
+  },
+  {
+    "id": "or",
+    "pl": "lub",
+    "en": "or",
+    "distractors": [
+      "and",
+      "but",
+      "so"
+    ]
+  },
+  {
+    "id": "because",
+    "pl": "ponieważ",
+    "en": "because",
+    "distractors": [
+      "so",
+      "but",
+      "and"
+    ]
+  },
+  {
+    "id": "with",
+    "pl": "z",
+    "en": "with",
+    "distractors": [
+      "to",
+      "for",
+      "at"
+    ]
+  },
+  {
+    "id": "yes",
+    "pl": "tak",
+    "en": "yes",
+    "distractors": [
+      "no",
+      "maybe",
+      "okay"
+    ]
+  },
+  {
+    "id": "no",
+    "pl": "nie",
+    "en": "no",
+    "distractors": [
+      "yes",
+      "maybe",
+      "okay"
+    ]
+  },
+  {
+    "id": "please",
+    "pl": "proszę",
+    "en": "please",
+    "distractors": [
+      "thanks",
+      "sorry",
+      "hello"
+    ]
+  },
+  {
+    "id": "thanks",
+    "pl": "dziękuję",
+    "en": "thanks",
+    "distractors": [
+      "please",
+      "sorry",
+      "hello"
+    ]
+  },
+  {
+    "id": "sorry",
+    "pl": "przepraszam",
+    "en": "sorry",
+    "distractors": [
+      "please",
+      "thanks",
+      "hello"
+    ]
+  },
+  {
+    "id": "cow",
+    "pl": "krowa",
+    "en": "cow",
+    "distractors": [
+      "horse",
+      "sheep",
+      "goat"
+    ]
+  },
+  {
+    "id": "pig",
+    "pl": "świnia",
+    "en": "pig",
+    "distractors": [
+      "sheep",
+      "cow",
+      "horse"
+    ]
+  },
+  {
+    "id": "sheep",
+    "pl": "owca",
+    "en": "sheep",
+    "distractors": [
+      "goat",
+      "pig",
+      "cow"
+    ]
+  },
+  {
+    "id": "chicken",
+    "pl": "kurczak",
+    "en": "chicken",
+    "distractors": [
+      "duck",
+      "turkey",
+      "bird"
+    ]
+  },
+  {
+    "id": "duck",
+    "pl": "kaczka",
+    "en": "duck",
+    "distractors": [
+      "goose",
+      "chicken",
+      "swan"
+    ]
+  },
+  {
+    "id": "mouse",
+    "pl": "mysz",
+    "en": "mouse",
+    "distractors": [
+      "rat",
+      "hamster",
+      "squirrel"
+    ]
+  },
+  {
+    "id": "bear",
+    "pl": "niedźwiedź",
+    "en": "bear",
+    "distractors": [
+      "wolf",
+      "lion",
+      "tiger"
+    ]
+  },
+  {
+    "id": "tiger",
+    "pl": "tygrys",
+    "en": "tiger",
+    "distractors": [
+      "lion",
+      "cheetah",
+      "panther"
+    ]
+  },
+  {
+    "id": "monkey",
+    "pl": "małpa",
+    "en": "monkey",
+    "distractors": [
+      "gorilla",
+      "ape",
+      "chimp"
+    ]
+  },
+  {
+    "id": "snake",
+    "pl": "wąż",
+    "en": "snake",
+    "distractors": [
+      "worm",
+      "lizard",
+      "crocodile"
+    ]
+  },
+  {
+    "id": "frog",
+    "pl": "żaba",
+    "en": "frog",
+    "distractors": [
+      "toad",
+      "lizard",
+      "turtle"
+    ]
+  },
+  {
+    "id": "spider",
+    "pl": "pająk",
+    "en": "spider",
+    "distractors": [
+      "bug",
+      "ant",
+      "fly"
+    ]
+  },
+  {
+    "id": "neck",
+    "pl": "szyja",
+    "en": "neck",
+    "distractors": [
+      "throat",
+      "shoulder",
+      "head"
+    ]
+  },
+  {
+    "id": "shoulder",
+    "pl": "ramię",
+    "en": "shoulder",
+    "distractors": [
+      "arm",
+      "neck",
+      "back"
+    ]
+  },
+  {
+    "id": "arm",
+    "pl": "ręka",
+    "en": "arm",
+    "distractors": [
+      "leg",
+      "shoulder",
+      "hand"
+    ]
+  },
+  {
+    "id": "finger",
+    "pl": "palec",
+    "en": "finger",
+    "distractors": [
+      "toe",
+      "thumb",
+      "hand"
+    ]
+  },
+  {
+    "id": "foot",
+    "pl": "stopa",
+    "en": "foot",
+    "distractors": [
+      "hand",
+      "leg",
+      "toe"
+    ]
+  },
+  {
+    "id": "knee",
+    "pl": "kolano",
+    "en": "knee",
+    "distractors": [
+      "elbow",
+      "ankle",
+      "leg"
+    ]
+  },
+  {
+    "id": "back",
+    "pl": "plecy",
+    "en": "back",
+    "distractors": [
+      "chest",
+      "stomach",
+      "shoulder"
+    ]
+  },
+  {
+    "id": "stomach",
+    "pl": "brzuch",
+    "en": "stomach",
+    "distractors": [
+      "chest",
+      "back",
+      "throat"
+    ]
+  },
+  {
+    "id": "chest",
+    "pl": "klatka piersiowa",
+    "en": "chest",
+    "distractors": [
+      "stomach",
+      "back",
+      "shoulder"
+    ]
+  },
+  {
+    "id": "heart",
+    "pl": "serce",
+    "en": "heart",
+    "distractors": [
+      "brain",
+      "blood",
+      "stomach"
+    ]
+  },
+  {
+    "id": "t-shirt",
+    "pl": "koszulka",
+    "en": "t-shirt",
+    "distractors": [
+      "shirt",
+      "sweater",
+      "jacket"
+    ]
+  },
+  {
+    "id": "trousers",
+    "pl": "spodnie",
+    "en": "trousers",
+    "distractors": [
+      "jeans",
+      "shorts",
+      "sweatpants"
+    ]
+  },
+  {
+    "id": "jeans",
+    "pl": "dżinsy",
+    "en": "jeans",
+    "distractors": [
+      "trousers",
+      "shorts",
+      "leggings"
+    ]
+  },
+  {
+    "id": "shorts",
+    "pl": "szorty",
+    "en": "shorts",
+    "distractors": [
+      "pants",
+      "jeans",
+      "trousers"
+    ]
+  },
+  {
+    "id": "skirt",
+    "pl": "spódnica",
+    "en": "skirt",
+    "distractors": [
+      "dress",
+      "shorts",
+      "pants"
+    ]
+  },
+  {
+    "id": "glove",
+    "pl": "rękawiczka",
+    "en": "glove",
+    "distractors": [
+      "sock",
+      "shoe",
+      "boot"
+    ]
+  },
+  {
+    "id": "sock",
+    "pl": "skarpeta",
+    "en": "sock",
+    "distractors": [
+      "shoe",
+      "glove",
+      "slipper"
+    ]
+  },
+  {
+    "id": "shoe",
+    "pl": "but",
+    "en": "shoe",
+    "distractors": [
+      "sock",
+      "boot",
+      "sneaker"
+    ]
+  },
+  {
+    "id": "boot",
+    "pl": "kozak",
+    "en": "boot",
+    "distractors": [
+      "shoe",
+      "sandal",
+      "slipper"
+    ]
+  },
+  {
+    "id": "umbrella",
+    "pl": "parasol",
+    "en": "umbrella",
+    "distractors": [
+      "raincoat",
+      "hat",
+      "bag"
+    ]
+  },
+  {
+    "id": "bag",
+    "pl": "torba",
+    "en": "bag",
+    "distractors": [
+      "backpack",
+      "purse",
+      "wallet"
+    ]
+  },
+  {
+    "id": "glasses",
+    "pl": "okulary",
+    "en": "glasses",
+    "distractors": [
+      "sunglasses",
+      "watch",
+      "hat"
+    ]
+  },
+  {
+    "id": "banana",
+    "pl": "banan",
+    "en": "banana",
+    "distractors": [
+      "apple",
+      "orange",
+      "lemon"
+    ]
+  },
+  {
+    "id": "orange",
+    "pl": "pomarańcza",
+    "en": "orange",
+    "distractors": [
+      "lemon",
+      "apple",
+      "banana"
+    ]
+  },
+  {
+    "id": "tomato",
+    "pl": "pomidor",
+    "en": "tomato",
+    "distractors": [
+      "potato",
+      "cucumber",
+      "carrot"
+    ]
+  },
+  {
+    "id": "potato",
+    "pl": "ziemniak",
+    "en": "potato",
+    "distractors": [
+      "tomato",
+      "onion",
+      "carrot"
+    ]
+  },
+  {
+    "id": "carrot",
+    "pl": "marchewka",
+    "en": "carrot",
+    "distractors": [
+      "potato",
+      "onion",
+      "pepper"
+    ]
+  },
+  {
+    "id": "butter",
+    "pl": "masło",
+    "en": "butter",
+    "distractors": [
+      "cheese",
+      "bread",
+      "jam"
+    ]
+  },
+  {
+    "id": "sausage",
+    "pl": "kiełbasa",
+    "en": "sausage",
+    "distractors": [
+      "ham",
+      "bacon",
+      "meat"
+    ]
+  },
+  {
+    "id": "salad",
+    "pl": "sałatka",
+    "en": "salad",
+    "distractors": [
+      "soup",
+      "sandwich",
+      "pasta"
+    ]
+  },
+  {
+    "id": "sandwich",
+    "pl": "kanapka",
+    "en": "sandwich",
+    "distractors": [
+      "burger",
+      "pizza",
+      "salad"
+    ]
+  },
+  {
+    "id": "roof",
+    "pl": "dach",
+    "en": "roof",
+    "distractors": [
+      "ceiling",
+      "floor",
+      "wall"
+    ]
+  },
+  {
+    "id": "sofa",
+    "pl": "kanapa",
+    "en": "sofa",
+    "distractors": [
+      "bed",
+      "armchair",
+      "chair"
+    ]
+  },
+  {
+    "id": "wardrobe",
+    "pl": "szafa",
+    "en": "wardrobe",
+    "distractors": [
+      "cupboard",
+      "bookcase",
+      "drawer"
+    ]
+  },
+  {
+    "id": "lamp",
+    "pl": "lampa",
+    "en": "lamp",
+    "distractors": [
+      "light",
+      "mirror",
+      "picture"
+    ]
+  },
+  {
+    "id": "mirror",
+    "pl": "lustro",
+    "en": "mirror",
+    "distractors": [
+      "picture",
+      "window",
+      "glass"
+    ]
+  },
+  {
+    "id": "clock",
+    "pl": "zegar",
+    "en": "clock",
+    "distractors": [
+      "watch",
+      "picture",
+      "lamp"
+    ]
+  },
+  {
+    "id": "fridge",
+    "pl": "lodówka",
+    "en": "fridge",
+    "distractors": [
+      "cooker",
+      "oven",
+      "sink"
+    ]
+  },
+  {
+    "id": "television",
+    "pl": "telewizor",
+    "en": "television",
+    "distractors": [
+      "computer",
+      "radio",
+      "phone"
+    ]
+  },
+  {
+    "id": "rubber",
+    "pl": "gumka",
+    "en": "rubber",
+    "distractors": [
+      "ruler",
+      "pencil",
+      "pen"
+    ]
+  },
+  {
+    "id": "ruler",
+    "pl": "linijka",
+    "en": "ruler",
+    "distractors": [
+      "rubber",
+      "pencil",
+      "scissors"
+    ]
+  },
+  {
+    "id": "desk",
+    "pl": "biurko",
+    "en": "desk",
+    "distractors": [
+      "table",
+      "chair",
+      "board"
+    ]
+  },
+  {
+    "id": "board",
+    "pl": "tablica",
+    "en": "board",
+    "distractors": [
+      "desk",
+      "poster",
+      "wall"
+    ]
+  },
+  {
+    "id": "scissors",
+    "pl": "nożyczki",
+    "en": "scissors",
+    "distractors": [
+      "knife",
+      "ruler",
+      "pen"
+    ]
+  },
+  {
+    "id": "paper",
+    "pl": "papier",
+    "en": "paper",
+    "distractors": [
+      "notebook",
+      "book",
+      "folder"
+    ]
+  },
+  {
+    "id": "boat",
+    "pl": "łódź",
+    "en": "boat",
+    "distractors": [
+      "ship",
+      "canoe",
+      "raft"
+    ]
+  },
+  {
+    "id": "hospital",
+    "pl": "szpital",
+    "en": "hospital",
+    "distractors": [
+      "clinic",
+      "school",
+      "police-station"
+    ]
+  },
+  {
+    "id": "bank",
+    "pl": "bank",
+    "en": "bank",
+    "distractors": [
+      "post-office",
+      "shop",
+      "cinema"
+    ]
+  },
+  {
+    "id": "station",
+    "pl": "stacja",
+    "en": "station",
+    "distractors": [
+      "stop",
+      "airport",
+      "port"
+    ]
+  },
+  {
+    "id": "airport",
+    "pl": "lotnisko",
+    "en": "airport",
+    "distractors": [
+      "station",
+      "port",
+      "garage"
+    ]
+  },
+  {
+    "id": "bridge",
+    "pl": "most",
+    "en": "bridge",
+    "distractors": [
+      "road",
+      "street",
+      "tunnel"
+    ]
+  },
+  {
+    "id": "star",
+    "pl": "gwiazda",
+    "en": "star",
+    "distractors": [
+      "moon",
+      "sun",
+      "cloud"
+    ]
+  },
+  {
+    "id": "grass",
+    "pl": "trawa",
+    "en": "grass",
+    "distractors": [
+      "leaf",
+      "flower",
+      "plant"
+    ]
+  },
+  {
+    "id": "lake",
+    "pl": "jezioro",
+    "en": "lake",
+    "distractors": [
+      "river",
+      "sea",
+      "pond"
+    ]
+  },
+  {
+    "id": "mother",
+    "pl": "matka",
+    "en": "mother",
+    "distractors": [
+      "father",
+      "sister",
+      "aunt"
+    ]
+  },
+  {
+    "id": "father",
+    "pl": "ojciec",
+    "en": "father",
+    "distractors": [
+      "mother",
+      "brother",
+      "uncle"
+    ]
+  },
+  {
+    "id": "grandmother",
+    "pl": "babcia",
+    "en": "grandmother",
+    "distractors": [
+      "grandfather",
+      "aunt",
+      "mother"
+    ]
+  },
+  {
+    "id": "grandfather",
+    "pl": "dziadek",
+    "en": "grandfather",
+    "distractors": [
+      "grandmother",
+      "uncle",
+      "father"
+    ]
+  },
+  {
+    "id": "boy",
+    "pl": "chłopiec",
+    "en": "boy",
+    "distractors": [
+      "girl",
+      "man",
+      "child"
+    ]
+  },
+  {
+    "id": "girl",
+    "pl": "dziewczynka",
+    "en": "girl",
+    "distractors": [
+      "boy",
+      "woman",
+      "baby"
+    ]
+  },
+  {
+    "id": "man",
+    "pl": "mężczyzna",
+    "en": "man",
+    "distractors": [
+      "woman",
+      "boy",
+      "guy"
+    ]
+  },
+  {
+    "id": "woman",
+    "pl": "kobieta",
+    "en": "woman",
+    "distractors": [
+      "man",
+      "girl",
+      "lady"
+    ]
+  },
+  {
+    "id": "baby",
+    "pl": "niemowlę",
+    "en": "baby",
+    "distractors": [
+      "child",
+      "kid",
+      "toddler"
+    ]
+  },
+  {
+    "id": "doctor",
+    "pl": "lekarz",
+    "en": "doctor",
+    "distractors": [
+      "nurse",
+      "dentist",
+      "vet"
+    ]
+  },
+  {
+    "id": "nurse",
+    "pl": "pielęgniarka",
+    "en": "nurse",
+    "distractors": [
+      "doctor",
+      "patient",
+      "dentist"
+    ]
+  },
+  {
+    "id": "dentist",
+    "pl": "dentysta",
+    "en": "dentist",
+    "distractors": [
+      "doctor",
+      "surgeon",
+      "nurse"
+    ]
+  },
+  {
+    "id": "vet",
+    "pl": "weterynarz",
+    "en": "vet",
+    "distractors": [
+      "doctor",
+      "farmer",
+      "zookeeper"
+    ]
+  },
+  {
+    "id": "farmer",
+    "pl": "rolnik",
+    "en": "farmer",
+    "distractors": [
+      "gardener",
+      "vet",
+      "builder"
+    ]
+  },
+  {
+    "id": "builder",
+    "pl": "budowniczy",
+    "en": "builder",
+    "distractors": [
+      "carpenter",
+      "driver",
+      "farmer"
+    ]
+  },
+  {
+    "id": "driver",
+    "pl": "kierowca",
+    "en": "driver",
+    "distractors": [
+      "pilot",
+      "mechanic",
+      "sailor"
+    ]
+  },
+  {
+    "id": "pilot",
+    "pl": "pilot",
+    "en": "pilot",
+    "distractors": [
+      "driver",
+      "sailor",
+      "captain"
+    ]
+  },
+  {
+    "id": "police-officer",
+    "pl": "policjant",
+    "en": "police-officer",
+    "distractors": [
+      "firefighter",
+      "soldier",
+      "guard"
+    ]
+  },
+  {
+    "id": "firefighter",
+    "pl": "strażak",
+    "en": "firefighter",
+    "distractors": [
+      "police-officer",
+      "doctor",
+      "rescuer"
+    ]
+  },
+  {
+    "id": "singer",
+    "pl": "piosenkarz",
+    "en": "singer",
+    "distractors": [
+      "actor",
+      "dancer",
+      "musician"
+    ]
+  },
+  {
+    "id": "actor",
+    "pl": "aktor",
+    "en": "actor",
+    "distractors": [
+      "singer",
+      "director",
+      "dancer"
+    ]
+  }
+  
 ]

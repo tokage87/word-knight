@@ -40,6 +40,7 @@ export class GameScene extends Phaser.Scene {
   private pendingLevelUps = 0;
   private levelUpCount = 0;
   private pendingCardOptions: SkillCardOption[] | null = null;
+  private statRanks: Record<StatId, number> = { maxHp: 0, meleeDmg: 0, atkSpeed: 0 };
   // Quiz answers are the primary XP source — kills give a smaller
   // trickle so progression is gated on vocabulary, not combat.
   private readonly EXP_PER_KILL = 8;
@@ -139,6 +140,8 @@ export class GameScene extends Phaser.Scene {
 
     this.registry.set('hp', this.knight.hp);
     this.registry.set('hpMax', this.knight.hpMax);
+    this.registry.set('meleeDamage', this.knight.meleeDamage);
+    this.registry.set('meleeCooldownMs', this.knight.meleeCooldownMs);
     this.registry.set('distance', Math.max(0, Math.floor(this.distance)));
     this.registry.set('fireCd', this.spellCaster.getCooldown('fire'));
     this.registry.set('fireCdBase', this.spellCaster.getBaseCooldown('fire'));
@@ -379,7 +382,7 @@ export class GameScene extends Phaser.Scene {
       desc: SPELL_META[id].newDesc,
       icon: SPELL_META[id].icon,
     }));
-    const upgradeCards: SkillCardOption[] = upgradableIds.map((id) => {
+    const spellUpgradeCards: SkillCardOption[] = upgradableIds.map((id) => {
       const nextRank = this.spellCaster.getRank(id) + 1;
       return {
         key: `${id}.upgrade`,
@@ -389,6 +392,19 @@ export class GameScene extends Phaser.Scene {
         icon: SPELL_META[id].icon,
       };
     });
+    const statUpgradeCards: SkillCardOption[] = (Object.keys(this.statRanks) as StatId[])
+      .filter((id) => this.statRanks[id] < STAT_META[id].maxRank)
+      .map((id) => {
+        const nextRank = this.statRanks[id] + 1;
+        return {
+          key: `${id}.stat`,
+          kind: 'upgrade',
+          title: `${STAT_META[id].name} ${toRoman(nextRank)}`,
+          desc: STAT_META[id].desc,
+          icon: STAT_META[id].icon,
+        };
+      });
+    const upgradeCards = [...spellUpgradeCards, ...statUpgradeCards];
 
     shuffleInPlace(newCards);
     shuffleInPlace(upgradeCards);
@@ -416,9 +432,15 @@ export class GameScene extends Phaser.Scene {
   }
 
   private onSkillPicked(option: SkillCardOption) {
-    const [idStr, kind] = option.key.split('.') as [SpellId, 'new' | 'upgrade'];
-    if (kind === 'new') this.spellCaster.unlock(idStr);
-    else this.spellCaster.upgrade(idStr);
+    const [idStr, kind] = option.key.split('.') as [string, 'new' | 'upgrade' | 'stat'];
+
+    if (kind === 'stat') {
+      this.applyStatUpgrade(idStr as StatId);
+    } else if (kind === 'new') {
+      this.spellCaster.unlock(idStr as SpellId);
+    } else {
+      this.spellCaster.upgrade(idStr as SpellId);
+    }
 
     this.registry.set(
       'spellsUnlocked',
@@ -429,14 +451,52 @@ export class GameScene extends Phaser.Scene {
       ice: this.spellCaster.getRank('ice'),
       heal: this.spellCaster.getRank('heal'),
     });
+    this.registry.set('statRanks', { ...this.statRanks });
 
     this.pendingLevelUps -= 1;
     this.pendingCardOptions = null;
     this.paused = false;
-    // If the player has multiple level-ups banked, show the next picker.
     this.maybeShowPicker();
   }
+
+  private applyStatUpgrade(id: StatId) {
+    if (this.statRanks[id] >= STAT_META[id].maxRank) return;
+    this.statRanks[id] += 1;
+    const meta = STAT_META[id];
+    if (id === 'maxHp') this.knight.boostMaxHp(meta.amount);
+    else if (id === 'meleeDmg') this.knight.boostMeleeDamage(meta.amount);
+    else if (id === 'atkSpeed') this.knight.boostAttackSpeed(meta.amount);
+  }
 }
+
+type StatId = 'maxHp' | 'meleeDmg' | 'atkSpeed';
+
+const STAT_META: Record<
+  StatId,
+  { name: string; icon: string; desc: string; amount: number; maxRank: number }
+> = {
+  maxHp: {
+    name: 'Vitality',
+    icon: '❤️',
+    desc: '+20 max HP & heal now.',
+    amount: 20,
+    maxRank: 5,
+  },
+  meleeDmg: {
+    name: 'Sharp Sword',
+    icon: 'assets/ui/Icon_07.png',
+    desc: '+3 melee damage.',
+    amount: 3,
+    maxRank: 5,
+  },
+  atkSpeed: {
+    name: 'Swift Strike',
+    icon: 'assets/ui/Icon_09.png',
+    desc: '−10% attack cooldown.',
+    amount: 0.10,
+    maxRank: 4,
+  },
+};
 
 const SPELL_META: Record<
   SpellId,

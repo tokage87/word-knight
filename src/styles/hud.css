@@ -19,6 +19,22 @@
   display: block;
 }
 
+/* HUD scale: the logical resolution is 640x360, so on a fullscreen laptop
+   the overlay-inner ends up ~1920x1080 and fixed-px HUD panels look tiny.
+   `--hud-scale` grows every corner panel proportionally to viewport height.
+   Each panel scales around its own corner so positions don't drift.
+   Tuning: at <=620px viewport height we stay at 1x (original design size);
+   above that we scale up to a capped 1.8x. */
+#overlay-inner {
+  /* Mirror overlay-inner's height formula (min(100vh, 100vw * 9/16))
+     without using container queries — `container-type: size` was breaking
+     flex children by growing them to the full inline size. Dividing
+     length-by-length yields a unitless number scale() accepts. Design
+     target is 360 logical px tall; once the canvas grows past ~620 real
+     px we start scaling, capped at 1.8x. */
+  --hud-scale: clamp(1, min(100vh, 100vw * 9 / 16) / 620px, 1.8);
+}
+
 .hud-top-left,
 .hud-top-right,
 .hud-top-center,
@@ -27,6 +43,10 @@
   position: absolute;
   pointer-events: auto;
 }
+.hud-top-left    { transform: scale(var(--hud-scale)); transform-origin: top left; }
+.hud-top-right   { transform: scale(var(--hud-scale)); transform-origin: top right; }
+.hud-bottom-left { transform: scale(var(--hud-scale)); transform-origin: bottom left; }
+.hud-bottom-center { transform: scale(var(--hud-scale)); transform-origin: bottom center; }
 
 /* Shared paper 9-slice (packed source: 168x153, slice 44/52/45/52) */
 .paper {
@@ -109,7 +129,10 @@
 .boss-bar {
   top: 8px;
   left: 50%;
-  transform: translateX(-50%);
+  /* Scale chained with the existing centering translate so boss bar grows
+     with the rest of the HUD on large viewports (see --hud-scale). */
+  transform: translateX(-50%) scale(var(--hud-scale));
+  transform-origin: top center;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -444,4 +467,47 @@
 .cd-badge--rise {
   transform: translate(-50%, -50px);
   opacity: 0;
+}
+
+/* ───── Hover tooltips ─────
+   Any element with a non-empty `data-tooltip` attribute gets a small
+   paper-styled bubble on hover. Uses ::after so no extra DOM is needed.
+   The hosting element must already have `pointer-events: auto` (all
+   HUD panels do; see the .hud-top-* / .hud-bottom-* rules above). */
+/* :where() drops specificity to 0 so the HUD panels' own
+   `position: absolute` (set above) still wins. We only need `relative`
+   for elements that are statically positioned — for already-positioned
+   ancestors, the ::after tooltip already resolves against them. */
+:where([data-tooltip]:not([data-tooltip=""])) {
+  position: relative;
+}
+[data-tooltip]:not([data-tooltip=""]):hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: pre-line;
+  max-width: 240px;
+  min-width: max-content;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--paper-text);
+  text-align: center;
+  pointer-events: none;
+  z-index: 100;
+  border-style: solid;
+  border-width: 14px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/paper-9s.png');
+  border-image-slice: 44 52 45 52 fill;
+  border-image-width: 14px;
+  border-image-repeat: stretch;
+  animation: tooltip-fade-in 120ms ease-out;
+}
+@keyframes tooltip-fade-in {
+  from { opacity: 0; transform: translate(-50%, 4px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
 }

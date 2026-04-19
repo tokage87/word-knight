@@ -195,5 +195,1365 @@
       { "correct": "am", "distractor": "is" },
       { "correct": "happy", "distractor": "sad" }
     ]
+  },
+  {
+    "id": "go-to-school",
+    "pl": "Idę do szkoły.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "go", "distractor": "goes" },
+      { "correct": "to", "distractor": "in" },
+      { "correct": "school", "distractor": "work" }
+    ]
+  },
+  {
+    "id": "she-likes-apples",
+    "pl": "Ona lubi jabłka.",
+    "steps": [
+      { "correct": "She", "distractor": "He" },
+      { "correct": "likes", "distractor": "like" },
+      { "correct": "apples", "distractor": "oranges" }
+    ]
+  },
+  {
+    "id": "we-play-football",
+    "pl": "My gramy w piłkę nożną.",
+    "steps": [
+      { "correct": "We", "distractor": "They" },
+      { "correct": "play", "distractor": "plays" },
+      { "correct": "football", "distractor": "tennis" }
+    ]
+  },
+  {
+    "id": "he-drinks-water",
+    "pl": "On pije wodę.",
+    "steps": [
+      { "correct": "He", "distractor": "She" },
+      { "correct": "drinks", "distractor": "drink" },
+      { "correct": "water", "distractor": "milk" }
+    ]
+  },
+  {
+    "id": "dog-is-sleeping",
+    "pl": "Pies śpi.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "dog", "distractor": "cat" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "sleeping", "distractor": "sleeps" }
+    ]
+  },
+  {
+    "id": "read-a-book",
+    "pl": "Czytam książkę.",
+    "steps": [
+      { "correct": "I", "distractor": "You" },
+      { "correct": "read", "distractor": "reads" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "book", "distractor": "pen" }
+    ]
+  },
+  {
+    "id": "mom-cooks-dinner",
+    "pl": "Mama gotuje obiad.",
+    "steps": [
+      { "correct": "Mom", "distractor": "Dad" },
+      { "correct": "cooks", "distractor": "cook" },
+      { "correct": "dinner", "distractor": "breakfast" }
+    ]
+  },
+  {
+    "id": "have-two-brothers",
+    "pl": "Mam dwóch braci.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "have", "distractor": "has" },
+      { "correct": "two", "distractor": "three" },
+      { "correct": "brothers", "distractor": "sisters" }
+    ]
+  },
+  {
+    "id": "you-are-friend",
+    "pl": "Jesteś moim przyjacielem.",
+    "steps": [
+      { "correct": "You", "distractor": "I" },
+      { "correct": "are", "distractor": "is" },
+      { "correct": "my", "distractor": "your" },
+      { "correct": "friend", "distractor": "teacher" }
+    ]
+  },
+  {
+    "id": "cat-catches-mouse",
+    "pl": "Kot łapie mysz.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "cat", "distractor": "dog" },
+      { "correct": "catches", "distractor": "catch" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "mouse", "distractor": "bird" }
+    ]
+  },
+  {
+    "id": "brush-my-teeth",
+    "pl": "Myję zęby.",
+    "steps": [
+      { "correct": "I", "distractor": "We" },
+      { "correct": "brush", "distractor": "wash" },
+      { "correct": "my", "distractor": "your" },
+      { "correct": "teeth", "distractor": "hair" }
+    ]
+  },
+  {
+    "id": "wake-up-early",
+    "pl": "Budzę się wcześnie.",
+    "steps": [
+      { "correct": "I", "distractor": "She" },
+      { "correct": "wake", "distractor": "wakes" },
+      { "correct": "up", "distractor": "down" },
+      { "correct": "early", "distractor": "late" }
+    ]
+  },
+  {
+    "id": "wash-my-face",
+    "pl": "Myję twarz.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "wash", "distractor": "clean" },
+      { "correct": "my", "distractor": "his" },
+      { "correct": "face", "distractor": "hands" }
+    ]
+  },
+  {
+    "id": "eat-my-lunch",
+    "pl": "Ona je obiad.",
+    "steps": [
+      { "correct": "She", "distractor": "I" },
+      { "correct": "eats", "distractor": "eat" },
+      { "correct": "lunch", "distractor": "breakfast" }
+    ]
+  },
+  {
+    "id": "do-my-homework",
+    "pl": "Odrabiam pracę domową.",
+    "steps": [
+      { "correct": "I", "distractor": "You" },
+      { "correct": "do", "distractor": "does" },
+      { "correct": "my", "distractor": "your" },
+      { "correct": "homework", "distractor": "lesson" }
+    ]
+  },
+  {
+    "id": "watch-the-tv",
+    "pl": "Oglądamy telewizję.",
+    "steps": [
+      { "correct": "We", "distractor": "He" },
+      { "correct": "watch", "distractor": "watches" },
+      { "correct": "TV", "distractor": "radio" }
+    ]
+  },
+  {
+    "id": "go-to-sleep",
+    "pl": "Idą spać.",
+    "steps": [
+      { "correct": "They", "distractor": "We" },
+      { "correct": "go", "distractor": "goes" },
+      { "correct": "to", "distractor": "in" },
+      { "correct": "sleep", "distractor": "bed" }
+    ]
+  },
+  {
+    "id": "dad-drives-car",
+    "pl": "Tata prowadzi samochód.",
+    "steps": [
+      { "correct": "Dad", "distractor": "Mom" },
+      { "correct": "drives", "distractor": "drive" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "car", "distractor": "bus" }
+    ]
+  },
+  {
+    "id": "brother-plays-games",
+    "pl": "Mój brat gra w gry.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "brother", "distractor": "sister" },
+      { "correct": "plays", "distractor": "play" },
+      { "correct": "games", "distractor": "sports" }
+    ]
+  },
+  {
+    "id": "sister-draws-picture",
+    "pl": "Jej siostra rysuje obrazek.",
+    "steps": [
+      { "correct": "Her", "distractor": "His" },
+      { "correct": "sister", "distractor": "brother" },
+      { "correct": "draws", "distractor": "draw" },
+      { "correct": "a", "distractor": "the" },
+      { "correct": "picture", "distractor": "book" }
+    ]
+  },
+  {
+    "id": "we-clean-room",
+    "pl": "Sprzątamy nasz pokój.",
+    "steps": [
+      { "correct": "We", "distractor": "They" },
+      { "correct": "clean", "distractor": "cleans" },
+      { "correct": "our", "distractor": "their" },
+      { "correct": "room", "distractor": "house" }
+    ]
+  },
+  {
+    "id": "dog-runs-fast",
+    "pl": "Pies biegnie szybko.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "dog", "distractor": "cat" },
+      { "correct": "runs", "distractor": "run" },
+      { "correct": "fast", "distractor": "slow" }
+    ]
+  },
+  {
+    "id": "bird-sings-song",
+    "pl": "Ptak śpiewa piosenkę.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "bird", "distractor": "fish" },
+      { "correct": "sings", "distractor": "sing" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "song", "distractor": "story" }
+    ]
+  },
+  {
+    "id": "fish-swims-now",
+    "pl": "Ryba teraz pływa.",
+    "steps": [
+      { "correct": "The", "distractor": "An" },
+      { "correct": "fish", "distractor": "bird" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "swimming", "distractor": "swims" }
+    ]
+  },
+  {
+    "id": "horse-eats-grass",
+    "pl": "Koń je trawę.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "horse", "distractor": "cow" },
+      { "correct": "eats", "distractor": "eat" },
+      { "correct": "grass", "distractor": "meat" }
+    ]
+  },
+  {
+    "id": "i-like-pizza",
+    "pl": "Lubię pizzę.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "like", "distractor": "likes" },
+      { "correct": "pizza", "distractor": "soup" }
+    ]
+  },
+  {
+    "id": "she-hates-onions",
+    "pl": "Ona nienawidzi cebuli.",
+    "steps": [
+      { "correct": "She", "distractor": "We" },
+      { "correct": "hates", "distractor": "hate" },
+      { "correct": "onions", "distractor": "apples" }
+    ]
+  },
+  {
+    "id": "he-wants-apple",
+    "pl": "On chce jabłko.",
+    "steps": [
+      { "correct": "He", "distractor": "They" },
+      { "correct": "wants", "distractor": "want" },
+      { "correct": "an", "distractor": "a" },
+      { "correct": "apple", "distractor": "banana" }
+    ]
+  },
+  {
+    "id": "they-need-water",
+    "pl": "Oni potrzebują wody.",
+    "steps": [
+      { "correct": "They", "distractor": "He" },
+      { "correct": "need", "distractor": "needs" },
+      { "correct": "water", "distractor": "milk" }
+    ]
+  },
+  {
+    "id": "you-have-pen",
+    "pl": "Masz długopis.",
+    "steps": [
+      { "correct": "You", "distractor": "She" },
+      { "correct": "have", "distractor": "has" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "pen", "distractor": "pencil" }
+    ]
+  },
+  {
+    "id": "we-make-cake",
+    "pl": "Robimy ciasto.",
+    "steps": [
+      { "correct": "We", "distractor": "He" },
+      { "correct": "make", "distractor": "makes" },
+      { "correct": "a", "distractor": "the" },
+      { "correct": "cake", "distractor": "bread" }
+    ]
+  },
+  {
+    "id": "grandma-bakes-cookies",
+    "pl": "Babcia piecze ciasteczka.",
+    "steps": [
+      { "correct": "Grandma", "distractor": "Grandpa" },
+      { "correct": "bakes", "distractor": "bake" },
+      { "correct": "cookies", "distractor": "cakes" }
+    ]
+  },
+  {
+    "id": "grandpa-reads-newspaper",
+    "pl": "Dziadek czyta gazetę.",
+    "steps": [
+      { "correct": "Grandpa", "distractor": "Grandma" },
+      { "correct": "reads", "distractor": "read" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "newspaper", "distractor": "book" }
+    ]
+  },
+  {
+    "id": "uncle-drinks-coffee",
+    "pl": "Wujek pije kawę.",
+    "steps": [
+      { "correct": "Uncle", "distractor": "Aunt" },
+      { "correct": "drinks", "distractor": "drink" },
+      { "correct": "coffee", "distractor": "tea" }
+    ]
+  },
+  {
+    "id": "aunt-buys-bread",
+    "pl": "Ciocia kupuje chleb.",
+    "steps": [
+      { "correct": "Aunt", "distractor": "Uncle" },
+      { "correct": "buys", "distractor": "buy" },
+      { "correct": "bread", "distractor": "butter" }
+    ]
+  },
+  {
+    "id": "cousin-visits-us",
+    "pl": "Nasz kuzyn nas odwiedza.",
+    "steps": [
+      { "correct": "Our", "distractor": "Their" },
+      { "correct": "cousin", "distractor": "brother" },
+      { "correct": "visits", "distractor": "visit" },
+      { "correct": "us", "distractor": "we" }
+    ]
+  },
+  {
+    "id": "boy-jumps-high",
+    "pl": "Chłopiec skacze wysoko.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "boy", "distractor": "girl" },
+      { "correct": "jumps", "distractor": "jump" },
+      { "correct": "high", "distractor": "low" }
+    ]
+  },
+  {
+    "id": "girl-runs-fast",
+    "pl": "Dziewczynka biegnie szybko.",
+    "steps": [
+      { "correct": "The", "distractor": "An" },
+      { "correct": "girl", "distractor": "boy" },
+      { "correct": "runs", "distractor": "run" },
+      { "correct": "fast", "distractor": "slow" }
+    ]
+  },
+  {
+    "id": "baby-cries-now",
+    "pl": "Dziecko teraz płacze.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "baby", "distractor": "dog" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "crying", "distractor": "cries" }
+    ]
+  },
+  {
+    "id": "teacher-talks-loudly",
+    "pl": "Nauczyciel mówi głośno.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "teacher", "distractor": "student" },
+      { "correct": "talks", "distractor": "talk" },
+      { "correct": "loudly", "distractor": "quietly" }
+    ]
+  },
+  {
+    "id": "student-listens-carefully",
+    "pl": "Uczeń słucha uważnie.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "student", "distractor": "teacher" },
+      { "correct": "listens", "distractor": "listen" },
+      { "correct": "carefully", "distractor": "badly" }
+    ]
+  },
+  {
+    "id": "school-is-big",
+    "pl": "Ta szkoła jest duża.",
+    "steps": [
+      { "correct": "This", "distractor": "That" },
+      { "correct": "school", "distractor": "house" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "big", "distractor": "small" }
+    ]
+  },
+  {
+    "id": "class-is-small",
+    "pl": "Klasa jest mała.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "class", "distractor": "school" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "small", "distractor": "big" }
+    ]
+  },
+  {
+    "id": "book-is-interesting",
+    "pl": "Książka jest ciekawa.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "book", "distractor": "pen" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "interesting", "distractor": "boring" }
+    ]
+  },
+  {
+    "id": "pen-is-blue",
+    "pl": "Mój długopis jest niebieski.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "pen", "distractor": "pencil" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "blue", "distractor": "red" }
+    ]
+  },
+  {
+    "id": "desk-is-brown",
+    "pl": "Biurko jest brązowe.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "desk", "distractor": "chair" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "brown", "distractor": "black" }
+    ]
+  },
+  {
+    "id": "sun-is-hot",
+    "pl": "Słońce jest gorące.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "sun", "distractor": "moon" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "hot", "distractor": "cold" }
+    ]
+  },
+  {
+    "id": "moon-is-white",
+    "pl": "Księżyc jest biały.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "moon", "distractor": "sun" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "white", "distractor": "black" }
+    ]
+  },
+  {
+    "id": "sky-is-blue",
+    "pl": "Niebo jest niebieskie.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "sky", "distractor": "cloud" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "blue", "distractor": "green" }
+    ]
+  },
+  {
+    "id": "grass-is-green",
+    "pl": "Trawa jest zielona.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "grass", "distractor": "tree" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "green", "distractor": "red" }
+    ]
+  },
+  {
+    "id": "tree-is-tall",
+    "pl": "To drzewo jest wysokie.",
+    "steps": [
+      { "correct": "This", "distractor": "These" },
+      { "correct": "tree", "distractor": "flower" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "tall", "distractor": "short" }
+    ]
+  },
+  {
+    "id": "flower-is-beautiful",
+    "pl": "Kwiat jest piękny.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "flower", "distractor": "tree" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "beautiful", "distractor": "ugly" }
+    ]
+  },
+  {
+    "id": "rain-is-cold",
+    "pl": "Deszcz jest zimny.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "rain", "distractor": "snow" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "cold", "distractor": "hot" }
+    ]
+  },
+  {
+    "id": "snow-is-white",
+    "pl": "Śnieg jest biały.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "snow", "distractor": "rain" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "white", "distractor": "black" }
+    ]
+  },
+  {
+    "id": "wind-is-strong",
+    "pl": "Wiatr jest silny.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "wind", "distractor": "cloud" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "strong", "distractor": "weak" }
+    ]
+  },
+  {
+    "id": "i-see-bird",
+    "pl": "Widzę ptaka.",
+    "steps": [
+      { "correct": "I", "distractor": "You" },
+      { "correct": "see", "distractor": "sees" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "bird", "distractor": "dog" }
+    ]
+  },
+  {
+    "id": "you-hear-dog",
+    "pl": "Słyszysz psa.",
+    "steps": [
+      { "correct": "You", "distractor": "He" },
+      { "correct": "hear", "distractor": "hears" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "dog", "distractor": "cat" }
+    ]
+  },
+  {
+    "id": "he-feels-happy",
+    "pl": "On czuje się szczęśliwy.",
+    "steps": [
+      { "correct": "He", "distractor": "She" },
+      { "correct": "feels", "distractor": "feel" },
+      { "correct": "happy", "distractor": "sad" }
+    ]
+  },
+  {
+    "id": "she-looks-sad",
+    "pl": "Ona wygląda na smutną.",
+    "steps": [
+      { "correct": "She", "distractor": "I" },
+      { "correct": "looks", "distractor": "look" },
+      { "correct": "sad", "distractor": "happy" }
+    ]
+  },
+  {
+    "id": "we-are-tired",
+    "pl": "Jesteśmy zmęczeni.",
+    "steps": [
+      { "correct": "We", "distractor": "They" },
+      { "correct": "are", "distractor": "is" },
+      { "correct": "tired", "distractor": "happy" }
+    ]
+  },
+  {
+    "id": "they-are-angry",
+    "pl": "Oni są źli.",
+    "steps": [
+      { "correct": "They", "distractor": "He" },
+      { "correct": "are", "distractor": "is" },
+      { "correct": "angry", "distractor": "happy" }
+    ]
+  },
+  {
+    "id": "it-is-funny",
+    "pl": "To jest śmieszne.",
+    "steps": [
+      { "correct": "It", "distractor": "They" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "funny", "distractor": "sad" }
+    ]
+  },
+  {
+    "id": "movie-is-boring",
+    "pl": "Ten film jest nudny.",
+    "steps": [
+      { "correct": "This", "distractor": "These" },
+      { "correct": "movie", "distractor": "book" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "boring", "distractor": "interesting" }
+    ]
+  },
+  {
+    "id": "game-is-exciting",
+    "pl": "Gra jest ekscytująca.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "game", "distractor": "book" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "exciting", "distractor": "boring" }
+    ]
+  },
+  {
+    "id": "sport-is-good",
+    "pl": "Sport jest dobry.",
+    "steps": [
+      { "correct": "Sport", "distractor": "Game" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "good", "distractor": "bad" }
+    ]
+  },
+  {
+    "id": "i-play-tennis",
+    "pl": "Gram w tenisa.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "play", "distractor": "plays" },
+      { "correct": "tennis", "distractor": "football" }
+    ]
+  },
+  {
+    "id": "you-swim-well",
+    "pl": "Dobrze pływasz.",
+    "steps": [
+      { "correct": "You", "distractor": "I" },
+      { "correct": "swim", "distractor": "swims" },
+      { "correct": "well", "distractor": "badly" }
+    ]
+  },
+  {
+    "id": "he-rides-bike",
+    "pl": "On jeździ na rowerze.",
+    "steps": [
+      { "correct": "He", "distractor": "They" },
+      { "correct": "rides", "distractor": "ride" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "bike", "distractor": "car" }
+    ]
+  },
+  {
+    "id": "she-sings-song",
+    "pl": "Ona śpiewa piosenkę.",
+    "steps": [
+      { "correct": "She", "distractor": "I" },
+      { "correct": "sings", "distractor": "sing" },
+      { "correct": "a", "distractor": "the" },
+      { "correct": "song", "distractor": "book" }
+    ]
+  },
+  {
+    "id": "we-dance-together",
+    "pl": "Tańczymy razem.",
+    "steps": [
+      { "correct": "We", "distractor": "He" },
+      { "correct": "dance", "distractor": "dances" },
+      { "correct": "together", "distractor": "alone" }
+    ]
+  },
+  {
+    "id": "they-draw-dog",
+    "pl": "Oni rysują psa.",
+    "steps": [
+      { "correct": "They", "distractor": "She" },
+      { "correct": "draw", "distractor": "draws" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "dog", "distractor": "cat" }
+    ]
+  },
+  {
+    "id": "car-is-fast",
+    "pl": "Samochód jest szybki.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "car", "distractor": "bus" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "fast", "distractor": "slow" }
+    ]
+  },
+  {
+    "id": "bus-is-slow",
+    "pl": "Autobus jest wolny.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "bus", "distractor": "car" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "slow", "distractor": "fast" }
+    ]
+  },
+  {
+    "id": "train-is-long",
+    "pl": "Pociąg jest długi.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "train", "distractor": "bike" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "long", "distractor": "short" }
+    ]
+  },
+  {
+    "id": "plane-is-high",
+    "pl": "Samolot jest wysoko.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "plane", "distractor": "ship" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "high", "distractor": "low" }
+    ]
+  },
+  {
+    "id": "ship-is-big",
+    "pl": "Statek jest duży.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "ship", "distractor": "boat" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "big", "distractor": "small" }
+    ]
+  },
+  {
+    "id": "house-is-small",
+    "pl": "Nasz dom jest mały.",
+    "steps": [
+      { "correct": "Our", "distractor": "Your" },
+      { "correct": "house", "distractor": "school" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "small", "distractor": "big" }
+    ]
+  },
+  {
+    "id": "room-is-clean",
+    "pl": "Mój pokój jest czysty.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "room", "distractor": "house" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "clean", "distractor": "dirty" }
+    ]
+  },
+  {
+    "id": "kitchen-is-dirty",
+    "pl": "Kuchnia jest brudna.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "kitchen", "distractor": "bathroom" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "dirty", "distractor": "clean" }
+    ]
+  },
+  {
+    "id": "door-is-open",
+    "pl": "Drzwi są otwarte.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "door", "distractor": "window" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "open", "distractor": "closed" }
+    ]
+  },
+  {
+    "id": "window-is-closed",
+    "pl": "Okno jest zamknięte.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "window", "distractor": "door" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "closed", "distractor": "open" }
+    ]
+  },
+  {
+    "id": "table-is-round",
+    "pl": "Stół jest okrągły.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "table", "distractor": "chair" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "round", "distractor": "square" }
+    ]
+  },
+  {
+    "id": "chair-is-comfortable",
+    "pl": "Krzesło jest wygodne.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "chair", "distractor": "table" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "comfortable", "distractor": "bad" }
+    ]
+  },
+  {
+    "id": "bed-is-soft",
+    "pl": "To łóżko jest miękkie.",
+    "steps": [
+      { "correct": "This", "distractor": "That" },
+      { "correct": "bed", "distractor": "chair" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "soft", "distractor": "hard" }
+    ]
+  },
+  {
+    "id": "lamp-is-bright",
+    "pl": "Lampa jest jasna.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "lamp", "distractor": "bed" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "bright", "distractor": "dark" }
+    ]
+  },
+  {
+    "id": "i-wear-shirt",
+    "pl": "Noszę koszulę.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "wear", "distractor": "wears" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "shirt", "distractor": "jacket" }
+    ]
+  },
+  {
+    "id": "she-buys-dress",
+    "pl": "Ona kupuje sukienkę.",
+    "steps": [
+      { "correct": "She", "distractor": "We" },
+      { "correct": "buys", "distractor": "buy" },
+      { "correct": "a", "distractor": "the" },
+      { "correct": "dress", "distractor": "skirt" }
+    ]
+  },
+  {
+    "id": "he-has-shoes",
+    "pl": "On ma nowe buty.",
+    "steps": [
+      { "correct": "He", "distractor": "I" },
+      { "correct": "has", "distractor": "have" },
+      { "correct": "new", "distractor": "old" },
+      { "correct": "shoes", "distractor": "socks" }
+    ]
+  },
+  {
+    "id": "we-need-hats",
+    "pl": "Potrzebujemy czapek.",
+    "steps": [
+      { "correct": "We", "distractor": "She" },
+      { "correct": "need", "distractor": "needs" },
+      { "correct": "hats", "distractor": "shoes" }
+    ]
+  },
+  {
+    "id": "they-want-jackets",
+    "pl": "Oni chcą kurtki.",
+    "steps": [
+      { "correct": "They", "distractor": "He" },
+      { "correct": "want", "distractor": "wants" },
+      { "correct": "jackets", "distractor": "shirts" }
+    ]
+  },
+  {
+    "id": "socks-are-red",
+    "pl": "Moje skarpetki są czerwone.",
+    "steps": [
+      { "correct": "My", "distractor": "I" },
+      { "correct": "socks", "distractor": "shoes" },
+      { "correct": "are", "distractor": "is" },
+      { "correct": "red", "distractor": "blue" }
+    ]
+  },
+  {
+    "id": "coat-is-warm",
+    "pl": "Płaszcz jest ciepły.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "coat", "distractor": "shirt" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "warm", "distractor": "cold" }
+    ]
+  },
+  {
+    "id": "jeans-are-blue",
+    "pl": "Jej dżinsy są niebieskie.",
+    "steps": [
+      { "correct": "Her", "distractor": "His" },
+      { "correct": "jeans", "distractor": "socks" },
+      { "correct": "are", "distractor": "is" },
+      { "correct": "blue", "distractor": "red" }
+    ]
+  },
+  {
+    "id": "i-love-summer",
+    "pl": "Kocham lato.",
+    "steps": [
+      { "correct": "I", "distractor": "She" },
+      { "correct": "love", "distractor": "loves" },
+      { "correct": "summer", "distractor": "winter" }
+    ]
+  },
+  {
+    "id": "you-like-winter",
+    "pl": "Ty lubisz zimę.",
+    "steps": [
+      { "correct": "You", "distractor": "He" },
+      { "correct": "like", "distractor": "likes" },
+      { "correct": "winter", "distractor": "summer" }
+    ]
+  },
+  {
+    "id": "he-hates-autumn",
+    "pl": "On nienawidzi jesieni.",
+    "steps": [
+      { "correct": "He", "distractor": "They" },
+      { "correct": "hates", "distractor": "hate" },
+      { "correct": "autumn", "distractor": "spring" }
+    ]
+  },
+  {
+    "id": "she-enjoys-spring",
+    "pl": "Ona cieszy się wiosną.",
+    "steps": [
+      { "correct": "She", "distractor": "We" },
+      { "correct": "enjoys", "distractor": "enjoy" },
+      { "correct": "spring", "distractor": "autumn" }
+    ]
+  },
+  {
+    "id": "day-is-long",
+    "pl": "Dzień jest długi.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "day", "distractor": "night" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "long", "distractor": "short" }
+    ]
+  },
+  {
+    "id": "night-is-dark",
+    "pl": "Noc jest ciemna.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "night", "distractor": "day" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "dark", "distractor": "light" }
+    ]
+  },
+  {
+    "id": "morning-is-cold",
+    "pl": "Poranek jest zimny.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "morning", "distractor": "evening" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "cold", "distractor": "hot" }
+    ]
+  },
+  {
+    "id": "evening-is-quiet",
+    "pl": "Wieczór jest cichy.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "evening", "distractor": "morning" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "quiet", "distractor": "loud" }
+    ]
+  },
+  {
+    "id": "today-is-monday",
+    "pl": "Dzisiaj jest poniedziałek.",
+    "steps": [
+      { "correct": "Today", "distractor": "Tomorrow" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "Monday", "distractor": "Tuesday" }
+    ]
+  },
+  {
+    "id": "tomorrow-is-tuesday",
+    "pl": "Jutro jest wtorek.",
+    "steps": [
+      { "correct": "Tomorrow", "distractor": "Today" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "Tuesday", "distractor": "Monday" }
+    ]
+  },
+  {
+    "id": "we-are-ready",
+    "pl": "Jesteśmy gotowi.",
+    "steps": [
+      { "correct": "We", "distractor": "He" },
+      { "correct": "are", "distractor": "is" },
+      { "correct": "ready", "distractor": "late" }
+    ]
+  },
+  {
+    "id": "they-go-home",
+    "pl": "Oni idą do domu.",
+    "steps": [
+      { "correct": "They", "distractor": "She" },
+      { "correct": "go", "distractor": "goes" },
+      { "correct": "home", "distractor": "school" }
+    ]
+  },
+  {
+    "id": "she-never-eats-meat",
+    "pl": "Ona nigdy nie je mięsa.",
+    "steps": [
+      { "correct": "She", "distractor": "He" },
+      { "correct": "never", "distractor": "always" },
+      { "correct": "eats", "distractor": "eat" },
+      { "correct": "meat", "distractor": "fish" }
+    ]
+  },
+  {
+    "id": "my-dad-gets-up",
+    "pl": "Mój tata wstaje wcześnie.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "dad", "distractor": "mom" },
+      { "correct": "gets", "distractor": "get" },
+      { "correct": "up", "distractor": "down" },
+      { "correct": "early", "distractor": "late" }
+    ]
+  },
+  {
+    "id": "book-is-under-desk",
+    "pl": "Książka jest pod biurkiem.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "book", "distractor": "pen" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "under", "distractor": "on" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "desk", "distractor": "chair" }
+    ]
+  },
+  {
+    "id": "she-doesnt-eat-apples",
+    "pl": "Ona nie je jabłek.",
+    "steps": [
+      { "correct": "She", "distractor": "He" },
+      { "correct": "doesn't", "distractor": "don't" },
+      { "correct": "eat", "distractor": "eats" },
+      { "correct": "apples", "distractor": "oranges" }
+    ]
+  },
+  {
+    "id": "cat-sleeps-on-sofa",
+    "pl": "Mój kot śpi na kanapie.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "cat", "distractor": "dog" },
+      { "correct": "sleeps", "distractor": "sleep" },
+      { "correct": "on", "distractor": "in" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "sofa", "distractor": "bed" }
+    ]
+  },
+  {
+    "id": "there-is-milk-here",
+    "pl": "W lodówce jest mleko.",
+    "steps": [
+      { "correct": "There", "distractor": "Here" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "milk", "distractor": "water" },
+      { "correct": "in", "distractor": "on" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "fridge", "distractor": "oven" }
+    ]
+  },
+  {
+    "id": "they-arent-playing-now",
+    "pl": "Oni nie grają dzisiaj w piłkę.",
+    "steps": [
+      { "correct": "They", "distractor": "We" },
+      { "correct": "aren't", "distractor": "isn't" },
+      { "correct": "playing", "distractor": "play" },
+      { "correct": "football", "distractor": "tennis" },
+      { "correct": "today", "distractor": "tomorrow" }
+    ]
+  },
+  {
+    "id": "brother-has-curly-hair",
+    "pl": "Jego brat ma kręcone włosy.",
+    "steps": [
+      { "correct": "His", "distractor": "Her" },
+      { "correct": "brother", "distractor": "sister" },
+      { "correct": "has", "distractor": "have" },
+      { "correct": "curly", "distractor": "straight" },
+      { "correct": "hair", "distractor": "head" }
+    ]
+  },
+  {
+    "id": "teacher-speaks-quietly",
+    "pl": "Nasza nauczycielka zawsze mówi cicho.",
+    "steps": [
+      { "correct": "Our", "distractor": "Their" },
+      { "correct": "teacher", "distractor": "student" },
+      { "correct": "always", "distractor": "never" },
+      { "correct": "speaks", "distractor": "speak" },
+      { "correct": "quietly", "distractor": "loudly" }
+    ]
+  },
+  {
+    "id": "car-is-behind-house",
+    "pl": "Mój samochód jest za domem.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "car", "distractor": "bike" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "behind", "distractor": "in" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "house", "distractor": "school" }
+    ]
+  },
+  {
+    "id": "i-sometimes-read-bed",
+    "pl": "Czasami czytam w łóżku.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "sometimes", "distractor": "never" },
+      { "correct": "read", "distractor": "reads" },
+      { "correct": "in", "distractor": "on" },
+      { "correct": "bed", "distractor": "chair" }
+    ]
+  },
+  {
+    "id": "this-dress-is-expensive",
+    "pl": "Ta sukienka jest bardzo droga.",
+    "steps": [
+      { "correct": "This", "distractor": "These" },
+      { "correct": "dress", "distractor": "skirt" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "very", "distractor": "too" },
+      { "correct": "expensive", "distractor": "cheap" }
+    ]
+  },
+  {
+    "id": "children-play-in-park",
+    "pl": "Dzieci bawią się w parku.",
+    "steps": [
+      { "correct": "Children", "distractor": "Child" },
+      { "correct": "play", "distractor": "plays" },
+      { "correct": "in", "distractor": "on" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "park", "distractor": "zoo" }
+    ]
+  },
+  {
+    "id": "her-new-skirt-is",
+    "pl": "Jej nowa spódnica jest piękna.",
+    "steps": [
+      { "correct": "Her", "distractor": "His" },
+      { "correct": "new", "distractor": "old" },
+      { "correct": "skirt", "distractor": "dress" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "beautiful", "distractor": "ugly" }
+    ]
+  },
+  {
+    "id": "flowers-grow-in-garden",
+    "pl": "W naszym ogrodzie rosną kwiaty.",
+    "steps": [
+      { "correct": "Flowers", "distractor": "Trees" },
+      { "correct": "grow", "distractor": "grows" },
+      { "correct": "in", "distractor": "on" },
+      { "correct": "our", "distractor": "their" },
+      { "correct": "garden", "distractor": "house" }
+    ]
+  },
+  {
+    "id": "i-dont-like-cold",
+    "pl": "Nie lubię zimnej kawy.",
+    "steps": [
+      { "correct": "I", "distractor": "He" },
+      { "correct": "don't", "distractor": "doesn't" },
+      { "correct": "like", "distractor": "likes" },
+      { "correct": "cold", "distractor": "hot" },
+      { "correct": "coffee", "distractor": "tea" }
+    ]
+  },
+  {
+    "id": "spider-sits-on-wall",
+    "pl": "Pająk siedzi na ścianie.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "spider", "distractor": "fly" },
+      { "correct": "sits", "distractor": "sit" },
+      { "correct": "on", "distractor": "under" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "wall", "distractor": "floor" }
+    ]
+  },
+  {
+    "id": "grandpa-walks-very-slowly",
+    "pl": "Mój dziadek wolno chodzi.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "grandpa", "distractor": "grandma" },
+      { "correct": "walks", "distractor": "walk" },
+      { "correct": "slowly", "distractor": "fast" }
+    ]
+  },
+  {
+    "id": "she-has-red-coat",
+    "pl": "Ona ma czerwony płaszcz.",
+    "steps": [
+      { "correct": "She", "distractor": "He" },
+      { "correct": "has", "distractor": "have" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "red", "distractor": "blue" },
+      { "correct": "coat", "distractor": "jacket" }
+    ]
+  },
+  {
+    "id": "we-go-to-cinema",
+    "pl": "Idziemy do kina.",
+    "steps": [
+      { "correct": "We", "distractor": "They" },
+      { "correct": "go", "distractor": "goes" },
+      { "correct": "to", "distractor": "in" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "cinema", "distractor": "hospital" }
+    ]
+  },
+  {
+    "id": "shop-near-the-school",
+    "pl": "Sklep jest blisko szkoły.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "shop", "distractor": "bank" },
+      { "correct": "is", "distractor": "are" },
+      { "correct": "near", "distractor": "in" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "school", "distractor": "park" }
+    ]
+  },
+  {
+    "id": "i-am-reading-an",
+    "pl": "Czytam ciekawą książkę.",
+    "steps": [
+      { "correct": "I", "distractor": "You" },
+      { "correct": "am", "distractor": "is" },
+      { "correct": "reading", "distractor": "read" },
+      { "correct": "an", "distractor": "a" },
+      { "correct": "interesting", "distractor": "boring" },
+      { "correct": "book", "distractor": "pen" }
+    ]
+  },
+  {
+    "id": "my-mom-makes-a",
+    "pl": "Moja mama robi pyszne ciasto.",
+    "steps": [
+      { "correct": "My", "distractor": "Your" },
+      { "correct": "mom", "distractor": "dad" },
+      { "correct": "makes", "distractor": "make" },
+      { "correct": "a", "distractor": "an" },
+      { "correct": "delicious", "distractor": "bad" },
+      { "correct": "cake", "distractor": "pizza" }
+    ]
+  },
+  {
+    "id": "they-always-help-at",
+    "pl": "Oni zawsze pomagają w domu.",
+    "steps": [
+      { "correct": "They", "distractor": "We" },
+      { "correct": "always", "distractor": "never" },
+      { "correct": "help", "distractor": "helps" },
+      { "correct": "at", "distractor": "in" },
+      { "correct": "home", "distractor": "school" }
+    ]
+  },
+  {
+    "id": "he-doesnt-have-homework",
+    "pl": "On nie ma dzisiaj pracy domowej.",
+    "steps": [
+      { "correct": "He", "distractor": "She" },
+      { "correct": "doesn't", "distractor": "don't" },
+      { "correct": "have", "distractor": "has" },
+      { "correct": "homework", "distractor": "lesson" },
+      { "correct": "today", "distractor": "tomorrow" }
+    ]
+  },
+  {
+    "id": "dog-sleeps-under-table",
+    "pl": "Pies śpi pod stołem.",
+    "steps": [
+      { "correct": "The", "distractor": "A" },
+      { "correct": "dog", "distractor": "cat" },
+      { "correct": "sleeps", "distractor": "sleep" },
+      { "correct": "under", "distractor": "on" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "table", "distractor": "chair" }
+    ]
+  },
+  {
+    "id": "we-have-apples-in",
+    "pl": "Mamy jabłka w kuchni.",
+    "steps": [
+      { "correct": "We", "distractor": "They" },
+      { "correct": "have", "distractor": "has" },
+      { "correct": "apples", "distractor": "bananas" },
+      { "correct": "in", "distractor": "on" },
+      { "correct": "the", "distractor": "a" },
+      { "correct": "kitchen", "distractor": "bathroom" }
+    ]
+  },
+  {
+    "id": "she-listens-to-music",
+    "pl": "Ona słucha muzyki.",
+    "steps": [
+      { "correct": "She", "distractor": "I" },
+      { "correct": "listens", "distractor": "listen" },
+      { "correct": "to", "distractor": "at" },
+      { "correct": "music", "distractor": "radio" }
+    ]
+  },
+  {
+    "id": "we-often-eat-pizza",
+    "pl": "Często jemy pizzę na obiad.",
+    "steps": [
+      { "correct": "We", "distractor": "They" },
+      { "correct": "often", "distractor": "never" },
+      { "correct": "eat", "distractor": "eats" },
+      { "correct": "pizza", "distractor": "soup" },
+      { "correct": "for", "distractor": "to" },
+      { "correct": "dinner", "distractor": "breakfast" }
+    ]
+  },
+  {
+    "id": "his-shoes-are-dirty",
+    "pl": "Jego buty są bardzo brudne.",
+    "steps": [
+      { "correct": "His", "distractor": "Her" },
+      { "correct": "shoes", "distractor": "socks" },
+      { "correct": "are", "distractor": "is" },
+      { "correct": "very", "distractor": "not" },
+      { "correct": "dirty", "distractor": "clean" }
+    ]
   }
 ]
+

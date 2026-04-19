@@ -3,13 +3,15 @@ import { AK, ANIM } from '../constants/assetKeys';
 import type { Enemy } from './Enemy';
 
 const MELEE_RANGE = 58;
-const MELEE_DAMAGE = 10;
-const MELEE_RATE_MS = 900;
 const SPRITE_SCALE = 0.32;
 
 export class Knight extends Phaser.GameObjects.Sprite {
-  readonly hpMax = 100;
+  // Stats start at these base values and are boosted via the roguelite
+  // stat-upgrade cards (see GameScene StatId / applyStatUpgrade).
+  hpMax = 100;
   hp = 100;
+  meleeDamage = 10;
+  meleeCooldownMs = 900;
   readonly meleeRange = MELEE_RANGE;
 
   private meleeCooldown = 0;
@@ -33,14 +35,26 @@ export class Knight extends Phaser.GameObjects.Sprite {
     if (target) {
       if (this.animState !== 'attack' && this.meleeCooldown <= 0) {
         this.playAttack();
-        target.takeDamage(MELEE_DAMAGE);
-        this.meleeCooldown = MELEE_RATE_MS;
+        target.takeDamage(this.meleeDamage);
+        this.meleeCooldown = this.meleeCooldownMs;
       } else if (this.animState !== 'attack' && this.animState !== 'idle') {
         this.setAnim('idle');
       }
     } else if (this.animState !== 'run' && this.animState !== 'attack') {
       this.setAnim('run');
     }
+  }
+
+  // Stat-upgrade hooks (called by GameScene when a stat card is picked).
+  boostMaxHp(amount: number) {
+    this.hpMax += amount;
+    this.hp = Math.min(this.hpMax, this.hp + amount);
+  }
+  boostMeleeDamage(amount: number) {
+    this.meleeDamage += amount;
+  }
+  boostAttackSpeed(pct: number) {
+    this.meleeCooldownMs = Math.max(200, Math.round(this.meleeCooldownMs * (1 - pct)));
   }
 
   anyEnemyInRange(enemies: Enemy[]): boolean {
