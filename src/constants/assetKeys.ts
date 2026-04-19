@@ -55,6 +55,9 @@ export const AK = {
   cityRock1: 'city-rock-1',
   cityRock2: 'city-rock-2',
   cityWaterRocks: 'city-water-rocks',
+  cityTreePine: 'city-tree-pine',
+  cityTreeLeafy: 'city-tree-leafy',
+  citySoldierIdle: 'city-soldier-idle',
 } as const;
 
 export const ANIM = {
@@ -79,6 +82,9 @@ export const ANIM = {
   pawnPurpleIdle: 'pawn-purple-idle-loop',
   pawnRedIdle: 'pawn-red-idle-loop',
   pawnYellowIdle: 'pawn-yellow-idle-loop',
+  cityTreePineSway: 'city-tree-pine-sway-loop',
+  cityTreeLeafySway: 'city-tree-leafy-sway-loop',
+  citySoldierIdle: 'city-soldier-idle-loop',
 } as const;
 
 // Tiny Swords unit spritesheets are always 192x192 per frame.

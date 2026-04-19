@@ -143,6 +143,22 @@ export class BootScene extends Phaser.Scene {
       frameWidth: 64,
       frameHeight: 64,
     });
+    // Trees — 8 frames each. Pine tree is taller (192×256), leafy is
+    // the same 192 square as the rest.
+    this.load.spritesheet(AK.cityTreePine, 'assets/city/tree-pine.png', {
+      frameWidth: 192,
+      frameHeight: 256,
+    });
+    this.load.spritesheet(AK.cityTreeLeafy, 'assets/city/tree-leafy.png', {
+      frameWidth: 192,
+      frameHeight: 192,
+    });
+    // Blue faction warrior idle — 8-frame spritesheet, used as guard
+    // NPCs flanking the castle in the City scene.
+    this.load.spritesheet(AK.citySoldierIdle, 'assets/city/soldier-idle.png', {
+      frameWidth: 192,
+      frameHeight: 192,
+    });
   }
 
   create() {
@@ -176,6 +192,9 @@ export class BootScene extends Phaser.Scene {
     this.buildAnim(ANIM.pawnPurpleIdle, AK.pawnPurple, 8, 7, -1);
     this.buildAnim(ANIM.pawnRedIdle, AK.pawnRed, 8, 7, -1);
     this.buildAnim(ANIM.pawnYellowIdle, AK.pawnYellow, 8, 7, -1);
+    this.buildAnim(ANIM.cityTreePineSway, AK.cityTreePine, 8, 5, -1);
+    this.buildAnim(ANIM.cityTreeLeafySway, AK.cityTreeLeafy, 8, 5, -1);
+    this.buildAnim(ANIM.citySoldierIdle, AK.citySoldierIdle, 8, 7, -1);
 
     this.scene.start('Game');
     this.scene.launch('UI');

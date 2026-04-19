@@ -3,22 +3,29 @@ import { AK, ANIM, TILE, GRASS_CENTER_FRAME } from '../constants/assetKeys';
 import { LOGICAL_WIDTH, LOGICAL_HEIGHT } from '../constants/layout';
 import { metaStore } from '../systems/MetaStore';
 
-// Post-death "MIASTO" scene — the meta-progression hub. Built to
-// evoke the Tiny Swords reference screenshot: a pair of grass islands
-// floating on teal water, ringed by cliff tiles, with buildings,
-// villagers wandering between them, sheep grazing, and a signboard
-// announcing the town.
+// MIASTO scene — aims to reproduce the Tiny Swords map reference as
+// closely as our asset set allows. Key visual beats from that image:
 //
-// Layout is hand-authored (no auto-tile engine): each island is a big
-// grass TileSprite with cliff tiles dropped at its perimeter, and
-// everything else — buildings, rocks, bushes, NPCs — is placed by
-// pixel coordinate. The scene is <200 lines and cheap to re-render.
+//  * Teal water background with rocks floating in it.
+//  * A big irregular main island holding a blue castle, soldier NPCs
+//    flanking it, pines behind and internal cliff walls carving the
+//    interior into little plots.
+//  * A cluster of blue houses on a right-hand island with sheep grazing.
+//  * A couple of small satellite islands — a tower in the lower-left,
+//    another tower on a lone island at the bottom centre.
+//  * Pine + leafy (autumn) trees dotting the borders.
+//  * A central knight character (we reuse the player sprite).
 
-// Tilemap_color1 frame indices (9 cols × 6 rows). Row/col = index/9.
+// Tilemap_color1 indices we actually use. Cols 0-3 rows 0-2 form the
+// 3×3 grass+cliff autotile; row 3 of the same cols is the cliff face
+// (stone wall). We stack row-2 tiles on top of row-3 tiles to get the
+// "thick" 2-tile cliff look the reference uses.
 const T = {
   NW: 0,  N: 1,  NE: 2,
   W:  9,  C: GRASS_CENTER_FRAME, E: 11,
   SW: 18, S: 19, SE: 20,
+  // Stone wall front, used BELOW south edges to thicken the cliff.
+  WALL_W: 27, WALL: 28, WALL_E: 29,
 };
 
 interface BranchSpot {
@@ -29,39 +36,47 @@ interface BranchSpot {
   scale: number;
 }
 
-// 4 branch buildings spread across two islands. Anchor-y points the
-// sprite's bottom-centre at the ground line.
+// All buildings are the blue Tiny Swords variant so the town reads as
+// one faction (matching the reference). Branch identity comes from
+// building type (castle / tower / barracks / house) + label.
 const BRANCH_SPOTS: BranchSpot[] = [
-  { id: 'combat',  label: 'Sala Bojowa',      textureKey: AK.cityCastleRed,
-    x: 120, y: 195, scale: 0.55 },
+  { id: 'combat',  label: 'Sala Bojowa',      textureKey: AK.cityCastleBlue,
+    x: 130, y: 175, scale: 0.55 },
   { id: 'scholar', label: 'Krąg Uczonych',    textureKey: AK.cityBarracksBlue,
-    x: 310, y: 220, scale: 0.48 },
-  { id: 'spells',  label: 'Biblioteka Magii', textureKey: AK.cityTowerBlue,
-    x: 570, y: 200, scale: 0.45 },
+    x: 295, y: 195, scale: 0.48 },
   { id: 'writer',  label: 'Gildia Pisarzy',   textureKey: AK.houseBlue3,
-    x: 495, y: 230, scale: 0.45 },
+    x: 475, y: 200, scale: 0.45 },
+  { id: 'spells',  label: 'Biblioteka Magii', textureKey: AK.cityTowerBlue,
+    x: 590, y: 200, scale: 0.42 },
 ];
 
-// Purely decorative buildings (not clickable). Flesh the town out so
-// the reference's "cluster of houses + outlying towers" feel comes
-// through instead of "4 buildings in a line".
+// Purely decorative houses — reference has a cluster of 4 blue houses
+// in the upper-right, we echo that to the right of the barracks.
 interface DecoBuilding { key: string; x: number; y: number; scale: number }
 const DECO_BUILDINGS: DecoBuilding[] = [
-  { key: AK.houseYellow1, x: 210, y: 210, scale: 0.42 },
-  { key: AK.houseRed1,    x: 420, y: 225, scale: 0.42 },
-  { key: AK.houseBlue1,   x: 455, y: 215, scale: 0.38 },
-  { key: AK.cityTowerRed, x: 165, y: 320, scale: 0.42 },
+  { key: AK.houseBlue1, x: 420, y: 200, scale: 0.42 },
+  { key: AK.houseBlue2, x: 525, y: 210, scale: 0.42 },
+  { key: AK.houseBlue3, x: 540, y: 300, scale: 0.38 },
 ];
 
-// Wandering villagers. Each is placed on an island, plays its idle
-// animation, and tweens left/right a short distance on a loop.
+// Soldier-like blue-faction warriors flanking the castle, echoing the
+// row of spearmen in the reference. Tweens give them a gentle sway.
+interface Soldier { x: number; y: number; drift: number }
+const SOLDIERS: Soldier[] = [
+  { x: 190, y: 155, drift: 8 },
+  { x: 220, y: 160, drift: 8 },
+  { x: 250, y: 165, drift: 8 },
+  { x: 175, y: 200, drift: 6 },
+  { x: 205, y: 200, drift: 6 },
+];
+
+// Civilian pawns wandering the streets.
 interface Villager { key: string; anim: string; x: number; y: number; drift: number }
 const VILLAGERS: Villager[] = [
-  { key: AK.pawnBlack,  anim: ANIM.pawnBlackIdle,  x: 175, y: 225, drift: 20 },
-  { key: AK.pawnYellow, anim: ANIM.pawnYellowIdle, x: 265, y: 240, drift: 15 },
-  { key: AK.pawnRed,    anim: ANIM.pawnRedIdle,    x: 380, y: 235, drift: 30 },
-  { key: AK.pawnPurple, anim: ANIM.pawnPurpleIdle, x: 540, y: 245, drift: 18 },
-  { key: AK.pawnBlack,  anim: ANIM.pawnBlackIdle,  x: 140, y: 330, drift: 22 },
+  { key: AK.pawnYellow, anim: ANIM.pawnYellowIdle, x: 360, y: 215, drift: 20 },
+  { key: AK.pawnRed,    anim: ANIM.pawnRedIdle,    x: 470, y: 250, drift: 22 },
+  { key: AK.pawnPurple, anim: ANIM.pawnPurpleIdle, x: 155, y: 260, drift: 18 },
+  { key: AK.pawnBlack,  anim: ANIM.pawnBlackIdle,  x: 595, y: 260, drift: 14 },
 ];
 
 export class CityScene extends Phaser.Scene {
@@ -71,18 +86,23 @@ export class CityScene extends Phaser.Scene {
 
   create() {
     this.drawWater();
-    // Main island (left + centre) — holds Sala Bojowa, Krąg Uczonych,
-    // decorative houses and most villagers.
-    this.drawIsland({ x: 16, y: 112, cols: 8, rows: 3 });
-    // Small island (right) — the Biblioteka Magii tower cluster.
-    this.drawIsland({ x: 512, y: 128, cols: 2, rows: 3 });
-    // Bridge tile bridging the two islands so it reads as one town
-    // rather than disconnected archipelago chunks.
-    this.drawBridge({ fromX: 528, toX: 528, y: 168 });
-    // Small outlying tower island in the lower-left of the main area.
-    this.drawIsland({ x: 112, y: 272, cols: 2, rows: 2 });
+
+    // Main landmass — occupies roughly the top two-thirds of the view
+    // (640×360). Holds the castle + barracks + house + tower, flanked
+    // by trees and soldiers.
+    this.drawIsland({ x: 32, y: 96, cols: 9, rows: 3 });
+    // Bridge strip linking main island to the right-hand extension.
+    // (Reference has a narrow grass strip where the map pinches.)
+    this.drawLandRow(9 * TILE + 32, 96 + TILE, 1);
+    // Right-hand extension with the tower + extra house cluster.
+    this.drawIsland({ x: 576, y: 128, cols: 1, rows: 2 });
+    // Lower-left satellite island: tower guarded by soldier.
+    this.drawIsland({ x: 48, y: 272, cols: 2, rows: 1 });
+    // Lower-centre satellite with extra house.
+    this.drawIsland({ x: 480, y: 272, cols: 2, rows: 1 });
 
     this.drawWaterDeco();
+    this.drawTrees();
     this.drawDecoBuildings();
     this.drawBranchBuildings();
     this.drawAmbientLife();
@@ -104,17 +124,13 @@ export class CityScene extends Phaser.Scene {
       .setDepth(0);
   }
 
-  // Render a rectangular grass island with cliff-tile borders. All
-  // coords in pixels; `cols` / `rows` are in 64px tiles. Non-tile-
-  // aligned sizes are fine — we just overshoot the interior tileSprite
-  // to fill any fractional remainder.
+  // Rectangular grass island with cliff-tile borders AND a thick
+  // stone-wall band beneath the south edge (two tiles of wall face)
+  // so the cliff reads as substantial rather than paper-thin.
   private drawIsland({ x, y, cols, rows }: { x: number; y: number; cols: number; rows: number }) {
     const w = cols * TILE;
     const h = rows * TILE;
-    this.add
-      .tileSprite(x, y, w, h, AK.tilemap, T.C)
-      .setOrigin(0, 0)
-      .setDepth(1);
+    this.add.tileSprite(x, y, w, h, AK.tilemap, T.C).setOrigin(0, 0).setDepth(1);
 
     const left = x - TILE;
     const right = x + w;
@@ -132,44 +148,88 @@ export class CityScene extends Phaser.Scene {
       this.cliff(T.W, left, cy);
       this.cliff(T.E, right, cy);
     }
+
+    // Thick stone wall under the south edge. Row 3 tiles are the cliff
+    // face — paint them as a band immediately below each south tile.
+    const wallY = bottom + TILE;
+    this.cliff(T.WALL_W, left, wallY);
+    this.cliff(T.WALL_E, right, wallY);
+    for (let cx = x; cx < x + w; cx += TILE) {
+      this.cliff(T.WALL, cx, wallY);
+    }
   }
 
   private cliff(frame: number, x: number, y: number) {
     this.add.image(x, y, AK.tilemap, frame).setOrigin(0, 0).setDepth(2);
   }
 
-  // A couple of extra grass tiles bridging the main island to the
-  // tower island so the archipelago reads as a connected town.
-  private drawBridge({ fromX, toX, y }: { fromX: number; toX: number; y: number }) {
-    // Single-tile-wide stone-grass strip, no fancy cliffs.
-    const x = Math.min(fromX, toX) - TILE / 2;
-    this.add
-      .image(x, y, AK.tilemap, T.C)
-      .setOrigin(0, 0)
-      .setDepth(1);
-    this.add
-      .image(x + TILE, y, AK.tilemap, T.C)
-      .setOrigin(0, 0)
-      .setDepth(1);
+  // Tiny grass bridge row — no cliff styling, just grass tiles so two
+  // islands read as connected.
+  private drawLandRow(x: number, y: number, cols: number) {
+    for (let i = 0; i < cols; i++) {
+      this.add.image(x + i * TILE, y, AK.tilemap, T.C).setOrigin(0, 0).setDepth(1);
+    }
   }
 
   private drawWaterDeco() {
     const spots = [
-      { x: 40,  y: 60,  f: 0 },
-      { x: 620, y: 70,  f: 2 },
-      { x: 80,  y: 330, f: 1 },
-      { x: 300, y: 70,  f: 3 },
+      { x: 14,  y: 50 },
+      { x: 620, y: 60 },
+      { x: 80,  y: 340 },
+      { x: 260, y: 60 },
+      { x: 300, y: 330 },
+      { x: 460, y: 50 },
+      { x: 550, y: 340 },
     ];
-    spots.forEach((s) => {
+    spots.forEach((s, i) => {
       this.add
-        .image(s.x, s.y, AK.cityWaterRocks, s.f)
+        .image(s.x, s.y, AK.cityWaterRocks, i % 4)
         .setOrigin(0.5)
-        .setScale(0.8)
+        .setScale(0.6 + (i % 2) * 0.2)
         .setDepth(0.5);
     });
   }
 
-  // ───── buildings ─────
+  // ───── trees, buildings, life ─────
+
+  private drawTrees() {
+    // Pine trees clustered around the upper-right (mimicking the pine
+    // forest behind the Tiny Swords logo in the reference).
+    const pines: Array<{ x: number; y: number; scale: number }> = [
+      { x: 350, y: 118, scale: 0.28 },
+      { x: 395, y: 115, scale: 0.30 },
+      { x: 560, y: 125, scale: 0.30 },
+      { x: 600, y: 120, scale: 0.26 },
+      // Scattered solo pines
+      { x: 40,  y: 135, scale: 0.26 },
+      { x: 75,  y: 145, scale: 0.28 },
+    ];
+    pines.forEach((t) => {
+      const spr = this.add
+        .sprite(t.x, t.y, AK.cityTreePine, 0)
+        .setOrigin(0.5, 1)
+        .setScale(t.scale)
+        .setDepth(7);
+      spr.play(ANIM.cityTreePineSway);
+    });
+
+    // Leafy (autumn) trees — rounder silhouette, dotted around the
+    // border like in the reference.
+    const leafy: Array<{ x: number; y: number; scale: number }> = [
+      { x: 35,  y: 220, scale: 0.28 },
+      { x: 625, y: 260, scale: 0.28 },
+      { x: 100, y: 315, scale: 0.26 },
+      { x: 440, y: 320, scale: 0.28 },
+    ];
+    leafy.forEach((t) => {
+      const spr = this.add
+        .sprite(t.x, t.y, AK.cityTreeLeafy, 0)
+        .setOrigin(0.5, 1)
+        .setScale(t.scale)
+        .setDepth(7);
+      spr.play(ANIM.cityTreeLeafySway);
+    });
+  }
 
   private drawDecoBuildings() {
     DECO_BUILDINGS.forEach((b) => {
@@ -209,30 +269,27 @@ export class CityScene extends Phaser.Scene {
     });
   }
 
-  // ───── ambient life ─────
-
   private drawAmbientLife() {
-    // Sheep graze on the main island.
-    [ { x: 270, y: 250 }, { x: 450, y: 200 } ].forEach((p) => {
-      const sheep = this.add
-        .sprite(p.x, p.y, AK.citySheepIdle, 0)
+    // Soldier guards (Tiny Swords Blue Warrior idle) stationed around
+    // the castle — the row of spearmen in the reference.
+    SOLDIERS.forEach((s) => {
+      const spr = this.add
+        .sprite(s.x, s.y, AK.citySoldierIdle, 0)
         .setOrigin(0.5, 0.72)
-        .setScale(0.35)
+        .setScale(0.28)
         .setDepth(9);
-      sheep.play(ANIM.citySheepIdle);
+      spr.play(ANIM.citySoldierIdle);
       this.tweens.add({
-        targets: sheep,
-        x: sheep.x + (Math.random() < 0.5 ? -30 : 30),
-        duration: 4000 + Math.random() * 2000,
+        targets: spr,
+        x: spr.x + (Math.random() < 0.5 ? -s.drift : s.drift),
+        duration: 3800 + Math.random() * 1400,
         yoyo: true,
         repeat: -1,
         ease: 'Sine.InOut',
       });
     });
 
-    // Villagers — pawn idle sheets with a slow left-right drift so the
-    // town feels populated. Scale 0.28 keeps them knight-sized next to
-    // the 64px tiles.
+    // Civilian pawns.
     VILLAGERS.forEach((v) => {
       const spr = this.add
         .sprite(v.x, v.y, v.key, 0)
@@ -250,15 +307,45 @@ export class CityScene extends Phaser.Scene {
       });
     });
 
-    // Swaying bushes + static rocks sprinkled on the island.
+    // "Player knight" standing in the centre of town, idling — echoes
+    // the single shield-and-sword hero in the middle of the reference.
+    const hero = this.add
+      .sprite(350, 260, AK.knightIdle, 0)
+      .setOrigin(0.5, 0.72)
+      .setScale(0.32)
+      .setDepth(9);
+    hero.play(ANIM.knightIdle);
+
+    // Sheep grazing near the house cluster (reference shows 3-4 sheep).
+    const sheepSpots = [
+      { x: 395, y: 270 }, { x: 500, y: 270 }, { x: 570, y: 270 }, { x: 520, y: 340 },
+    ];
+    sheepSpots.forEach((p) => {
+      const sheep = this.add
+        .sprite(p.x, p.y, AK.citySheepIdle, 0)
+        .setOrigin(0.5, 0.72)
+        .setScale(0.30)
+        .setDepth(9);
+      sheep.play(ANIM.citySheepIdle);
+      this.tweens.add({
+        targets: sheep,
+        x: sheep.x + (Math.random() < 0.5 ? -18 : 18),
+        duration: 4200 + Math.random() * 2000,
+        yoyo: true,
+        repeat: -1,
+        ease: 'Sine.InOut',
+      });
+    });
+
+    // Swaying bushes and static rocks sprinkled on every island.
     const deco: Array<{ x: number; y: number; key: string; scale: number; anim?: string }> = [
-      { x: 90,  y: 265, key: AK.cityBush,  scale: 0.35, anim: ANIM.cityBushSway },
-      { x: 240, y: 175, key: AK.cityBush,  scale: 0.30, anim: ANIM.cityBushSway },
-      { x: 380, y: 255, key: AK.cityBush,  scale: 0.32, anim: ANIM.cityBushSway },
-      { x: 555, y: 260, key: AK.cityBush,  scale: 0.28, anim: ANIM.cityBushSway },
-      { x: 350, y: 170, key: AK.cityRock1, scale: 0.45 },
-      { x: 460, y: 260, key: AK.cityRock2, scale: 0.45 },
-      { x: 200, y: 335, key: AK.cityRock1, scale: 0.4 },
+      { x: 120, y: 260, key: AK.cityBush,  scale: 0.30, anim: ANIM.cityBushSway },
+      { x: 330, y: 180, key: AK.cityBush,  scale: 0.26, anim: ANIM.cityBushSway },
+      { x: 390, y: 260, key: AK.cityBush,  scale: 0.30, anim: ANIM.cityBushSway },
+      { x: 440, y: 170, key: AK.cityBush,  scale: 0.26, anim: ANIM.cityBushSway },
+      { x: 280, y: 260, key: AK.cityRock1, scale: 0.45 },
+      { x: 170, y: 175, key: AK.cityRock2, scale: 0.40 },
+      { x: 480, y: 170, key: AK.cityRock1, scale: 0.40 },
     ];
     deco.forEach((d) => {
       const spr = this.add
