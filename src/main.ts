@@ -3,6 +3,7 @@ import { LOGICAL_WIDTH, LOGICAL_HEIGHT } from './constants/layout';
 import { BootScene } from './scenes/BootScene';
 import { GameScene } from './scenes/GameScene';
 import { UIScene } from './scenes/UIScene';
+import { CityScene } from './scenes/CityScene';
 import './styles/hud.css';
 import './styles/quiz.css';
 import './styles/skillpicker.css';
@@ -19,5 +20,5 @@ import './styles/sentences.css';
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [BootScene, GameScene, UIScene],
+  scene: [BootScene, GameScene, UIScene, CityScene],
 });

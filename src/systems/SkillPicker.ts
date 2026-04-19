@@ -91,8 +91,16 @@ export class SkillPicker {
         const weakBadge = opt.weakened
           ? '<div class="skill-card-weak-badge">WEAKENED −50%</div>'
           : '';
+        // Tooltip on each card: title + description + WEAKENED note.
+        // The card already shows desc inline, but the hover tooltip
+        // reads better on narrow viewports where the inline text gets
+        // truncated. HTML-escape the pieces before inlining into the
+        // data-tooltip attribute.
+        const tipParts = [opt.title, opt.desc];
+        if (opt.weakened) tipParts.push('OSŁABIONE −50%');
+        const tooltip = escapeAttr(tipParts.join('\n'));
         return `
-          <button class="skill-card skill-card--${opt.kind}${weakCls}" data-i="${i}">
+          <button class="skill-card skill-card--${opt.kind}${weakCls}" data-i="${i}" data-tooltip="${tooltip}">
             <div class="skill-card-kind">${kindLabel}</div>
             ${weakBadge}
             ${iconHtml}
@@ -110,4 +118,15 @@ export class SkillPicker {
       </div>
     `;
   }
+}
+
+// Minimal HTML-attribute escape so a card title / desc with quotes or
+// angle brackets can't break the `data-tooltip="…"` wrapper we're
+// inlining via a template string.
+function escapeAttr(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }

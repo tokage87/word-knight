@@ -39,6 +39,7 @@ export class UIScene extends Phaser.Scene {
     this.game.events.on('ui:gameOver', this.onGameOver, this);
     this.hud.onPauseButtonClick(() => this.game.events.emit('ui:togglePause'));
     this.hud.onRestartButtonClick(() => this.game.events.emit('ui:restart'));
+    this.hud.onCityButtonClick(() => this.game.events.emit('ui:openCity'));
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.off(
@@ -53,6 +54,21 @@ export class UIScene extends Phaser.Scene {
       );
       this.game.events.off('enemy:killed', this.hud.onEnemyKilled, this.hud);
       this.game.events.off('boss:spawned', this.hud.onBossSpawned, this.hud);
+      this.game.events.off('ui:pauseChanged', this.onPauseChanged, this);
+      this.game.events.off('ui:gameOver', this.onGameOver, this);
+      // Tear down the HUD's HTML so the game-over / pause overlays
+      // don't linger over the City scene (or any scene that follows).
+      this.hud.unmount();
+      // Blank every other HTML overlay root too — the QuizManager /
+      // SentenceBuilder / SkillPicker each own their own #*-root and
+      // leaving any of them populated leaks into the next scene.
+      ['quiz-root', 'sentence-root', 'skill-picker-root'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.innerHTML = '';
+          el.classList.remove('quiz--visible', 'sentence--visible', 'skill-picker--visible');
+        }
+      });
     });
   }
 

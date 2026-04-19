@@ -12,6 +12,7 @@ import { WaveSpawner } from '../systems/WaveSpawner';
 import { SpellCaster, MAX_RANK, type SpellId } from '../systems/SpellCaster';
 import type { SkillCardOption } from '../systems/SkillPicker';
 import { SentenceBuilder } from '../systems/SentenceBuilder';
+import { metaStore } from '../systems/MetaStore';
 
 const WALK_SPEED_MPS = 0.008;
 
@@ -162,6 +163,7 @@ export class GameScene extends Phaser.Scene {
     this.registry.set('expPct', 0);
     this.registry.set('spellsUnlocked', [] as SpellId[]);
     this.registry.set('spellsRank', { fire: 0, ice: 0, heal: 0 });
+    this.registry.set('gold', metaStore.getGold());
 
     this.game.events.on('quiz:correct', this.onQuizCorrect, this);
     this.game.events.on('quiz:wrong', this.onQuizWrong, this);
@@ -171,6 +173,7 @@ export class GameScene extends Phaser.Scene {
     this.game.events.on('ui:togglePause', this.toggleManualPause, this);
     this.game.events.on('knight:died', this.onKnightDied, this);
     this.game.events.on('ui:restart', this.onUiRestart, this);
+    this.game.events.on('ui:openCity', this.onOpenCity, this);
     this.game.events.on('enemy:killed', this.onEnemyKilled, this);
     this.game.events.on('skillpicker:picked', this.onSkillPicked, this);
     this.game.events.on('sentence:complete', this.onSentenceComplete, this);
@@ -181,6 +184,7 @@ export class GameScene extends Phaser.Scene {
       this.game.events.off('quiz:wrong', this.onQuizWrong, this);
       this.game.events.off('knight:died', this.onKnightDied, this);
       this.game.events.off('ui:restart', this.onUiRestart, this);
+      this.game.events.off('ui:openCity', this.onOpenCity, this);
       this.game.events.off('enemy:killed', this.onEnemyKilled, this);
       this.game.events.off('skillpicker:picked', this.onSkillPicked, this);
       this.game.events.off('sentence:complete', this.onSentenceComplete, this);
@@ -207,6 +211,7 @@ export class GameScene extends Phaser.Scene {
     this.registry.set('hpMax', this.knight.hpMax);
     this.registry.set('meleeDamage', this.knight.meleeDamage);
     this.registry.set('meleeCooldownMs', this.knight.meleeCooldownMs);
+    this.registry.set('gold', metaStore.getGold());
     this.registry.set('distance', Math.max(0, Math.floor(this.distance)));
     this.registry.set('fireCd', this.spellCaster.getCooldown('fire'));
     this.registry.set('fireCdBase', this.spellCaster.getBaseCooldown('fire'));
@@ -390,6 +395,9 @@ export class GameScene extends Phaser.Scene {
     this.gainExp(this.EXP_PER_QUIZ_CORRECT);
     this.stats.quizCorrect += 1;
     if (payload?.id) this.distinctWords.add(payload.id);
+    // Mirror into lifetime counters so the City's "50 correct quizzes"
+    // challenge can track across runs.
+    metaStore.incrementQuizCorrect(payload?.id);
     this.publishStats();
   }
 
@@ -441,6 +449,7 @@ export class GameScene extends Phaser.Scene {
     // deferred to `ui:restart` — emitted by the player clicking the
     // RESTART button in the HUD.
     this.paused = true;
+    metaStore.endRun();
     this.cameras.main.flash(520, 180, 30, 30);
     this.cameras.main.shake(360, 0.008);
     this.enemies.getChildren().forEach((e) => e.destroy());
@@ -449,6 +458,7 @@ export class GameScene extends Phaser.Scene {
         level: this.level,
         ...this.stats,
         distinctWords: this.distinctWords.size,
+        gold: metaStore.getGold(),
       });
     });
   }
@@ -461,8 +471,26 @@ export class GameScene extends Phaser.Scene {
     this.scene.restart();
   }
 
+  private onOpenCity() {
+    this.enemies.getChildren().forEach((e) => e.destroy());
+    // Stop Game + UI and hand control to CityScene. UIScene will
+    // un-mount its HTML overlay (including the Game Over panel) on
+    // shutdown, so we come back to a clean slate when "NOWA PRZYGODA"
+    // re-starts Game.
+    this.scene.stop('UI');
+    this.scene.stop('Game');
+    this.scene.start('City');
+  }
+
   private onEnemyKilled(payload: { isBoss: boolean }) {
     this.gainExp(payload.isBoss ? this.EXP_PER_BOSS_KILL : this.EXP_PER_KILL);
+    // Gold bounty: 10 per boss, 1 per regular — matches the HUD's
+    // existing visible counter, but now persists across runs in meta.
+    metaStore.addGold(payload.isBoss ? 10 : 1);
+    if (payload.isBoss) metaStore.incrementBossKill();
+    // Publish immediately (not just on the next update() tick) so the
+    // HUD badge animates in-sync with the kill.
+    this.registry.set('gold', metaStore.getGold());
   }
 
   private maybeShowPicker() {
@@ -520,8 +548,12 @@ export class GameScene extends Phaser.Scene {
   }) {
     let options = this.pendingCardOptions;
     if (!options) return;
-    if (payload.perfect) this.stats.storiesPerfect += 1;
-    else this.stats.storiesFailed += 1;
+    if (payload.perfect) {
+      this.stats.storiesPerfect += 1;
+      metaStore.incrementPerfectStory();
+    } else {
+      this.stats.storiesFailed += 1;
+    }
     this.publishStats();
     // Only the 3-mistake abort path (weakened:true) drops the NEW
     // spell and halves upgrades. Finishing a story with 1–2 mistakes

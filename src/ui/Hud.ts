@@ -28,7 +28,9 @@ export class Hud {
   private gameOverOverlay?: HTMLElement;
   private gameOverStats?: HTMLElement;
   private gameOverRestart?: HTMLElement;
+  private gameOverCity?: HTMLElement;
   private restartClickHandler?: () => void;
+  private cityClickHandler?: () => void;
 
   mount() {
     const root = document.getElementById('hud-root');
@@ -41,6 +43,7 @@ export class Hud {
     this.gameOverOverlay = root.querySelector<HTMLElement>('.gameover-overlay') ?? undefined;
     this.gameOverStats = root.querySelector<HTMLElement>('.gameover-stats') ?? undefined;
     this.gameOverRestart = root.querySelector<HTMLElement>('.gameover-restart') ?? undefined;
+    this.gameOverCity = root.querySelector<HTMLElement>('.gameover-city') ?? undefined;
 
     this.stats = root.querySelector<HTMLElement>('.stat-hp-val') ?? undefined;
     this.dmgStat = root.querySelector<HTMLElement>('.stat-dmg-val') ?? undefined;
@@ -78,13 +81,20 @@ export class Hud {
       this.hpText.textContent = `${Math.max(0, Math.floor(hp))} / ${hpMax}`;
     if (this.stats) this.stats.textContent = String(Math.max(0, Math.floor(hp)));
 
+    // Gold now persists across runs via MetaStore; the registry is the
+    // source of truth. The old `onEnemyKilled` per-run counter is
+    // redundant but left alone so the HUD still reacts instantly to
+    // kills if the registry tick lags.
+    const gold = (registry.get('gold') as number | undefined) ?? 0;
+    if (this.gold) this.gold.textContent = `x${gold}`;
+
     const dmg = (registry.get('meleeDamage') as number | undefined) ?? 10;
     const cdMs = (registry.get('meleeCooldownMs') as number | undefined) ?? BASE_MELEE_COOLDOWN_MS;
     if (this.dmgStat) {
       this.dmgStat.textContent = String(dmg);
       this.dmgStat.closest<HTMLElement>('.stat-row')?.setAttribute(
         'data-tooltip',
-        `Attack damage\n${dmg} per swing`,
+        `Obrażenia ataku\n${dmg} na uderzenie`,
       );
     }
     if (this.spdStat) {
@@ -92,7 +102,7 @@ export class Hud {
       this.spdStat.textContent = `${pct}%`;
       this.spdStat.closest<HTMLElement>('.stat-row')?.setAttribute(
         'data-tooltip',
-        `Attack speed\n${pct}% (${(cdMs / 1000).toFixed(2)}s per swing)`,
+        `Szybkość ataku\n${pct}% (${(cdMs / 1000).toFixed(2)}s na uderzenie)`,
       );
     }
     if (this.stats) {
@@ -188,6 +198,15 @@ export class Hud {
     this.gameOverOverlay.classList.remove('gameover-overlay--visible');
   }
 
+  // Called on UIScene shutdown so we don't leak HTML into the next
+  // scene (e.g. the Game Over panel persisting on top of the City).
+  unmount() {
+    if (this.root) this.root.innerHTML = '';
+    this.root = undefined;
+    this.gameOverOverlay = undefined;
+    this.pauseOverlay = undefined;
+  }
+
   onRestartButtonClick(handler: () => void) {
     if (!this.gameOverRestart) return;
     if (this.restartClickHandler) {
@@ -195,6 +214,15 @@ export class Hud {
     }
     this.restartClickHandler = handler;
     this.gameOverRestart.addEventListener('click', handler);
+  }
+
+  onCityButtonClick(handler: () => void) {
+    if (!this.gameOverCity) return;
+    if (this.cityClickHandler) {
+      this.gameOverCity.removeEventListener('click', this.cityClickHandler);
+    }
+    this.cityClickHandler = handler;
+    this.gameOverCity.addEventListener('click', handler);
   }
 
   flashCooldownPenalty(ms: number) {
@@ -242,7 +270,7 @@ export class Hud {
       icon.root.classList.remove('ability--ready');
       icon.root.setAttribute(
         'data-tooltip',
-        `${SPELL_LABEL[id]} — locked.\nLevel up and pick it to unlock.`,
+        `${SPELL_LOCKED_LABEL[id]}.\nAwansuj i wybierz, aby odblokować.`,
       );
       return;
     }
@@ -254,10 +282,10 @@ export class Hud {
     icon.text.textContent = cd <= 0 ? '' : `${(cd / 1000).toFixed(1)}s`;
     icon.root.classList.toggle('ability--ready', cd <= 0);
     const rankStr = rank > 1 ? ` ${toRoman(rank)}` : '';
-    const status = cd <= 0 ? 'Ready' : `${(cd / 1000).toFixed(1)}s`;
+    const status = cd <= 0 ? 'Gotowe' : `${(cd / 1000).toFixed(1)}s`;
     icon.root.setAttribute(
       'data-tooltip',
-      `${SPELL_LABEL[id]}${rankStr}\n${SPELL_DESC[id]}\nCooldown: ${(base / 1000).toFixed(0)}s · ${status}`,
+      `${SPELL_LABEL[id]}${rankStr}\n${SPELL_DESC[id]}\nOdnowienie: ${(base / 1000).toFixed(0)}s · ${status}`,
     );
   }
 
@@ -281,34 +309,42 @@ function toRoman(n: number): string {
 }
 
 const SPELL_LABEL: Record<'fire' | 'ice' | 'heal', string> = {
-  fire: 'Fire',
-  ice: 'Ice',
-  heal: 'Heal',
+  fire: 'Ogień',
+  ice: 'Lód',
+  heal: 'Leczenie',
+};
+// Polish adjectives must agree with the noun's gender: Ogień/Lód are
+// masculine ("zablokowany"), Leczenie is neuter ("zablokowane"). One
+// map per spell avoids a template string that's grammatically wrong.
+const SPELL_LOCKED_LABEL: Record<'fire' | 'ice' | 'heal', string> = {
+  fire: 'Ogień — zablokowany',
+  ice: 'Lód — zablokowany',
+  heal: 'Leczenie — zablokowane',
 };
 const SPELL_DESC: Record<'fire' | 'ice' | 'heal', string> = {
-  fire: 'AoE burn damage to all enemies on screen.',
-  ice: 'Slows and damages the closest enemies.',
-  heal: 'Restores HP to the knight.',
+  fire: 'Obszarowe obrażenia ogniem dla wszystkich wrogów na ekranie.',
+  ice: 'Spowalnia i rani najbliższych wrogów.',
+  heal: 'Przywraca HP rycerzowi.',
 };
 
 const HTML = `
   <div class="hud-top-left stat-panel">
-    <div class="stat-row" data-tooltip="Attack damage per swing"><span class="stat-ico ico-sword"></span><span class="stat-val stat-dmg-val">10</span></div>
-    <div class="stat-row" data-tooltip="Current / max HP"><span class="stat-ico ico-heart"></span><span class="stat-val stat-hp-val">100</span></div>
-    <div class="stat-row" data-tooltip="Attack speed (100% = baseline)"><span class="stat-ico ico-speed"></span><span class="stat-val stat-spd-val">100%</span></div>
+    <div class="stat-row" data-tooltip="Obrażenia na uderzenie"><span class="stat-ico ico-sword"></span><span class="stat-val stat-dmg-val">10</span></div>
+    <div class="stat-row" data-tooltip="Aktualne / maks. HP"><span class="stat-ico ico-heart"></span><span class="stat-val stat-hp-val">100</span></div>
+    <div class="stat-row" data-tooltip="Szybkość ataku (100% = bazowa)"><span class="stat-ico ico-speed"></span><span class="stat-val stat-spd-val">100%</span></div>
   </div>
 
-  <div class="hud-top-right gold-panel" data-tooltip="Gold earned from kills">
+  <div class="hud-top-right gold-panel" data-tooltip="Złoto zdobyte za zabicia">
     <span class="gold-ico"></span>
     <span class="gold-count">x0</span>
   </div>
 
-  <div class="hud-top-center boss-bar" data-tooltip="Boss HP">
+  <div class="hud-top-center boss-bar" data-tooltip="HP bossa">
     <div class="boss-label">BOSS</div>
     <div class="boss-track"><div class="boss-fill"></div></div>
   </div>
 
-  <button type="button" class="pause-btn" data-tooltip="Pause (P)">⏸</button>
+  <button type="button" class="pause-btn" data-tooltip="Pauza (P)">⏸</button>
 
   <div class="pause-overlay">
     <div class="pause-panel">
@@ -323,14 +359,17 @@ const HTML = `
       <div class="gameover-title">GAME OVER</div>
       <div class="gameover-sub">Your run ended — here's how it went</div>
       <div class="gameover-stats"></div>
-      <button type="button" class="gameover-restart">RESTART</button>
+      <div class="gameover-actions">
+        <button type="button" class="gameover-restart">RESTART</button>
+        <button type="button" class="gameover-city">MIASTO</button>
+      </div>
     </div>
   </div>
 
   <div class="hud-bottom-left equipment-panel">
     <div class="equipment-grid">
-      <div class="eq-slot" data-tooltip="Knight's Sword"><img src="assets/ui/Icon_07.png" alt="sword" /></div>
-      <div class="eq-slot" data-tooltip="Knight's Shield"><img src="assets/ui/Icon_06.png" alt="shield" /></div>
+      <div class="eq-slot" data-tooltip="Miecz Rycerza"><img src="assets/ui/Icon_07.png" alt="sword" /></div>
+      <div class="eq-slot" data-tooltip="Tarcza Rycerza"><img src="assets/ui/Icon_06.png" alt="shield" /></div>
       <div class="eq-slot empty"></div>
       <div class="eq-slot empty"></div>
     </div>
@@ -338,62 +377,62 @@ const HTML = `
 
   <div class="hud-bottom-center">
     <div class="abilities-row">
-      <div class="ability ability--locked" data-spell="fire" data-tooltip="Fire — locked. Level up to unlock.">
+      <div class="ability ability--locked" data-spell="fire" data-tooltip="Ogień — zablokowany. Awansuj, aby odblokować.">
         <span class="ability-glyph">🔥</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
         <span class="ability-rank"></span>
       </div>
-      <div class="ability ability--locked" data-spell="ice" data-tooltip="Ice — locked. Level up to unlock.">
+      <div class="ability ability--locked" data-spell="ice" data-tooltip="Lód — zablokowany. Awansuj, aby odblokować.">
         <span class="ability-glyph">❄</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
         <span class="ability-rank"></span>
       </div>
-      <div class="ability ability--locked" data-spell="heal" data-tooltip="Heal — locked. Level up to unlock.">
+      <div class="ability ability--locked" data-spell="heal" data-tooltip="Leczenie — zablokowane. Awansuj, aby odblokować.">
         <img class="ability-glyph-img" src="assets/ui/Icon_05.png" alt="heal" />
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
         <span class="ability-rank"></span>
       </div>
-      <div class="ability ability--locked" data-spell="lightning" data-tooltip="Lightning — not yet implemented.">
+      <div class="ability ability--locked" data-spell="lightning" data-tooltip="Błyskawica — jeszcze niedostępna.">
         <span class="ability-glyph">⚡</span>
         <span class="ability-lock">🔒</span>
       </div>
     </div>
 
     <div class="buff-row">
-      <div class="buff-box" data-tooltip="Attack buff (placeholder)">
+      <div class="buff-box" data-tooltip="Wzmocnienie ataku (placeholder)">
         <div class="buff-top"><span class="buff-ico ico-sword"></span><span>16.12%</span></div>
         <div class="buff-sub">30%</div>
       </div>
-      <div class="buff-box" data-tooltip="Ranged buff (placeholder)">
+      <div class="buff-box" data-tooltip="Wzmocnienie dystansu (placeholder)">
         <div class="buff-top"><span class="buff-ico ico-arrow"></span><span>33.82%</span></div>
         <div class="buff-sub">210%</div>
       </div>
-      <div class="buff-box" data-tooltip="Dodge buff (placeholder)">
+      <div class="buff-box" data-tooltip="Wzmocnienie uniku (placeholder)">
         <div class="buff-top"><span class="buff-ico ico-ghost"></span><span>9.27%</span></div>
         <div class="buff-sub">2:00</div>
       </div>
-      <div class="buff-box" data-tooltip="Regen buff (placeholder)">
+      <div class="buff-box" data-tooltip="Wzmocnienie regeneracji (placeholder)">
         <div class="buff-top"><span class="buff-ico ico-leaf"></span><span>4.56%</span></div>
         <div class="buff-sub">20%</div>
       </div>
     </div>
 
     <div class="bars-col">
-      <div class="bar-line" data-tooltip="Health">
+      <div class="bar-line" data-tooltip="Zdrowie">
         <span class="bar-ico bar-ico-img ico-heart"></span>
         <div class="bar-track bar-hp"><div class="bar-fill bar-hp-fill"></div><span class="bar-text bar-hp-text">100 / 100</span></div>
       </div>
-      <div class="bar-line" data-tooltip="Experience toward next level">
+      <div class="bar-line" data-tooltip="Doświadczenie do następnego poziomu">
         <span class="bar-ico bar-badge badge-exp">EXP</span>
         <div class="bar-track bar-exp"><div class="bar-fill bar-exp-fill"></div><span class="bar-text bar-exp-text">LV: 1</span></div>
       </div>
-      <div class="bar-line" data-tooltip="Study level (placeholder)">
+      <div class="bar-line" data-tooltip="Poziom nauki (placeholder)">
         <span class="bar-ico bar-badge badge-std">STD</span>
         <div class="bar-track bar-std"><div class="bar-fill bar-std-fill" style="width:45%"></div><span class="bar-text">LV: 1</span></div>
       </div>
