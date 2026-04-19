@@ -15,7 +15,7 @@ import { deepJudge } from '../systems/DeepJudge';
 //     "Sprawdź szczegółowo" to download + evaluate.
 // Progress bars for both downloads are rendered inline.
 
-const UNLOCK_MIN_WORDS = 30;
+const UNLOCK_MIN_WORDS = 15;
 const UNLOCK_MIN_TOPIC = 0.55;
 
 export class WritingTask {

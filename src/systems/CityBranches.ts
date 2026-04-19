@@ -43,6 +43,15 @@ export interface BranchDef {
 const cost = (table: number[]) => (r: number) =>
   r < table.length ? table[r]! : Infinity;
 
+// A branch is considered unlocked iff the player has at least one
+// saved writing submission for it. We use submissions (not the
+// `branches[id].unlocked` boolean) as the source of truth, so old
+// saves where auto-unlock from combat/quiz counters set the flag
+// don't skip the writing requirement in the new build.
+function hasSubmissionFor(id: BranchId): boolean {
+  return metaStore.getWritingSubmissions().some((s) => s.branch === id);
+}
+
 // Small util — score a submission for the soft word-count gate.
 export function countWords(text: string): { total: number; distinct: number } {
   const tokens = text
@@ -72,7 +81,7 @@ const combat: BranchDef = {
       'Every morning I wake up early. I eat breakfast with my family. I go to school and study many subjects. After school I play with friends, read books and do my homework. In the evening I eat dinner, wash my face and go to sleep.',
   },
   isUnlocked() {
-    return metaStore.get().branches.combat.unlocked;
+    return hasSubmissionFor('combat');
   },
   upgrades: [
     {
@@ -148,7 +157,7 @@ const spells: BranchDef = {
       'My favourite place is a quiet park near my house. There are many tall trees and colourful flowers. I like to visit it on sunny days. I sit on the grass, read a book and watch the birds. It makes me feel calm and happy.',
   },
   isUnlocked() {
-    return metaStore.get().branches.spells.unlocked;
+    return hasSubmissionFor('spells');
   },
   upgrades: SPELL_OPTIONS.map((opt) => ({
     id: `start.${opt.id}`,
@@ -188,7 +197,7 @@ const scholar: BranchDef = {
       'My best friend is called Anna. She is tall and has long brown hair and blue eyes. She is very kind, funny and smart. We go to school together and play every afternoon. She always helps me when I have a problem. I am happy she is my friend.',
   },
   isUnlocked() {
-    return metaStore.get().branches.scholar.unlocked;
+    return hasSubmissionFor('scholar');
   },
   upgrades: [
     {
@@ -243,7 +252,7 @@ const writer: BranchDef = {
       'Last summer I went on holiday with my family. We travelled to the sea. The weather was hot and sunny. Every day we swam in the blue water and built big sand castles on the beach. In the evening we ate dinner and played games. It was a beautiful and happy holiday.',
   },
   isUnlocked() {
-    return metaStore.get().branches.writer.unlocked;
+    return hasSubmissionFor('writer');
   },
   upgrades: [
     {
