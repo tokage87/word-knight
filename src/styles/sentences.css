@@ -53,6 +53,24 @@
   margin-bottom: 4px;
 }
 
+/* Story-gate header: title line + "Sentence N / total" progress strip.
+   Only visible when the SentenceBuilder is in story mode (multi-sentence
+   run). The single-sentence gate keeps its simpler two-line header. */
+.sentence-story-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffd75a;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  text-shadow: 0 1px 0 #3a2a10;
+}
+.sentence-story-progress {
+  font-size: 11px;
+  color: #bba576;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
 .sentence-pl {
   font-size: 22px;
   font-weight: bold;

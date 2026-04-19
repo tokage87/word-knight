@@ -113,6 +113,7 @@ export class GameScene extends Phaser.Scene {
     this.game.events.on('enemy:killed', this.onEnemyKilled, this);
     this.game.events.on('skillpicker:picked', this.onSkillPicked, this);
     this.game.events.on('sentence:complete', this.onSentenceComplete, this);
+    this.game.events.on('story:complete', this.onStoryComplete, this);
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.off('quiz:correct', this.onQuizCorrect, this);
@@ -120,6 +121,7 @@ export class GameScene extends Phaser.Scene {
       this.game.events.off('enemy:killed', this.onEnemyKilled, this);
       this.game.events.off('skillpicker:picked', this.onSkillPicked, this);
       this.game.events.off('sentence:complete', this.onSentenceComplete, this);
+      this.game.events.off('story:complete', this.onStoryComplete, this);
     });
   }
 
@@ -358,20 +360,56 @@ export class GameScene extends Phaser.Scene {
       this.pendingLevelUps = 0;
       return;
     }
-    // Pause game and gate the reward behind a sentence-building task.
-    // The picker opens once the player completes the sentence.
     this.paused = true;
     this.pendingCardOptions = options;
-    this.game.events.emit('sentence:show', SentenceBuilder.pickRandom());
+
+    // If this level-up's pool contains a "new" spell card, gate it
+    // behind a 4-5 sentence story; a single wrong answer anywhere in
+    // the story strips the new-spell option at pick time (upgrades
+    // still available). Upgrade-only level-ups keep the original
+    // single-sentence gate for speed.
+    const hasNewCard = options.some((o) => o.kind === 'new');
+    if (hasNewCard) {
+      this.game.events.emit('story:show', SentenceBuilder.pickRandomStory());
+    } else {
+      this.game.events.emit('sentence:show', SentenceBuilder.pickRandom());
+    }
   }
 
-  private onSentenceComplete() {
-    const options = this.pendingCardOptions;
+  private onSentenceComplete(payload: { id: string; perfect: boolean }) {
+    let options = this.pendingCardOptions;
     if (!options) return;
+    if (!payload.perfect) {
+      // Mistake during the single-sentence gate — upgrade pool stays
+      // the same but every card becomes WEAKENED (50% amount).
+      options = this.buildCardOptions(3, { weakened: true });
+      this.pendingCardOptions = options;
+    }
     this.game.events.emit('skillpicker:show', options);
   }
 
-  private buildCardOptions(count: number): SkillCardOption[] {
+  private onStoryComplete(payload: { id: string; perfect: boolean }) {
+    let options = this.pendingCardOptions;
+    if (!options) return;
+    if (!payload.perfect) {
+      // Mistake in the story gate — drop new-spell cards AND weaken
+      // upgrades by 50%. Picker still shows 3 choices, all upgrades.
+      options = this.buildCardOptions(3, { allowNew: false, weakened: true });
+      this.pendingCardOptions = options;
+    }
+    this.game.events.emit('skillpicker:show', options);
+  }
+
+  // `overrides.allowNew`, if set, bypasses the default every-other-levelup
+  // rule. Used by the story-gate flow to force upgrade-only pools after
+  // a failed story (any mistake in the 4-5 sentence gate).
+  // `overrides.weakened`, if true, flags every UPGRADE card as weakened
+  // (half amount on pick) and rewrites descriptions to show the halved
+  // value, so the player knows what they're accepting before picking.
+  private buildCardOptions(
+    count: number,
+    overrides: { allowNew?: boolean; weakened?: boolean } = {},
+  ): SkillCardOption[] {
     const lockedIds = this.spellCaster.getLocked();
     const upgradableIds = this.spellCaster.getUpgradable();
 
@@ -382,14 +420,18 @@ export class GameScene extends Phaser.Scene {
       desc: SPELL_META[id].newDesc,
       icon: SPELL_META[id].icon,
     }));
+    const weakened = !!overrides.weakened;
     const spellUpgradeCards: SkillCardOption[] = upgradableIds.map((id) => {
       const nextRank = this.spellCaster.getRank(id) + 1;
       return {
         key: `${id}.upgrade`,
         kind: 'upgrade',
         title: `${SPELL_META[id].name} ${toRoman(nextRank)}`,
-        desc: SPELL_META[id].upgradeDesc,
+        desc: weakened
+          ? `${SPELL_META[id].upgradeDesc} (−50%)`
+          : SPELL_META[id].upgradeDesc,
         icon: SPELL_META[id].icon,
+        weakened,
       };
     });
     const statUpgradeCards: SkillCardOption[] = (Object.keys(this.statRanks) as StatId[])
@@ -400,8 +442,9 @@ export class GameScene extends Phaser.Scene {
           key: `${id}.stat`,
           kind: 'upgrade',
           title: `${STAT_META[id].name} ${toRoman(nextRank)}`,
-          desc: STAT_META[id].desc,
+          desc: weakened ? STAT_META[id].weakDesc : STAT_META[id].desc,
           icon: STAT_META[id].icon,
+          weakened,
         };
       });
     const upgradeCards = [...spellUpgradeCards, ...statUpgradeCards];
@@ -412,7 +455,10 @@ export class GameScene extends Phaser.Scene {
     // New skills only appear on every 2nd level-up (1st, 3rd, 5th...).
     // Other level-ups are upgrade-only, with a new-card fallback if the
     // upgrade pool is empty so the picker still shows something.
-    const allowNew = this.levelUpCount % 2 === 1;
+    // `overrides.allowNew` forces the value (used by the story gate on
+    // failure to guarantee upgrade-only cards).
+    const allowNew =
+      overrides.allowNew ?? (this.levelUpCount % 2 === 1);
     const pool: SkillCardOption[] = [];
 
     if (allowNew) {
@@ -433,13 +479,14 @@ export class GameScene extends Phaser.Scene {
 
   private onSkillPicked(option: SkillCardOption) {
     const [idStr, kind] = option.key.split('.') as [string, 'new' | 'upgrade' | 'stat'];
+    const weakened = !!option.weakened;
 
     if (kind === 'stat') {
-      this.applyStatUpgrade(idStr as StatId);
+      this.applyStatUpgrade(idStr as StatId, weakened);
     } else if (kind === 'new') {
       this.spellCaster.unlock(idStr as SpellId);
     } else {
-      this.spellCaster.upgrade(idStr as SpellId);
+      this.spellCaster.upgrade(idStr as SpellId, weakened);
     }
 
     this.registry.set(
@@ -459,26 +506,36 @@ export class GameScene extends Phaser.Scene {
     this.maybeShowPicker();
   }
 
-  private applyStatUpgrade(id: StatId) {
+  private applyStatUpgrade(id: StatId, weakened = false) {
     if (this.statRanks[id] >= STAT_META[id].maxRank) return;
     this.statRanks[id] += 1;
-    const meta = STAT_META[id];
-    if (id === 'maxHp') this.knight.boostMaxHp(meta.amount);
-    else if (id === 'meleeDmg') this.knight.boostMeleeDamage(meta.amount);
-    else if (id === 'atkSpeed') this.knight.boostAttackSpeed(meta.amount);
+    const amount = weakenedAmount(STAT_META[id].amount, weakened, id);
+    if (id === 'maxHp') this.knight.boostMaxHp(amount);
+    else if (id === 'meleeDmg') this.knight.boostMeleeDamage(amount);
+    else if (id === 'atkSpeed') this.knight.boostAttackSpeed(amount);
   }
+}
+
+// Halve an upgrade amount when `weakened` (story/sentence gate failed).
+// Integer stats floor to 0 sanely; `atkSpeed` is a 0..1 fraction so we
+// halve without flooring to avoid silently zeroing the effect.
+function weakenedAmount(amount: number, weakened: boolean, id: StatId): number {
+  if (!weakened) return amount;
+  if (id === 'atkSpeed') return amount * 0.5; // 10% -> 5%
+  return Math.floor(amount * 0.5); // 20 -> 10, 3 -> 1
 }
 
 type StatId = 'maxHp' | 'meleeDmg' | 'atkSpeed';
 
 const STAT_META: Record<
   StatId,
-  { name: string; icon: string; desc: string; amount: number; maxRank: number }
+  { name: string; icon: string; desc: string; weakDesc: string; amount: number; maxRank: number }
 > = {
   maxHp: {
     name: 'Vitality',
     icon: '❤️',
     desc: '+20 max HP & heal now.',
+    weakDesc: '+10 max HP & heal now.',
     amount: 20,
     maxRank: 5,
   },
@@ -486,6 +543,7 @@ const STAT_META: Record<
     name: 'Sharp Sword',
     icon: 'assets/ui/Icon_07.png',
     desc: '+3 melee damage.',
+    weakDesc: '+1 melee damage.',
     amount: 3,
     maxRank: 5,
   },
@@ -493,6 +551,7 @@ const STAT_META: Record<
     name: 'Swift Strike',
     icon: 'assets/ui/Icon_09.png',
     desc: '−10% attack cooldown.',
+    weakDesc: '−5% attack cooldown.',
     amount: 0.10,
     maxRank: 4,
   },

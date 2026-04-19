@@ -93,6 +93,24 @@
   border-image-source: url('/assets/ui/button-red-9s.png');
   background-color: #8b2a2e;
 }
+/* Applied when the player failed the level-up gate. The card still
+   works but its amount is halved — badge + muted colour so it reads
+   clearly as a penalty before picking. */
+.skill-card--weak {
+  filter: grayscale(0.25) brightness(0.92);
+}
+.skill-card-weak-badge {
+  display: inline-block;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  color: #1c0a05;
+  background: #ffb04a;
+  padding: 1px 5px;
+  margin-top: 2px;
+  border-radius: 2px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
 
 .skill-card-kind {
   font-size: 9px;

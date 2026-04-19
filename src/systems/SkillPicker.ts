@@ -11,6 +11,11 @@ export interface SkillCardOption {
   title: string;         // "Fire" / "Ice II"
   desc: string;
   icon: string;          // emoji or /assets/ url
+  // True when the player made at least one mistake in the level-up
+  // sentence/story gate. Upgrade effects for weakened cards are halved
+  // (rounded down) on pick. Rendered with a "WEAKENED" badge so the
+  // player knows what they're accepting.
+  weakened?: boolean;
 }
 
 const HOTKEYS = ['w', 'e', 'r'] as const;
@@ -82,9 +87,14 @@ export class SkillPicker {
           ? `<img class="skill-card-icon-img" src="${opt.icon}" alt="" />`
           : `<span class="skill-card-icon">${opt.icon}</span>`;
         const kindLabel = opt.kind === 'new' ? 'NEW' : 'UPGRADE';
+        const weakCls = opt.weakened ? ' skill-card--weak' : '';
+        const weakBadge = opt.weakened
+          ? '<div class="skill-card-weak-badge">WEAKENED −50%</div>'
+          : '';
         return `
-          <button class="skill-card skill-card--${opt.kind}" data-i="${i}">
+          <button class="skill-card skill-card--${opt.kind}${weakCls}" data-i="${i}">
             <div class="skill-card-kind">${kindLabel}</div>
+            ${weakBadge}
             ${iconHtml}
             <div class="skill-card-title">${opt.title}</div>
             <div class="skill-card-desc">${opt.desc}</div>

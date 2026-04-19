@@ -3848,6 +3848,2005 @@
       "director",
       "dancer"
     ]
+  },
+  {
+    "id": "gray",
+    "pl": "szary",
+    "en": "gray",
+    "distractors": [
+      "gold",
+      "dark",
+      "light"
+    ]
+  },
+  {
+    "id": "gold",
+    "pl": "złoty",
+    "en": "gold",
+    "distractors": [
+      "gray",
+      "pink",
+      "bright"
+    ]
+  },
+  {
+    "id": "silver",
+    "pl": "srebrny",
+    "en": "silver",
+    "distractors": [
+      "purple",
+      "dark",
+      "light"
+    ]
+  },
+  {
+    "id": "purple",
+    "pl": "fioletowy",
+    "en": "purple",
+    "distractors": [
+      "gold",
+      "light",
+      "bright"
+    ]
+  },
+  {
+    "id": "dark",
+    "pl": "ciemny",
+    "en": "dark",
+    "distractors": [
+      "bright",
+      "orange",
+      "silver"
+    ]
+  },
+  {
+    "id": "light",
+    "pl": "jasny",
+    "en": "light",
+    "distractors": [
+      "bright",
+      "gray",
+      "pink"
+    ]
+  },
+  {
+    "id": "bright",
+    "pl": "jaskrawy",
+    "en": "bright",
+    "distractors": [
+      "orange",
+      "gray",
+      "gold"
+    ]
+  },
+  {
+    "id": "zero",
+    "pl": "zero",
+    "en": "zero",
+    "distractors": [
+      "five",
+      "one",
+      "seven"
+    ]
+  },
+  {
+    "id": "twelve",
+    "pl": "dwanaście",
+    "en": "twelve",
+    "distractors": [
+      "three",
+      "eight",
+      "hundred"
+    ]
+  },
+  {
+    "id": "twenty",
+    "pl": "dwadzieścia",
+    "en": "twenty",
+    "distractors": [
+      "ten",
+      "zero",
+      "nine"
+    ]
+  },
+  {
+    "id": "fifty",
+    "pl": "pięćdziesiąt",
+    "en": "fifty",
+    "distractors": [
+      "eight",
+      "hundred",
+      "nine"
+    ]
+  },
+  {
+    "id": "hundred",
+    "pl": "sto",
+    "en": "hundred",
+    "distractors": [
+      "zero",
+      "twenty",
+      "eight"
+    ]
+  },
+  {
+    "id": "thousand",
+    "pl": "tysiąc",
+    "en": "thousand",
+    "distractors": [
+      "five",
+      "ten",
+      "twelve"
+    ]
+  },
+  {
+    "id": "january",
+    "pl": "styczeń",
+    "en": "january",
+    "distractors": [
+      "february",
+      "july",
+      "april"
+    ]
+  },
+  {
+    "id": "february",
+    "pl": "luty",
+    "en": "february",
+    "distractors": [
+      "march",
+      "july",
+      "october"
+    ]
+  },
+  {
+    "id": "march",
+    "pl": "marzec",
+    "en": "march",
+    "distractors": [
+      "november",
+      "june",
+      "january"
+    ]
+  },
+  {
+    "id": "april",
+    "pl": "kwiecień",
+    "en": "april",
+    "distractors": [
+      "march",
+      "august",
+      "june"
+    ]
+  },
+  {
+    "id": "may",
+    "pl": "maj",
+    "en": "may",
+    "distractors": [
+      "august",
+      "november",
+      "april"
+    ]
+  },
+  {
+    "id": "june",
+    "pl": "czerwiec",
+    "en": "june",
+    "distractors": [
+      "january",
+      "february",
+      "september"
+    ]
+  },
+  {
+    "id": "july",
+    "pl": "lipiec",
+    "en": "july",
+    "distractors": [
+      "april",
+      "june",
+      "may"
+    ]
+  },
+  {
+    "id": "august",
+    "pl": "sierpień",
+    "en": "august",
+    "distractors": [
+      "september",
+      "may",
+      "november"
+    ]
+  },
+  {
+    "id": "september",
+    "pl": "wrzesień",
+    "en": "september",
+    "distractors": [
+      "august",
+      "april",
+      "july"
+    ]
+  },
+  {
+    "id": "october",
+    "pl": "październik",
+    "en": "october",
+    "distractors": [
+      "november",
+      "may",
+      "december"
+    ]
+  },
+  {
+    "id": "november",
+    "pl": "listopad",
+    "en": "november",
+    "distractors": [
+      "march",
+      "july",
+      "october"
+    ]
+  },
+  {
+    "id": "december",
+    "pl": "grudzień",
+    "en": "december",
+    "distractors": [
+      "october",
+      "july",
+      "january"
+    ]
+  },
+  {
+    "id": "summer-season",
+    "pl": "lato",
+    "en": "summer",
+    "distractors": [
+      "spring",
+      "winter",
+      "autumn"
+    ]
+  },
+  {
+    "id": "winter-season",
+    "pl": "zima",
+    "en": "winter",
+    "distractors": [
+      "spring",
+      "summer",
+      "autumn"
+    ]
+  },
+  {
+    "id": "storm",
+    "pl": "burza",
+    "en": "storm",
+    "distractors": [
+      "rainbow",
+      "ice",
+      "thunder"
+    ]
+  },
+  {
+    "id": "fog",
+    "pl": "mgła",
+    "en": "fog",
+    "distractors": [
+      "storm",
+      "ice",
+      "cloud"
+    ]
+  },
+  {
+    "id": "ice",
+    "pl": "lód",
+    "en": "ice",
+    "distractors": [
+      "rainbow",
+      "thunder",
+      "wind"
+    ]
+  },
+  {
+    "id": "thunder",
+    "pl": "grzmot",
+    "en": "thunder",
+    "distractors": [
+      "cloud",
+      "storm",
+      "snow"
+    ]
+  },
+  {
+    "id": "lightning-bolt",
+    "pl": "błyskawica",
+    "en": "lightning",
+    "distractors": [
+      "wind",
+      "ice",
+      "thunder"
+    ]
+  },
+  {
+    "id": "rainbow",
+    "pl": "tęcza",
+    "en": "rainbow",
+    "distractors": [
+      "wind",
+      "sun",
+      "lightning"
+    ]
+  },
+  {
+    "id": "warm",
+    "pl": "ciepły",
+    "en": "warm",
+    "distractors": [
+      "hot",
+      "wet",
+      "cloudy"
+    ]
+  },
+  {
+    "id": "wet",
+    "pl": "mokry",
+    "en": "wet",
+    "distractors": [
+      "snowy",
+      "sunny",
+      "cloudy"
+    ]
+  },
+  {
+    "id": "dry",
+    "pl": "suchy",
+    "en": "dry",
+    "distractors": [
+      "sunny",
+      "cold",
+      "cloudy"
+    ]
+  },
+  {
+    "id": "sunny",
+    "pl": "słoneczny",
+    "en": "sunny",
+    "distractors": [
+      "warm",
+      "snowy",
+      "cloudy"
+    ]
+  },
+  {
+    "id": "rainy",
+    "pl": "deszczowy",
+    "en": "rainy",
+    "distractors": [
+      "hot",
+      "dry",
+      "warm"
+    ]
+  },
+  {
+    "id": "snowy",
+    "pl": "śnieżny",
+    "en": "snowy",
+    "distractors": [
+      "cloudy",
+      "hot",
+      "rainy"
+    ]
+  },
+  {
+    "id": "windy",
+    "pl": "wietrzny",
+    "en": "windy",
+    "distractors": [
+      "wet",
+      "sunny",
+      "dry"
+    ]
+  },
+  {
+    "id": "cloudy",
+    "pl": "pochmurny",
+    "en": "cloudy",
+    "distractors": [
+      "rainy",
+      "hot",
+      "foggy"
+    ]
+  },
+  {
+    "id": "foggy",
+    "pl": "mglisty",
+    "en": "foggy",
+    "distractors": [
+      "sunny",
+      "cloudy",
+      "windy"
+    ]
+  },
+  {
+    "id": "sugar",
+    "pl": "cukier",
+    "en": "sugar",
+    "distractors": [
+      "rice",
+      "honey",
+      "pepper"
+    ]
+  },
+  {
+    "id": "salt",
+    "pl": "sól",
+    "en": "salt",
+    "distractors": [
+      "honey",
+      "butter",
+      "jam"
+    ]
+  },
+  {
+    "id": "pepper",
+    "pl": "pieprz",
+    "en": "pepper",
+    "distractors": [
+      "pasta",
+      "rice",
+      "flour"
+    ]
+  },
+  {
+    "id": "rice",
+    "pl": "ryż",
+    "en": "rice",
+    "distractors": [
+      "oil",
+      "butter",
+      "honey"
+    ]
+  },
+  {
+    "id": "pasta",
+    "pl": "makaron",
+    "en": "pasta",
+    "distractors": [
+      "bread",
+      "salt",
+      "cheese"
+    ]
+  },
+  {
+    "id": "honey",
+    "pl": "miód",
+    "en": "honey",
+    "distractors": [
+      "pasta",
+      "cheese",
+      "flour"
+    ]
+  },
+  {
+    "id": "jam",
+    "pl": "dżem",
+    "en": "jam",
+    "distractors": [
+      "salt",
+      "soup",
+      "butter"
+    ]
+  },
+  {
+    "id": "flour",
+    "pl": "mąka",
+    "en": "flour",
+    "distractors": [
+      "egg",
+      "sugar",
+      "pasta"
+    ]
+  },
+  {
+    "id": "oil",
+    "pl": "olej",
+    "en": "oil",
+    "distractors": [
+      "bread",
+      "milk",
+      "flour"
+    ]
+  },
+  {
+    "id": "coffee",
+    "pl": "kawa",
+    "en": "coffee",
+    "distractors": [
+      "lemonade",
+      "water",
+      "cocoa"
+    ]
+  },
+  {
+    "id": "lemonade",
+    "pl": "lemoniada",
+    "en": "lemonade",
+    "distractors": [
+      "water",
+      "coffee",
+      "cocoa"
+    ]
+  },
+  {
+    "id": "cocoa",
+    "pl": "kakao",
+    "en": "cocoa",
+    "distractors": [
+      "tea",
+      "juice",
+      "coffee"
+    ]
+  },
+  {
+    "id": "knife",
+    "pl": "nóż",
+    "en": "knife",
+    "distractors": [
+      "plate",
+      "stove",
+      "glass"
+    ]
+  },
+  {
+    "id": "fork",
+    "pl": "widelec",
+    "en": "fork",
+    "distractors": [
+      "pot",
+      "spoon",
+      "cup"
+    ]
+  },
+  {
+    "id": "spoon",
+    "pl": "łyżka",
+    "en": "spoon",
+    "distractors": [
+      "stove",
+      "plate",
+      "pot"
+    ]
+  },
+  {
+    "id": "plate",
+    "pl": "talerz",
+    "en": "plate",
+    "distractors": [
+      "cup",
+      "pot",
+      "bowl"
+    ]
+  },
+  {
+    "id": "cup",
+    "pl": "filiżanka",
+    "en": "cup",
+    "distractors": [
+      "spoon",
+      "pan",
+      "pot"
+    ]
+  },
+  {
+    "id": "glass",
+    "pl": "szklanka",
+    "en": "glass",
+    "distractors": [
+      "stove",
+      "pan",
+      "oven"
+    ]
+  },
+  {
+    "id": "bowl",
+    "pl": "miska",
+    "en": "bowl",
+    "distractors": [
+      "spoon",
+      "pan",
+      "plate"
+    ]
+  },
+  {
+    "id": "pot",
+    "pl": "garnek",
+    "en": "pot",
+    "distractors": [
+      "fork",
+      "plate",
+      "spoon"
+    ]
+  },
+  {
+    "id": "pan",
+    "pl": "patelnia",
+    "en": "pan",
+    "distractors": [
+      "cup",
+      "pot",
+      "stove"
+    ]
+  },
+  {
+    "id": "stove",
+    "pl": "kuchenka",
+    "en": "stove",
+    "distractors": [
+      "bowl",
+      "oven",
+      "pot"
+    ]
+  },
+  {
+    "id": "oven",
+    "pl": "piekarnik",
+    "en": "oven",
+    "distractors": [
+      "pot",
+      "knife",
+      "pan"
+    ]
+  },
+  {
+    "id": "living-room",
+    "pl": "salon",
+    "en": "living room",
+    "distractors": [
+      "attic",
+      "hall",
+      "garden"
+    ]
+  },
+  {
+    "id": "balcony",
+    "pl": "balkon",
+    "en": "balcony",
+    "distractors": [
+      "window",
+      "stairs",
+      "garden"
+    ]
+  },
+  {
+    "id": "basement",
+    "pl": "piwnica",
+    "en": "basement",
+    "distractors": [
+      "garden",
+      "balcony",
+      "window"
+    ]
+  },
+  {
+    "id": "attic",
+    "pl": "strych",
+    "en": "attic",
+    "distractors": [
+      "balcony",
+      "living room",
+      "garden"
+    ]
+  },
+  {
+    "id": "hall",
+    "pl": "korytarz",
+    "en": "hall",
+    "distractors": [
+      "bathroom",
+      "balcony",
+      "door"
+    ]
+  },
+  {
+    "id": "stairs",
+    "pl": "schody",
+    "en": "stairs",
+    "distractors": [
+      "garden",
+      "living room",
+      "basement"
+    ]
+  },
+  {
+    "id": "gloves",
+    "pl": "rękawiczki",
+    "en": "gloves",
+    "distractors": [
+      "jacket",
+      "hat",
+      "socks"
+    ]
+  },
+  {
+    "id": "boots",
+    "pl": "buty",
+    "en": "boots",
+    "distractors": [
+      "sweater",
+      "coat",
+      "dress"
+    ]
+  },
+  {
+    "id": "wolf",
+    "pl": "wilk",
+    "en": "wolf",
+    "distractors": [
+      "bear",
+      "fox",
+      "butterfly"
+    ]
+  },
+  {
+    "id": "deer",
+    "pl": "jeleń",
+    "en": "deer",
+    "distractors": [
+      "butterfly",
+      "whale",
+      "dolphin"
+    ]
+  },
+  {
+    "id": "squirrel",
+    "pl": "wiewiórka",
+    "en": "squirrel",
+    "distractors": [
+      "whale",
+      "wolf",
+      "spider"
+    ]
+  },
+  {
+    "id": "owl",
+    "pl": "sowa",
+    "en": "owl",
+    "distractors": [
+      "wolf",
+      "fox",
+      "lion"
+    ]
+  },
+  {
+    "id": "parrot",
+    "pl": "papuga",
+    "en": "parrot",
+    "distractors": [
+      "ant",
+      "owl",
+      "elephant"
+    ]
+  },
+  {
+    "id": "penguin",
+    "pl": "pingwin",
+    "en": "penguin",
+    "distractors": [
+      "whale",
+      "bear",
+      "elephant"
+    ]
+  },
+  {
+    "id": "dolphin",
+    "pl": "delfin",
+    "en": "dolphin",
+    "distractors": [
+      "bee",
+      "deer",
+      "bear"
+    ]
+  },
+  {
+    "id": "shark",
+    "pl": "rekin",
+    "en": "shark",
+    "distractors": [
+      "ant",
+      "turtle",
+      "elephant"
+    ]
+  },
+  {
+    "id": "whale",
+    "pl": "wieloryb",
+    "en": "whale",
+    "distractors": [
+      "lion",
+      "ant",
+      "bee"
+    ]
+  },
+  {
+    "id": "turtle",
+    "pl": "żółw",
+    "en": "turtle",
+    "distractors": [
+      "rabbit",
+      "bee",
+      "shark"
+    ]
+  },
+  {
+    "id": "butterfly",
+    "pl": "motyl",
+    "en": "butterfly",
+    "distractors": [
+      "bee",
+      "tiger",
+      "whale"
+    ]
+  },
+  {
+    "id": "bee",
+    "pl": "pszczoła",
+    "en": "bee",
+    "distractors": [
+      "parrot",
+      "elephant",
+      "whale"
+    ]
+  },
+  {
+    "id": "ant",
+    "pl": "mrówka",
+    "en": "ant",
+    "distractors": [
+      "deer",
+      "dolphin",
+      "lion"
+    ]
+  },
+  {
+    "id": "fox",
+    "pl": "lis",
+    "en": "fox",
+    "distractors": [
+      "tiger",
+      "deer",
+      "squirrel"
+    ]
+  },
+  {
+    "id": "classroom",
+    "pl": "klasa",
+    "en": "classroom",
+    "distractors": [
+      "test",
+      "homework",
+      "lesson"
+    ]
+  },
+  {
+    "id": "test",
+    "pl": "sprawdzian",
+    "en": "test",
+    "distractors": [
+      "grade",
+      "homework",
+      "break"
+    ]
+  },
+  {
+    "id": "grade",
+    "pl": "ocena",
+    "en": "grade",
+    "distractors": [
+      "test",
+      "classroom",
+      "bell"
+    ]
+  },
+  {
+    "id": "break",
+    "pl": "przerwa",
+    "en": "break",
+    "distractors": [
+      "uniform",
+      "bell",
+      "dictionary"
+    ]
+  },
+  {
+    "id": "uniform",
+    "pl": "mundurek",
+    "en": "uniform",
+    "distractors": [
+      "classroom",
+      "lesson",
+      "break"
+    ]
+  },
+  {
+    "id": "bell",
+    "pl": "dzwonek",
+    "en": "bell",
+    "distractors": [
+      "homework",
+      "exam",
+      "dictionary"
+    ]
+  },
+  {
+    "id": "subject",
+    "pl": "przedmiot",
+    "en": "subject",
+    "distractors": [
+      "exam",
+      "homework",
+      "dictionary"
+    ]
+  },
+  {
+    "id": "dictionary",
+    "pl": "słownik",
+    "en": "dictionary",
+    "distractors": [
+      "classroom",
+      "uniform",
+      "exam"
+    ]
+  },
+  {
+    "id": "bicycle",
+    "pl": "rower",
+    "en": "bicycle",
+    "distractors": [
+      "train",
+      "truck",
+      "plane"
+    ]
+  },
+  {
+    "id": "motorcycle",
+    "pl": "motocykl",
+    "en": "motorcycle",
+    "distractors": [
+      "helicopter",
+      "ship",
+      "train"
+    ]
+  },
+  {
+    "id": "taxi",
+    "pl": "taksówka",
+    "en": "taxi",
+    "distractors": [
+      "helicopter",
+      "plane",
+      "boat"
+    ]
+  },
+  {
+    "id": "truck",
+    "pl": "ciężarówka",
+    "en": "truck",
+    "distractors": [
+      "ship",
+      "boat",
+      "plane"
+    ]
+  },
+  {
+    "id": "tram",
+    "pl": "tramwaj",
+    "en": "tram",
+    "distractors": [
+      "boat",
+      "taxi",
+      "train"
+    ]
+  },
+  {
+    "id": "helicopter",
+    "pl": "helikopter",
+    "en": "helicopter",
+    "distractors": [
+      "bicycle",
+      "bus",
+      "car"
+    ]
+  },
+  {
+    "id": "hill",
+    "pl": "wzgórze",
+    "en": "hill",
+    "distractors": [
+      "lake",
+      "tree",
+      "valley"
+    ]
+  },
+  {
+    "id": "valley",
+    "pl": "dolina",
+    "en": "valley",
+    "distractors": [
+      "grass",
+      "desert",
+      "mountain"
+    ]
+  },
+  {
+    "id": "desert",
+    "pl": "pustynia",
+    "en": "desert",
+    "distractors": [
+      "flower",
+      "sand",
+      "sea"
+    ]
+  },
+  {
+    "id": "island",
+    "pl": "wyspa",
+    "en": "island",
+    "distractors": [
+      "cave",
+      "stone",
+      "tree"
+    ]
+  },
+  {
+    "id": "cave",
+    "pl": "jaskinia",
+    "en": "cave",
+    "distractors": [
+      "sand",
+      "grass",
+      "hill"
+    ]
+  },
+  {
+    "id": "field",
+    "pl": "pole",
+    "en": "field",
+    "distractors": [
+      "hill",
+      "sea",
+      "tree"
+    ]
+  },
+  {
+    "id": "stone",
+    "pl": "kamień",
+    "en": "stone",
+    "distractors": [
+      "sea",
+      "cave",
+      "tree"
+    ]
+  },
+  {
+    "id": "sand",
+    "pl": "piasek",
+    "en": "sand",
+    "distractors": [
+      "sea",
+      "ocean",
+      "flower"
+    ]
+  },
+  {
+    "id": "soon",
+    "pl": "wkrótce",
+    "en": "soon",
+    "distractors": [
+      "now",
+      "always",
+      "morning"
+    ]
+  },
+  {
+    "id": "late",
+    "pl": "późno",
+    "en": "late",
+    "distractors": [
+      "afternoon",
+      "morning",
+      "today"
+    ]
+  },
+  {
+    "id": "early",
+    "pl": "wcześnie",
+    "en": "early",
+    "distractors": [
+      "night",
+      "late",
+      "often"
+    ]
+  },
+  {
+    "id": "excited",
+    "pl": "podekscytowany",
+    "en": "excited",
+    "distractors": [
+      "scared",
+      "tired",
+      "healthy"
+    ]
+  },
+  {
+    "id": "bored",
+    "pl": "znudzony",
+    "en": "bored",
+    "distractors": [
+      "calm",
+      "hungry",
+      "surprised"
+    ]
+  },
+  {
+    "id": "angry",
+    "pl": "zły",
+    "en": "angry",
+    "distractors": [
+      "hungry",
+      "bored",
+      "calm"
+    ]
+  },
+  {
+    "id": "scared",
+    "pl": "przestraszony",
+    "en": "scared",
+    "distractors": [
+      "proud",
+      "calm",
+      "surprised"
+    ]
+  },
+  {
+    "id": "surprised",
+    "pl": "zaskoczony",
+    "en": "surprised",
+    "distractors": [
+      "excited",
+      "sick",
+      "nervous"
+    ]
+  },
+  {
+    "id": "proud",
+    "pl": "dumny",
+    "en": "proud",
+    "distractors": [
+      "lonely",
+      "hungry",
+      "angry"
+    ]
+  },
+  {
+    "id": "lonely",
+    "pl": "samotny",
+    "en": "lonely",
+    "distractors": [
+      "bored",
+      "excited",
+      "nervous"
+    ]
+  },
+  {
+    "id": "calm",
+    "pl": "spokojny",
+    "en": "calm",
+    "distractors": [
+      "hungry",
+      "scared",
+      "sick"
+    ]
+  },
+  {
+    "id": "nervous",
+    "pl": "zdenerwowany",
+    "en": "nervous",
+    "distractors": [
+      "angry",
+      "lonely",
+      "proud"
+    ]
+  },
+  {
+    "id": "tired",
+    "pl": "zmęczony",
+    "en": "tired",
+    "distractors": [
+      "angry",
+      "lonely",
+      "thirsty"
+    ]
+  },
+  {
+    "id": "hungry",
+    "pl": "głodny",
+    "en": "hungry",
+    "distractors": [
+      "bored",
+      "healthy",
+      "nervous"
+    ]
+  },
+  {
+    "id": "thirsty",
+    "pl": "spragniony",
+    "en": "thirsty",
+    "distractors": [
+      "tired",
+      "hungry",
+      "excited"
+    ]
+  },
+  {
+    "id": "sick",
+    "pl": "chory",
+    "en": "sick",
+    "distractors": [
+      "bored",
+      "excited",
+      "calm"
+    ]
+  },
+  {
+    "id": "healthy",
+    "pl": "zdrowy",
+    "en": "healthy",
+    "distractors": [
+      "sick",
+      "surprised",
+      "proud"
+    ]
+  },
+  {
+    "id": "cook-job",
+    "pl": "kucharz",
+    "en": "cook",
+    "distractors": [
+      "firefighter",
+      "farmer",
+      "scientist"
+    ]
+  },
+  {
+    "id": "actor-job",
+    "pl": "aktor",
+    "en": "actor",
+    "distractors": [
+      "farmer",
+      "doctor",
+      "builder"
+    ]
+  },
+  {
+    "id": "writer",
+    "pl": "pisarz",
+    "en": "writer",
+    "distractors": [
+      "cook",
+      "nurse",
+      "actor"
+    ]
+  },
+  {
+    "id": "artist",
+    "pl": "artysta",
+    "en": "artist",
+    "distractors": [
+      "pilot",
+      "firefighter",
+      "nurse"
+    ]
+  },
+  {
+    "id": "scientist",
+    "pl": "naukowiec",
+    "en": "scientist",
+    "distractors": [
+      "nurse",
+      "doctor",
+      "firefighter"
+    ]
+  },
+  {
+    "id": "elbow",
+    "pl": "łokieć",
+    "en": "elbow",
+    "distractors": [
+      "toe",
+      "knee",
+      "shoulder"
+    ]
+  },
+  {
+    "id": "ankle",
+    "pl": "kostka",
+    "en": "ankle",
+    "distractors": [
+      "shoulder",
+      "wrist",
+      "chest"
+    ]
+  },
+  {
+    "id": "wrist",
+    "pl": "nadgarstek",
+    "en": "wrist",
+    "distractors": [
+      "ankle",
+      "shoulder",
+      "chest"
+    ]
+  },
+  {
+    "id": "throat",
+    "pl": "gardło",
+    "en": "throat",
+    "distractors": [
+      "wrist",
+      "heart",
+      "back"
+    ]
+  },
+  {
+    "id": "toe",
+    "pl": "palec u nogi",
+    "en": "toe",
+    "distractors": [
+      "throat",
+      "elbow",
+      "shoulder"
+    ]
+  },
+  {
+    "id": "heart-body",
+    "pl": "serce",
+    "en": "heart",
+    "distractors": [
+      "back",
+      "elbow",
+      "chest"
+    ]
+  },
+  {
+    "id": "jump",
+    "pl": "skakać",
+    "en": "jump",
+    "distractors": [
+      "pull",
+      "fly",
+      "bring"
+    ]
+  },
+  {
+    "id": "swim",
+    "pl": "pływać",
+    "en": "swim",
+    "distractors": [
+      "finish",
+      "give",
+      "open"
+    ]
+  },
+  {
+    "id": "fly",
+    "pl": "latać",
+    "en": "fly",
+    "distractors": [
+      "finish",
+      "give",
+      "carry"
+    ]
+  },
+  {
+    "id": "climb",
+    "pl": "wspinać się",
+    "en": "climb",
+    "distractors": [
+      "take",
+      "sell",
+      "open"
+    ]
+  },
+  {
+    "id": "fall",
+    "pl": "spadać",
+    "en": "fall",
+    "distractors": [
+      "pull",
+      "throw",
+      "take"
+    ]
+  },
+  {
+    "id": "carry",
+    "pl": "nosić",
+    "en": "carry",
+    "distractors": [
+      "fly",
+      "take",
+      "throw"
+    ]
+  },
+  {
+    "id": "bring",
+    "pl": "przynosić",
+    "en": "bring",
+    "distractors": [
+      "jump",
+      "open",
+      "push"
+    ]
+  },
+  {
+    "id": "take",
+    "pl": "brać",
+    "en": "take",
+    "distractors": [
+      "jump",
+      "pull",
+      "begin"
+    ]
+  },
+  {
+    "id": "give",
+    "pl": "dawać",
+    "en": "give",
+    "distractors": [
+      "throw",
+      "open",
+      "close"
+    ]
+  },
+  {
+    "id": "buy",
+    "pl": "kupować",
+    "en": "buy",
+    "distractors": [
+      "throw",
+      "fall",
+      "take"
+    ]
+  },
+  {
+    "id": "sell",
+    "pl": "sprzedawać",
+    "en": "sell",
+    "distractors": [
+      "fly",
+      "finish",
+      "open"
+    ]
+  },
+  {
+    "id": "open",
+    "pl": "otwierać",
+    "en": "open",
+    "distractors": [
+      "give",
+      "sell",
+      "swim"
+    ]
+  },
+  {
+    "id": "close",
+    "pl": "zamykać",
+    "en": "close",
+    "distractors": [
+      "fly",
+      "carry",
+      "catch"
+    ]
+  },
+  {
+    "id": "stop",
+    "pl": "zatrzymywać",
+    "en": "stop",
+    "distractors": [
+      "pull",
+      "buy",
+      "catch"
+    ]
+  },
+  {
+    "id": "finish",
+    "pl": "kończyć",
+    "en": "finish",
+    "distractors": [
+      "sell",
+      "swim",
+      "stop"
+    ]
+  },
+  {
+    "id": "begin",
+    "pl": "zaczynać",
+    "en": "begin",
+    "distractors": [
+      "pull",
+      "give",
+      "fly"
+    ]
+  },
+  {
+    "id": "throw",
+    "pl": "rzucać",
+    "en": "throw",
+    "distractors": [
+      "fly",
+      "jump",
+      "stop"
+    ]
+  },
+  {
+    "id": "catch",
+    "pl": "łapać",
+    "en": "catch",
+    "distractors": [
+      "swim",
+      "throw",
+      "give"
+    ]
+  },
+  {
+    "id": "push",
+    "pl": "pchać",
+    "en": "push",
+    "distractors": [
+      "finish",
+      "fly",
+      "take"
+    ]
+  },
+  {
+    "id": "pull",
+    "pl": "ciągnąć",
+    "en": "pull",
+    "distractors": [
+      "buy",
+      "stop",
+      "carry"
+    ]
+  },
+  {
+    "id": "soft",
+    "pl": "miękki",
+    "en": "soft",
+    "distractors": [
+      "empty",
+      "heavy",
+      "sour"
+    ]
+  },
+  {
+    "id": "hard",
+    "pl": "twardy",
+    "en": "hard",
+    "distractors": [
+      "fast",
+      "tasty",
+      "heavy"
+    ]
+  },
+  {
+    "id": "dirty",
+    "pl": "brudny",
+    "en": "dirty",
+    "distractors": [
+      "spicy",
+      "fast",
+      "hard"
+    ]
+  },
+  {
+    "id": "cheap",
+    "pl": "tani",
+    "en": "cheap",
+    "distractors": [
+      "dirty",
+      "tasty",
+      "fast"
+    ]
+  },
+  {
+    "id": "expensive",
+    "pl": "drogi",
+    "en": "expensive",
+    "distractors": [
+      "difficult",
+      "wide",
+      "fresh"
+    ]
+  },
+  {
+    "id": "empty",
+    "pl": "pusty",
+    "en": "empty",
+    "distractors": [
+      "slow",
+      "sharp",
+      "fast"
+    ]
+  },
+  {
+    "id": "full",
+    "pl": "pełny",
+    "en": "full",
+    "distractors": [
+      "narrow",
+      "shallow",
+      "important"
+    ]
+  },
+  {
+    "id": "near",
+    "pl": "bliski",
+    "en": "near",
+    "distractors": [
+      "hard",
+      "fresh",
+      "cheap"
+    ]
+  },
+  {
+    "id": "far",
+    "pl": "daleki",
+    "en": "far",
+    "distractors": [
+      "rich",
+      "clean",
+      "narrow"
+    ]
+  },
+  {
+    "id": "heavy",
+    "pl": "ciężki",
+    "en": "heavy",
+    "distractors": [
+      "sour",
+      "empty",
+      "dirty"
+    ]
+  },
+  {
+    "id": "sharp",
+    "pl": "ostry",
+    "en": "sharp",
+    "distractors": [
+      "fresh",
+      "salty",
+      "soft"
+    ]
+  },
+  {
+    "id": "sweet",
+    "pl": "słodki",
+    "en": "sweet",
+    "distractors": [
+      "fresh",
+      "interesting",
+      "spicy"
+    ]
+  },
+  {
+    "id": "sour",
+    "pl": "kwaśny",
+    "en": "sour",
+    "distractors": [
+      "narrow",
+      "spicy",
+      "poor"
+    ]
+  },
+  {
+    "id": "salty",
+    "pl": "słony",
+    "en": "salty",
+    "distractors": [
+      "spicy",
+      "soft",
+      "expensive"
+    ]
+  },
+  {
+    "id": "spicy",
+    "pl": "pikantny",
+    "en": "spicy",
+    "distractors": [
+      "expensive",
+      "near",
+      "sour"
+    ]
+  },
+  {
+    "id": "tasty",
+    "pl": "smaczny",
+    "en": "tasty",
+    "distractors": [
+      "spicy",
+      "rich",
+      "difficult"
+    ]
+  },
+  {
+    "id": "fresh",
+    "pl": "świeży",
+    "en": "fresh",
+    "distractors": [
+      "hard",
+      "empty",
+      "clean"
+    ]
+  },
+  {
+    "id": "rich",
+    "pl": "bogaty",
+    "en": "rich",
+    "distractors": [
+      "full",
+      "fast",
+      "tasty"
+    ]
+  },
+  {
+    "id": "poor",
+    "pl": "biedny",
+    "en": "poor",
+    "distractors": [
+      "wide",
+      "far",
+      "slow"
+    ]
+  },
+  {
+    "id": "wide",
+    "pl": "szeroki",
+    "en": "wide",
+    "distractors": [
+      "tasty",
+      "poor",
+      "difficult"
+    ]
+  },
+  {
+    "id": "narrow",
+    "pl": "wąski",
+    "en": "narrow",
+    "distractors": [
+      "near",
+      "full",
+      "poor"
+    ]
+  },
+  {
+    "id": "deep",
+    "pl": "głęboki",
+    "en": "deep",
+    "distractors": [
+      "tasty",
+      "far",
+      "sharp"
+    ]
+  },
+  {
+    "id": "shallow",
+    "pl": "płytki",
+    "en": "shallow",
+    "distractors": [
+      "deep",
+      "tasty",
+      "rich"
+    ]
+  },
+  {
+    "id": "important",
+    "pl": "ważny",
+    "en": "important",
+    "distractors": [
+      "boring",
+      "far",
+      "spicy"
+    ]
+  },
+  {
+    "id": "market",
+    "pl": "rynek",
+    "en": "market",
+    "distractors": [
+      "bakery",
+      "bank",
+      "airport"
+    ]
+  },
+  {
+    "id": "church",
+    "pl": "kościół",
+    "en": "church",
+    "distractors": [
+      "shop",
+      "market",
+      "cafe"
+    ]
+  },
+  {
+    "id": "theater",
+    "pl": "teatr",
+    "en": "theater",
+    "distractors": [
+      "market",
+      "pharmacy",
+      "bakery"
+    ]
+  },
+  {
+    "id": "cafe",
+    "pl": "kawiarnia",
+    "en": "cafe",
+    "distractors": [
+      "market",
+      "museum",
+      "bakery"
+    ]
+  },
+  {
+    "id": "bakery",
+    "pl": "piekarnia",
+    "en": "bakery",
+    "distractors": [
+      "museum",
+      "cinema",
+      "theater"
+    ]
+  },
+  {
+    "id": "pharmacy",
+    "pl": "apteka",
+    "en": "pharmacy",
+    "distractors": [
+      "zoo",
+      "park",
+      "cafe"
+    ]
+  },
+  {
+    "id": "poland",
+    "pl": "Polska",
+    "en": "Poland",
+    "distractors": [
+      "America",
+      "Canada",
+      "Japan"
+    ]
+  },
+  {
+    "id": "england",
+    "pl": "Anglia",
+    "en": "England",
+    "distractors": [
+      "America",
+      "France",
+      "Japan"
+    ]
+  },
+  {
+    "id": "germany",
+    "pl": "Niemcy",
+    "en": "Germany",
+    "distractors": [
+      "France",
+      "Spain",
+      "Italy"
+    ]
+  },
+  {
+    "id": "france",
+    "pl": "Francja",
+    "en": "France",
+    "distractors": [
+      "America",
+      "England",
+      "Canada"
+    ]
+  },
+  {
+    "id": "spain",
+    "pl": "Hiszpania",
+    "en": "Spain",
+    "distractors": [
+      "China",
+      "France",
+      "Poland"
+    ]
+  },
+  {
+    "id": "italy",
+    "pl": "Włochy",
+    "en": "Italy",
+    "distractors": [
+      "Japan",
+      "England",
+      "Spain"
+    ]
+  },
+  {
+    "id": "america",
+    "pl": "Ameryka",
+    "en": "America",
+    "distractors": [
+      "Spain",
+      "Poland",
+      "Germany"
+    ]
+  },
+  {
+    "id": "canada",
+    "pl": "Kanada",
+    "en": "Canada",
+    "distractors": [
+      "Japan",
+      "China",
+      "Spain"
+    ]
+  },
+  {
+    "id": "japan",
+    "pl": "Japonia",
+    "en": "Japan",
+    "distractors": [
+      "France",
+      "England",
+      "Italy"
+    ]
+  },
+  {
+    "id": "china",
+    "pl": "Chiny",
+    "en": "China",
+    "distractors": [
+      "Germany",
+      "Spain",
+      "Canada"
+    ]
+  },
+  {
+    "id": "guitar",
+    "pl": "gitara",
+    "en": "guitar",
+    "distractors": [
+      "piano",
+      "drum",
+      "violin"
+    ]
+  },
+  {
+    "id": "piano",
+    "pl": "pianino",
+    "en": "piano",
+    "distractors": [
+      "guitar",
+      "drum",
+      "flute"
+    ]
+  },
+  {
+    "id": "violin",
+    "pl": "skrzypce",
+    "en": "violin",
+    "distractors": [
+      "guitar",
+      "piano",
+      "drum"
+    ]
   }
-  
 ]

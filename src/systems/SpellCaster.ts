@@ -13,6 +13,10 @@ interface SpellState {
   current: number;
   unlocked: boolean;
   rank: number; // 0 when locked; 1..MAX_RANK when unlocked
+  // How many of the rank-ups were taken under the WEAKENED flag (i.e.
+  // the player made a mistake in the level-up gate). Each weakened rank
+  // contributes half the usual rank-bonus to damage/heal/cooldown math.
+  weakenedRanks: number;
 }
 
 // Priority order per tick: Heal > Fire > Ice. One spell casts per frame.
@@ -25,9 +29,9 @@ export class SpellCaster {
   private readonly spells: Record<SpellId, SpellState> = {
     // Cooldowns tuned so the opener usually lands within ~15s of the
     // spell being picked (new skills start "ready to cast").
-    heal: { id: 'heal', baseCooldownAtRank1: 35_000, current: 35_000, unlocked: false, rank: 0 },
-    fire: { id: 'fire', baseCooldownAtRank1: 30_000, current: 30_000, unlocked: false, rank: 0 },
-    ice:  { id: 'ice',  baseCooldownAtRank1: 22_000, current: 22_000, unlocked: false, rank: 0 },
+    heal: { id: 'heal', baseCooldownAtRank1: 35_000, current: 35_000, unlocked: false, rank: 0, weakenedRanks: 0 },
+    fire: { id: 'fire', baseCooldownAtRank1: 30_000, current: 30_000, unlocked: false, rank: 0, weakenedRanks: 0 },
+    ice:  { id: 'ice',  baseCooldownAtRank1: 22_000, current: 22_000, unlocked: false, rank: 0, weakenedRanks: 0 },
   };
 
   constructor(private readonly scene: Phaser.Scene) {}
@@ -42,11 +46,13 @@ export class SpellCaster {
     s.current = 0;
   }
 
-  upgrade(id: SpellId) {
+  upgrade(id: SpellId, weakened = false) {
     const s = this.spells[id];
     if (!s.unlocked || s.rank >= MAX_RANK) return;
     s.rank += 1;
-    // New cooldown drops 15% per rank above 1, cap current at the new base.
+    if (weakened) s.weakenedRanks += 1;
+    // New cooldown drops 15% per rank above 1 (or 7.5% if this rank was
+    // taken weakened, via cooldownScale below). Cap current at new base.
     if (s.current > this.getBaseCooldown(id)) s.current = this.getBaseCooldown(id);
   }
 
@@ -74,27 +80,38 @@ export class SpellCaster {
 
   // ────────── per-rank effect scaling ──────────
 
-  private rankMultiplier(rank: number): number {
-    // Rank 1 = 1.00, Rank 2 = 1.35, Rank 3 = 1.70
-    return 1 + 0.35 * Math.max(0, rank - 1);
+  // A spell's effective "bonus rank count" is (rank - 1) normally, but
+  // each WEAKENED rank contributes only 0.5 instead of 1 — so a spell
+  // with rank 3 and one weakened rank sits at effective +1.5 ranks
+  // (= 2 full + 1 half).
+  private effectiveBonus(s: SpellState): number {
+    const normalBonus = Math.max(0, s.rank - 1 - s.weakenedRanks);
+    return normalBonus + 0.5 * s.weakenedRanks;
   }
 
-  private cooldownScale(rank: number): number {
-    // Rank 1 = 1.00, Rank 2 = 0.85, Rank 3 = 0.70
-    return Math.max(0.5, 1 - 0.15 * Math.max(0, rank - 1));
+  private rankMultiplier(s: SpellState): number {
+    // Rank 1 = 1.00, Rank 2 = 1.35, Rank 3 = 1.70; weakened ranks
+    // contribute half the +0.35 bonus.
+    return 1 + 0.35 * this.effectiveBonus(s);
+  }
+
+  private cooldownScale(s: SpellState): number {
+    // Rank 1 = 1.00, Rank 2 = 0.85, Rank 3 = 0.70; weakened ranks only
+    // trim 7.5% instead of 15%.
+    return Math.max(0.5, 1 - 0.15 * this.effectiveBonus(s));
   }
 
   private fireDamage(): number {
-    return Math.round(30 * this.rankMultiplier(this.spells.fire.rank));
+    return Math.round(30 * this.rankMultiplier(this.spells.fire));
   }
   private iceDamage(): number {
-    return Math.round(10 * this.rankMultiplier(this.spells.ice.rank));
+    return Math.round(10 * this.rankMultiplier(this.spells.ice));
   }
   private iceSlowMs(): number {
-    return Math.round(3000 * this.rankMultiplier(this.spells.ice.rank));
+    return Math.round(3000 * this.rankMultiplier(this.spells.ice));
   }
   private healAmount(): number {
-    return Math.round(50 * this.rankMultiplier(this.spells.heal.rank));
+    return Math.round(50 * this.rankMultiplier(this.spells.heal));
   }
 
   // ────────── main tick ──────────
@@ -147,8 +164,10 @@ export class SpellCaster {
   getBaseCooldown(id: SpellId): number {
     const s = this.spells[id];
     // If locked, return rank-1 base so HUD shows a consistent fill value.
-    const effectiveRank = Math.max(1, s.rank);
-    return s.baseCooldownAtRank1 * this.cooldownScale(effectiveRank);
+    const refState: SpellState = s.rank < 1
+      ? { ...s, rank: 1, weakenedRanks: 0 }
+      : s;
+    return s.baseCooldownAtRank1 * this.cooldownScale(refState);
   }
 
   private castFire(targets: Enemy[]) {

@@ -1,0 +1,1506 @@
+[
+  {
+    "id": "little-knight",
+    "title": "The Little Knight",
+    "sentences": [
+      {
+        "id": "little-knight-1",
+        "pl": "Mały odważny rycerz mieszka w starym zamku.",
+        "steps": [
+          {
+            "correct": "A",
+            "distractor": "The"
+          },
+          {
+            "correct": "brave",
+            "distractor": "scared"
+          },
+          {
+            "correct": "little",
+            "distractor": "big"
+          },
+          {
+            "correct": "knight",
+            "distractor": "king"
+          },
+          {
+            "correct": "lives",
+            "distractor": "live"
+          },
+          {
+            "correct": "in",
+            "distractor": "on"
+          },
+          {
+            "correct": "an",
+            "distractor": "the"
+          },
+          {
+            "correct": "old",
+            "distractor": "new"
+          },
+          {
+            "correct": "castle",
+            "distractor": "house"
+          }
+        ]
+      },
+      {
+        "id": "little-knight-2",
+        "pl": "Pewnego dnia wielki smok atakuje wioskę.",
+        "steps": [
+          {
+            "correct": "One",
+            "distractor": "Some"
+          },
+          {
+            "correct": "day",
+            "distractor": "night"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "big",
+            "distractor": "small"
+          },
+          {
+            "correct": "dragon",
+            "distractor": "bear"
+          },
+          {
+            "correct": "attacks",
+            "distractor": "attack"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "village",
+            "distractor": "forest"
+          }
+        ]
+      },
+      {
+        "id": "little-knight-3",
+        "pl": "Rycerz bierze swój ostry srebrny miecz.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "knight",
+            "distractor": "wizard"
+          },
+          {
+            "correct": "takes",
+            "distractor": "take"
+          },
+          {
+            "correct": "his",
+            "distractor": "her"
+          },
+          {
+            "correct": "sharp",
+            "distractor": "dull"
+          },
+          {
+            "correct": "silver",
+            "distractor": "gold"
+          },
+          {
+            "correct": "sword",
+            "distractor": "shield"
+          }
+        ]
+      },
+      {
+        "id": "little-knight-4",
+        "pl": "Walczy ze smokiem i ratuje wszystkich ludzi.",
+        "steps": [
+          {
+            "correct": "He",
+            "distractor": "She"
+          },
+          {
+            "correct": "fights",
+            "distractor": "fight"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "dragon",
+            "distractor": "wolf"
+          },
+          {
+            "correct": "and",
+            "distractor": "or"
+          },
+          {
+            "correct": "saves",
+            "distractor": "save"
+          },
+          {
+            "correct": "all",
+            "distractor": "some"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "people",
+            "distractor": "friends"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lost-puppy",
+    "title": "The Lost Puppy",
+    "sentences": [
+      {
+        "id": "lost-puppy-1",
+        "pl": "Mały brązowy piesek zgubił się w lesie.",
+        "steps": [
+          {
+            "correct": "A",
+            "distractor": "The"
+          },
+          {
+            "correct": "small",
+            "distractor": "big"
+          },
+          {
+            "correct": "brown",
+            "distractor": "black"
+          },
+          {
+            "correct": "puppy",
+            "distractor": "cat"
+          },
+          {
+            "correct": "got",
+            "distractor": "gets"
+          },
+          {
+            "correct": "lost",
+            "distractor": "found"
+          },
+          {
+            "correct": "in",
+            "distractor": "on"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "forest",
+            "distractor": "field"
+          }
+        ]
+      },
+      {
+        "id": "lost-puppy-2",
+        "pl": "Piesek jest głodny i bardzo zmęczony.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "puppy",
+            "distractor": "bird"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "hungry",
+            "distractor": "full"
+          },
+          {
+            "correct": "and",
+            "distractor": "or"
+          },
+          {
+            "correct": "very",
+            "distractor": "quite"
+          },
+          {
+            "correct": "tired",
+            "distractor": "happy"
+          }
+        ]
+      },
+      {
+        "id": "lost-puppy-3",
+        "pl": "Miła dziewczynka znajduje go pod drzewem.",
+        "steps": [
+          {
+            "correct": "A",
+            "distractor": "The"
+          },
+          {
+            "correct": "kind",
+            "distractor": "mean"
+          },
+          {
+            "correct": "girl",
+            "distractor": "boy"
+          },
+          {
+            "correct": "finds",
+            "distractor": "find"
+          },
+          {
+            "correct": "him",
+            "distractor": "her"
+          },
+          {
+            "correct": "under",
+            "distractor": "over"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "tree",
+            "distractor": "rock"
+          }
+        ]
+      },
+      {
+        "id": "lost-puppy-4",
+        "pl": "Zabiera pieska do swojego ciepłego domu.",
+        "steps": [
+          {
+            "correct": "She",
+            "distractor": "He"
+          },
+          {
+            "correct": "takes",
+            "distractor": "take"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "puppy",
+            "distractor": "cat"
+          },
+          {
+            "correct": "to",
+            "distractor": "from"
+          },
+          {
+            "correct": "her",
+            "distractor": "his"
+          },
+          {
+            "correct": "warm",
+            "distractor": "cold"
+          },
+          {
+            "correct": "home",
+            "distractor": "school"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "magic-tree",
+    "title": "The Magic Tree",
+    "sentences": [
+      {
+        "id": "magic-tree-1",
+        "pl": "W zielonym lesie rośnie stare magiczne drzewo.",
+        "steps": [
+          {
+            "correct": "In",
+            "distractor": "On"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "green",
+            "distractor": "brown"
+          },
+          {
+            "correct": "forest",
+            "distractor": "garden"
+          },
+          {
+            "correct": "grows",
+            "distractor": "grow"
+          },
+          {
+            "correct": "an",
+            "distractor": "the"
+          },
+          {
+            "correct": "old",
+            "distractor": "young"
+          },
+          {
+            "correct": "magic",
+            "distractor": "broken"
+          },
+          {
+            "correct": "tree",
+            "distractor": "flower"
+          }
+        ]
+      },
+      {
+        "id": "magic-tree-2",
+        "pl": "Drzewo spełnia życzenie każdego dobrego dziecka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "tree",
+            "distractor": "rock"
+          },
+          {
+            "correct": "grants",
+            "distractor": "grant"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "wish",
+            "distractor": "gift"
+          },
+          {
+            "correct": "to",
+            "distractor": "for"
+          },
+          {
+            "correct": "every",
+            "distractor": "some"
+          },
+          {
+            "correct": "good",
+            "distractor": "bad"
+          },
+          {
+            "correct": "child",
+            "distractor": "dog"
+          }
+        ]
+      },
+      {
+        "id": "magic-tree-3",
+        "pl": "Mały chłopiec prosi o nowego szczeniaka.",
+        "steps": [
+          {
+            "correct": "A",
+            "distractor": "The"
+          },
+          {
+            "correct": "little",
+            "distractor": "big"
+          },
+          {
+            "correct": "boy",
+            "distractor": "girl"
+          },
+          {
+            "correct": "asks",
+            "distractor": "ask"
+          },
+          {
+            "correct": "for",
+            "distractor": "of"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "new",
+            "distractor": "old"
+          },
+          {
+            "correct": "puppy",
+            "distractor": "kitten"
+          }
+        ]
+      },
+      {
+        "id": "magic-tree-4",
+        "pl": "Nagle piesek pojawia się u jego stóp.",
+        "steps": [
+          {
+            "correct": "Suddenly",
+            "distractor": "Slowly"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "puppy",
+            "distractor": "bird"
+          },
+          {
+            "correct": "appears",
+            "distractor": "appear"
+          },
+          {
+            "correct": "at",
+            "distractor": "on"
+          },
+          {
+            "correct": "his",
+            "distractor": "her"
+          },
+          {
+            "correct": "feet",
+            "distractor": "hands"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "forest-picnic",
+    "title": "The Forest Picnic",
+    "sentences": [
+      {
+        "id": "forest-picnic-1",
+        "pl": "W słoneczny letni dzień idziemy do lasu.",
+        "steps": [
+          {
+            "correct": "On",
+            "distractor": "In"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "sunny",
+            "distractor": "rainy"
+          },
+          {
+            "correct": "summer",
+            "distractor": "winter"
+          },
+          {
+            "correct": "day",
+            "distractor": "night"
+          },
+          {
+            "correct": "we",
+            "distractor": "they"
+          },
+          {
+            "correct": "go",
+            "distractor": "goes"
+          },
+          {
+            "correct": "to",
+            "distractor": "from"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "forest",
+            "distractor": "city"
+          }
+        ]
+      },
+      {
+        "id": "forest-picnic-2",
+        "pl": "Mama robi smaczne kanapki ze świeżym serem.",
+        "steps": [
+          {
+            "correct": "Mom",
+            "distractor": "Dad"
+          },
+          {
+            "correct": "makes",
+            "distractor": "make"
+          },
+          {
+            "correct": "tasty",
+            "distractor": "awful"
+          },
+          {
+            "correct": "sandwiches",
+            "distractor": "cookies"
+          },
+          {
+            "correct": "with",
+            "distractor": "without"
+          },
+          {
+            "correct": "fresh",
+            "distractor": "old"
+          },
+          {
+            "correct": "cheese",
+            "distractor": "bread"
+          }
+        ]
+      },
+      {
+        "id": "forest-picnic-3",
+        "pl": "Siedzimy na miękkiej zielonej trawie.",
+        "steps": [
+          {
+            "correct": "We",
+            "distractor": "They"
+          },
+          {
+            "correct": "sit",
+            "distractor": "sits"
+          },
+          {
+            "correct": "on",
+            "distractor": "in"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "soft",
+            "distractor": "hard"
+          },
+          {
+            "correct": "green",
+            "distractor": "yellow"
+          },
+          {
+            "correct": "grass",
+            "distractor": "sand"
+          }
+        ]
+      },
+      {
+        "id": "forest-picnic-4",
+        "pl": "Słyszymy śpiew małych kolorowych ptaków.",
+        "steps": [
+          {
+            "correct": "We",
+            "distractor": "They"
+          },
+          {
+            "correct": "hear",
+            "distractor": "hears"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "song",
+            "distractor": "noise"
+          },
+          {
+            "correct": "of",
+            "distractor": "from"
+          },
+          {
+            "correct": "small",
+            "distractor": "big"
+          },
+          {
+            "correct": "colorful",
+            "distractor": "gray"
+          },
+          {
+            "correct": "birds",
+            "distractor": "bees"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "new-school-day",
+    "title": "The New School",
+    "sentences": [
+      {
+        "id": "new-school-day-1",
+        "pl": "Dzisiaj jest mój pierwszy dzień w nowej szkole.",
+        "steps": [
+          {
+            "correct": "Today",
+            "distractor": "Tomorrow"
+          },
+          {
+            "correct": "is",
+            "distractor": "was"
+          },
+          {
+            "correct": "my",
+            "distractor": "your"
+          },
+          {
+            "correct": "first",
+            "distractor": "last"
+          },
+          {
+            "correct": "day",
+            "distractor": "night"
+          },
+          {
+            "correct": "at",
+            "distractor": "in"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "new",
+            "distractor": "old"
+          },
+          {
+            "correct": "school",
+            "distractor": "park"
+          }
+        ]
+      },
+      {
+        "id": "new-school-day-2",
+        "pl": "Jestem trochę nieśmiały i bardzo zdenerwowany.",
+        "steps": [
+          {
+            "correct": "I",
+            "distractor": "We"
+          },
+          {
+            "correct": "am",
+            "distractor": "is"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "little",
+            "distractor": "very"
+          },
+          {
+            "correct": "shy",
+            "distractor": "bold"
+          },
+          {
+            "correct": "and",
+            "distractor": "but"
+          },
+          {
+            "correct": "very",
+            "distractor": "quite"
+          },
+          {
+            "correct": "nervous",
+            "distractor": "calm"
+          }
+        ]
+      },
+      {
+        "id": "new-school-day-3",
+        "pl": "Miła nauczycielka wita mnie z uśmiechem.",
+        "steps": [
+          {
+            "correct": "A",
+            "distractor": "The"
+          },
+          {
+            "correct": "kind",
+            "distractor": "mean"
+          },
+          {
+            "correct": "teacher",
+            "distractor": "student"
+          },
+          {
+            "correct": "greets",
+            "distractor": "greet"
+          },
+          {
+            "correct": "me",
+            "distractor": "him"
+          },
+          {
+            "correct": "with",
+            "distractor": "without"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "smile",
+            "distractor": "book"
+          }
+        ]
+      },
+      {
+        "id": "new-school-day-4",
+        "pl": "Spotykam dwóch nowych śmiesznych kolegów.",
+        "steps": [
+          {
+            "correct": "I",
+            "distractor": "We"
+          },
+          {
+            "correct": "meet",
+            "distractor": "meets"
+          },
+          {
+            "correct": "two",
+            "distractor": "three"
+          },
+          {
+            "correct": "new",
+            "distractor": "old"
+          },
+          {
+            "correct": "funny",
+            "distractor": "serious"
+          },
+          {
+            "correct": "friends",
+            "distractor": "teachers"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "summer-beach",
+    "title": "The Summer Beach",
+    "sentences": [
+      {
+        "id": "summer-beach-1",
+        "pl": "Nasza rodzina jedzie na piękną piaszczystą plażę.",
+        "steps": [
+          {
+            "correct": "Our",
+            "distractor": "Your"
+          },
+          {
+            "correct": "family",
+            "distractor": "friend"
+          },
+          {
+            "correct": "goes",
+            "distractor": "go"
+          },
+          {
+            "correct": "to",
+            "distractor": "from"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "beautiful",
+            "distractor": "ugly"
+          },
+          {
+            "correct": "sandy",
+            "distractor": "rocky"
+          },
+          {
+            "correct": "beach",
+            "distractor": "lake"
+          }
+        ]
+      },
+      {
+        "id": "summer-beach-2",
+        "pl": "Gorące żółte słońce świeci na niebieskim niebie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "hot",
+            "distractor": "cold"
+          },
+          {
+            "correct": "yellow",
+            "distractor": "white"
+          },
+          {
+            "correct": "sun",
+            "distractor": "moon"
+          },
+          {
+            "correct": "shines",
+            "distractor": "shine"
+          },
+          {
+            "correct": "in",
+            "distractor": "on"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "blue",
+            "distractor": "green"
+          },
+          {
+            "correct": "sky",
+            "distractor": "sea"
+          }
+        ]
+      },
+      {
+        "id": "summer-beach-3",
+        "pl": "Mój brat buduje duży zamek z mokrego piasku.",
+        "steps": [
+          {
+            "correct": "My",
+            "distractor": "Your"
+          },
+          {
+            "correct": "brother",
+            "distractor": "sister"
+          },
+          {
+            "correct": "builds",
+            "distractor": "build"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "big",
+            "distractor": "small"
+          },
+          {
+            "correct": "castle",
+            "distractor": "house"
+          },
+          {
+            "correct": "from",
+            "distractor": "with"
+          },
+          {
+            "correct": "wet",
+            "distractor": "dry"
+          },
+          {
+            "correct": "sand",
+            "distractor": "stone"
+          }
+        ]
+      },
+      {
+        "id": "summer-beach-4",
+        "pl": "Pływam w chłodnej słonej wodzie.",
+        "steps": [
+          {
+            "correct": "I",
+            "distractor": "We"
+          },
+          {
+            "correct": "swim",
+            "distractor": "swims"
+          },
+          {
+            "correct": "in",
+            "distractor": "on"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "cool",
+            "distractor": "warm"
+          },
+          {
+            "correct": "salty",
+            "distractor": "sweet"
+          },
+          {
+            "correct": "water",
+            "distractor": "sand"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "winter-night",
+    "title": "The Winter Night",
+    "sentences": [
+      {
+        "id": "winter-night-1",
+        "pl": "Jest ciemna zimna zimowa noc.",
+        "steps": [
+          {
+            "correct": "It",
+            "distractor": "This"
+          },
+          {
+            "correct": "is",
+            "distractor": "was"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "dark",
+            "distractor": "bright"
+          },
+          {
+            "correct": "cold",
+            "distractor": "warm"
+          },
+          {
+            "correct": "winter",
+            "distractor": "summer"
+          },
+          {
+            "correct": "night",
+            "distractor": "day"
+          }
+        ]
+      },
+      {
+        "id": "winter-night-2",
+        "pl": "Miękki biały śnieg pokrywa nasz ogród.",
+        "steps": [
+          {
+            "correct": "Soft",
+            "distractor": "Hard"
+          },
+          {
+            "correct": "white",
+            "distractor": "black"
+          },
+          {
+            "correct": "snow",
+            "distractor": "rain"
+          },
+          {
+            "correct": "covers",
+            "distractor": "cover"
+          },
+          {
+            "correct": "our",
+            "distractor": "your"
+          },
+          {
+            "correct": "garden",
+            "distractor": "street"
+          }
+        ]
+      },
+      {
+        "id": "winter-night-3",
+        "pl": "Siedzimy przy gorącym kominku.",
+        "steps": [
+          {
+            "correct": "We",
+            "distractor": "They"
+          },
+          {
+            "correct": "sit",
+            "distractor": "sits"
+          },
+          {
+            "correct": "by",
+            "distractor": "on"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "hot",
+            "distractor": "cold"
+          },
+          {
+            "correct": "fireplace",
+            "distractor": "window"
+          }
+        ]
+      },
+      {
+        "id": "winter-night-4",
+        "pl": "Mama robi słodkie ciepłe kakao.",
+        "steps": [
+          {
+            "correct": "Mom",
+            "distractor": "Dad"
+          },
+          {
+            "correct": "makes",
+            "distractor": "make"
+          },
+          {
+            "correct": "sweet",
+            "distractor": "sour"
+          },
+          {
+            "correct": "warm",
+            "distractor": "cold"
+          },
+          {
+            "correct": "cocoa",
+            "distractor": "tea"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "evil-wizard",
+    "title": "The Evil Wizard",
+    "sentences": [
+      {
+        "id": "evil-wizard-1",
+        "pl": "Zły stary czarodziej mieszka w ciemnym zamku.",
+        "steps": [
+          {
+            "correct": "An",
+            "distractor": "A"
+          },
+          {
+            "correct": "evil",
+            "distractor": "kind"
+          },
+          {
+            "correct": "old",
+            "distractor": "young"
+          },
+          {
+            "correct": "wizard",
+            "distractor": "king"
+          },
+          {
+            "correct": "lives",
+            "distractor": "live"
+          },
+          {
+            "correct": "in",
+            "distractor": "on"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "dark",
+            "distractor": "bright"
+          },
+          {
+            "correct": "castle",
+            "distractor": "tower"
+          }
+        ]
+      },
+      {
+        "id": "evil-wizard-2",
+        "pl": "Ma niebezpieczną czarną różdżkę.",
+        "steps": [
+          {
+            "correct": "He",
+            "distractor": "She"
+          },
+          {
+            "correct": "has",
+            "distractor": "have"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "dangerous",
+            "distractor": "safe"
+          },
+          {
+            "correct": "black",
+            "distractor": "white"
+          },
+          {
+            "correct": "wand",
+            "distractor": "sword"
+          }
+        ]
+      },
+      {
+        "id": "evil-wizard-3",
+        "pl": "Mądra młoda księżniczka idzie go pokonać.",
+        "steps": [
+          {
+            "correct": "A",
+            "distractor": "The"
+          },
+          {
+            "correct": "wise",
+            "distractor": "silly"
+          },
+          {
+            "correct": "young",
+            "distractor": "old"
+          },
+          {
+            "correct": "princess",
+            "distractor": "queen"
+          },
+          {
+            "correct": "goes",
+            "distractor": "go"
+          },
+          {
+            "correct": "to",
+            "distractor": "from"
+          },
+          {
+            "correct": "defeat",
+            "distractor": "help"
+          },
+          {
+            "correct": "him",
+            "distractor": "her"
+          }
+        ]
+      },
+      {
+        "id": "evil-wizard-4",
+        "pl": "Używa swojej jasnej magicznej mocy.",
+        "steps": [
+          {
+            "correct": "She",
+            "distractor": "He"
+          },
+          {
+            "correct": "uses",
+            "distractor": "use"
+          },
+          {
+            "correct": "her",
+            "distractor": "his"
+          },
+          {
+            "correct": "bright",
+            "distractor": "dark"
+          },
+          {
+            "correct": "magical",
+            "distractor": "normal"
+          },
+          {
+            "correct": "power",
+            "distractor": "book"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "wise-owl",
+    "title": "The Wise Owl",
+    "sentences": [
+      {
+        "id": "wise-owl-1",
+        "pl": "W starym drzewie mieszka mądra szara sowa.",
+        "steps": [
+          {
+            "correct": "In",
+            "distractor": "On"
+          },
+          {
+            "correct": "an",
+            "distractor": "the"
+          },
+          {
+            "correct": "old",
+            "distractor": "new"
+          },
+          {
+            "correct": "tree",
+            "distractor": "cave"
+          },
+          {
+            "correct": "lives",
+            "distractor": "live"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "wise",
+            "distractor": "silly"
+          },
+          {
+            "correct": "gray",
+            "distractor": "white"
+          },
+          {
+            "correct": "owl",
+            "distractor": "bird"
+          }
+        ]
+      },
+      {
+        "id": "wise-owl-2",
+        "pl": "Dzieci przychodzą do niej z trudnymi pytaniami.",
+        "steps": [
+          {
+            "correct": "Children",
+            "distractor": "Teachers"
+          },
+          {
+            "correct": "come",
+            "distractor": "comes"
+          },
+          {
+            "correct": "to",
+            "distractor": "from"
+          },
+          {
+            "correct": "her",
+            "distractor": "him"
+          },
+          {
+            "correct": "with",
+            "distractor": "without"
+          },
+          {
+            "correct": "difficult",
+            "distractor": "easy"
+          },
+          {
+            "correct": "questions",
+            "distractor": "answers"
+          }
+        ]
+      },
+      {
+        "id": "wise-owl-3",
+        "pl": "Sowa daje im dobre i mądre odpowiedzi.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "owl",
+            "distractor": "fox"
+          },
+          {
+            "correct": "gives",
+            "distractor": "give"
+          },
+          {
+            "correct": "them",
+            "distractor": "us"
+          },
+          {
+            "correct": "good",
+            "distractor": "bad"
+          },
+          {
+            "correct": "and",
+            "distractor": "or"
+          },
+          {
+            "correct": "wise",
+            "distractor": "silly"
+          },
+          {
+            "correct": "answers",
+            "distractor": "stories"
+          }
+        ]
+      },
+      {
+        "id": "wise-owl-4",
+        "pl": "Wszystkie dzieci są bardzo szczęśliwe.",
+        "steps": [
+          {
+            "correct": "All",
+            "distractor": "Some"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "children",
+            "distractor": "adults"
+          },
+          {
+            "correct": "are",
+            "distractor": "is"
+          },
+          {
+            "correct": "very",
+            "distractor": "not"
+          },
+          {
+            "correct": "happy",
+            "distractor": "sad"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "birthday-party",
+    "title": "The Birthday Party",
+    "sentences": [
+      {
+        "id": "birthday-party-1",
+        "pl": "Moja mała siostra ma dziś urodziny.",
+        "steps": [
+          {
+            "correct": "My",
+            "distractor": "Your"
+          },
+          {
+            "correct": "little",
+            "distractor": "big"
+          },
+          {
+            "correct": "sister",
+            "distractor": "brother"
+          },
+          {
+            "correct": "has",
+            "distractor": "have"
+          },
+          {
+            "correct": "her",
+            "distractor": "his"
+          },
+          {
+            "correct": "birthday",
+            "distractor": "holiday"
+          },
+          {
+            "correct": "today",
+            "distractor": "tomorrow"
+          }
+        ]
+      },
+      {
+        "id": "birthday-party-2",
+        "pl": "Mama piecze pyszny czekoladowy tort.",
+        "steps": [
+          {
+            "correct": "Mom",
+            "distractor": "Dad"
+          },
+          {
+            "correct": "bakes",
+            "distractor": "bake"
+          },
+          {
+            "correct": "a",
+            "distractor": "the"
+          },
+          {
+            "correct": "delicious",
+            "distractor": "awful"
+          },
+          {
+            "correct": "chocolate",
+            "distractor": "fruit"
+          },
+          {
+            "correct": "cake",
+            "distractor": "pie"
+          }
+        ]
+      },
+      {
+        "id": "birthday-party-3",
+        "pl": "Zapraszamy wielu śmiesznych przyjaciół.",
+        "steps": [
+          {
+            "correct": "We",
+            "distractor": "They"
+          },
+          {
+            "correct": "invite",
+            "distractor": "invites"
+          },
+          {
+            "correct": "many",
+            "distractor": "few"
+          },
+          {
+            "correct": "funny",
+            "distractor": "boring"
+          },
+          {
+            "correct": "friends",
+            "distractor": "strangers"
+          }
+        ]
+      },
+      {
+        "id": "birthday-party-4",
+        "pl": "Bawimy się i śpiewamy głośne piosenki.",
+        "steps": [
+          {
+            "correct": "We",
+            "distractor": "They"
+          },
+          {
+            "correct": "play",
+            "distractor": "plays"
+          },
+          {
+            "correct": "and",
+            "distractor": "but"
+          },
+          {
+            "correct": "sing",
+            "distractor": "sings"
+          },
+          {
+            "correct": "loud",
+            "distractor": "quiet"
+          },
+          {
+            "correct": "songs",
+            "distractor": "books"
+          }
+        ]
+      }
+    ]
+  }
+]
