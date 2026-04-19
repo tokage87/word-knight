@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { BRANCH_DEFS, BranchDef, type BranchId } from '../systems/CityBranches';
+import { BRANCH_DEFS, type BranchDef, type BranchId } from '../systems/CityBranches';
 import { metaStore } from '../systems/MetaStore';
 
 // HTML overlay for the City's branch-detail view. Lives in
@@ -23,11 +23,22 @@ export class CityOverlay {
     root.classList.remove('city-overlay--visible');
 
     this.scene.game.events.on('city:branchClick', this.onBranchClick, this);
+    this.scene.game.events.on('writing:completed', this.onWritingCompleted, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.scene.game.events.off('city:branchClick', this.onBranchClick, this);
+      this.scene.game.events.off('writing:completed', this.onWritingCompleted, this);
       window.removeEventListener('keydown', this.onKey);
       if (this.root) this.root.innerHTML = '';
     });
+  }
+
+  // Re-render the city panel when a writing task unlocks a branch, so
+  // the student sees the upgrade list immediately.
+  private onWritingCompleted(payload: { branchId: BranchId }) {
+    const branch = BRANCH_DEFS[payload.branchId];
+    if (branch && this.root?.classList.contains('city-overlay--visible')) {
+      this.render(branch);
+    }
   }
 
   private onBranchClick(payload: { id: BranchId }) {
@@ -52,16 +63,24 @@ export class CityOverlay {
 
   private render(branch: BranchDef) {
     if (!this.root) return;
-    const status = branch.status();
+    const unlocked = branch.isUnlocked();
     const gold = metaStore.getGold();
 
-    // Challenge badge at the top — either progress meter or ✓ done.
-    const challengeBody = status.unlocked
-      ? `<span class="city-challenge-done">✓ Odblokowane</span>`
-      : `<span class="city-challenge-progress">${status.current} / ${status.target}</span>`;
+    const challengeBlock = unlocked
+      ? `<div class="city-challenge">
+           <div class="city-challenge-label">Zadanie: ${escapeHtml(branch.task.prompt)}</div>
+           <div class="city-challenge-body"><span class="city-challenge-done">✓ Odblokowane</span></div>
+         </div>`
+      : `<div class="city-challenge">
+           <div class="city-challenge-label">Wyzwanie (zadanie pisemne po angielsku):</div>
+           <div class="city-challenge-body"><b>${escapeHtml(branch.task.prompt)}</b></div>
+           <div class="city-challenge-sub">${escapeHtml(branch.task.promptEn)}</div>
+           <button class="city-task-start" type="button" data-branch="${branch.id}">
+             📝 ROZPOCZNIJ ZADANIE
+           </button>
+         </div>`;
 
-    // Upgrade rows — each shows label, current → next rank description,
-    // cost, and a buy button (greyed if locked / unaffordable / maxed).
+    // Upgrade rows — greyed and un-buyable until the branch is unlocked.
     const rowsHtml = branch.upgrades.map((u) => {
       const r = u.currentRank();
       const maxed = r >= u.maxRank;
@@ -69,20 +88,14 @@ export class CityOverlay {
       const affordable = !maxed && gold >= cost;
       const nextRank = Math.min(r + 1, u.maxRank);
       const rankLabel = u.maxRank > 1 ? ` ${romanCaps(nextRank)}` : '';
-      const buyLabel = maxed
-        ? 'MAX'
-        : !status.unlocked
-          ? '🔒'
-          : `${cost} ⚒`;
-      const buyDisabled = maxed || !status.unlocked || !affordable;
+      const buyLabel = maxed ? 'MAX' : !unlocked ? '🔒' : `${cost} ⚒`;
+      const buyDisabled = maxed || !unlocked || !affordable;
       return `
         <div class="city-upgrade-row ${maxed ? 'city-upgrade-row--maxed' : ''}">
           <div class="city-upgrade-main">
-            <div class="city-upgrade-title">${u.label}${rankLabel}</div>
-            <div class="city-upgrade-desc">${maxed ? 'Osiągnięto maks. poziom.' : u.describe(nextRank)}</div>
-            <div class="city-upgrade-ranks">
-              ${renderRankPips(r, u.maxRank)}
-            </div>
+            <div class="city-upgrade-title">${escapeHtml(u.label)}${rankLabel}</div>
+            <div class="city-upgrade-desc">${maxed ? 'Osiągnięto maks. poziom.' : escapeHtml(u.describe(nextRank))}</div>
+            <div class="city-upgrade-ranks">${renderRankPips(r, u.maxRank)}</div>
           </div>
           <button class="city-upgrade-buy" data-upgrade="${u.id}"${buyDisabled ? ' disabled' : ''}>${buyLabel}</button>
         </div>`;
@@ -92,13 +105,10 @@ export class CityOverlay {
       <div class="city-panel">
         <div class="city-panel-header">
           <div class="city-panel-icon">${branch.icon}</div>
-          <div class="city-panel-title">${branch.label}</div>
+          <div class="city-panel-title">${escapeHtml(branch.label)}</div>
           <button class="city-panel-close" type="button" aria-label="Zamknij">×</button>
         </div>
-        <div class="city-challenge">
-          <div class="city-challenge-label">Wyzwanie: ${status.label}</div>
-          <div class="city-challenge-body">${challengeBody}</div>
-        </div>
+        ${challengeBlock}
         <div class="city-upgrade-list">
           ${rowsHtml}
         </div>
@@ -116,13 +126,24 @@ export class CityOverlay {
         const id = btn.dataset.upgrade;
         const u = branch.upgrades.find((x) => x.id === id);
         if (!u) return;
-        if (u.buy()) {
-          // Re-render so gold, rank pips and buy-button state update.
-          this.render(branch);
-        }
+        if (u.buy()) this.render(branch);
       });
     });
+    const startBtn = this.root.querySelector<HTMLButtonElement>('.city-task-start');
+    startBtn?.addEventListener('click', () => {
+      // Let the WritingTask overlay handle it; it lives in a separate
+      // root so we don't need to tear down this panel first.
+      this.scene.game.events.emit('writing:start', { branchId: branch.id });
+    });
   }
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 function romanCaps(n: number): string {

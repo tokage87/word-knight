@@ -1,48 +1,57 @@
 // City meta-progression branch definitions.
 //
-// Each branch is a building in the City scene. It has an unlock
-// *challenge* (measured against MetaStore lifetime counters) and a
-// list of *upgrades* the player can buy with gold once unlocked.
-//
-// `applyMetaProgression()` in GameScene reads the ranks directly off
-// MetaStore and bakes them into run-start stats — the definitions
-// here are for the UI: descriptions, prices, buy actions, unlock
-// detection.
+// Each branch is a building in the City scene. It has a LEARNING TASK
+// (a teacher-style writing prompt) that unlocks it, and a list of
+// upgrades the player can buy with gold once unlocked. The task is
+// the only unlock path — combat / quiz / boss counters no longer
+// gate the branches (they still accumulate for the pause panel).
 
-import { metaStore } from './MetaStore';
+import { metaStore, type WritingSubmission } from './MetaStore';
 import type { SpellId } from './SpellCaster';
 
 export type BranchId = 'combat' | 'spells' | 'scholar' | 'writer';
 
-export interface ChallengeStatus {
-  unlocked: boolean;
-  label: string;      // e.g. "Pokonaj 1 bossa"
-  current: number;    // lifetime progress toward target
-  target: number;
+export interface BranchTask {
+  prompt: string;      // Polish prompt shown to the student
+  promptEn: string;    // English version (displayed smaller under the Polish)
+  hint: string;        // short teacher-style guidance
+  hintWords: string[]; // ~12 suggested topic words, clickable into the textarea
+  // A short "reference" description used for topic-match scoring via
+  // the embeddings-based TextJudge. Plain English, A1-A2 vocabulary.
+  referenceEn: string;
 }
 
 export interface UpgradeDef {
   id: string;
-  label: string;                     // "Wytrzymałość"
-  describe(nextRank: number): string; // "+20 maks. HP na start"
+  label: string;
+  describe(nextRank: number): string;
   maxRank: number;
-  costAtRank(rank: number): number;  // rank = how many already owned
+  costAtRank(rank: number): number;
   currentRank(): number;
-  buy(): boolean;                    // deducts gold + mutates state
+  buy(): boolean;
 }
 
 export interface BranchDef {
   id: BranchId;
   label: string;
   icon: string;
-  status(): ChallengeStatus;
+  task: BranchTask;
   upgrades: UpgradeDef[];
+  isUnlocked(): boolean;
 }
 
-// Small helper — clamp a cost lookup so "beyond max rank" doesn't
-// crash the UI.
 const cost = (table: number[]) => (r: number) =>
   r < table.length ? table[r]! : Infinity;
+
+// Small util — score a submission for the soft word-count gate.
+export function countWords(text: string): { total: number; distinct: number } {
+  const tokens = text
+    .toLowerCase()
+    .replace(/[^a-ząćęłńóśźż\s'-]/gi, ' ')
+    .split(/\s+/)
+    .filter((w) => w.length >= 2);
+  return { total: tokens.length, distinct: new Set(tokens).size };
+}
 
 // ─────────────────────────────────────────────────────────────────
 // Combat Hall — Sala Bojowa
@@ -51,18 +60,19 @@ const combat: BranchDef = {
   id: 'combat',
   label: 'Sala Bojowa',
   icon: '🛡',
-  status() {
-    const killed = metaStore.get().lifetime.bossesKilled;
-    const unlocked = metaStore.get().branches.combat.unlocked || killed >= 1;
-    if (unlocked && !metaStore.get().branches.combat.unlocked) {
-      metaStore.unlockBranch('combat');
-    }
-    return {
-      unlocked,
-      label: 'Pokonaj 1 bossa w dowolnym biegu',
-      current: Math.min(killed, 1),
-      target: 1,
-    };
+  task: {
+    prompt: 'Opisz swoją codzienną rutynę',
+    promptEn: 'Describe your daily routine',
+    hint: 'Napisz po angielsku, co robisz każdego dnia — od rana do wieczora.',
+    hintWords: [
+      'wake up', 'eat', 'breakfast', 'school', 'study', 'play', 'read',
+      'run', 'dinner', 'wash', 'sleep', 'morning', 'evening', 'night',
+    ],
+    referenceEn:
+      'Every morning I wake up early. I eat breakfast with my family. I go to school and study many subjects. After school I play with friends, read books and do my homework. In the evening I eat dinner, wash my face and go to sleep.',
+  },
+  isUnlocked() {
+    return metaStore.get().branches.combat.unlocked;
   },
   upgrades: [
     {
@@ -98,7 +108,7 @@ const combat: BranchDef = {
     {
       id: 'spd',
       label: 'Szybki Cios',
-      describe: (r) => `−${(1 - Math.pow(0.95, r)) * 100 | 0}% czasu odnowy na start (−5% / rangę)`,
+      describe: (r) => `−${((1 - Math.pow(0.95, r)) * 100) | 0}% czasu odnowy na start (−5% / rangę)`,
       maxRank: 4,
       costAtRank: cost([30, 60, 120, 240]),
       currentRank: () => metaStore.get().branches.combat.ranks.spd,
@@ -115,9 +125,6 @@ const combat: BranchDef = {
 
 // ─────────────────────────────────────────────────────────────────
 // Spell Library — Biblioteka Magii
-// Single-purchase: pick which spell you start with (1 of 3). Once
-// bought the "upgrade" becomes re-selectable so the player can swap
-// between runs if they wish.
 // ─────────────────────────────────────────────────────────────────
 const SPELL_OPTIONS: Array<{ id: SpellId; label: string; desc: string; icon: string }> = [
   { id: 'fire',  label: 'Ogień',  desc: 'Startuj z odblokowanym Ogniem.', icon: '🔥' },
@@ -129,18 +136,19 @@ const spells: BranchDef = {
   id: 'spells',
   label: 'Biblioteka Magii',
   icon: '🔮',
-  status() {
-    const perfect = metaStore.get().lifetime.perfectStories;
-    const unlocked = metaStore.get().branches.spells.unlocked || perfect >= 1;
-    if (unlocked && !metaStore.get().branches.spells.unlocked) {
-      metaStore.unlockBranch('spells');
-    }
-    return {
-      unlocked,
-      label: 'Ukończ dowolną opowieść bez błędu',
-      current: Math.min(perfect, 1),
-      target: 1,
-    };
+  task: {
+    prompt: 'Opisz swoje ulubione miejsce',
+    promptEn: 'Write about your favourite place',
+    hint: 'Pomyśl o miejscu, które lubisz — park, pokój, plaża, miasto. Jak wygląda? Co tam robisz?',
+    hintWords: [
+      'favourite', 'place', 'park', 'house', 'room', 'beach', 'mountain',
+      'tree', 'flower', 'sunny', 'warm', 'quiet', 'happy', 'play', 'visit',
+    ],
+    referenceEn:
+      'My favourite place is a quiet park near my house. There are many tall trees and colourful flowers. I like to visit it on sunny days. I sit on the grass, read a book and watch the birds. It makes me feel calm and happy.',
+  },
+  isUnlocked() {
+    return metaStore.get().branches.spells.unlocked;
   },
   upgrades: SPELL_OPTIONS.map((opt) => ({
     id: `start.${opt.id}`,
@@ -151,9 +159,6 @@ const spells: BranchDef = {
     currentRank: () =>
       metaStore.get().branches.spells.chosenStartSpell === opt.id ? 1 : 0,
     buy() {
-      // Free swap if already owned elsewhere (player picked a different
-      // start spell previously) — we don't want to re-charge for a
-      // change of mind. First purchase costs 100.
       const already = metaStore.get().branches.spells.chosenStartSpell !== null;
       if (!already) {
         if (!metaStore.spendGold(100)) return false;
@@ -171,18 +176,19 @@ const scholar: BranchDef = {
   id: 'scholar',
   label: 'Krąg Uczonych',
   icon: '📚',
-  status() {
-    const qc = metaStore.get().lifetime.quizCorrect;
-    const unlocked = metaStore.get().branches.scholar.unlocked || qc >= 50;
-    if (unlocked && !metaStore.get().branches.scholar.unlocked) {
-      metaStore.unlockBranch('scholar');
-    }
-    return {
-      unlocked,
-      label: 'Odpowiedz poprawnie na 50 quizów (łącznie)',
-      current: Math.min(qc, 50),
-      target: 50,
-    };
+  task: {
+    prompt: 'Opisz swojego najlepszego przyjaciela',
+    promptEn: 'Describe your best friend',
+    hint: 'Jak ma na imię? Jak wygląda? Jaki ma charakter? Co razem lubicie robić?',
+    hintWords: [
+      'friend', 'name', 'tall', 'short', 'nice', 'kind', 'funny', 'brave',
+      'smart', 'hair', 'eyes', 'play', 'help', 'school',
+    ],
+    referenceEn:
+      'My best friend is called Anna. She is tall and has long brown hair and blue eyes. She is very kind, funny and smart. We go to school together and play every afternoon. She always helps me when I have a problem. I am happy she is my friend.',
+  },
+  isUnlocked() {
+    return metaStore.get().branches.scholar.unlocked;
   },
   upgrades: [
     {
@@ -220,29 +226,24 @@ const scholar: BranchDef = {
 
 // ─────────────────────────────────────────────────────────────────
 // Writer's Guild — Gildia Pisarzy
-// Phase 3 ships without the writing-task feature yet — we keep the
-// challenge + upgrades defined so the UI has something to show, with
-// a placeholder challenge tied to lifetime runs until the writing
-// mode lands.
 // ─────────────────────────────────────────────────────────────────
 const writer: BranchDef = {
   id: 'writer',
   label: 'Gildia Pisarzy',
   icon: '✍',
-  status() {
-    // Placeholder challenge: survive 3 runs total. When writing mode
-    // arrives we'll swap this to `writingTasksDone >= 1`.
-    const runs = metaStore.get().lifetime.runs;
-    const unlocked = metaStore.get().branches.writer.unlocked || runs >= 3;
-    if (unlocked && !metaStore.get().branches.writer.unlocked) {
-      metaStore.unlockBranch('writer');
-    }
-    return {
-      unlocked,
-      label: 'Ukończ 3 biegi (tymczasowo, do czasu dodania zadań pisemnych)',
-      current: Math.min(runs, 3),
-      target: 3,
-    };
+  task: {
+    prompt: 'Napisz o swoich ostatnich wakacjach',
+    promptEn: 'Write about your last holiday',
+    hint: 'Gdzie byłeś/byłaś? Z kim? Co robiliście? Jaka była pogoda? Co ci się podobało?',
+    hintWords: [
+      'last', 'summer', 'holiday', 'family', 'sea', 'mountain', 'swim',
+      'play', 'visit', 'eat', 'beach', 'sun', 'happy', 'beautiful',
+    ],
+    referenceEn:
+      'Last summer I went on holiday with my family. We travelled to the sea. The weather was hot and sunny. Every day we swam in the blue water and built big sand castles on the beach. In the evening we ate dinner and played games. It was a beautiful and happy holiday.',
+  },
+  isUnlocked() {
+    return metaStore.get().branches.writer.unlocked;
   },
   upgrades: [
     {
@@ -266,3 +267,23 @@ const writer: BranchDef = {
 export const BRANCH_DEFS: Record<BranchId, BranchDef> = {
   combat, spells, scholar, writer,
 };
+
+// Submit a writing task: save to metaStore + unlock branch.
+export function submitWritingTask(
+  branchId: BranchId,
+  text: string,
+): WritingSubmission {
+  const { total, distinct } = countWords(text);
+  const submission: WritingSubmission = {
+    id: `${branchId}.${Date.now()}`,
+    branch: branchId,
+    prompt: BRANCH_DEFS[branchId].task.prompt,
+    text,
+    wordCount: total,
+    distinctCount: distinct,
+    submittedAt: Date.now(),
+  };
+  metaStore.addWritingSubmission(submission);
+  metaStore.unlockBranch(branchId);
+  return submission;
+}

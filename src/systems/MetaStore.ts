@@ -56,6 +56,20 @@ export interface MetaState {
       ranks: { xpBonus: number };
     };
   };
+  // Free-form written responses that unlocked each branch. Stored so
+  // the teacher can read them later without leaving the app. Capped at
+  // 20 entries to keep localStorage small — oldest drops off.
+  writingSubmissions: WritingSubmission[];
+}
+
+export interface WritingSubmission {
+  id: string;            // `${branchId}.${timestamp}`
+  branch: BranchId;
+  prompt: string;        // the Polish prompt the student saw
+  text: string;          // their written response
+  wordCount: number;
+  distinctCount: number;
+  submittedAt: number;
 }
 
 function freshState(): MetaState {
@@ -76,6 +90,7 @@ function freshState(): MetaState {
       scholar: { unlocked: false, ranks: { xpPerQuiz: 0, cdCutPerQuiz: 0 } },
       writer: { unlocked: false, ranks: { xpBonus: 0 } },
     },
+    writingSubmissions: [],
   };
 }
 
@@ -90,6 +105,7 @@ function hydrate(raw: unknown): MetaState {
   return {
     ...fresh,
     ...r,
+    writingSubmissions: Array.isArray(r.writingSubmissions) ? r.writingSubmissions : [],
     lifetime: { ...fresh.lifetime, ...(r.lifetime ?? {}) },
     branches: {
       combat: { ...fresh.branches.combat, ...(r.branches?.combat ?? {}),
@@ -197,6 +213,21 @@ export class MetaStore {
   incrementWritingTaskDone() {
     this.state.lifetime.writingTasksDone += 1;
     this.save();
+  }
+
+  // Append a written submission and cap the list to the last 20 so
+  // localStorage doesn't balloon over months of use. Newest first.
+  addWritingSubmission(s: WritingSubmission) {
+    this.state.writingSubmissions.unshift(s);
+    if (this.state.writingSubmissions.length > 20) {
+      this.state.writingSubmissions.length = 20;
+    }
+    this.state.lifetime.writingTasksDone += 1;
+    this.save();
+  }
+
+  getWritingSubmissions(): WritingSubmission[] {
+    return this.state.writingSubmissions;
   }
 
   endRun() {

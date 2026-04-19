@@ -3,6 +3,7 @@ import { AK, ANIM, TILE, GRASS_CENTER_FRAME } from '../constants/assetKeys';
 import { LOGICAL_WIDTH, LOGICAL_HEIGHT } from '../constants/layout';
 import { metaStore } from '../systems/MetaStore';
 import { CityOverlay } from '../ui/CityOverlay';
+import { WritingTask } from '../ui/WritingTask';
 
 // MIASTO scene — aims to reproduce the Tiny Swords map reference as
 // closely as our asset set allows. Key visual beats from that image:
@@ -114,14 +115,19 @@ export class CityScene extends Phaser.Scene {
     // renders a paper panel with the challenge + upgrade scroll.
     const overlay = new CityOverlay(this);
     overlay.mount();
+    // Writing-task overlay — opens on writing:start, with live
+    // Transformers.js topic scoring and optional WebLLM feedback.
+    const writing = new WritingTask(this);
+    writing.mount();
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.emit('city:closed');
-      // Wipe the overlay root so leaving the city doesn't leak DOM
-      // into the next scene. (The overlay also clears itself on
-      // scene shutdown, but double-safety is cheap.)
-      const overlayRoot = document.getElementById('city-overlay-root');
-      if (overlayRoot) overlayRoot.innerHTML = '';
+      // Wipe every city-side HTML overlay so leaving the city doesn't
+      // leak DOM into the next scene.
+      ['city-overlay-root', 'writing-task-root'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = '';
+      });
     });
     this.game.events.emit('city:opened', { gold: metaStore.getGold() });
   }
