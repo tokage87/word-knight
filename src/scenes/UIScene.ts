@@ -36,7 +36,9 @@ export class UIScene extends Phaser.Scene {
     this.game.events.on('enemy:killed', this.hud.onEnemyKilled, this.hud);
     this.game.events.on('boss:spawned', this.hud.onBossSpawned, this.hud);
     this.game.events.on('ui:pauseChanged', this.onPauseChanged, this);
+    this.game.events.on('ui:gameOver', this.onGameOver, this);
     this.hud.onPauseButtonClick(() => this.game.events.emit('ui:togglePause'));
+    this.hud.onRestartButtonClick(() => this.game.events.emit('ui:restart'));
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.off(
@@ -61,5 +63,9 @@ export class UIScene extends Phaser.Scene {
   private onPauseChanged(payload: { paused: boolean }) {
     const stats = (this.registry.get('stats') as Record<string, number> | undefined) ?? {};
     this.hud.setPaused(payload.paused, stats);
+  }
+
+  private onGameOver(payload: Record<string, number>) {
+    this.hud.showGameOver(payload);
   }
 }

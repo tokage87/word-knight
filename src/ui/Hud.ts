@@ -25,6 +25,10 @@ export class Hud {
   private pauseStats?: HTMLElement;
   private pauseBtn?: HTMLElement;
   private pauseClickHandler?: () => void;
+  private gameOverOverlay?: HTMLElement;
+  private gameOverStats?: HTMLElement;
+  private gameOverRestart?: HTMLElement;
+  private restartClickHandler?: () => void;
 
   mount() {
     const root = document.getElementById('hud-root');
@@ -34,6 +38,9 @@ export class Hud {
     this.pauseOverlay = root.querySelector<HTMLElement>('.pause-overlay') ?? undefined;
     this.pauseStats = root.querySelector<HTMLElement>('.pause-stats') ?? undefined;
     this.pauseBtn = root.querySelector<HTMLElement>('.pause-btn') ?? undefined;
+    this.gameOverOverlay = root.querySelector<HTMLElement>('.gameover-overlay') ?? undefined;
+    this.gameOverStats = root.querySelector<HTMLElement>('.gameover-stats') ?? undefined;
+    this.gameOverRestart = root.querySelector<HTMLElement>('.gameover-restart') ?? undefined;
 
     this.stats = root.querySelector<HTMLElement>('.stat-hp-val') ?? undefined;
     this.dmgStat = root.querySelector<HTMLElement>('.stat-dmg-val') ?? undefined;
@@ -156,6 +163,40 @@ export class Hud {
     this.pauseBtn.addEventListener('click', handler);
   }
 
+  showGameOver(stats: Record<string, number> = {}) {
+    if (!this.gameOverOverlay) return;
+    this.gameOverOverlay.classList.add('gameover-overlay--visible');
+    if (this.gameOverStats) {
+      const lines: [string, number | string][] = [
+        ['Level reached', stats.level ?? 1],
+        ['Correct quizzes', stats.quizCorrect ?? 0],
+        ['Wrong quizzes', stats.quizWrong ?? 0],
+        ['Distinct words solved', stats.distinctWords ?? 0],
+        ['Sentences (perfect)', stats.sentenceCorrect ?? 0],
+        ['Sentences (with mistake)', stats.sentenceWrong ?? 0],
+        ['Stories perfect', stats.storiesPerfect ?? 0],
+        ['Stories failed', stats.storiesFailed ?? 0],
+      ];
+      this.gameOverStats.innerHTML = lines
+        .map(([k, v]) => `<div class="gameover-stat-row"><span>${k}</span><span class="gameover-stat-val">${v}</span></div>`)
+        .join('');
+    }
+  }
+
+  hideGameOver() {
+    if (!this.gameOverOverlay) return;
+    this.gameOverOverlay.classList.remove('gameover-overlay--visible');
+  }
+
+  onRestartButtonClick(handler: () => void) {
+    if (!this.gameOverRestart) return;
+    if (this.restartClickHandler) {
+      this.gameOverRestart.removeEventListener('click', this.restartClickHandler);
+    }
+    this.restartClickHandler = handler;
+    this.gameOverRestart.addEventListener('click', handler);
+  }
+
   flashCooldownPenalty(ms: number) {
     if (!this.root) return;
     const badge = document.createElement('div');
@@ -274,6 +315,15 @@ const HTML = `
       <div class="pause-title">PAUSED</div>
       <div class="pause-sub">Press P to resume</div>
       <div class="pause-stats"></div>
+    </div>
+  </div>
+
+  <div class="gameover-overlay">
+    <div class="gameover-panel">
+      <div class="gameover-title">GAME OVER</div>
+      <div class="gameover-sub">Your run ended — here's how it went</div>
+      <div class="gameover-stats"></div>
+      <button type="button" class="gameover-restart">RESTART</button>
     </div>
   </div>
 

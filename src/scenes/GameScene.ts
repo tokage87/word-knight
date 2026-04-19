@@ -162,6 +162,7 @@ export class GameScene extends Phaser.Scene {
     this.input.keyboard?.on('keydown-P', () => this.toggleManualPause());
     this.game.events.on('ui:togglePause', this.toggleManualPause, this);
     this.game.events.on('knight:died', this.onKnightDied, this);
+    this.game.events.on('ui:restart', this.onUiRestart, this);
     this.game.events.on('enemy:killed', this.onEnemyKilled, this);
     this.game.events.on('skillpicker:picked', this.onSkillPicked, this);
     this.game.events.on('sentence:complete', this.onSentenceComplete, this);
@@ -171,6 +172,7 @@ export class GameScene extends Phaser.Scene {
       this.game.events.off('quiz:correct', this.onQuizCorrect, this);
       this.game.events.off('quiz:wrong', this.onQuizWrong, this);
       this.game.events.off('knight:died', this.onKnightDied, this);
+      this.game.events.off('ui:restart', this.onUiRestart, this);
       this.game.events.off('enemy:killed', this.onEnemyKilled, this);
       this.game.events.off('skillpicker:picked', this.onSkillPicked, this);
       this.game.events.off('sentence:complete', this.onSentenceComplete, this);
@@ -426,22 +428,29 @@ export class GameScene extends Phaser.Scene {
   }
 
   private onKnightDied() {
-    // Hard reset: the player loses EVERYTHING — level, XP, unlocked
-    // spells, stat upgrades, stats counters — and starts over. A short
-    // red flash + freeze gives the death some weight before the
-    // scene restarts. Restarting both scenes clears any UI gate that
-    // happened to be open (quiz lockout, picker, story progress).
+    // Freeze the world, play a short red flash + shake, then surface
+    // the game-over panel with the final run stats. Actual reset is
+    // deferred to `ui:restart` — emitted by the player clicking the
+    // RESTART button in the HUD.
     this.paused = true;
     this.cameras.main.flash(520, 180, 30, 30);
     this.cameras.main.shake(360, 0.008);
-    this.time.delayedCall(700, () => {
-      // Kill all enemies so the restart doesn't inherit stragglers.
-      this.enemies.getChildren().forEach((e) => e.destroy());
-      // Restart the UI scene first so its HTML gates (quiz, sentence,
-      // picker) get torn down and re-mounted fresh.
-      this.scene.get('UI').scene.restart();
-      this.scene.restart();
+    this.enemies.getChildren().forEach((e) => e.destroy());
+    this.time.delayedCall(500, () => {
+      this.game.events.emit('ui:gameOver', {
+        level: this.level,
+        ...this.stats,
+        distinctWords: this.distinctWords.size,
+      });
     });
+  }
+
+  private onUiRestart() {
+    this.enemies.getChildren().forEach((e) => e.destroy());
+    // Restart the UI scene first so its HTML gates (quiz, sentence,
+    // picker, game-over panel) get torn down and re-mounted fresh.
+    this.scene.get('UI').scene.restart();
+    this.scene.restart();
   }
 
   private onEnemyKilled(payload: { isBoss: boolean }) {
