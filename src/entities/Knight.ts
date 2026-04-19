@@ -64,12 +64,15 @@ export class Knight extends Phaser.GameObjects.Sprite {
   }
 
   takeDamage(n: number) {
+    if (this.hp <= 0) return; // already dead, waiting for scene restart
     this.hp -= n;
     this.setTint(0xff7070);
     this.scene.time.delayedCall(80, () => this.clearTint());
     this.scene.cameras.main.shake(60, 0.003);
     if (this.hp <= 0) {
-      this.hp = this.hpMax;
+      // Don't auto-revive — GameScene will restart the scene and build
+      // a fresh knight, which is the full run-reset on death.
+      this.hp = 0;
       this.scene.game.events.emit('knight:died');
     }
   }

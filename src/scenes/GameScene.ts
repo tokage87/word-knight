@@ -14,7 +14,6 @@ import type { SkillCardOption } from '../systems/SkillPicker';
 import { SentenceBuilder } from '../systems/SentenceBuilder';
 
 const WALK_SPEED_MPS = 0.008;
-const CHAMBER_PUSHBACK_M = 200;
 
 interface Villager {
   sprite: Phaser.GameObjects.Sprite;
@@ -95,6 +94,31 @@ export class GameScene extends Phaser.Scene {
   }
 
   create() {
+    // Class-field initializers only run once (at construction), but
+    // `scene.restart()` reuses the instance and re-invokes create().
+    // Reset every stateful field up-front so a death-restart truly
+    // starts over. New Knight/SpellCaster/WaveSpawner below are fresh
+    // because they're re-instantiated in this method.
+    this.distance = 0;
+    this.level = 1;
+    this.exp = 0;
+    this.paused = false;
+    this.manuallyPaused = false;
+    this.pendingLevelUps = 0;
+    this.levelUpCount = 0;
+    this.pendingCardOptions = null;
+    this.statRanks = { maxHp: 0, meleeDmg: 0, atkSpeed: 0 };
+    this.stats = {
+      quizCorrect: 0,
+      quizWrong: 0,
+      sentenceCorrect: 0,
+      sentenceWrong: 0,
+      storiesPerfect: 0,
+      storiesFailed: 0,
+    };
+    this.distinctWords.clear();
+    this.lastBgScroll = 0;
+
     this.drawSky();
     this.drawMountains();
     this.spawnClouds();
@@ -402,9 +426,22 @@ export class GameScene extends Phaser.Scene {
   }
 
   private onKnightDied() {
-    this.distance = Math.max(0, this.distance - CHAMBER_PUSHBACK_M);
-    this.enemies.getChildren().forEach((e) => e.destroy());
-    this.cameras.main.flash(220, 180, 60, 60);
+    // Hard reset: the player loses EVERYTHING — level, XP, unlocked
+    // spells, stat upgrades, stats counters — and starts over. A short
+    // red flash + freeze gives the death some weight before the
+    // scene restarts. Restarting both scenes clears any UI gate that
+    // happened to be open (quiz lockout, picker, story progress).
+    this.paused = true;
+    this.cameras.main.flash(520, 180, 30, 30);
+    this.cameras.main.shake(360, 0.008);
+    this.time.delayedCall(700, () => {
+      // Kill all enemies so the restart doesn't inherit stragglers.
+      this.enemies.getChildren().forEach((e) => e.destroy());
+      // Restart the UI scene first so its HTML gates (quiz, sentence,
+      // picker) get torn down and re-mounted fresh.
+      this.scene.get('UI').scene.restart();
+      this.scene.restart();
+    });
   }
 
   private onEnemyKilled(payload: { isBoss: boolean }) {
@@ -461,14 +498,14 @@ export class GameScene extends Phaser.Scene {
     if (payload.perfect) this.stats.storiesPerfect += 1;
     else this.stats.storiesFailed += 1;
     this.publishStats();
-    // Any non-perfect story still loses the new-spell option; the
-    // −50% weaken penalty now kicks in ONLY when the player hit the
-    // 3-mistake abort path (SentenceBuilder sets weakened:true there).
-    // Stories finished with 1–2 mistakes keep full-strength upgrades.
-    if (!payload.perfect) {
+    // Only the 3-mistake abort path (weakened:true) drops the NEW
+    // spell and halves upgrades. Finishing a story with 1–2 mistakes
+    // keeps the new-spell option AND full-strength upgrades. A perfect
+    // run needs no rebuild.
+    if (payload.weakened) {
       options = this.buildCardOptions(3, {
         allowNew: false,
-        weakened: payload.weakened,
+        weakened: true,
       });
       this.pendingCardOptions = options;
     }
