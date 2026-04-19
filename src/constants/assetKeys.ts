@@ -75,6 +75,10 @@ export const ANIM = {
   minotaurAttack: 'minotaur-attack-once',
   citySheepIdle: 'city-sheep-idle-loop',
   cityBushSway: 'city-bush-sway-loop',
+  pawnBlackIdle: 'pawn-black-idle-loop',
+  pawnPurpleIdle: 'pawn-purple-idle-loop',
+  pawnRedIdle: 'pawn-red-idle-loop',
+  pawnYellowIdle: 'pawn-yellow-idle-loop',
 } as const;
 
 // Tiny Swords unit spritesheets are always 192x192 per frame.

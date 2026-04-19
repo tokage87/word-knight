@@ -132,8 +132,11 @@ export class BootScene extends Phaser.Scene {
       frameWidth: 128,
       frameHeight: 128,
     });
+    // Bush sheet is 1024×128 — 8 frames of 128×128. Using a 64×128
+    // frame size (as we did initially) produced an empty animation
+    // because the bush outgrew the horizontal half of each frame.
     this.load.spritesheet(AK.cityBush, 'assets/city/bush-sheet.png', {
-      frameWidth: 64,
+      frameWidth: 128,
       frameHeight: 128,
     });
     this.load.spritesheet(AK.cityWaterRocks, 'assets/city/water-rocks.png', {
@@ -165,7 +168,14 @@ export class BootScene extends Phaser.Scene {
     this.buildAnim(ANIM.minotaurAttack, AK.minotaurAttack, 12, 12, 0);
     // City ambient loops — slow frame rates so the scene feels calm.
     this.buildAnim(ANIM.citySheepIdle, AK.citySheepIdle, 8, 6, -1);
-    this.buildAnim(ANIM.cityBushSway, AK.cityBush, 16, 6, -1);
+    // 8 bush frames sway at 6 fps — the sheet is 8×(128×128).
+    this.buildAnim(ANIM.cityBushSway, AK.cityBush, 8, 6, -1);
+    // Pawn idle loops (8 frames at 192×192 each, shared across colors).
+    // Used to animate wandering villagers in the City scene.
+    this.buildAnim(ANIM.pawnBlackIdle, AK.pawnBlack, 8, 7, -1);
+    this.buildAnim(ANIM.pawnPurpleIdle, AK.pawnPurple, 8, 7, -1);
+    this.buildAnim(ANIM.pawnRedIdle, AK.pawnRed, 8, 7, -1);
+    this.buildAnim(ANIM.pawnYellowIdle, AK.pawnYellow, 8, 7, -1);
 
     this.scene.start('Game');
     this.scene.launch('UI');
