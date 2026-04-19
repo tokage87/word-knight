@@ -4,31 +4,85 @@ import type { Knight } from './Knight';
 
 const MELEE_RANGE = 54;
 const MELEE_RATE_MS = 1000;
-const SPRITE_SCALE = 0.30;
 const BOSS_SCALE = 0.42;
 
 export interface EnemyConfig {
   isBoss?: boolean;
   // Difficulty tier for regular enemies. Ignored when `isBoss: true`.
-  // WaveSpawner increments the tier every time a boss is defeated, so
-  // the next wave of regulars is meaningfully stronger. Tier 0 is the
-  // baseline skeleton; each tier adds +50% base HP, +2 damage, +5
-  // speed, and a different body tint so the player sees the threat.
+  // WaveSpawner increments the tier every time a boss is defeated. Each
+  // tier swaps to a stronger-looking sprite (skeleton → goblin → spider
+  // → minotaur) and bumps HP / damage / speed. Tiers above the last
+  // entry in TIER_PROFILES cycle back to the top-end sprite (minotaur)
+  // so content never runs out; stat scaling keeps climbing.
   tier?: number;
 }
 
-// Base stats for tier-0 regulars. Scaling lives in applyTierStats().
+// Base stats for tier-0 regulars. Deltas per tier layer on top.
 const BASE_REGULAR_HP = 36;
 const BASE_REGULAR_DMG = 4;
 const BASE_REGULAR_SPEED = 55;
-// Each tier layers on top of the previous — kept as per-tier deltas so
-// the formula stays readable when we add more tiers later.
-const TIER_HP_STEP = 18;      // +50% of base per tier
+const TIER_HP_STEP = 18; // +50% of base per tier
 const TIER_DMG_STEP = 2;
 const TIER_SPEED_STEP = 5;
-// Each tier gets its own tint, cycled if the player outruns the list.
-// Tier 0 = no tint (natural skull colour); tier 1+ tinted.
-const TIER_TINTS: number[] = [0xffffff, 0xff9a9a, 0xb0a0ff, 0xffc878, 0x9affc8];
+
+// One entry per visual tier. `scale` accounts for the source frame size
+// (minotaur frames are 320px vs the 192px base, so its display scale is
+// smaller to avoid a giant pixel blob). `originY` puts the feet on the
+// ground — each sprite's painted feet sit at a different y/frameHeight
+// ratio, so we tune per-sprite.
+interface TierProfile {
+  texture: string;
+  idle: string;
+  run: string;
+  attack: string;
+  scale: number;
+  originY: number;
+}
+
+const TIER_PROFILES: TierProfile[] = [
+  // Tier 0 — skeleton (baseline)
+  {
+    texture: AK.enemyRun,
+    idle: ANIM.enemyIdle,
+    run: ANIM.enemyRun,
+    attack: ANIM.enemyAttack,
+    scale: 0.30,
+    originY: 0.672,
+  },
+  // Tier 1 — goblin
+  {
+    texture: AK.goblinRun,
+    idle: ANIM.goblinIdle,
+    run: ANIM.goblinRun,
+    attack: ANIM.goblinAttack,
+    scale: 0.30,
+    originY: 0.72,
+  },
+  // Tier 2 — spider (low silhouette)
+  {
+    texture: AK.spiderRun,
+    idle: ANIM.spiderIdle,
+    run: ANIM.spiderRun,
+    attack: ANIM.spiderAttack,
+    scale: 0.32,
+    originY: 0.78,
+  },
+  // Tier 3+ — minotaur (frames are 320px, so scale is smaller for the
+  // same on-screen footprint; still reads bigger than earlier tiers).
+  {
+    texture: AK.minotaurRun,
+    idle: ANIM.minotaurIdle,
+    run: ANIM.minotaurRun,
+    attack: ANIM.minotaurAttack,
+    scale: 0.22,
+    originY: 0.72,
+  },
+];
+
+function profileForTier(tier: number): TierProfile {
+  const clamped = Math.min(Math.max(0, tier), TIER_PROFILES.length - 1);
+  return TIER_PROFILES[clamped]!;
+}
 
 export class Enemy extends Phaser.GameObjects.Sprite {
   hp: number;
@@ -41,35 +95,41 @@ export class Enemy extends Phaser.GameObjects.Sprite {
 
   private meleeCooldown = 0;
   private animState: 'run' | 'attack' = 'run';
-  private baseTint: number;
+  private profile: TierProfile;
+  // Boss keeps a gentle purple tint; regular-enemy sprites wear their
+  // own art so we don't tint them (white "tint" is a no-op anyway).
+  private bossTint = 0xc0b0c0;
 
   constructor(scene: Phaser.Scene, x: number, y: number, cfg: EnemyConfig = {}) {
-    super(scene, x, y, AK.enemyRun, 0);
+    const isBoss = !!cfg.isBoss;
+    const tier = isBoss ? 0 : Math.max(0, cfg.tier ?? 0);
+    const profile = isBoss
+      ? TIER_PROFILES[0]! // bosses always render as the skull silhouette
+      : profileForTier(tier);
+
+    super(scene, x, y, profile.texture, 0);
     scene.add.existing(this);
 
-    this.isBoss = !!cfg.isBoss;
-    this.tier = this.isBoss ? 0 : Math.max(0, cfg.tier ?? 0);
+    this.isBoss = isBoss;
+    this.tier = tier;
+    this.profile = profile;
 
     if (this.isBoss) {
       this.hpMax = 72;
       this.hp = 72;
       this.damage = 6;
       this.speed = 44;
-      this.baseTint = 0xc0b0c0;
       this.setScale(-BOSS_SCALE, BOSS_SCALE);
-      this.setTint(this.baseTint);
+      this.setTint(this.bossTint);
     } else {
       this.hpMax = BASE_REGULAR_HP + TIER_HP_STEP * this.tier;
       this.hp = this.hpMax;
       this.damage = BASE_REGULAR_DMG + TIER_DMG_STEP * this.tier;
       this.speed = BASE_REGULAR_SPEED + TIER_SPEED_STEP * this.tier;
-      this.baseTint = TIER_TINTS[this.tier % TIER_TINTS.length]!;
-      this.setScale(-SPRITE_SCALE, SPRITE_SCALE);
-      if (this.tier > 0) this.setTint(this.baseTint);
+      this.setScale(-profile.scale, profile.scale);
     }
-    // Skull painted feet end at y=129/192 (ratio 0.672)
-    this.setOrigin(0.5, 0.672);
-    this.play(ANIM.enemyRun);
+    this.setOrigin(0.5, profile.originY);
+    this.play(profile.run);
   }
 
   tick(delta: number, knight: Knight) {
@@ -118,11 +178,11 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     this.scene.time.delayedCall(ms, () => this.restoreBaseTint());
   }
 
-  // Restore whichever tint this enemy was born with — the boss ghostly
-  // purple, or the tier tint for regulars (or none at tier 0).
+  // Restore the birth tint — boss keeps its purple glow; regulars have
+  // no tint and just display the raw sprite art.
   private restoreBaseTint() {
     if (!this.active) return;
-    if (this.isBoss || this.tier > 0) this.setTint(this.baseTint);
+    if (this.isBoss) this.setTint(this.bossTint);
     else this.clearTint();
   }
 
@@ -145,15 +205,15 @@ export class Enemy extends Phaser.GameObjects.Sprite {
 
   private setStateRun() {
     this.animState = 'run';
-    this.play(ANIM.enemyRun);
+    this.play(this.profile.run);
   }
 
   private playAttack() {
     this.animState = 'attack';
-    this.play(ANIM.enemyAttack);
+    this.play(this.profile.attack);
     this.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
       this.animState = 'run';
-      if (this.active) this.play(ANIM.enemyRun);
+      if (this.active) this.play(this.profile.run);
     });
   }
 }

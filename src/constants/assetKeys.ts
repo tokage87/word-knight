@@ -11,6 +11,18 @@ export const AK = {
   enemyIdle: 'enemy-idle',
   enemyRun: 'enemy-run',
   enemyAttack: 'enemy-attack',
+  // Tier-1 enemy: goblin (192px frames, idle 8 / run 6 / attack 4)
+  goblinIdle: 'goblin-idle',
+  goblinRun: 'goblin-run',
+  goblinAttack: 'goblin-attack',
+  // Tier-2 enemy: spider (192px frames, idle 8 / run 5 / attack 8)
+  spiderIdle: 'spider-idle',
+  spiderRun: 'spider-run',
+  spiderAttack: 'spider-attack',
+  // Tier-3+ enemy: minotaur (LARGER 320px frames, idle 16 / walk 8 / attack 12)
+  minotaurIdle: 'minotaur-idle',
+  minotaurRun: 'minotaur-run',
+  minotaurAttack: 'minotaur-attack',
   pawnBlack: 'pawn-black',
   pawnPurple: 'pawn-purple',
   pawnYellow: 'pawn-yellow',
@@ -38,10 +50,21 @@ export const ANIM = {
   enemyIdle: 'enemy-idle-loop',
   enemyRun: 'enemy-run-loop',
   enemyAttack: 'enemy-attack-once',
+  goblinIdle: 'goblin-idle-loop',
+  goblinRun: 'goblin-run-loop',
+  goblinAttack: 'goblin-attack-once',
+  spiderIdle: 'spider-idle-loop',
+  spiderRun: 'spider-run-loop',
+  spiderAttack: 'spider-attack-once',
+  minotaurIdle: 'minotaur-idle-loop',
+  minotaurRun: 'minotaur-run-loop',
+  minotaurAttack: 'minotaur-attack-once',
 } as const;
 
 // Tiny Swords unit spritesheets are always 192x192 per frame.
 export const UNIT_FRAME = 192;
+// Minotaur sheets are 320x320 per frame — larger silhouette.
+export const MINOTAUR_FRAME = 320;
 
 // Tiny Swords tilesets are 64x64.
 export const TILE = 64;

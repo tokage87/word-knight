@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { AK, ANIM, UNIT_FRAME, TILE } from '../constants/assetKeys';
+import { AK, ANIM, UNIT_FRAME, MINOTAUR_FRAME, TILE } from '../constants/assetKeys';
 
 export class BootScene extends Phaser.Scene {
   constructor() {
@@ -21,7 +21,7 @@ export class BootScene extends Phaser.Scene {
       frameHeight: UNIT_FRAME,
     });
 
-    // Enemy (Tiny Swords Skull)
+    // Enemy tier 0: Tiny Swords Skull
     this.load.spritesheet(AK.enemyIdle, 'assets/enemy/idle.png', {
       frameWidth: UNIT_FRAME,
       frameHeight: UNIT_FRAME,
@@ -33,6 +33,48 @@ export class BootScene extends Phaser.Scene {
     this.load.spritesheet(AK.enemyAttack, 'assets/enemy/attack.png', {
       frameWidth: UNIT_FRAME,
       frameHeight: UNIT_FRAME,
+    });
+
+    // Enemy tier 1: Goblin (same 192px frame pattern)
+    this.load.spritesheet(AK.goblinIdle, 'assets/goblin/idle.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.goblinRun, 'assets/goblin/run.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.goblinAttack, 'assets/goblin/attack.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+
+    // Enemy tier 2: Spider (192px frames; fewer run frames, more attack)
+    this.load.spritesheet(AK.spiderIdle, 'assets/spider/idle.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.spiderRun, 'assets/spider/run.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.spiderAttack, 'assets/spider/attack.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+
+    // Enemy tier 3+: Minotaur — BIGGER 320x320 frames.
+    this.load.spritesheet(AK.minotaurIdle, 'assets/minotaur/idle.png', {
+      frameWidth: MINOTAUR_FRAME,
+      frameHeight: MINOTAUR_FRAME,
+    });
+    this.load.spritesheet(AK.minotaurRun, 'assets/minotaur/run.png', {
+      frameWidth: MINOTAUR_FRAME,
+      frameHeight: MINOTAUR_FRAME,
+    });
+    this.load.spritesheet(AK.minotaurAttack, 'assets/minotaur/attack.png', {
+      frameWidth: MINOTAUR_FRAME,
+      frameHeight: MINOTAUR_FRAME,
     });
 
     // Villager crowd (static — idle frame 0 only)
@@ -81,6 +123,19 @@ export class BootScene extends Phaser.Scene {
     this.buildAnim(ANIM.enemyIdle, AK.enemyIdle, 8, 7, -1);
     this.buildAnim(ANIM.enemyRun, AK.enemyRun, 6, 11, -1);
     this.buildAnim(ANIM.enemyAttack, AK.enemyAttack, 7, 14, 0);
+    // Goblin: idle 8f, run 6f, attack 4f
+    this.buildAnim(ANIM.goblinIdle, AK.goblinIdle, 8, 7, -1);
+    this.buildAnim(ANIM.goblinRun, AK.goblinRun, 6, 12, -1);
+    this.buildAnim(ANIM.goblinAttack, AK.goblinAttack, 4, 14, 0);
+    // Spider: idle 8f, run 5f, attack 8f
+    this.buildAnim(ANIM.spiderIdle, AK.spiderIdle, 8, 7, -1);
+    this.buildAnim(ANIM.spiderRun, AK.spiderRun, 5, 11, -1);
+    this.buildAnim(ANIM.spiderAttack, AK.spiderAttack, 8, 14, 0);
+    // Minotaur: idle 16f, walk 8f, attack 12f — slower frame rates to
+    // emphasise the heavy silhouette.
+    this.buildAnim(ANIM.minotaurIdle, AK.minotaurIdle, 16, 8, -1);
+    this.buildAnim(ANIM.minotaurRun, AK.minotaurRun, 8, 10, -1);
+    this.buildAnim(ANIM.minotaurAttack, AK.minotaurAttack, 12, 12, 0);
 
     this.scene.start('Game');
     this.scene.launch('UI');
