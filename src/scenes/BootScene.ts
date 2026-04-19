@@ -113,6 +113,33 @@ export class BootScene extends Phaser.Scene {
     this.load.image(AK.houseBlue2, 'assets/buildings/house-blue-2.png');
     this.load.image(AK.houseRed1, 'assets/buildings/house-red-1.png');
     this.load.image(AK.houseYellow1, 'assets/buildings/house-yellow-1.png');
+
+    // City-only assets: bigger buildings + ambient life for the
+    // post-death meta scene. Sheep + bush are animated spritesheets
+    // (128px and 64px frames respectively), everything else is a
+    // single image.
+    this.load.image(AK.cityCastleBlue,   'assets/city/castle-blue.png');
+    this.load.image(AK.cityCastleRed,    'assets/city/castle-red.png');
+    this.load.image(AK.cityCastleYellow, 'assets/city/castle-yellow.png');
+    this.load.image(AK.cityCastlePurple, 'assets/city/castle-purple.png');
+    this.load.image(AK.cityTowerBlue,    'assets/city/tower-blue.png');
+    this.load.image(AK.cityTowerRed,     'assets/city/tower-red.png');
+    this.load.image(AK.cityBarracksBlue, 'assets/city/barracks-blue.png');
+    this.load.image(AK.houseBlue3,       'assets/city/house-blue-3.png');
+    this.load.image(AK.cityRock1,        'assets/city/rock-1.png');
+    this.load.image(AK.cityRock2,        'assets/city/rock-2.png');
+    this.load.spritesheet(AK.citySheepIdle, 'assets/city/sheep-idle.png', {
+      frameWidth: 128,
+      frameHeight: 128,
+    });
+    this.load.spritesheet(AK.cityBush, 'assets/city/bush-sheet.png', {
+      frameWidth: 64,
+      frameHeight: 128,
+    });
+    this.load.spritesheet(AK.cityWaterRocks, 'assets/city/water-rocks.png', {
+      frameWidth: 64,
+      frameHeight: 64,
+    });
   }
 
   create() {
@@ -136,6 +163,9 @@ export class BootScene extends Phaser.Scene {
     this.buildAnim(ANIM.minotaurIdle, AK.minotaurIdle, 16, 8, -1);
     this.buildAnim(ANIM.minotaurRun, AK.minotaurRun, 8, 10, -1);
     this.buildAnim(ANIM.minotaurAttack, AK.minotaurAttack, 12, 12, 0);
+    // City ambient loops — slow frame rates so the scene feels calm.
+    this.buildAnim(ANIM.citySheepIdle, AK.citySheepIdle, 8, 6, -1);
+    this.buildAnim(ANIM.cityBushSway, AK.cityBush, 16, 6, -1);
 
     this.scene.start('Game');
     this.scene.launch('UI');

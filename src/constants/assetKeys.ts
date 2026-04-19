@@ -39,8 +39,22 @@ export const AK = {
   // Buildings
   houseBlue1: 'house-blue-1',
   houseBlue2: 'house-blue-2',
+  houseBlue3: 'house-blue-3',
   houseRed1: 'house-red-1',
   houseYellow1: 'house-yellow-1',
+  // City (post-death meta scene)
+  cityCastleBlue: 'city-castle-blue',
+  cityCastleRed: 'city-castle-red',
+  cityCastleYellow: 'city-castle-yellow',
+  cityCastlePurple: 'city-castle-purple',
+  cityTowerBlue: 'city-tower-blue',
+  cityTowerRed: 'city-tower-red',
+  cityBarracksBlue: 'city-barracks-blue',
+  citySheepIdle: 'city-sheep-idle',
+  cityBush: 'city-bush',
+  cityRock1: 'city-rock-1',
+  cityRock2: 'city-rock-2',
+  cityWaterRocks: 'city-water-rocks',
 } as const;
 
 export const ANIM = {
@@ -59,6 +73,8 @@ export const ANIM = {
   minotaurIdle: 'minotaur-idle-loop',
   minotaurRun: 'minotaur-run-loop',
   minotaurAttack: 'minotaur-attack-once',
+  citySheepIdle: 'city-sheep-idle-loop',
+  cityBushSway: 'city-bush-sway-loop',
 } as const;
 
 // Tiny Swords unit spritesheets are always 192x192 per frame.
