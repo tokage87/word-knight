@@ -456,7 +456,7 @@ const SPELL_META: Record<
   },
   heal: {
     name: 'Heal',
-    icon: '/assets/ui/Icon_05.png',
+    icon: 'assets/ui/Icon_05.png',
     newDesc: 'Restore 50 HP when below 55%.',
     upgradeDesc: '+35% healing, −15% cooldown.',
   },

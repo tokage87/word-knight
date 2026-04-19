@@ -173,8 +173,8 @@ const HTML = `
 
   <div class="hud-bottom-left equipment-panel">
     <div class="equipment-grid">
-      <div class="eq-slot"><img src="/assets/ui/Icon_07.png" alt="sword" /></div>
-      <div class="eq-slot"><img src="/assets/ui/Icon_06.png" alt="shield" /></div>
+      <div class="eq-slot"><img src="assets/ui/Icon_07.png" alt="sword" /></div>
+      <div class="eq-slot"><img src="assets/ui/Icon_06.png" alt="shield" /></div>
       <div class="eq-slot empty"></div>
       <div class="eq-slot empty"></div>
     </div>
@@ -197,7 +197,7 @@ const HTML = `
         <span class="ability-rank"></span>
       </div>
       <div class="ability ability--locked" data-spell="heal">
-        <img class="ability-glyph-img" src="/assets/ui/Icon_05.png" alt="heal" />
+        <img class="ability-glyph-img" src="assets/ui/Icon_05.png" alt="heal" />
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>

@@ -75,7 +75,10 @@ export class SkillPicker {
     const cards = options
       .map((opt, i) => {
         const key = HOTKEYS[i]?.toUpperCase() ?? '';
-        const iconHtml = opt.icon.startsWith('/')
+        // Icons may be either an emoji glyph (e.g. "🔥") or a relative
+        // image path ending in .png. We use the ".png" suffix as the
+        // discriminator so paths stay base-URL-agnostic.
+        const iconHtml = opt.icon.endsWith('.png')
           ? `<img class="skill-card-icon-img" src="${opt.icon}" alt="" />`
           : `<span class="skill-card-icon">${opt.icon}</span>`;
         const kindLabel = opt.kind === 'new' ? 'NEW' : 'UPGRADE';
