@@ -39,6 +39,13 @@ export class GameScene extends Phaser.Scene {
   private pendingLevelUps = 0;
   private levelUpCount = 0;
   private pendingCardOptions: SkillCardOption[] | null = null;
+  // One-shot carry-over for the new-skill slot. If the player failed a
+  // story (3 mistakes → no NEW in the picker), the very next level-up
+  // re-offers the new-skill opportunity even if the natural cadence
+  // (every 4th level-up) would skip it. Consumed once — regardless of
+  // the next gate's outcome — so it's a single forgiving retry, not an
+  // infinite "keep trying" loop. A subsequent fail sets it again.
+  private pendingNewSkillRollover = false;
   private statRanks: Record<StatId, number> = { maxHp: 0, meleeDmg: 0, atkSpeed: 0 };
   // Manual pause (P key / button) lives separately from `this.paused`
   // which is also used by the picker/sentence gates. We only toggle
@@ -107,6 +114,7 @@ export class GameScene extends Phaser.Scene {
     this.pendingLevelUps = 0;
     this.levelUpCount = 0;
     this.pendingCardOptions = null;
+    this.pendingNewSkillRollover = false;
     this.statRanks = { maxHp: 0, meleeDmg: 0, atkSpeed: 0 };
     this.stats = {
       quizCorrect: 0,
@@ -459,7 +467,15 @@ export class GameScene extends Phaser.Scene {
 
   private maybeShowPicker() {
     if (this.paused || this.pendingLevelUps <= 0) return;
-    const options = this.buildCardOptions(3);
+    // Consume the one-shot rollover: if the previous story gate failed,
+    // we force allowNew=true here regardless of the natural cadence,
+    // then clear the flag. A subsequent story-fail will set it again.
+    const rolloverActive = this.pendingNewSkillRollover;
+    this.pendingNewSkillRollover = false;
+    const options = this.buildCardOptions(
+      3,
+      rolloverActive ? { allowNew: true } : {},
+    );
     if (options.length === 0) {
       // No new skills available and nothing to upgrade — drop remaining
       // level-ups silently so the bar still flows.
@@ -512,6 +528,10 @@ export class GameScene extends Phaser.Scene {
     // keeps the new-spell option AND full-strength upgrades. A perfect
     // run needs no rebuild.
     if (payload.weakened) {
+      // 3-mistake abort — arm the one-shot new-skill rollover so the
+      // very next level-up gives the player another chance at a new
+      // spell, even if the natural every-4 cadence would skip it.
+      this.pendingNewSkillRollover = true;
       options = this.buildCardOptions(3, {
         allowNew: false,
         weakened: true,
