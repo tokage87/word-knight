@@ -41,11 +41,34 @@ export class GameScene extends Phaser.Scene {
   private levelUpCount = 0;
   private pendingCardOptions: SkillCardOption[] | null = null;
   private statRanks: Record<StatId, number> = { maxHp: 0, meleeDmg: 0, atkSpeed: 0 };
+  // Manual pause (P key / button) lives separately from `this.paused`
+  // which is also used by the picker/sentence gates. We only toggle
+  // `paused` if we're not already gated — otherwise the quiz / story /
+  // picker would get accidentally resumed when the player unpauses.
+  private manuallyPaused = false;
+  // Lifetime counters shown on the pause panel. Distinct words is a Set
+  // of vocab ids the player got right at least once — nicer metric than
+  // raw correct count because spamming the same word doesn't inflate it.
+  private stats = {
+    quizCorrect: 0,
+    quizWrong: 0,
+    sentenceCorrect: 0,
+    sentenceWrong: 0,
+    storiesPerfect: 0,
+    storiesFailed: 0,
+  };
+  private distinctWords = new Set<string>();
   // Quiz answers are the primary XP source — kills give a smaller
   // trickle so progression is gated on vocabulary, not combat.
   private readonly EXP_PER_KILL = 8;
   private readonly EXP_PER_BOSS_KILL = 25;
-  private readonly EXP_PER_QUIZ_CORRECT = 30;
+  // Nerfed from 30 to slow leveling — quiz answers used to rush the
+  // player past the early spell pool; now the curve leans on kills +
+  // deliberate correct answers instead of quiz spam.
+  private readonly EXP_PER_QUIZ_CORRECT = 5;
+  // Wrong quiz answer penalty: every spell's current cooldown gets this
+  // many ms added, capped at 2× base so it can't stack into oblivion.
+  private readonly QUIZ_WRONG_PENALTY_MS = 5000;
   // Roguelite-style curve: early levels come quickly so the player hits
   // the full skill pool, then upgrades get progressively rarer.
   //   L1→L2: 40 XP  (2 kills)
@@ -109,6 +132,11 @@ export class GameScene extends Phaser.Scene {
     this.registry.set('spellsRank', { fire: 0, ice: 0, heal: 0 });
 
     this.game.events.on('quiz:correct', this.onQuizCorrect, this);
+    this.game.events.on('quiz:wrong', this.onQuizWrong, this);
+    // P key toggles manual pause. Ignored while a gate (sentence, story,
+    // picker) is already pausing the game — those have their own flow.
+    this.input.keyboard?.on('keydown-P', () => this.toggleManualPause());
+    this.game.events.on('ui:togglePause', this.toggleManualPause, this);
     this.game.events.on('knight:died', this.onKnightDied, this);
     this.game.events.on('enemy:killed', this.onEnemyKilled, this);
     this.game.events.on('skillpicker:picked', this.onSkillPicked, this);
@@ -117,6 +145,7 @@ export class GameScene extends Phaser.Scene {
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.off('quiz:correct', this.onQuizCorrect, this);
+      this.game.events.off('quiz:wrong', this.onQuizWrong, this);
       this.game.events.off('knight:died', this.onKnightDied, this);
       this.game.events.off('enemy:killed', this.onEnemyKilled, this);
       this.game.events.off('skillpicker:picked', this.onSkillPicked, this);
@@ -322,9 +351,40 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  private onQuizCorrect() {
+  private onQuizCorrect(payload?: { id?: string }) {
     this.spellCaster.reduceAll(5000);
     this.gainExp(this.EXP_PER_QUIZ_CORRECT);
+    this.stats.quizCorrect += 1;
+    if (payload?.id) this.distinctWords.add(payload.id);
+    this.publishStats();
+  }
+
+  private toggleManualPause() {
+    // Don't fight with a gate-driven pause (picker, sentence, story).
+    // If a gate has already paused the game, ignore P — the player will
+    // resume via the gate anyway.
+    if (!this.manuallyPaused && this.paused) return;
+    this.manuallyPaused = !this.manuallyPaused;
+    this.paused = this.manuallyPaused;
+    this.game.events.emit('ui:pauseChanged', { paused: this.manuallyPaused });
+    this.publishStats();
+  }
+
+  private onQuizWrong() {
+    // Inverse of the correct-answer reward: every spell's cooldown gets
+    // pushed back QUIZ_WRONG_PENALTY_MS, teaching the player that silence
+    // or wrong picks are dangerous instead of neutral. Capped in
+    // SpellCaster.penalizeAll() so the punishment doesn't spiral.
+    this.spellCaster.penalizeAll(this.QUIZ_WRONG_PENALTY_MS);
+    this.stats.quizWrong += 1;
+    this.publishStats();
+  }
+
+  private publishStats() {
+    this.registry.set('stats', {
+      ...this.stats,
+      distinctWords: this.distinctWords.size,
+    });
   }
 
   private gainExp(amount: number) {
@@ -379,6 +439,9 @@ export class GameScene extends Phaser.Scene {
   private onSentenceComplete(payload: { id: string; perfect: boolean }) {
     let options = this.pendingCardOptions;
     if (!options) return;
+    if (payload.perfect) this.stats.sentenceCorrect += 1;
+    else this.stats.sentenceWrong += 1;
+    this.publishStats();
     if (!payload.perfect) {
       // Mistake during the single-sentence gate — upgrade pool stays
       // the same but every card becomes WEAKENED (50% amount).
@@ -391,6 +454,9 @@ export class GameScene extends Phaser.Scene {
   private onStoryComplete(payload: { id: string; perfect: boolean }) {
     let options = this.pendingCardOptions;
     if (!options) return;
+    if (payload.perfect) this.stats.storiesPerfect += 1;
+    else this.stats.storiesFailed += 1;
+    this.publishStats();
     if (!payload.perfect) {
       // Mistake in the story gate — drop new-spell cards AND weaken
       // upgrades by 50%. Picker still shows 3 choices, all upgrades.
@@ -452,13 +518,13 @@ export class GameScene extends Phaser.Scene {
     shuffleInPlace(newCards);
     shuffleInPlace(upgradeCards);
 
-    // New skills only appear on every 2nd level-up (1st, 3rd, 5th...).
+    // New skills only appear every 4th level-up (1st, 5th, 9th...).
     // Other level-ups are upgrade-only, with a new-card fallback if the
     // upgrade pool is empty so the picker still shows something.
     // `overrides.allowNew` forces the value (used by the story gate on
     // failure to guarantee upgrade-only cards).
     const allowNew =
-      overrides.allowNew ?? (this.levelUpCount % 2 === 1);
+      overrides.allowNew ?? (this.levelUpCount % 4 === 1);
     const pool: SkillCardOption[] = [];
 
     if (allowNew) {

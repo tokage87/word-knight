@@ -157,6 +157,20 @@ export class SpellCaster {
     this.scene.game.events.emit('spell:reduced', ms);
   }
 
+  // Wrong-quiz penalty: bumps every spell's current cooldown so it takes
+  // longer to be ready. Cap at 2× base so the punishment can't spiral
+  // into 30+ seconds of extra wait across a flurry of bad picks.
+  penalizeAll(ms: number) {
+    (Object.keys(this.spells) as SpellId[]).forEach((id) => {
+      const base = this.getBaseCooldown(id);
+      this.spells[id].current = Math.min(
+        base * 2,
+        this.spells[id].current + ms,
+      );
+    });
+    this.scene.game.events.emit('spell:penalized', ms);
+  }
+
   getCooldown(id: SpellId): number {
     return this.spells[id].current;
   }

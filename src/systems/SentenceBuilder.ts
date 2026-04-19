@@ -196,6 +196,14 @@ export class SentenceBuilder {
       });
       this.picked.push(step.correct);
       this.mistakes += 1;
+      // Story mode: 3 mistakes aborts the story early so the player
+      // doesn't grind through remaining sentences. finish() will still
+      // emit `story:complete` with perfect=false, which strips new-spell
+      // cards and flags upgrades as weakened.
+      if (this.story && this.mistakes >= 3) {
+        this.scene.time.delayedCall(900, () => this.abortStory());
+        return;
+      }
       this.scene.time.delayedCall(900, () => this.advance());
     }
   }
@@ -209,6 +217,17 @@ export class SentenceBuilder {
       return;
     }
     this.render();
+  }
+
+  // Called when the player hits the 3-mistake cap mid-story. Mirrors
+  // finish()'s story branch but marks completion non-perfect regardless
+  // of how far through the story the player got.
+  private abortStory() {
+    if (!this.story) return;
+    const id = this.story.id;
+    this.story = undefined;
+    this.hide();
+    this.scene.game.events.emit('story:complete', { id, perfect: false });
   }
 
   private finish() {

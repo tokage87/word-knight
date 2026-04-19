@@ -32,13 +32,21 @@ export class UIScene extends Phaser.Scene {
     this.sentence.mount();
 
     this.game.events.on('spell:reduced', this.hud.flashCooldownBadge, this.hud);
+    this.game.events.on('spell:penalized', this.hud.flashCooldownPenalty, this.hud);
     this.game.events.on('enemy:killed', this.hud.onEnemyKilled, this.hud);
     this.game.events.on('boss:spawned', this.hud.onBossSpawned, this.hud);
+    this.game.events.on('ui:pauseChanged', this.onPauseChanged, this);
+    this.hud.onPauseButtonClick(() => this.game.events.emit('ui:togglePause'));
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.off(
         'spell:reduced',
         this.hud.flashCooldownBadge,
+        this.hud,
+      );
+      this.game.events.off(
+        'spell:penalized',
+        this.hud.flashCooldownPenalty,
         this.hud,
       );
       this.game.events.off('enemy:killed', this.hud.onEnemyKilled, this.hud);
@@ -48,5 +56,10 @@ export class UIScene extends Phaser.Scene {
 
   update() {
     this.hud.tick(this.registry);
+  }
+
+  private onPauseChanged(payload: { paused: boolean }) {
+    const stats = (this.registry.get('stats') as Record<string, number> | undefined) ?? {};
+    this.hud.setPaused(payload.paused, stats);
   }
 }

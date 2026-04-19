@@ -12,12 +12,24 @@ export class WaveSpawner {
   private interval = MIN_INTERVAL_MS;
   private bossTimer = 0;
   private bossPending = false;
+  // Regular-enemy difficulty tier. Increments each time a boss is
+  // defeated — the NEXT wave of regulars (and every wave after, until
+  // the next boss dies) spawns at the new tier with more HP, damage and
+  // speed. See Enemy.ts for the per-tier stat deltas.
+  private tier = 0;
+  private onEnemyKilled = (p: { isBoss: boolean }) => {
+    if (p.isBoss) this.tier += 1;
+  };
 
   constructor(
     private readonly scene: Phaser.Scene,
     private readonly group: Phaser.GameObjects.Group,
   ) {
     this.resetInterval();
+    this.scene.game.events.on('enemy:killed', this.onEnemyKilled, this);
+    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.scene.game.events.off('enemy:killed', this.onEnemyKilled, this);
+    });
   }
 
   update(delta: number) {
@@ -38,10 +50,15 @@ export class WaveSpawner {
 
     const e = new Enemy(this.scene, LOGICAL_WIDTH + 30, GROUND_Y + 10, {
       isBoss,
+      tier: this.tier,
     });
     e.setDepth(50);
     this.group.add(e);
     if (isBoss) this.scene.game.events.emit('boss:spawned', e);
+  }
+
+  getTier(): number {
+    return this.tier;
   }
 
   private resetInterval() {

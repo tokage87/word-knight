@@ -468,6 +468,94 @@
   transform: translate(-50%, -50px);
   opacity: 0;
 }
+/* +cooldown penalty variant: red 9-slice instead of blue so wrong quiz
+   feedback reads as a loss without any extra DOM. */
+.cd-badge--penalty {
+  border-image-source: url('/assets/ui/button-red-9s.png');
+  color: #ffe0e0;
+}
+
+/* ───── Pause button + overlay ───── */
+.pause-btn {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) scale(var(--hud-scale));
+  transform-origin: top center;
+  pointer-events: auto;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/button-blue-9s.png');
+  border-image-slice: 47 45 fill;
+  border-image-width: 10px;
+  border-image-repeat: stretch;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  z-index: 15;
+}
+.pause-btn:active { transform: translateX(-50%) scale(calc(var(--hud-scale) * 0.95)); }
+
+.pause-overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 8, 14, 0.72);
+  z-index: 50;
+  pointer-events: auto;
+}
+.pause-overlay--visible { display: flex; }
+.pause-panel {
+  min-width: 260px;
+  max-width: 360px;
+  padding: 18px 24px 20px;
+  color: var(--paper-text);
+  text-align: center;
+  border-style: solid;
+  border-width: 18px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/paper-9s.png');
+  border-image-slice: 44 52 45 52 fill;
+  border-image-width: 18px;
+  border-image-repeat: stretch;
+}
+.pause-title {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #a43d1a;
+  margin-bottom: 2px;
+}
+.pause-sub {
+  font-size: 11px;
+  color: var(--paper-text-muted);
+  margin-bottom: 12px;
+}
+.pause-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  text-align: left;
+}
+.pause-stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 2px 4px;
+  border-bottom: 1px dashed rgba(58, 42, 16, 0.25);
+}
+.pause-stat-val {
+  font-weight: bold;
+  color: #7b3615;
+}
 
 /* ───── Hover tooltips ─────
    Any element with a non-empty `data-tooltip` attribute gets a small

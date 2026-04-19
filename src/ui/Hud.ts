@@ -21,12 +21,19 @@ export class Hud {
   private expText?: HTMLElement;
   private hpNum = 100;
   private gold_ = 0;
+  private pauseOverlay?: HTMLElement;
+  private pauseStats?: HTMLElement;
+  private pauseBtn?: HTMLElement;
+  private pauseClickHandler?: () => void;
 
   mount() {
     const root = document.getElementById('hud-root');
     if (!root) return;
     this.root = root;
     root.innerHTML = HTML;
+    this.pauseOverlay = root.querySelector<HTMLElement>('.pause-overlay') ?? undefined;
+    this.pauseStats = root.querySelector<HTMLElement>('.pause-stats') ?? undefined;
+    this.pauseBtn = root.querySelector<HTMLElement>('.pause-btn') ?? undefined;
 
     this.stats = root.querySelector<HTMLElement>('.stat-hp-val') ?? undefined;
     this.dmgStat = root.querySelector<HTMLElement>('.stat-dmg-val') ?? undefined;
@@ -117,6 +124,45 @@ export class Hud {
     const badge = document.createElement('div');
     badge.className = 'cd-badge';
     badge.textContent = `-${ms / 1000}s`;
+    this.root.appendChild(badge);
+    requestAnimationFrame(() => badge.classList.add('cd-badge--rise'));
+    setTimeout(() => badge.remove(), 900);
+  }
+
+  setPaused(paused: boolean, stats: Record<string, number> = {}) {
+    if (!this.pauseOverlay) return;
+    this.pauseOverlay.classList.toggle('pause-overlay--visible', paused);
+    if (this.pauseBtn) this.pauseBtn.textContent = paused ? '▶' : '⏸';
+    if (paused && this.pauseStats) {
+      const lines: [string, number | string][] = [
+        ['Correct quizzes', stats.quizCorrect ?? 0],
+        ['Wrong quizzes', stats.quizWrong ?? 0],
+        ['Distinct words solved', stats.distinctWords ?? 0],
+        ['Sentences (perfect)', stats.sentenceCorrect ?? 0],
+        ['Sentences (with mistake)', stats.sentenceWrong ?? 0],
+        ['Stories perfect', stats.storiesPerfect ?? 0],
+        ['Stories failed', stats.storiesFailed ?? 0],
+      ];
+      this.pauseStats.innerHTML = lines
+        .map(([k, v]) => `<div class="pause-stat-row"><span>${k}</span><span class="pause-stat-val">${v}</span></div>`)
+        .join('');
+    }
+  }
+
+  onPauseButtonClick(handler: () => void) {
+    if (!this.pauseBtn) return;
+    if (this.pauseClickHandler) this.pauseBtn.removeEventListener('click', this.pauseClickHandler);
+    this.pauseClickHandler = handler;
+    this.pauseBtn.addEventListener('click', handler);
+  }
+
+  flashCooldownPenalty(ms: number) {
+    if (!this.root) return;
+    const badge = document.createElement('div');
+    // Red-tinted variant of the cooldown badge (see .cd-badge--penalty
+    // in hud.css) so +cooldown reads as "bad" at a glance.
+    badge.className = 'cd-badge cd-badge--penalty';
+    badge.textContent = `+${ms / 1000}s`;
     this.root.appendChild(badge);
     requestAnimationFrame(() => badge.classList.add('cd-badge--rise'));
     setTimeout(() => badge.remove(), 900);
@@ -219,6 +265,16 @@ const HTML = `
   <div class="hud-top-center boss-bar" data-tooltip="Boss HP">
     <div class="boss-label">BOSS</div>
     <div class="boss-track"><div class="boss-fill"></div></div>
+  </div>
+
+  <button type="button" class="pause-btn" data-tooltip="Pause (P)">⏸</button>
+
+  <div class="pause-overlay">
+    <div class="pause-panel">
+      <div class="pause-title">PAUSED</div>
+      <div class="pause-sub">Press P to resume</div>
+      <div class="pause-stats"></div>
+    </div>
   </div>
 
   <div class="hud-bottom-left equipment-panel">

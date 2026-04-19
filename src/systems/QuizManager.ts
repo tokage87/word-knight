@@ -108,10 +108,11 @@ export class QuizManager {
 
     if (isCorrect) {
       btn.classList.add('quiz-correct');
-      this.scene.game.events.emit('quiz:correct');
+      this.scene.game.events.emit('quiz:correct', { id: this.current.id });
       this.scene.time.delayedCall(400, () => this.loadNext());
     } else {
       btn.classList.add('quiz-wrong');
+      this.scene.game.events.emit('quiz:wrong', { id: this.current.id });
       buttons.forEach((b) => {
         const t = b.querySelector<HTMLElement>('.quiz-opt-text');
         if (t?.textContent?.trim() === this.current!.en) {
