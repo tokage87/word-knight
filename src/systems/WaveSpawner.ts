@@ -3,8 +3,10 @@ import { Enemy } from '../entities/Enemy';
 import { LOGICAL_WIDTH, GROUND_Y } from '../constants/layout';
 
 const MAX_ON_SCREEN = 3;
-const MIN_INTERVAL_MS = 2000;
-const MAX_INTERVAL_MS = 3000;
+// Moderate slowdown pass (2026-04-22): +500 ms on both ends. Fewer
+// enemies on screen at once = more time between quiz answers.
+const MIN_INTERVAL_MS = 2500;
+const MAX_INTERVAL_MS = 3500;
 const BOSS_EVERY_MS = 30_000;
 
 export class WaveSpawner {

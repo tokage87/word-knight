@@ -3,7 +3,9 @@ import Phaser from 'phaser';
 // Plain HTML HUD overlay. Keeps all HUD elements in `#hud-root` in
 // index.html and mutates live values per frame from the game registry.
 // Positioning is CSS-driven (see src/styles/hud.css).
-const BASE_MELEE_COOLDOWN_MS = 900;
+// Matches Knight.meleeCooldownMs default; earned atk-speed ranks
+// trim that down so the displayed "Szybkość ataku" % goes above 100.
+const BASE_MELEE_COOLDOWN_MS = 1300;
 
 // Live player stats rendered into the pause panel. Every field is
 // optional — rows with missing or default values are elided so the

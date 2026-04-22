@@ -14,7 +14,9 @@ export class Knight extends Phaser.GameObjects.Sprite {
   hpMax = 100;
   hp = 100;
   meleeDamage = 10;
-  meleeCooldownMs = 900;
+  // Moderate slowdown pass (2026-04-22): 900→1300 ms baseline. Earned
+  // attack-speed ranks still scale this down via the tree.
+  meleeCooldownMs = 1300;
   readonly meleeRange = MELEE_RANGE;
 
   // Extended stats applied by tree nodes (fractional values are 0..1).

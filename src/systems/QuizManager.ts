@@ -13,6 +13,11 @@ export class QuizManager {
   private root?: HTMLElement;
   private locked = false;
   private inputPaused = false;
+  // Anti-spam grace window: when a new word renders, ignore W/E + click
+  // until this timestamp. Gives the kid a beat to read before the next
+  // keystroke registers, so mashing keys between words doesn't blow
+  // through prompts.
+  private newWordGraceUntilMs = 0;
   private keydownHandler?: (ev: KeyboardEvent) => void;
 
   constructor(private readonly scene: Phaser.Scene) {}
@@ -77,7 +82,7 @@ export class QuizManager {
   }
 
   private onClick(ev: Event) {
-    if (this.locked || this.inputPaused) return;
+    if (this.locked || this.inputPaused || this.scene.time.now < this.newWordGraceUntilMs) return;
     const t = (ev.target as HTMLElement).closest(
       '.quiz-opt',
     ) as HTMLButtonElement | null;
@@ -88,6 +93,7 @@ export class QuizManager {
 
   private pressKey(key: KeyCode) {
     if (this.locked || this.inputPaused || !this.root) return;
+    if (this.scene.time.now < this.newWordGraceUntilMs) return;
     const btn = this.root.querySelector<HTMLButtonElement>(
       `.quiz-opt[data-key="${key}"]`,
     );
@@ -109,7 +115,9 @@ export class QuizManager {
     if (isCorrect) {
       btn.classList.add('quiz-correct');
       this.scene.game.events.emit('quiz:correct', { id: this.current.id });
-      this.scene.time.delayedCall(400, () => this.loadNext());
+      // Moderate slowdown pass: 400→900 ms so the green flash lingers
+      // long enough to feel like feedback, not a flicker.
+      this.scene.time.delayedCall(900, () => this.loadNext());
     } else {
       btn.classList.add('quiz-wrong');
       this.scene.game.events.emit('quiz:wrong', { id: this.current.id });
@@ -119,7 +127,9 @@ export class QuizManager {
           b.classList.add('quiz-correct');
         }
       });
-      this.scene.time.delayedCall(1200, () => this.loadNext());
+      // 1200→2200 ms: extra time to read the correct answer before
+      // moving on, since this is the teachable moment.
+      this.scene.time.delayedCall(2200, () => this.loadNext());
     }
   }
 
@@ -144,6 +154,9 @@ export class QuizManager {
       b.classList.remove('quiz-correct', 'quiz-wrong');
     });
 
+    // Anti-spam: ignore W/E + click for 1200 ms so the kid has to see
+    // the new word before their next keypress can submit.
+    this.newWordGraceUntilMs = this.scene.time.now + 1200;
     this.locked = false;
   }
 }

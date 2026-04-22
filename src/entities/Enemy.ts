@@ -3,7 +3,9 @@ import { AK, ANIM } from '../constants/assetKeys';
 import type { Knight } from './Knight';
 
 const MELEE_RANGE = 54;
-const MELEE_RATE_MS = 1000;
+// Moderate slowdown pass (2026-04-22): 1000→1300 ms. Gives the kid
+// an extra beat between incoming hits to answer a quiz.
+const MELEE_RATE_MS = 1300;
 const BOSS_SCALE = 0.42;
 
 export interface EnemyConfig {
@@ -20,7 +22,9 @@ export interface EnemyConfig {
 // Base stats for tier-0 regulars. Deltas per tier layer on top.
 const BASE_REGULAR_HP = 36;
 const BASE_REGULAR_DMG = 4;
-const BASE_REGULAR_SPEED = 55;
+// Moderate slowdown pass (2026-04-22): 55→40 px/s. Gives the kid
+// more reaction time to answer a quiz before enemies reach melee range.
+const BASE_REGULAR_SPEED = 40;
 const TIER_HP_STEP = 18; // +50% of base per tier
 const TIER_DMG_STEP = 2;
 const TIER_SPEED_STEP = 5;
@@ -118,7 +122,8 @@ export class Enemy extends Phaser.GameObjects.Sprite {
       this.hpMax = 72;
       this.hp = 72;
       this.damage = 6;
-      this.speed = 44;
+      // Moderate slowdown pass: boss speed 44→36.
+      this.speed = 36;
       this.setScale(-BOSS_SCALE, BOSS_SCALE);
       this.setTint(this.bossTint);
     } else {
