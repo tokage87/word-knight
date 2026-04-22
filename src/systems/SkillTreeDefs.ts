@@ -27,11 +27,11 @@ const fireNodes: TreeNode[] = [
   {
     id: 'fire.dmg1',
     label: 'Ostry Miecz',
-    desc: (r) => `+${2 * r} obrażeń w walce wręcz`,
+    desc: (r) => `+${3 * r} obrażeń w walce wręcz`,
     icon: 'assets/ui/Icon_05.png',
     maxRank: 3,
     costCurve: 'bigPassive',
-    effect: { kind: 'stat', stat: 'meleeDmg', perRank: 2 },
+    effect: { kind: 'stat', stat: 'meleeDmg', perRank: 3 },
     requires: [],
     position: { q: 1, r: 0 },
   },
@@ -277,6 +277,17 @@ const earthNodes: TreeNode[] = [
     effect: { kind: 'spellUnlock', spellId: 'earthquake' },
     requires: ['earth.shield.unlock', 'earth.xpMult'],
     position: { q: 1, r: 2 },
+  },
+  {
+    id: 'earth.gold',
+    label: 'Skarby Zatoki',
+    desc: (r) => `+${10 * r}% złota z wrogów`,
+    icon: 'assets/ui/Icon_03.png',
+    maxRank: 3,
+    costCurve: 'smallPassive',
+    effect: { kind: 'runStat', stat: 'goldMult', perRank: 0.10 },
+    requires: ['earth.xpMult'],
+    position: { q: 2, r: 1 },
   },
 ];
 

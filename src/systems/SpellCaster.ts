@@ -138,8 +138,12 @@ export class SpellCaster {
   private iceSlowMs(): number {
     return Math.round(3000 * this.rankMultiplier(this.spells.ice));
   }
-  private healAmount(): number {
-    return Math.round(50 * this.rankMultiplier(this.spells.heal));
+  private healAmount(hpMax: number): number {
+    // Heal floors at 50 but scales with max HP so fully-geared Knights
+    // (~235 HP) actually get a meaningful refill — previously capped at
+    // 85 HP (36% of bar).
+    const base = Math.max(50, Math.round(0.35 * hpMax));
+    return Math.round(base * this.rankMultiplier(this.spells.heal));
   }
 
   private fireArrowDamage(): number {
@@ -301,7 +305,7 @@ export class SpellCaster {
   }
 
   private castHeal(knight: Knight) {
-    knight.heal(this.healAmount());
+    knight.heal(this.healAmount(knight.hpMax));
     const flash = this.scene.add
       .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x80ff90, 0.35)
       .setOrigin(0, 0);
