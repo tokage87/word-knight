@@ -120,6 +120,7 @@ export class CityScene extends Phaser.Scene {
     this.drawTitleBanner();
     this.drawNewRunButton();
     this.drawJournalButton();
+    this.drawSettingsButton();
 
     // Phaser's InputPlugin registers a window-level pointerdown listener
     // that hit-tests the canvas regardless of which DOM element the
@@ -490,6 +491,34 @@ export class CityScene extends Phaser.Scene {
     bg.on('pointerout',  () => bg.setFillStyle(0x3a6fa6, 1));
     bg.on('pointerdown', () => {
       this.game.events.emit('city:openJournal');
+    });
+  }
+
+  // Tertiary button — opens the curriculum picker so the parent can
+  // choose source (legacy / tiered / A2 / B1) + tier + category. Kept
+  // small and gray so it reads as a settings affordance, not a primary
+  // action.
+  private drawSettingsButton() {
+    const btnX = 60;
+    const btnY = LOGICAL_HEIGHT - 22;
+    const bg = this.add
+      .rectangle(btnX, btnY, 100, 30, 0x5a5a5a, 1)
+      .setStrokeStyle(2, 0x2c2c2c)
+      .setDepth(30)
+      .setInteractive({ useHandCursor: true });
+    this.add
+      .text(btnX, btnY, 'USTAWIENIA', {
+        fontFamily: 'monospace',
+        fontSize: '11px',
+        fontStyle: 'bold',
+        color: '#fff',
+      })
+      .setOrigin(0.5)
+      .setDepth(31);
+    bg.on('pointerover', () => bg.setFillStyle(0x7a7a7a, 1));
+    bg.on('pointerout',  () => bg.setFillStyle(0x5a5a5a, 1));
+    bg.on('pointerdown', () => {
+      this.game.events.emit('city:openCurriculum');
     });
   }
 }

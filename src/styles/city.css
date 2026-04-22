@@ -1104,3 +1104,117 @@
   padding-top: 6px;
   border-top: 1px dashed rgba(58, 42, 16, 0.25);
 }
+
+/* ─── Curriculum picker / Ustawienia ────────────────────────────── */
+
+.city-curriculum-panel {
+  min-width: 460px;
+  max-width: 600px;
+}
+.cu-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 6px 0 10px;
+}
+.cu-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+}
+.cu-row-label {
+  min-width: 80px;
+  font-weight: bold;
+  color: var(--paper-text);
+  padding-top: 4px;
+}
+.cu-source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cu-source-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.cu-source-row input[type="radio"] { cursor: pointer; }
+
+.cu-tier-row {
+  display: flex;
+  gap: 6px;
+}
+.cu-tier-btn {
+  min-width: 36px;
+  padding: 4px 10px;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(245, 232, 200, 0.7);
+  border: 1px solid rgba(58, 42, 16, 0.4);
+  border-radius: 3px;
+  cursor: pointer;
+  color: var(--paper-text);
+}
+.cu-tier-btn:hover { background: rgba(245, 232, 200, 1); }
+.cu-tier-btn--active {
+  background: #a43d1a;
+  color: #fff;
+  border-color: #3a2a10;
+}
+
+.cu-cat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 380px;
+}
+.cu-cat-chip {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  background: rgba(245, 232, 200, 0.7);
+  border: 1px solid rgba(58, 42, 16, 0.4);
+  border-radius: 3px;
+  cursor: pointer;
+  color: var(--paper-text);
+}
+.cu-cat-chip:hover { background: rgba(245, 232, 200, 1); }
+.cu-cat-chip--active {
+  background: #3a6fa6;
+  color: #fff;
+  border-color: #1e3a57;
+}
+
+.cu-summary {
+  padding: 8px 10px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--paper-text-muted);
+  background: rgba(245, 232, 200, 0.4);
+  border-left: 3px solid #a43d1a;
+  border-radius: 2px;
+}
+.cu-summary b {
+  color: var(--paper-text);
+  font-style: normal;
+  font-family: monospace;
+}
+
+.cu-save {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #3a6fa6;
+  padding: 6px 18px;
+  cursor: pointer;
+  border: 2px solid #1e3a57;
+  border-radius: 3px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.cu-save:hover { background: #5a90c5; }
+.cu-save:active { transform: translateY(1px); }

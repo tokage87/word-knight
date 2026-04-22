@@ -1,0 +1,17 @@
+{
+  "master": {
+    "vocab": 630,
+    "sentences": 216,
+    "stories": 180
+  },
+  "a2": {
+    "vocab": 210,
+    "sentences": 72,
+    "stories": 60
+  },
+  "b1": {
+    "vocab": 210,
+    "sentences": 72,
+    "stories": 60
+  }
+}

@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "curriculum:bootstrap": "node scripts/bootstrap-experimental-master.mjs",
+    "curriculum:build": "node scripts/build-experimental-catalog.mjs",
+    "curriculum:validate": "node scripts/validate-experimental-catalog.mjs"
   },
   "devDependencies": {
     "pngjs": "^7.0.0",

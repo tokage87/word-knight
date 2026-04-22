@@ -1,0 +1,7210 @@
+[
+  {
+    "id": "animals_nature-b1-story-01",
+    "title": "The Glacier and Volcano",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-glacier",
+      "animals_nature-b1-volcano",
+      "animals_nature-b1-habitat",
+      "animals_nature-b1-ecosystem"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-01-s1",
+        "pl": "Pierwsza wskazówka to lodowiec.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "glacier",
+            "distractor": "sky"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-01-s2",
+        "pl": "Kolejna wskazówka to wulkan.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "volcano",
+            "distractor": "island"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-01-s3",
+        "pl": "Trzecia wskazówka to siedlisko.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "habitat",
+            "distractor": "valley"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-01-s4",
+        "pl": "Ostatnia wskazówka to ekosystem.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "ecosystem",
+            "distractor": "stream"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-02",
+    "title": "The Climate and Environment",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-climate",
+      "animals_nature-b1-environment",
+      "animals_nature-b1-trail",
+      "animals_nature-b1-shell"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-02-s1",
+        "pl": "Pierwsza wskazówka to klimat.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "climate",
+            "distractor": "canyon"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-02-s2",
+        "pl": "Kolejna wskazówka to środowisko.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "environment",
+            "distractor": "habitat"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-02-s3",
+        "pl": "Trzecia wskazówka to szlak.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "trail",
+            "distractor": "environment"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-02-s4",
+        "pl": "Ostatnia wskazówka to muszla.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "shell",
+            "distractor": "hoof"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-03",
+    "title": "The Paw and Hoof",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-paw",
+      "animals_nature-b1-hoof",
+      "animals_nature-b1-beak",
+      "animals_nature-b1-fur"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-03-s1",
+        "pl": "Pierwsza wskazówka to łapa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "paw",
+            "distractor": "fur"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-03-s2",
+        "pl": "Kolejna wskazówka to kopyto.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "hoof",
+            "distractor": "sunrise"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-03-s3",
+        "pl": "Trzecia wskazówka to dziób.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "beak",
+            "distractor": "flood"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-03-s4",
+        "pl": "Ostatnia wskazówka to futro.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "fur",
+            "distractor": "harvest"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-04",
+    "title": "The Migration and Wilderness",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-migration",
+      "animals_nature-b1-wilderness",
+      "animals_nature-b1-sunrise",
+      "animals_nature-b1-sunset"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-04-s1",
+        "pl": "Pierwsza wskazówka to migracja.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "migration",
+            "distractor": "creature"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-04-s2",
+        "pl": "Kolejna wskazówka to dzicz.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "wilderness",
+            "distractor": "whiskers"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-04-s3",
+        "pl": "Trzecia wskazówka to wschód słońca.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "sunrise",
+            "distractor": "meadow"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-04-s4",
+        "pl": "Ostatnia wskazówka to zachód słońca.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "sunset",
+            "distractor": "sky"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-05",
+    "title": "The Breeze and Flood",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-breeze",
+      "animals_nature-b1-flood",
+      "animals_nature-b1-drought",
+      "animals_nature-b1-blossom"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-05-s1",
+        "pl": "Pierwsza wskazówka to bryza.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "breeze",
+            "distractor": "cave"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-05-s2",
+        "pl": "Kolejna wskazówka to powódź.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "flood",
+            "distractor": "orchard"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-05-s3",
+        "pl": "Trzecia wskazówka to susza.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "drought",
+            "distractor": "cliff"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-05-s4",
+        "pl": "Ostatnia wskazówka to kwiatostan.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "blossom",
+            "distractor": "canyon"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-06",
+    "title": "The Harvest and Telescope",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-harvest",
+      "animals_nature-b1-telescope",
+      "animals_nature-b1-creature",
+      "animals_nature-b1-litter"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-06-s1",
+        "pl": "Pierwsza wskazówka to zbiory.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "harvest",
+            "distractor": "volcano"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-06-s2",
+        "pl": "Kolejna wskazówka to teleskop.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "telescope",
+            "distractor": "climate"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-06-s3",
+        "pl": "Trzecia wskazówka to stworzenie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "creature",
+            "distractor": "shell"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-06-s4",
+        "pl": "Ostatnia wskazówka to śmieci.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "litter",
+            "distractor": "beak"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-07",
+    "title": "The Rescue and Whiskers",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-rescue",
+      "animals_nature-b1-whiskers",
+      "animals_nature-b1-creek",
+      "animals_nature-b1-cliff"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-07-s1",
+        "pl": "Pierwsza wskazówka to ratunek.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "rescue",
+            "distractor": "migration"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-07-s2",
+        "pl": "Kolejna wskazówka to wąsy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "whiskers",
+            "distractor": "sunset"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-07-s3",
+        "pl": "Trzecia wskazówka to potok.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "creek",
+            "distractor": "drought"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-07-s4",
+        "pl": "Ostatnia wskazówka to klif.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "cliff",
+            "distractor": "creature"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-08",
+    "title": "The Stream and Reef",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-stream",
+      "animals_nature-b1-reef",
+      "animals_nature-b1-glacier",
+      "animals_nature-b1-volcano"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-08-s1",
+        "pl": "Pierwsza wskazówka to strumień.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "stream",
+            "distractor": "rescue"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-08-s2",
+        "pl": "Kolejna wskazówka to rafa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "reef",
+            "distractor": "forest"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-08-s3",
+        "pl": "Trzecia wskazówka to lodowiec.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "glacier",
+            "distractor": "lake"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-08-s4",
+        "pl": "Ostatnia wskazówka to wulkan.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "volcano",
+            "distractor": "cave"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-09",
+    "title": "The Habitat and Ecosystem",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-habitat",
+      "animals_nature-b1-ecosystem",
+      "animals_nature-b1-climate",
+      "animals_nature-b1-environment"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-09-s1",
+        "pl": "Pierwsza wskazówka to siedlisko.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "habitat",
+            "distractor": "pond"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-09-s2",
+        "pl": "Kolejna wskazówka to ekosystem.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "ecosystem",
+            "distractor": "coast"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-09-s3",
+        "pl": "Trzecia wskazówka to klimat.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "climate",
+            "distractor": "reef"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-09-s4",
+        "pl": "Ostatnia wskazówka to środowisko.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "environment",
+            "distractor": "volcano"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "animals_nature-b1-story-10",
+    "title": "The Trail and Shell",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-trail",
+      "animals_nature-b1-shell",
+      "animals_nature-b1-paw",
+      "animals_nature-b1-hoof"
+    ],
+    "sentences": [
+      {
+        "id": "animals_nature-b1-story-10-s1",
+        "pl": "Pierwsza wskazówka to szlak.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "trail",
+            "distractor": "ecosystem"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-10-s2",
+        "pl": "Kolejna wskazówka to muszla.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "shell",
+            "distractor": "trail"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-10-s3",
+        "pl": "Trzecia wskazówka to łapa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "paw",
+            "distractor": "beak"
+          }
+        ]
+      },
+      {
+        "id": "animals_nature-b1-story-10-s4",
+        "pl": "Ostatnia wskazówka to kopyto.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "hoof",
+            "distractor": "wilderness"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-01",
+    "title": "The Parchment and Helm",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-parchment",
+      "fantasy_adventure-b1-helm",
+      "fantasy_adventure-b1-gauntlet",
+      "fantasy_adventure-b1-quiver"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-01-s1",
+        "pl": "Pierwsza wskazówka to pergamin.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "parchment",
+            "distractor": "cavern"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-01-s2",
+        "pl": "Kolejna wskazówka to przyłbica.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "helm",
+            "distractor": "camp"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-01-s3",
+        "pl": "Trzecia wskazówka to rękawica zbrojna.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "gauntlet",
+            "distractor": "stronghold"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-01-s4",
+        "pl": "Ostatnia wskazówka to kołczan.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "quiver",
+            "distractor": "spellbook"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-02",
+    "title": "The Catapult and Barracks",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-catapult",
+      "fantasy_adventure-b1-barracks",
+      "fantasy_adventure-b1-crossbow",
+      "fantasy_adventure-b1-riddle"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-02-s1",
+        "pl": "Pierwsza wskazówka to katapulta.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "catapult",
+            "distractor": "artifact"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-02-s2",
+        "pl": "Kolejna wskazówka to koszary.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "barracks",
+            "distractor": "parchment"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-02-s3",
+        "pl": "Trzecia wskazówka to kusza.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "crossbow",
+            "distractor": "quiver"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-02-s4",
+        "pl": "Ostatnia wskazówka to zagadka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "riddle",
+            "distractor": "crossbow"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-03",
+    "title": "The Companion and Prophecy",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-companion",
+      "fantasy_adventure-b1-prophecy",
+      "fantasy_adventure-b1-oracle",
+      "fantasy_adventure-b1-commander"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-03-s1",
+        "pl": "Pierwsza wskazówka to towarzysz.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "companion",
+            "distractor": "prophecy"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-03-s2",
+        "pl": "Kolejna wskazówka to przepowiednia.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "prophecy",
+            "distractor": "alliance"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-03-s3",
+        "pl": "Trzecia wskazówka to wyrocznia.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "oracle",
+            "distractor": "healer"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-03-s4",
+        "pl": "Ostatnia wskazówka to dowódca.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "commander",
+            "distractor": "battleaxe"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-04",
+    "title": "The Alliance and Enemy",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-alliance",
+      "fantasy_adventure-b1-enemy",
+      "fantasy_adventure-b1-traveler",
+      "fantasy_adventure-b1-healer"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-04-s1",
+        "pl": "Pierwsza wskazówka to sojusz.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "alliance",
+            "distractor": "adventure"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-04-s2",
+        "pl": "Kolejna wskazówka to wróg.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "enemy",
+            "distractor": "castle"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-04-s3",
+        "pl": "Trzecia wskazówka to podróżnik.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "traveler",
+            "distractor": "chamber"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-04-s4",
+        "pl": "Ostatnia wskazówka to uzdrowiciel.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "healer",
+            "distractor": "watchtower"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-05",
+    "title": "The Pathfinder and Sorcerer",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-pathfinder",
+      "fantasy_adventure-b1-sorcerer",
+      "fantasy_adventure-b1-battleaxe",
+      "fantasy_adventure-b1-totem"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-05-s1",
+        "pl": "Pierwsza wskazówka to tropiciel.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "pathfinder",
+            "distractor": "altar"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-05-s2",
+        "pl": "Kolejna wskazówka to czarownik.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "sorcerer",
+            "distractor": "lantern"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-05-s3",
+        "pl": "Trzecia wskazówka to topór bojowy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "battleaxe",
+            "distractor": "compass"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-05-s4",
+        "pl": "Ostatnia wskazówka to totem.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "totem",
+            "distractor": "relic"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-06",
+    "title": "The Adventure and Spiral Staircase",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-adventure",
+      "fantasy_adventure-b1-spiral-staircase",
+      "fantasy_adventure-b1-fortress",
+      "fantasy_adventure-b1-spellbook"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-06-s1",
+        "pl": "Pierwsza wskazówka to przygoda.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "adventure",
+            "distractor": "helm"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-06-s2",
+        "pl": "Kolejna wskazówka to spiralne schody.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "spiral",
+            "distractor": "catapult"
+          },
+          {
+            "correct": "staircase",
+            "distractor": "barracks"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-06-s3",
+        "pl": "Trzecia wskazówka to twierdza.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "fortress",
+            "distractor": "companion"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-06-s4",
+        "pl": "Ostatnia wskazówka to księga zaklęć.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "spellbook",
+            "distractor": "commander"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-07",
+    "title": "The Compass and Artifact",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-compass",
+      "fantasy_adventure-b1-artifact",
+      "fantasy_adventure-b1-archway",
+      "fantasy_adventure-b1-relic"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-07-s1",
+        "pl": "Pierwsza wskazówka to kompas.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "compass",
+            "distractor": "enemy"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-07-s2",
+        "pl": "Kolejna wskazówka to artefakt.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "artifact",
+            "distractor": "pathfinder"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-07-s3",
+        "pl": "Trzecia wskazówka to arkada.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "archway",
+            "distractor": "totem"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-07-s4",
+        "pl": "Ostatnia wskazówka to relikwia.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "relic",
+            "distractor": "staircase"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-08",
+    "title": "The Parchment and Chamber",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-parchment",
+      "fantasy_adventure-b1-chamber",
+      "fantasy_adventure-b1-parchment",
+      "fantasy_adventure-b1-helm"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-08-s1",
+        "pl": "Pierwsza wskazówka to pergamin.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "parchment",
+            "distractor": "tower"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-08-s2",
+        "pl": "Kolejna wskazówka to komnata.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "chamber",
+            "distractor": "gateway"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-08-s3",
+        "pl": "Trzecia wskazówka to pergamin.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "parchment",
+            "distractor": "camp"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-08-s4",
+        "pl": "Ostatnia wskazówka to przyłbica.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "helm",
+            "distractor": "stronghold"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-09",
+    "title": "The Gauntlet and Quiver",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-gauntlet",
+      "fantasy_adventure-b1-quiver",
+      "fantasy_adventure-b1-catapult",
+      "fantasy_adventure-b1-barracks"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-09-s1",
+        "pl": "Pierwsza wskazówka to rękawica zbrojna.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "gauntlet",
+            "distractor": "fortress"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-09-s2",
+        "pl": "Kolejna wskazówka to kołczan.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "quiver",
+            "distractor": "artifact"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-09-s3",
+        "pl": "Trzecia wskazówka to katapulta.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "catapult",
+            "distractor": "parchment"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-09-s4",
+        "pl": "Ostatnia wskazówka to koszary.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "barracks",
+            "distractor": "quiver"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-story-10",
+    "title": "The Crossbow and Riddle",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-crossbow",
+      "fantasy_adventure-b1-riddle",
+      "fantasy_adventure-b1-companion",
+      "fantasy_adventure-b1-prophecy"
+    ],
+    "sentences": [
+      {
+        "id": "fantasy_adventure-b1-story-10-s1",
+        "pl": "Pierwsza wskazówka to kusza.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "crossbow",
+            "distractor": "barracks"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-10-s2",
+        "pl": "Kolejna wskazówka to zagadka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "riddle",
+            "distractor": "prophecy"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-10-s3",
+        "pl": "Trzecia wskazówka to towarzysz.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "companion",
+            "distractor": "alliance"
+          }
+        ]
+      },
+      {
+        "id": "fantasy_adventure-b1-story-10-s4",
+        "pl": "Ostatnia wskazówka to przepowiednia.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "prophecy",
+            "distractor": "healer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-01",
+    "title": "The Measuring Cup and Grater",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-measuring-cup",
+      "food_kitchen-b1-grater",
+      "food_kitchen-b1-barbecue",
+      "food_kitchen-b1-takeaway"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-01-s1",
+        "pl": "Pierwsza wskazówka to miarka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "measuring",
+            "distractor": "table"
+          },
+          {
+            "correct": "cup",
+            "distractor": "bakery"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-01-s2",
+        "pl": "Kolejna wskazówka to tarka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "grater",
+            "distractor": "buffet"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-01-s3",
+        "pl": "Trzecia wskazówka to grill.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "barbecue",
+            "distractor": "picnic"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-01-s4",
+        "pl": "Ostatnia wskazówka to jedzenie na wynos.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "takeaway",
+            "distractor": "toaster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-02",
+    "title": "The Reservation and Cupcake",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-reservation",
+      "food_kitchen-b1-cupcake",
+      "food_kitchen-b1-pudding",
+      "food_kitchen-b1-omelette"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-02-s1",
+        "pl": "Pierwsza wskazówka to rezerwacja.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "reservation",
+            "distractor": "whisk"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-02-s2",
+        "pl": "Kolejna wskazówka to babeczka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "cupcake",
+            "distractor": "slicer"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-02-s3",
+        "pl": "Trzecia wskazówka to budyń.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "pudding",
+            "distractor": "grater"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-02-s4",
+        "pl": "Ostatnia wskazówka to omlet.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "omelette",
+            "distractor": "reservation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-03",
+    "title": "The Broccoli and Cauliflower",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-broccoli",
+      "food_kitchen-b1-cauliflower",
+      "food_kitchen-b1-zucchini",
+      "food_kitchen-b1-pumpkin"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-03-s1",
+        "pl": "Pierwsza wskazówka to brokuł.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "broccoli",
+            "distractor": "pudding"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-03-s2",
+        "pl": "Kolejna wskazówka to kalafior.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "cauliflower",
+            "distractor": "zucchini"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-03-s3",
+        "pl": "Trzecia wskazówka to cukinia.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "zucchini",
+            "distractor": "raspberry"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-03-s4",
+        "pl": "Ostatnia wskazówka to dynia.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "pumpkin",
+            "distractor": "ingredient"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-04",
+    "title": "The Blueberry and Raspberry",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-blueberry",
+      "food_kitchen-b1-raspberry",
+      "food_kitchen-b1-coconut",
+      "food_kitchen-b1-avocado"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-04-s1",
+        "pl": "Pierwsza wskazówka to borówka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "blueberry",
+            "distractor": "vitamin"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-04-s2",
+        "pl": "Kolejna wskazówka to malina.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "raspberry",
+            "distractor": "seafood"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-04-s3",
+        "pl": "Trzecia wskazówka to kokos.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "coconut",
+            "distractor": "kitchen"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-04-s4",
+        "pl": "Ostatnia wskazówka to awokado.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "avocado",
+            "distractor": "bowl"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-05",
+    "title": "The Ingredient and Portion",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-ingredient",
+      "food_kitchen-b1-portion",
+      "food_kitchen-b1-vitamin",
+      "food_kitchen-b1-protein"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-05-s1",
+        "pl": "Pierwsza wskazówka to składnik.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "ingredient",
+            "distractor": "bakery"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-05-s2",
+        "pl": "Kolejna wskazówka to porcja.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "portion",
+            "distractor": "tray"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-05-s3",
+        "pl": "Trzecia wskazówka to witamina.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "vitamin",
+            "distractor": "basket"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-05-s4",
+        "pl": "Ostatnia wskazówka to białko.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "protein",
+            "distractor": "colander"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-06",
+    "title": "The Grain and Seafood",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-grain",
+      "food_kitchen-b1-seafood",
+      "food_kitchen-b1-stew",
+      "food_kitchen-b1-flavour"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-06-s1",
+        "pl": "Pierwsza wskazówka to zboże.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "grain",
+            "distractor": "thermos"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-06-s2",
+        "pl": "Kolejna wskazówka to owoce morza.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "seafood",
+            "distractor": "measuring"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-06-s3",
+        "pl": "Trzecia wskazówka to gulasz.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "stew",
+            "distractor": "barbecue"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-06-s4",
+        "pl": "Ostatnia wskazówka to smak.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "flavour",
+            "distractor": "cupcake"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-07",
+    "title": "The Picnic Basket and Toaster",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-picnic-basket",
+      "food_kitchen-b1-toaster",
+      "food_kitchen-b1-colander",
+      "food_kitchen-b1-whisk"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-07-s1",
+        "pl": "Pierwsza wskazówka to kosz piknikowy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "picnic",
+            "distractor": "broccoli"
+          },
+          {
+            "correct": "basket",
+            "distractor": "cauliflower"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-07-s2",
+        "pl": "Kolejna wskazówka to toster.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "toaster",
+            "distractor": "pumpkin"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-07-s3",
+        "pl": "Trzecia wskazówka to durszlak.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "colander",
+            "distractor": "coconut"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-07-s4",
+        "pl": "Ostatnia wskazówka to trzepaczka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "whisk",
+            "distractor": "portion"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-08",
+    "title": "The Thermos and Platter",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-thermos",
+      "food_kitchen-b1-platter",
+      "food_kitchen-b1-measuring-cup",
+      "food_kitchen-b1-grater"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-08-s1",
+        "pl": "Pierwsza wskazówka to termos.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "thermos",
+            "distractor": "protein"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-08-s2",
+        "pl": "Kolejna wskazówka to półmisek.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "platter",
+            "distractor": "stew"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-08-s3",
+        "pl": "Trzecia wskazówka to miarka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "measuring",
+            "distractor": "fridge"
+          },
+          {
+            "correct": "cup",
+            "distractor": "plate"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-08-s4",
+        "pl": "Ostatnia wskazówka to tarka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "grater",
+            "distractor": "table"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-09",
+    "title": "The Barbecue and Takeaway",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-barbecue",
+      "food_kitchen-b1-takeaway",
+      "food_kitchen-b1-reservation",
+      "food_kitchen-b1-cupcake"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-09-s1",
+        "pl": "Pierwsza wskazówka to grill.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "barbecue",
+            "distractor": "cafeteria"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-09-s2",
+        "pl": "Kolejna wskazówka to jedzenie na wynos.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "takeaway",
+            "distractor": "saucepan"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-09-s3",
+        "pl": "Trzecia wskazówka to rezerwacja.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "reservation",
+            "distractor": "blender"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-09-s4",
+        "pl": "Ostatnia wskazówka to babeczka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "cupcake",
+            "distractor": "whisk"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-story-10",
+    "title": "The Pudding and Omelette",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-pudding",
+      "food_kitchen-b1-omelette",
+      "food_kitchen-b1-broccoli",
+      "food_kitchen-b1-cauliflower"
+    ],
+    "sentences": [
+      {
+        "id": "food_kitchen-b1-story-10-s1",
+        "pl": "Pierwsza wskazówka to budyń.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "pudding",
+            "distractor": "platter"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-10-s2",
+        "pl": "Kolejna wskazówka to omlet.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "omelette",
+            "distractor": "cup"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-10-s3",
+        "pl": "Trzecia wskazówka to brokuł.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "broccoli",
+            "distractor": "takeaway"
+          }
+        ]
+      },
+      {
+        "id": "food_kitchen-b1-story-10-s4",
+        "pl": "Ostatnia wskazówka to kalafior.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "cauliflower",
+            "distractor": "pudding"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-01",
+    "title": "The Battery and Charger",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-battery",
+      "household-b1-charger",
+      "household-b1-remote",
+      "household-b1-earphone"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-01-s1",
+        "pl": "Pierwsza wskazówka to bateria.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "battery",
+            "distractor": "bedroom"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-01-s2",
+        "pl": "Kolejna wskazówka to ładowarka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "charger",
+            "distractor": "floor"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-01-s3",
+        "pl": "Trzecia wskazówka to pilot.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "remote",
+            "distractor": "garage"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-01-s4",
+        "pl": "Ostatnia wskazówka to słuchawka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "earphone",
+            "distractor": "radiator"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-02",
+    "title": "The Doorstep and Guest Room",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-doorstep",
+      "household-b1-guest-room",
+      "household-b1-boiler",
+      "household-b1-cushion"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-02-s1",
+        "pl": "Pierwsza wskazówka to próg.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "doorstep",
+            "distractor": "cable"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-02-s2",
+        "pl": "Kolejna wskazówka to pokój gościnny.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "guest",
+            "distractor": "detergent"
+          },
+          {
+            "correct": "room",
+            "distractor": "toolbox"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-02-s3",
+        "pl": "Trzecia wskazówka to piec.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "boiler",
+            "distractor": "battery"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-02-s4",
+        "pl": "Ostatnia wskazówka to poduszka dekoracyjna.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "cushion",
+            "distractor": "earphone"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-03",
+    "title": "The Sideboard and Keychain",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-sideboard",
+      "household-b1-keychain",
+      "household-b1-towel-rack",
+      "household-b1-laundry-room"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-03-s1",
+        "pl": "Pierwsza wskazówka to komoda.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "sideboard",
+            "distractor": "guest"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-03-s2",
+        "pl": "Kolejna wskazówka to brelok.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "keychain",
+            "distractor": "sideboard"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-03-s3",
+        "pl": "Trzecia wskazówka to wieszak na ręczniki.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "towel",
+            "distractor": "laundry"
+          },
+          {
+            "correct": "rack",
+            "distractor": "appliance"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-03-s4",
+        "pl": "Ostatnia wskazówka to pralnia.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "laundry",
+            "distractor": "mattress"
+          },
+          {
+            "correct": "room",
+            "distractor": "pillowcase"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-04",
+    "title": "The Appliance and Furniture",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-appliance",
+      "household-b1-furniture",
+      "household-b1-mattress",
+      "household-b1-pillowcase"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-04-s1",
+        "pl": "Pierwsza wskazówka to urządzenie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "appliance",
+            "distractor": "bedsheet"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-04-s2",
+        "pl": "Kolejna wskazówka to meble.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "furniture",
+            "distractor": "box"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-04-s3",
+        "pl": "Trzecia wskazówka to materac.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "mattress",
+            "distractor": "list"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-04-s4",
+        "pl": "Ostatnia wskazówka to poszewka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "pillowcase",
+            "distractor": "storage"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-05",
+    "title": "The Bedsheet and Bin",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-bedsheet",
+      "household-b1-bin",
+      "household-b1-recycling-box",
+      "household-b1-receipt"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-05-s1",
+        "pl": "Pierwsza wskazówka to prześcieradło.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "bedsheet",
+            "distractor": "renovation"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-05-s2",
+        "pl": "Kolejna wskazówka to pojemnik.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "bin",
+            "distractor": "kitchen"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-05-s3",
+        "pl": "Trzecia wskazówka to pojemnik do recyklingu.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "recycling",
+            "distractor": "shelf"
+          },
+          {
+            "correct": "box",
+            "distractor": "window"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-05-s4",
+        "pl": "Ostatnia wskazówka to paragon.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "receipt",
+            "distractor": "door"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-06",
+    "title": "The Shopping List and Electricity",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-shopping-list",
+      "household-b1-electricity",
+      "household-b1-plumbing",
+      "household-b1-storage"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-06-s1",
+        "pl": "Pierwsza wskazówka to lista zakupów.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "shopping",
+            "distractor": "garage"
+          },
+          {
+            "correct": "list",
+            "distractor": "hallway"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-06-s2",
+        "pl": "Kolejna wskazówka to prąd.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "electricity",
+            "distractor": "radiator"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-06-s3",
+        "pl": "Trzecia wskazówka to hydraulika.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "plumbing",
+            "distractor": "socket"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-06-s4",
+        "pl": "Ostatnia wskazówka to schowek.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "storage",
+            "distractor": "wardrobe"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-07",
+    "title": "The Maintenance and Renovation",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-maintenance",
+      "household-b1-renovation",
+      "household-b1-pantry",
+      "household-b1-radiator"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-07-s1",
+        "pl": "Pierwsza wskazówka to konserwacja.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "maintenance",
+            "distractor": "battery"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-07-s2",
+        "pl": "Kolejna wskazówka to remont.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "renovation",
+            "distractor": "earphone"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-07-s3",
+        "pl": "Trzecia wskazówka to spiżarnia.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "pantry",
+            "distractor": "cushion"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-07-s4",
+        "pl": "Ostatnia wskazówka to grzejnik.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "radiator",
+            "distractor": "towel"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-08",
+    "title": "The Extension Cable and Socket",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-extension-cable",
+      "household-b1-socket",
+      "household-b1-battery",
+      "household-b1-charger"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-08-s1",
+        "pl": "Pierwsza wskazówka to przedłużacz.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "extension",
+            "distractor": "laundry"
+          },
+          {
+            "correct": "cable",
+            "distractor": "appliance"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-08-s2",
+        "pl": "Kolejna wskazówka to gniazdko.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "socket",
+            "distractor": "mattress"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-08-s3",
+        "pl": "Trzecia wskazówka to bateria.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "battery",
+            "distractor": "bin"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-08-s4",
+        "pl": "Ostatnia wskazówka to ładowarka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "charger",
+            "distractor": "receipt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-09",
+    "title": "The Remote and Earphone",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-remote",
+      "household-b1-earphone",
+      "household-b1-doorstep",
+      "household-b1-guest-room"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-09-s1",
+        "pl": "Pierwsza wskazówka to pilot.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "remote",
+            "distractor": "list"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-09-s2",
+        "pl": "Kolejna wskazówka to słuchawka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "earphone",
+            "distractor": "storage"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-09-s3",
+        "pl": "Trzecia wskazówka to próg.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "doorstep",
+            "distractor": "house"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-09-s4",
+        "pl": "Ostatnia wskazówka to pokój gościnny.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "guest",
+            "distractor": "bathroom"
+          },
+          {
+            "correct": "room",
+            "distractor": "shelf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-b1-story-10",
+    "title": "The Boiler and Cushion",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-boiler",
+      "household-b1-cushion",
+      "household-b1-sideboard",
+      "household-b1-keychain"
+    ],
+    "sentences": [
+      {
+        "id": "household-b1-story-10-s1",
+        "pl": "Pierwsza wskazówka to piec.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "boiler",
+            "distractor": "shelf"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-10-s2",
+        "pl": "Kolejna wskazówka to poduszka dekoracyjna.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "cushion",
+            "distractor": "door"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-10-s3",
+        "pl": "Trzecia wskazówka to komoda.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "sideboard",
+            "distractor": "hallway"
+          }
+        ]
+      },
+      {
+        "id": "household-b1-story-10-s4",
+        "pl": "Ostatnia wskazówka to brelok.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "keychain",
+            "distractor": "extension"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-01",
+    "title": "The Seminar and Notepad",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-seminar",
+      "school-b1-notepad",
+      "school-b1-staff-room",
+      "school-b1-badge"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-01-s1",
+        "pl": "Pierwsza wskazówka to seminarium.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "seminar",
+            "distractor": "backpack"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-01-s2",
+        "pl": "Kolejna wskazówka to notatnik.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "notepad",
+            "distractor": "page"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-01-s3",
+        "pl": "Trzecia wskazówka to pokój nauczycielski.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "staff",
+            "distractor": "campus"
+          },
+          {
+            "correct": "room",
+            "distractor": "workshop"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-01-s4",
+        "pl": "Ostatnia wskazówka to identyfikator.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "badge",
+            "distractor": "microscope"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-02",
+    "title": "The Transcript and Syllabus",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-transcript",
+      "school-b1-syllabus",
+      "school-b1-journal",
+      "school-b1-article"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-02-s1",
+        "pl": "Pierwsza wskazówka to świadectwo.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "transcript",
+            "distractor": "competition"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-02-s2",
+        "pl": "Kolejna wskazówka to sylabus.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "syllabus",
+            "distractor": "seminar"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-02-s3",
+        "pl": "Trzecia wskazówka to czasopismo.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "journal",
+            "distractor": "room"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-02-s4",
+        "pl": "Ostatnia wskazówka to artykuł.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "article",
+            "distractor": "syllabus"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-03",
+    "title": "The Report and Graph",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-report",
+      "school-b1-graph",
+      "school-b1-formula",
+      "school-b1-theorem"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-03-s1",
+        "pl": "Pierwsza wskazówka to raport.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "report",
+            "distractor": "article"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-03-s2",
+        "pl": "Kolejna wskazówka to wykres.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "graph",
+            "distractor": "theorem"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-03-s3",
+        "pl": "Trzecia wskazówka to wzór.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "formula",
+            "distractor": "essay"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-03-s4",
+        "pl": "Ostatnia wskazówka to twierdzenie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "theorem",
+            "distractor": "curriculum"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-04",
+    "title": "The Assignment and Deadline",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-assignment",
+      "school-b1-deadline",
+      "school-b1-essay",
+      "school-b1-headmaster"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-04-s1",
+        "pl": "Pierwsza wskazówka to zadanie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "assignment",
+            "distractor": "source"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-04-s2",
+        "pl": "Kolejna wskazówka to termin.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "deadline",
+            "distractor": "semester"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-04-s3",
+        "pl": "Trzecia wskazówka to esej.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "essay",
+            "distractor": "school"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-04-s4",
+        "pl": "Ostatnia wskazówka to dyrektor.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "headmaster",
+            "distractor": "desk"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-05",
+    "title": "The Counsellor and Curriculum",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-counsellor",
+      "school-b1-curriculum",
+      "school-b1-research",
+      "school-b1-source"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-05-s1",
+        "pl": "Pierwsza wskazówka to doradca.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "counsellor",
+            "distractor": "laboratory"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-05-s2",
+        "pl": "Kolejna wskazówka to program nauczania.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "curriculum",
+            "distractor": "screen"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-05-s3",
+        "pl": "Trzecia wskazówka to badania.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "research",
+            "distractor": "workshop"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-05-s4",
+        "pl": "Ostatnia wskazówka to źródło.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "source",
+            "distractor": "trophy"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-06",
+    "title": "The Conclusion and Portfolio",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-conclusion",
+      "school-b1-portfolio",
+      "school-b1-semester",
+      "school-b1-internship"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-06-s1",
+        "pl": "Pierwsza wskazówka to wniosek.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "conclusion",
+            "distractor": "scholarship"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-06-s2",
+        "pl": "Kolejna wskazówka to portfolio.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "portfolio",
+            "distractor": "notepad"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-06-s3",
+        "pl": "Trzecia wskazówka to semestr.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "semester",
+            "distractor": "badge"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-06-s4",
+        "pl": "Ostatnia wskazówka to praktyki.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "internship",
+            "distractor": "journal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-07",
+    "title": "The Criteria and Experiment",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-criteria",
+      "school-b1-experiment",
+      "school-b1-microscope",
+      "school-b1-trophy"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-07-s1",
+        "pl": "Pierwsza wskazówka to kryteria.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "criteria",
+            "distractor": "report"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-07-s2",
+        "pl": "Kolejna wskazówka to eksperyment.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "experiment",
+            "distractor": "assignment"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-07-s3",
+        "pl": "Trzecia wskazówka to mikroskop.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "microscope",
+            "distractor": "headmaster"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-07-s4",
+        "pl": "Ostatnia wskazówka to puchar.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "trophy",
+            "distractor": "research"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-08",
+    "title": "The Competition and Scholarship",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-competition",
+      "school-b1-scholarship",
+      "school-b1-seminar",
+      "school-b1-notepad"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-08-s1",
+        "pl": "Pierwsza wskazówka to konkurs.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "competition",
+            "distractor": "conclusion"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-08-s2",
+        "pl": "Kolejna wskazówka to stypendium.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "scholarship",
+            "distractor": "internship"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-08-s3",
+        "pl": "Trzecia wskazówka to seminarium.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "seminar",
+            "distractor": "classroom"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-08-s4",
+        "pl": "Ostatnia wskazówka to notatnik.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "notepad",
+            "distractor": "backpack"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-09",
+    "title": "The Staff Room and Badge",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-staff-room",
+      "school-b1-badge",
+      "school-b1-transcript",
+      "school-b1-syllabus"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-09-s1",
+        "pl": "Pierwsza wskazówka to pokój nauczycielski.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "staff",
+            "distractor": "whiteboard"
+          },
+          {
+            "correct": "room",
+            "distractor": "page"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-09-s2",
+        "pl": "Kolejna wskazówka to identyfikator.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "badge",
+            "distractor": "auditorium"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-09-s3",
+        "pl": "Trzecia wskazówka to świadectwo.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "transcript",
+            "distractor": "experiment"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-09-s4",
+        "pl": "Ostatnia wskazówka to sylabus.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "syllabus",
+            "distractor": "competition"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-b1-story-10",
+    "title": "The Journal and Article",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-journal",
+      "school-b1-article",
+      "school-b1-report",
+      "school-b1-graph"
+    ],
+    "sentences": [
+      {
+        "id": "school-b1-story-10-s1",
+        "pl": "Pierwsza wskazówka to czasopismo.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "journal",
+            "distractor": "projector"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-10-s2",
+        "pl": "Kolejna wskazówka to artykuł.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "article",
+            "distractor": "staff"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-10-s3",
+        "pl": "Trzecia wskazówka to raport.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "report",
+            "distractor": "transcript"
+          }
+        ]
+      },
+      {
+        "id": "school-b1-story-10-s4",
+        "pl": "Ostatnia wskazówka to wykres.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "graph",
+            "distractor": "article"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-01",
+    "title": "The Announcement and Construction",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-announcement",
+      "town_places-b1-construction",
+      "town_places-b1-detour",
+      "town_places-b1-crowd"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-01-s1",
+        "pl": "Pierwsza wskazówka to ogłoszenie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "announcement",
+            "distractor": "bridge"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-01-s2",
+        "pl": "Kolejna wskazówka to budowa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "construction",
+            "distractor": "terminal"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-01-s3",
+        "pl": "Trzecia wskazówka to objazd.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "detour",
+            "distractor": "market"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-01-s4",
+        "pl": "Ostatnia wskazówka to tłum.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "crowd",
+            "distractor": "avenue"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-02",
+    "title": "The Subway and Skyscraper",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-subway",
+      "town_places-b1-skyscraper",
+      "town_places-b1-passage",
+      "town_places-b1-tram-line"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-02-s1",
+        "pl": "Pierwsza wskazówka to metro.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "subway",
+            "distractor": "intersection"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-02-s2",
+        "pl": "Kolejna wskazówka to wieżowiec.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "skyscraper",
+            "distractor": "receptionist"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-02-s3",
+        "pl": "Trzecia wskazówka to pasaż.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "passage",
+            "distractor": "construction"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-02-s4",
+        "pl": "Ostatnia wskazówka to linia tramwajowa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "tram",
+            "distractor": "subway"
+          },
+          {
+            "correct": "line",
+            "distractor": "skyscraper"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-03",
+    "title": "The Departure and Arrival",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-departure",
+      "town_places-b1-arrival",
+      "town_places-b1-excursion",
+      "town_places-b1-parking-lot"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-03-s1",
+        "pl": "Pierwsza wskazówka to odjazd.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "departure",
+            "distractor": "passage"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-03-s2",
+        "pl": "Kolejna wskazówka to przyjazd.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "arrival",
+            "distractor": "departure"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-03-s3",
+        "pl": "Trzecia wskazówka to wycieczka krajoznawcza.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "excursion",
+            "distractor": "lot"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-03-s4",
+        "pl": "Ostatnia wskazówka to parking.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "parking",
+            "distractor": "barricade"
+          },
+          {
+            "correct": "lot",
+            "distractor": "underpass"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-04",
+    "title": "The Security and Checkpoint",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-security",
+      "town_places-b1-checkpoint",
+      "town_places-b1-barricade",
+      "town_places-b1-underpass"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-04-s1",
+        "pl": "Pierwsza wskazówka to ochrona.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "security",
+            "distractor": "ferry"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-04-s2",
+        "pl": "Kolejna wskazówka to punkt kontroli.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "checkpoint",
+            "distractor": "destination"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-04-s3",
+        "pl": "Trzecia wskazówka to barykada.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "barricade",
+            "distractor": "pedestrian"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-04-s4",
+        "pl": "Ostatnia wskazówka to przejście podziemne.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "underpass",
+            "distractor": "town"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-05",
+    "title": "The Ferry and Platform Ticket",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-ferry",
+      "town_places-b1-platform-ticket",
+      "town_places-b1-destination",
+      "town_places-b1-route"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-05-s1",
+        "pl": "Pierwsza wskazówka to prom.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "ferry",
+            "distractor": "park"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-05-s2",
+        "pl": "Kolejna wskazówka to bilet peronowy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "platform",
+            "distractor": "museum"
+          },
+          {
+            "correct": "ticket",
+            "distractor": "square"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-05-s3",
+        "pl": "Trzecia wskazówka to cel.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "destination",
+            "distractor": "tunnel"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-05-s4",
+        "pl": "Ostatnia wskazówka to trasa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "route",
+            "distractor": "hotel"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-06",
+    "title": "The Landmark and Pedestrian",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-landmark",
+      "town_places-b1-pedestrian",
+      "town_places-b1-cyclist",
+      "town_places-b1-commute"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-06-s1",
+        "pl": "Pierwsza wskazówka to punkt orientacyjny.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "landmark",
+            "distractor": "avenue"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-06-s2",
+        "pl": "Kolejna wskazówka to pieszy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "pedestrian",
+            "distractor": "exhibition"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-06-s3",
+        "pl": "Trzecia wskazówka to rowerzysta.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "cyclist",
+            "distractor": "luggage"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-06-s4",
+        "pl": "Ostatnia wskazówka to dojazd.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "commute",
+            "distractor": "detour"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-07",
+    "title": "The Boulevard and Avenue",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-boulevard",
+      "town_places-b1-avenue",
+      "town_places-b1-district",
+      "town_places-b1-intersection"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-07-s1",
+        "pl": "Pierwsza wskazówka to bulwar.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "boulevard",
+            "distractor": "skyscraper"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-07-s2",
+        "pl": "Kolejna wskazówka to aleja.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "avenue",
+            "distractor": "line"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-07-s3",
+        "pl": "Trzecia wskazówka to dzielnica.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "district",
+            "distractor": "excursion"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-07-s4",
+        "pl": "Ostatnia wskazówka to skrzyżowanie dróg.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "intersection",
+            "distractor": "security"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-08",
+    "title": "The Exhibition and Souvenir",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-exhibition",
+      "town_places-b1-souvenir",
+      "town_places-b1-announcement",
+      "town_places-b1-construction"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-08-s1",
+        "pl": "Pierwsza wskazówka to wystawa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "exhibition",
+            "distractor": "barricade"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-08-s2",
+        "pl": "Kolejna wskazówka to pamiątka.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "souvenir",
+            "distractor": "platform"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-08-s3",
+        "pl": "Trzecia wskazówka to ogłoszenie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "announcement",
+            "distractor": "route"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-08-s4",
+        "pl": "Ostatnia wskazówka to budowa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "construction",
+            "distractor": "cyclist"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-09",
+    "title": "The Detour and Crowd",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-detour",
+      "town_places-b1-crowd",
+      "town_places-b1-subway",
+      "town_places-b1-skyscraper"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-09-s1",
+        "pl": "Pierwsza wskazówka to objazd.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "detour",
+            "distractor": "town"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-09-s2",
+        "pl": "Kolejna wskazówka to tłum.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "crowd",
+            "distractor": "station"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-09-s3",
+        "pl": "Trzecia wskazówka to metro.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "subway",
+            "distractor": "square"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-09-s4",
+        "pl": "Ostatnia wskazówka to wieżowiec.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "skyscraper",
+            "distractor": "dock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "town_places-b1-story-10",
+    "title": "The Passage and Tram Line",
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-passage",
+      "town_places-b1-tram-line",
+      "town_places-b1-departure",
+      "town_places-b1-arrival"
+    ],
+    "sentences": [
+      {
+        "id": "town_places-b1-story-10-s1",
+        "pl": "Pierwsza wskazówka to pasaż.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "first",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "passage",
+            "distractor": "hotel"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-10-s2",
+        "pl": "Kolejna wskazówka to linia tramwajowa.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "next",
+            "distractor": "last"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "tram",
+            "distractor": "district"
+          },
+          {
+            "correct": "line",
+            "distractor": "intersection"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-10-s3",
+        "pl": "Trzecia wskazówka to odjazd.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "third",
+            "distractor": "second"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "departure",
+            "distractor": "souvenir"
+          }
+        ]
+      },
+      {
+        "id": "town_places-b1-story-10-s4",
+        "pl": "Ostatnia wskazówka to przyjazd.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "final",
+            "distractor": "first"
+          },
+          {
+            "correct": "clue",
+            "distractor": "word"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "arrival",
+            "distractor": "announcement"
+          }
+        ]
+      }
+    ]
+  }
+]

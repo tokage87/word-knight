@@ -14,9 +14,10 @@
 // next level). Death always wipes those — the core roguelite contract.
 
 import type { SpellId } from './SpellCaster';
+import { DEFAULT_CURRICULUM, type CurriculumSelection } from './CurriculumTypes';
 
 export const STORAGE_KEY = 'wk.meta.v1';
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 
 export type BranchId = 'combat' | 'spells' | 'scholar' | 'writer';
 
@@ -29,7 +30,7 @@ export interface BranchState {
 }
 
 export interface MetaState {
-  version: 2;
+  version: 3;
   gold: number;
   lifetime: {
     runs: number;
@@ -41,6 +42,9 @@ export interface MetaState {
   };
   branches: Record<BranchId, BranchState>;
   writingSubmissions: WritingSubmission[];
+  // v3 addition: player-selectable curriculum. A v2 save rehydrates
+  // with DEFAULT_CURRICULUM injected; nothing else changes.
+  curriculum: CurriculumSelection;
 }
 
 export interface WritingSubmission {
@@ -59,7 +63,7 @@ function freshBranch(): BranchState {
 
 function freshState(): MetaState {
   return {
-    version: 2,
+    version: 3,
     gold: 0,
     lifetime: {
       runs: 0,
@@ -76,6 +80,7 @@ function freshState(): MetaState {
       writer:  freshBranch(),
     },
     writingSubmissions: [],
+    curriculum: { ...DEFAULT_CURRICULUM },
   };
 }
 
@@ -147,9 +152,11 @@ function hydrate(raw: unknown): MetaState {
   const fresh = freshState();
   if (!raw || typeof raw !== 'object') return fresh;
   const r = raw as { version?: number } & Record<string, unknown>;
-  if (r.version === 2) {
-    // Merge-with-defaults against v2. Each branch fills in missing
-    // fields so a partial save doesn't crash.
+  // v2 and v3 share the same branch/lifetime/submission shape; the only
+  // difference is the v3 `curriculum` field. v2 saves rehydrate with
+  // DEFAULT_CURRICULUM injected and get written back as v3 on the next
+  // mutation. No data loss either direction.
+  if (r.version === 2 || r.version === 3) {
     const rbranches = (r.branches ?? {}) as Partial<Record<BranchId, Partial<BranchState>>>;
     const branches: Record<BranchId, BranchState> = {
       combat:  { ...freshBranch(), ...(rbranches.combat  ?? {}), treeRanks: { ...(rbranches.combat?.treeRanks  ?? {}) } },
@@ -157,13 +164,17 @@ function hydrate(raw: unknown): MetaState {
       scholar: { ...freshBranch(), ...(rbranches.scholar ?? {}), treeRanks: { ...(rbranches.scholar?.treeRanks ?? {}) } },
       writer:  { ...freshBranch(), ...(rbranches.writer  ?? {}), treeRanks: { ...(rbranches.writer?.treeRanks  ?? {}) } },
     };
+    const rawCurriculum = r.curriculum as CurriculumSelection | undefined;
     return {
       ...fresh,
       ...(r as object),
-      version: 2,
+      version: 3,
       writingSubmissions: Array.isArray(r.writingSubmissions) ? (r.writingSubmissions as WritingSubmission[]) : [],
       lifetime: { ...fresh.lifetime, ...((r.lifetime as object) ?? {}) },
       branches,
+      curriculum: rawCurriculum && typeof rawCurriculum === 'object'
+        ? { ...DEFAULT_CURRICULUM, ...rawCurriculum }
+        : { ...DEFAULT_CURRICULUM },
     };
   }
   if (r.version === 1 || r.version === undefined) {
@@ -265,6 +276,17 @@ export class MetaStore {
 
   getWritingSubmissions(): WritingSubmission[] {
     return this.state.writingSubmissions;
+  }
+
+  // ── curriculum (v3) ──
+
+  getCurriculum(): CurriculumSelection {
+    return this.state.curriculum ?? DEFAULT_CURRICULUM;
+  }
+
+  setCurriculum(sel: CurriculumSelection) {
+    this.state.curriculum = { ...sel };
+    this.save();
   }
 
   endRun() {

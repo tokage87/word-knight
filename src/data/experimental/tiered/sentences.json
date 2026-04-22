@@ -1,0 +1,6522 @@
+[
+  {
+    "id": "animals_nature-a1-sentence-01",
+    "pl": "To słowo to chmura.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cloud",
+        "distractor": "lake"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-cloud"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-02",
+    "pl": "Ten wyraz to drzewo.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "tree",
+        "distractor": "valley"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-tree"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-03",
+    "pl": "Teraz to słowo to kwiat.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "flower",
+        "distractor": "dog"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-flower"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-04",
+    "pl": "Następne słowo to trawa.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "grass",
+        "distractor": "sheep"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-grass"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-05",
+    "pl": "To słowo to liść.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "leaf",
+        "distractor": "sun"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-leaf"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-06",
+    "pl": "Ten wyraz to kamień.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "stone",
+        "distractor": "field"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-stone"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-07",
+    "pl": "Teraz to słowo to kot.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cat",
+        "distractor": "cave"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-cat"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-08",
+    "pl": "Następne słowo to pies.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "dog",
+        "distractor": "tree"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-dog"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-09",
+    "pl": "To słowo to ptak.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "bird",
+        "distractor": "dog"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-bird"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-10",
+    "pl": "Ten wyraz to królik.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "rabbit",
+        "distractor": "duck"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-rabbit"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-11",
+    "pl": "Teraz to słowo to mysz.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "mouse",
+        "distractor": "rain"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-mouse"
+    ]
+  },
+  {
+    "id": "animals_nature-a1-sentence-12",
+    "pl": "Następne słowo to koń.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "horse",
+        "distractor": "meadow"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a1-horse"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-01",
+    "pl": "To słowo to smok.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "dragon",
+        "distractor": "chamber"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-dragon"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-02",
+    "pl": "Ten wyraz to miecz.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "sword",
+        "distractor": "stronghold"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-sword"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-03",
+    "pl": "Teraz to słowo to tarcza.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "shield",
+        "distractor": "potion"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-shield"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-04",
+    "pl": "Następne słowo to skarb.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "treasure",
+        "distractor": "wand"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-treasure"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-05",
+    "pl": "To słowo to korona.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "crown",
+        "distractor": "princess"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-crown"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-06",
+    "pl": "Ten wyraz to magia.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "magic",
+        "distractor": "quest"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-magic"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-07",
+    "pl": "Teraz to słowo to zaklęcie.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "spell",
+        "distractor": "tower"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-spell"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-08",
+    "pl": "Następne słowo to eliksir.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "potion",
+        "distractor": "altar"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-potion"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-09",
+    "pl": "To słowo to potwór.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "monster",
+        "distractor": "shield"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-monster"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-10",
+    "pl": "Ten wyraz to bohater.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "hero",
+        "distractor": "torch"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-hero"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-11",
+    "pl": "Teraz to słowo to pochodnia.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "torch",
+        "distractor": "queen"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-torch"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a1-sentence-12",
+    "pl": "Następne słowo to zwój.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "scroll",
+        "distractor": "elf"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a1-scroll"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-01",
+    "pl": "To słowo to kubek.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cup",
+        "distractor": "bowl"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-cup"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-02",
+    "pl": "Ten wyraz to łyżka.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "spoon",
+        "distractor": "picnic"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-spoon"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-03",
+    "pl": "Teraz to słowo to widelec.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "fork",
+        "distractor": "milk"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-fork"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-04",
+    "pl": "Następne słowo to nóż.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "knife",
+        "distractor": "strawberry"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-knife"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-05",
+    "pl": "To słowo to chleb.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "bread",
+        "distractor": "fish"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-bread"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-06",
+    "pl": "Ten wyraz to masło.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "butter",
+        "distractor": "cookie"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-butter"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-07",
+    "pl": "Teraz to słowo to mleko.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "milk",
+        "distractor": "plate"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-milk"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-08",
+    "pl": "Następne słowo to woda.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "water",
+        "distractor": "saucepan"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-water"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-09",
+    "pl": "To słowo to sok.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "juice",
+        "distractor": "fork"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-juice"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-10",
+    "pl": "Ten wyraz to jabłko.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "apple",
+        "distractor": "banana"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-apple"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-11",
+    "pl": "Teraz to słowo to banan.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "banana",
+        "distractor": "chicken"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-banana"
+    ]
+  },
+  {
+    "id": "food_kitchen-a1-sentence-12",
+    "pl": "Następne słowo to pomarańcza.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "orange",
+        "distractor": "cake"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a1-orange"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-01",
+    "pl": "To słowo to salon.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "living",
+        "distractor": "bathroom"
+      },
+      {
+        "correct": "room",
+        "distractor": "shelf"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-living-room"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-02",
+    "pl": "Ten wyraz to łóżko.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "bed",
+        "distractor": "garage"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-bed"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-03",
+    "pl": "Teraz to słowo to stół.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "table",
+        "distractor": "cupboard"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-table"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-04",
+    "pl": "Następne słowo to krzesło.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "chair",
+        "distractor": "toy"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-chair"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-05",
+    "pl": "To słowo to lampa.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "lamp",
+        "distractor": "brother"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-lamp"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-06",
+    "pl": "Ten wyraz to zegar.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "clock",
+        "distractor": "kitchen"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-clock"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-07",
+    "pl": "Teraz to słowo to sofa.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "sofa",
+        "distractor": "garage"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-sofa"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-08",
+    "pl": "Następne słowo to kredens.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cupboard",
+        "distractor": "clock"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-cupboard"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-09",
+    "pl": "To słowo to lustro.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "mirror",
+        "distractor": "pillow"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-mirror"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-10",
+    "pl": "Ten wyraz to ręcznik.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "towel",
+        "distractor": "dad"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-towel"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-11",
+    "pl": "Teraz to słowo to szczotka.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "brush",
+        "distractor": "kitchen"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-brush"
+    ]
+  },
+  {
+    "id": "household-a1-sentence-12",
+    "pl": "Następne słowo to mydło.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "soap",
+        "distractor": "garden"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household",
+    "vocabIds": [
+      "household-a1-soap"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-01",
+    "pl": "To słowo to książka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "book",
+        "distractor": "desk"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-book"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-02",
+    "pl": "Ten wyraz to zeszyt.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "notebook",
+        "distractor": "campus"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-notebook"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-03",
+    "pl": "Teraz to słowo to ołówek.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "pencil",
+        "distractor": "bell"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-pencil"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-04",
+    "pl": "Następne słowo to długopis.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "pen",
+        "distractor": "sharpener"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-pen"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-05",
+    "pl": "To słowo to gumka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "eraser",
+        "distractor": "homework"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-eraser"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-06",
+    "pl": "Ten wyraz to linijka.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "ruler",
+        "distractor": "friend"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-ruler"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-07",
+    "pl": "Teraz to słowo to tablica.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "board",
+        "distractor": "whiteboard"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-board"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-08",
+    "pl": "Następne słowo to dzwonek.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "bell",
+        "distractor": "notebook"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-bell"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-09",
+    "pl": "To słowo to śniadaniówka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "lunchbox",
+        "distractor": "bell"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-lunchbox"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-10",
+    "pl": "Ten wyraz to komputer.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "computer",
+        "distractor": "alphabet"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-computer"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-11",
+    "pl": "Teraz to słowo to mapa.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "map",
+        "distractor": "answer"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-map"
+    ]
+  },
+  {
+    "id": "school-a1-sentence-12",
+    "pl": "Następne słowo to klej.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "glue",
+        "distractor": "classroom"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school",
+    "vocabIds": [
+      "school-a1-glue"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-01",
+    "pl": "To słowo to droga.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "road",
+        "distractor": "station"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-road"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-02",
+    "pl": "Ten wyraz to sklep.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "shop",
+        "distractor": "market"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-shop"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-03",
+    "pl": "Teraz to słowo to plac zabaw.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "playground",
+        "distractor": "zoo"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-playground"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-04",
+    "pl": "Następne słowo to szpital.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "hospital",
+        "distractor": "ticket"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-hospital"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-05",
+    "pl": "To słowo to apteka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "pharmacy",
+        "distractor": "car"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-pharmacy"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-06",
+    "pl": "Ten wyraz to klinika.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "clinic",
+        "distractor": "light"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-clinic"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-07",
+    "pl": "Teraz to słowo to kino.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cinema",
+        "distractor": "terminal"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-cinema"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-08",
+    "pl": "Następne słowo to zoo.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "zoo",
+        "distractor": "playground"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-zoo"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-09",
+    "pl": "To słowo to poczta.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "post",
+        "distractor": "office"
+      },
+      {
+        "correct": "office",
+        "distractor": "bank"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-post-office"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-10",
+    "pl": "Ten wyraz to bank.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "bank",
+        "distractor": "pavement"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-bank"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-11",
+    "pl": "Teraz to słowo to restauracja.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "restaurant",
+        "distractor": "police"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-restaurant"
+    ]
+  },
+  {
+    "id": "town_places-a1-sentence-12",
+    "pl": "Następne słowo to kawiarnia.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cafe",
+        "distractor": "station"
+      }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a1-cafe"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-01",
+    "pl": "To słowo to ocean.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "ocean",
+        "distractor": "lake"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-ocean"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-02",
+    "pl": "Ten wyraz to pustynia.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "desert",
+        "distractor": "valley"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-desert"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-03",
+    "pl": "Teraz to słowo to dżungla.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "jungle",
+        "distractor": "thunder"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-jungle"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-04",
+    "pl": "Następne słowo to ścieżka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "path",
+        "distractor": "fox"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-path"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-05",
+    "pl": "To słowo to wodospad.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "waterfall",
+        "distractor": "turtle"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-waterfall"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-06",
+    "pl": "Ten wyraz to tęcza.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "rainbow",
+        "distractor": "feather"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-rainbow"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-07",
+    "pl": "Teraz to słowo to burza.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "storm",
+        "distractor": "river"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-storm"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-08",
+    "pl": "Następne słowo to grzmot.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "thunder",
+        "distractor": "orchard"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-thunder"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-09",
+    "pl": "To słowo to błyskawica.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "lightning",
+        "distractor": "path"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-lightning"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-10",
+    "pl": "Ten wyraz to gałąź.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "branch",
+        "distractor": "root"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-branch"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-11",
+    "pl": "Teraz to słowo to krzak.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "bush",
+        "distractor": "hedgehog"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-bush"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-12",
+    "pl": "Następne słowo to korzeń.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "root",
+        "distractor": "campfire"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-root"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-01",
+    "pl": "To słowo to królestwo.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "kingdom",
+        "distractor": "chamber"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-kingdom"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-02",
+    "pl": "Ten wyraz to sztandar.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "banner",
+        "distractor": "stronghold"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-banner"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-03",
+    "pl": "Teraz to słowo to pierścień.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "ring",
+        "distractor": "carriage"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-ring"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-04",
+    "pl": "Następne słowo to amulet.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "amulet",
+        "distractor": "mask"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-amulet"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-05",
+    "pl": "To słowo to trójząb.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "trident",
+        "distractor": "fire"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-trident"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-06",
+    "pl": "Ten wyraz to kocioł.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cauldron",
+        "distractor": "guardian"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-cauldron"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-07",
+    "pl": "Teraz to słowo to labirynt.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "maze",
+        "distractor": "castle"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-maze"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-08",
+    "pl": "Następne słowo to powóz.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "carriage",
+        "distractor": "camp"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-carriage"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-09",
+    "pl": "To słowo to strażnik bramy.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "gate",
+        "distractor": "banner"
+      },
+      {
+        "correct": "guard",
+        "distractor": "ring"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-gate-guard"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-10",
+    "pl": "Ten wyraz to płomień.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "flame",
+        "distractor": "gate"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-flame"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-11",
+    "pl": "Teraz to słowo to bestia.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "beast",
+        "distractor": "archer"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-beast"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-12",
+    "pl": "Następne słowo to włócznia.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "spear",
+        "distractor": "villain"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-spear"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-01",
+    "pl": "To słowo to patelnia.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "pan",
+        "distractor": "bowl"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-pan"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-02",
+    "pl": "Ten wyraz to deska do krojenia.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "chopping",
+        "distractor": "picnic"
+      },
+      {
+        "correct": "board",
+        "distractor": "basket"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-chopping-board"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-03",
+    "pl": "Teraz to słowo to czajnik.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "kettle",
+        "distractor": "recipe"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-kettle"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-04",
+    "pl": "Następne słowo to butelka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "bottle",
+        "distractor": "pepper"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-bottle"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-05",
+    "pl": "To słowo to serwetka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "napkin",
+        "distractor": "yogurt"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-napkin"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-06",
+    "pl": "Ten wyraz to przepis.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "recipe",
+        "distractor": "ham"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-recipe"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-07",
+    "pl": "Teraz to słowo to menu.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "menu",
+        "distractor": "plate"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-menu"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-08",
+    "pl": "Następne słowo to makaron.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "pasta",
+        "distractor": "saucepan"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-pasta"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-09",
+    "pl": "To słowo to płatki.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cereal",
+        "distractor": "board"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-cereal"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-10",
+    "pl": "Ten wyraz to naleśnik.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "pancake",
+        "distractor": "cereal"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-pancake"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-11",
+    "pl": "Teraz to słowo to dżem.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "jam",
+        "distractor": "lemonade"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-jam"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-12",
+    "pl": "Następne słowo to miód.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "honey",
+        "distractor": "sausage"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-a2-honey"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-01",
+    "pl": "To słowo to mieszkanie.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "apartment",
+        "distractor": "bathroom"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-apartment"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-02",
+    "pl": "Ten wyraz to balkon.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "balcony",
+        "distractor": "garage"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-balcony"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-03",
+    "pl": "Teraz to słowo to klatka schodowa.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "staircase",
+        "distractor": "vacuum"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-staircase"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-04",
+    "pl": "Następne słowo to dywan.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "carpet",
+        "distractor": "mop"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-carpet"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-05",
+    "pl": "To słowo to zasłona.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "curtain",
+        "distractor": "basement"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-curtain"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-06",
+    "pl": "Ten wyraz to koszyk.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "basket",
+        "distractor": "thread"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-basket"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-07",
+    "pl": "Teraz to słowo to szuflada.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "drawer",
+        "distractor": "house"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-drawer"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-08",
+    "pl": "Następne słowo to odkurzacz.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "vacuum",
+        "distractor": "floor"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-vacuum"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-09",
+    "pl": "To słowo to zmywarka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "dishwasher",
+        "distractor": "balcony"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-dishwasher"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-10",
+    "pl": "Ten wyraz to zamrażarka.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "freezer",
+        "distractor": "dishwasher"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-freezer"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-11",
+    "pl": "Teraz to słowo to piekarnik.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "oven",
+        "distractor": "doormat"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-oven"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-12",
+    "pl": "Następne słowo to mikrofalówka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "microwave",
+        "distractor": "candle"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-microwave"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-01",
+    "pl": "To słowo to słownik.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "dictionary",
+        "distractor": "desk"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-dictionary"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-02",
+    "pl": "Ten wyraz to zdanie.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "sentence",
+        "distractor": "campus"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-sentence"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-03",
+    "pl": "Teraz to słowo to akapit.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "paragraph",
+        "distractor": "printer"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-paragraph"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-04",
+    "pl": "Następne słowo to ćwiczenie.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "exercise",
+        "distractor": "tablet"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-exercise"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-05",
+    "pl": "To słowo to quiz.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "quiz",
+        "distractor": "history"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-quiz"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-06",
+    "pl": "Ten wyraz to kalkulator.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "calculator",
+        "distractor": "pronunciation"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-calculator"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-07",
+    "pl": "Teraz to słowo to klawiatura.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "keyboard",
+        "distractor": "library"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-keyboard"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-08",
+    "pl": "Następne słowo to drukarka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "printer",
+        "distractor": "auditorium"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-printer"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-09",
+    "pl": "To słowo to plakat.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "poster",
+        "distractor": "exercise"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-poster"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-10",
+    "pl": "Ten wyraz to plan lekcji.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "timetable",
+        "distractor": "worksheet"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-timetable"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-11",
+    "pl": "Teraz to słowo to ćwiczeniówka.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "workbook",
+        "distractor": "science"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-workbook"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-12",
+    "pl": "Następne słowo to karta pracy.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "worksheet",
+        "distractor": "grade"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-worksheet"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-01",
+    "pl": "To słowo to lotnisko.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "airport",
+        "distractor": "station"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-airport"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-02",
+    "pl": "Ten wyraz to peron.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "platform",
+        "distractor": "market"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-platform"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-03",
+    "pl": "Teraz to słowo to teatr.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "theatre",
+        "distractor": "harbour"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-theatre"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-04",
+    "pl": "Następne słowo to basen.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "swimming",
+        "distractor": "petrol"
+      },
+      {
+        "correct": "pool",
+        "distractor": "tram"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-swimming-pool"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-05",
+    "pl": "To słowo to biuro.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "office",
+        "distractor": "lane"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-office"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-06",
+    "pl": "Ten wyraz to fabryka.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "factory",
+        "distractor": "car"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-factory"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-07",
+    "pl": "Teraz to słowo to port.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "harbour",
+        "distractor": "neighbourhood"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-harbour"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-08",
+    "pl": "Następne słowo to wieża.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "tower",
+        "distractor": "hall"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-tower"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-09",
+    "pl": "To słowo to stadion.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "stadium",
+        "distractor": "museum"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-stadium"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-10",
+    "pl": "Ten wyraz to kwiaciarnia.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "flower",
+        "distractor": "airport"
+      },
+      {
+        "correct": "shop",
+        "distractor": "platform"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-flower-shop"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-11",
+    "pl": "Teraz to słowo to sklep mięsny.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "butcher",
+        "distractor": "tower"
+      },
+      {
+        "correct": "shop",
+        "distractor": "stadium"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-butcher-shop"
+    ]
+  },
+  {
+    "id": "town_places-a2-sentence-12",
+    "pl": "Następne słowo to rozstaje.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "crossroads",
+        "distractor": "elevator"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-a2-crossroads"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-01",
+    "pl": "To słowo to klif.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cliff",
+        "distractor": "lake"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-cliff"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-02",
+    "pl": "Ten wyraz to strumień.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "stream",
+        "distractor": "valley"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-stream"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-03",
+    "pl": "Teraz to słowo to rafa.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "reef",
+        "distractor": "ecosystem"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-reef"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-04",
+    "pl": "Następne słowo to kanion.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "canyon",
+        "distractor": "beak"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-canyon"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-05",
+    "pl": "To słowo to lodowiec.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "glacier",
+        "distractor": "breeze"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-glacier"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-06",
+    "pl": "Ten wyraz to wulkan.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "volcano",
+        "distractor": "litter"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-volcano"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-07",
+    "pl": "Teraz to słowo to siedlisko.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "habitat",
+        "distractor": "sky"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-habitat"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-08",
+    "pl": "Następne słowo to ekosystem.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "ecosystem",
+        "distractor": "coast"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-ecosystem"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-09",
+    "pl": "To słowo to klimat.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "climate",
+        "distractor": "volcano"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-climate"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-10",
+    "pl": "Ten wyraz to środowisko.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "environment",
+        "distractor": "hoof"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-environment"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-11",
+    "pl": "Teraz to słowo to szlak.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "trail",
+        "distractor": "flood"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-trail"
+    ]
+  },
+  {
+    "id": "animals_nature-b1-sentence-12",
+    "pl": "Następne słowo to muszla.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "shell",
+        "distractor": "rescue"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-b1-shell"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-01",
+    "pl": "To słowo to twierdza.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "fortress",
+        "distractor": "chamber"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-fortress"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-02",
+    "pl": "Ten wyraz to księga zaklęć.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "spellbook",
+        "distractor": "stronghold"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-spellbook"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-03",
+    "pl": "Teraz to słowo to kompas.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "compass",
+        "distractor": "helm"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-compass"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-04",
+    "pl": "Następne słowo to artefakt.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "artifact",
+        "distractor": "companion"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-artifact"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-05",
+    "pl": "To słowo to arkada.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "archway",
+        "distractor": "traveler"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-archway"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-06",
+    "pl": "Ten wyraz to relikwia.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "relic",
+        "distractor": "spiral"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-relic"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-07",
+    "pl": "Teraz to słowo to pergamin.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "parchment",
+        "distractor": "watchtower"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-parchment"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-08",
+    "pl": "Następne słowo to przyłbica.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "helm",
+        "distractor": "spellbook"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-helm"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-09",
+    "pl": "To słowo to rękawica zbrojna.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "gauntlet",
+        "distractor": "helm"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-gauntlet"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-10",
+    "pl": "Ten wyraz to kołczan.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "quiver",
+        "distractor": "prophecy"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-quiver"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-11",
+    "pl": "Teraz to słowo to katapulta.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "catapult",
+        "distractor": "sorcerer"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-catapult"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-b1-sentence-12",
+    "pl": "Następne słowo to koszary.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "barracks",
+        "distractor": "tower"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-b1-barracks"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-01",
+    "pl": "To słowo to toster.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "toaster",
+        "distractor": "bowl"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-toaster"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-02",
+    "pl": "Ten wyraz to durszlak.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "colander",
+        "distractor": "picnic"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-colander"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-03",
+    "pl": "Teraz to słowo to trzepaczka.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "whisk",
+        "distractor": "measuring"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-whisk"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-04",
+    "pl": "Następne słowo to termos.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "thermos",
+        "distractor": "pudding"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-thermos"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-05",
+    "pl": "To słowo to półmisek.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "platter",
+        "distractor": "blueberry"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-platter"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-06",
+    "pl": "Ten wyraz to krajalnica.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "slicer",
+        "distractor": "protein"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-slicer"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-07",
+    "pl": "Teraz to słowo to miarka.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "measuring",
+        "distractor": "bowl"
+      },
+      {
+        "correct": "cup",
+        "distractor": "table"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-measuring-cup"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-08",
+    "pl": "Następne słowo to tarka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "grater",
+        "distractor": "picnic"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-grater"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-09",
+    "pl": "To słowo to grill.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "barbecue",
+        "distractor": "thermos"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-barbecue"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-10",
+    "pl": "Ten wyraz to jedzenie na wynos.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "takeaway",
+        "distractor": "reservation"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-takeaway"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-11",
+    "pl": "Teraz to słowo to rezerwacja.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "reservation",
+        "distractor": "blueberry"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-reservation"
+    ]
+  },
+  {
+    "id": "food_kitchen-b1-sentence-12",
+    "pl": "Następne słowo to babeczka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "cupcake",
+        "distractor": "protein"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen",
+    "vocabIds": [
+      "food_kitchen-b1-cupcake"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-01",
+    "pl": "To słowo to spiżarnia.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "pantry",
+        "distractor": "bathroom"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-pantry"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-02",
+    "pl": "Ten wyraz to grzejnik.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "radiator",
+        "distractor": "garage"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-radiator"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-03",
+    "pl": "Teraz to słowo to przedłużacz.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "extension",
+        "distractor": "wardrobe"
+      },
+      {
+        "correct": "cable",
+        "distractor": "toolbox"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-extension-cable"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-04",
+    "pl": "Następne słowo to gniazdko.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "socket",
+        "distractor": "guest"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-socket"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-05",
+    "pl": "To słowo to włącznik.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "switch",
+        "distractor": "rack"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-switch"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-06",
+    "pl": "Ten wyraz to detergent.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "detergent",
+        "distractor": "bin"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-detergent"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-07",
+    "pl": "Teraz to słowo to szafa.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "wardrobe",
+        "distractor": "storage"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-wardrobe"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-08",
+    "pl": "Następne słowo to skrzynka z narzędziami.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "toolbox",
+        "distractor": "bedroom"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-toolbox"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-09",
+    "pl": "To słowo to bateria.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "battery",
+        "distractor": "garage"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-battery"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-10",
+    "pl": "Ten wyraz to ładowarka.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "charger",
+        "distractor": "switch"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-charger"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-11",
+    "pl": "Teraz to słowo to pilot.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "remote",
+        "distractor": "guest"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-remote"
+    ]
+  },
+  {
+    "id": "household-b1-sentence-12",
+    "pl": "Następne słowo to słuchawka.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "earphone",
+        "distractor": "laundry"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household",
+    "vocabIds": [
+      "household-b1-earphone"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-01",
+    "pl": "To słowo to eksperyment.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "experiment",
+        "distractor": "desk"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-experiment"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-02",
+    "pl": "Ten wyraz to mikroskop.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "microscope",
+        "distractor": "campus"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-microscope"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-03",
+    "pl": "Teraz to słowo to puchar.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "trophy",
+        "distractor": "notepad"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-trophy"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-04",
+    "pl": "Następne słowo to konkurs.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "competition",
+        "distractor": "article"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-competition"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-05",
+    "pl": "To słowo to stypendium.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "scholarship",
+        "distractor": "deadline"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-scholarship"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-06",
+    "pl": "Ten wyraz to projektor.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "projector",
+        "distractor": "conclusion"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-projector"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-07",
+    "pl": "Teraz to słowo to seminarium.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "seminar",
+        "distractor": "desk"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-seminar"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-08",
+    "pl": "Następne słowo to notatnik.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "notepad",
+        "distractor": "campus"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-notepad"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-09",
+    "pl": "To słowo to pokój nauczycielski.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "staff",
+        "distractor": "scholarship"
+      },
+      {
+        "correct": "room",
+        "distractor": "projector"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-staff-room"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-10",
+    "pl": "Ten wyraz to identyfikator.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "badge",
+        "distractor": "syllabus"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-badge"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-11",
+    "pl": "Teraz to słowo to świadectwo.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "transcript",
+        "distractor": "deadline"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-transcript"
+    ]
+  },
+  {
+    "id": "school-b1-sentence-12",
+    "pl": "Następne słowo to sylabus.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "syllabus",
+        "distractor": "conclusion"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school",
+    "vocabIds": [
+      "school-b1-syllabus"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-01",
+    "pl": "To słowo to bulwar.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "boulevard",
+        "distractor": "station"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-boulevard"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-02",
+    "pl": "Ten wyraz to aleja.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "avenue",
+        "distractor": "market"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-avenue"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-03",
+    "pl": "Teraz to słowo to dzielnica.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "district",
+        "distractor": "luggage"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-district"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-04",
+    "pl": "Następne słowo to skrzyżowanie dróg.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "intersection",
+        "distractor": "passage"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-intersection"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-05",
+    "pl": "To słowo to wystawa.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "exhibition",
+        "distractor": "parking"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-exhibition"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-06",
+    "pl": "Ten wyraz to pamiątka.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "souvenir",
+        "distractor": "platform"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-souvenir"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-07",
+    "pl": "Teraz to słowo to recepcjonista.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "receptionist",
+        "distractor": "town"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-receptionist"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-08",
+    "pl": "Następne słowo to bagaż.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "luggage",
+        "distractor": "terminal"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-luggage"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-09",
+    "pl": "To słowo to ogłoszenie.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "announcement",
+        "distractor": "avenue"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-announcement"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-10",
+    "pl": "Ten wyraz to budowa.",
+    "steps": [
+      {
+        "correct": "This",
+        "distractor": "That"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "construction",
+        "distractor": "announcement"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-construction"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-11",
+    "pl": "Teraz to słowo to objazd.",
+    "steps": [
+      {
+        "correct": "Now",
+        "distractor": "Then"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "detour",
+        "distractor": "departure"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-detour"
+    ]
+  },
+  {
+    "id": "town_places-b1-sentence-12",
+    "pl": "Następne słowo to tłum.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "next",
+        "distractor": "last"
+      },
+      {
+        "correct": "word",
+        "distractor": "clue"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "crowd",
+        "distractor": "barricade"
+      }
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places",
+    "vocabIds": [
+      "town_places-b1-crowd"
+    ]
+  }
+]

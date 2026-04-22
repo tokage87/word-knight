@@ -1,14 +1,8 @@
 import Phaser from 'phaser';
-import VOCAB_RAW from '../data/vocab.json';
+import { curriculumCatalog } from './CurriculumCatalog';
+import type { CurriculumVocab } from './CurriculumTypes';
 
-interface VocabEntry {
-  id: string;
-  pl: string;
-  en: string;
-  distractors: string[];
-}
-
-const VOCAB: VocabEntry[] = VOCAB_RAW as VocabEntry[];
+type VocabEntry = CurriculumVocab;
 
 type KeyCode = 'W' | 'E';
 
@@ -131,7 +125,8 @@ export class QuizManager {
 
   private loadNext() {
     if (!this.root) return;
-    this.current = VOCAB[Math.floor(Math.random() * VOCAB.length)];
+    const pool = curriculumCatalog.getVocabPool();
+    this.current = pool[Math.floor(Math.random() * pool.length)];
     const distractor =
       this.current.distractors[
         Math.floor(Math.random() * this.current.distractors.length)

@@ -1,0 +1,8192 @@
+[
+  {
+    "id": "animals_nature-a1-bee",
+    "pl": "pszczoła",
+    "en": "bee",
+    "distractors": [
+      "spider",
+      "sun",
+      "moon"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-bird",
+    "pl": "ptak",
+    "en": "bird",
+    "distractors": [
+      "mouse",
+      "horse",
+      "cow"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-butterfly",
+    "pl": "motyl",
+    "en": "butterfly",
+    "distractors": [
+      "sun",
+      "moon",
+      "star"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-cat",
+    "pl": "kot",
+    "en": "cat",
+    "distractors": [
+      "bird",
+      "rabbit",
+      "mouse"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-cloud",
+    "pl": "chmura",
+    "en": "cloud",
+    "distractors": [
+      "flower",
+      "grass",
+      "leaf"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-cow",
+    "pl": "krowa",
+    "en": "cow",
+    "distractors": [
+      "sheep",
+      "duck",
+      "frog"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-dog",
+    "pl": "pies",
+    "en": "dog",
+    "distractors": [
+      "rabbit",
+      "mouse",
+      "horse"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-duck",
+    "pl": "kaczka",
+    "en": "duck",
+    "distractors": [
+      "bee",
+      "butterfly",
+      "spider"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-field",
+    "pl": "pole",
+    "en": "field",
+    "distractors": [
+      "forest",
+      "meadow",
+      "river"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-flower",
+    "pl": "kwiat",
+    "en": "flower",
+    "distractors": [
+      "leaf",
+      "nest",
+      "stone"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-forest",
+    "pl": "las",
+    "en": "forest",
+    "distractors": [
+      "river",
+      "lake",
+      "sky"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-frog",
+    "pl": "żaba",
+    "en": "frog",
+    "distractors": [
+      "butterfly",
+      "spider",
+      "sun"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-goldfish",
+    "pl": "złota rybka",
+    "en": "goldfish",
+    "distractors": [
+      "meadow",
+      "river",
+      "lake"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-grass",
+    "pl": "trawa",
+    "en": "grass",
+    "distractors": [
+      "nest",
+      "stone",
+      "cat"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-horse",
+    "pl": "koń",
+    "en": "horse",
+    "distractors": [
+      "pig",
+      "sheep",
+      "duck"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-lake",
+    "pl": "jezioro",
+    "en": "lake",
+    "distractors": [
+      "cloud",
+      "tree",
+      "flower"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-leaf",
+    "pl": "liść",
+    "en": "leaf",
+    "distractors": [
+      "stone",
+      "cat",
+      "dog"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-meadow",
+    "pl": "łąka",
+    "en": "meadow",
+    "distractors": [
+      "lake",
+      "sky",
+      "cloud"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-moon",
+    "pl": "księżyc",
+    "en": "moon",
+    "distractors": [
+      "rain",
+      "snow",
+      "wind"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-mountain",
+    "pl": "góra",
+    "en": "mountain",
+    "distractors": [
+      "goldfish",
+      "forest",
+      "meadow"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-mouse",
+    "pl": "mysz",
+    "en": "mouse",
+    "distractors": [
+      "cow",
+      "pig",
+      "sheep"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-nest",
+    "pl": "gniazdo",
+    "en": "nest",
+    "distractors": [
+      "cat",
+      "dog",
+      "bird"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-pig",
+    "pl": "świnia",
+    "en": "pig",
+    "distractors": [
+      "duck",
+      "frog",
+      "bee"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-rabbit",
+    "pl": "królik",
+    "en": "rabbit",
+    "distractors": [
+      "horse",
+      "cow",
+      "pig"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-rain",
+    "pl": "deszcz",
+    "en": "rain",
+    "distractors": [
+      "wind",
+      "mountain",
+      "field"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-river",
+    "pl": "rzeka",
+    "en": "river",
+    "distractors": [
+      "sky",
+      "cloud",
+      "tree"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-sheep",
+    "pl": "owca",
+    "en": "sheep",
+    "distractors": [
+      "frog",
+      "bee",
+      "butterfly"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-sky",
+    "pl": "niebo",
+    "en": "sky",
+    "distractors": [
+      "tree",
+      "flower",
+      "grass"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-snow",
+    "pl": "śnieg",
+    "en": "snow",
+    "distractors": [
+      "mountain",
+      "field",
+      "goldfish"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-spider",
+    "pl": "pająk",
+    "en": "spider",
+    "distractors": [
+      "moon",
+      "star",
+      "rain"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-star",
+    "pl": "gwiazda",
+    "en": "star",
+    "distractors": [
+      "snow",
+      "wind",
+      "mountain"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-stone",
+    "pl": "kamień",
+    "en": "stone",
+    "distractors": [
+      "dog",
+      "bird",
+      "rabbit"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-sun",
+    "pl": "słońce",
+    "en": "sun",
+    "distractors": [
+      "star",
+      "rain",
+      "snow"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-tree",
+    "pl": "drzewo",
+    "en": "tree",
+    "distractors": [
+      "grass",
+      "leaf",
+      "nest"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a1-wind",
+    "pl": "wiatr",
+    "en": "wind",
+    "distractors": [
+      "field",
+      "goldfish",
+      "forest"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "fantasy_adventure-a1-armor",
+    "pl": "zbroja",
+    "en": "armor",
+    "distractors": [
+      "dragon",
+      "sword",
+      "shield"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-castle",
+    "pl": "zamek",
+    "en": "castle",
+    "distractors": [
+      "sword",
+      "shield",
+      "treasure"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-cloak",
+    "pl": "peleryna",
+    "en": "cloak",
+    "distractors": [
+      "king",
+      "queen",
+      "prince"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-crown",
+    "pl": "korona",
+    "en": "crown",
+    "distractors": [
+      "spell",
+      "potion",
+      "monster"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-crystal",
+    "pl": "kryształ",
+    "en": "crystal",
+    "distractors": [
+      "rune",
+      "helmet",
+      "armor"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-dragon",
+    "pl": "smok",
+    "en": "dragon",
+    "distractors": [
+      "shield",
+      "treasure",
+      "crown"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-dwarf",
+    "pl": "krasnolud",
+    "en": "dwarf",
+    "distractors": [
+      "portal",
+      "crystal",
+      "goblin"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-elf",
+    "pl": "elf",
+    "en": "elf",
+    "distractors": [
+      "quest",
+      "portal",
+      "crystal"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-fairy",
+    "pl": "wróżka",
+    "en": "fairy",
+    "distractors": [
+      "dwarf",
+      "quest",
+      "portal"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-gem",
+    "pl": "klejnot",
+    "en": "gem",
+    "distractors": [
+      "wand",
+      "cloak",
+      "knight"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-giant",
+    "pl": "olbrzym",
+    "en": "giant",
+    "distractors": [
+      "elf",
+      "dwarf",
+      "quest"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-goblin",
+    "pl": "goblin",
+    "en": "goblin",
+    "distractors": [
+      "helmet",
+      "armor",
+      "castle"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-helmet",
+    "pl": "hełm",
+    "en": "helmet",
+    "distractors": [
+      "castle",
+      "dragon",
+      "sword"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-hero",
+    "pl": "bohater",
+    "en": "hero",
+    "distractors": [
+      "scroll",
+      "gem",
+      "orb"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-king",
+    "pl": "król",
+    "en": "king",
+    "distractors": [
+      "prince",
+      "princess",
+      "wizard"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-knight",
+    "pl": "rycerz",
+    "en": "knight",
+    "distractors": [
+      "queen",
+      "prince",
+      "princess"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-magic",
+    "pl": "magia",
+    "en": "magic",
+    "distractors": [
+      "potion",
+      "monster",
+      "hero"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-monster",
+    "pl": "potwór",
+    "en": "monster",
+    "distractors": [
+      "torch",
+      "scroll",
+      "gem"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-orb",
+    "pl": "kula",
+    "en": "orb",
+    "distractors": [
+      "cloak",
+      "knight",
+      "king"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-portal",
+    "pl": "portal",
+    "en": "portal",
+    "distractors": [
+      "goblin",
+      "rune",
+      "helmet"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-potion",
+    "pl": "eliksir",
+    "en": "potion",
+    "distractors": [
+      "hero",
+      "torch",
+      "scroll"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-prince",
+    "pl": "książę",
+    "en": "prince",
+    "distractors": [
+      "wizard",
+      "throne",
+      "giant"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-princess",
+    "pl": "księżniczka",
+    "en": "princess",
+    "distractors": [
+      "throne",
+      "giant",
+      "fairy"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-queen",
+    "pl": "królowa",
+    "en": "queen",
+    "distractors": [
+      "princess",
+      "wizard",
+      "throne"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-quest",
+    "pl": "wyprawa",
+    "en": "quest",
+    "distractors": [
+      "crystal",
+      "goblin",
+      "rune"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-rune",
+    "pl": "runa",
+    "en": "rune",
+    "distractors": [
+      "armor",
+      "castle",
+      "dragon"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-scroll",
+    "pl": "zwój",
+    "en": "scroll",
+    "distractors": [
+      "orb",
+      "wand",
+      "cloak"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-shield",
+    "pl": "tarcza",
+    "en": "shield",
+    "distractors": [
+      "crown",
+      "magic",
+      "spell"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-spell",
+    "pl": "zaklęcie",
+    "en": "spell",
+    "distractors": [
+      "monster",
+      "hero",
+      "torch"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-sword",
+    "pl": "miecz",
+    "en": "sword",
+    "distractors": [
+      "treasure",
+      "crown",
+      "magic"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-throne",
+    "pl": "tron",
+    "en": "throne",
+    "distractors": [
+      "fairy",
+      "elf",
+      "dwarf"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-torch",
+    "pl": "pochodnia",
+    "en": "torch",
+    "distractors": [
+      "gem",
+      "orb",
+      "wand"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-treasure",
+    "pl": "skarb",
+    "en": "treasure",
+    "distractors": [
+      "magic",
+      "spell",
+      "potion"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-wand",
+    "pl": "różdżka",
+    "en": "wand",
+    "distractors": [
+      "knight",
+      "king",
+      "queen"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a1-wizard",
+    "pl": "czarodziej",
+    "en": "wizard",
+    "distractors": [
+      "giant",
+      "fairy",
+      "elf"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "food_kitchen-a1-apple",
+    "pl": "jabłko",
+    "en": "apple",
+    "distractors": [
+      "orange",
+      "pear",
+      "strawberry"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-banana",
+    "pl": "banan",
+    "en": "banana",
+    "distractors": [
+      "pear",
+      "strawberry",
+      "soup"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-bread",
+    "pl": "chleb",
+    "en": "bread",
+    "distractors": [
+      "milk",
+      "water",
+      "juice"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-breakfast",
+    "pl": "śniadanie",
+    "en": "breakfast",
+    "distractors": [
+      "dinner",
+      "tea",
+      "kitchen"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-butter",
+    "pl": "masło",
+    "en": "butter",
+    "distractors": [
+      "water",
+      "juice",
+      "apple"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-cake",
+    "pl": "ciasto",
+    "en": "cake",
+    "distractors": [
+      "sandwich",
+      "breakfast",
+      "lunch"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-carrot",
+    "pl": "marchewka",
+    "en": "carrot",
+    "distractors": [
+      "cake",
+      "cookie",
+      "sandwich"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-cheese",
+    "pl": "ser",
+    "en": "cheese",
+    "distractors": [
+      "chicken",
+      "fish",
+      "rice"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-chicken",
+    "pl": "kurczak",
+    "en": "chicken",
+    "distractors": [
+      "rice",
+      "potato",
+      "tomato"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-cookie",
+    "pl": "ciastko",
+    "en": "cookie",
+    "distractors": [
+      "breakfast",
+      "lunch",
+      "dinner"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-cucumber",
+    "pl": "ogórek",
+    "en": "cucumber",
+    "distractors": [
+      "cookie",
+      "sandwich",
+      "breakfast"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-cup",
+    "pl": "kubek",
+    "en": "cup",
+    "distractors": [
+      "fork",
+      "knife",
+      "bread"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-dinner",
+    "pl": "kolacja",
+    "en": "dinner",
+    "distractors": [
+      "kitchen",
+      "fridge",
+      "plate"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-egg",
+    "pl": "jajko",
+    "en": "egg",
+    "distractors": [
+      "fish",
+      "rice",
+      "potato"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-fish",
+    "pl": "ryba",
+    "en": "fish",
+    "distractors": [
+      "potato",
+      "tomato",
+      "carrot"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-fork",
+    "pl": "widelec",
+    "en": "fork",
+    "distractors": [
+      "bread",
+      "butter",
+      "milk"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-fridge",
+    "pl": "lodówka",
+    "en": "fridge",
+    "distractors": [
+      "cup",
+      "spoon",
+      "fork"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-juice",
+    "pl": "sok",
+    "en": "juice",
+    "distractors": [
+      "banana",
+      "orange",
+      "pear"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-kitchen",
+    "pl": "kuchnia",
+    "en": "kitchen",
+    "distractors": [
+      "plate",
+      "cup",
+      "spoon"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-knife",
+    "pl": "nóż",
+    "en": "knife",
+    "distractors": [
+      "butter",
+      "milk",
+      "water"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-lunch",
+    "pl": "obiad",
+    "en": "lunch",
+    "distractors": [
+      "tea",
+      "kitchen",
+      "fridge"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-milk",
+    "pl": "mleko",
+    "en": "milk",
+    "distractors": [
+      "juice",
+      "apple",
+      "banana"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-orange",
+    "pl": "pomarańcza",
+    "en": "orange",
+    "distractors": [
+      "strawberry",
+      "soup",
+      "salad"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-pear",
+    "pl": "gruszka",
+    "en": "pear",
+    "distractors": [
+      "soup",
+      "salad",
+      "cheese"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-plate",
+    "pl": "talerz",
+    "en": "plate",
+    "distractors": [
+      "spoon",
+      "fork",
+      "knife"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-potato",
+    "pl": "ziemniak",
+    "en": "potato",
+    "distractors": [
+      "carrot",
+      "cucumber",
+      "cake"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-rice",
+    "pl": "ryż",
+    "en": "rice",
+    "distractors": [
+      "tomato",
+      "carrot",
+      "cucumber"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-salad",
+    "pl": "sałatka",
+    "en": "salad",
+    "distractors": [
+      "egg",
+      "chicken",
+      "fish"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-sandwich",
+    "pl": "kanapka",
+    "en": "sandwich",
+    "distractors": [
+      "lunch",
+      "dinner",
+      "tea"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-soup",
+    "pl": "zupa",
+    "en": "soup",
+    "distractors": [
+      "cheese",
+      "egg",
+      "chicken"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-spoon",
+    "pl": "łyżka",
+    "en": "spoon",
+    "distractors": [
+      "knife",
+      "bread",
+      "butter"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-strawberry",
+    "pl": "truskawka",
+    "en": "strawberry",
+    "distractors": [
+      "salad",
+      "cheese",
+      "egg"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-tea",
+    "pl": "herbata",
+    "en": "tea",
+    "distractors": [
+      "fridge",
+      "plate",
+      "cup"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-tomato",
+    "pl": "pomidor",
+    "en": "tomato",
+    "distractors": [
+      "cucumber",
+      "cake",
+      "cookie"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a1-water",
+    "pl": "woda",
+    "en": "water",
+    "distractors": [
+      "apple",
+      "banana",
+      "orange"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "household-a1-bathroom",
+    "pl": "łazienka",
+    "en": "bathroom",
+    "distractors": [
+      "bed",
+      "table",
+      "chair"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-bed",
+    "pl": "łóżko",
+    "en": "bed",
+    "distractors": [
+      "chair",
+      "door",
+      "window"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-bedroom",
+    "pl": "sypialnia",
+    "en": "bedroom",
+    "distractors": [
+      "table",
+      "chair",
+      "door"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-blanket",
+    "pl": "koc",
+    "en": "blanket",
+    "distractors": [
+      "shelf",
+      "floor",
+      "wall"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-brother",
+    "pl": "brat",
+    "en": "brother",
+    "distractors": [
+      "grandma",
+      "grandpa",
+      "family"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-brush",
+    "pl": "szczotka",
+    "en": "brush",
+    "distractors": [
+      "pillow",
+      "blanket",
+      "toy"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-chair",
+    "pl": "krzesło",
+    "en": "chair",
+    "distractors": [
+      "window",
+      "lamp",
+      "clock"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-clock",
+    "pl": "zegar",
+    "en": "clock",
+    "distractors": [
+      "cupboard",
+      "mirror",
+      "towel"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-cupboard",
+    "pl": "kredens",
+    "en": "cupboard",
+    "distractors": [
+      "towel",
+      "brush",
+      "soap"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-dad",
+    "pl": "tata",
+    "en": "dad",
+    "distractors": [
+      "sister",
+      "grandma",
+      "grandpa"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-door",
+    "pl": "drzwi",
+    "en": "door",
+    "distractors": [
+      "lamp",
+      "clock",
+      "sofa"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-family",
+    "pl": "rodzina",
+    "en": "family",
+    "distractors": [
+      "room",
+      "living room",
+      "bathroom"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-floor",
+    "pl": "podłoga",
+    "en": "floor",
+    "distractors": [
+      "roof",
+      "garden",
+      "garage"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-garage",
+    "pl": "garaż",
+    "en": "garage",
+    "distractors": [
+      "mom",
+      "dad",
+      "brother"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-garden",
+    "pl": "ogród",
+    "en": "garden",
+    "distractors": [
+      "key",
+      "mom",
+      "dad"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-grandma",
+    "pl": "babcia",
+    "en": "grandma",
+    "distractors": [
+      "family",
+      "house",
+      "room"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-grandpa",
+    "pl": "dziadek",
+    "en": "grandpa",
+    "distractors": [
+      "house",
+      "room",
+      "living room"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-house",
+    "pl": "dom",
+    "en": "house",
+    "distractors": [
+      "living room",
+      "bathroom",
+      "bedroom"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-key",
+    "pl": "klucz",
+    "en": "key",
+    "distractors": [
+      "dad",
+      "brother",
+      "sister"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-lamp",
+    "pl": "lampa",
+    "en": "lamp",
+    "distractors": [
+      "sofa",
+      "cupboard",
+      "mirror"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-living-room",
+    "pl": "salon",
+    "en": "living room",
+    "distractors": [
+      "bedroom",
+      "bed",
+      "table"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-mirror",
+    "pl": "lustro",
+    "en": "mirror",
+    "distractors": [
+      "brush",
+      "soap",
+      "pillow"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-mom",
+    "pl": "mama",
+    "en": "mom",
+    "distractors": [
+      "brother",
+      "sister",
+      "grandma"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-pillow",
+    "pl": "poduszka",
+    "en": "pillow",
+    "distractors": [
+      "toy",
+      "shelf",
+      "floor"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-roof",
+    "pl": "dach",
+    "en": "roof",
+    "distractors": [
+      "garage",
+      "key",
+      "mom"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-room",
+    "pl": "pokój",
+    "en": "room",
+    "distractors": [
+      "bathroom",
+      "bedroom",
+      "bed"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-shelf",
+    "pl": "półka",
+    "en": "shelf",
+    "distractors": [
+      "wall",
+      "roof",
+      "garden"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-sister",
+    "pl": "siostra",
+    "en": "sister",
+    "distractors": [
+      "grandpa",
+      "family",
+      "house"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-soap",
+    "pl": "mydło",
+    "en": "soap",
+    "distractors": [
+      "blanket",
+      "toy",
+      "shelf"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-sofa",
+    "pl": "sofa",
+    "en": "sofa",
+    "distractors": [
+      "mirror",
+      "towel",
+      "brush"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-table",
+    "pl": "stół",
+    "en": "table",
+    "distractors": [
+      "door",
+      "window",
+      "lamp"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-towel",
+    "pl": "ręcznik",
+    "en": "towel",
+    "distractors": [
+      "soap",
+      "pillow",
+      "blanket"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-toy",
+    "pl": "zabawka",
+    "en": "toy",
+    "distractors": [
+      "floor",
+      "wall",
+      "roof"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-wall",
+    "pl": "ściana",
+    "en": "wall",
+    "distractors": [
+      "garden",
+      "garage",
+      "key"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "household-a1-window",
+    "pl": "okno",
+    "en": "window",
+    "distractors": [
+      "clock",
+      "sofa",
+      "cupboard"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "household"
+  },
+  {
+    "id": "school-a1-alphabet",
+    "pl": "alfabet",
+    "en": "alphabet",
+    "distractors": [
+      "song",
+      "game",
+      "lesson"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-answer",
+    "pl": "odpowiedź",
+    "en": "answer",
+    "distractors": [
+      "paper",
+      "teacher",
+      "student"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-backpack",
+    "pl": "plecak",
+    "en": "backpack",
+    "distractors": [
+      "glue",
+      "crayon",
+      "marker"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-bell",
+    "pl": "dzwonek",
+    "en": "bell",
+    "distractors": [
+      "computer",
+      "backpack",
+      "map"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-board",
+    "pl": "tablica",
+    "en": "board",
+    "distractors": [
+      "lunchbox",
+      "computer",
+      "backpack"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-book",
+    "pl": "książka",
+    "en": "book",
+    "distractors": [
+      "pencil",
+      "pen",
+      "eraser"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-break",
+    "pl": "przerwa",
+    "en": "break",
+    "distractors": [
+      "classroom",
+      "library",
+      "book"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-classroom",
+    "pl": "klasa",
+    "en": "classroom",
+    "distractors": [
+      "book",
+      "notebook",
+      "pencil"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-computer",
+    "pl": "komputer",
+    "en": "computer",
+    "distractors": [
+      "map",
+      "glue",
+      "crayon"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-crayon",
+    "pl": "kredka",
+    "en": "crayon",
+    "distractors": [
+      "sharpener",
+      "alphabet",
+      "number"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-desk",
+    "pl": "ławka",
+    "en": "desk",
+    "distractors": [
+      "bell",
+      "lunchbox",
+      "computer"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-eraser",
+    "pl": "gumka",
+    "en": "eraser",
+    "distractors": [
+      "desk",
+      "board",
+      "bell"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-friend",
+    "pl": "przyjaciel",
+    "en": "friend",
+    "distractors": [
+      "school",
+      "classroom",
+      "library"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-game",
+    "pl": "gra",
+    "en": "game",
+    "distractors": [
+      "homework",
+      "test",
+      "question"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-glue",
+    "pl": "klej",
+    "en": "glue",
+    "distractors": [
+      "marker",
+      "sharpener",
+      "alphabet"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-homework",
+    "pl": "praca domowa",
+    "en": "homework",
+    "distractors": [
+      "question",
+      "answer",
+      "page"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-lesson",
+    "pl": "lekcja",
+    "en": "lesson",
+    "distractors": [
+      "test",
+      "question",
+      "answer"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-library",
+    "pl": "biblioteka",
+    "en": "library",
+    "distractors": [
+      "notebook",
+      "pencil",
+      "pen"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-lunchbox",
+    "pl": "śniadaniówka",
+    "en": "lunchbox",
+    "distractors": [
+      "backpack",
+      "map",
+      "glue"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-map",
+    "pl": "mapa",
+    "en": "map",
+    "distractors": [
+      "crayon",
+      "marker",
+      "sharpener"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-marker",
+    "pl": "marker",
+    "en": "marker",
+    "distractors": [
+      "alphabet",
+      "number",
+      "song"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-notebook",
+    "pl": "zeszyt",
+    "en": "notebook",
+    "distractors": [
+      "pen",
+      "eraser",
+      "ruler"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-number",
+    "pl": "liczba",
+    "en": "number",
+    "distractors": [
+      "game",
+      "lesson",
+      "homework"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-page",
+    "pl": "strona",
+    "en": "page",
+    "distractors": [
+      "teacher",
+      "student",
+      "friend"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-paper",
+    "pl": "papier",
+    "en": "paper",
+    "distractors": [
+      "student",
+      "friend",
+      "break"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-pen",
+    "pl": "długopis",
+    "en": "pen",
+    "distractors": [
+      "ruler",
+      "desk",
+      "board"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-pencil",
+    "pl": "ołówek",
+    "en": "pencil",
+    "distractors": [
+      "eraser",
+      "ruler",
+      "desk"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-question",
+    "pl": "pytanie",
+    "en": "question",
+    "distractors": [
+      "page",
+      "paper",
+      "teacher"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-ruler",
+    "pl": "linijka",
+    "en": "ruler",
+    "distractors": [
+      "board",
+      "bell",
+      "lunchbox"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-school",
+    "pl": "szkoła",
+    "en": "school",
+    "distractors": [
+      "library",
+      "book",
+      "notebook"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-sharpener",
+    "pl": "temperówka",
+    "en": "sharpener",
+    "distractors": [
+      "number",
+      "song",
+      "game"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-song",
+    "pl": "piosenka",
+    "en": "song",
+    "distractors": [
+      "lesson",
+      "homework",
+      "test"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-student",
+    "pl": "uczeń",
+    "en": "student",
+    "distractors": [
+      "break",
+      "school",
+      "classroom"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-teacher",
+    "pl": "nauczyciel",
+    "en": "teacher",
+    "distractors": [
+      "friend",
+      "break",
+      "school"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "school-a1-test",
+    "pl": "test",
+    "en": "test",
+    "distractors": [
+      "answer",
+      "page",
+      "paper"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "school"
+  },
+  {
+    "id": "town_places-a1-bank",
+    "pl": "bank",
+    "en": "bank",
+    "distractors": [
+      "restaurant",
+      "cafe",
+      "square"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-bike",
+    "pl": "rower",
+    "en": "bike",
+    "distractors": [
+      "stop",
+      "police",
+      "taxi"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-bridge",
+    "pl": "most",
+    "en": "bridge",
+    "distractors": [
+      "shop",
+      "market",
+      "park"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-bus",
+    "pl": "autobus",
+    "en": "bus",
+    "distractors": [
+      "bike",
+      "train",
+      "stop"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-cafe",
+    "pl": "kawiarnia",
+    "en": "cafe",
+    "distractors": [
+      "church",
+      "ticket",
+      "corner"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-car",
+    "pl": "samochód",
+    "en": "car",
+    "distractors": [
+      "train",
+      "stop",
+      "police"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-church",
+    "pl": "kościół",
+    "en": "church",
+    "distractors": [
+      "corner",
+      "pavement",
+      "fountain"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-cinema",
+    "pl": "kino",
+    "en": "cinema",
+    "distractors": [
+      "zoo",
+      "post office",
+      "bank"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-clinic",
+    "pl": "klinika",
+    "en": "clinic",
+    "distractors": [
+      "museum",
+      "zoo",
+      "post office"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-corner",
+    "pl": "róg",
+    "en": "corner",
+    "distractors": [
+      "fountain",
+      "statue",
+      "bus"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-fountain",
+    "pl": "fontanna",
+    "en": "fountain",
+    "distractors": [
+      "bus",
+      "car",
+      "bike"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-hospital",
+    "pl": "szpital",
+    "en": "hospital",
+    "distractors": [
+      "clinic",
+      "cinema",
+      "museum"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-hotel",
+    "pl": "hotel",
+    "en": "hotel",
+    "distractors": [
+      "cafe",
+      "square",
+      "church"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-market",
+    "pl": "rynek",
+    "en": "market",
+    "distractors": [
+      "playground",
+      "hospital",
+      "pharmacy"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-museum",
+    "pl": "muzeum",
+    "en": "museum",
+    "distractors": [
+      "post office",
+      "bank",
+      "hotel"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-park",
+    "pl": "park",
+    "en": "park",
+    "distractors": [
+      "hospital",
+      "pharmacy",
+      "clinic"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-pavement",
+    "pl": "chodnik",
+    "en": "pavement",
+    "distractors": [
+      "statue",
+      "bus",
+      "car"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-pharmacy",
+    "pl": "apteka",
+    "en": "pharmacy",
+    "distractors": [
+      "cinema",
+      "museum",
+      "zoo"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-playground",
+    "pl": "plac zabaw",
+    "en": "playground",
+    "distractors": [
+      "pharmacy",
+      "clinic",
+      "cinema"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-police",
+    "pl": "policja",
+    "en": "police",
+    "distractors": [
+      "traffic light",
+      "town",
+      "street"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-post-office",
+    "pl": "poczta",
+    "en": "post office",
+    "distractors": [
+      "hotel",
+      "restaurant",
+      "cafe"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-restaurant",
+    "pl": "restauracja",
+    "en": "restaurant",
+    "distractors": [
+      "square",
+      "church",
+      "ticket"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-road",
+    "pl": "droga",
+    "en": "road",
+    "distractors": [
+      "station",
+      "shop",
+      "market"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-shop",
+    "pl": "sklep",
+    "en": "shop",
+    "distractors": [
+      "park",
+      "playground",
+      "hospital"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-square",
+    "pl": "plac",
+    "en": "square",
+    "distractors": [
+      "ticket",
+      "corner",
+      "pavement"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-station",
+    "pl": "stacja",
+    "en": "station",
+    "distractors": [
+      "market",
+      "park",
+      "playground"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-statue",
+    "pl": "posąg",
+    "en": "statue",
+    "distractors": [
+      "car",
+      "bike",
+      "train"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-stop",
+    "pl": "przystanek",
+    "en": "stop",
+    "distractors": [
+      "taxi",
+      "traffic light",
+      "town"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-street",
+    "pl": "ulica",
+    "en": "street",
+    "distractors": [
+      "bridge",
+      "station",
+      "shop"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-taxi",
+    "pl": "taksówka",
+    "en": "taxi",
+    "distractors": [
+      "town",
+      "street",
+      "road"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-ticket",
+    "pl": "bilet",
+    "en": "ticket",
+    "distractors": [
+      "pavement",
+      "fountain",
+      "statue"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-town",
+    "pl": "miasto",
+    "en": "town",
+    "distractors": [
+      "road",
+      "bridge",
+      "station"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-traffic-light",
+    "pl": "sygnalizacja świetlna",
+    "en": "traffic light",
+    "distractors": [
+      "street",
+      "road",
+      "bridge"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-train",
+    "pl": "pociąg",
+    "en": "train",
+    "distractors": [
+      "police",
+      "taxi",
+      "traffic light"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a1-zoo",
+    "pl": "zoo",
+    "en": "zoo",
+    "distractors": [
+      "bank",
+      "hotel",
+      "restaurant"
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "town_places"
+  },
+  {
+    "id": "animals_nature-a2-autumn",
+    "pl": "jesień",
+    "en": "autumn",
+    "distractors": [
+      "ocean",
+      "island",
+      "desert"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-branch",
+    "pl": "gałąź",
+    "en": "branch",
+    "distractors": [
+      "root",
+      "seed",
+      "petal"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-bush",
+    "pl": "krzak",
+    "en": "bush",
+    "distractors": [
+      "seed",
+      "petal",
+      "fox"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-campfire",
+    "pl": "ognisko",
+    "en": "campfire",
+    "distractors": [
+      "season",
+      "spring",
+      "summer"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-cave",
+    "pl": "jaskinia",
+    "en": "cave",
+    "distractors": [
+      "rainbow",
+      "storm",
+      "thunder"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-deer",
+    "pl": "jeleń",
+    "en": "deer",
+    "distractors": [
+      "squirrel",
+      "hedgehog",
+      "turtle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-desert",
+    "pl": "pustynia",
+    "en": "desert",
+    "distractors": [
+      "path",
+      "cave",
+      "waterfall"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-dolphin",
+    "pl": "delfin",
+    "en": "dolphin",
+    "distractors": [
+      "parrot",
+      "farmer",
+      "gardener"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-farmer",
+    "pl": "rolnik",
+    "en": "farmer",
+    "distractors": [
+      "campfire",
+      "feather",
+      "season"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-feather",
+    "pl": "pióro",
+    "en": "feather",
+    "distractors": [
+      "spring",
+      "summer",
+      "autumn"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-fox",
+    "pl": "lis",
+    "en": "fox",
+    "distractors": [
+      "deer",
+      "owl",
+      "squirrel"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-gardener",
+    "pl": "ogrodnik",
+    "en": "gardener",
+    "distractors": [
+      "feather",
+      "season",
+      "spring"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-hedgehog",
+    "pl": "jeż",
+    "en": "hedgehog",
+    "distractors": [
+      "dolphin",
+      "whale",
+      "parrot"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-island",
+    "pl": "wyspa",
+    "en": "island",
+    "distractors": [
+      "jungle",
+      "path",
+      "cave"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-jungle",
+    "pl": "dżungla",
+    "en": "jungle",
+    "distractors": [
+      "cave",
+      "waterfall",
+      "rainbow"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-lightning",
+    "pl": "błyskawica",
+    "en": "lightning",
+    "distractors": [
+      "bush",
+      "root",
+      "seed"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-ocean",
+    "pl": "ocean",
+    "en": "ocean",
+    "distractors": [
+      "desert",
+      "jungle",
+      "path"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-owl",
+    "pl": "sowa",
+    "en": "owl",
+    "distractors": [
+      "hedgehog",
+      "turtle",
+      "dolphin"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-parrot",
+    "pl": "papuga",
+    "en": "parrot",
+    "distractors": [
+      "gardener",
+      "campfire",
+      "feather"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-path",
+    "pl": "ścieżka",
+    "en": "path",
+    "distractors": [
+      "waterfall",
+      "rainbow",
+      "storm"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-petal",
+    "pl": "płatek",
+    "en": "petal",
+    "distractors": [
+      "wolf",
+      "deer",
+      "owl"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-rainbow",
+    "pl": "tęcza",
+    "en": "rainbow",
+    "distractors": [
+      "thunder",
+      "lightning",
+      "branch"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-root",
+    "pl": "korzeń",
+    "en": "root",
+    "distractors": [
+      "petal",
+      "fox",
+      "wolf"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-season",
+    "pl": "pora roku",
+    "en": "season",
+    "distractors": [
+      "summer",
+      "autumn",
+      "winter"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-seed",
+    "pl": "nasiono",
+    "en": "seed",
+    "distractors": [
+      "fox",
+      "wolf",
+      "deer"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-spring",
+    "pl": "wiosna",
+    "en": "spring",
+    "distractors": [
+      "autumn",
+      "winter",
+      "ocean"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-squirrel",
+    "pl": "wiewiórka",
+    "en": "squirrel",
+    "distractors": [
+      "turtle",
+      "dolphin",
+      "whale"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-storm",
+    "pl": "burza",
+    "en": "storm",
+    "distractors": [
+      "lightning",
+      "branch",
+      "bush"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-summer",
+    "pl": "lato",
+    "en": "summer",
+    "distractors": [
+      "winter",
+      "ocean",
+      "island"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-thunder",
+    "pl": "grzmot",
+    "en": "thunder",
+    "distractors": [
+      "branch",
+      "bush",
+      "root"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-turtle",
+    "pl": "żółw",
+    "en": "turtle",
+    "distractors": [
+      "whale",
+      "parrot",
+      "farmer"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-waterfall",
+    "pl": "wodospad",
+    "en": "waterfall",
+    "distractors": [
+      "storm",
+      "thunder",
+      "lightning"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-whale",
+    "pl": "wieloryb",
+    "en": "whale",
+    "distractors": [
+      "farmer",
+      "gardener",
+      "campfire"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-winter",
+    "pl": "zima",
+    "en": "winter",
+    "distractors": [
+      "island",
+      "desert",
+      "jungle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-a2-wolf",
+    "pl": "wilk",
+    "en": "wolf",
+    "distractors": [
+      "owl",
+      "squirrel",
+      "hedgehog"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature"
+  },
+  {
+    "id": "fantasy_adventure-a2-altar",
+    "pl": "ołtarz",
+    "en": "altar",
+    "distractors": [
+      "spear",
+      "dagger",
+      "mask"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-amulet",
+    "pl": "amulet",
+    "en": "amulet",
+    "distractors": [
+      "cauldron",
+      "maze",
+      "carriage"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-archer",
+    "pl": "łucznik",
+    "en": "archer",
+    "distractors": [
+      "fire bird",
+      "mermaid",
+      "unicorn"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-banner",
+    "pl": "sztandar",
+    "en": "banner",
+    "distractors": [
+      "amulet",
+      "trident",
+      "cauldron"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-battle",
+    "pl": "bitwa",
+    "en": "battle",
+    "distractors": [
+      "guardian",
+      "shadow",
+      "secret"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-beast",
+    "pl": "bestia",
+    "en": "beast",
+    "distractors": [
+      "dagger",
+      "mask",
+      "portal stone"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-camp",
+    "pl": "obóz",
+    "en": "camp",
+    "distractors": [
+      "flame",
+      "altar",
+      "beast"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-captain",
+    "pl": "kapitan",
+    "en": "captain",
+    "distractors": [
+      "dungeon",
+      "kingdom",
+      "banner"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-carriage",
+    "pl": "powóz",
+    "en": "carriage",
+    "distractors": [
+      "gate guard",
+      "flame",
+      "altar"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-cauldron",
+    "pl": "kocioł",
+    "en": "cauldron",
+    "distractors": [
+      "carriage",
+      "camp",
+      "gate guard"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-champion",
+    "pl": "mistrz",
+    "en": "champion",
+    "distractors": [
+      "captain",
+      "messenger",
+      "dungeon"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-curse",
+    "pl": "klątwa",
+    "en": "curse",
+    "distractors": [
+      "puzzle",
+      "captain",
+      "messenger"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-dagger",
+    "pl": "sztylet",
+    "en": "dagger",
+    "distractors": [
+      "portal stone",
+      "archer",
+      "magic bird"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-dungeon",
+    "pl": "loch",
+    "en": "dungeon",
+    "distractors": [
+      "banner",
+      "ring",
+      "amulet"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-escape",
+    "pl": "ucieczka",
+    "en": "escape",
+    "distractors": [
+      "shadow",
+      "secret",
+      "curse"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-fire-bird",
+    "pl": "ognisty ptak",
+    "en": "fire bird",
+    "distractors": [
+      "unicorn",
+      "witch",
+      "villain"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-flame",
+    "pl": "płomień",
+    "en": "flame",
+    "distractors": [
+      "beast",
+      "spear",
+      "dagger"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-gate-guard",
+    "pl": "strażnik bramy",
+    "en": "gate guard",
+    "distractors": [
+      "altar",
+      "beast",
+      "spear"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-guardian",
+    "pl": "strażnik",
+    "en": "guardian",
+    "distractors": [
+      "secret",
+      "curse",
+      "champion"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-kingdom",
+    "pl": "królestwo",
+    "en": "kingdom",
+    "distractors": [
+      "ring",
+      "amulet",
+      "trident"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-magic-bird",
+    "pl": "magiczny ptak",
+    "en": "magic bird",
+    "distractors": [
+      "mermaid",
+      "unicorn",
+      "witch"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-mask",
+    "pl": "maska",
+    "en": "mask",
+    "distractors": [
+      "archer",
+      "magic bird",
+      "fire bird"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-maze",
+    "pl": "labirynt",
+    "en": "maze",
+    "distractors": [
+      "camp",
+      "gate guard",
+      "flame"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-mermaid",
+    "pl": "syrena",
+    "en": "mermaid",
+    "distractors": [
+      "witch",
+      "villain",
+      "battle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-messenger",
+    "pl": "posłaniec",
+    "en": "messenger",
+    "distractors": [
+      "kingdom",
+      "banner",
+      "ring"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-portal-stone",
+    "pl": "kamień portalu",
+    "en": "portal stone",
+    "distractors": [
+      "magic bird",
+      "fire bird",
+      "mermaid"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-puzzle",
+    "pl": "łamigłówka",
+    "en": "puzzle",
+    "distractors": [
+      "messenger",
+      "dungeon",
+      "kingdom"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-ring",
+    "pl": "pierścień",
+    "en": "ring",
+    "distractors": [
+      "trident",
+      "cauldron",
+      "maze"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-secret",
+    "pl": "sekret",
+    "en": "secret",
+    "distractors": [
+      "champion",
+      "puzzle",
+      "captain"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-shadow",
+    "pl": "cień",
+    "en": "shadow",
+    "distractors": [
+      "curse",
+      "champion",
+      "puzzle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-spear",
+    "pl": "włócznia",
+    "en": "spear",
+    "distractors": [
+      "mask",
+      "portal stone",
+      "archer"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-trident",
+    "pl": "trójząb",
+    "en": "trident",
+    "distractors": [
+      "maze",
+      "carriage",
+      "camp"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-unicorn",
+    "pl": "jednorożec",
+    "en": "unicorn",
+    "distractors": [
+      "villain",
+      "battle",
+      "escape"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-villain",
+    "pl": "czarny charakter",
+    "en": "villain",
+    "distractors": [
+      "escape",
+      "guardian",
+      "shadow"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-a2-witch",
+    "pl": "czarownica",
+    "en": "witch",
+    "distractors": [
+      "battle",
+      "escape",
+      "guardian"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "food_kitchen-a2-bakery",
+    "pl": "piekarnia",
+    "en": "bakery",
+    "distractors": [
+      "cereal",
+      "pancake",
+      "jam"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-bean",
+    "pl": "fasola",
+    "en": "bean",
+    "distractors": [
+      "sauce",
+      "picnic",
+      "bowl"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-bottle",
+    "pl": "butelka",
+    "en": "bottle",
+    "distractors": [
+      "recipe",
+      "menu",
+      "bakery"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-bowl",
+    "pl": "miska",
+    "en": "bowl",
+    "distractors": [
+      "tray",
+      "chopping board",
+      "kettle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-cereal",
+    "pl": "płatki",
+    "en": "cereal",
+    "distractors": [
+      "jam",
+      "honey",
+      "pepper"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-chopping-board",
+    "pl": "deska do krojenia",
+    "en": "chopping board",
+    "distractors": [
+      "bottle",
+      "napkin",
+      "recipe"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-dessert",
+    "pl": "deser",
+    "en": "dessert",
+    "distractors": [
+      "grape",
+      "pineapple",
+      "sausage"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-garlic",
+    "pl": "czosnek",
+    "en": "garlic",
+    "distractors": [
+      "lemonade",
+      "yogurt",
+      "snack"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-grape",
+    "pl": "winogrono",
+    "en": "grape",
+    "distractors": [
+      "sausage",
+      "ham",
+      "spinach"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-ham",
+    "pl": "szynka",
+    "en": "ham",
+    "distractors": [
+      "lettuce",
+      "bean",
+      "pea"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-honey",
+    "pl": "miód",
+    "en": "honey",
+    "distractors": [
+      "salt",
+      "onion",
+      "garlic"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-jam",
+    "pl": "dżem",
+    "en": "jam",
+    "distractors": [
+      "pepper",
+      "salt",
+      "onion"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-kettle",
+    "pl": "czajnik",
+    "en": "kettle",
+    "distractors": [
+      "napkin",
+      "recipe",
+      "menu"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-lemon",
+    "pl": "cytryna",
+    "en": "lemon",
+    "distractors": [
+      "pineapple",
+      "sausage",
+      "ham"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-lemonade",
+    "pl": "lemoniada",
+    "en": "lemonade",
+    "distractors": [
+      "snack",
+      "dessert",
+      "lemon"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-lettuce",
+    "pl": "sałata",
+    "en": "lettuce",
+    "distractors": [
+      "pea",
+      "sauce",
+      "picnic"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-menu",
+    "pl": "menu",
+    "en": "menu",
+    "distractors": [
+      "pasta",
+      "cereal",
+      "pancake"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-mushroom",
+    "pl": "grzyb",
+    "en": "mushroom",
+    "distractors": [
+      "yogurt",
+      "snack",
+      "dessert"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-napkin",
+    "pl": "serwetka",
+    "en": "napkin",
+    "distractors": [
+      "menu",
+      "bakery",
+      "pasta"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-onion",
+    "pl": "cebula",
+    "en": "onion",
+    "distractors": [
+      "mushroom",
+      "lemonade",
+      "yogurt"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-pan",
+    "pl": "patelnia",
+    "en": "pan",
+    "distractors": [
+      "chopping board",
+      "kettle",
+      "bottle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-pancake",
+    "pl": "naleśnik",
+    "en": "pancake",
+    "distractors": [
+      "honey",
+      "pepper",
+      "salt"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-pasta",
+    "pl": "makaron",
+    "en": "pasta",
+    "distractors": [
+      "pancake",
+      "jam",
+      "honey"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-pea",
+    "pl": "groszek",
+    "en": "pea",
+    "distractors": [
+      "picnic",
+      "bowl",
+      "pan"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-pepper",
+    "pl": "pieprz",
+    "en": "pepper",
+    "distractors": [
+      "onion",
+      "garlic",
+      "mushroom"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-picnic",
+    "pl": "piknik",
+    "en": "picnic",
+    "distractors": [
+      "pan",
+      "tray",
+      "chopping board"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-pineapple",
+    "pl": "ananas",
+    "en": "pineapple",
+    "distractors": [
+      "ham",
+      "spinach",
+      "lettuce"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-recipe",
+    "pl": "przepis",
+    "en": "recipe",
+    "distractors": [
+      "bakery",
+      "pasta",
+      "cereal"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-salt",
+    "pl": "sól",
+    "en": "salt",
+    "distractors": [
+      "garlic",
+      "mushroom",
+      "lemonade"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-sauce",
+    "pl": "sos",
+    "en": "sauce",
+    "distractors": [
+      "bowl",
+      "pan",
+      "tray"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-sausage",
+    "pl": "kiełbasa",
+    "en": "sausage",
+    "distractors": [
+      "spinach",
+      "lettuce",
+      "bean"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-snack",
+    "pl": "przekąska",
+    "en": "snack",
+    "distractors": [
+      "lemon",
+      "grape",
+      "pineapple"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-spinach",
+    "pl": "szpinak",
+    "en": "spinach",
+    "distractors": [
+      "bean",
+      "pea",
+      "sauce"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-tray",
+    "pl": "taca",
+    "en": "tray",
+    "distractors": [
+      "kettle",
+      "bottle",
+      "napkin"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-a2-yogurt",
+    "pl": "jogurt",
+    "en": "yogurt",
+    "distractors": [
+      "dessert",
+      "lemon",
+      "grape"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "household-a2-apartment",
+    "pl": "mieszkanie",
+    "en": "apartment",
+    "distractors": [
+      "staircase",
+      "carpet",
+      "curtain"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-apron",
+    "pl": "fartuch",
+    "en": "apron",
+    "distractors": [
+      "thread",
+      "bucket",
+      "ladder"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-attic",
+    "pl": "strych",
+    "en": "attic",
+    "distractors": [
+      "chimney",
+      "gate",
+      "mailbox"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-aunt",
+    "pl": "ciocia",
+    "en": "aunt",
+    "distractors": [
+      "apartment",
+      "balcony",
+      "staircase"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-balcony",
+    "pl": "balkon",
+    "en": "balcony",
+    "distractors": [
+      "carpet",
+      "curtain",
+      "basket"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-basement",
+    "pl": "piwnica",
+    "en": "basement",
+    "distractors": [
+      "gate",
+      "mailbox",
+      "candle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-basket",
+    "pl": "koszyk",
+    "en": "basket",
+    "distractors": [
+      "vacuum",
+      "dishwasher",
+      "freezer"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-broom",
+    "pl": "miotła",
+    "en": "broom",
+    "distractors": [
+      "doormat",
+      "corridor",
+      "attic"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-bucket",
+    "pl": "wiadro",
+    "en": "bucket",
+    "distractors": [
+      "parent",
+      "cousin",
+      "uncle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-candle",
+    "pl": "świeca",
+    "en": "candle",
+    "distractors": [
+      "needle",
+      "thread",
+      "bucket"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-carpet",
+    "pl": "dywan",
+    "en": "carpet",
+    "distractors": [
+      "basket",
+      "drawer",
+      "vacuum"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-chimney",
+    "pl": "komin",
+    "en": "chimney",
+    "distractors": [
+      "mailbox",
+      "candle",
+      "apron"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-corridor",
+    "pl": "korytarz",
+    "en": "corridor",
+    "distractors": [
+      "basement",
+      "chimney",
+      "gate"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-cousin",
+    "pl": "kuzyn",
+    "en": "cousin",
+    "distractors": [
+      "aunt",
+      "neighbour",
+      "apartment"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-curtain",
+    "pl": "zasłona",
+    "en": "curtain",
+    "distractors": [
+      "drawer",
+      "vacuum",
+      "dishwasher"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-dishwasher",
+    "pl": "zmywarka",
+    "en": "dishwasher",
+    "distractors": [
+      "oven",
+      "microwave",
+      "sink"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-doormat",
+    "pl": "wycieraczka",
+    "en": "doormat",
+    "distractors": [
+      "attic",
+      "basement",
+      "chimney"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-drawer",
+    "pl": "szuflada",
+    "en": "drawer",
+    "distractors": [
+      "dishwasher",
+      "freezer",
+      "oven"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-faucet",
+    "pl": "kran",
+    "en": "faucet",
+    "distractors": [
+      "broom",
+      "hanger",
+      "doormat"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-freezer",
+    "pl": "zamrażarka",
+    "en": "freezer",
+    "distractors": [
+      "microwave",
+      "sink",
+      "faucet"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-gate",
+    "pl": "brama",
+    "en": "gate",
+    "distractors": [
+      "candle",
+      "apron",
+      "needle"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-hanger",
+    "pl": "wieszak",
+    "en": "hanger",
+    "distractors": [
+      "corridor",
+      "attic",
+      "basement"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-ladder",
+    "pl": "drabina",
+    "en": "ladder",
+    "distractors": [
+      "cousin",
+      "uncle",
+      "aunt"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-mailbox",
+    "pl": "skrzynka pocztowa",
+    "en": "mailbox",
+    "distractors": [
+      "apron",
+      "needle",
+      "thread"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-microwave",
+    "pl": "mikrofalówka",
+    "en": "microwave",
+    "distractors": [
+      "faucet",
+      "mop",
+      "broom"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-mop",
+    "pl": "mop",
+    "en": "mop",
+    "distractors": [
+      "hanger",
+      "doormat",
+      "corridor"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-needle",
+    "pl": "igła",
+    "en": "needle",
+    "distractors": [
+      "bucket",
+      "ladder",
+      "parent"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-neighbour",
+    "pl": "sąsiad",
+    "en": "neighbour",
+    "distractors": [
+      "balcony",
+      "staircase",
+      "carpet"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-oven",
+    "pl": "piekarnik",
+    "en": "oven",
+    "distractors": [
+      "sink",
+      "faucet",
+      "mop"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-parent",
+    "pl": "rodzic",
+    "en": "parent",
+    "distractors": [
+      "uncle",
+      "aunt",
+      "neighbour"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-sink",
+    "pl": "zlew",
+    "en": "sink",
+    "distractors": [
+      "mop",
+      "broom",
+      "hanger"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-staircase",
+    "pl": "klatka schodowa",
+    "en": "staircase",
+    "distractors": [
+      "curtain",
+      "basket",
+      "drawer"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-thread",
+    "pl": "nić",
+    "en": "thread",
+    "distractors": [
+      "ladder",
+      "parent",
+      "cousin"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-uncle",
+    "pl": "wujek",
+    "en": "uncle",
+    "distractors": [
+      "neighbour",
+      "apartment",
+      "balcony"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "household-a2-vacuum",
+    "pl": "odkurzacz",
+    "en": "vacuum",
+    "distractors": [
+      "freezer",
+      "oven",
+      "microwave"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household"
+  },
+  {
+    "id": "school-a2-archive",
+    "pl": "archiwum",
+    "en": "archive",
+    "distractors": [
+      "science",
+      "history",
+      "geography"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-calculator",
+    "pl": "kalkulator",
+    "en": "calculator",
+    "distractors": [
+      "printer",
+      "screen",
+      "poster"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-certificate",
+    "pl": "certyfikat",
+    "en": "certificate",
+    "distractors": [
+      "laboratory",
+      "dictionary",
+      "sentence"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-debate",
+    "pl": "debata",
+    "en": "debate",
+    "distractors": [
+      "dictionary",
+      "sentence",
+      "paragraph"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-dictionary",
+    "pl": "słownik",
+    "en": "dictionary",
+    "distractors": [
+      "paragraph",
+      "exercise",
+      "quiz"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-exercise",
+    "pl": "ćwiczenie",
+    "en": "exercise",
+    "distractors": [
+      "calculator",
+      "keyboard",
+      "printer"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-geography",
+    "pl": "geografia",
+    "en": "geography",
+    "distractors": [
+      "team",
+      "presentation",
+      "schedule"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-grade",
+    "pl": "ocena",
+    "en": "grade",
+    "distractors": [
+      "spelling",
+      "grammar",
+      "trip"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-grammar",
+    "pl": "gramatyka",
+    "en": "grammar",
+    "distractors": [
+      "certificate",
+      "debate",
+      "laboratory"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-history",
+    "pl": "historia",
+    "en": "history",
+    "distractors": [
+      "project",
+      "team",
+      "presentation"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-keyboard",
+    "pl": "klawiatura",
+    "en": "keyboard",
+    "distractors": [
+      "screen",
+      "poster",
+      "timetable"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-laboratory",
+    "pl": "laboratorium",
+    "en": "laboratory",
+    "distractors": [
+      "sentence",
+      "paragraph",
+      "exercise"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-locker",
+    "pl": "szafka szkolna",
+    "en": "locker",
+    "distractors": [
+      "archive",
+      "subject",
+      "science"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-microphone",
+    "pl": "mikrofon",
+    "en": "microphone",
+    "distractors": [
+      "locker",
+      "uniform",
+      "archive"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-paragraph",
+    "pl": "akapit",
+    "en": "paragraph",
+    "distractors": [
+      "quiz",
+      "calculator",
+      "keyboard"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-poster",
+    "pl": "plakat",
+    "en": "poster",
+    "distractors": [
+      "workbook",
+      "worksheet",
+      "speaker"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-presentation",
+    "pl": "prezentacja",
+    "en": "presentation",
+    "distractors": [
+      "grade",
+      "pronunciation",
+      "spelling"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-printer",
+    "pl": "drukarka",
+    "en": "printer",
+    "distractors": [
+      "poster",
+      "timetable",
+      "workbook"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-project",
+    "pl": "projekt",
+    "en": "project",
+    "distractors": [
+      "presentation",
+      "schedule",
+      "grade"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-pronunciation",
+    "pl": "wymowa",
+    "en": "pronunciation",
+    "distractors": [
+      "grammar",
+      "trip",
+      "certificate"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-quiz",
+    "pl": "quiz",
+    "en": "quiz",
+    "distractors": [
+      "keyboard",
+      "printer",
+      "screen"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-schedule",
+    "pl": "harmonogram",
+    "en": "schedule",
+    "distractors": [
+      "pronunciation",
+      "spelling",
+      "grammar"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-science",
+    "pl": "nauka",
+    "en": "science",
+    "distractors": [
+      "geography",
+      "project",
+      "team"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-screen",
+    "pl": "ekran",
+    "en": "screen",
+    "distractors": [
+      "timetable",
+      "workbook",
+      "worksheet"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-sentence",
+    "pl": "zdanie",
+    "en": "sentence",
+    "distractors": [
+      "exercise",
+      "quiz",
+      "calculator"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-speaker",
+    "pl": "głośnik",
+    "en": "speaker",
+    "distractors": [
+      "tablet",
+      "locker",
+      "uniform"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-spelling",
+    "pl": "pisownia",
+    "en": "spelling",
+    "distractors": [
+      "trip",
+      "certificate",
+      "debate"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-subject",
+    "pl": "przedmiot",
+    "en": "subject",
+    "distractors": [
+      "history",
+      "geography",
+      "project"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-tablet",
+    "pl": "tablet",
+    "en": "tablet",
+    "distractors": [
+      "uniform",
+      "archive",
+      "subject"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-team",
+    "pl": "zespół",
+    "en": "team",
+    "distractors": [
+      "schedule",
+      "grade",
+      "pronunciation"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-timetable",
+    "pl": "plan lekcji",
+    "en": "timetable",
+    "distractors": [
+      "worksheet",
+      "speaker",
+      "microphone"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-trip",
+    "pl": "wyjazd szkolny",
+    "en": "trip",
+    "distractors": [
+      "debate",
+      "laboratory",
+      "dictionary"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-uniform",
+    "pl": "mundurek",
+    "en": "uniform",
+    "distractors": [
+      "subject",
+      "science",
+      "history"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-workbook",
+    "pl": "ćwiczeniówka",
+    "en": "workbook",
+    "distractors": [
+      "speaker",
+      "microphone",
+      "tablet"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "school-a2-worksheet",
+    "pl": "karta pracy",
+    "en": "worksheet",
+    "distractors": [
+      "microphone",
+      "tablet",
+      "locker"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school"
+  },
+  {
+    "id": "town_places-a2-airport",
+    "pl": "lotnisko",
+    "en": "airport",
+    "distractors": [
+      "theatre",
+      "swimming pool",
+      "office"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-ambulance",
+    "pl": "karetka",
+    "en": "ambulance",
+    "distractors": [
+      "police car",
+      "passenger",
+      "suitcase"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-bicycle-lane",
+    "pl": "ścieżka rowerowa",
+    "en": "bicycle lane",
+    "distractors": [
+      "ambulance",
+      "fire engine",
+      "police car"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-butcher-shop",
+    "pl": "sklep mięsny",
+    "en": "butcher shop",
+    "distractors": [
+      "petrol station",
+      "tram",
+      "elevator"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-city-hall",
+    "pl": "ratusz",
+    "en": "city hall",
+    "distractors": [
+      "platform",
+      "theatre",
+      "swimming pool"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-crossroads",
+    "pl": "rozstaje",
+    "en": "crossroads",
+    "distractors": [
+      "tram",
+      "elevator",
+      "monument"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-crosswalk",
+    "pl": "przejście dla pieszych",
+    "en": "crosswalk",
+    "distractors": [
+      "traffic jam",
+      "ambulance",
+      "fire engine"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-driver",
+    "pl": "kierowca",
+    "en": "driver",
+    "distractors": [
+      "ticket booth",
+      "newsstand",
+      "neighbourhood"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-elevator",
+    "pl": "winda",
+    "en": "elevator",
+    "distractors": [
+      "crosswalk",
+      "bicycle lane",
+      "traffic jam"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-factory",
+    "pl": "fabryka",
+    "en": "factory",
+    "distractors": [
+      "tower",
+      "stadium",
+      "flower shop"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-fire-engine",
+    "pl": "wóz strażacki",
+    "en": "fire engine",
+    "distractors": [
+      "passenger",
+      "suitcase",
+      "driver"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-flower-shop",
+    "pl": "kwiaciarnia",
+    "en": "flower shop",
+    "distractors": [
+      "crossroads",
+      "petrol station",
+      "tram"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-guide",
+    "pl": "przewodnik",
+    "en": "guide",
+    "distractors": [
+      "city hall",
+      "airport",
+      "platform"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-harbour",
+    "pl": "port",
+    "en": "harbour",
+    "distractors": [
+      "stadium",
+      "flower shop",
+      "butcher shop"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-journey",
+    "pl": "podróż",
+    "en": "journey",
+    "distractors": [
+      "guide",
+      "market stall",
+      "city hall"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-market-stall",
+    "pl": "stoisko",
+    "en": "market stall",
+    "distractors": [
+      "airport",
+      "platform",
+      "theatre"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-monument",
+    "pl": "pomnik",
+    "en": "monument",
+    "distractors": [
+      "bicycle lane",
+      "traffic jam",
+      "ambulance"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-neighbourhood",
+    "pl": "okolica",
+    "en": "neighbourhood",
+    "distractors": [
+      "journey",
+      "tourist",
+      "guide"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-newsstand",
+    "pl": "kiosk",
+    "en": "newsstand",
+    "distractors": [
+      "suburb",
+      "journey",
+      "tourist"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-office",
+    "pl": "biuro",
+    "en": "office",
+    "distractors": [
+      "harbour",
+      "tower",
+      "stadium"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-passenger",
+    "pl": "pasażer",
+    "en": "passenger",
+    "distractors": [
+      "driver",
+      "queue",
+      "ticket booth"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-petrol-station",
+    "pl": "stacja benzynowa",
+    "en": "petrol station",
+    "distractors": [
+      "elevator",
+      "monument",
+      "crosswalk"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-platform",
+    "pl": "peron",
+    "en": "platform",
+    "distractors": [
+      "swimming pool",
+      "office",
+      "factory"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-police-car",
+    "pl": "radiowóz",
+    "en": "police car",
+    "distractors": [
+      "suitcase",
+      "driver",
+      "queue"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-queue",
+    "pl": "kolejka",
+    "en": "queue",
+    "distractors": [
+      "newsstand",
+      "neighbourhood",
+      "suburb"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-stadium",
+    "pl": "stadion",
+    "en": "stadium",
+    "distractors": [
+      "butcher shop",
+      "crossroads",
+      "petrol station"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-suburb",
+    "pl": "przedmieście",
+    "en": "suburb",
+    "distractors": [
+      "tourist",
+      "guide",
+      "market stall"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-suitcase",
+    "pl": "walizka",
+    "en": "suitcase",
+    "distractors": [
+      "queue",
+      "ticket booth",
+      "newsstand"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-swimming-pool",
+    "pl": "basen",
+    "en": "swimming pool",
+    "distractors": [
+      "factory",
+      "harbour",
+      "tower"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-theatre",
+    "pl": "teatr",
+    "en": "theatre",
+    "distractors": [
+      "office",
+      "factory",
+      "harbour"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-ticket-booth",
+    "pl": "kasa biletowa",
+    "en": "ticket booth",
+    "distractors": [
+      "neighbourhood",
+      "suburb",
+      "journey"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-tourist",
+    "pl": "turysta",
+    "en": "tourist",
+    "distractors": [
+      "market stall",
+      "city hall",
+      "airport"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-tower",
+    "pl": "wieża",
+    "en": "tower",
+    "distractors": [
+      "flower shop",
+      "butcher shop",
+      "crossroads"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-traffic-jam",
+    "pl": "korek",
+    "en": "traffic jam",
+    "distractors": [
+      "fire engine",
+      "police car",
+      "passenger"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-a2-tram",
+    "pl": "tramwaj",
+    "en": "tram",
+    "distractors": [
+      "monument",
+      "crosswalk",
+      "bicycle lane"
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "town_places"
+  },
+  {
+    "id": "animals_nature-b1-beak",
+    "pl": "dziób",
+    "en": "beak",
+    "distractors": [
+      "migration",
+      "wilderness",
+      "sunrise"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-blossom",
+    "pl": "kwiatostan",
+    "en": "blossom",
+    "distractors": [
+      "telescope",
+      "creature",
+      "litter"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-breeze",
+    "pl": "bryza",
+    "en": "breeze",
+    "distractors": [
+      "drought",
+      "blossom",
+      "harvest"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-canyon",
+    "pl": "kanion",
+    "en": "canyon",
+    "distractors": [
+      "volcano",
+      "habitat",
+      "ecosystem"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-cliff",
+    "pl": "klif",
+    "en": "cliff",
+    "distractors": [
+      "pond",
+      "orchard",
+      "coast"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-climate",
+    "pl": "klimat",
+    "en": "climate",
+    "distractors": [
+      "trail",
+      "shell",
+      "paw"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-coast",
+    "pl": "wybrzeże",
+    "en": "coast",
+    "distractors": [
+      "canyon",
+      "glacier",
+      "volcano"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-creature",
+    "pl": "stworzenie",
+    "en": "creature",
+    "distractors": [
+      "rescue",
+      "whiskers",
+      "creek"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-creek",
+    "pl": "potok",
+    "en": "creek",
+    "distractors": [
+      "cliff",
+      "stream",
+      "pond"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-drought",
+    "pl": "susza",
+    "en": "drought",
+    "distractors": [
+      "harvest",
+      "telescope",
+      "creature"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-ecosystem",
+    "pl": "ekosystem",
+    "en": "ecosystem",
+    "distractors": [
+      "environment",
+      "trail",
+      "shell"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-environment",
+    "pl": "środowisko",
+    "en": "environment",
+    "distractors": [
+      "shell",
+      "paw",
+      "hoof"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-flood",
+    "pl": "powódź",
+    "en": "flood",
+    "distractors": [
+      "blossom",
+      "harvest",
+      "telescope"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-fur",
+    "pl": "futro",
+    "en": "fur",
+    "distractors": [
+      "wilderness",
+      "sunrise",
+      "sunset"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-glacier",
+    "pl": "lodowiec",
+    "en": "glacier",
+    "distractors": [
+      "habitat",
+      "ecosystem",
+      "climate"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-habitat",
+    "pl": "siedlisko",
+    "en": "habitat",
+    "distractors": [
+      "climate",
+      "environment",
+      "trail"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-harvest",
+    "pl": "zbiory",
+    "en": "harvest",
+    "distractors": [
+      "creature",
+      "litter",
+      "rescue"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-hoof",
+    "pl": "kopyto",
+    "en": "hoof",
+    "distractors": [
+      "fur",
+      "migration",
+      "wilderness"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-litter",
+    "pl": "śmieci",
+    "en": "litter",
+    "distractors": [
+      "whiskers",
+      "creek",
+      "valley"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-migration",
+    "pl": "migracja",
+    "en": "migration",
+    "distractors": [
+      "sunrise",
+      "sunset",
+      "breeze"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-orchard",
+    "pl": "sad",
+    "en": "orchard",
+    "distractors": [
+      "reef",
+      "canyon",
+      "glacier"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-paw",
+    "pl": "łapa",
+    "en": "paw",
+    "distractors": [
+      "beak",
+      "fur",
+      "migration"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-pond",
+    "pl": "staw",
+    "en": "pond",
+    "distractors": [
+      "coast",
+      "reef",
+      "canyon"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-reef",
+    "pl": "rafa",
+    "en": "reef",
+    "distractors": [
+      "glacier",
+      "volcano",
+      "habitat"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-rescue",
+    "pl": "ratunek",
+    "en": "rescue",
+    "distractors": [
+      "creek",
+      "valley",
+      "cliff"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-shell",
+    "pl": "muszla",
+    "en": "shell",
+    "distractors": [
+      "hoof",
+      "beak",
+      "fur"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-stream",
+    "pl": "strumień",
+    "en": "stream",
+    "distractors": [
+      "orchard",
+      "coast",
+      "reef"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-sunrise",
+    "pl": "wschód słońca",
+    "en": "sunrise",
+    "distractors": [
+      "breeze",
+      "flood",
+      "drought"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-sunset",
+    "pl": "zachód słońca",
+    "en": "sunset",
+    "distractors": [
+      "flood",
+      "drought",
+      "blossom"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-telescope",
+    "pl": "teleskop",
+    "en": "telescope",
+    "distractors": [
+      "litter",
+      "rescue",
+      "whiskers"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-trail",
+    "pl": "szlak",
+    "en": "trail",
+    "distractors": [
+      "paw",
+      "hoof",
+      "beak"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-valley",
+    "pl": "dolina",
+    "en": "valley",
+    "distractors": [
+      "stream",
+      "pond",
+      "orchard"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-volcano",
+    "pl": "wulkan",
+    "en": "volcano",
+    "distractors": [
+      "ecosystem",
+      "climate",
+      "environment"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-whiskers",
+    "pl": "wąsy",
+    "en": "whiskers",
+    "distractors": [
+      "valley",
+      "cliff",
+      "stream"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "animals_nature-b1-wilderness",
+    "pl": "dzicz",
+    "en": "wilderness",
+    "distractors": [
+      "sunset",
+      "breeze",
+      "flood"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "animals_nature"
+  },
+  {
+    "id": "fantasy_adventure-b1-adventure",
+    "pl": "przygoda",
+    "en": "adventure",
+    "distractors": [
+      "fortress",
+      "spellbook",
+      "compass"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-alliance",
+    "pl": "sojusz",
+    "en": "alliance",
+    "distractors": [
+      "traveler",
+      "healer",
+      "pathfinder"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-archway",
+    "pl": "arkada",
+    "en": "archway",
+    "distractors": [
+      "watchtower",
+      "relic",
+      "parchment"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-artifact",
+    "pl": "artefakt",
+    "en": "artifact",
+    "distractors": [
+      "cavern",
+      "watchtower",
+      "relic"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-barracks",
+    "pl": "koszary",
+    "en": "barracks",
+    "distractors": [
+      "crossbow",
+      "lantern",
+      "riddle"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-battleaxe",
+    "pl": "topór bojowy",
+    "en": "battleaxe",
+    "distractors": [
+      "adventure",
+      "spiral staircase",
+      "fortress"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-battlefield",
+    "pl": "pole bitwy",
+    "en": "battlefield",
+    "distractors": [
+      "commander",
+      "alliance",
+      "enemy"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-catapult",
+    "pl": "katapulta",
+    "en": "catapult",
+    "distractors": [
+      "stronghold",
+      "crossbow",
+      "lantern"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-cavern",
+    "pl": "grota",
+    "en": "cavern",
+    "distractors": [
+      "relic",
+      "parchment",
+      "chamber"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-chamber",
+    "pl": "komnata",
+    "en": "chamber",
+    "distractors": [
+      "helm",
+      "gauntlet",
+      "quiver"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-commander",
+    "pl": "dowódca",
+    "en": "commander",
+    "distractors": [
+      "enemy",
+      "traveler",
+      "healer"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-companion",
+    "pl": "towarzysz",
+    "en": "companion",
+    "distractors": [
+      "battlefield",
+      "oracle",
+      "commander"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-compass",
+    "pl": "kompas",
+    "en": "compass",
+    "distractors": [
+      "archway",
+      "cavern",
+      "watchtower"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-crossbow",
+    "pl": "kusza",
+    "en": "crossbow",
+    "distractors": [
+      "riddle",
+      "companion",
+      "prophecy"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-enemy",
+    "pl": "wróg",
+    "en": "enemy",
+    "distractors": [
+      "healer",
+      "pathfinder",
+      "sorcerer"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-fortress",
+    "pl": "twierdza",
+    "en": "fortress",
+    "distractors": [
+      "compass",
+      "artifact",
+      "archway"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-gateway",
+    "pl": "wrota",
+    "en": "gateway",
+    "distractors": [
+      "gauntlet",
+      "quiver",
+      "catapult"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-gauntlet",
+    "pl": "rękawica zbrojna",
+    "en": "gauntlet",
+    "distractors": [
+      "catapult",
+      "barracks",
+      "stronghold"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-healer",
+    "pl": "uzdrowiciel",
+    "en": "healer",
+    "distractors": [
+      "sorcerer",
+      "battleaxe",
+      "totem"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-helm",
+    "pl": "przyłbica",
+    "en": "helm",
+    "distractors": [
+      "quiver",
+      "catapult",
+      "barracks"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-lantern",
+    "pl": "latarnia",
+    "en": "lantern",
+    "distractors": [
+      "companion",
+      "prophecy",
+      "battlefield"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-oracle",
+    "pl": "wyrocznia",
+    "en": "oracle",
+    "distractors": [
+      "alliance",
+      "enemy",
+      "traveler"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-parchment",
+    "pl": "pergamin",
+    "en": "parchment",
+    "distractors": [
+      "gateway",
+      "helm",
+      "gauntlet"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-pathfinder",
+    "pl": "tropiciel",
+    "en": "pathfinder",
+    "distractors": [
+      "battleaxe",
+      "totem",
+      "adventure"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-prophecy",
+    "pl": "przepowiednia",
+    "en": "prophecy",
+    "distractors": [
+      "oracle",
+      "commander",
+      "alliance"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-quiver",
+    "pl": "kołczan",
+    "en": "quiver",
+    "distractors": [
+      "barracks",
+      "stronghold",
+      "crossbow"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-relic",
+    "pl": "relikwia",
+    "en": "relic",
+    "distractors": [
+      "chamber",
+      "gateway",
+      "helm"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-riddle",
+    "pl": "zagadka",
+    "en": "riddle",
+    "distractors": [
+      "prophecy",
+      "battlefield",
+      "oracle"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-sorcerer",
+    "pl": "czarownik",
+    "en": "sorcerer",
+    "distractors": [
+      "totem",
+      "adventure",
+      "spiral staircase"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-spellbook",
+    "pl": "księga zaklęć",
+    "en": "spellbook",
+    "distractors": [
+      "artifact",
+      "archway",
+      "cavern"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-spiral-staircase",
+    "pl": "spiralne schody",
+    "en": "spiral staircase",
+    "distractors": [
+      "spellbook",
+      "compass",
+      "artifact"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-stronghold",
+    "pl": "warownia",
+    "en": "stronghold",
+    "distractors": [
+      "lantern",
+      "riddle",
+      "companion"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-totem",
+    "pl": "totem",
+    "en": "totem",
+    "distractors": [
+      "spiral staircase",
+      "fortress",
+      "spellbook"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-traveler",
+    "pl": "podróżnik",
+    "en": "traveler",
+    "distractors": [
+      "pathfinder",
+      "sorcerer",
+      "battleaxe"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "fantasy_adventure-b1-watchtower",
+    "pl": "wieża strażnicza",
+    "en": "watchtower",
+    "distractors": [
+      "parchment",
+      "chamber",
+      "gateway"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "fantasy_adventure"
+  },
+  {
+    "id": "food_kitchen-b1-avocado",
+    "pl": "awokado",
+    "en": "avocado",
+    "distractors": [
+      "portion",
+      "vitamin",
+      "protein"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-barbecue",
+    "pl": "grill",
+    "en": "barbecue",
+    "distractors": [
+      "takeaway",
+      "reservation",
+      "cupcake"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-blender",
+    "pl": "blender",
+    "en": "blender",
+    "distractors": [
+      "whisk",
+      "thermos",
+      "platter"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-blueberry",
+    "pl": "borówka",
+    "en": "blueberry",
+    "distractors": [
+      "coconut",
+      "avocado",
+      "ingredient"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-broccoli",
+    "pl": "brokuł",
+    "en": "broccoli",
+    "distractors": [
+      "zucchini",
+      "pumpkin",
+      "blueberry"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-buffet",
+    "pl": "bufet",
+    "en": "buffet",
+    "distractors": [
+      "cafeteria",
+      "takeaway",
+      "reservation"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-cafeteria",
+    "pl": "stołówka",
+    "en": "cafeteria",
+    "distractors": [
+      "reservation",
+      "cupcake",
+      "pudding"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-cauliflower",
+    "pl": "kalafior",
+    "en": "cauliflower",
+    "distractors": [
+      "pumpkin",
+      "blueberry",
+      "raspberry"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-coconut",
+    "pl": "kokos",
+    "en": "coconut",
+    "distractors": [
+      "ingredient",
+      "portion",
+      "vitamin"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-colander",
+    "pl": "durszlak",
+    "en": "colander",
+    "distractors": [
+      "thermos",
+      "platter",
+      "slicer"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-cupcake",
+    "pl": "babeczka",
+    "en": "cupcake",
+    "distractors": [
+      "omelette",
+      "broccoli",
+      "cauliflower"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-flavour",
+    "pl": "smak",
+    "en": "flavour",
+    "distractors": [
+      "saucepan",
+      "toaster",
+      "blender"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-grain",
+    "pl": "zboże",
+    "en": "grain",
+    "distractors": [
+      "stew",
+      "flavour",
+      "picnic basket"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-grater",
+    "pl": "tarka",
+    "en": "grater",
+    "distractors": [
+      "barbecue",
+      "cafeteria",
+      "takeaway"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-ingredient",
+    "pl": "składnik",
+    "en": "ingredient",
+    "distractors": [
+      "vitamin",
+      "protein",
+      "grain"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-measuring-cup",
+    "pl": "miarka",
+    "en": "measuring cup",
+    "distractors": [
+      "buffet",
+      "barbecue",
+      "cafeteria"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-omelette",
+    "pl": "omlet",
+    "en": "omelette",
+    "distractors": [
+      "cauliflower",
+      "zucchini",
+      "pumpkin"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-picnic-basket",
+    "pl": "kosz piknikowy",
+    "en": "picnic basket",
+    "distractors": [
+      "toaster",
+      "blender",
+      "colander"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-platter",
+    "pl": "półmisek",
+    "en": "platter",
+    "distractors": [
+      "measuring cup",
+      "grater",
+      "buffet"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-portion",
+    "pl": "porcja",
+    "en": "portion",
+    "distractors": [
+      "protein",
+      "grain",
+      "seafood"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-protein",
+    "pl": "białko",
+    "en": "protein",
+    "distractors": [
+      "seafood",
+      "stew",
+      "flavour"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-pudding",
+    "pl": "budyń",
+    "en": "pudding",
+    "distractors": [
+      "broccoli",
+      "cauliflower",
+      "zucchini"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-pumpkin",
+    "pl": "dynia",
+    "en": "pumpkin",
+    "distractors": [
+      "raspberry",
+      "coconut",
+      "avocado"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-raspberry",
+    "pl": "malina",
+    "en": "raspberry",
+    "distractors": [
+      "avocado",
+      "ingredient",
+      "portion"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-reservation",
+    "pl": "rezerwacja",
+    "en": "reservation",
+    "distractors": [
+      "pudding",
+      "omelette",
+      "broccoli"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-saucepan",
+    "pl": "rondel",
+    "en": "saucepan",
+    "distractors": [
+      "blender",
+      "colander",
+      "whisk"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-seafood",
+    "pl": "owoce morza",
+    "en": "seafood",
+    "distractors": [
+      "flavour",
+      "picnic basket",
+      "saucepan"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-slicer",
+    "pl": "krajalnica",
+    "en": "slicer",
+    "distractors": [
+      "grater",
+      "buffet",
+      "barbecue"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-stew",
+    "pl": "gulasz",
+    "en": "stew",
+    "distractors": [
+      "picnic basket",
+      "saucepan",
+      "toaster"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-takeaway",
+    "pl": "jedzenie na wynos",
+    "en": "takeaway",
+    "distractors": [
+      "cupcake",
+      "pudding",
+      "omelette"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-thermos",
+    "pl": "termos",
+    "en": "thermos",
+    "distractors": [
+      "slicer",
+      "measuring cup",
+      "grater"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-toaster",
+    "pl": "toster",
+    "en": "toaster",
+    "distractors": [
+      "colander",
+      "whisk",
+      "thermos"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-vitamin",
+    "pl": "witamina",
+    "en": "vitamin",
+    "distractors": [
+      "grain",
+      "seafood",
+      "stew"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-whisk",
+    "pl": "trzepaczka",
+    "en": "whisk",
+    "distractors": [
+      "platter",
+      "slicer",
+      "measuring cup"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "food_kitchen-b1-zucchini",
+    "pl": "cukinia",
+    "en": "zucchini",
+    "distractors": [
+      "blueberry",
+      "raspberry",
+      "coconut"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "food_kitchen"
+  },
+  {
+    "id": "household-b1-appliance",
+    "pl": "urządzenie",
+    "en": "appliance",
+    "distractors": [
+      "mattress",
+      "pillowcase",
+      "bedsheet"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-battery",
+    "pl": "bateria",
+    "en": "battery",
+    "distractors": [
+      "remote",
+      "earphone",
+      "doorstep"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-bedsheet",
+    "pl": "prześcieradło",
+    "en": "bedsheet",
+    "distractors": [
+      "recycling box",
+      "receipt",
+      "shopping list"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-bin",
+    "pl": "pojemnik",
+    "en": "bin",
+    "distractors": [
+      "receipt",
+      "shopping list",
+      "electricity"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-boiler",
+    "pl": "piec",
+    "en": "boiler",
+    "distractors": [
+      "sideboard",
+      "keychain",
+      "towel rack"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-charger",
+    "pl": "ładowarka",
+    "en": "charger",
+    "distractors": [
+      "earphone",
+      "doorstep",
+      "hallway"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-cushion",
+    "pl": "poduszka dekoracyjna",
+    "en": "cushion",
+    "distractors": [
+      "keychain",
+      "towel rack",
+      "laundry room"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-detergent",
+    "pl": "detergent",
+    "en": "detergent",
+    "distractors": [
+      "toolbox",
+      "battery",
+      "charger"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-doorstep",
+    "pl": "próg",
+    "en": "doorstep",
+    "distractors": [
+      "guest room",
+      "boiler",
+      "cushion"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-earphone",
+    "pl": "słuchawka",
+    "en": "earphone",
+    "distractors": [
+      "hallway",
+      "guest room",
+      "boiler"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-electricity",
+    "pl": "prąd",
+    "en": "electricity",
+    "distractors": [
+      "storage",
+      "maintenance",
+      "renovation"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-extension-cable",
+    "pl": "przedłużacz",
+    "en": "extension cable",
+    "distractors": [
+      "switch",
+      "detergent",
+      "wardrobe"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-furniture",
+    "pl": "meble",
+    "en": "furniture",
+    "distractors": [
+      "pillowcase",
+      "bedsheet",
+      "bin"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-guest-room",
+    "pl": "pokój gościnny",
+    "en": "guest room",
+    "distractors": [
+      "cushion",
+      "sideboard",
+      "keychain"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-hallway",
+    "pl": "przedpokój",
+    "en": "hallway",
+    "distractors": [
+      "boiler",
+      "cushion",
+      "sideboard"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-keychain",
+    "pl": "brelok",
+    "en": "keychain",
+    "distractors": [
+      "laundry room",
+      "appliance",
+      "furniture"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-laundry-room",
+    "pl": "pralnia",
+    "en": "laundry room",
+    "distractors": [
+      "furniture",
+      "mattress",
+      "pillowcase"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-maintenance",
+    "pl": "konserwacja",
+    "en": "maintenance",
+    "distractors": [
+      "pantry",
+      "radiator",
+      "extension cable"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-mattress",
+    "pl": "materac",
+    "en": "mattress",
+    "distractors": [
+      "bedsheet",
+      "bin",
+      "recycling box"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-pantry",
+    "pl": "spiżarnia",
+    "en": "pantry",
+    "distractors": [
+      "extension cable",
+      "socket",
+      "switch"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-pillowcase",
+    "pl": "poszewka",
+    "en": "pillowcase",
+    "distractors": [
+      "bin",
+      "recycling box",
+      "receipt"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-plumbing",
+    "pl": "hydraulika",
+    "en": "plumbing",
+    "distractors": [
+      "maintenance",
+      "renovation",
+      "pantry"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-radiator",
+    "pl": "grzejnik",
+    "en": "radiator",
+    "distractors": [
+      "socket",
+      "switch",
+      "detergent"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-receipt",
+    "pl": "paragon",
+    "en": "receipt",
+    "distractors": [
+      "electricity",
+      "plumbing",
+      "storage"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-recycling-box",
+    "pl": "pojemnik do recyklingu",
+    "en": "recycling box",
+    "distractors": [
+      "shopping list",
+      "electricity",
+      "plumbing"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-remote",
+    "pl": "pilot",
+    "en": "remote",
+    "distractors": [
+      "doorstep",
+      "hallway",
+      "guest room"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-renovation",
+    "pl": "remont",
+    "en": "renovation",
+    "distractors": [
+      "radiator",
+      "extension cable",
+      "socket"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-shopping-list",
+    "pl": "lista zakupów",
+    "en": "shopping list",
+    "distractors": [
+      "plumbing",
+      "storage",
+      "maintenance"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-sideboard",
+    "pl": "komoda",
+    "en": "sideboard",
+    "distractors": [
+      "towel rack",
+      "laundry room",
+      "appliance"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-socket",
+    "pl": "gniazdko",
+    "en": "socket",
+    "distractors": [
+      "detergent",
+      "wardrobe",
+      "toolbox"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-storage",
+    "pl": "schowek",
+    "en": "storage",
+    "distractors": [
+      "renovation",
+      "pantry",
+      "radiator"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-switch",
+    "pl": "włącznik",
+    "en": "switch",
+    "distractors": [
+      "wardrobe",
+      "toolbox",
+      "battery"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-toolbox",
+    "pl": "skrzynka z narzędziami",
+    "en": "toolbox",
+    "distractors": [
+      "charger",
+      "remote",
+      "earphone"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-towel-rack",
+    "pl": "wieszak na ręczniki",
+    "en": "towel rack",
+    "distractors": [
+      "appliance",
+      "furniture",
+      "mattress"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "household-b1-wardrobe",
+    "pl": "szafa",
+    "en": "wardrobe",
+    "distractors": [
+      "battery",
+      "charger",
+      "remote"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "household"
+  },
+  {
+    "id": "school-b1-article",
+    "pl": "artykuł",
+    "en": "article",
+    "distractors": [
+      "graph",
+      "formula",
+      "theorem"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-assignment",
+    "pl": "zadanie",
+    "en": "assignment",
+    "distractors": [
+      "essay",
+      "headmaster",
+      "counsellor"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-auditorium",
+    "pl": "aula",
+    "en": "auditorium",
+    "distractors": [
+      "staff room",
+      "badge",
+      "transcript"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-badge",
+    "pl": "identyfikator",
+    "en": "badge",
+    "distractors": [
+      "syllabus",
+      "journal",
+      "article"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-campus",
+    "pl": "kampus",
+    "en": "campus",
+    "distractors": [
+      "auditorium",
+      "notepad",
+      "staff room"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-competition",
+    "pl": "konkurs",
+    "en": "competition",
+    "distractors": [
+      "whiteboard",
+      "projector",
+      "campus"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-conclusion",
+    "pl": "wniosek",
+    "en": "conclusion",
+    "distractors": [
+      "semester",
+      "internship",
+      "criteria"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-counsellor",
+    "pl": "doradca",
+    "en": "counsellor",
+    "distractors": [
+      "research",
+      "source",
+      "conclusion"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-criteria",
+    "pl": "kryteria",
+    "en": "criteria",
+    "distractors": [
+      "microscope",
+      "trophy",
+      "workshop"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-curriculum",
+    "pl": "program nauczania",
+    "en": "curriculum",
+    "distractors": [
+      "source",
+      "conclusion",
+      "portfolio"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-deadline",
+    "pl": "termin",
+    "en": "deadline",
+    "distractors": [
+      "headmaster",
+      "counsellor",
+      "curriculum"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-essay",
+    "pl": "esej",
+    "en": "essay",
+    "distractors": [
+      "counsellor",
+      "curriculum",
+      "research"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-experiment",
+    "pl": "eksperyment",
+    "en": "experiment",
+    "distractors": [
+      "trophy",
+      "workshop",
+      "competition"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-formula",
+    "pl": "wzór",
+    "en": "formula",
+    "distractors": [
+      "assignment",
+      "deadline",
+      "essay"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-graph",
+    "pl": "wykres",
+    "en": "graph",
+    "distractors": [
+      "theorem",
+      "assignment",
+      "deadline"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-headmaster",
+    "pl": "dyrektor",
+    "en": "headmaster",
+    "distractors": [
+      "curriculum",
+      "research",
+      "source"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-internship",
+    "pl": "praktyki",
+    "en": "internship",
+    "distractors": [
+      "experiment",
+      "microscope",
+      "trophy"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-journal",
+    "pl": "czasopismo",
+    "en": "journal",
+    "distractors": [
+      "report",
+      "graph",
+      "formula"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-microscope",
+    "pl": "mikroskop",
+    "en": "microscope",
+    "distractors": [
+      "workshop",
+      "competition",
+      "scholarship"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-notepad",
+    "pl": "notatnik",
+    "en": "notepad",
+    "distractors": [
+      "badge",
+      "transcript",
+      "syllabus"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-portfolio",
+    "pl": "portfolio",
+    "en": "portfolio",
+    "distractors": [
+      "internship",
+      "criteria",
+      "experiment"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-projector",
+    "pl": "projektor",
+    "en": "projector",
+    "distractors": [
+      "seminar",
+      "auditorium",
+      "notepad"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-report",
+    "pl": "raport",
+    "en": "report",
+    "distractors": [
+      "formula",
+      "theorem",
+      "assignment"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-research",
+    "pl": "badania",
+    "en": "research",
+    "distractors": [
+      "conclusion",
+      "portfolio",
+      "semester"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-scholarship",
+    "pl": "stypendium",
+    "en": "scholarship",
+    "distractors": [
+      "projector",
+      "campus",
+      "seminar"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-semester",
+    "pl": "semestr",
+    "en": "semester",
+    "distractors": [
+      "criteria",
+      "experiment",
+      "microscope"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-seminar",
+    "pl": "seminarium",
+    "en": "seminar",
+    "distractors": [
+      "notepad",
+      "staff room",
+      "badge"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-source",
+    "pl": "źródło",
+    "en": "source",
+    "distractors": [
+      "portfolio",
+      "semester",
+      "internship"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-staff-room",
+    "pl": "pokój nauczycielski",
+    "en": "staff room",
+    "distractors": [
+      "transcript",
+      "syllabus",
+      "journal"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-syllabus",
+    "pl": "sylabus",
+    "en": "syllabus",
+    "distractors": [
+      "article",
+      "report",
+      "graph"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-theorem",
+    "pl": "twierdzenie",
+    "en": "theorem",
+    "distractors": [
+      "deadline",
+      "essay",
+      "headmaster"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-transcript",
+    "pl": "świadectwo",
+    "en": "transcript",
+    "distractors": [
+      "journal",
+      "article",
+      "report"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-trophy",
+    "pl": "puchar",
+    "en": "trophy",
+    "distractors": [
+      "competition",
+      "scholarship",
+      "whiteboard"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-whiteboard",
+    "pl": "tablica suchościeralna",
+    "en": "whiteboard",
+    "distractors": [
+      "campus",
+      "seminar",
+      "auditorium"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "school-b1-workshop",
+    "pl": "warsztat",
+    "en": "workshop",
+    "distractors": [
+      "scholarship",
+      "whiteboard",
+      "projector"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "school"
+  },
+  {
+    "id": "town_places-b1-announcement",
+    "pl": "ogłoszenie",
+    "en": "announcement",
+    "distractors": [
+      "detour",
+      "crowd",
+      "subway"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-arrival",
+    "pl": "przyjazd",
+    "en": "arrival",
+    "distractors": [
+      "parking lot",
+      "security",
+      "checkpoint"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-avenue",
+    "pl": "aleja",
+    "en": "avenue",
+    "distractors": [
+      "intersection",
+      "exhibition",
+      "souvenir"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-barricade",
+    "pl": "barykada",
+    "en": "barricade",
+    "distractors": [
+      "ferry",
+      "dock",
+      "platform ticket"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-boulevard",
+    "pl": "bulwar",
+    "en": "boulevard",
+    "distractors": [
+      "district",
+      "intersection",
+      "exhibition"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-checkpoint",
+    "pl": "punkt kontroli",
+    "en": "checkpoint",
+    "distractors": [
+      "underpass",
+      "ferry",
+      "dock"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-commute",
+    "pl": "dojazd",
+    "en": "commute",
+    "distractors": [
+      "boulevard",
+      "avenue",
+      "district"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-construction",
+    "pl": "budowa",
+    "en": "construction",
+    "distractors": [
+      "crowd",
+      "subway",
+      "tunnel"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-crowd",
+    "pl": "tłum",
+    "en": "crowd",
+    "distractors": [
+      "tunnel",
+      "skyscraper",
+      "passage"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-cyclist",
+    "pl": "rowerzysta",
+    "en": "cyclist",
+    "distractors": [
+      "terminal",
+      "boulevard",
+      "avenue"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-departure",
+    "pl": "odjazd",
+    "en": "departure",
+    "distractors": [
+      "excursion",
+      "parking lot",
+      "security"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-destination",
+    "pl": "cel",
+    "en": "destination",
+    "distractors": [
+      "landmark",
+      "pedestrian",
+      "cyclist"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-detour",
+    "pl": "objazd",
+    "en": "detour",
+    "distractors": [
+      "subway",
+      "tunnel",
+      "skyscraper"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-district",
+    "pl": "dzielnica",
+    "en": "district",
+    "distractors": [
+      "exhibition",
+      "souvenir",
+      "receptionist"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-dock",
+    "pl": "nabrzeże",
+    "en": "dock",
+    "distractors": [
+      "destination",
+      "route",
+      "landmark"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-excursion",
+    "pl": "wycieczka krajoznawcza",
+    "en": "excursion",
+    "distractors": [
+      "security",
+      "checkpoint",
+      "barricade"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-exhibition",
+    "pl": "wystawa",
+    "en": "exhibition",
+    "distractors": [
+      "receptionist",
+      "luggage",
+      "announcement"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-ferry",
+    "pl": "prom",
+    "en": "ferry",
+    "distractors": [
+      "platform ticket",
+      "destination",
+      "route"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-intersection",
+    "pl": "skrzyżowanie dróg",
+    "en": "intersection",
+    "distractors": [
+      "souvenir",
+      "receptionist",
+      "luggage"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-landmark",
+    "pl": "punkt orientacyjny",
+    "en": "landmark",
+    "distractors": [
+      "cyclist",
+      "commute",
+      "terminal"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-luggage",
+    "pl": "bagaż",
+    "en": "luggage",
+    "distractors": [
+      "construction",
+      "detour",
+      "crowd"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-parking-lot",
+    "pl": "parking",
+    "en": "parking lot",
+    "distractors": [
+      "checkpoint",
+      "barricade",
+      "underpass"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-passage",
+    "pl": "pasaż",
+    "en": "passage",
+    "distractors": [
+      "departure",
+      "arrival",
+      "excursion"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-pedestrian",
+    "pl": "pieszy",
+    "en": "pedestrian",
+    "distractors": [
+      "commute",
+      "terminal",
+      "boulevard"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-platform-ticket",
+    "pl": "bilet peronowy",
+    "en": "platform ticket",
+    "distractors": [
+      "route",
+      "landmark",
+      "pedestrian"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-receptionist",
+    "pl": "recepcjonista",
+    "en": "receptionist",
+    "distractors": [
+      "announcement",
+      "construction",
+      "detour"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-route",
+    "pl": "trasa",
+    "en": "route",
+    "distractors": [
+      "pedestrian",
+      "cyclist",
+      "commute"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-security",
+    "pl": "ochrona",
+    "en": "security",
+    "distractors": [
+      "barricade",
+      "underpass",
+      "ferry"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-skyscraper",
+    "pl": "wieżowiec",
+    "en": "skyscraper",
+    "distractors": [
+      "tram line",
+      "departure",
+      "arrival"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-souvenir",
+    "pl": "pamiątka",
+    "en": "souvenir",
+    "distractors": [
+      "luggage",
+      "announcement",
+      "construction"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-subway",
+    "pl": "metro",
+    "en": "subway",
+    "distractors": [
+      "skyscraper",
+      "passage",
+      "tram line"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-terminal",
+    "pl": "terminal",
+    "en": "terminal",
+    "distractors": [
+      "avenue",
+      "district",
+      "intersection"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-tram-line",
+    "pl": "linia tramwajowa",
+    "en": "tram line",
+    "distractors": [
+      "arrival",
+      "excursion",
+      "parking lot"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-tunnel",
+    "pl": "tunel",
+    "en": "tunnel",
+    "distractors": [
+      "passage",
+      "tram line",
+      "departure"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  },
+  {
+    "id": "town_places-b1-underpass",
+    "pl": "przejście podziemne",
+    "en": "underpass",
+    "distractors": [
+      "dock",
+      "platform ticket",
+      "destination"
+    ],
+    "tier": 3,
+    "cefr": "b1",
+    "category": "town_places"
+  }
+]

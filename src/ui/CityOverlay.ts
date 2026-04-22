@@ -1,6 +1,18 @@
 import Phaser from 'phaser';
 import { BRANCH_DEFS, type BranchDef, type BranchId, gateCta } from '../systems/CityBranches';
 import { metaStore, type WritingSubmission } from '../systems/MetaStore';
+import { curriculumCatalog } from '../systems/CurriculumCatalog';
+import {
+  ALL_CATEGORIES,
+  ALL_SOURCES,
+  ALL_TIERS,
+  CATEGORY_LABELS_PL,
+  SOURCE_LABELS_PL,
+  type CurriculumCategory,
+  type CurriculumSelection,
+  type CurriculumSource,
+  type CurriculumTier,
+} from '../systems/CurriculumTypes';
 import { SkillTreeView } from './SkillTreeView';
 
 // HTML overlay for the City's branch-detail view. Lives in
@@ -10,6 +22,9 @@ import { SkillTreeView } from './SkillTreeView';
 export class CityOverlay {
   private root?: HTMLElement;
   private tree?: SkillTreeView;
+  // Draft for the curriculum picker — populated on open, committed by
+  // ZAPISZ, discarded on WRÓĆ/Escape.
+  private curriculumDraft?: CurriculumSelection;
   private onKey = (e: KeyboardEvent) => {
     if (e.key === 'Escape') this.hide();
   };
@@ -25,14 +40,29 @@ export class CityOverlay {
 
     this.scene.game.events.on('city:branchClick', this.onBranchClick, this);
     this.scene.game.events.on('city:openJournal', this.onOpenJournal, this);
+    this.scene.game.events.on('city:openCurriculum', this.onOpenCurriculum, this);
     this.scene.game.events.on('writing:completed', this.onWritingCompleted, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.scene.game.events.off('city:branchClick', this.onBranchClick, this);
       this.scene.game.events.off('city:openJournal', this.onOpenJournal, this);
+      this.scene.game.events.off('city:openCurriculum', this.onOpenCurriculum, this);
       this.scene.game.events.off('writing:completed', this.onWritingCompleted, this);
       window.removeEventListener('keydown', this.onKey);
       if (this.root) this.root.innerHTML = '';
     });
+  }
+
+  private onOpenCurriculum() {
+    if (!this.root || !document.body.contains(this.root)) {
+      this.root = document.getElementById('city-overlay-root') ?? undefined;
+    }
+    if (!this.root) return;
+    // Draft state starts as a clone of the persisted selection; edits
+    // stay in-memory until the player hits ZAPISZ.
+    this.curriculumDraft = { ...curriculumCatalog.getActiveSelection() };
+    this.renderCurriculum();
+    this.root.classList.add('city-overlay--visible');
+    window.addEventListener('keydown', this.onKey);
   }
 
   private onOpenJournal() {
@@ -190,6 +220,116 @@ export class CityOverlay {
         if ((e.target as HTMLElement).closest('.city-journal-text')) return;
         card.classList.toggle('city-journal-card--open');
       });
+    });
+  }
+
+  // ── curriculum picker ──
+
+  private renderCurriculum() {
+    if (!this.root || !this.curriculumDraft) return;
+    const wtRoot = document.getElementById('writing-task-root');
+    if (wtRoot) {
+      wtRoot.classList.remove('writing-task--visible');
+      wtRoot.innerHTML = '';
+    }
+    const draft = this.curriculumDraft;
+    const summary = curriculumCatalog.summaryFor(draft);
+
+    const sourceRows = ALL_SOURCES.map((s) => {
+      const checked = s === draft.source ? 'checked' : '';
+      return `
+        <label class="cu-source-row">
+          <input type="radio" name="cu-source" value="${s}" ${checked} />
+          <span>${escapeHtml(SOURCE_LABELS_PL[s])}</span>
+        </label>
+      `;
+    }).join('');
+
+    const tierBlock =
+      draft.source === 'experimental-tiered'
+        ? `<div class="cu-row">
+             <div class="cu-row-label">Poziom:</div>
+             <div class="cu-tier-row">
+               ${ALL_TIERS.map((t) => {
+                 const active = draft.tier === t ? 'cu-tier-btn--active' : '';
+                 return `<button type="button" class="cu-tier-btn ${active}" data-tier="${t}">${t}</button>`;
+               }).join('')}
+             </div>
+           </div>`
+        : '';
+
+    const categoryChips = ALL_CATEGORIES.map((c) => {
+      const active = c === draft.category ? 'cu-cat-chip--active' : '';
+      return `<button type="button" class="cu-cat-chip ${active}" data-cat="${c}">${escapeHtml(CATEGORY_LABELS_PL[c])}</button>`;
+    }).join('');
+
+    this.root.innerHTML = `
+      <div class="city-panel city-curriculum-panel paper-scroll">
+        <div class="city-panel-header">
+          <div class="city-panel-icon-slot"><span class="city-panel-icon">⚙️</span></div>
+          <div class="city-panel-title">Ustawienia — Plan nauki</div>
+          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+        </div>
+        <div class="cu-body">
+          <div class="cu-row">
+            <div class="cu-row-label">Źródło:</div>
+            <div class="cu-source-list">${sourceRows}</div>
+          </div>
+          ${tierBlock}
+          <div class="cu-row">
+            <div class="cu-row-label">Kategoria:</div>
+            <div class="cu-cat-row">${categoryChips}</div>
+          </div>
+          <div class="cu-summary">
+            Aktywna pula: <b>${summary.vocab}</b> słówek ·
+            <b>${summary.sentences}</b> zdań ·
+            <b>${summary.stories}</b> opowieści
+          </div>
+        </div>
+        <div class="city-panel-footer">
+          <button class="cu-save" type="button">ZAPISZ</button>
+          <button class="city-panel-back" type="button">WRÓĆ</button>
+        </div>
+      </div>
+    `;
+
+    this.root.querySelector('.city-panel-close')!.addEventListener('click', () => this.hide());
+    this.root.querySelector('.city-panel-back')!.addEventListener('click', () => this.hide());
+
+    this.root.querySelectorAll<HTMLInputElement>('input[name="cu-source"]').forEach((inp) => {
+      inp.addEventListener('change', () => {
+        if (!this.curriculumDraft) return;
+        this.curriculumDraft.source = inp.value as CurriculumSource;
+        // Keep a sensible tier whenever switching source. Only tiered
+        // actually consumes it, but leaving it undefined would break
+        // the picker state on a switch-back to tiered.
+        if (this.curriculumDraft.source === 'experimental-tiered' && !this.curriculumDraft.tier) {
+          this.curriculumDraft.tier = 1;
+        }
+        this.renderCurriculum();
+      });
+    });
+
+    this.root.querySelectorAll<HTMLButtonElement>('.cu-tier-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!this.curriculumDraft) return;
+        this.curriculumDraft.tier = Number(btn.dataset.tier) as CurriculumTier;
+        this.renderCurriculum();
+      });
+    });
+
+    this.root.querySelectorAll<HTMLButtonElement>('.cu-cat-chip').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!this.curriculumDraft) return;
+        this.curriculumDraft.category = btn.dataset.cat as CurriculumCategory;
+        this.renderCurriculum();
+      });
+    });
+
+    this.root.querySelector('.cu-save')!.addEventListener('click', () => {
+      if (!this.curriculumDraft) return;
+      curriculumCatalog.setSelection({ ...this.curriculumDraft });
+      this.hide();
     });
   }
 }

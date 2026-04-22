@@ -1,26 +1,16 @@
 import Phaser from 'phaser';
-import SENTENCES_RAW from '../data/sentences.json';
-import STORIES_RAW from '../data/stories.json';
+import { curriculumCatalog } from './CurriculumCatalog';
+import type {
+  CurriculumSentence,
+  CurriculumStory,
+} from './CurriculumTypes';
 
-interface SentenceStep {
-  correct: string;
-  distractor: string;
-}
-
-export interface Sentence {
-  id: string;
-  pl: string;
-  steps: SentenceStep[];
-}
-
-export interface Story {
-  id: string;
-  title: string;
-  sentences: Sentence[];
-}
-
-const SENTENCES: Sentence[] = SENTENCES_RAW as Sentence[];
-const STORIES: Story[] = STORIES_RAW as Story[];
+// Keep the old public names so the rest of the codebase (scene event
+// payloads) reads cleanly — `Sentence` and `Story` are now aliases for
+// the normalized catalog shapes that carry optional tier/cefr/category
+// metadata.
+export type Sentence = CurriculumSentence;
+export type Story = CurriculumStory;
 
 // Words that are treated as equivalent for story-mode scoring. Picking
 // "the" when the correct answer was "a" (or vice versa) does NOT count
@@ -86,11 +76,13 @@ export class SentenceBuilder {
   }
 
   static pickRandom(): Sentence {
-    return SENTENCES[Math.floor(Math.random() * SENTENCES.length)];
+    const pool = curriculumCatalog.getSentencePool();
+    return pool[Math.floor(Math.random() * pool.length)]!;
   }
 
   static pickRandomStory(): Story {
-    return STORIES[Math.floor(Math.random() * STORIES.length)];
+    const pool = curriculumCatalog.getStoryPool();
+    return pool[Math.floor(Math.random() * pool.length)]!;
   }
 
   private show(sentence: Sentence) {
