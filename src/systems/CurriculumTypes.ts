@@ -9,6 +9,7 @@
 export type CurriculumSource =
   | 'legacy'
   | 'experimental-tiered'
+  | 'experimental-a1'
   | 'experimental-a2'
   | 'experimental-b1';
 
@@ -75,6 +76,7 @@ export const DEFAULT_CURRICULUM: CurriculumSelection = {
 export const ALL_SOURCES: CurriculumSource[] = [
   'legacy',
   'experimental-tiered',
+  'experimental-a1',
   'experimental-a2',
   'experimental-b1',
 ];
@@ -104,6 +106,17 @@ export const CATEGORY_LABELS_PL: Record<CurriculumCategory, string> = {
 export const SOURCE_LABELS_PL: Record<CurriculumSource, string> = {
   legacy: 'Klasyczny',
   'experimental-tiered': 'Rozszerzony',
+  'experimental-a1': 'CEFR A1',
   'experimental-a2': 'CEFR A2',
   'experimental-b1': 'CEFR B1',
+};
+
+// One-line explanations shown under each source radio. Keep under ~60
+// chars so they fit inline under the label without wrapping.
+export const SOURCE_DESCRIPTIONS_PL: Record<CurriculumSource, string> = {
+  legacy: 'oryginalna lista słówek bez poziomów i tematów',
+  'experimental-tiered': 'nowa lista z trzema poziomami i tematami',
+  'experimental-a1': 'tylko słownictwo A1 (początkujący)',
+  'experimental-a2': 'tylko słownictwo A2 (podstawowy)',
+  'experimental-b1': 'tylko słownictwo B1 (średnio zaawansowany)',
 };

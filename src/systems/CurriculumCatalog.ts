@@ -114,16 +114,23 @@ class CurriculumCatalog {
   }
 
   private baseArray(kind: PoolKind, src: CurriculumSource): AnyRecord[] {
-    const pick = (
-      src === 'legacy'
-        ? { vocab: LEGACY_VOCAB, sentences: LEGACY_SENTENCES, stories: LEGACY_STORIES }
-        : src === 'experimental-tiered'
-        ? { vocab: TIERED_VOCAB, sentences: TIERED_SENTENCES, stories: TIERED_STORIES }
-        : src === 'experimental-a2'
-        ? { vocab: A2_VOCAB, sentences: A2_SENTENCES, stories: A2_STORIES }
-        : { vocab: B1_VOCAB, sentences: B1_SENTENCES, stories: B1_STORIES }
-    ) as Record<PoolKind, AnyRecord[]>;
-    return pick[kind];
+    if (src === 'legacy') {
+      return ({ vocab: LEGACY_VOCAB, sentences: LEGACY_SENTENCES, stories: LEGACY_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+    }
+    if (src === 'experimental-tiered') {
+      return ({ vocab: TIERED_VOCAB, sentences: TIERED_SENTENCES, stories: TIERED_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+    }
+    if (src === 'experimental-a1') {
+      // No pre-generated a1 bundle exists — derive it from the tiered
+      // export by CEFR level. Cheaper than shipping another JSON and
+      // guarantees parity with whatever the tiered build produced.
+      const base = ({ vocab: TIERED_VOCAB, sentences: TIERED_SENTENCES, stories: TIERED_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+      return base.filter((r) => r.cefr === 'a1');
+    }
+    if (src === 'experimental-a2') {
+      return ({ vocab: A2_VOCAB, sentences: A2_SENTENCES, stories: A2_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+    }
+    return ({ vocab: B1_VOCAB, sentences: B1_SENTENCES, stories: B1_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
   }
 
   private normalize(kind: PoolKind, records: AnyRecord[]): AnyRecord[] {

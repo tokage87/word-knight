@@ -7,6 +7,7 @@ import {
   ALL_SOURCES,
   ALL_TIERS,
   CATEGORY_LABELS_PL,
+  SOURCE_DESCRIPTIONS_PL,
   SOURCE_LABELS_PL,
   type CurriculumCategory,
   type CurriculumSelection,
@@ -240,7 +241,10 @@ export class CityOverlay {
       return `
         <label class="cu-source-row">
           <input type="radio" name="cu-source" value="${s}" ${checked} />
-          <span>${escapeHtml(SOURCE_LABELS_PL[s])}</span>
+          <span class="cu-source-text">
+            <span class="cu-source-label">${escapeHtml(SOURCE_LABELS_PL[s])}</span>
+            <span class="cu-source-desc">${escapeHtml(SOURCE_DESCRIPTIONS_PL[s])}</span>
+          </span>
         </label>
       `;
     }).join('');
@@ -258,10 +262,20 @@ export class CityOverlay {
            </div>`
         : '';
 
+    // Legacy data has no category metadata, so the chips would all
+    // silently fall back to `all`. Hide the whole row instead of
+    // showing dead controls.
+    const showCategories = draft.source !== 'legacy';
     const categoryChips = ALL_CATEGORIES.map((c) => {
       const active = c === draft.category ? 'cu-cat-chip--active' : '';
       return `<button type="button" class="cu-cat-chip ${active}" data-cat="${c}">${escapeHtml(CATEGORY_LABELS_PL[c])}</button>`;
     }).join('');
+    const categoryBlock = showCategories
+      ? `<div class="cu-row">
+           <div class="cu-row-label">Kategoria:</div>
+           <div class="cu-cat-row">${categoryChips}</div>
+         </div>`
+      : '';
 
     this.root.innerHTML = `
       <div class="city-panel city-curriculum-panel paper-scroll">
@@ -276,10 +290,7 @@ export class CityOverlay {
             <div class="cu-source-list">${sourceRows}</div>
           </div>
           ${tierBlock}
-          <div class="cu-row">
-            <div class="cu-row-label">Kategoria:</div>
-            <div class="cu-cat-row">${categoryChips}</div>
-          </div>
+          ${categoryBlock}
           <div class="cu-summary">
             Aktywna pula: <b>${summary.vocab}</b> słówek ·
             <b>${summary.sentences}</b> zdań ·
