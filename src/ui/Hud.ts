@@ -90,7 +90,17 @@ export class Hud {
     // slots (fire/ice/heal) with companions, so the ability row is
     // entirely ally-driven now. Each slot shows the same sweep+text
     // cooldown pattern as the old spell slots used.
-    const allyKinds = ['fire-archer', 'fire-monk', 'ice-archer', 'ice-monk', 'cleric', 'wind-monk'] as const;
+    const allyKinds = [
+      'fire-archer',
+      'fire-monk',
+      'ice-archer',
+      'ice-monk',
+      'cleric',
+      'wind-monk',
+      'wind-lancer',
+      'earth-pawn',
+      'earth-lancer',
+    ] as const;
     allyKinds.forEach((kind) => {
       const ic = root.querySelector<HTMLElement>(`.ability[data-ally="${kind}"]`);
       if (!ic) return;
@@ -137,7 +147,19 @@ export class Hud {
     // Ability row is entirely ally-driven after the Tier-2 rework. Loop
     // over every ally slot we know about and let each row manage its
     // locked / ready / cooldown state via the snapshot in the registry.
-    (['fire-archer', 'fire-monk', 'ice-archer', 'ice-monk', 'cleric', 'wind-monk'] as const).forEach((k) => {
+    (
+      [
+        'fire-archer',
+        'fire-monk',
+        'ice-archer',
+        'ice-monk',
+        'cleric',
+        'wind-monk',
+        'wind-lancer',
+        'earth-pawn',
+        'earth-lancer',
+      ] as const
+    ).forEach((k) => {
       this.updateAlly(registry, k);
     });
 
@@ -388,20 +410,26 @@ export class Hud {
 // Ally labels + short descriptions used by the ability-row tooltip.
 // Keep these in sync with src/entities/Ally.ts AllyKind / PROFILES.
 const ALLY_LABELS: Record<string, string> = {
-  'fire-archer': 'Ognisty Łucznik',
-  'fire-monk':   'Ognisty Mnich',
-  'ice-archer':  'Lodowy Łucznik',
-  'ice-monk':    'Lodowy Mnich',
-  cleric:        'Uzdrowiciel',
-  'wind-monk':   'Wietrzny Mnich',
+  'fire-archer':  'Ognisty Łucznik',
+  'fire-monk':    'Ognisty Mnich',
+  'ice-archer':   'Lodowy Łucznik',
+  'ice-monk':     'Lodowy Mnich',
+  cleric:         'Uzdrowiciel',
+  'wind-monk':    'Wietrzny Mnich',
+  'wind-lancer':  'Wietrzny Lansjer',
+  'earth-pawn':   'Ziemny Pionek',
+  'earth-lancer': 'Ziemny Lansjer',
 };
 const ALLY_DESCS: Record<string, string> = {
-  'fire-archer': 'Strzela ognistymi strzałami w najbliższego wroga.',
-  'fire-monk':   'Rzuca ciężką kulą ognia w pojedynczego wroga.',
-  'ice-archer':  'Strzela lodowymi strzałami, spowalnia wrogów.',
-  'ice-monk':    'Ciska lodowym pociskiem z silnym spowolnieniem.',
-  cleric:        'Regularnie leczy rycerza podczas walki.',
-  'wind-monk':   'Szybko rzuca lekkie pociski wiatru.',
+  'fire-archer':  'Strzela ognistymi strzałami w najbliższego wroga.',
+  'fire-monk':    'Rzuca ciężką kulą ognia w pojedynczego wroga.',
+  'ice-archer':   'Strzela lodowymi strzałami, spowalnia wrogów.',
+  'ice-monk':     'Ciska lodowym pociskiem z silnym spowolnieniem.',
+  cleric:         'Regularnie leczy rycerza podczas walki.',
+  'wind-monk':    'Szybko rzuca lekkie pociski wiatru.',
+  'wind-lancer':  'Szybkie pchnięcie przeszywające trzech wrogów.',
+  'earth-pawn':   'Rąbie toporem blisko rycerza.',
+  'earth-lancer': 'Ciężki kamienny pocisk, spowalnia uderzonego wroga.',
 };
 
 const HTML = `
@@ -481,6 +509,24 @@ const HTML = `
       </div>
       <div class="ability ability--locked" data-ally="wind-monk" data-tooltip="Wietrzny Mnich — zablokowany. Odblokuj w Kręgu Uczonych.">
         <span class="ability-glyph">🌀</span>
+        <div class="ability-cd-overlay"></div>
+        <span class="ability-cd-text"></span>
+        <span class="ability-lock">🔒</span>
+      </div>
+      <div class="ability ability--locked" data-ally="wind-lancer" data-tooltip="Wietrzny Lansjer — zablokowany. Odblokuj w Kręgu Uczonych.">
+        <span class="ability-glyph">🗡</span>
+        <div class="ability-cd-overlay"></div>
+        <span class="ability-cd-text"></span>
+        <span class="ability-lock">🔒</span>
+      </div>
+      <div class="ability ability--locked" data-ally="earth-pawn" data-tooltip="Ziemny Pionek — zablokowany. Odblokuj w Gildii Pisarzy.">
+        <span class="ability-glyph">🪓</span>
+        <div class="ability-cd-overlay"></div>
+        <span class="ability-cd-text"></span>
+        <span class="ability-lock">🔒</span>
+      </div>
+      <div class="ability ability--locked" data-ally="earth-lancer" data-tooltip="Ziemny Lansjer — zablokowany. Odblokuj w Gildii Pisarzy.">
+        <span class="ability-glyph">🪨</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>

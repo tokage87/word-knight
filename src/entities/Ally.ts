@@ -15,7 +15,10 @@ export type AllyKind =
   | 'fire-monk'
   | 'ice-monk'
   | 'wind-monk'
-  | 'cleric';
+  | 'cleric'
+  | 'wind-lancer'
+  | 'earth-lancer'
+  | 'earth-pawn';
 
 // Behavior branch. Ranged = fires a projectile at nearest enemy.
 // Heal = targets the knight himself and restores HP on cooldown.
@@ -40,6 +43,9 @@ interface AllyProfile {
   // Flat enemy slow (ms) applied on projectile hit. Used by the ice
   // variants so their shots feel distinct from the fire variants.
   projectileSlowMs?: number;
+  // Enemies a single shot can chew through before despawning. Wind
+  // Lancer uses this so its strike feels like a piercing sweep.
+  projectilePierceCount?: number;
 }
 
 const PROFILES: Record<AllyKind, AllyProfile> = {
@@ -138,6 +144,63 @@ const PROFILES: Record<AllyKind, AllyProfile> = {
     rangePx: 0,       // unused for heal
     scale: 0.28,
   },
+  'wind-lancer': {
+    behavior: 'ranged',
+    idleAnim: ANIM.lancerIdle,
+    runAnim: ANIM.lancerRun,
+    attackAnim: ANIM.lancerAttack,
+    // Old windSlash was 14 dmg / 2.5s single-target. As an ally we
+    // keep the fast cadence but give it piercing so a single thrust
+    // hits up to 3 enemies in a line.
+    attackCooldownMs: 2500,
+    attackDamage: 11,
+    rangePx: 260,
+    projectileTexture: AK.arrow,
+    projectileTint: 0xd9ffb0,
+    projectileSpeed: 640,
+    projectileScale: 0.45,
+    projectilePierceCount: 3,
+    // Lancer frames are 320px vs archer's 192px — smaller render
+    // scale keeps the on-screen silhouette comparable.
+    scale: 0.18,
+  },
+  'earth-lancer': {
+    behavior: 'ranged',
+    idleAnim: ANIM.lancerIdle,
+    runAnim: ANIM.lancerRun,
+    attackAnim: ANIM.lancerAttack,
+    // Old earthquake was 20 dmg on 26s CD (screen-wide AOE). As an
+    // ally we trade screen-wide reach for guaranteed hit + stun-ish
+    // slow and faster cadence.
+    attackCooldownMs: 4500,
+    attackDamage: 20,
+    rangePx: 220,
+    projectileTexture: AK.arrow,
+    projectileTint: 0x8d6e3b, // earth brown
+    projectileSpeed: 340,
+    projectileScale: 0.65,
+    projectileSlowMs: 1500,
+    scale: 0.18,
+  },
+  'earth-pawn': {
+    behavior: 'ranged',
+    idleAnim: ANIM.pawnAxeIdle,
+    runAnim: ANIM.pawnAxeRun,
+    attackAnim: ANIM.pawnAxeAttack,
+    // Old stoneShield spell was a self-invuln buff for the knight,
+    // which doesn't map cleanly to a follower. Earth Pawn instead
+    // acts as a sturdy frontliner: short-range axe swings for
+    // moderate damage at a comfortable cadence. Feels tanky because
+    // the sprite carries an axe and stays close to the knight.
+    attackCooldownMs: 2500,
+    attackDamage: 13,
+    rangePx: 120,
+    projectileTexture: AK.arrow,
+    projectileTint: 0xd1d1d1, // pale silver — reads as "chop"
+    projectileSpeed: 420,
+    projectileScale: 0.4,
+    scale: 0.28,
+  },
 };
 
 export class Ally extends Phaser.GameObjects.Sprite {
@@ -151,7 +214,14 @@ export class Ally extends Phaser.GameObjects.Sprite {
     const profile = PROFILES[kind];
     // Pick the initial texture based on the idle-anim family so the
     // sprite has the right image even before its first play().
-    const idleTexture = profile.idleAnim === ANIM.monkIdle ? AK.monkIdle : AK.archerIdle;
+    const idleTexture =
+      profile.idleAnim === ANIM.monkIdle
+        ? AK.monkIdle
+        : profile.idleAnim === ANIM.lancerIdle
+        ? AK.lancerIdle
+        : profile.idleAnim === ANIM.pawnAxeIdle
+        ? AK.pawnAxeIdle
+        : AK.archerIdle;
     super(scene, knight.x + offsetX, knight.y, idleTexture, 0);
     scene.add.existing(this);
     this.kind = kind;
@@ -259,6 +329,7 @@ export class Ally extends Phaser.GameObjects.Sprite {
       tint: this.profile.projectileTint,
       scale: this.profile.projectileScale,
       slowMs: this.profile.projectileSlowMs,
+      pierceCount: this.profile.projectilePierceCount,
     });
     projectiles.add(p);
   }

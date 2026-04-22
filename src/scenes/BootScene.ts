@@ -196,6 +196,38 @@ export class BootScene extends Phaser.Scene {
       frameWidth: UNIT_FRAME,
       frameHeight: UNIT_FRAME,
     });
+
+    // Lancer ally sprites — 320px frame (same size family as the
+    // minotaur enemy). Used by Wind Lancer and Earth Lancer.
+    this.load.spritesheet(AK.lancerIdle, 'assets/lancer/Idle.png', {
+      frameWidth: MINOTAUR_FRAME,
+      frameHeight: MINOTAUR_FRAME,
+    });
+    this.load.spritesheet(AK.lancerRun, 'assets/lancer/Run.png', {
+      frameWidth: MINOTAUR_FRAME,
+      frameHeight: MINOTAUR_FRAME,
+    });
+    this.load.spritesheet(AK.lancerAttack, 'assets/lancer/Attack.png', {
+      frameWidth: MINOTAUR_FRAME,
+      frameHeight: MINOTAUR_FRAME,
+    });
+
+    // Pawn (Axe variant) — 192px frame. The "interact" sheet shows
+    // the pawn swinging its axe; we reuse it as a melee attack
+    // animation for Earth Pawn (the sprite pack doesn't ship a real
+    // attack anim for the pawn archetype).
+    this.load.spritesheet(AK.pawnAxeIdle, 'assets/pawn/Idle.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.pawnAxeRun, 'assets/pawn/Run.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.pawnAxeAttack, 'assets/pawn/Attack.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
   }
 
   create() {
@@ -242,6 +274,14 @@ export class BootScene extends Phaser.Scene {
     this.buildAnim(ANIM.monkIdle, AK.monkIdle, 6, 7, -1);
     this.buildAnim(ANIM.monkRun, AK.monkRun, 4, 10, -1);
     this.buildAnim(ANIM.monkCast, AK.monkHeal, 11, 14, 0);
+    // Lancer ally animations (320px frames). Idle 12f, Run 6f, Attack 3f.
+    this.buildAnim(ANIM.lancerIdle, AK.lancerIdle, 12, 8, -1);
+    this.buildAnim(ANIM.lancerRun, AK.lancerRun, 6, 10, -1);
+    this.buildAnim(ANIM.lancerAttack, AK.lancerAttack, 3, 12, 0);
+    // Axe Pawn ally animations. Idle 8f, Run 6f, Attack (axe swing) 6f.
+    this.buildAnim(ANIM.pawnAxeIdle, AK.pawnAxeIdle, 8, 7, -1);
+    this.buildAnim(ANIM.pawnAxeRun, AK.pawnAxeRun, 6, 10, -1);
+    this.buildAnim(ANIM.pawnAxeAttack, AK.pawnAxeAttack, 6, 11, 0);
 
     this.scene.start('Game');
     this.scene.launch('UI');

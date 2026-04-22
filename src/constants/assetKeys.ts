@@ -41,6 +41,17 @@ export const AK = {
   monkRun: 'monk-run',
   monkHeal: 'monk-heal',
   monkHealEffect: 'monk-heal-effect',
+  // Lancer: larger 320px frame. Idle 12f, Run 6f, Right_Attack 3f.
+  // Shared by Wind Lancer and Earth Lancer — differ by projectile
+  // tint and stats.
+  lancerIdle: 'lancer-idle',
+  lancerRun: 'lancer-run',
+  lancerAttack: 'lancer-attack',
+  // Pawn (axe variant): 192px frame. Idle 8f, Run 6f, Interact (axe
+  // swing) 6f — used as the "attack" animation for Earth Pawn.
+  pawnAxeIdle: 'pawn-axe-idle',
+  pawnAxeRun: 'pawn-axe-run',
+  pawnAxeAttack: 'pawn-axe-attack',
 
   // Terrain & props
   tilemap: 'tilemap',
@@ -105,6 +116,12 @@ export const ANIM = {
   monkIdle: 'monk-idle-loop',
   monkRun: 'monk-run-loop',
   monkCast: 'monk-cast-once',
+  lancerIdle: 'lancer-idle-loop',
+  lancerRun: 'lancer-run-loop',
+  lancerAttack: 'lancer-attack-once',
+  pawnAxeIdle: 'pawn-axe-idle-loop',
+  pawnAxeRun: 'pawn-axe-run-loop',
+  pawnAxeAttack: 'pawn-axe-attack-once',
 } as const;
 
 // Tiny Swords unit spritesheets are always 192x192 per frame.

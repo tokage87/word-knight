@@ -15,6 +15,10 @@ export interface ProjectileConfig {
   scale?: number;        // render scale (Arrow.png is 64x64, too big at 1.0)
   ttlMs?: number;        // max flight time before self-destruct
   slowMs?: number;       // optional slow duration applied on hit
+  // How many distinct enemies the projectile can hit before despawning.
+  // Default 1 (classic single-target shot). Wind Lancer uses a pierce
+  // count >1 so its strike chains through the enemy line.
+  pierceCount?: number;
 }
 
 export class Projectile extends Phaser.GameObjects.Image {
@@ -23,6 +27,11 @@ export class Projectile extends Phaser.GameObjects.Image {
   private damage: number;
   private ttlMs: number;
   private slowMs: number;
+  private pierceRemaining: number;
+  // Enemies this projectile has already hit — prevents a pierce shot
+  // from stacking multiple damages on the same enemy on subsequent
+  // frames while it's still inside the hit radius.
+  private hitEnemies = new WeakSet<Enemy>();
 
   constructor(scene: Phaser.Scene, x: number, y: number, cfg: ProjectileConfig) {
     super(scene, x, y, cfg.textureKey);
@@ -39,6 +48,7 @@ export class Projectile extends Phaser.GameObjects.Image {
     this.damage = cfg.damage;
     this.ttlMs = cfg.ttlMs ?? 2000;
     this.slowMs = cfg.slowMs ?? 0;
+    this.pierceRemaining = Math.max(1, cfg.pierceCount ?? 1);
     // Rotate sprite to face travel direction. Arrow.png points right
     // by default, so atan2 gives us the correct visual angle.
     this.setRotation(Math.atan2(dy, dx));
@@ -63,12 +73,16 @@ export class Projectile extends Phaser.GameObjects.Image {
     const HIT_RADIUS = 24;
     for (const e of enemies) {
       if (!e.active) continue;
+      // Skip enemies already hit by this shot (pierce tracking).
+      if (this.hitEnemies.has(e)) continue;
       const dx = e.x - this.x;
       const dy = e.y - this.y;
       if (dx * dx + dy * dy < HIT_RADIUS * HIT_RADIUS) {
         e.takeDamage(this.damage);
         if (this.slowMs > 0) e.applySlow(this.slowMs);
-        return false;
+        this.hitEnemies.add(e);
+        this.pierceRemaining -= 1;
+        if (this.pierceRemaining <= 0) return false;
       }
     }
     return true;
