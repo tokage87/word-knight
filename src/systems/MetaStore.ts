@@ -2,79 +2,64 @@
 //
 // Everything "between runs" lives here: accumulated gold, lifetime
 // counters (bosses killed, quizzes answered, distinct words solved,
-// stories perfected, writing tasks done) and per-branch unlock +
-// upgrade state for the City scene.
+// stories perfected, writing tasks done) and per-branch SKILL-TREE
+// rank state for the City scene.
 //
-// A single key `wk.meta.v1` holds the whole blob as JSON — versioned
-// so we can migrate cleanly later. Reads are cheap (one localStorage
-// hit per game start); writes happen only at well-defined moments
-// (end of run, branch unlock, upgrade purchase, save-wipe).
+// v2 schema: each branch stores `unlockedAt` + `treeRanks: Record<nodeId, number>`.
+// v1 → v2 migration maps the old flat-rank fields (combat.ranks.hp
+// etc. + spells.chosenStartSpell) onto the new tree-node IDs. Once
+// migrated, the store writes v2.
 //
 // NOT persisted: in-run state (current HP, equipped spells, XP toward
-// next level). Death always wipes those — that's the core roguelite
-// contract.
+// next level). Death always wipes those — the core roguelite contract.
 
 import type { SpellId } from './SpellCaster';
 
 export const STORAGE_KEY = 'wk.meta.v1';
+export const SCHEMA_VERSION = 2;
 
 export type BranchId = 'combat' | 'spells' | 'scholar' | 'writer';
 
+export interface BranchState {
+  // Timestamp when the unlock gate was first cleared. null = still
+  // locked. Takes precedence over any legacy `unlocked` boolean from v1.
+  unlockedAt: number | null;
+  // nodeId → rank owned. Missing entries mean rank 0 (not purchased).
+  treeRanks: Record<string, number>;
+}
+
 export interface MetaState {
-  version: 1;
-  // Accumulated gold ("money" in the user-facing city) carried across
-  // runs. Earned from kills during a run; survives death; spent in the
-  // city on permanent upgrades.
+  version: 2;
   gold: number;
-  // Lifetime counters — increment during a run, never reset except by
-  // the explicit wipe action. These feed branch-unlock challenges.
   lifetime: {
     runs: number;
     bossesKilled: number;
     quizCorrect: number;
     perfectStories: number;
     writingTasksDone: number;
-    // Set of vocab ids solved correctly at least once. Stored as an
-    // array for JSON compatibility; hydrated into a Set on load.
     distinctWordIds: string[];
   };
-  branches: {
-    combat: {
-      unlocked: boolean;
-      ranks: { hp: number; dmg: number; spd: number };
-    };
-    spells: {
-      unlocked: boolean;
-      chosenStartSpell: SpellId | null;
-    };
-    scholar: {
-      unlocked: boolean;
-      ranks: { xpPerQuiz: number; cdCutPerQuiz: number };
-    };
-    writer: {
-      unlocked: boolean;
-      ranks: { xpBonus: number };
-    };
-  };
-  // Free-form written responses that unlocked each branch. Stored so
-  // the teacher can read them later without leaving the app. Capped at
-  // 20 entries to keep localStorage small — oldest drops off.
+  branches: Record<BranchId, BranchState>;
   writingSubmissions: WritingSubmission[];
 }
 
 export interface WritingSubmission {
-  id: string;            // `${branchId}.${timestamp}`
+  id: string;
   branch: BranchId;
-  prompt: string;        // the Polish prompt the student saw
-  text: string;          // their written response
+  prompt: string;
+  text: string;
   wordCount: number;
   distinctCount: number;
   submittedAt: number;
 }
 
+function freshBranch(): BranchState {
+  return { unlockedAt: null, treeRanks: {} };
+}
+
 function freshState(): MetaState {
   return {
-    version: 1,
+    version: 2,
     gold: 0,
     lifetime: {
       runs: 0,
@@ -85,44 +70,115 @@ function freshState(): MetaState {
       distinctWordIds: [],
     },
     branches: {
-      combat: { unlocked: false, ranks: { hp: 0, dmg: 0, spd: 0 } },
-      spells: { unlocked: false, chosenStartSpell: null },
-      scholar: { unlocked: false, ranks: { xpPerQuiz: 0, cdCutPerQuiz: 0 } },
-      writer: { unlocked: false, ranks: { xpBonus: 0 } },
+      combat:  freshBranch(),
+      spells:  freshBranch(),
+      scholar: freshBranch(),
+      writer:  freshBranch(),
     },
     writingSubmissions: [],
   };
 }
 
-// Merge-with-defaults so an older save missing fields doesn't blow up
-// when we extend the schema. The `version` check is the migration
-// door; when we bump to v2 we'll branch on it here.
+// v1 shape, referenced only by the migration path.
+interface V1Branches {
+  combat?:  { unlocked?: boolean; ranks?: { hp?: number; dmg?: number; spd?: number } };
+  spells?:  { unlocked?: boolean; chosenStartSpell?: SpellId | null };
+  scholar?: { unlocked?: boolean; ranks?: { xpPerQuiz?: number; cdCutPerQuiz?: number } };
+  writer?:  { unlocked?: boolean; ranks?: { xpBonus?: number } };
+}
+
+// Map old v1 fields onto new tree-node IDs. spd — which lived on
+// combat — maps to wind.atkSpd since "attack speed" is thematically
+// a Wind-tree passive in v2. Losing the old unlock flag on `spells`
+// is accepted: if the player had chosen a start spell, we mint the
+// matching tree-unlock rank so they retain the benefit.
+function migrateV1(raw: { branches?: V1Branches; unlocked?: boolean } & Record<string, unknown>): MetaState {
+  const fresh = freshState();
+  const b = raw.branches ?? {};
+
+  const combatRanks: Record<string, number> = {};
+  if (b.combat?.ranks?.hp) combatRanks['fire.hp1'] = b.combat.ranks.hp;
+  if (b.combat?.ranks?.dmg) combatRanks['fire.dmg1'] = b.combat.ranks.dmg;
+  fresh.branches.combat = {
+    unlockedAt: b.combat?.unlocked ? Date.now() : null,
+    treeRanks: combatRanks,
+  };
+
+  const windRanks: Record<string, number> = {};
+  // combat.ranks.spd re-homed onto wind.atkSpd (Wind is where atk-speed lives).
+  if (b.combat?.ranks?.spd) windRanks['wind.atkSpd'] = b.combat.ranks.spd;
+  if (b.scholar?.ranks?.xpPerQuiz) windRanks['wind.xp'] = b.scholar.ranks.xpPerQuiz;
+  if (b.scholar?.ranks?.cdCutPerQuiz) windRanks['wind.cdCut'] = b.scholar.ranks.cdCutPerQuiz;
+  fresh.branches.scholar = {
+    unlockedAt: b.scholar?.unlocked ? Date.now() : null,
+    treeRanks: windRanks,
+  };
+
+  const waterRanks: Record<string, number> = {};
+  const chosen = b.spells?.chosenStartSpell;
+  if (chosen === 'fire') waterRanks['water.ice.unlock'] = 0; // fire isn't a water-tree node; silently drop
+  if (chosen === 'ice')  waterRanks['water.ice.unlock'] = 1;
+  if (chosen === 'heal') waterRanks['water.heal.unlock'] = 1;
+  fresh.branches.spells = {
+    unlockedAt: b.spells?.unlocked ? Date.now() : null,
+    treeRanks: waterRanks,
+  };
+
+  const earthRanks: Record<string, number> = {};
+  if (b.writer?.ranks?.xpBonus) earthRanks['earth.xpMult'] = b.writer.ranks.xpBonus;
+  fresh.branches.writer = {
+    unlockedAt: b.writer?.unlocked ? Date.now() : null,
+    treeRanks: earthRanks,
+  };
+
+  // Carry top-level fields from v1.
+  fresh.gold = typeof raw.gold === 'number' ? raw.gold : 0;
+  if (Array.isArray(raw.writingSubmissions)) {
+    fresh.writingSubmissions = raw.writingSubmissions as WritingSubmission[];
+  }
+  if (raw.lifetime && typeof raw.lifetime === 'object') {
+    fresh.lifetime = { ...fresh.lifetime, ...(raw.lifetime as object) };
+    if (!Array.isArray(fresh.lifetime.distinctWordIds)) fresh.lifetime.distinctWordIds = [];
+  }
+  return fresh;
+}
+
 function hydrate(raw: unknown): MetaState {
   const fresh = freshState();
   if (!raw || typeof raw !== 'object') return fresh;
-  const r = raw as Partial<MetaState> & { version?: number };
-  if (r.version !== 1) return fresh;
-  return {
-    ...fresh,
-    ...r,
-    writingSubmissions: Array.isArray(r.writingSubmissions) ? r.writingSubmissions : [],
-    lifetime: { ...fresh.lifetime, ...(r.lifetime ?? {}) },
-    branches: {
-      combat: { ...fresh.branches.combat, ...(r.branches?.combat ?? {}),
-        ranks: { ...fresh.branches.combat.ranks, ...(r.branches?.combat?.ranks ?? {}) } },
-      spells: { ...fresh.branches.spells, ...(r.branches?.spells ?? {}) },
-      scholar: { ...fresh.branches.scholar, ...(r.branches?.scholar ?? {}),
-        ranks: { ...fresh.branches.scholar.ranks, ...(r.branches?.scholar?.ranks ?? {}) } },
-      writer: { ...fresh.branches.writer, ...(r.branches?.writer ?? {}),
-        ranks: { ...fresh.branches.writer.ranks, ...(r.branches?.writer?.ranks ?? {}) } },
-    },
-  };
+  const r = raw as { version?: number } & Record<string, unknown>;
+  if (r.version === 2) {
+    // Merge-with-defaults against v2. Each branch fills in missing
+    // fields so a partial save doesn't crash.
+    const rbranches = (r.branches ?? {}) as Partial<Record<BranchId, Partial<BranchState>>>;
+    const branches: Record<BranchId, BranchState> = {
+      combat:  { ...freshBranch(), ...(rbranches.combat  ?? {}), treeRanks: { ...(rbranches.combat?.treeRanks  ?? {}) } },
+      spells:  { ...freshBranch(), ...(rbranches.spells  ?? {}), treeRanks: { ...(rbranches.spells?.treeRanks  ?? {}) } },
+      scholar: { ...freshBranch(), ...(rbranches.scholar ?? {}), treeRanks: { ...(rbranches.scholar?.treeRanks ?? {}) } },
+      writer:  { ...freshBranch(), ...(rbranches.writer  ?? {}), treeRanks: { ...(rbranches.writer?.treeRanks  ?? {}) } },
+    };
+    return {
+      ...fresh,
+      ...(r as object),
+      version: 2,
+      writingSubmissions: Array.isArray(r.writingSubmissions) ? (r.writingSubmissions as WritingSubmission[]) : [],
+      lifetime: { ...fresh.lifetime, ...((r.lifetime as object) ?? {}) },
+      branches,
+    };
+  }
+  if (r.version === 1 || r.version === undefined) {
+    try {
+      return migrateV1(r as Parameters<typeof migrateV1>[0]);
+    } catch {
+      return fresh;
+    }
+  }
+  // Unknown future version — start fresh rather than corrupting.
+  return fresh;
 }
 
 export class MetaStore {
   private state: MetaState;
-  // In-memory mirror of distinctWordIds for O(1) dedup during a run.
-  // Persisted as an array back to localStorage on save.
   private distinctWordsSet: Set<string>;
 
   constructor() {
@@ -136,21 +192,16 @@ export class MetaStore {
       if (!raw) return freshState();
       return hydrate(JSON.parse(raw));
     } catch {
-      // Corrupted save (user cleared storage mid-write, QuotaExceeded
-      // during a previous session, etc.) — treat as fresh state
-      // rather than crashing. Players can wipe manually from the City.
       return freshState();
     }
   }
 
   save() {
-    // Keep the set's contents mirrored back to the array before writing.
     this.state.lifetime.distinctWordIds = Array.from(this.distinctWordsSet);
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state));
     } catch {
-      // localStorage disabled / quota full — silently drop. City UI
-      // will show last-known state from memory for this session.
+      // localStorage disabled / quota full — silently drop.
     }
   }
 
@@ -164,21 +215,9 @@ export class MetaStore {
     }
   }
 
-  // ───── read helpers ─────
-
-  get(): MetaState {
-    return this.state;
-  }
-
-  getGold(): number {
-    return this.state.gold;
-  }
-
-  distinctWordCount(): number {
-    return this.distinctWordsSet.size;
-  }
-
-  // ───── write helpers (save-after to keep localStorage fresh) ─────
+  get(): MetaState { return this.state; }
+  getGold(): number { return this.state.gold; }
+  distinctWordCount(): number { return this.distinctWordsSet.size; }
 
   addGold(amount: number) {
     if (amount <= 0) return;
@@ -215,8 +254,6 @@ export class MetaStore {
     this.save();
   }
 
-  // Append a written submission and cap the list to the last 20 so
-  // localStorage doesn't balloon over months of use. Newest first.
   addWritingSubmission(s: WritingSubmission) {
     this.state.writingSubmissions.unshift(s);
     if (this.state.writingSubmissions.length > 20) {
@@ -235,37 +272,34 @@ export class MetaStore {
     this.save();
   }
 
-  // Branch mutators — the City UI drives these. They don't check the
-  // unlock challenge themselves; that lives at a higher level so the
-  // "did we just earn it?" moment can fire a celebration animation.
+  // ── branch mutators ──
 
   unlockBranch(id: BranchId) {
-    this.state.branches[id].unlocked = true;
+    const b = this.state.branches[id];
+    if (b.unlockedAt === null) b.unlockedAt = Date.now();
     this.save();
   }
 
-  buyCombatRank(stat: 'hp' | 'dmg' | 'spd') {
-    this.state.branches.combat.ranks[stat] += 1;
+  isBranchUnlocked(id: BranchId): boolean {
+    return this.state.branches[id].unlockedAt !== null;
+  }
+
+  getRank(id: BranchId, nodeId: string): number {
+    return this.state.branches[id].treeRanks[nodeId] ?? 0;
+  }
+
+  setRank(id: BranchId, nodeId: string, rank: number) {
+    this.state.branches[id].treeRanks[nodeId] = rank;
     this.save();
   }
 
-  setStartSpell(id: SpellId | null) {
-    this.state.branches.spells.chosenStartSpell = id;
+  buyRank(id: BranchId, nodeId: string): boolean {
+    const b = this.state.branches[id];
+    const current = b.treeRanks[nodeId] ?? 0;
+    b.treeRanks[nodeId] = current + 1;
     this.save();
-  }
-
-  buyScholarRank(stat: 'xpPerQuiz' | 'cdCutPerQuiz') {
-    this.state.branches.scholar.ranks[stat] += 1;
-    this.save();
-  }
-
-  buyWriterRank() {
-    this.state.branches.writer.ranks.xpBonus += 1;
-    this.save();
+    return true;
   }
 }
 
-// Single shared instance. Scenes should import this rather than
-// constructing their own — otherwise two copies could diverge before
-// the next save.
 export const metaStore = new MetaStore();

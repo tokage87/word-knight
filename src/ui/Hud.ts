@@ -31,6 +31,10 @@ export class Hud {
   private gameOverCity?: HTMLElement;
   private restartClickHandler?: () => void;
   private cityClickHandler?: () => void;
+  private pauseResumeBtn?: HTMLElement;
+  private pauseCityBtn?: HTMLElement;
+  private pauseResumeHandler?: () => void;
+  private pauseCityHandler?: () => void;
 
   mount() {
     const root = document.getElementById('hud-root');
@@ -56,6 +60,9 @@ export class Hud {
     this.bossBar = root.querySelector<HTMLElement>('.boss-bar') ?? undefined;
     this.bossFill = root.querySelector<HTMLElement>('.boss-fill') ?? undefined;
     this.expText = root.querySelector<HTMLElement>('.bar-exp-text') ?? undefined;
+
+    this.pauseResumeBtn = root.querySelector<HTMLElement>('.pause-resume') ?? undefined;
+    this.pauseCityBtn = root.querySelector<HTMLElement>('.pause-city') ?? undefined;
 
     (['fire', 'ice', 'heal', 'lightning'] as const).forEach((id) => {
       const ic = root.querySelector<HTMLElement>(`.ability[data-spell="${id}"]`);
@@ -149,19 +156,33 @@ export class Hud {
   setPaused(paused: boolean, stats: Record<string, number> = {}) {
     if (!this.pauseOverlay) return;
     this.pauseOverlay.classList.toggle('pause-overlay--visible', paused);
+    // Hide the rest of the HUD (stats, gold, boss bar, equipment,
+    // abilities) behind the pause overlay so the dim screen actually
+    // reads as "the game is paused" instead of leaking bright chrome
+    // through the 72% overlay tint.
+    const hudRoot = document.getElementById('hud-root');
+    hudRoot?.classList.toggle('hud--paused', paused);
     if (this.pauseBtn) this.pauseBtn.textContent = paused ? '▶' : '⏸';
     if (paused && this.pauseStats) {
-      const lines: [string, number | string][] = [
-        ['Correct quizzes', stats.quizCorrect ?? 0],
-        ['Wrong quizzes', stats.quizWrong ?? 0],
-        ['Distinct words solved', stats.distinctWords ?? 0],
-        ['Sentences (perfect)', stats.sentenceCorrect ?? 0],
-        ['Sentences (with mistake)', stats.sentenceWrong ?? 0],
-        ['Stories perfect', stats.storiesPerfect ?? 0],
-        ['Stories failed', stats.storiesFailed ?? 0],
+      // Each row gets a small Tiny Swords icon chip that matches the
+      // meaning of the counter — so the pause readout feels like an
+      // in-game ledger rather than a plain debug dump. Icons map:
+      //   ✓ = Icon_07 (green wedge)    ✕ = Icon_09 (red X)
+      //   book = Icon_02 (log/scroll)  scroll = Icon_10 (gear)
+      //   star = Icon_03 (coin)         skull = Icon_09 (red X)
+      const lines: [string, string, number | string][] = [
+        ['ico-ok', 'Poprawne quizy', stats.quizCorrect ?? 0],
+        ['ico-bad', 'Błędne quizy', stats.quizWrong ?? 0],
+        ['ico-word', 'Poznane słowa', stats.distinctWords ?? 0],
+        ['ico-sentence', 'Zdania bez błędu', stats.sentenceCorrect ?? 0],
+        ['ico-sentence-bad', 'Zdania z błędem', stats.sentenceWrong ?? 0],
+        ['ico-story', 'Opowieści ukończone', stats.storiesPerfect ?? 0],
+        ['ico-story-bad', 'Opowieści nieudane', stats.storiesFailed ?? 0],
       ];
       this.pauseStats.innerHTML = lines
-        .map(([k, v]) => `<div class="pause-stat-row"><span>${k}</span><span class="pause-stat-val">${v}</span></div>`)
+        .map(([ico, k, v]) =>
+          `<div class="pause-stat-row"><span class="stat-chip ${ico}" aria-hidden="true"></span><span class="pause-stat-label">${k}</span><span class="pause-stat-val">${v}</span></div>`,
+        )
         .join('');
     }
   }
@@ -177,18 +198,22 @@ export class Hud {
     if (!this.gameOverOverlay) return;
     this.gameOverOverlay.classList.add('gameover-overlay--visible');
     if (this.gameOverStats) {
-      const lines: [string, number | string][] = [
-        ['Level reached', stats.level ?? 1],
-        ['Correct quizzes', stats.quizCorrect ?? 0],
-        ['Wrong quizzes', stats.quizWrong ?? 0],
-        ['Distinct words solved', stats.distinctWords ?? 0],
-        ['Sentences (perfect)', stats.sentenceCorrect ?? 0],
-        ['Sentences (with mistake)', stats.sentenceWrong ?? 0],
-        ['Stories perfect', stats.storiesPerfect ?? 0],
-        ['Stories failed', stats.storiesFailed ?? 0],
+      // Same iconified row pattern as the pause panel, with "level
+      // reached" pinned to the top and shown with the EXP ribbon chip.
+      const lines: [string, string, number | string][] = [
+        ['ico-level', 'Zdobyty poziom', stats.level ?? 1],
+        ['ico-ok', 'Poprawne quizy', stats.quizCorrect ?? 0],
+        ['ico-bad', 'Błędne quizy', stats.quizWrong ?? 0],
+        ['ico-word', 'Poznane słowa', stats.distinctWords ?? 0],
+        ['ico-sentence', 'Zdania bez błędu', stats.sentenceCorrect ?? 0],
+        ['ico-sentence-bad', 'Zdania z błędem', stats.sentenceWrong ?? 0],
+        ['ico-story', 'Opowieści ukończone', stats.storiesPerfect ?? 0],
+        ['ico-story-bad', 'Opowieści nieudane', stats.storiesFailed ?? 0],
       ];
       this.gameOverStats.innerHTML = lines
-        .map(([k, v]) => `<div class="gameover-stat-row"><span>${k}</span><span class="gameover-stat-val">${v}</span></div>`)
+        .map(([ico, k, v]) =>
+          `<div class="gameover-stat-row"><span class="stat-chip ${ico}" aria-hidden="true"></span><span class="gameover-stat-label">${k}</span><span class="gameover-stat-val">${v}</span></div>`,
+        )
         .join('');
     }
   }
@@ -223,6 +248,24 @@ export class Hud {
     }
     this.cityClickHandler = handler;
     this.gameOverCity.addEventListener('click', handler);
+  }
+
+  onPauseResumeClick(handler: () => void) {
+    if (!this.pauseResumeBtn) return;
+    if (this.pauseResumeHandler) {
+      this.pauseResumeBtn.removeEventListener('click', this.pauseResumeHandler);
+    }
+    this.pauseResumeHandler = handler;
+    this.pauseResumeBtn.addEventListener('click', handler);
+  }
+
+  onPauseCityClick(handler: () => void) {
+    if (!this.pauseCityBtn) return;
+    if (this.pauseCityHandler) {
+      this.pauseCityBtn.removeEventListener('click', this.pauseCityHandler);
+    }
+    this.pauseCityHandler = handler;
+    this.pauseCityBtn.addEventListener('click', handler);
   }
 
   flashCooldownPenalty(ms: number) {
@@ -347,17 +390,27 @@ const HTML = `
   <button type="button" class="pause-btn" data-tooltip="Pauza (P)">⏸</button>
 
   <div class="pause-overlay">
-    <div class="pause-panel">
-      <div class="pause-title">PAUSED</div>
-      <div class="pause-sub">Press P to resume</div>
+    <div class="pause-panel paper-scroll">
+      <div class="panel-title-row">
+        <div class="panel-title-icon" aria-hidden="true"></div>
+        <div class="pause-title">PAUZA</div>
+      </div>
+      <div class="pause-sub">Naciśnij P aby kontynuować</div>
       <div class="pause-stats"></div>
+      <div class="pause-actions">
+        <button type="button" class="pause-resume">KONTYNUUJ</button>
+        <button type="button" class="pause-city">MIASTO</button>
+      </div>
     </div>
   </div>
 
   <div class="gameover-overlay">
-    <div class="gameover-panel">
-      <div class="gameover-title">GAME OVER</div>
-      <div class="gameover-sub">Your run ended — here's how it went</div>
+    <div class="gameover-panel paper-scroll">
+      <div class="panel-title-row">
+        <div class="panel-title-icon panel-title-icon--fallen" aria-hidden="true"></div>
+        <div class="gameover-title">KONIEC GRY</div>
+      </div>
+      <div class="gameover-sub">Twój bieg dobiegł końca — oto jak ci poszło</div>
       <div class="gameover-stats"></div>
       <div class="gameover-actions">
         <button type="button" class="gameover-restart">RESTART</button>
@@ -368,7 +421,7 @@ const HTML = `
 
   <div class="hud-bottom-left equipment-panel">
     <div class="equipment-grid">
-      <div class="eq-slot" data-tooltip="Miecz Rycerza"><img src="assets/ui/Icon_07.png" alt="sword" /></div>
+      <div class="eq-slot" data-tooltip="Miecz Rycerza"><img src="assets/ui/Icon_05.png" alt="sword" /></div>
       <div class="eq-slot" data-tooltip="Tarcza Rycerza"><img src="assets/ui/Icon_06.png" alt="shield" /></div>
       <div class="eq-slot empty"></div>
       <div class="eq-slot empty"></div>

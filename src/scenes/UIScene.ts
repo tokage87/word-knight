@@ -40,6 +40,8 @@ export class UIScene extends Phaser.Scene {
     this.hud.onPauseButtonClick(() => this.game.events.emit('ui:togglePause'));
     this.hud.onRestartButtonClick(() => this.game.events.emit('ui:restart'));
     this.hud.onCityButtonClick(() => this.game.events.emit('ui:openCity'));
+    this.hud.onPauseResumeClick(() => this.game.events.emit('ui:togglePause'));
+    this.hud.onPauseCityClick(() => this.game.events.emit('ui:openCity'));
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.off(

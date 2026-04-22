@@ -9,10 +9,12 @@ import {
 import { Knight } from '../entities/Knight';
 import { Enemy } from '../entities/Enemy';
 import { WaveSpawner } from '../systems/WaveSpawner';
-import { SpellCaster, MAX_RANK, type SpellId } from '../systems/SpellCaster';
+import { SpellCaster, MAX_RANK, ALL_SPELL_IDS, type SpellId } from '../systems/SpellCaster';
 import type { SkillCardOption } from '../systems/SkillPicker';
 import { SentenceBuilder } from '../systems/SentenceBuilder';
-import { metaStore } from '../systems/MetaStore';
+import { metaStore, type BranchId } from '../systems/MetaStore';
+import { SKILL_TREES } from '../systems/SkillTreeDefs';
+import type { TreeNode } from '../systems/SkillTree';
 
 const WALK_SPEED_MPS = 0.008;
 
@@ -75,6 +77,10 @@ export class GameScene extends Phaser.Scene {
   // Meta-driven run modifiers — baked from metaStore in create().
   private quizCorrectCdCutMs = 5000;
   private xpMultiplier = 1;
+  private goldMultiplier = 1;
+  // Composite CDR summed from Water-tree nodes; baked into each spell's
+  // opener-readiness via spellCaster.reduceAll at run start.
+  private globalCooldownReduction = 0;
   // Nerfed from 30 to slow leveling — quiz answers used to rush the
   // player past the early spell pool; now the curve leans on kills +
   // deliberate correct answers instead of quiz spam.
@@ -169,8 +175,7 @@ export class GameScene extends Phaser.Scene {
 
     this.registry.set('level', this.level);
     this.registry.set('expPct', 0);
-    this.registry.set('spellsUnlocked', [] as SpellId[]);
-    this.registry.set('spellsRank', { fire: 0, ice: 0, heal: 0 });
+    this.publishSpellRegistry();
     this.registry.set('gold', metaStore.getGold());
 
     this.game.events.on('quiz:correct', this.onQuizCorrect, this);
@@ -451,45 +456,82 @@ export class GameScene extends Phaser.Scene {
     this.maybeShowPicker();
   }
 
-  // Read MetaStore branches and bake persistent bonuses into THIS run.
-  // Called once per create() after Knight + SpellCaster exist. Base
-  // stats are already at their fresh values thanks to the reset block
-  // at the top of create(), so we just add.
+  // Read MetaStore tree ranks and bake persistent bonuses into THIS
+  // run. Called once per create() after Knight + SpellCaster exist.
+  // Base stats are already at fresh values from create(), so we add.
+  //
+  // Iterates over every node in every tree and dispatches by effect
+  // kind. Adding a new effect kind = add one case here (see plan §M6).
   private applyMetaProgression() {
-    const meta = metaStore.get();
     // Reset run-level modifiers to defaults first, then layer meta on.
     this.EXP_PER_QUIZ_CORRECT = 5;
     this.quizCorrectCdCutMs = 5000;
     this.xpMultiplier = 1;
+    this.goldMultiplier = 1;
+    this.spellCaster.spellDmgMult = 1;
 
-    // Combat Hall — starting stats.
-    const c = meta.branches.combat.ranks;
-    if (c.hp > 0) {
-      this.knight.hpMax += 20 * c.hp;
-      this.knight.hp = this.knight.hpMax;
-    }
-    if (c.dmg > 0) {
-      this.knight.meleeDamage += 2 * c.dmg;
-    }
-    if (c.spd > 0) {
-      // Compounding 5% per rank to match the in-run Swift Strike card.
-      this.knight.meleeCooldownMs = Math.max(
-        200,
-        Math.round(this.knight.meleeCooldownMs * Math.pow(0.95, c.spd)),
-      );
+    const branches: BranchId[] = ['combat', 'spells', 'scholar', 'writer'];
+    for (const branchId of branches) {
+      const tree = SKILL_TREES[branchId];
+      for (const node of tree.nodes) {
+        const rank = metaStore.getRank(branchId, node.id);
+        if (rank <= 0) continue;
+        this.applyNodeEffect(node.effect, rank);
+      }
     }
 
-    // Spell Library — start with the chosen spell already unlocked.
-    if (meta.branches.spells.unlocked && meta.branches.spells.chosenStartSpell) {
-      this.spellCaster.unlock(meta.branches.spells.chosenStartSpell);
+    // Global cooldown reduction applies as opener-readiness: trim every
+    // spell's starting cooldown proportionally so the first cast lands
+    // sooner. Full per-cast CDR would need a SpellCaster refactor we
+    // defer — this opener-cut gets us the "feels faster" effect now.
+    if (this.globalCooldownReduction > 0) {
+      this.spellCaster.reduceAll(this.globalCooldownReduction * 20_000);
     }
+    void ALL_SPELL_IDS;
+  }
 
-    // Scholar's Circle — extra XP per quiz + bigger CD cut per quiz.
-    this.EXP_PER_QUIZ_CORRECT += 2 * meta.branches.scholar.ranks.xpPerQuiz;
-    this.quizCorrectCdCutMs += 1000 * meta.branches.scholar.ranks.cdCutPerQuiz;
-
-    // Writer's Guild — global XP multiplier.
-    this.xpMultiplier = 1 + 0.10 * meta.branches.writer.ranks.xpBonus;
+  // Single dispatch for every tree-node effect kind. Extend here when
+  // introducing new effect categories.
+  private applyNodeEffect(effect: TreeNode['effect'], rank: number) {
+    switch (effect.kind) {
+      case 'stat': {
+        this.knight.boostStat(effect.stat, effect.perRank * rank);
+        break;
+      }
+      case 'runStat': {
+        switch (effect.stat) {
+          case 'xpMult':
+            this.xpMultiplier += effect.perRank * rank;
+            break;
+          case 'goldMult':
+            this.goldMultiplier += effect.perRank * rank;
+            break;
+          case 'xpPerQuiz':
+            this.EXP_PER_QUIZ_CORRECT += effect.perRank * rank;
+            break;
+          case 'cdCutPerQuiz':
+            this.quizCorrectCdCutMs += effect.perRank * rank;
+            break;
+          case 'globalCooldown':
+            this.globalCooldownReduction += effect.perRank * rank;
+            break;
+          case 'spellDmg':
+            this.spellCaster.spellDmgMult += effect.perRank * rank;
+            break;
+        }
+        break;
+      }
+      case 'spellUnlock': {
+        this.spellCaster.unlock(effect.spellId);
+        break;
+      }
+      case 'spellRank': {
+        for (let i = 0; i < effect.perRank * rank; i++) {
+          this.spellCaster.upgrade(effect.spellId);
+        }
+        break;
+      }
+    }
   }
 
   private onKnightDied() {
@@ -535,7 +577,8 @@ export class GameScene extends Phaser.Scene {
     this.gainExp(payload.isBoss ? this.EXP_PER_BOSS_KILL : this.EXP_PER_KILL);
     // Gold bounty: 10 per boss, 1 per regular — matches the HUD's
     // existing visible counter, but now persists across runs in meta.
-    metaStore.addGold(payload.isBoss ? 10 : 1);
+    const baseGold = payload.isBoss ? 10 : 1;
+    metaStore.addGold(Math.max(1, Math.round(baseGold * this.goldMultiplier)));
     if (payload.isBoss) metaStore.incrementBossKill();
     // Publish immediately (not just on the next update() tick) so the
     // HUD badge animates in-sync with the kill.
@@ -711,21 +754,24 @@ export class GameScene extends Phaser.Scene {
       this.spellCaster.upgrade(idStr as SpellId, weakened);
     }
 
-    this.registry.set(
-      'spellsUnlocked',
-      (['fire', 'ice', 'heal'] as SpellId[]).filter((id) => this.spellCaster.isUnlocked(id)),
-    );
-    this.registry.set('spellsRank', {
-      fire: this.spellCaster.getRank('fire'),
-      ice: this.spellCaster.getRank('ice'),
-      heal: this.spellCaster.getRank('heal'),
-    });
+    this.publishSpellRegistry();
     this.registry.set('statRanks', { ...this.statRanks });
 
     this.pendingLevelUps -= 1;
     this.pendingCardOptions = null;
     this.paused = false;
     this.maybeShowPicker();
+  }
+
+  // Keep the HUD's spell-state registry in sync after unlock / upgrade
+  // events. Enumerates every SpellId (old and new) so the HUD can
+  // render cooldown badges for any spell the tree has surfaced.
+  private publishSpellRegistry() {
+    const unlocked: SpellId[] = ALL_SPELL_IDS.filter((id) => this.spellCaster.isUnlocked(id));
+    this.registry.set('spellsUnlocked', unlocked);
+    const ranks: Record<string, number> = {};
+    ALL_SPELL_IDS.forEach((id) => { ranks[id] = this.spellCaster.getRank(id); });
+    this.registry.set('spellsRank', ranks);
   }
 
   private applyStatUpgrade(id: StatId, weakened = false) {
@@ -800,6 +846,42 @@ const SPELL_META: Record<
     icon: 'assets/ui/Icon_05.png',
     newDesc: 'Restore 50 HP when below 55%.',
     upgradeDesc: '+35% healing, −15% cooldown.',
+  },
+  fireArrow: {
+    name: 'Fire Arrow',
+    icon: 'assets/ui/Icon_02.png',
+    newDesc: 'Fast 15 dmg projectile every 3s.',
+    upgradeDesc: '+35% damage, −15% cooldown.',
+  },
+  blizzard: {
+    name: 'Blizzard',
+    icon: 'assets/ui/Icon_08.png',
+    newDesc: 'Screen-wide 18 dmg + 4s slow.',
+    upgradeDesc: '+35% damage & slow, −15% cooldown.',
+  },
+  windSlash: {
+    name: 'Wind Slash',
+    icon: 'assets/ui/Icon_05.png',
+    newDesc: 'Piercing slash hits up to 3 foes.',
+    upgradeDesc: '+35% damage, −15% cooldown.',
+  },
+  tornado: {
+    name: 'Tornado',
+    icon: 'assets/ui/Icon_10.png',
+    newDesc: 'Lingering vortex — 6 dmg × 3 ticks over 2s.',
+    upgradeDesc: '+35% damage, −15% cooldown.',
+  },
+  stoneShield: {
+    name: 'Stone Shield',
+    icon: 'assets/ui/Icon_06.png',
+    newDesc: '2s invulnerability at low HP.',
+    upgradeDesc: '−15% cooldown.',
+  },
+  earthquake: {
+    name: 'Earthquake',
+    icon: 'assets/ui/Icon_01.png',
+    newDesc: 'AoE 20 dmg + brief stun.',
+    upgradeDesc: '+35% damage, −15% cooldown.',
   },
 };
 

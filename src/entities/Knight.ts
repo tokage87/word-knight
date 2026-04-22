@@ -5,17 +5,29 @@ import type { Enemy } from './Enemy';
 const MELEE_RANGE = 58;
 const SPRITE_SCALE = 0.32;
 
+export type KnightStat =
+  | 'hpMax' | 'meleeDmg' | 'atkSpd'
+  | 'critChance' | 'lifesteal' | 'hpRegen'
+  | 'armor' | 'dodgeChance';
+
 export class Knight extends Phaser.GameObjects.Sprite {
-  // Stats start at these base values and are boosted via the roguelite
-  // stat-upgrade cards (see GameScene StatId / applyStatUpgrade).
   hpMax = 100;
   hp = 100;
   meleeDamage = 10;
   meleeCooldownMs = 900;
   readonly meleeRange = MELEE_RANGE;
 
+  // Extended stats applied by tree nodes (fractional values are 0..1).
+  critChance = 0;
+  lifesteal = 0;
+  hpRegen = 0;       // HP per second
+  armor = 0;         // incoming damage multiplier = (1 - armor)
+  dodgeChance = 0;
+
   private meleeCooldown = 0;
   private animState: 'idle' | 'run' | 'attack' = 'run';
+  private regenCarry = 0; // fractional HP accumulator for hpRegen
+  private invulnUntilMs = 0;
 
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, AK.knightRun, 0);
@@ -28,6 +40,17 @@ export class Knight extends Phaser.GameObjects.Sprite {
   tick(delta: number, enemies: Enemy[]) {
     if (this.meleeCooldown > 0) this.meleeCooldown -= delta;
 
+    // Passive HP regen — accumulate fractional ticks so a "1 HP/sec"
+    // stat actually works at 60 FPS.
+    if (this.hpRegen > 0 && this.hp > 0 && this.hp < this.hpMax) {
+      this.regenCarry += (this.hpRegen * delta) / 1000;
+      if (this.regenCarry >= 1) {
+        const whole = Math.floor(this.regenCarry);
+        this.regenCarry -= whole;
+        this.hp = Math.min(this.hpMax, this.hp + whole);
+      }
+    }
+
     const target = enemies.find(
       (e) => e.active && Math.abs(e.x - this.x) < MELEE_RANGE,
     );
@@ -35,7 +58,17 @@ export class Knight extends Phaser.GameObjects.Sprite {
     if (target) {
       if (this.animState !== 'attack' && this.meleeCooldown <= 0) {
         this.playAttack();
-        target.takeDamage(this.meleeDamage);
+        // Crit roll: double damage, small yellow flash.
+        const isCrit = this.critChance > 0 && Math.random() < this.critChance;
+        const dmg = isCrit ? this.meleeDamage * 2 : this.meleeDamage;
+        target.takeDamage(dmg);
+        if (isCrit) {
+          this.scene.cameras.main.flash(60, 255, 230, 120);
+        }
+        // Lifesteal — heal fraction of damage dealt.
+        if (this.lifesteal > 0) {
+          this.hp = Math.min(this.hpMax, this.hp + dmg * this.lifesteal);
+        }
         this.meleeCooldown = this.meleeCooldownMs;
       } else if (this.animState !== 'attack' && this.animState !== 'idle') {
         this.setAnim('idle');
@@ -45,17 +78,48 @@ export class Knight extends Phaser.GameObjects.Sprite {
     }
   }
 
-  // Stat-upgrade hooks (called by GameScene when a stat card is picked).
-  boostMaxHp(amount: number) {
-    this.hpMax += amount;
-    this.hp = Math.min(this.hpMax, this.hp + amount);
+  // ── stat boost: single dispatch so tree-node effect.kind === 'stat'
+  // can call here without knowing the hero internals.
+  boostStat(stat: KnightStat, delta: number) {
+    switch (stat) {
+      case 'hpMax':
+        this.hpMax += delta;
+        this.hp = Math.min(this.hpMax, this.hp + delta);
+        break;
+      case 'meleeDmg':
+        this.meleeDamage += delta;
+        break;
+      case 'atkSpd':
+        // `delta` here is a 0..1 fraction; reduces cooldown.
+        this.meleeCooldownMs = Math.max(
+          200,
+          Math.round(this.meleeCooldownMs * (1 - delta)),
+        );
+        break;
+      case 'critChance':
+        this.critChance = Math.min(1, this.critChance + delta);
+        break;
+      case 'lifesteal':
+        this.lifesteal = Math.min(1, this.lifesteal + delta);
+        break;
+      case 'hpRegen':
+        this.hpRegen += delta;
+        break;
+      case 'armor':
+        this.armor = Math.min(0.8, this.armor + delta);
+        break;
+      case 'dodgeChance':
+        this.dodgeChance = Math.min(0.9, this.dodgeChance + delta);
+        break;
+    }
   }
-  boostMeleeDamage(amount: number) {
-    this.meleeDamage += amount;
-  }
-  boostAttackSpeed(pct: number) {
-    this.meleeCooldownMs = Math.max(200, Math.round(this.meleeCooldownMs * (1 - pct)));
-  }
+
+  // Legacy stat-boost hooks — kept so the in-run SkillPicker code that
+  // calls boostMaxHp / boostMeleeDamage / boostAttackSpeed still works
+  // without a rewrite.
+  boostMaxHp(amount: number) { this.boostStat('hpMax', amount); }
+  boostMeleeDamage(amount: number) { this.boostStat('meleeDmg', amount); }
+  boostAttackSpeed(pct: number) { this.boostStat('atkSpd', pct); }
 
   anyEnemyInRange(enemies: Enemy[]): boolean {
     return enemies.some(
@@ -64,14 +128,26 @@ export class Knight extends Phaser.GameObjects.Sprite {
   }
 
   takeDamage(n: number) {
-    if (this.hp <= 0) return; // already dead, waiting for scene restart
-    this.hp -= n;
+    if (this.hp <= 0) return;
+    // Invulnerability window from Stone Shield etc.
+    if (this.scene.time.now < this.invulnUntilMs) {
+      this.setTint(0xffe2a0);
+      this.scene.time.delayedCall(80, () => this.clearTint());
+      return;
+    }
+    // Dodge roll.
+    if (this.dodgeChance > 0 && Math.random() < this.dodgeChance) {
+      this.setTint(0xa0e0ff);
+      this.scene.time.delayedCall(80, () => this.clearTint());
+      return;
+    }
+    // Armor reduction.
+    const applied = this.armor > 0 ? Math.max(1, Math.round(n * (1 - this.armor))) : n;
+    this.hp -= applied;
     this.setTint(0xff7070);
     this.scene.time.delayedCall(80, () => this.clearTint());
     this.scene.cameras.main.shake(60, 0.003);
     if (this.hp <= 0) {
-      // Don't auto-revive — GameScene will restart the scene and build
-      // a fresh knight, which is the full run-reset on death.
       this.hp = 0;
       this.scene.game.events.emit('knight:died');
     }
@@ -83,6 +159,12 @@ export class Knight extends Phaser.GameObjects.Sprite {
 
   resetHp() {
     this.hp = this.hpMax;
+  }
+
+  // Called by Stone Shield spell — grant invulnerability until `tMs`.
+  setInvulnUntil(tMs: number) {
+    this.invulnUntilMs = Math.max(this.invulnUntilMs, tMs);
+    this.setTint(0xffd880);
   }
 
   private playAttack() {

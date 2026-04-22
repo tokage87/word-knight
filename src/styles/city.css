@@ -3,6 +3,55 @@
    match the paper-9slice look used by the pause / game-over panels,
    so it reads as the same UI family. */
 
+/* ─────────────────────────────────────────────────────────────────
+   Shared scroll-banner border for ALL paper panels.
+   Uses Tiny Swords' `Banner.png` (copied to /assets/ui/banner-9s.png):
+   a 448x448 sheet laid out as a 3x3 9-slice — four scroll corners
+   with ears + curls + stretchable middles. Applied to .city-panel,
+   .wt-panel, .pause-panel, .gameover-panel via the `.paper-scroll`
+   class (name kept for backward-compat — hosts opt in by adding it).
+   Slice values chosen by eyeballing the art: corners occupy roughly
+   the outer ~140px, leaving the middle ~170px stretchable. The
+   visible border width is scaled down to ~32px so the scroll reads
+   as a decorative frame, not the whole panel.
+   ───────────────────────────────────────────────────────────────── */
+/* Hybrid scroll panel:
+   - Panel body keeps the existing `paper-9s.png` 9-slice (proven to
+     fill cleanly at any size).
+   - Top + bottom scroll curls from Tiny Swords' Banner_Vertical are
+     overlaid as pseudo-elements that show ONLY the top 32px or
+     bottom 32px of the 116x128 banner-9s.png image.
+   Trick: stretch the background vertically by 128/32=400% and anchor
+   to top or bottom to crop the other half off-element. The narrower
+   width (min(90%, 440px)) keeps the scroll visually centered and
+   prevents the ears from stretching absurdly on wide panels. */
+.paper-scroll {
+  position: relative;
+}
+.paper-scroll::before,
+.paper-scroll::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 440px);
+  height: 34px;
+  background-image: url('/assets/ui/banner-9s.png');
+  background-repeat: no-repeat;
+  background-size: 100% 400%;
+  image-rendering: pixelated;
+  pointer-events: none;
+  z-index: 5;
+}
+.paper-scroll::before {
+  top: -24px;
+  background-position: center top;
+}
+.paper-scroll::after {
+  bottom: -24px;
+  background-position: center bottom;
+}
+
 #city-overlay-root {
   position: absolute;
   inset: 0;
@@ -16,9 +65,12 @@
 #city-overlay-root.city-overlay--visible { display: flex; }
 
 .city-panel {
-  min-width: 340px;
-  max-width: 440px;
-  padding: 16px 20px 18px;
+  min-width: 420px;
+  max-width: 640px;
+  max-height: 86vh;
+  overflow-y: auto;
+  overflow-x: visible;
+  padding: 16px 22px 18px;
   color: var(--paper-text);
   border-style: solid;
   border-width: 18px;
@@ -36,7 +88,21 @@
   gap: 10px;
   margin-bottom: 10px;
 }
-.city-panel-icon { font-size: 24px; line-height: 1; }
+/* Header icon sits inside a Tiny Swords blue inventory slot —
+   same art as the HUD equipment chits, so the whole UI family
+   reads consistently. */
+.city-panel-icon-slot {
+  width: 34px;
+  height: 34px;
+  background-image: url('/assets/ui/tiny-blue.png');
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.city-panel-icon { font-size: 20px; line-height: 1; filter: drop-shadow(0 1px 0 rgba(0,0,0,0.3)); }
 .city-panel-title {
   flex: 1;
   font-size: 18px;
@@ -44,17 +110,21 @@
   letter-spacing: 2px;
   color: #7b3615;
 }
+/* Close button renders the red-X Tiny Swords icon directly instead
+   of the system-font "×" character — same style as the writing-task
+   close. Transparent background so the icon art does the heavy lift. */
 .city-panel-close {
-  background: transparent;
-  border: 1px solid #3a2a10;
-  color: #3a2a10;
-  font-size: 14px;
-  line-height: 1;
-  width: 22px; height: 22px;
-  border-radius: 3px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: url('/assets/ui/Icon_09.png') center / 20px 20px no-repeat;
+  border: none;
   cursor: pointer;
+  image-rendering: pixelated;
+  flex-shrink: 0;
 }
-.city-panel-close:hover { background: #f0e0c0; }
+.city-panel-close:hover { filter: brightness(1.15); }
+.city-panel-close:active { transform: scale(0.92); }
 
 .city-challenge {
   padding: 6px 10px;
@@ -121,7 +191,7 @@
 .city-rank-pip--filled { background: #a56b12; }
 
 .city-upgrade-buy {
-  min-width: 70px;
+  min-width: 74px;
   padding: 6px 10px;
   font-size: 12px;
   font-weight: bold;
@@ -136,12 +206,48 @@
   border-image-width: 10px;
   border-image-repeat: stretch;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 .city-upgrade-buy:disabled {
   cursor: not-allowed;
   filter: grayscale(0.5) brightness(0.85);
 }
 .city-upgrade-buy:not(:disabled):active { transform: scale(0.97); }
+/* Buy-button children: price + coin icon. The coin is the same
+   Icon_03 PNG we use in the HUD gold readout. */
+.city-buy-cost { font-family: monospace; letter-spacing: 0.5px; }
+.city-buy-coin {
+  width: 14px;
+  height: 14px;
+  background: url('/assets/ui/Icon_03.png') center / contain no-repeat;
+  image-rendering: pixelated;
+}
+/* Padlock for locked-branch buy buttons: a tiny-red tile with a
+   padlock glyph stamped over it, so "locked" reads as Tiny Swords
+   UI rather than a system-font emoji. */
+.city-buy-lock {
+  width: 20px;
+  height: 20px;
+  background-image: url('/assets/ui/tiny-red.png');
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+  position: relative;
+}
+.city-buy-lock::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: url('/assets/ui/Icon_09.png') center / 12px 12px no-repeat;
+  opacity: 0.9;
+}
+.city-buy-max {
+  font-family: monospace;
+  letter-spacing: 1px;
+  font-size: 11px;
+}
 
 .city-panel-footer {
   display: flex;
@@ -154,7 +260,17 @@
   font-size: 14px;
   font-weight: bold;
   color: #a56b12;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
+.city-gold-coin {
+  width: 18px;
+  height: 18px;
+  background: url('/assets/ui/Icon_03.png') center / contain no-repeat;
+  image-rendering: pixelated;
+}
+.city-gold-val { font-family: monospace; font-size: 15px; }
 .city-panel-back {
   font-size: 12px;
   font-weight: bold;
@@ -198,6 +314,10 @@
   border-image-width: 10px;
   border-image-repeat: stretch;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
 }
 .city-task-start:active { transform: scale(0.97); }
 
@@ -235,7 +355,21 @@
   align-items: flex-start;
   margin-bottom: 10px;
 }
-.wt-icon { font-size: 24px; line-height: 1; }
+/* Writing-task header icon uses the same tiny-blue slot treatment as
+   the city panel — one visual language across all menus. */
+.wt-icon-slot {
+  width: 36px;
+  height: 36px;
+  background-image: url('/assets/ui/tiny-blue.png');
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.wt-icon { font-size: 22px; line-height: 1; filter: drop-shadow(0 1px 0 rgba(0,0,0,0.3)); }
 .wt-title-block { flex: 1; min-width: 0; }
 .wt-title {
   font-size: 11px;
@@ -255,15 +389,17 @@
   margin-top: 2px;
 }
 .wt-close {
-  background: transparent;
-  border: 1px solid #3a2a10;
-  color: #3a2a10;
-  font-size: 14px;
-  width: 22px; height: 22px;
-  border-radius: 3px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: url('/assets/ui/Icon_09.png') center / 20px 20px no-repeat;
+  border: none;
   cursor: pointer;
+  image-rendering: pixelated;
+  flex-shrink: 0;
 }
-.wt-close:hover { background: #f0e0c0; }
+.wt-close:hover { filter: brightness(1.15); }
+.wt-close:active { transform: scale(0.92); }
 
 .wt-hint {
   padding: 6px 10px;
@@ -276,7 +412,50 @@
   font-size: 11px;
   color: var(--paper-text-muted);
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
+
+/* Tiny Swords icon chips reused across the writing overlay — replaces
+   the 📝 / 💡 / ⭐ emojis with actual pixel-art icons. All chips use
+   the same tile+icon stack so the UI reads as one asset family.
+   Sizing stays small so they blend into body text. */
+.wt-chip {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+.wt-chip--hint  { background-image: url('/assets/ui/Icon_07.png'); }
+.wt-chip--words { background-image: url('/assets/ui/Icon_02.png'); }
+.wt-chip--ai    { background-image: url('/assets/ui/Icon_10.png'); }
+
+/* Green-wedge tick used by the meter right column when it's satisfied. */
+.wt-tick {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url('/assets/ui/Icon_07.png') center / contain no-repeat;
+  image-rendering: pixelated;
+}
+
+/* Deep-judge score pips — coin for each earned point, greyed coin for
+   missed. 1–5 rating becomes a row of five chips. */
+.wt-score-row { display: inline-flex; gap: 3px; margin: 0 4px; }
+.wt-score-pip {
+  width: 16px;
+  height: 16px;
+  background: url('/assets/ui/Icon_03.png') center / contain no-repeat;
+  image-rendering: pixelated;
+}
+.wt-score-pip--off { filter: grayscale(1) brightness(0.55); opacity: 0.55; }
+.wt-score-num { font-family: monospace; margin-left: 2px; }
 .wt-hint-chips {
   display: flex;
   flex-wrap: wrap;
@@ -322,7 +501,12 @@
   align-items: center;
   padding: 2px 4px;
 }
-.wt-meter-label { font-size: 12px; }
+.wt-meter-label {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .wt-meter-bar {
   position: relative;
   height: 10px;
@@ -359,6 +543,9 @@
   border-image-width: 10px;
   border-image-repeat: stretch;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .wt-deep-note {
   font-size: 10px;
@@ -375,7 +562,14 @@
   border: 1px solid rgba(43, 122, 31, 0.4);
   border-radius: 3px;
 }
-.wt-deep-score { font-size: 13px; font-weight: bold; margin-bottom: 4px; }
+.wt-deep-score {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .wt-deep-feedback { font-size: 12px; line-height: 1.35; }
 
 .wt-footer {
@@ -423,4 +617,398 @@
 .wt-submit:disabled {
   cursor: not-allowed;
   filter: grayscale(0.5) brightness(0.85);
+}
+
+/* ──────── Listening-gate UI ──────── */
+.lt-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 0;
+}
+.lt-speak {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 18px;
+  cursor: pointer;
+  background: transparent;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent;
+  border-image-source: url('/assets/ui/button-blue-9s.png');
+  border-image-slice: 47 45 fill;
+  border-image-width: 10px;
+  border-image-repeat: stretch;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.lt-speak-ico { font-size: 18px; }
+.lt-no-tts { font-size: 12px; color: #5a4020; font-style: italic; }
+.lt-sentence { font-size: 14px; padding: 8px 12px; background: rgba(255, 245, 220, 0.7); border-radius: 4px; }
+.lt-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 520px; }
+.lt-chip {
+  font-size: 13px;
+  padding: 6px 14px;
+  cursor: pointer;
+  background: #f3e6c8;
+  border: 2px solid #8a6a32;
+  border-radius: 20px;
+  color: #3a2a10;
+  font-weight: 600;
+}
+.lt-chip--on {
+  background: #e8c66a;
+  border-color: #5a3e10;
+  box-shadow: inset 0 0 0 2px #fff, 0 2px 4px rgba(0,0,0,0.2);
+}
+.lt-status { font-size: 13px; color: #5a4020; }
+.lt-status--ok { color: #2b7a1f; font-weight: bold; }
+.lt-status--bad { color: #a23030; font-weight: bold; }
+
+/* Sentence with inline gaps — used for the fill-the-blanks listening flow. */
+.lt-sentence-fill {
+  font-size: 18px;
+  line-height: 1.7;
+  padding: 12px 14px;
+  background: rgba(255, 245, 220, 0.7);
+  border-radius: 4px;
+  max-width: 560px;
+  text-align: center;
+  color: #3a2a10;
+}
+.lt-word { padding: 0 2px; }
+.lt-gap {
+  display: inline-block;
+  min-width: 70px;
+  padding: 2px 10px;
+  margin: 0 2px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 0;
+  line-height: 1.3;
+}
+.lt-gap--empty {
+  background: transparent;
+  color: #a23030;
+  border-bottom: 3px solid #8a6a32;
+  border-radius: 0;
+  cursor: default;
+}
+.lt-gap--correct {
+  background: #a8e090;
+  color: #1a4a0f;
+  border: 2px solid #2b7a1f;
+}
+.lt-gap--wrong {
+  background: #e8a8a8;
+  color: #5a1010;
+  border: 2px solid #a23030;
+}
+.lt-chip--used {
+  opacity: 0.35;
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+}
+
+/* ──────── Read-Aloud gate UI ──────── */
+.ra-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 0;
+}
+.ra-sentence {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
+  color: #3a2a10;
+  padding: 10px 14px;
+  background: rgba(255, 245, 220, 0.7);
+  border-radius: 4px;
+  max-width: 520px;
+}
+.ra-word { padding: 0 2px; transition: color 150ms, background 150ms; }
+.ra-word--hit { color: #2b7a1f; background: rgba(67, 160, 44, 0.15); border-radius: 3px; padding: 0 4px; }
+.ra-word--miss { color: #a23030; background: rgba(180, 50, 50, 0.15); border-radius: 3px; padding: 0 4px; }
+.ra-hint-pl { font-size: 12px; color: #5a4020; font-style: italic; }
+.ra-mic {
+  font-size: 14px; font-weight: bold; color: #fff;
+  padding: 10px 22px; cursor: pointer;
+  background: transparent;
+  border-style: solid; border-width: 10px; border-color: transparent;
+  border-image-source: url('/assets/ui/button-red-9s.png');
+  border-image-slice: 47 45 fill; border-image-width: 10px; border-image-repeat: stretch;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.ra-mic--busy { animation: ra-pulse 700ms infinite alternate; }
+.ra-mic-ico { font-size: 18px; }
+@keyframes ra-pulse { from { filter: brightness(0.9); } to { filter: brightness(1.2); } }
+.ra-status { font-size: 13px; color: #5a4020; }
+.ra-status--busy { color: #4a6a20; font-style: italic; }
+.ra-attempts { font-size: 11px; color: #6a5020; }
+.ra-fallback {
+  font-size: 12px; padding: 4px 10px; cursor: pointer;
+  background: transparent; border: 1px solid #8a6a32; border-radius: 3px; color: #5a4020;
+}
+.ra-type-note { font-size: 12px; color: #5a4020; }
+.ra-input {
+  width: 100%; max-width: 480px; min-height: 60px;
+  font-size: 14px; padding: 8px; border-radius: 3px;
+  border: 2px solid #8a6a32; background: #fbf1d8; color: #3a2a10;
+  font-family: inherit;
+}
+
+/* ──────── Cloze gate UI ──────── */
+.cz-body {
+  display: flex; flex-direction: column; gap: 14px;
+  align-items: center; padding: 8px 0;
+}
+.cz-sentence {
+  font-size: 18px; font-weight: 600; color: #3a2a10;
+  padding: 12px 14px; background: rgba(255, 245, 220, 0.7);
+  border-radius: 4px; line-height: 1.6; max-width: 520px;
+  display: inline-flex; flex-wrap: wrap; gap: 4px; align-items: center;
+  justify-content: center;
+}
+.cz-gap {
+  display: inline-block; min-width: 60px; padding: 2px 10px;
+  border-bottom: 3px solid #8a6a32; color: #a23030; font-weight: bold;
+}
+.cz-gap--filled { color: #2b7a1f; border-bottom-color: #2b7a1f; }
+.cz-hint-pl { font-size: 12px; color: #5a4020; font-style: italic; }
+.cz-opts { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.cz-opt {
+  font-size: 15px; font-weight: bold; padding: 8px 20px;
+  cursor: pointer; background: #f3e6c8; border: 2px solid #8a6a32;
+  border-radius: 4px; color: #3a2a10; min-width: 80px;
+}
+.cz-opt--correct {
+  background: #a8e090; border-color: #2b7a1f; color: #1a4a0f;
+}
+.cz-opt--wrong {
+  background: #e8a8a8; border-color: #a23030; color: #5a1010;
+  animation: cz-shake 250ms;
+}
+@keyframes cz-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ──────── Skill-tree view ──────── */
+/* Tree host — no scroll on this layer so hover tooltips can extend
+   beyond the visible node area. If the tree gets taller than the
+   panel, the panel itself scrolls (max-height on .city-panel handles it). */
+.city-tree-host {
+  margin-top: 10px;
+  overflow: visible;
+  position: relative;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+.city-tree-placeholder {
+  padding: 24px;
+  text-align: center;
+  color: #6a5020;
+  font-style: italic;
+}
+.city-tree-locked-hint {
+  padding: 16px;
+  text-align: center;
+  color: #6a5020;
+  font-style: italic;
+  font-size: 13px;
+}
+.st-canvas {
+  position: relative;
+  margin: 0 auto;
+}
+.st-edges {
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+}
+.st-node {
+  position: absolute;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/ui/tiny-blue.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  transition: transform 120ms;
+}
+.st-node:hover { transform: scale(1.08); }
+.st-node-icon {
+  width: 40px; height: 40px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.4));
+}
+.st-node-rank {
+  position: absolute;
+  bottom: 3px; right: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background: #2a1a08;
+  padding: 1px 4px;
+  border-radius: 3px;
+  line-height: 14px;
+}
+.st-node--locked { filter: grayscale(1) brightness(0.6); cursor: help; }
+.st-node--locked .st-node-icon { opacity: 0.5; }
+.st-node--poor { filter: saturate(0.5) brightness(0.85); }
+.st-node--maxed { filter: drop-shadow(0 0 4px #f0c020); }
+.st-node--unlockable { filter: drop-shadow(0 0 4px #6acfff); }
+.st-node { z-index: 1; }
+.st-node:hover,
+.st-node:focus-visible,
+.st-node.st-node--hovering { z-index: 20; }
+
+/* Price / state badge sitting above each node. Shows cost to buy, or
+   MAX, or a padlock when prereqs are unmet. */
+.st-node-badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 34px;
+  height: 18px;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  background: #2a1a08;
+  color: #fff;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  pointer-events: none;
+  z-index: 1;
+}
+.st-node-badge--cost { background: #8a6a20; color: #fff; }
+.st-node-badge--poor { background: #5a4020; color: #d8c090; }
+.st-node-badge--max  { background: #2b7a1f; color: #fff; letter-spacing: 0.5px; }
+.st-node-badge--locked {
+  width: 18px; height: 18px; padding: 0; border-radius: 50%;
+  background: #5a3e10 url('/assets/ui/Icon_09.png') center/70% no-repeat;
+  filter: grayscale(0.4);
+}
+.st-node-badge-coin {
+  width: 13px; height: 13px;
+  background: url('/assets/ui/Icon_03.png') center/contain no-repeat;
+  image-rendering: pixelated;
+  display: inline-block;
+}
+
+/* Hover tooltip rendered via a child <span>. Positioned above the
+   node and revealed on hover. Doesn't intercept pointer events so
+   the popover click flow still works. */
+/* Tooltip anchored BELOW the node — grows downward so hovering the
+   top-row nodes doesn't clip outside the tree viewport. Arrow on top
+   of the tooltip points up at the hovered node. */
+.st-node-tooltip {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  max-width: 280px;
+  padding: 10px 12px;
+  background: #2a1a08;
+  color: #fbf1d8;
+  font-size: 13px;
+  line-height: 1.4;
+  border-radius: 5px;
+  border: 1px solid #6a4e18;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+  display: none;
+  pointer-events: none;
+  text-align: center;
+  white-space: normal;
+  z-index: 5;
+}
+.st-node-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: #2a1a08;
+}
+.st-node:hover .st-node-tooltip,
+.st-node:focus-visible .st-node-tooltip,
+.st-node.st-node--hovering .st-node-tooltip {
+  display: block;
+}
+.st-tt-title { display: inline; font-weight: bold; font-size: 14px; }
+.st-tt-rank { display: inline; margin-left: 4px; color: #c2a060; font-size: 11px; }
+.st-tt-desc { display: block; margin-top: 4px; color: #f3e6c8; }
+.st-tt-cost { display: block; margin-top: 6px; color: #f0c020; font-weight: bold; font-size: 13px; }
+
+.st-popover-host { position: relative; }
+.st-popover {
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+  width: 320px;
+  background: #fbf1d8;
+  border: 2px solid #5a3e10;
+  border-radius: 4px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+.st-pop-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.st-pop-icon { width: 24px; height: 24px; image-rendering: pixelated; }
+.st-pop-title { flex: 1; font-weight: bold; font-size: 14px; color: #3a2a10; }
+.st-pop-rank { font-size: 11px; color: #6a5020; margin-left: 6px; font-weight: normal; }
+.st-pop-close {
+  background: transparent; border: 0; font-size: 18px; cursor: pointer;
+  color: #5a3e10; padding: 0 4px;
+}
+.st-pop-desc { font-size: 13px; color: #3a2a10; margin-bottom: 8px; line-height: 1.35; }
+.st-pop-prereq { font-size: 11px; color: #5a4020; margin-bottom: 8px; }
+.st-pop-prereq-item.missing { color: #a23030; }
+.st-pop-prereq-item.ok { color: #2b7a1f; font-weight: bold; }
+.st-pop-max, .st-pop-locked, .st-pop-poor {
+  font-size: 12px; padding: 6px 8px; border-radius: 3px; text-align: center;
+}
+.st-pop-max { background: rgba(240, 192, 32, 0.2); color: #5a4020; }
+.st-pop-locked { background: rgba(162, 48, 48, 0.15); color: #a23030; }
+.st-pop-poor { background: rgba(90, 70, 20, 0.1); color: #5a4020; }
+.st-pop-buy {
+  font-size: 13px; font-weight: bold; letter-spacing: 1px; color: #fff;
+  padding: 7px 18px; cursor: pointer; width: 100%;
+  background: transparent;
+  border-style: solid; border-width: 10px; border-color: transparent;
+  border-image-source: url('/assets/ui/button-blue-9s.png');
+  border-image-slice: 47 45 fill; border-image-width: 10px; border-image-repeat: stretch;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.st-pop-coin {
+  display: inline-block;
+  width: 14px; height: 14px;
+  background: url('/assets/ui/Icon_03.png') center/contain no-repeat;
+  image-rendering: pixelated;
+  vertical-align: middle;
+  margin-left: 4px;
 }

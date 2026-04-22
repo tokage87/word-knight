@@ -2,8 +2,12 @@ import Phaser from 'phaser';
 import { AK, ANIM, TILE, GRASS_CENTER_FRAME } from '../constants/assetKeys';
 import { LOGICAL_WIDTH, LOGICAL_HEIGHT } from '../constants/layout';
 import { metaStore } from '../systems/MetaStore';
+import { resetSessionUnlocks } from '../systems/CityBranches';
 import { CityOverlay } from '../ui/CityOverlay';
 import { WritingTask } from '../ui/WritingTask';
+import { ListeningTask } from '../ui/ListeningTask';
+import { ReadAloudTask } from '../ui/ReadAloudTask';
+import { ClozeTask } from '../ui/ClozeTask';
 
 // MIASTO scene — aims to reproduce the Tiny Swords map reference as
 // closely as our asset set allows. Key visual beats from that image:
@@ -87,6 +91,11 @@ export class CityScene extends Phaser.Scene {
   }
 
   create() {
+    // Per-visit gate re-unlock: every time the player enters the city,
+    // all four branches are locked again until the gate is re-completed.
+    // Tree ranks persist in MetaStore — only the "enter the building"
+    // challenge repeats, so visits stay exercising language skills.
+    resetSessionUnlocks();
     this.drawWater();
 
     // Main landmass — occupies roughly the top two-thirds of the view
@@ -111,14 +120,39 @@ export class CityScene extends Phaser.Scene {
     this.drawTitleBanner();
     this.drawNewRunButton();
 
+    // Phaser's InputPlugin registers a window-level pointerdown listener
+    // that hit-tests the canvas regardless of which DOM element the
+    // click targeted. Without this guard, clicking a CTA button on e.g.
+    // Biblioteka Magii also counts as a click on whichever building
+    // sprite sits behind the panel — so the panel instantly re-renders
+    // for the wrong branch. We stop propagation on the overlay roots so
+    // the event never reaches window.
+    ['city-overlay-root', 'writing-task-root'].forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el || el.dataset.phaserGuard === '1') return;
+      const stop = (e: Event) => e.stopPropagation();
+      el.addEventListener('pointerdown', stop);
+      el.addEventListener('mousedown', stop);
+      el.addEventListener('touchstart', stop);
+      el.dataset.phaserGuard = '1';
+    });
+
     // Branch-detail HTML overlay — listens for city:branchClick and
     // renders a paper panel with the challenge + upgrade scroll.
     const overlay = new CityOverlay(this);
     overlay.mount();
-    // Writing-task overlay — opens on writing:start, with live
-    // Transformers.js topic scoring and optional WebLLM feedback.
+    // Unlock-gate overlays — four task classes all listen on
+    // `writing:start` and only render for branches whose gate.kind
+    // matches their own. They share #writing-task-root; only one is
+    // ever open at a time.
     const writing = new WritingTask(this);
     writing.mount();
+    const listening = new ListeningTask(this);
+    listening.mount();
+    const readAloud = new ReadAloudTask(this);
+    readAloud.mount();
+    const cloze = new ClozeTask(this);
+    cloze.mount();
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.game.events.emit('city:closed');

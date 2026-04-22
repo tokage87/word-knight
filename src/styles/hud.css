@@ -92,15 +92,26 @@
   background-position: center;
   vertical-align: middle;
 }
-.stat-ico.ico-sword  { background-image: url('/assets/ui/Icon_07.png'); }
-.stat-ico.ico-heart  { background-image: url('/assets/ui/Icon_05.png'); }
-.stat-ico.ico-speed  { background-image: url('/assets/ui/Icon_09.png'); }
+/* Correct mapping (Tiny Swords icons only, no custom art):
+   - damage → Icon_05 (crossed swords)
+   - HP     → Icon_04 (meat — the classic "food = health" metaphor,
+                        since the pack doesn't ship a heart)
+   - speed  → Icon_08 (orange wedge — "direction / forward")
+   - crit   → Icon_11 (stays as-is for now)
+   Previous mapping used Icon_07 for sword and Icon_05 for heart,
+   which put *actual* crossed-sword art on the HP row. */
+.stat-ico.ico-sword  { background-image: url('/assets/ui/Icon_05.png'); }
+.stat-ico.ico-heart  { background-image: url('/assets/ui/Icon_04.png'); }
+.stat-ico.ico-speed  { background-image: url('/assets/ui/Icon_08.png'); }
 .stat-ico.ico-crit   { background-image: url('/assets/ui/Icon_11.png'); }
 
 /* ───── Top-right gold ───── */
+/* Sits to the LEFT of the pause button so they don't stack on top of
+   each other. Pause button anchors to right: 10px; gold panel leaves
+   ~46px clearance for it. */
 .gold-panel {
   top: 10px;
-  right: 10px;
+  right: 56px;
   padding: 4px 10px 4px 6px;
   display: flex;
   align-items: center;
@@ -336,10 +347,13 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-.buff-ico.ico-sword  { background-image: url('/assets/ui/Icon_07.png'); }
+/* Placeholder buff row icons — use the correct Tiny Swords art per
+   buff type: crossed swords for attack, orange wedge for range, gear
+   for evasion, green wedge for regen. */
+.buff-ico.ico-sword  { background-image: url('/assets/ui/Icon_05.png'); }
 .buff-ico.ico-arrow  { background-image: url('/assets/ui/Icon_08.png'); }
-.buff-ico.ico-ghost  { background-image: url('/assets/ui/Icon_12.png'); }
-.buff-ico.ico-leaf   { background-image: url('/assets/ui/Icon_09.png'); }
+.buff-ico.ico-ghost  { background-image: url('/assets/ui/Icon_10.png'); }
+.buff-ico.ico-leaf   { background-image: url('/assets/ui/Icon_07.png'); }
 .buff-sub {
   font-size: 8px;
   color: var(--paper-text-muted);
@@ -373,7 +387,8 @@
   background-repeat: no-repeat;
   display: inline-block;
 }
-.bar-ico-img.ico-heart { background-image: url('/assets/ui/Icon_05.png'); }
+/* Same HP-icon correction as the stat panel above — meat, not swords. */
+.bar-ico-img.ico-heart { background-image: url('/assets/ui/Icon_04.png'); }
 .bar-badge {
   display: inline-block;
   padding: 2px 6px;
@@ -476,12 +491,14 @@
 }
 
 /* ───── Pause button + overlay ───── */
+/* Top-right corner so the boss HP bar (top-center) has room to render
+   without being covered. */
 .pause-btn {
   position: absolute;
   top: 10px;
-  left: 50%;
-  transform: translateX(-50%) scale(var(--hud-scale));
-  transform-origin: top center;
+  right: 10px;
+  transform: scale(var(--hud-scale));
+  transform-origin: top right;
   pointer-events: auto;
   background: transparent;
   color: #fff;
@@ -499,7 +516,7 @@
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   z-index: 15;
 }
-.pause-btn:active { transform: translateX(-50%) scale(calc(var(--hud-scale) * 0.95)); }
+.pause-btn:active { transform: scale(calc(var(--hud-scale) * 0.95)); }
 
 .pause-overlay {
   position: absolute;
@@ -512,6 +529,19 @@
   pointer-events: auto;
 }
 .pause-overlay--visible { display: flex; }
+
+/* When paused, hide every bright HUD chip so the dim overlay actually
+   reads as "paused" — otherwise stats/gold/boss bar bleed through the
+   72% tint (the gold coin especially stood out). Pause button stays
+   visible so it can toggle back. */
+#hud-root.hud--paused .hud-top-left,
+#hud-root.hud--paused .hud-top-right,
+#hud-root.hud--paused .hud-top-center,
+#hud-root.hud--paused .hud-bottom-left,
+#hud-root.hud--paused .hud-bottom-center,
+#hud-root.hud--paused .pause-btn {
+  display: none;
+}
 .pause-panel {
   min-width: 260px;
   max-width: 360px;
@@ -546,16 +576,106 @@
   text-align: left;
 }
 .pause-stat-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  align-items: center;
+  gap: 8px;
   padding: 2px 4px;
   border-bottom: 1px dashed rgba(58, 42, 16, 0.25);
 }
+.pause-stat-label { color: var(--paper-text); }
 .pause-stat-val {
   font-weight: bold;
   color: #7b3615;
+  font-family: monospace;
 }
+
+/* Buttons inside the pause panel (Resume + City). Reuse the existing
+   blue/red 9-slice button motifs so they match the game-over panel. */
+.pause-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.pause-resume, .pause-city {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #fff;
+  padding: 6px 18px;
+  cursor: pointer;
+  background: transparent;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent;
+  border-image-slice: 47 45 fill;
+  border-image-width: 10px;
+  border-image-repeat: stretch;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.pause-resume { border-image-source: url('/assets/ui/button-blue-9s.png'); }
+.pause-city   { border-image-source: url('/assets/ui/button-red-9s.png'); }
+.pause-resume:active, .pause-city:active { transform: scale(0.97); }
+
+/* Shared title row for pause + game-over — an icon chit sits next to
+   the bold headline so each panel reads as "a thing" rather than just
+   a floating word. */
+.panel-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.panel-title-icon {
+  width: 28px;
+  height: 28px;
+  background-image: url('/assets/ui/tiny-blue.png');
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+  position: relative;
+  flex-shrink: 0;
+}
+.panel-title-icon::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: url('/assets/ui/Icon_10.png') center / contain no-repeat;
+  image-rendering: pixelated;
+}
+.panel-title-icon--fallen {
+  background-image: url('/assets/ui/tiny-red.png');
+}
+.panel-title-icon--fallen::after {
+  background-image: url('/assets/ui/Icon_09.png');
+}
+
+/* Shared icon chip used by pause + game-over rows. Each variant
+   picks one of the Tiny Swords icons so the row reads at a glance. */
+.stat-chip {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+}
+.stat-chip.ico-ok       { background-image: url('/assets/ui/Icon_07.png'); }
+.stat-chip.ico-bad      { background-image: url('/assets/ui/Icon_09.png'); }
+.stat-chip.ico-word     { background-image: url('/assets/ui/Icon_02.png'); }
+.stat-chip.ico-sentence { background-image: url('/assets/ui/Icon_12.png'); }
+.stat-chip.ico-sentence-bad {
+  background-image: url('/assets/ui/Icon_12.png');
+  filter: grayscale(0.8) brightness(0.85);
+}
+.stat-chip.ico-story    { background-image: url('/assets/ui/Icon_11.png'); }
+.stat-chip.ico-story-bad {
+  background-image: url('/assets/ui/Icon_11.png');
+  filter: grayscale(0.8) brightness(0.85);
+}
+.stat-chip.ico-level    { background-image: url('/assets/ui/Icon_03.png'); }
 
 /* ───── Game-over overlay ─────
    Structurally the same as .pause-overlay but always red-tinged and
@@ -608,15 +728,18 @@
   margin-bottom: 14px;
 }
 .gameover-stat-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  align-items: center;
+  gap: 8px;
   padding: 2px 4px;
   border-bottom: 1px dashed rgba(58, 42, 16, 0.25);
 }
+.gameover-stat-label { color: var(--paper-text); }
 .gameover-stat-val {
   font-weight: bold;
   color: #7b3615;
+  font-family: monospace;
 }
 .gameover-restart {
   font-size: 14px;
