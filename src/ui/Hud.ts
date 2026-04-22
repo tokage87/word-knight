@@ -40,6 +40,11 @@ export class Hud {
     const root = document.getElementById('hud-root');
     if (!root) return;
     this.root = root;
+    // If the player navigated to City from a paused state (MIASTO on the
+    // pause panel), the hud--paused class lingered through unmount. A
+    // fresh run must start unpaused — otherwise every hud section stays
+    // hidden by the .hud--paused CSS while only quiz-root shows.
+    root.classList.remove('hud--paused');
     root.innerHTML = HTML;
     this.pauseOverlay = root.querySelector<HTMLElement>('.pause-overlay') ?? undefined;
     this.pauseStats = root.querySelector<HTMLElement>('.pause-stats') ?? undefined;
