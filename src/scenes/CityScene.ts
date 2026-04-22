@@ -119,6 +119,7 @@ export class CityScene extends Phaser.Scene {
     this.drawAmbientLife();
     this.drawTitleBanner();
     this.drawNewRunButton();
+    this.drawJournalButton();
 
     // Phaser's InputPlugin registers a window-level pointerdown listener
     // that hit-tests the canvas regardless of which DOM element the
@@ -461,6 +462,34 @@ export class CityScene extends Phaser.Scene {
       this.scene.stop('City');
       this.scene.start('Game');
       this.scene.launch('UI');
+    });
+  }
+
+  // Secondary button that opens the parent/teacher journal — a list
+  // of every writing submission the student has made. Lives to the
+  // right of NOWA PRZYGODA so parents can skim without interrupting
+  // the kid's run flow.
+  private drawJournalButton() {
+    const btnX = LOGICAL_WIDTH - 58;
+    const btnY = LOGICAL_HEIGHT - 22;
+    const bg = this.add
+      .rectangle(btnX, btnY, 100, 30, 0x3a6fa6, 1)
+      .setStrokeStyle(2, 0x1e3a57)
+      .setDepth(30)
+      .setInteractive({ useHandCursor: true });
+    this.add
+      .text(btnX, btnY, 'DZIENNIK', {
+        fontFamily: 'monospace',
+        fontSize: '11px',
+        fontStyle: 'bold',
+        color: '#fff',
+      })
+      .setOrigin(0.5)
+      .setDepth(31);
+    bg.on('pointerover', () => bg.setFillStyle(0x5a90c5, 1));
+    bg.on('pointerout',  () => bg.setFillStyle(0x3a6fa6, 1));
+    bg.on('pointerdown', () => {
+      this.game.events.emit('city:openJournal');
     });
   }
 }

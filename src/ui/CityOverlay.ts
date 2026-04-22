@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { BRANCH_DEFS, type BranchDef, type BranchId, gateCta } from '../systems/CityBranches';
-import { metaStore } from '../systems/MetaStore';
+import { metaStore, type WritingSubmission } from '../systems/MetaStore';
 import { SkillTreeView } from './SkillTreeView';
 
 // HTML overlay for the City's branch-detail view. Lives in
@@ -24,13 +24,25 @@ export class CityOverlay {
     root.classList.remove('city-overlay--visible');
 
     this.scene.game.events.on('city:branchClick', this.onBranchClick, this);
+    this.scene.game.events.on('city:openJournal', this.onOpenJournal, this);
     this.scene.game.events.on('writing:completed', this.onWritingCompleted, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.scene.game.events.off('city:branchClick', this.onBranchClick, this);
+      this.scene.game.events.off('city:openJournal', this.onOpenJournal, this);
       this.scene.game.events.off('writing:completed', this.onWritingCompleted, this);
       window.removeEventListener('keydown', this.onKey);
       if (this.root) this.root.innerHTML = '';
     });
+  }
+
+  private onOpenJournal() {
+    if (!this.root || !document.body.contains(this.root)) {
+      this.root = document.getElementById('city-overlay-root') ?? undefined;
+    }
+    if (!this.root) return;
+    this.renderJournal();
+    this.root.classList.add('city-overlay--visible');
+    window.addEventListener('keydown', this.onKey);
   }
 
   // Re-render the city panel when a gate unlocks a branch, so the
@@ -129,6 +141,105 @@ export class CityOverlay {
       this.scene.game.events.emit('writing:start', { branchId: branch.id });
     });
   }
+
+  // Renders the parent/teacher journal — every writing submission the
+  // student has made, newest first. No gameplay state here, just a
+  // read-only review surface. Same defensive wt-root clear as render().
+  private renderJournal() {
+    if (!this.root) return;
+    const wtRoot = document.getElementById('writing-task-root');
+    if (wtRoot) {
+      wtRoot.classList.remove('writing-task--visible');
+      wtRoot.innerHTML = '';
+    }
+    const submissions = metaStore.getWritingSubmissions();
+    const bodyBlock =
+      submissions.length === 0
+        ? `<div class="city-journal-empty">Ukończ pierwsze wyzwanie, żeby zobaczyć wpisy tutaj.</div>`
+        : `<div class="city-journal-list">${submissions.map(renderSubmissionCard).join('')}</div>`;
+
+    const summary =
+      submissions.length === 0
+        ? 'Brak wpisów'
+        : `${submissions.length} ${submissionCountWord(submissions.length)} · ostatni ${relativeTime(submissions[0]!.submittedAt)}`;
+
+    this.root.innerHTML = `
+      <div class="city-panel city-journal-panel paper-scroll">
+        <div class="city-panel-header">
+          <div class="city-panel-icon-slot"><span class="city-panel-icon">📖</span></div>
+          <div class="city-panel-title">Dziennik postępów</div>
+          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+        </div>
+        <div class="city-journal-summary">${escapeHtml(summary)}</div>
+        ${bodyBlock}
+        <div class="city-panel-footer">
+          <button class="city-panel-back" type="button">WRÓĆ</button>
+        </div>
+      </div>
+    `;
+
+    this.root.querySelector('.city-panel-close')!.addEventListener('click', () => this.hide());
+    this.root.querySelector('.city-panel-back')!.addEventListener('click', () => this.hide());
+
+    // Expand/collapse individual cards on click. Default is collapsed
+    // so parents can scan the list before diving into one entry.
+    this.root.querySelectorAll<HTMLElement>('.city-journal-card').forEach((card) => {
+      card.addEventListener('click', (e) => {
+        // Don't collapse when clicking inside the already-open text (so
+        // selections for copy-paste don't trigger a re-render).
+        if ((e.target as HTMLElement).closest('.city-journal-text')) return;
+        card.classList.toggle('city-journal-card--open');
+      });
+    });
+  }
+}
+
+function renderSubmissionCard(s: WritingSubmission): string {
+  const branchLabel = BRANCH_DEFS[s.branch]?.label ?? s.branch;
+  const when = `${formatAbsoluteDate(s.submittedAt)} · ${relativeTime(s.submittedAt)}`;
+  return `
+    <div class="city-journal-card">
+      <div class="city-journal-card-header">
+        <span class="city-journal-branch">${escapeHtml(branchLabel)}</span>
+        <span class="city-journal-when">${escapeHtml(when)}</span>
+      </div>
+      <div class="city-journal-prompt"><b>${escapeHtml(s.prompt)}</b></div>
+      <div class="city-journal-meters">
+        <span class="city-journal-meter">Słów: <b>${s.wordCount}</b></span>
+        <span class="city-journal-meter">Różnych: <b>${s.distinctCount}</b></span>
+      </div>
+      <div class="city-journal-text">${escapeHtml(s.text)}</div>
+    </div>
+  `;
+}
+
+function submissionCountWord(n: number): string {
+  // Polish plural: 1 wpis, 2-4 wpisy, 5+ wpisów. Handles teens
+  // correctly (12 wpisów, not 12 wpisy).
+  const abs = Math.abs(n);
+  if (abs === 1) return 'wpis';
+  const last = abs % 10;
+  const last2 = abs % 100;
+  if (last >= 2 && last <= 4 && (last2 < 12 || last2 > 14)) return 'wpisy';
+  return 'wpisów';
+}
+
+function relativeTime(ts: number): string {
+  const diff = Date.now() - ts;
+  const mins = Math.floor(diff / 60_000);
+  if (mins < 1) return 'przed chwilą';
+  if (mins < 60) return `${mins} min temu`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours} godz. temu`;
+  const days = Math.floor(hours / 24);
+  if (days < 30) return `${days} dni temu`;
+  return `${Math.floor(days / 30)} mies. temu`;
+}
+
+function formatAbsoluteDate(ts: number): string {
+  const d = new Date(ts);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${pad(d.getDate())}.${pad(d.getMonth() + 1)}.${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
 }
 
 function escapeHtml(s: string): string {
