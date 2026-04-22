@@ -13,3 +13,12 @@ sprites/
 # Local Claude Code settings (tokens, per-machine prefs).
 .claude/settings.local.json
 
+# Generated HTML catalogs — regenerate with
+# `npm run curriculum:vacab-list` or by running the asset script
+# directly. Keeping them out of git avoids a diff every time the
+# underlying data shifts.
+/Vacab_list.html
+/asset_collection.html
+
+# Personal scratch folder — source material + notes not shipped.
+/zadania gpt/
