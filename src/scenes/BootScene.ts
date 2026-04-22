@@ -176,6 +176,26 @@ export class BootScene extends Phaser.Scene {
       frameHeight: UNIT_FRAME,
     });
     this.load.image(AK.arrow, 'assets/archer/Arrow.png');
+
+    // Monk ally sprites (used by Cleric, Fire Monk, Ice Monk, Wind Monk).
+    // Shared 192px frame size; Heal.png is the cast animation we reuse
+    // for every monk variant.
+    this.load.spritesheet(AK.monkIdle, 'assets/monk/Idle.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.monkRun, 'assets/monk/Run.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.monkHeal, 'assets/monk/Heal.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.monkHealEffect, 'assets/monk/Heal_Effect.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
   }
 
   create() {
@@ -216,6 +236,12 @@ export class BootScene extends Phaser.Scene {
     this.buildAnim(ANIM.archerIdle, AK.archerIdle, 6, 7, -1);
     this.buildAnim(ANIM.archerRun, AK.archerRun, 4, 10, -1);
     this.buildAnim(ANIM.archerShoot, AK.archerShoot, 8, 14, 0);
+    // Monk ally animations. Cast is the Heal sheet — it's the only
+    // "action" animation the monk sprite ships with, so we reuse it
+    // for every monk-flavored cast (cleric heal + offensive casts).
+    this.buildAnim(ANIM.monkIdle, AK.monkIdle, 6, 7, -1);
+    this.buildAnim(ANIM.monkRun, AK.monkRun, 4, 10, -1);
+    this.buildAnim(ANIM.monkCast, AK.monkHeal, 11, 14, 0);
 
     this.scene.start('Game');
     this.scene.launch('UI');

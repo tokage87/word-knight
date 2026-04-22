@@ -29,9 +29,9 @@ export class Hud {
   private hpFill?: HTMLElement;
   private hpText?: HTMLElement;
   private expFill?: HTMLElement;
-  private spellIcons: Record<string, { root: HTMLElement; overlay: HTMLElement; text: HTMLElement; lock?: HTMLElement; rank?: HTMLElement }> = {};
-  // Ally ability slots — same shape as spellIcons so the render logic
-  // can share code. Keyed by AllyKind (currently just 'fire-archer').
+  // Ally ability slots — the post-rework ability row is entirely
+  // companion-driven. Each key is an AllyKind; the values mirror the
+  // element refs we need to update per frame.
   private allyIcons: Record<string, { root: HTMLElement; overlay: HTMLElement; text: HTMLElement; lock?: HTMLElement }> = {};
   private bossBar?: HTMLElement;
   private bossFill?: HTMLElement;
@@ -86,19 +86,12 @@ export class Hud {
     this.pauseResumeBtn = root.querySelector<HTMLElement>('.pause-resume') ?? undefined;
     this.pauseCityBtn = root.querySelector<HTMLElement>('.pause-city') ?? undefined;
 
-    (['fire', 'ice', 'heal', 'lightning'] as const).forEach((id) => {
-      const ic = root.querySelector<HTMLElement>(`.ability[data-spell="${id}"]`);
-      if (!ic) return;
-      const overlay = ic.querySelector<HTMLElement>('.ability-cd-overlay')!;
-      const text = ic.querySelector<HTMLElement>('.ability-cd-text')!;
-      const lock = ic.querySelector<HTMLElement>('.ability-lock') ?? undefined;
-      const rank = ic.querySelector<HTMLElement>('.ability-rank') ?? undefined;
-      this.spellIcons[id] = { root: ic, overlay, text, lock, rank };
-    });
-    // Ally ability slots share the same DOM shape as spell slots so
-    // the player can't tell (or care) whether a given cooldown is a
-    // spell or a companion.
-    (['fire-archer'] as const).forEach((kind) => {
+    // Ally ability slots — the in-tree rework replaced the old spell
+    // slots (fire/ice/heal) with companions, so the ability row is
+    // entirely ally-driven now. Each slot shows the same sweep+text
+    // cooldown pattern as the old spell slots used.
+    const allyKinds = ['fire-archer', 'fire-monk', 'ice-archer', 'ice-monk', 'cleric', 'wind-monk'] as const;
+    allyKinds.forEach((kind) => {
       const ic = root.querySelector<HTMLElement>(`.ability[data-ally="${kind}"]`);
       if (!ic) return;
       const overlay = ic.querySelector<HTMLElement>('.ability-cd-overlay')!;
@@ -141,14 +134,12 @@ export class Hud {
     };
 
     const level = (registry.get('level') as number | undefined) ?? 1;
-    const ranks = (registry.get('spellsRank') as Record<string, number> | undefined) ?? {
-      fire: 0, ice: 0, heal: 0,
-    };
-    this.updateSpell(registry, 'fire', ranks.fire ?? 0);
-    this.updateSpell(registry, 'ice', ranks.ice ?? 0);
-    this.updateSpell(registry, 'heal', ranks.heal ?? 0);
-    this.updateLightning();
-    this.updateAlly(registry, 'fire-archer');
+    // Ability row is entirely ally-driven after the Tier-2 rework. Loop
+    // over every ally slot we know about and let each row manage its
+    // locked / ready / cooldown state via the snapshot in the registry.
+    (['fire-archer', 'fire-monk', 'ice-archer', 'ice-monk', 'cleric', 'wind-monk'] as const).forEach((k) => {
+      this.updateAlly(registry, k);
+    });
 
     const expPct = (registry.get('expPct') as number | undefined) ?? 0;
     if (this.expFill) this.expFill.style.width = `${Math.min(100, expPct)}%`;
@@ -352,56 +343,6 @@ export class Hud {
     // by registry 'bossAlive' in tick().
   }
 
-  private updateSpell(
-    registry: Phaser.Data.DataManager,
-    id: 'fire' | 'ice' | 'heal',
-    rank: number,
-  ) {
-    const icon = this.spellIcons[id];
-    if (!icon) return;
-    const locked = rank <= 0;
-
-    icon.root.classList.toggle('ability--locked', locked);
-    if (icon.lock) icon.lock.style.display = locked ? '' : 'none';
-    if (icon.rank) {
-      icon.rank.style.display = locked ? 'none' : '';
-      icon.rank.textContent = rank > 1 ? toRoman(rank) : '';
-    }
-
-    if (locked) {
-      icon.overlay.style.height = '100%';
-      icon.text.textContent = '';
-      icon.root.classList.remove('ability--ready');
-      icon.root.setAttribute(
-        'data-tooltip',
-        `${SPELL_LOCKED_LABEL[id]}.\nAwansuj i wybierz, aby odblokować.`,
-      );
-      return;
-    }
-
-    const cd = registry.get(`${id}Cd`) ?? 0;
-    const base = registry.get(`${id}CdBase`) ?? 1;
-    const frac = base > 0 ? cd / base : 0;
-    icon.overlay.style.height = `${Math.max(0, Math.min(1, frac)) * 100}%`;
-    icon.text.textContent = cd <= 0 ? '' : `${(cd / 1000).toFixed(1)}s`;
-    icon.root.classList.toggle('ability--ready', cd <= 0);
-    const rankStr = rank > 1 ? ` ${toRoman(rank)}` : '';
-    const status = cd <= 0 ? 'Gotowe' : `${(cd / 1000).toFixed(1)}s`;
-    icon.root.setAttribute(
-      'data-tooltip',
-      `${SPELL_LABEL[id]}${rankStr}\n${SPELL_DESC[id]}\nOdnowienie: ${(base / 1000).toFixed(0)}s · ${status}`,
-    );
-  }
-
-  private updateLightning() {
-    const icon = this.spellIcons['lightning'];
-    if (!icon) return;
-    // Lightning is intentionally not in the roguelite pool yet — keep it
-    // permanently locked with a padlock instead of a level badge.
-    icon.root.classList.add('ability--locked');
-    if (icon.lock) icon.lock.textContent = '🔒';
-  }
-
   // Update a companion ability slot. Reads the live cooldown snapshot
   // that GameScene publishes each frame; if the ally hasn't been
   // spawned (tree node not unlocked), the slot shows the padlock.
@@ -430,9 +371,11 @@ export class Hud {
     icon.text.textContent = snap.remainingMs <= 0 ? '' : `${(snap.remainingMs / 1000).toFixed(1)}s`;
     icon.root.classList.toggle('ability--ready', snap.remainingMs <= 0);
     const status = snap.remainingMs <= 0 ? 'Gotowy' : `${(snap.remainingMs / 1000).toFixed(1)}s`;
+    const label = ALLY_LABELS[kind] ?? kind;
+    const desc = ALLY_DESCS[kind] ?? '';
     icon.root.setAttribute(
       'data-tooltip',
-      `Ognisty Łucznik\nWystrzeliwuje ognistą strzałę w najbliższego wroga.\nOdnowienie: ${(snap.totalMs / 1000).toFixed(0)}s · ${status}`,
+      `${label}\n${desc}\nOdnowienie: ${(snap.totalMs / 1000).toFixed(0)}s · ${status}`,
     );
   }
 
@@ -442,27 +385,23 @@ export class Hud {
   }
 }
 
-function toRoman(n: number): string {
-  return n === 1 ? 'I' : n === 2 ? 'II' : n === 3 ? 'III' : String(n);
-}
-
-const SPELL_LABEL: Record<'fire' | 'ice' | 'heal', string> = {
-  fire: 'Ogień',
-  ice: 'Lód',
-  heal: 'Leczenie',
+// Ally labels + short descriptions used by the ability-row tooltip.
+// Keep these in sync with src/entities/Ally.ts AllyKind / PROFILES.
+const ALLY_LABELS: Record<string, string> = {
+  'fire-archer': 'Ognisty Łucznik',
+  'fire-monk':   'Ognisty Mnich',
+  'ice-archer':  'Lodowy Łucznik',
+  'ice-monk':    'Lodowy Mnich',
+  cleric:        'Uzdrowiciel',
+  'wind-monk':   'Wietrzny Mnich',
 };
-// Polish adjectives must agree with the noun's gender: Ogień/Lód are
-// masculine ("zablokowany"), Leczenie is neuter ("zablokowane"). One
-// map per spell avoids a template string that's grammatically wrong.
-const SPELL_LOCKED_LABEL: Record<'fire' | 'ice' | 'heal', string> = {
-  fire: 'Ogień — zablokowany',
-  ice: 'Lód — zablokowany',
-  heal: 'Leczenie — zablokowane',
-};
-const SPELL_DESC: Record<'fire' | 'ice' | 'heal', string> = {
-  fire: 'Obszarowe obrażenia ogniem dla wszystkich wrogów na ekranie.',
-  ice: 'Spowalnia i rani najbliższych wrogów.',
-  heal: 'Przywraca HP rycerzowi.',
+const ALLY_DESCS: Record<string, string> = {
+  'fire-archer': 'Strzela ognistymi strzałami w najbliższego wroga.',
+  'fire-monk':   'Rzuca ciężką kulą ognia w pojedynczego wroga.',
+  'ice-archer':  'Strzela lodowymi strzałami, spowalnia wrogów.',
+  'ice-monk':    'Ciska lodowym pociskiem z silnym spowolnieniem.',
+  cleric:        'Regularnie leczy rycerza podczas walki.',
+  'wind-monk':   'Szybko rzuca lekkie pociski wiatru.',
 };
 
 const HTML = `
@@ -510,33 +449,38 @@ const HTML = `
 
   <div class="hud-bottom-center">
     <div class="abilities-row">
-      <div class="ability ability--locked" data-spell="fire" data-tooltip="Ogień — zablokowany. Awansuj, aby odblokować.">
+      <div class="ability ability--locked" data-ally="fire-archer" data-tooltip="Ognisty Łucznik — zablokowany. Odblokuj w Sali Bojowej.">
+        <span class="ability-glyph">🏹</span>
+        <div class="ability-cd-overlay"></div>
+        <span class="ability-cd-text"></span>
+        <span class="ability-lock">🔒</span>
+      </div>
+      <div class="ability ability--locked" data-ally="fire-monk" data-tooltip="Ognisty Mnich — zablokowany. Odblokuj w Sali Bojowej.">
         <span class="ability-glyph">🔥</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
-        <span class="ability-rank"></span>
       </div>
-      <div class="ability ability--locked" data-spell="ice" data-tooltip="Lód — zablokowany. Awansuj, aby odblokować.">
+      <div class="ability ability--locked" data-ally="ice-archer" data-tooltip="Lodowy Łucznik — zablokowany. Odblokuj w Bibliotece Magii.">
         <span class="ability-glyph">❄</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
-        <span class="ability-rank"></span>
       </div>
-      <div class="ability ability--locked" data-spell="heal" data-tooltip="Leczenie — zablokowane. Awansuj, aby odblokować.">
-        <img class="ability-glyph-img" src="assets/ui/Icon_05.png" alt="heal" />
+      <div class="ability ability--locked" data-ally="ice-monk" data-tooltip="Lodowy Mnich — zablokowany. Odblokuj w Bibliotece Magii.">
+        <span class="ability-glyph">🧊</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
-        <span class="ability-rank"></span>
       </div>
-      <div class="ability ability--locked" data-spell="lightning" data-tooltip="Błyskawica — jeszcze niedostępna.">
-        <span class="ability-glyph">⚡</span>
+      <div class="ability ability--locked" data-ally="cleric" data-tooltip="Uzdrowiciel — zablokowany. Odblokuj w Bibliotece Magii.">
+        <span class="ability-glyph">✨</span>
+        <div class="ability-cd-overlay"></div>
+        <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="fire-archer" data-tooltip="Ognisty Łucznik — zablokowany. Odblokuj w mieście (Sala Bojowa).">
-        <span class="ability-glyph">🏹</span>
+      <div class="ability ability--locked" data-ally="wind-monk" data-tooltip="Wietrzny Mnich — zablokowany. Odblokuj w Kręgu Uczonych.">
+        <span class="ability-glyph">🌀</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>

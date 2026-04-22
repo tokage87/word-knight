@@ -14,6 +14,7 @@ export interface ProjectileConfig {
   tint?: number;         // optional color tint (Fire Archer = red)
   scale?: number;        // render scale (Arrow.png is 64x64, too big at 1.0)
   ttlMs?: number;        // max flight time before self-destruct
+  slowMs?: number;       // optional slow duration applied on hit
 }
 
 export class Projectile extends Phaser.GameObjects.Image {
@@ -21,6 +22,7 @@ export class Projectile extends Phaser.GameObjects.Image {
   private vy: number;
   private damage: number;
   private ttlMs: number;
+  private slowMs: number;
 
   constructor(scene: Phaser.Scene, x: number, y: number, cfg: ProjectileConfig) {
     super(scene, x, y, cfg.textureKey);
@@ -36,6 +38,7 @@ export class Projectile extends Phaser.GameObjects.Image {
     this.vy = (dy / dist) * cfg.speed;
     this.damage = cfg.damage;
     this.ttlMs = cfg.ttlMs ?? 2000;
+    this.slowMs = cfg.slowMs ?? 0;
     // Rotate sprite to face travel direction. Arrow.png points right
     // by default, so atan2 gives us the correct visual angle.
     this.setRotation(Math.atan2(dy, dx));
@@ -64,6 +67,7 @@ export class Projectile extends Phaser.GameObjects.Image {
       const dy = e.y - this.y;
       if (dx * dx + dy * dy < HIT_RADIUS * HIT_RADIUS) {
         e.takeDamage(this.damage);
+        if (this.slowMs > 0) e.applySlow(this.slowMs);
         return false;
       }
     }

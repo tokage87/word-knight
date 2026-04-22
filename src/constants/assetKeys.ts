@@ -34,6 +34,13 @@ export const AK = {
   archerRun: 'archer-run',
   archerShoot: 'archer-shoot',
   arrow: 'arrow',
+  // Monk: 192px frame. Idle 6f, Run 4f, Heal 11f. Heal_Effect is an
+  // overlay sprite (not currently rendered — kept for future cleric
+  // polish).
+  monkIdle: 'monk-idle',
+  monkRun: 'monk-run',
+  monkHeal: 'monk-heal',
+  monkHealEffect: 'monk-heal-effect',
 
   // Terrain & props
   tilemap: 'tilemap',
@@ -95,6 +102,9 @@ export const ANIM = {
   archerIdle: 'archer-idle-loop',
   archerRun: 'archer-run-loop',
   archerShoot: 'archer-shoot-once',
+  monkIdle: 'monk-idle-loop',
+  monkRun: 'monk-run-loop',
+  monkCast: 'monk-cast-once',
 } as const;
 
 // Tiny Swords unit spritesheets are always 192x192 per frame.
