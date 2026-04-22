@@ -28,6 +28,13 @@ export const AK = {
   pawnYellow: 'pawn-yellow',
   pawnRed: 'pawn-red',
 
+  // Ally units (tier-2 follower system). Blue archer shares the knight's
+  // 192px frame size. Idle/Run/Shoot are 6/4/8 frames.
+  archerIdle: 'archer-idle',
+  archerRun: 'archer-run',
+  archerShoot: 'archer-shoot',
+  arrow: 'arrow',
+
   // Terrain & props
   tilemap: 'tilemap',
   tree: 'tree',
@@ -85,6 +92,9 @@ export const ANIM = {
   cityTreePineSway: 'city-tree-pine-sway-loop',
   cityTreeLeafySway: 'city-tree-leafy-sway-loop',
   citySoldierIdle: 'city-soldier-idle-loop',
+  archerIdle: 'archer-idle-loop',
+  archerRun: 'archer-run-loop',
+  archerShoot: 'archer-shoot-once',
 } as const;
 
 // Tiny Swords unit spritesheets are always 192x192 per frame.

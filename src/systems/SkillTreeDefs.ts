@@ -58,13 +58,16 @@ const fireNodes: TreeNode[] = [
     position: { q: -2, r: 1 },
   },
   {
+    // Node ID is stable — old saves with this rank unlocked continue
+    // to route to the allyUnlock handler. The *effect* changed from
+    // a spell-unlock into an ally-unlock (Tier-2 rework, 2026-04-22).
     id: 'fire.arrow.unlock',
-    label: 'Ognista Strzała',
-    desc: () => 'Odblokuj: szybki pocisk (15 obr., co 3s)',
+    label: 'Ognisty Łucznik',
+    desc: () => 'Łucznik dołącza do drużyny i strzela ognistymi strzałami',
     icon: 'assets/ui/Icon_02.png',
     maxRank: 1,
     costCurve: 'spellUnlock',
-    effect: { kind: 'spellUnlock', spellId: 'fireArrow' },
+    effect: { kind: 'allyUnlock', allyKind: 'fire-archer' },
     requires: ['fire.dmg1'],
     position: { q: 1, r: 2 },
   },

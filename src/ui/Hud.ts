@@ -30,6 +30,9 @@ export class Hud {
   private hpText?: HTMLElement;
   private expFill?: HTMLElement;
   private spellIcons: Record<string, { root: HTMLElement; overlay: HTMLElement; text: HTMLElement; lock?: HTMLElement; rank?: HTMLElement }> = {};
+  // Ally ability slots — same shape as spellIcons so the render logic
+  // can share code. Keyed by AllyKind (currently just 'fire-archer').
+  private allyIcons: Record<string, { root: HTMLElement; overlay: HTMLElement; text: HTMLElement; lock?: HTMLElement }> = {};
   private bossBar?: HTMLElement;
   private bossFill?: HTMLElement;
   private expText?: HTMLElement;
@@ -92,6 +95,17 @@ export class Hud {
       const rank = ic.querySelector<HTMLElement>('.ability-rank') ?? undefined;
       this.spellIcons[id] = { root: ic, overlay, text, lock, rank };
     });
+    // Ally ability slots share the same DOM shape as spell slots so
+    // the player can't tell (or care) whether a given cooldown is a
+    // spell or a companion.
+    (['fire-archer'] as const).forEach((kind) => {
+      const ic = root.querySelector<HTMLElement>(`.ability[data-ally="${kind}"]`);
+      if (!ic) return;
+      const overlay = ic.querySelector<HTMLElement>('.ability-cd-overlay')!;
+      const text = ic.querySelector<HTMLElement>('.ability-cd-text')!;
+      const lock = ic.querySelector<HTMLElement>('.ability-lock') ?? undefined;
+      this.allyIcons[kind] = { root: ic, overlay, text, lock };
+    });
   }
 
   tick(registry: Phaser.Data.DataManager) {
@@ -134,6 +148,7 @@ export class Hud {
     this.updateSpell(registry, 'ice', ranks.ice ?? 0);
     this.updateSpell(registry, 'heal', ranks.heal ?? 0);
     this.updateLightning();
+    this.updateAlly(registry, 'fire-archer');
 
     const expPct = (registry.get('expPct') as number | undefined) ?? 0;
     if (this.expFill) this.expFill.style.width = `${Math.min(100, expPct)}%`;
@@ -387,6 +402,40 @@ export class Hud {
     if (icon.lock) icon.lock.textContent = '🔒';
   }
 
+  // Update a companion ability slot. Reads the live cooldown snapshot
+  // that GameScene publishes each frame; if the ally hasn't been
+  // spawned (tree node not unlocked), the slot shows the padlock.
+  private updateAlly(registry: Phaser.Data.DataManager, kind: string) {
+    const icon = this.allyIcons[kind];
+    if (!icon) return;
+    const snapshots = (registry.get('allyCooldowns') as Array<{
+      allyKind: string;
+      remainingMs: number;
+      totalMs: number;
+    }> | undefined) ?? [];
+    const snap = snapshots.find((s) => s.allyKind === kind);
+    if (!snap) {
+      // Not unlocked this run — show the locked state.
+      icon.root.classList.add('ability--locked');
+      icon.root.classList.remove('ability--ready');
+      if (icon.lock) icon.lock.style.display = '';
+      icon.overlay.style.height = '100%';
+      icon.text.textContent = '';
+      return;
+    }
+    icon.root.classList.remove('ability--locked');
+    if (icon.lock) icon.lock.style.display = 'none';
+    const frac = snap.totalMs > 0 ? snap.remainingMs / snap.totalMs : 0;
+    icon.overlay.style.height = `${Math.max(0, Math.min(1, frac)) * 100}%`;
+    icon.text.textContent = snap.remainingMs <= 0 ? '' : `${(snap.remainingMs / 1000).toFixed(1)}s`;
+    icon.root.classList.toggle('ability--ready', snap.remainingMs <= 0);
+    const status = snap.remainingMs <= 0 ? 'Gotowy' : `${(snap.remainingMs / 1000).toFixed(1)}s`;
+    icon.root.setAttribute(
+      'data-tooltip',
+      `Ognisty Łucznik\nWystrzeliwuje ognistą strzałę w najbliższego wroga.\nOdnowienie: ${(snap.totalMs / 1000).toFixed(0)}s · ${status}`,
+    );
+  }
+
   // Unused; reserved for HP number reads if needed externally.
   getHp(): number {
     return this.hpNum;
@@ -484,6 +533,12 @@ const HTML = `
       </div>
       <div class="ability ability--locked" data-spell="lightning" data-tooltip="Błyskawica — jeszcze niedostępna.">
         <span class="ability-glyph">⚡</span>
+        <span class="ability-lock">🔒</span>
+      </div>
+      <div class="ability ability--locked" data-ally="fire-archer" data-tooltip="Ognisty Łucznik — zablokowany. Odblokuj w mieście (Sala Bojowa).">
+        <span class="ability-glyph">🏹</span>
+        <div class="ability-cd-overlay"></div>
+        <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
     </div>

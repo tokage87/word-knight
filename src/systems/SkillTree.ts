@@ -2,6 +2,7 @@ import type { KnightStat } from '../entities/Knight';
 import type { SpellId } from './SpellCaster';
 import type { CurveName } from './SkillTreeBalance';
 import type { BranchId } from './CityBranches';
+import type { AllyKind } from '../entities/Ally';
 
 // Elemental theming for the four branches.
 export type ElementId = 'fire' | 'water' | 'wind' | 'earth';
@@ -21,7 +22,10 @@ export type NodeEffect =
   | { kind: 'stat'; stat: KnightStat; perRank: number }
   | { kind: 'runStat'; stat: 'xpMult' | 'goldMult' | 'xpPerQuiz' | 'cdCutPerQuiz' | 'globalCooldown' | 'spellDmg'; perRank: number }
   | { kind: 'spellUnlock'; spellId: SpellId }
-  | { kind: 'spellRank'; spellId: SpellId; perRank: number };
+  | { kind: 'spellRank'; spellId: SpellId; perRank: number }
+  // Tier-2 ally follower system. Spawns a unit behind the knight on
+  // run start if the owning tree-node has rank >= 1. See entities/Ally.
+  | { kind: 'allyUnlock'; allyKind: AllyKind };
 
 export interface TreeNode {
   id: string;                // stable; NEVER rename post-ship

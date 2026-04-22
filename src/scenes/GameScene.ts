@@ -7,6 +7,8 @@ import {
   KNIGHT_X,
 } from '../constants/layout';
 import { Knight } from '../entities/Knight';
+import { Ally, type AllyKind } from '../entities/Ally';
+import { Projectile } from '../entities/Projectile';
 import { Enemy } from '../entities/Enemy';
 import { WaveSpawner } from '../systems/WaveSpawner';
 import { SpellCaster, MAX_RANK, ALL_SPELL_IDS, type SpellId } from '../systems/SpellCaster';
@@ -33,6 +35,14 @@ export class GameScene extends Phaser.Scene {
   private knight!: Knight;
   private enemies!: Phaser.GameObjects.Group;
   private spawner!: WaveSpawner;
+  // Tier-2 allies that follow the knight and fire projectiles. Populated
+  // by applyMetaProgression() based on unlocked tree nodes.
+  private allies!: Phaser.GameObjects.Group;
+  private projectiles!: Phaser.GameObjects.Group;
+  // Running count of how many allies have spawned this run — used to
+  // pick the follow-offset so stacked allies don't pile on the same
+  // pixel.
+  private nextAllyIndex = 0;
   private spellCaster!: SpellCaster;
 
   private distance = 0;
@@ -168,6 +178,9 @@ export class GameScene extends Phaser.Scene {
     this.knight = new Knight(this, KNIGHT_X, GROUND_Y + 10);
     this.knight.setDepth(50);
     this.enemies = this.add.group();
+    this.allies = this.add.group();
+    this.projectiles = this.add.group();
+    this.nextAllyIndex = 0;
     this.spawner = new WaveSpawner(this, this.enemies);
     this.spellCaster = new SpellCaster(this);
 
@@ -219,6 +232,32 @@ export class GameScene extends Phaser.Scene {
     enemies.forEach((e) => e.tick(delta, this.knight));
     this.spawner.update(delta);
     this.spellCaster.update(delta, this.knight, enemies);
+
+    // Tier-2 ally tick. Allies move toward a follow-slot behind the
+    // knight and auto-fire at the nearest enemy in range. Projectiles
+    // are a separate group so they outlive the ally that spawned them
+    // (e.g. ally dies offscreen — the arrow still hits).
+    const allyList = this.allies.getChildren() as unknown as Ally[];
+    allyList.forEach((a) => a.tick(delta, this.knight, enemies, this.projectiles));
+
+    // Projectile collision pass. `tick()` returns false when the
+    // projectile hit something or timed out — destroy on next frame
+    // to avoid mutating the group while we're iterating it.
+    const projList = this.projectiles.getChildren() as unknown as Projectile[];
+    const toDestroy: Projectile[] = [];
+    projList.forEach((p) => {
+      if (!p.tick(delta, enemies)) toDestroy.push(p);
+    });
+    toDestroy.forEach((p) => p.destroy());
+
+    // Publish ally cooldown snapshot to the HUD. Same shape as the
+    // existing spell cooldowns — one row per active ally.
+    const allyCds = allyList.map((a) => ({
+      allyKind: a.kind,
+      remainingMs: a.cooldownRemaining,
+      totalMs: a.cooldownTotal,
+    }));
+    this.registry.set('allyCooldowns', allyCds);
 
     this.registry.set('hp', this.knight.hp);
     this.registry.set('hpMax', this.knight.hpMax);
@@ -537,7 +576,23 @@ export class GameScene extends Phaser.Scene {
         }
         break;
       }
+      case 'allyUnlock': {
+        this.spawnAlly(effect.allyKind);
+        break;
+      }
     }
+  }
+
+  // Spawns an ally into the scene behind the knight. Called from
+  // applyNodeEffect when a tree-node with allyUnlock has rank >= 1.
+  // Stacks subsequent allies at -20 px offsets so multiple allies
+  // (next session will have more) don't pile on the same pixel.
+  private spawnAlly(kind: AllyKind) {
+    const offset = -20 - this.nextAllyIndex * 22;
+    const a = new Ally(this, kind, this.knight, offset);
+    a.setDepth(49); // just behind the knight (50)
+    this.allies.add(a);
+    this.nextAllyIndex += 1;
   }
 
   private onKnightDied() {
@@ -550,6 +605,8 @@ export class GameScene extends Phaser.Scene {
     this.cameras.main.flash(520, 180, 30, 30);
     this.cameras.main.shake(360, 0.008);
     this.enemies.getChildren().forEach((e) => e.destroy());
+    this.allies.getChildren().forEach((a) => a.destroy());
+    this.projectiles.getChildren().forEach((p) => p.destroy());
     this.time.delayedCall(500, () => {
       this.game.events.emit('ui:gameOver', {
         level: this.level,
@@ -562,6 +619,8 @@ export class GameScene extends Phaser.Scene {
 
   private onUiRestart() {
     this.enemies.getChildren().forEach((e) => e.destroy());
+    this.allies.getChildren().forEach((a) => a.destroy());
+    this.projectiles.getChildren().forEach((p) => p.destroy());
     // Restart the UI scene first so its HTML gates (quiz, sentence,
     // picker, game-over panel) get torn down and re-mounted fresh.
     this.scene.get('UI').scene.restart();
@@ -570,6 +629,8 @@ export class GameScene extends Phaser.Scene {
 
   private onOpenCity() {
     this.enemies.getChildren().forEach((e) => e.destroy());
+    this.allies.getChildren().forEach((a) => a.destroy());
+    this.projectiles.getChildren().forEach((p) => p.destroy());
     // Stop Game + UI and hand control to CityScene. UIScene will
     // un-mount its HTML overlay (including the Game Over panel) on
     // shutdown, so we come back to a clean slate when "NOWA PRZYGODA"

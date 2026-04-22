@@ -159,6 +159,23 @@ export class BootScene extends Phaser.Scene {
       frameWidth: 192,
       frameHeight: 192,
     });
+
+    // Ally tier-2 sprites: Blue Archer + Arrow projectile. Same 192px
+    // frame size as the knight; idle 6f, run 4f, shoot 8f. Arrow is a
+    // single 64x64 sprite.
+    this.load.spritesheet(AK.archerIdle, 'assets/archer/Archer_Idle.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.archerRun, 'assets/archer/Archer_Run.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.spritesheet(AK.archerShoot, 'assets/archer/Archer_Shoot.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
+    this.load.image(AK.arrow, 'assets/archer/Arrow.png');
   }
 
   create() {
@@ -195,6 +212,10 @@ export class BootScene extends Phaser.Scene {
     this.buildAnim(ANIM.cityTreePineSway, AK.cityTreePine, 8, 5, -1);
     this.buildAnim(ANIM.cityTreeLeafySway, AK.cityTreeLeafy, 8, 5, -1);
     this.buildAnim(ANIM.citySoldierIdle, AK.citySoldierIdle, 8, 7, -1);
+    // Archer ally animations. Shoot plays once per fire; idle/run loop.
+    this.buildAnim(ANIM.archerIdle, AK.archerIdle, 6, 7, -1);
+    this.buildAnim(ANIM.archerRun, AK.archerRun, 4, 10, -1);
+    this.buildAnim(ANIM.archerShoot, AK.archerShoot, 8, 14, 0);
 
     this.scene.start('Game');
     this.scene.launch('UI');
