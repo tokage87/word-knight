@@ -5,22 +5,38 @@ import Phaser from 'phaser';
 // Positioning is CSS-driven (see src/styles/hud.css).
 const BASE_MELEE_COOLDOWN_MS = 900;
 
+// Live player stats rendered into the pause panel. Every field is
+// optional — rows with missing or default values are elided so the
+// pause readout stays tight early-game when few stats have been
+// earned yet.
+export interface PlayerStats {
+  hp?: number;
+  hpMax?: number;
+  meleeDamage?: number;
+  meleeCooldownMs?: number;
+  critChance?: number;   // 0..1
+  armor?: number;        // 0..1 (damage-reduction fraction)
+  lifesteal?: number;    // 0..1
+  dodgeChance?: number;  // 0..1
+  hpRegen?: number;      // HP per second
+}
+
 export class Hud {
   private root?: HTMLElement;
-  private stats?: HTMLElement;
-  private dmgStat?: HTMLElement;
-  private spdStat?: HTMLElement;
   private gold?: HTMLElement;
   private hpFill?: HTMLElement;
   private hpText?: HTMLElement;
   private expFill?: HTMLElement;
-  private stdFill?: HTMLElement;
   private spellIcons: Record<string, { root: HTMLElement; overlay: HTMLElement; text: HTMLElement; lock?: HTMLElement; rank?: HTMLElement }> = {};
   private bossBar?: HTMLElement;
   private bossFill?: HTMLElement;
   private expText?: HTMLElement;
   private hpNum = 100;
   private gold_ = 0;
+  // Latest player-stat snapshot, rendered into the pause overlay when
+  // the player pauses. Updated on each HUD tick so the pause readout is
+  // always current.
+  private lastPlayerStats: PlayerStats = {};
   private pauseOverlay?: HTMLElement;
   private pauseStats?: HTMLElement;
   private pauseBtn?: HTMLElement;
@@ -54,14 +70,10 @@ export class Hud {
     this.gameOverRestart = root.querySelector<HTMLElement>('.gameover-restart') ?? undefined;
     this.gameOverCity = root.querySelector<HTMLElement>('.gameover-city') ?? undefined;
 
-    this.stats = root.querySelector<HTMLElement>('.stat-hp-val') ?? undefined;
-    this.dmgStat = root.querySelector<HTMLElement>('.stat-dmg-val') ?? undefined;
-    this.spdStat = root.querySelector<HTMLElement>('.stat-spd-val') ?? undefined;
     this.gold = root.querySelector<HTMLElement>('.gold-count') ?? undefined;
     this.hpFill = root.querySelector<HTMLElement>('.bar-hp-fill') ?? undefined;
     this.hpText = root.querySelector<HTMLElement>('.bar-hp-text') ?? undefined;
     this.expFill = root.querySelector<HTMLElement>('.bar-exp-fill') ?? undefined;
-    this.stdFill = root.querySelector<HTMLElement>('.bar-std-fill') ?? undefined;
     this.bossBar = root.querySelector<HTMLElement>('.boss-bar') ?? undefined;
     this.bossFill = root.querySelector<HTMLElement>('.boss-fill') ?? undefined;
     this.expText = root.querySelector<HTMLElement>('.bar-exp-text') ?? undefined;
@@ -78,8 +90,6 @@ export class Hud {
       const rank = ic.querySelector<HTMLElement>('.ability-rank') ?? undefined;
       this.spellIcons[id] = { root: ic, overlay, text, lock, rank };
     });
-
-    void this.stdFill;
   }
 
   tick(registry: Phaser.Data.DataManager) {
@@ -91,7 +101,6 @@ export class Hud {
       this.hpFill.style.width = `${Math.max(0, (hp / hpMax) * 100)}%`;
     if (this.hpText)
       this.hpText.textContent = `${Math.max(0, Math.floor(hp))} / ${hpMax}`;
-    if (this.stats) this.stats.textContent = String(Math.max(0, Math.floor(hp)));
 
     // Gold now persists across runs via MetaStore; the registry is the
     // source of truth. The old `onEnemyKilled` per-run counter is
@@ -100,29 +109,20 @@ export class Hud {
     const gold = (registry.get('gold') as number | undefined) ?? 0;
     if (this.gold) this.gold.textContent = `x${gold}`;
 
-    const dmg = (registry.get('meleeDamage') as number | undefined) ?? 10;
-    const cdMs = (registry.get('meleeCooldownMs') as number | undefined) ?? BASE_MELEE_COOLDOWN_MS;
-    if (this.dmgStat) {
-      this.dmgStat.textContent = String(dmg);
-      this.dmgStat.closest<HTMLElement>('.stat-row')?.setAttribute(
-        'data-tooltip',
-        `Obrażenia ataku\n${dmg} na uderzenie`,
-      );
-    }
-    if (this.spdStat) {
-      const pct = Math.round((BASE_MELEE_COOLDOWN_MS / Math.max(1, cdMs)) * 100);
-      this.spdStat.textContent = `${pct}%`;
-      this.spdStat.closest<HTMLElement>('.stat-row')?.setAttribute(
-        'data-tooltip',
-        `Szybkość ataku\n${pct}% (${(cdMs / 1000).toFixed(2)}s na uderzenie)`,
-      );
-    }
-    if (this.stats) {
-      this.stats.closest<HTMLElement>('.stat-row')?.setAttribute(
-        'data-tooltip',
-        `HP: ${Math.max(0, Math.floor(hp))} / ${hpMax}`,
-      );
-    }
+    // Stash the live stat snapshot so the pause overlay (which only
+    // renders on open) can show the latest numbers without re-running
+    // the tick path.
+    this.lastPlayerStats = {
+      hp,
+      hpMax,
+      meleeDamage: (registry.get('meleeDamage') as number | undefined) ?? 10,
+      meleeCooldownMs: (registry.get('meleeCooldownMs') as number | undefined) ?? BASE_MELEE_COOLDOWN_MS,
+      critChance: (registry.get('critChance') as number | undefined) ?? 0,
+      armor: (registry.get('armor') as number | undefined) ?? 0,
+      lifesteal: (registry.get('lifesteal') as number | undefined) ?? 0,
+      dodgeChance: (registry.get('dodgeChance') as number | undefined) ?? 0,
+      hpRegen: (registry.get('hpRegen') as number | undefined) ?? 0,
+    };
 
     const level = (registry.get('level') as number | undefined) ?? 1;
     const ranks = (registry.get('spellsRank') as Record<string, number> | undefined) ?? {
@@ -171,11 +171,8 @@ export class Hud {
     if (paused && this.pauseStats) {
       // Each row gets a small Tiny Swords icon chip that matches the
       // meaning of the counter — so the pause readout feels like an
-      // in-game ledger rather than a plain debug dump. Icons map:
-      //   ✓ = Icon_07 (green wedge)    ✕ = Icon_09 (red X)
-      //   book = Icon_02 (log/scroll)  scroll = Icon_10 (gear)
-      //   star = Icon_03 (coin)         skull = Icon_09 (red X)
-      const lines: [string, string, number | string][] = [
+      // in-game ledger rather than a plain debug dump.
+      const quizLines: [string, string, number | string][] = [
         ['ico-ok', 'Poprawne quizy', stats.quizCorrect ?? 0],
         ['ico-bad', 'Błędne quizy', stats.quizWrong ?? 0],
         ['ico-word', 'Poznane słowa', stats.distinctWords ?? 0],
@@ -184,12 +181,54 @@ export class Hud {
         ['ico-story', 'Opowieści ukończone', stats.storiesPerfect ?? 0],
         ['ico-story-bad', 'Opowieści nieudane', stats.storiesFailed ?? 0],
       ];
-      this.pauseStats.innerHTML = lines
+      const quizHtml = quizLines
         .map(([ico, k, v]) =>
           `<div class="pause-stat-row"><span class="stat-chip ${ico}" aria-hidden="true"></span><span class="pause-stat-label">${k}</span><span class="pause-stat-val">${v}</span></div>`,
         )
         .join('');
+      this.pauseStats.innerHTML = quizHtml + this.renderPlayerStatsHtml();
     }
+  }
+
+  // Renders the "Twoje statystyki" block shown below quiz stats when
+  // paused. Only includes rows that reflect non-default values — the
+  // goal is to surface what the player has actually earned, not dump
+  // every possible stat on a fresh run.
+  private renderPlayerStatsHtml(): string {
+    const s = this.lastPlayerStats;
+    const rows: string[] = [];
+    const push = (ico: string, label: string, value: string) => {
+      rows.push(
+        `<div class="pause-stat-row"><span class="stat-chip ${ico}" aria-hidden="true"></span><span class="pause-stat-label">${label}</span><span class="pause-stat-val">${value}</span></div>`,
+      );
+    };
+
+    // HP max — always shown (baseline 100, earned ranks bump it).
+    push('ico-heart', 'Życie (maks.)', String(s.hpMax ?? 100));
+
+    // Melee dmg — always shown (baseline 10).
+    push('ico-sword', 'Obrażenia ataku', String(s.meleeDamage ?? 10));
+
+    // Attack speed % — 100% baseline; anything off 100 means a rank
+    // was earned.
+    if (s.meleeCooldownMs && s.meleeCooldownMs !== BASE_MELEE_COOLDOWN_MS) {
+      const pct = Math.round((BASE_MELEE_COOLDOWN_MS / Math.max(1, s.meleeCooldownMs)) * 100);
+      push('ico-speed', 'Szybkość ataku', `${pct}%`);
+    }
+
+    // Earned stats — only show when > 0 to keep the panel tight.
+    if ((s.critChance ?? 0) > 0) push('ico-ok', 'Krytyk', `${Math.round((s.critChance ?? 0) * 100)}%`);
+    if ((s.armor ?? 0) > 0) push('ico-armor', 'Pancerz', `${Math.round((s.armor ?? 0) * 100)}%`);
+    if ((s.lifesteal ?? 0) > 0) push('ico-heart', 'Wampiryzm', `${Math.round((s.lifesteal ?? 0) * 100)}%`);
+    if ((s.dodgeChance ?? 0) > 0) push('ico-ghost', 'Unik', `${Math.round((s.dodgeChance ?? 0) * 100)}%`);
+    if ((s.hpRegen ?? 0) > 0) push('ico-leaf', 'Regeneracja', `${s.hpRegen} HP/s`);
+
+    if (rows.length === 0) return '';
+    return `
+      <div class="pause-stats-divider"></div>
+      <div class="pause-stats-heading">Twoje statystyki</div>
+      ${rows.join('')}
+    `;
   }
 
   onPauseButtonClick(handler: () => void) {
@@ -376,12 +415,6 @@ const SPELL_DESC: Record<'fire' | 'ice' | 'heal', string> = {
 };
 
 const HTML = `
-  <div class="hud-top-left stat-panel">
-    <div class="stat-row" data-tooltip="Obrażenia na uderzenie"><span class="stat-ico ico-sword"></span><span class="stat-val stat-dmg-val">10</span></div>
-    <div class="stat-row" data-tooltip="Aktualne / maks. HP"><span class="stat-ico ico-heart"></span><span class="stat-val stat-hp-val">100</span></div>
-    <div class="stat-row" data-tooltip="Szybkość ataku (100% = bazowa)"><span class="stat-ico ico-speed"></span><span class="stat-val stat-spd-val">100%</span></div>
-  </div>
-
   <div class="hud-top-right gold-panel" data-tooltip="Złoto zdobyte za zabicia">
     <span class="gold-ico"></span>
     <span class="gold-count">x0</span>
@@ -424,15 +457,6 @@ const HTML = `
     </div>
   </div>
 
-  <div class="hud-bottom-left equipment-panel">
-    <div class="equipment-grid">
-      <div class="eq-slot" data-tooltip="Miecz Rycerza"><img src="assets/ui/Icon_05.png" alt="sword" /></div>
-      <div class="eq-slot" data-tooltip="Tarcza Rycerza"><img src="assets/ui/Icon_06.png" alt="shield" /></div>
-      <div class="eq-slot empty"></div>
-      <div class="eq-slot empty"></div>
-    </div>
-  </div>
-
   <div class="hud-bottom-center">
     <div class="abilities-row">
       <div class="ability ability--locked" data-spell="fire" data-tooltip="Ogień — zablokowany. Awansuj, aby odblokować.">
@@ -462,25 +486,6 @@ const HTML = `
       </div>
     </div>
 
-    <div class="buff-row">
-      <div class="buff-box" data-tooltip="Wzmocnienie ataku (placeholder)">
-        <div class="buff-top"><span class="buff-ico ico-sword"></span><span>16.12%</span></div>
-        <div class="buff-sub">30%</div>
-      </div>
-      <div class="buff-box" data-tooltip="Wzmocnienie dystansu (placeholder)">
-        <div class="buff-top"><span class="buff-ico ico-arrow"></span><span>33.82%</span></div>
-        <div class="buff-sub">210%</div>
-      </div>
-      <div class="buff-box" data-tooltip="Wzmocnienie uniku (placeholder)">
-        <div class="buff-top"><span class="buff-ico ico-ghost"></span><span>9.27%</span></div>
-        <div class="buff-sub">2:00</div>
-      </div>
-      <div class="buff-box" data-tooltip="Wzmocnienie regeneracji (placeholder)">
-        <div class="buff-top"><span class="buff-ico ico-leaf"></span><span>4.56%</span></div>
-        <div class="buff-sub">20%</div>
-      </div>
-    </div>
-
     <div class="bars-col">
       <div class="bar-line" data-tooltip="Zdrowie">
         <span class="bar-ico bar-ico-img ico-heart"></span>
@@ -489,10 +494,6 @@ const HTML = `
       <div class="bar-line" data-tooltip="Doświadczenie do następnego poziomu">
         <span class="bar-ico bar-badge badge-exp">EXP</span>
         <div class="bar-track bar-exp"><div class="bar-fill bar-exp-fill"></div><span class="bar-text bar-exp-text">LV: 1</span></div>
-      </div>
-      <div class="bar-line" data-tooltip="Poziom nauki (placeholder)">
-        <span class="bar-ico bar-badge badge-std">STD</span>
-        <div class="bar-track bar-std"><div class="bar-fill bar-std-fill" style="width:45%"></div><span class="bar-text">LV: 1</span></div>
       </div>
     </div>
   </div>

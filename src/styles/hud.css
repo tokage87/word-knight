@@ -59,51 +59,9 @@
   border-image-repeat: stretch;
 }
 
-/* ───── Top-left stats panel ───── */
-.stat-panel {
-  top: 10px;
-  left: 10px;
-  padding: 4px 8px;
-  min-width: 96px;
-  border-style: solid;
-  border-width: 18px;
-  border-color: transparent;
-  border-image-source: url('/assets/ui/paper-9s.png');
-  border-image-slice: 44 52 45 52 fill;
-  border-image-width: 18px;
-  border-image-repeat: stretch;
-}
-.stat-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 1px 0;
-  color: var(--paper-text);
-}
-.stat-ico {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  vertical-align: middle;
-}
-/* Correct mapping (Tiny Swords icons only, no custom art):
-   - damage → Icon_05 (crossed swords)
-   - HP     → Icon_04 (meat — the classic "food = health" metaphor,
-                        since the pack doesn't ship a heart)
-   - speed  → Icon_08 (orange wedge — "direction / forward")
-   - crit   → Icon_11 (stays as-is for now)
-   Previous mapping used Icon_07 for sword and Icon_05 for heart,
-   which put *actual* crossed-sword art on the HP row. */
-.stat-ico.ico-sword  { background-image: url('/assets/ui/Icon_05.png'); }
-.stat-ico.ico-heart  { background-image: url('/assets/ui/Icon_04.png'); }
-.stat-ico.ico-speed  { background-image: url('/assets/ui/Icon_08.png'); }
-.stat-ico.ico-crit   { background-image: url('/assets/ui/Icon_11.png'); }
+/* Top-left stat panel removed. Stats now live in the pause overlay
+   (see .pause-stats-heading below) — HP is read from the bottom-center
+   bars-col instead. */
 
 /* ───── Top-right gold ───── */
 /* Sits to the LEFT of the pause button so they don't stack on top of
@@ -182,45 +140,10 @@
   transition: width 120ms ease-out;
 }
 
-/* ───── Bottom-left equipment ───── */
-.equipment-panel {
-  bottom: 10px;
-  left: 10px;
-  padding: 2px;
-  border-style: solid;
-  border-width: 16px;
-  border-color: transparent;
-  border-image-source: url('/assets/ui/paper-9s.png');
-  border-image-slice: 44 52 45 52 fill;
-  border-image-width: 16px;
-  border-image-repeat: stretch;
-}
-.equipment-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3px;
-}
-.eq-slot {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url('/assets/ui/tiny-blue.png');
-  background-size: 100% 100%;
-  image-rendering: pixelated;
-  position: relative;
-}
-.eq-slot.empty {
-  background-image: url('/assets/ui/tiny-red.png');
-  opacity: 0.45;
-}
-.eq-slot img {
-  width: 24px;
-  height: 24px;
-}
+/* Bottom-left equipment panel removed — it was pure decoration with
+   no live data. */
 
-/* ───── Bottom-center: abilities + buffs + bars ───── */
+/* ───── Bottom-center: abilities + bars ───── */
 .hud-bottom-center {
   bottom: 10px;
   left: 8px;
@@ -317,51 +240,8 @@
   pointer-events: none;
 }
 
-.buff-row {
-  display: flex;
-  gap: 3px;
-}
-.buff-box {
-  width: 70px;
-  padding: 1px 6px 1px 4px;
-  color: var(--paper-text);
-  border-style: solid;
-  border-width: 11px;
-  border-color: transparent;
-  border-image-source: url('/assets/ui/paper-9s.png');
-  border-image-slice: 44 52 45 52 fill;
-  border-image-width: 11px;
-  border-image-repeat: stretch;
-}
-.buff-top {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 9px;
-  font-weight: bold;
-}
-.buff-ico {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-/* Placeholder buff row icons — use the correct Tiny Swords art per
-   buff type: crossed swords for attack, orange wedge for range, gear
-   for evasion, green wedge for regen. */
-.buff-ico.ico-sword  { background-image: url('/assets/ui/Icon_05.png'); }
-.buff-ico.ico-arrow  { background-image: url('/assets/ui/Icon_08.png'); }
-.buff-ico.ico-ghost  { background-image: url('/assets/ui/Icon_10.png'); }
-.buff-ico.ico-leaf   { background-image: url('/assets/ui/Icon_07.png'); }
-.buff-sub {
-  font-size: 8px;
-  color: var(--paper-text-muted);
-  text-align: right;
-  margin-top: 1px;
-  padding-right: 2px;
-  font-weight: bold;
-}
+/* Placeholder buff row removed — all four boxes were static
+   placeholders with no live data. */
 
 .bars-col {
   display: flex;
@@ -409,12 +289,7 @@
   border-image-width: 6px;
   border-image-repeat: stretch;
 }
-.badge-std {
-  border-image-source: url('/assets/ui/button-red-9s.png');
-  border-image-slice: 47 45 fill;
-  border-image-width: 6px;
-  border-image-repeat: stretch;
-}
+/* STD bar + badge removed — unused placeholder. */
 
 .bar-track {
   position: relative;
@@ -439,7 +314,6 @@
 }
 .bar-hp .bar-fill { background: linear-gradient(180deg, #ff6a7a 0%, #b11e2e 100%); }
 .bar-exp .bar-fill { background: linear-gradient(180deg, #5a8aff 0%, #2e4dc0 100%); width: 0%; }
-.bar-std .bar-fill { background: linear-gradient(180deg, #c88aff 0%, #8a2ec0 100%); }
 
 .bar-text {
   position: absolute;
@@ -676,6 +550,30 @@
   filter: grayscale(0.8) brightness(0.85);
 }
 .stat-chip.ico-level    { background-image: url('/assets/ui/Icon_03.png'); }
+/* Player-stat chips for the "Twoje statystyki" pause block — same
+   Tiny Swords mapping as the old top-left stat panel used. */
+.stat-chip.ico-heart    { background-image: url('/assets/ui/Icon_04.png'); }
+.stat-chip.ico-sword    { background-image: url('/assets/ui/Icon_05.png'); }
+.stat-chip.ico-speed    { background-image: url('/assets/ui/Icon_08.png'); }
+.stat-chip.ico-armor    { background-image: url('/assets/ui/Icon_06.png'); }
+.stat-chip.ico-ghost    { background-image: url('/assets/ui/Icon_10.png'); }
+.stat-chip.ico-leaf     { background-image: url('/assets/ui/Icon_07.png'); }
+
+/* Divider + heading shown between the quiz-stats and player-stats
+   blocks inside the pause overlay. */
+.pause-stats-divider {
+  height: 0;
+  border-top: 1px dashed rgba(58, 42, 16, 0.35);
+  margin: 8px 0 4px;
+}
+.pause-stats-heading {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #7b3615;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
 
 /* ───── Game-over overlay ─────
    Structurally the same as .pause-overlay but always red-tinged and

@@ -224,6 +224,12 @@ export class GameScene extends Phaser.Scene {
     this.registry.set('hpMax', this.knight.hpMax);
     this.registry.set('meleeDamage', this.knight.meleeDamage);
     this.registry.set('meleeCooldownMs', this.knight.meleeCooldownMs);
+    // Earned stats — the HUD pause panel renders them when non-zero.
+    this.registry.set('critChance', this.knight.critChance);
+    this.registry.set('armor', this.knight.armor);
+    this.registry.set('lifesteal', this.knight.lifesteal);
+    this.registry.set('dodgeChance', this.knight.dodgeChance);
+    this.registry.set('hpRegen', this.knight.hpRegen);
     this.registry.set('gold', metaStore.getGold());
     this.registry.set('distance', Math.max(0, Math.floor(this.distance)));
     this.registry.set('fireCd', this.spellCaster.getCooldown('fire'));
