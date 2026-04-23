@@ -46,6 +46,14 @@ interface AllyProfile {
   // Enemies a single shot can chew through before despawning. Wind
   // Lancer uses this so its strike feels like a piercing sweep.
   projectilePierceCount?: number;
+  // When true, the ally walks ahead of the knight and wanders in a
+  // small patrol instead of trailing tight behind. Archers use this
+  // so they read as their own walking characters, not shadows.
+  solo?: boolean;
+}
+
+export function isSoloAlly(kind: AllyKind): boolean {
+  return !!PROFILES[kind].solo;
 }
 
 const PROFILES: Record<AllyKind, AllyProfile> = {
@@ -54,9 +62,9 @@ const PROFILES: Record<AllyKind, AllyProfile> = {
     idleAnim: ANIM.archerIdle,
     runAnim: ANIM.archerRun,
     attackAnim: ANIM.archerShoot,
-    // Matches the old fireArrow spell tempo + damage so the rework
-    // doesn't silently rebalance combat. 15 dmg every 3s.
-    attackCooldownMs: 3000,
+    // Slower, heavier shot — relies on quiz-correct cooldown cuts
+    // to fire more often. 15s base, quiz answers trim it down.
+    attackCooldownMs: 15000,
     attackDamage: 15,
     rangePx: 220,
     projectileTexture: AK.arrow,
@@ -64,16 +72,16 @@ const PROFILES: Record<AllyKind, AllyProfile> = {
     projectileSpeed: 520,
     projectileScale: 0.42,
     scale: 0.28,
+    solo: true,
   },
   'ice-archer': {
     behavior: 'ranged',
     idleAnim: ANIM.archerIdle,
     runAnim: ANIM.archerRun,
     attackAnim: ANIM.archerShoot,
-    // Matches the old ice spell damage (10) + slow (3000ms) but at
-    // an archer's firing cadence so it feels like a companion, not
-    // a 22s-cooldown spell.
-    attackCooldownMs: 3500,
+    // Same archer tempo philosophy: heavy shot every 15s, quiz
+    // answers shave it down.
+    attackCooldownMs: 15000,
     attackDamage: 10,
     rangePx: 240,
     projectileTexture: AK.arrow,
@@ -82,6 +90,7 @@ const PROFILES: Record<AllyKind, AllyProfile> = {
     projectileScale: 0.42,
     projectileSlowMs: 2000,
     scale: 0.28,
+    solo: true,
   },
   'fire-monk': {
     behavior: 'ranged',
@@ -209,6 +218,9 @@ export class Ally extends Phaser.GameObjects.Sprite {
   private attackTimerMs = 0;
   private animState: 'idle' | 'run' | 'attack' = 'idle';
   private followOffsetX: number;
+  // Per-instance phase for the solo-wander sine so multiple solo
+  // allies don't drift in perfect lockstep.
+  private walkPhase: number;
 
   constructor(scene: Phaser.Scene, kind: AllyKind, knight: Knight, offsetX: number) {
     const profile = PROFILES[kind];
@@ -227,6 +239,7 @@ export class Ally extends Phaser.GameObjects.Sprite {
     this.kind = kind;
     this.profile = profile;
     this.followOffsetX = offsetX;
+    this.walkPhase = Math.random() * Math.PI * 2;
     this.setScale(profile.scale);
     this.setOrigin(0.5, 0.71);
     this.play(profile.idleAnim);
@@ -241,9 +254,13 @@ export class Ally extends Phaser.GameObjects.Sprite {
   tick(delta: number, knight: Knight, enemies: Enemy[], projectiles: Phaser.GameObjects.Group) {
     if (this.attackTimerMs > 0) this.attackTimerMs -= delta;
 
-    // Move toward the follow slot. Same simple x-ease as the knight's
-    // melee range test — no pathfinding, the world is flat.
-    const targetX = knight.x + this.followOffsetX;
+    // Solo allies (archers) wander ±14 px around a home slot slightly
+    // ahead of the knight — reads as a unit walking on its own rather
+    // than a shadow glued behind. Non-solo allies still trail.
+    const wander = this.profile.solo
+      ? Math.sin((this.scene.time.now / 700) + this.walkPhase) * 14
+      : 0;
+    const targetX = knight.x + this.followOffsetX + wander;
     const dx = targetX - this.x;
     const absDx = Math.abs(dx);
     if (absDx > 1) {

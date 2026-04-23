@@ -7,7 +7,7 @@ import {
   KNIGHT_X,
 } from '../constants/layout';
 import { Knight } from '../entities/Knight';
-import { Ally, type AllyKind } from '../entities/Ally';
+import { Ally, isSoloAlly, type AllyKind } from '../entities/Ally';
 import { Projectile } from '../entities/Projectile';
 import { Enemy } from '../entities/Enemy';
 import { WaveSpawner } from '../systems/WaveSpawner';
@@ -97,6 +97,17 @@ export class GameScene extends Phaser.Scene {
   // Wrong quiz answer penalty: every spell's current cooldown gets this
   // many ms added, capped at 2× base so it can't stack into oblivion.
   private readonly QUIZ_WRONG_PENALTY_MS = 5000;
+  // Ultimate ability — unlocked the first time the player hits
+  // ULT_UNLOCK_LEVEL. 120s base cooldown, quiz-correct shaves 3s off,
+  // quiz-wrong adds 1s back (capped at base). When ready, auto-casts
+  // on the next update() and wipes all on-screen enemies.
+  private readonly ULT_UNLOCK_LEVEL = 10;
+  private readonly ULT_BASE_CD_MS = 120_000;
+  private readonly ULT_CORRECT_CUT_MS = 3000;
+  private readonly ULT_WRONG_PENALTY_MS = 1000;
+  private readonly ULT_DAMAGE = 200;
+  private ultUnlocked = false;
+  private ultCdMs = 0;
   // Roguelite-style curve: early levels come quickly so the player hits
   // the full skill pool, then upgrades get progressively rarer.
   //   L1→L2: 40 XP  (2 kills)
@@ -137,6 +148,8 @@ export class GameScene extends Phaser.Scene {
     this.levelUpCount = 0;
     this.pendingCardOptions = null;
     this.pendingNewSkillRollover = false;
+    this.ultUnlocked = false;
+    this.ultCdMs = 0;
     this.stats = {
       quizCorrect: 0,
       quizWrong: 0,
@@ -256,6 +269,20 @@ export class GameScene extends Phaser.Scene {
       totalMs: a.cooldownTotal,
     }));
     this.registry.set('allyCooldowns', allyCds);
+
+    // Ultimate tick. Only ticks once unlocked; when it reaches 0 it
+    // auto-casts, blasts every on-screen enemy, and resets to base.
+    if (this.ultUnlocked) {
+      if (this.ultCdMs > 0) {
+        this.ultCdMs = Math.max(0, this.ultCdMs - delta);
+      }
+      if (this.ultCdMs <= 0) {
+        this.castUlt(enemies);
+        this.ultCdMs = this.ULT_BASE_CD_MS;
+      }
+      this.registry.set('ultCdMs', this.ultCdMs);
+      this.registry.set('ultCdBase', this.ULT_BASE_CD_MS);
+    }
 
     this.registry.set('hp', this.knight.hp);
     this.registry.set('hpMax', this.knight.hpMax);
@@ -449,6 +476,9 @@ export class GameScene extends Phaser.Scene {
   private onQuizCorrect(payload?: { id?: string }) {
     if (import.meta.env.DEV) console.log('[xp] quiz:correct +', this.EXP_PER_QUIZ_CORRECT);
     this.spellCaster.reduceAll(this.quizCorrectCdCutMs);
+    if (this.ultUnlocked && this.ultCdMs > 0) {
+      this.ultCdMs = Math.max(0, this.ultCdMs - this.ULT_CORRECT_CUT_MS);
+    }
     this.gainExp(this.EXP_PER_QUIZ_CORRECT);
     this.stats.quizCorrect += 1;
     if (payload?.id) this.distinctWords.add(payload.id);
@@ -476,6 +506,9 @@ export class GameScene extends Phaser.Scene {
     // or wrong picks are dangerous instead of neutral. Capped in
     // SpellCaster.penalizeAll() so the punishment doesn't spiral.
     this.spellCaster.penalizeAll(this.QUIZ_WRONG_PENALTY_MS);
+    if (this.ultUnlocked) {
+      this.ultCdMs = Math.min(this.ULT_BASE_CD_MS, this.ultCdMs + this.ULT_WRONG_PENALTY_MS);
+    }
     this.stats.quizWrong += 1;
     this.publishStats();
   }
@@ -497,6 +530,11 @@ export class GameScene extends Phaser.Scene {
       this.levelUpCount += 1;
       this.registry.set('level', this.level);
       this.game.events.emit('level:up', { level: this.level });
+      if (!this.ultUnlocked && this.level >= this.ULT_UNLOCK_LEVEL) {
+        this.ultUnlocked = true;
+        this.ultCdMs = this.ULT_BASE_CD_MS;
+        this.game.events.emit('ult:unlocked');
+      }
     }
     this.registry.set('expPct', (this.exp / this.xpForNextLevel()) * 100);
     this.maybeShowPicker();
@@ -584,12 +622,37 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  // Spawns an ally into the scene behind the knight. Called from
-  // applyNodeEffect when a tree-node with allyUnlock has rank >= 1.
-  // Stacks subsequent allies at -20 px offsets so multiple allies
-  // (next session will have more) don't pile on the same pixel.
+  // Screen-wide ultimate. Applies ULT_DAMAGE to every active enemy in
+  // the passed list, plus a strong camera flash + shake so the player
+  // feels the payoff. Skips enemies that are already off-screen to the
+  // left (they're despawning anyway).
+  private castUlt(enemies: Enemy[]) {
+    let hitCount = 0;
+    for (const e of enemies) {
+      if (!e.active) continue;
+      if (e.x < -20 || e.x > LOGICAL_WIDTH + 40) continue;
+      e.takeDamage(this.ULT_DAMAGE);
+      hitCount += 1;
+    }
+    this.cameras.main.flash(650, 255, 210, 80);
+    this.cameras.main.shake(320, 0.012);
+    this.game.events.emit('ult:cast', { hitCount });
+  }
+
+  // Spawns an ally into the scene. Solo allies (archers) walk ahead
+  // of the knight and wander independently; other allies trail tight
+  // behind at stacked offsets so multiple followers don't share a
+  // single pixel.
   private spawnAlly(kind: AllyKind) {
-    const offset = -20 - this.nextAllyIndex * 22;
+    const solo = isSoloAlly(kind);
+    const soloCount = this.allies
+      .getChildren()
+      .filter((a) => (a as Ally).kind && isSoloAlly((a as Ally).kind))
+      .length;
+    const trailCount = this.nextAllyIndex - soloCount;
+    const offset = solo
+      ? 60 + soloCount * 18
+      : -20 - trailCount * 22;
     const a = new Ally(this, kind, this.knight, offset);
     a.setDepth(49); // just behind the knight (50)
     this.allies.add(a);
