@@ -277,5 +277,547 @@
     "tier": 1,
     "cefr": "a1",
     "category": "all"
+  },
+
+  {
+    "id": "de-num-1",
+    "pl": "jeden",
+    "en": "eins",
+    "distractors": ["zwei", "drei", "vier"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-2",
+    "pl": "dwa",
+    "en": "zwei",
+    "distractors": ["eins", "drei", "vier"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-3",
+    "pl": "trzy",
+    "en": "drei",
+    "distractors": ["zwei", "vier", "fünf"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-4",
+    "pl": "cztery",
+    "en": "vier",
+    "distractors": ["drei", "fünf", "sechs"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-5",
+    "pl": "pięć",
+    "en": "fünf",
+    "distractors": ["vier", "sechs", "sieben"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-6",
+    "pl": "sześć",
+    "en": "sechs",
+    "distractors": ["fünf", "sieben", "acht"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-7",
+    "pl": "siedem",
+    "en": "sieben",
+    "distractors": ["sechs", "acht", "neun"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-8",
+    "pl": "osiem",
+    "en": "acht",
+    "distractors": ["sieben", "neun", "zehn"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-9",
+    "pl": "dziewięć",
+    "en": "neun",
+    "distractors": ["acht", "zehn", "elf"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-num-10",
+    "pl": "dziesięć",
+    "en": "zehn",
+    "distractors": ["neun", "elf", "zwölf"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-day-mon",
+    "pl": "poniedziałek",
+    "en": "Montag",
+    "distractors": ["Dienstag", "Mittwoch", "Donnerstag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-day-tue",
+    "pl": "wtorek",
+    "en": "Dienstag",
+    "distractors": ["Montag", "Mittwoch", "Donnerstag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-day-wed",
+    "pl": "środa",
+    "en": "Mittwoch",
+    "distractors": ["Dienstag", "Donnerstag", "Freitag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-day-thu",
+    "pl": "czwartek",
+    "en": "Donnerstag",
+    "distractors": ["Mittwoch", "Freitag", "Samstag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-day-fri",
+    "pl": "piątek",
+    "en": "Freitag",
+    "distractors": ["Donnerstag", "Samstag", "Sonntag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-day-sat",
+    "pl": "sobota",
+    "en": "Samstag",
+    "distractors": ["Freitag", "Sonntag", "Montag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-day-sun",
+    "pl": "niedziela",
+    "en": "Sonntag",
+    "distractors": ["Samstag", "Montag", "Dienstag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-color-white",
+    "pl": "biały",
+    "en": "weiß",
+    "distractors": ["schwarz", "grau", "gelb"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-color-green",
+    "pl": "zielony",
+    "en": "grün",
+    "distractors": ["blau", "gelb", "rot"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-color-yellow",
+    "pl": "żółty",
+    "en": "gelb",
+    "distractors": ["rot", "grün", "weiß"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-color-gold",
+    "pl": "złoty",
+    "en": "gold",
+    "distractors": ["silber", "gelb", "rot"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-body-head",
+    "pl": "głowa",
+    "en": "Kopf",
+    "distractors": ["Hand", "Fuß", "Auge"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-body-hand",
+    "pl": "ręka",
+    "en": "Hand",
+    "distractors": ["Kopf", "Fuß", "Auge"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-body-foot",
+    "pl": "stopa",
+    "en": "Fuß",
+    "distractors": ["Hand", "Kopf", "Ohr"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-body-eye",
+    "pl": "oko",
+    "en": "Auge",
+    "distractors": ["Ohr", "Nase", "Mund"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-body-nose",
+    "pl": "nos",
+    "en": "Nase",
+    "distractors": ["Mund", "Auge", "Ohr"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-body-ear",
+    "pl": "ucho",
+    "en": "Ohr",
+    "distractors": ["Auge", "Nase", "Mund"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-food-bread",
+    "pl": "chleb",
+    "en": "Brot",
+    "distractors": ["Butter", "Wurst", "Käse"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-food-apple",
+    "pl": "jabłko",
+    "en": "Apfel",
+    "distractors": ["Birne", "Banane", "Orange"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-food-water",
+    "pl": "woda",
+    "en": "Wasser",
+    "distractors": ["Milch", "Saft", "Tee"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-food-milk",
+    "pl": "mleko",
+    "en": "Milch",
+    "distractors": ["Wasser", "Saft", "Tee"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-food-cheese",
+    "pl": "ser",
+    "en": "Käse",
+    "distractors": ["Wurst", "Brot", "Butter"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-food-sausage",
+    "pl": "kiełbasa",
+    "en": "Wurst",
+    "distractors": ["Käse", "Brot", "Fleisch"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-verb-be",
+    "pl": "być",
+    "en": "sein",
+    "distractors": ["haben", "gehen", "kommen"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-have",
+    "pl": "mieć",
+    "en": "haben",
+    "distractors": ["sein", "gehen", "machen"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-go",
+    "pl": "iść",
+    "en": "gehen",
+    "distractors": ["kommen", "fahren", "laufen"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-come",
+    "pl": "przychodzić",
+    "en": "kommen",
+    "distractors": ["gehen", "fahren", "bleiben"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-speak",
+    "pl": "mówić",
+    "en": "sprechen",
+    "distractors": ["hören", "lesen", "schreiben"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-read",
+    "pl": "czytać",
+    "en": "lesen",
+    "distractors": ["schreiben", "sprechen", "hören"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-write",
+    "pl": "pisać",
+    "en": "schreiben",
+    "distractors": ["lesen", "sprechen", "hören"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-play",
+    "pl": "grać",
+    "en": "spielen",
+    "distractors": ["singen", "laufen", "schlafen"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-like",
+    "pl": "lubić",
+    "en": "mögen",
+    "distractors": ["müssen", "können", "wollen"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-verb-learn",
+    "pl": "uczyć się",
+    "en": "lernen",
+    "distractors": ["spielen", "schreiben", "lesen"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-greet-thanks",
+    "pl": "dziękuję",
+    "en": "Danke",
+    "distractors": ["Bitte", "Hallo", "Tschüss"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-greet-please",
+    "pl": "proszę",
+    "en": "Bitte",
+    "distractors": ["Danke", "Hallo", "Tschüss"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-greet-good-day",
+    "pl": "dzień dobry",
+    "en": "Guten Tag",
+    "distractors": ["Guten Morgen", "Guten Abend", "Gute Nacht"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-greet-good-morning",
+    "pl": "dzień dobry (rano)",
+    "en": "Guten Morgen",
+    "distractors": ["Guten Tag", "Guten Abend", "Gute Nacht"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-time-today",
+    "pl": "dzisiaj",
+    "en": "heute",
+    "distractors": ["gestern", "morgen", "jetzt"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-time-yesterday",
+    "pl": "wczoraj",
+    "en": "gestern",
+    "distractors": ["heute", "morgen", "jetzt"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-time-tomorrow",
+    "pl": "jutro",
+    "en": "morgen",
+    "distractors": ["heute", "gestern", "jetzt"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-weather-sun",
+    "pl": "słońce",
+    "en": "Sonne",
+    "distractors": ["Mond", "Regen", "Schnee"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-weather-rain",
+    "pl": "deszcz",
+    "en": "Regen",
+    "distractors": ["Schnee", "Sonne", "Wind"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-weather-snow",
+    "pl": "śnieg",
+    "en": "Schnee",
+    "distractors": ["Regen", "Sonne", "Wind"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-home-house",
+    "pl": "dom",
+    "en": "Haus",
+    "distractors": ["Wohnung", "Zimmer", "Tür"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-home-room",
+    "pl": "pokój",
+    "en": "Zimmer",
+    "distractors": ["Haus", "Küche", "Bad"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-home-kitchen",
+    "pl": "kuchnia",
+    "en": "Küche",
+    "distractors": ["Bad", "Zimmer", "Haus"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-home-door",
+    "pl": "drzwi",
+    "en": "Tür",
+    "distractors": ["Fenster", "Wand", "Haus"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+
+  {
+    "id": "de-school-pen",
+    "pl": "długopis",
+    "en": "Stift",
+    "distractors": ["Buch", "Heft", "Tafel"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-school-bag",
+    "pl": "plecak",
+    "en": "Schultasche",
+    "distractors": ["Buch", "Heft", "Stift"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
   }
 ]
