@@ -10,10 +10,18 @@
 // only wires branches to their gates and their tree.
 
 import { metaStore, type WritingSubmission } from './MetaStore';
+import { curriculumCatalog } from './CurriculumCatalog';
+import type { CurriculumSentence } from './CurriculumTypes';
 import {
   GATE_CTA,
+  type ClozeItem,
+  type ClozePayload,
   type GateDef,
+  type GateKind,
   type GatePayload,
+  type ListeningPayload,
+  type ReadAloudPayload,
+  type WritingPayload,
 } from './UnlockGates';
 
 export type BranchId = 'combat' | 'spells' | 'scholar' | 'writer';
@@ -207,13 +215,124 @@ export function gateCta(id: BranchId) {
 }
 
 // Narrow a branch's payload by kind (reads nicer at call-sites than
-// chained `isWritingPayload` etc. checks).
+// chained `isWritingPayload` etc. checks). For non-English curricula
+// the hardcoded English payload in BRANCH_DEFS isn't useful, so we
+// build a fresh payload from the active curriculum pool.
 export function payloadFor<K extends GatePayload['kind']>(
   id: BranchId,
   kind: K,
 ): Extract<GatePayload, { kind: K }> | null {
-  const p = BRANCH_DEFS[id].gate.payload;
-  return p.kind === kind ? (p as Extract<GatePayload, { kind: K }>) : null;
+  const gate = BRANCH_DEFS[id].gate;
+  if (gate.kind !== kind) return null;
+  if (activeLanguage() !== 'en') {
+    return buildLocalizedPayload(gate.kind) as Extract<GatePayload, { kind: K }>;
+  }
+  return gate.payload as Extract<GatePayload, { kind: K }>;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Language-aware payload builders
+// ─────────────────────────────────────────────────────────────────
+// Sampled from curriculumCatalog on each gate open. Right now only
+// German (experimental-de-exam) flips activeLanguage() to 'de'; any
+// future non-English curriculum can reuse this path.
+
+function activeLanguage(): 'en' | 'de' {
+  return curriculumCatalog.getActiveSelection().source === 'experimental-de-exam'
+    ? 'de'
+    : 'en';
+}
+
+function buildLocalizedPayload(kind: GateKind): GatePayload {
+  switch (kind) {
+    case 'listening': return buildListeningPayload();
+    case 'cloze':     return buildClozePayload();
+    case 'readAloud': return buildReadAloudPayload();
+    case 'writing':   return buildWritingPayload();
+  }
+}
+
+function targetLangSentence(s: CurriculumSentence): string {
+  return s.steps.map((st) => st.correct).join(' ');
+}
+
+function sampleWithoutReplacement<T>(arr: T[], n: number): T[] {
+  if (arr.length === 0) return [];
+  const copy = arr.slice();
+  const out: T[] = [];
+  while (out.length < n && copy.length > 0) {
+    const idx = Math.floor(Math.random() * copy.length);
+    out.push(copy.splice(idx, 1)[0]!);
+  }
+  // Pool too small — repeat with replacement rather than under-fill the gate.
+  while (out.length < n && arr.length > 0) {
+    out.push(arr[Math.floor(Math.random() * arr.length)]!);
+  }
+  return out;
+}
+
+function buildListeningPayload(): ListeningPayload {
+  const pool = curriculumCatalog.getSentencePool();
+  const sample = sampleWithoutReplacement(pool, 4);
+  return {
+    kind: 'listening',
+    sentences: sample.map((s) => ({
+      en: targetLangSentence(s), // field name is legacy; carries target-lang text
+      correctWords: s.steps.map((st) => st.correct),
+      distractors: s.steps.map((st) => st.distractor),
+    })),
+  };
+}
+
+function buildReadAloudPayload(): ReadAloudPayload {
+  const pool = curriculumCatalog.getSentencePool();
+  const picked = sampleWithoutReplacement(pool, 1)[0];
+  if (!picked) return { kind: 'readAloud', sentence: '', hintPl: '' };
+  return {
+    kind: 'readAloud',
+    sentence: targetLangSentence(picked),
+    hintPl: picked.pl,
+  };
+}
+
+function buildClozePayload(): ClozePayload {
+  const pool = curriculumCatalog.getSentencePool();
+  const sample = sampleWithoutReplacement(pool, 6);
+  const items: ClozeItem[] = sample.map((s) => {
+    const gapIdx = Math.floor(Math.random() * s.steps.length);
+    const gap = s.steps[gapIdx]!;
+    const sentence = s.steps
+      .map((st, i) => (i === gapIdx ? '{{GAP}}' : st.correct))
+      .join(' ');
+    const options = [gap.correct, gap.distractor];
+    // Pad to 3 options by borrowing a distractor from another step.
+    const pads = s.steps
+      .filter((_, i) => i !== gapIdx)
+      .map((st) => st.distractor)
+      .filter((w) => !options.includes(w));
+    if (pads.length > 0) {
+      options.push(pads[Math.floor(Math.random() * pads.length)]!);
+    }
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [options[i], options[j]] = [options[j]!, options[i]!];
+    }
+    return { sentence, options, correct: gap.correct, hintPl: s.pl };
+  });
+  return { kind: 'cloze', items };
+}
+
+function buildWritingPayload(): WritingPayload {
+  // Keep Polish-facing prompt identical for now; drop the English hint
+  // word list (it's curated for EN and doesn't translate cleanly).
+  return {
+    kind: 'writing',
+    prompt: 'Napisz o swoich ostatnich wakacjach',
+    promptEn: '',
+    hint: 'Gdzie byłeś/byłaś? Z kim? Co robiliście? Jaka była pogoda? Co ci się podobało?',
+    hintWords: [],
+    referenceEn: '',
+  };
 }
 
 // Every gate calls this on success. `text` is the student's written

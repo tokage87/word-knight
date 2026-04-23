@@ -59,7 +59,6 @@ export class GameScene extends Phaser.Scene {
   // the next gate's outcome — so it's a single forgiving retry, not an
   // infinite "keep trying" loop. A subsequent fail sets it again.
   private pendingNewSkillRollover = false;
-  private statRanks: Record<StatId, number> = { maxHp: 0, meleeDmg: 0, atkSpeed: 0 };
   // Manual pause (P key / button) lives separately from `this.paused`
   // which is also used by the picker/sentence gates. We only toggle
   // `paused` if we're not already gated — otherwise the quiz / story /
@@ -138,7 +137,6 @@ export class GameScene extends Phaser.Scene {
     this.levelUpCount = 0;
     this.pendingCardOptions = null;
     this.pendingNewSkillRollover = false;
-    this.statRanks = { maxHp: 0, meleeDmg: 0, atkSpeed: 0 };
     this.stats = {
       quizCorrect: 0,
       quizWrong: 0,
@@ -449,6 +447,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private onQuizCorrect(payload?: { id?: string }) {
+    if (import.meta.env.DEV) console.log('[xp] quiz:correct +', this.EXP_PER_QUIZ_CORRECT);
     this.spellCaster.reduceAll(this.quizCorrectCdCutMs);
     this.gainExp(this.EXP_PER_QUIZ_CORRECT);
     this.stats.quizCorrect += 1;
@@ -471,6 +470,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private onQuizWrong() {
+    if (import.meta.env.DEV) console.log('[xp] quiz:wrong (no xp granted)');
     // Inverse of the correct-answer reward: every spell's cooldown gets
     // pushed back QUIZ_WRONG_PENALTY_MS, teaching the player that silence
     // or wrong picks are dangerous instead of neutral. Capped in
@@ -488,6 +488,7 @@ export class GameScene extends Phaser.Scene {
   }
 
   private gainExp(amount: number) {
+    if (import.meta.env.DEV) console.trace(`[xp] gainExp +${amount}`);
     this.exp += Math.floor(amount * this.xpMultiplier);
     while (this.exp >= this.xpForNextLevel()) {
       this.exp -= this.xpForNextLevel();
@@ -738,48 +739,40 @@ export class GameScene extends Phaser.Scene {
   // `overrides.weakened`, if true, flags every UPGRADE card as weakened
   // (half amount on pick) and rewrites descriptions to show the halved
   // value, so the player knows what they're accepting before picking.
+  // Cards are derived from the skill tree (SkillTreeDefs.ts) so picks
+  // persist via metaStore.buyRank and ally-unlock nodes actually spawn
+  // the ally mid-run. "New" cards = allyUnlock nodes at rank 0;
+  // "upgrade" cards = stat/runStat nodes, or any node with rank > 0.
   private buildCardOptions(
     count: number,
     overrides: { allowNew?: boolean; weakened?: boolean } = {},
   ): SkillCardOption[] {
-    const lockedIds = this.spellCaster.getLocked();
-    const upgradableIds = this.spellCaster.getUpgradable();
-
-    const newCards: SkillCardOption[] = lockedIds.map((id) => ({
-      key: `${id}.new`,
-      kind: 'new',
-      title: SPELL_META[id].name,
-      desc: SPELL_META[id].newDesc,
-      icon: SPELL_META[id].icon,
-    }));
     const weakened = !!overrides.weakened;
-    const spellUpgradeCards: SkillCardOption[] = upgradableIds.map((id) => {
-      const nextRank = this.spellCaster.getRank(id) + 1;
-      return {
-        key: `${id}.upgrade`,
-        kind: 'upgrade',
-        title: `${SPELL_META[id].name} ${toRoman(nextRank)}`,
-        desc: weakened
-          ? `${SPELL_META[id].upgradeDesc} (−50%)`
-          : SPELL_META[id].upgradeDesc,
-        icon: SPELL_META[id].icon,
-        weakened,
-      };
-    });
-    const statUpgradeCards: SkillCardOption[] = (Object.keys(this.statRanks) as StatId[])
-      .filter((id) => this.statRanks[id] < STAT_META[id].maxRank)
-      .map((id) => {
-        const nextRank = this.statRanks[id] + 1;
-        return {
-          key: `${id}.stat`,
-          kind: 'upgrade',
-          title: `${STAT_META[id].name} ${toRoman(nextRank)}`,
-          desc: weakened ? STAT_META[id].weakDesc : STAT_META[id].desc,
-          icon: STAT_META[id].icon,
-          weakened,
+    const newCards: SkillCardOption[] = [];
+    const upgradeCards: SkillCardOption[] = [];
+
+    for (const branchId of ['combat', 'spells', 'scholar', 'writer'] as BranchId[]) {
+      for (const node of SKILL_TREES[branchId].nodes) {
+        const prereqsMet = node.requires.every((r) => metaStore.getRank(branchId, r) > 0);
+        if (!prereqsMet) continue;
+        const rank = metaStore.getRank(branchId, node.id);
+        if (rank >= node.maxRank) continue;
+        const nextRank = rank + 1;
+        const isAllyNew = node.effect.kind === 'allyUnlock' && rank === 0;
+        const rankSuffix = node.maxRank > 1 ? ` ${toRoman(nextRank)}` : '';
+        const descText = node.desc(nextRank);
+        const card: SkillCardOption = {
+          key: `${branchId}:${node.id}`,
+          kind: isAllyNew ? 'new' : 'upgrade',
+          title: `${node.label}${rankSuffix}`,
+          desc: weakened && canWeaken(node) ? `${descText} (−50%)` : descText,
+          icon: node.icon,
+          weakened: weakened && canWeaken(node),
         };
-      });
-    const upgradeCards = [...spellUpgradeCards, ...statUpgradeCards];
+        if (isAllyNew) newCards.push(card);
+        else upgradeCards.push(card);
+      }
+    }
 
     shuffleInPlace(newCards);
     shuffleInPlace(upgradeCards);
@@ -810,19 +803,25 @@ export class GameScene extends Phaser.Scene {
   }
 
   private onSkillPicked(option: SkillCardOption) {
-    const [idStr, kind] = option.key.split('.') as [string, 'new' | 'upgrade' | 'stat'];
-    const weakened = !!option.weakened;
-
-    if (kind === 'stat') {
-      this.applyStatUpgrade(idStr as StatId, weakened);
-    } else if (kind === 'new') {
-      this.spellCaster.unlock(idStr as SpellId);
-    } else {
-      this.spellCaster.upgrade(idStr as SpellId, weakened);
+    const sep = option.key.indexOf(':');
+    if (sep < 0) {
+      // Defensive: old keys shouldn't reach here after the tree rewire,
+      // but if they do, just drop the level-up cleanly.
+      this.pendingLevelUps -= 1;
+      this.pendingCardOptions = null;
+      this.paused = false;
+      this.maybeShowPicker();
+      return;
     }
+    const branchId = option.key.slice(0, sep) as BranchId;
+    const nodeId = option.key.slice(sep + 1);
+    const node = SKILL_TREES[branchId]?.nodes.find((n) => n.id === nodeId);
+    if (!node) return;
 
+    metaStore.buyRank(branchId, nodeId);
+    const effect = option.weakened ? weakenEffect(node.effect) : node.effect;
+    this.applyNodeEffect(effect, 1);
     this.publishSpellRegistry();
-    this.registry.set('statRanks', { ...this.statRanks });
 
     this.pendingLevelUps -= 1;
     this.pendingCardOptions = null;
@@ -841,116 +840,37 @@ export class GameScene extends Phaser.Scene {
     this.registry.set('spellsRank', ranks);
   }
 
-  private applyStatUpgrade(id: StatId, weakened = false) {
-    if (this.statRanks[id] >= STAT_META[id].maxRank) return;
-    this.statRanks[id] += 1;
-    const amount = weakenedAmount(STAT_META[id].amount, weakened, id);
-    if (id === 'maxHp') this.knight.boostMaxHp(amount);
-    else if (id === 'meleeDmg') this.knight.boostMeleeDamage(amount);
-    else if (id === 'atkSpeed') this.knight.boostAttackSpeed(amount);
+}
+
+// Stat/runStat nodes have numeric `perRank` we halve for weakened
+// picks. Ally unlocks are binary (join or don't) — weakening them is
+// a no-op. Returning the effect unchanged means "nothing to soften".
+function canWeaken(node: TreeNode): boolean {
+  return (
+    node.effect.kind === 'stat' ||
+    node.effect.kind === 'runStat' ||
+    node.effect.kind === 'spellRank'
+  );
+}
+
+function weakenEffect(effect: TreeNode['effect']): TreeNode['effect'] {
+  if (
+    effect.kind === 'stat' ||
+    effect.kind === 'runStat' ||
+    effect.kind === 'spellRank'
+  ) {
+    return { ...effect, perRank: halve(effect.perRank) };
   }
+  return effect;
 }
 
-// Halve an upgrade amount when `weakened` (story/sentence gate failed).
-// Integer stats floor to 0 sanely; `atkSpeed` is a 0..1 fraction so we
-// halve without flooring to avoid silently zeroing the effect.
-function weakenedAmount(amount: number, weakened: boolean, id: StatId): number {
-  if (!weakened) return amount;
-  if (id === 'atkSpeed') return amount * 0.5; // 10% -> 5%
-  return Math.floor(amount * 0.5); // 20 -> 10, 3 -> 1
+// Integer perRank values floor-halve down with a floor of 1 so the
+// bonus doesn't silently vanish; fractional ones halve directly so
+// e.g. +10% → +5% stays a useful modifier.
+function halve(n: number): number {
+  if (Number.isInteger(n)) return Math.max(1, Math.floor(n * 0.5));
+  return n * 0.5;
 }
-
-type StatId = 'maxHp' | 'meleeDmg' | 'atkSpeed';
-
-const STAT_META: Record<
-  StatId,
-  { name: string; icon: string; desc: string; weakDesc: string; amount: number; maxRank: number }
-> = {
-  maxHp: {
-    name: 'Vitality',
-    icon: '❤️',
-    desc: '+20 max HP & heal now.',
-    weakDesc: '+10 max HP & heal now.',
-    amount: 20,
-    maxRank: 5,
-  },
-  meleeDmg: {
-    name: 'Sharp Sword',
-    icon: 'assets/ui/Icon_07.png',
-    desc: '+3 melee damage.',
-    weakDesc: '+1 melee damage.',
-    amount: 3,
-    maxRank: 5,
-  },
-  atkSpeed: {
-    name: 'Swift Strike',
-    icon: 'assets/ui/Icon_09.png',
-    desc: '−10% attack cooldown.',
-    weakDesc: '−5% attack cooldown.',
-    amount: 0.10,
-    maxRank: 4,
-  },
-};
-
-const SPELL_META: Record<
-  SpellId,
-  { name: string; icon: string; newDesc: string; upgradeDesc: string }
-> = {
-  fire: {
-    name: 'Fire',
-    icon: '🔥',
-    newDesc: 'AoE burn (30 dmg) when 2+ foes are visible.',
-    upgradeDesc: '+35% damage, −15% cooldown.',
-  },
-  ice: {
-    name: 'Ice',
-    icon: '❄',
-    newDesc: 'Chill blast: 10 dmg + 3s slow.',
-    upgradeDesc: '+35% damage & slow, −15% cooldown.',
-  },
-  heal: {
-    name: 'Heal',
-    icon: 'assets/ui/Icon_05.png',
-    newDesc: 'Restore 50 HP when below 55%.',
-    upgradeDesc: '+35% healing, −15% cooldown.',
-  },
-  fireArrow: {
-    name: 'Fire Arrow',
-    icon: 'assets/ui/Icon_02.png',
-    newDesc: 'Fast 15 dmg projectile every 3s.',
-    upgradeDesc: '+35% damage, −15% cooldown.',
-  },
-  blizzard: {
-    name: 'Blizzard',
-    icon: 'assets/ui/Icon_08.png',
-    newDesc: 'Screen-wide 18 dmg + 4s slow.',
-    upgradeDesc: '+35% damage & slow, −15% cooldown.',
-  },
-  windSlash: {
-    name: 'Wind Slash',
-    icon: 'assets/ui/Icon_05.png',
-    newDesc: 'Piercing slash hits up to 3 foes.',
-    upgradeDesc: '+35% damage, −15% cooldown.',
-  },
-  tornado: {
-    name: 'Tornado',
-    icon: 'assets/ui/Icon_10.png',
-    newDesc: 'Lingering vortex — 6 dmg × 3 ticks over 2s.',
-    upgradeDesc: '+35% damage, −15% cooldown.',
-  },
-  stoneShield: {
-    name: 'Stone Shield',
-    icon: 'assets/ui/Icon_06.png',
-    newDesc: '2s invulnerability at low HP.',
-    upgradeDesc: '−15% cooldown.',
-  },
-  earthquake: {
-    name: 'Earthquake',
-    icon: 'assets/ui/Icon_01.png',
-    newDesc: 'AoE 20 dmg + brief stun.',
-    upgradeDesc: '+35% damage, −15% cooldown.',
-  },
-};
 
 function toRoman(n: number): string {
   return n === 1 ? 'I' : n === 2 ? 'II' : n === 3 ? 'III' : String(n);

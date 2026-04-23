@@ -13,10 +13,10 @@ export class QuizManager {
   private root?: HTMLElement;
   private locked = false;
   private inputPaused = false;
-  // Anti-spam grace window: when a new word renders, ignore W/E + click
-  // until this timestamp. Gives the kid a beat to read before the next
-  // keystroke registers, so mashing keys between words doesn't blow
-  // through prompts.
+  // Keyboard anti-mash grace: when a new word renders, ignore W/E
+  // until this timestamp. Mouse clicks are ungated — deliberate aim
+  // isn't mashing, and swallowing legitimate clicks made the quiz feel
+  // unresponsive.
   private newWordGraceUntilMs = 0;
   private keydownHandler?: (ev: KeyboardEvent) => void;
 
@@ -82,7 +82,7 @@ export class QuizManager {
   }
 
   private onClick(ev: Event) {
-    if (this.locked || this.inputPaused || this.scene.time.now < this.newWordGraceUntilMs) return;
+    if (this.locked || this.inputPaused) return;
     const t = (ev.target as HTMLElement).closest(
       '.quiz-opt',
     ) as HTMLButtonElement | null;
@@ -154,8 +154,9 @@ export class QuizManager {
       b.classList.remove('quiz-correct', 'quiz-wrong');
     });
 
-    // Anti-spam: ignore W/E + click for 1200 ms so the kid has to see
-    // the new word before their next keypress can submit.
+    // Anti-mash: ignore W/E for 1200 ms so the kid has to see the new
+    // word before their next keypress can submit. Mouse clicks are
+    // ungated — see onClick.
     this.newWordGraceUntilMs = this.scene.time.now + 1200;
     this.locked = false;
   }
