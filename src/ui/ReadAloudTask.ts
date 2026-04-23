@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
-import { isSrSupported, listen, tokenizeEn, tokenOverlap } from '../systems/speech';
+import { isSrSupported, listen, sourceLangCode, tokenizeEn, tokenOverlap } from '../systems/speech';
+import { curriculumCatalog } from '../systems/CurriculumCatalog';
 
 // Read-aloud gate — opens for branches with gate.kind === 'readAloud'
 // (Fire / Sala Bojowa). Shows an English sentence and asks the student
@@ -181,7 +182,8 @@ export class ReadAloudTask {
     this.lastTranscript = '';
     this.render();
     try {
-      const { transcript } = await listen({ lang: 'en-US' });
+      const lang = sourceLangCode(curriculumCatalog.getActiveSelection().source);
+      const { transcript } = await listen({ lang });
       this.lastTranscript = transcript;
       this.evaluate(transcript, p.sentence);
     } catch (e) {

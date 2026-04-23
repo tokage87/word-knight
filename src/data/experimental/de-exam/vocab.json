@@ -1,0 +1,281 @@
+[
+  {
+    "id": "de-intro-name",
+    "pl": "imię",
+    "en": "Name",
+    "distractors": ["Alter", "Hobby", "Familie"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-age",
+    "pl": "wiek",
+    "en": "Alter",
+    "distractors": ["Name", "Jahr", "Tag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-year",
+    "pl": "rok",
+    "en": "Jahr",
+    "distractors": ["Tag", "Woche", "Monat"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-hello",
+    "pl": "cześć",
+    "en": "Hallo",
+    "distractors": ["Tschüss", "Bitte", "Danke"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-goodbye",
+    "pl": "do widzenia",
+    "en": "Tschüss",
+    "distractors": ["Hallo", "Bitte", "Danke"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-family",
+    "pl": "rodzina",
+    "en": "Familie",
+    "distractors": ["Freund", "Schule", "Haus"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-mother",
+    "pl": "mama",
+    "en": "Mutter",
+    "distractors": ["Vater", "Schwester", "Oma"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-father",
+    "pl": "tata",
+    "en": "Vater",
+    "distractors": ["Mutter", "Bruder", "Opa"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-brother",
+    "pl": "brat",
+    "en": "Bruder",
+    "distractors": ["Schwester", "Vater", "Freund"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-sister",
+    "pl": "siostra",
+    "en": "Schwester",
+    "distractors": ["Bruder", "Mutter", "Freundin"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-friend",
+    "pl": "przyjaciel",
+    "en": "Freund",
+    "distractors": ["Bruder", "Lehrer", "Vater"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-school",
+    "pl": "szkoła",
+    "en": "Schule",
+    "distractors": ["Haus", "Stadt", "Klasse"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-class",
+    "pl": "klasa",
+    "en": "Klasse",
+    "distractors": ["Schule", "Buch", "Lehrer"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-teacher",
+    "pl": "nauczyciel",
+    "en": "Lehrer",
+    "distractors": ["Schüler", "Freund", "Vater"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-city",
+    "pl": "miasto",
+    "en": "Stadt",
+    "distractors": ["Land", "Dorf", "Haus"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-country",
+    "pl": "kraj",
+    "en": "Land",
+    "distractors": ["Stadt", "Dorf", "Haus"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-poland",
+    "pl": "Polska",
+    "en": "Polen",
+    "distractors": ["Deutschland", "Österreich", "Schweiz"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-germany",
+    "pl": "Niemcy",
+    "en": "Deutschland",
+    "distractors": ["Polen", "Österreich", "Schweiz"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-hobby",
+    "pl": "hobby",
+    "en": "Hobby",
+    "distractors": ["Familie", "Klasse", "Schule"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-football",
+    "pl": "piłka nożna",
+    "en": "Fußball",
+    "distractors": ["Musik", "Basketball", "Tennis"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-music",
+    "pl": "muzyka",
+    "en": "Musik",
+    "distractors": ["Fußball", "Buch", "Film"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-sport",
+    "pl": "sport",
+    "en": "Sport",
+    "distractors": ["Musik", "Hobby", "Schule"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-book",
+    "pl": "książka",
+    "en": "Buch",
+    "distractors": ["Heft", "Stift", "Tafel"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-food",
+    "pl": "jedzenie",
+    "en": "Essen",
+    "distractors": ["Trinken", "Brot", "Suppe"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-pizza",
+    "pl": "pizza",
+    "en": "Pizza",
+    "distractors": ["Brot", "Suppe", "Wurst"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-color",
+    "pl": "kolor",
+    "en": "Farbe",
+    "distractors": ["Zahl", "Tag", "Wort"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-blue",
+    "pl": "niebieski",
+    "en": "blau",
+    "distractors": ["rot", "grün", "gelb"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-red",
+    "pl": "czerwony",
+    "en": "rot",
+    "distractors": ["blau", "grün", "gelb"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-black",
+    "pl": "czarny",
+    "en": "schwarz",
+    "distractors": ["weiß", "rot", "gelb"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-dog",
+    "pl": "pies",
+    "en": "Hund",
+    "distractors": ["Katze", "Vogel", "Maus"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-intro-cat",
+    "pl": "kot",
+    "en": "Katze",
+    "distractors": ["Hund", "Maus", "Vogel"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  }
+]

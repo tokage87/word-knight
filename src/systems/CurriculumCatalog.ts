@@ -20,6 +20,9 @@ import A2_STORIES from '../data/experimental/cefr/a2/stories.json';
 import B1_VOCAB from '../data/experimental/cefr/b1/vocab.json';
 import B1_SENTENCES from '../data/experimental/cefr/b1/sentences.json';
 import B1_STORIES from '../data/experimental/cefr/b1/stories.json';
+import DE_EXAM_VOCAB from '../data/experimental/de-exam/vocab.json';
+import DE_EXAM_SENTENCES from '../data/experimental/de-exam/sentences.json';
+import DE_EXAM_STORIES from '../data/experimental/de-exam/stories.json';
 import { metaStore } from './MetaStore';
 import {
   DEFAULT_CURRICULUM,
@@ -129,6 +132,9 @@ class CurriculumCatalog {
     }
     if (src === 'experimental-a2') {
       return ({ vocab: A2_VOCAB, sentences: A2_SENTENCES, stories: A2_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+    }
+    if (src === 'experimental-de-exam') {
+      return ({ vocab: DE_EXAM_VOCAB, sentences: DE_EXAM_SENTENCES, stories: DE_EXAM_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
     }
     return ({ vocab: B1_VOCAB, sentences: B1_SENTENCES, stories: B1_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
   }

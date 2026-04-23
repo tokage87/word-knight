@@ -11,7 +11,8 @@ export type CurriculumSource =
   | 'experimental-tiered'
   | 'experimental-a1'
   | 'experimental-a2'
-  | 'experimental-b1';
+  | 'experimental-b1'
+  | 'experimental-de-exam';
 
 export type CurriculumCategory =
   | 'all'
@@ -79,6 +80,7 @@ export const ALL_SOURCES: CurriculumSource[] = [
   'experimental-a1',
   'experimental-a2',
   'experimental-b1',
+  'experimental-de-exam',
 ];
 
 export const ALL_CATEGORIES: CurriculumCategory[] = [
@@ -109,6 +111,7 @@ export const SOURCE_LABELS_PL: Record<CurriculumSource, string> = {
   'experimental-a1': 'CEFR A1',
   'experimental-a2': 'CEFR A2',
   'experimental-b1': 'CEFR B1',
+  'experimental-de-exam': 'Niemiecki (egzamin)',
 };
 
 // One-line explanations shown under each source radio. Keep under ~60
@@ -119,4 +122,5 @@ export const SOURCE_DESCRIPTIONS_PL: Record<CurriculumSource, string> = {
   'experimental-a1': 'tylko słownictwo A1 (początkujący)',
   'experimental-a2': 'tylko słownictwo A2 (podstawowy)',
   'experimental-b1': 'tylko słownictwo B1 (średnio zaawansowany)',
+  'experimental-de-exam': 'ćwiczenia do egzaminu z niemieckiego',
 };

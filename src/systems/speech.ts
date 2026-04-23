@@ -3,6 +3,14 @@
 // missing SpeechRecognition entirely). Both helpers are no-throw on
 // unsupported browsers; callers get a friendly fallback UI.
 
+import type { CurriculumSource } from './CurriculumTypes';
+
+// Maps a curriculum source to the BCP-47 lang code used by the
+// browser's TTS and SpeechRecognition APIs.
+export function sourceLangCode(src: CurriculumSource): string {
+  return src === 'experimental-de-exam' ? 'de-DE' : 'en-US';
+}
+
 export function isTtsSupported(): boolean {
   return typeof window !== 'undefined' && 'speechSynthesis' in window;
 }
@@ -80,12 +88,13 @@ export function listen(opts: { lang?: string } = {}): Promise<SrResult> {
   });
 }
 
-// Utility: tokenize an English sentence into lowercase alphabetic words.
-// Used to compare target sentence vs transcript for fuzzy pass/fail.
+// Utility: tokenize a target-language sentence into lowercase words.
+// Keeps ASCII letters plus German umlauts (ä ö ü) and ß so German
+// sentences round-trip. Used to compare target vs transcript.
 export function tokenizeEn(s: string): string[] {
   return s
     .toLowerCase()
-    .replace(/[^a-z'\s-]/g, ' ')
+    .replace(/[^a-zäöüß'\s-]/g, ' ')
     .split(/\s+/)
     .filter((w) => w.length > 0);
 }

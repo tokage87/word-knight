@@ -1,0 +1,297 @@
+[
+  {
+    "id": "de-exam-germany",
+    "title": "Deutschland",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-germany", "de-intro-country", "de-intro-city"],
+    "sentences": [
+      {
+        "id": "de-exam-germany-s1",
+        "pl": "Niemcy to kraj w Europie.",
+        "steps": [
+          { "correct": "Deutschland", "distractor": "Österreich" },
+          { "correct": "ist", "distractor": "sind" },
+          { "correct": "ein", "distractor": "eine" },
+          { "correct": "Land", "distractor": "Stadt" },
+          { "correct": "in", "distractor": "auf" },
+          { "correct": "Europa", "distractor": "Afrika" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-s2",
+        "pl": "Stolicą Niemiec jest Berlin.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Hauptstadt", "distractor": "Stadt" },
+          { "correct": "von", "distractor": "aus" },
+          { "correct": "Deutschland", "distractor": "Österreich" },
+          { "correct": "ist", "distractor": "sind" },
+          { "correct": "Berlin", "distractor": "Wien" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-s3",
+        "pl": "W Niemczech mieszka około 84 milionów ludzi.",
+        "steps": [
+          { "correct": "In", "distractor": "Auf" },
+          { "correct": "Deutschland", "distractor": "Europa" },
+          { "correct": "leben", "distractor": "wohnen" },
+          { "correct": "etwa", "distractor": "viele" },
+          { "correct": "84", "distractor": "48" },
+          { "correct": "Millionen", "distractor": "Menschen" },
+          { "correct": "Menschen", "distractor": "Millionen" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-s4",
+        "pl": "W Niemczech mówi się po niemiecku.",
+        "steps": [
+          { "correct": "In", "distractor": "Aus" },
+          { "correct": "Deutschland", "distractor": "Österreich" },
+          { "correct": "spricht", "distractor": "sprechen" },
+          { "correct": "man", "distractor": "wir" },
+          { "correct": "Deutsch", "distractor": "Polnisch" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-q1",
+        "pl": "Wo liegt Deutschland?",
+        "steps": [
+          { "correct": "in Europa", "distractor": "in Asien" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-q2",
+        "pl": "Wie heißt die Hauptstadt von Deutschland?",
+        "steps": [
+          { "correct": "Berlin", "distractor": "Wien" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-q3",
+        "pl": "Wie viele Menschen leben ungefähr in Deutschland?",
+        "steps": [
+          { "correct": "etwa 84 Millionen", "distractor": "etwa 9 Millionen" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-q4",
+        "pl": "Welche Farben hat die deutsche Flagge?",
+        "steps": [
+          { "correct": "schwarz, rot und goldig", "distractor": "blau, weiß und rot" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-q5",
+        "pl": "Welche Sprache spricht man in Deutschland?",
+        "steps": [
+          { "correct": "Deutsch", "distractor": "Polnisch" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-q6",
+        "pl": "Welcher Sport ist in Deutschland beliebt?",
+        "steps": [
+          { "correct": "Fußball", "distractor": "Basketball" }
+        ]
+      },
+      {
+        "id": "de-exam-germany-q7",
+        "pl": "Was ist typisches Essen in Deutschland?",
+        "steps": [
+          { "correct": "Wurst und Brot", "distractor": "Pizza und Pasta" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "de-exam-austria",
+    "title": "Österreich",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-country", "de-intro-city"],
+    "sentences": [
+      {
+        "id": "de-exam-austria-s1",
+        "pl": "Austria leży w Europie.",
+        "steps": [
+          { "correct": "Österreich", "distractor": "Deutschland" },
+          { "correct": "liegt", "distractor": "leben" },
+          { "correct": "in", "distractor": "auf" },
+          { "correct": "Europa", "distractor": "Asien" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-s2",
+        "pl": "Stolicą jest Wiedeń.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Hauptstadt", "distractor": "Stadt" },
+          { "correct": "ist", "distractor": "sind" },
+          { "correct": "Wien", "distractor": "Berlin" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-s3",
+        "pl": "W Austrii mieszka około 9 milionów ludzi.",
+        "steps": [
+          { "correct": "In", "distractor": "Auf" },
+          { "correct": "Österreich", "distractor": "Deutschland" },
+          { "correct": "leben", "distractor": "lernen" },
+          { "correct": "etwa", "distractor": "viele" },
+          { "correct": "9", "distractor": "84" },
+          { "correct": "Millionen", "distractor": "Menschen" },
+          { "correct": "Menschen", "distractor": "Millionen" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-s4",
+        "pl": "Ludzie mówią po niemiecku.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Menschen", "distractor": "Millionen" },
+          { "correct": "sprechen", "distractor": "spricht" },
+          { "correct": "Deutsch", "distractor": "Polnisch" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-q1",
+        "pl": "In welchem Kontinent liegt Österreich?",
+        "steps": [
+          { "correct": "in Europa", "distractor": "in Afrika" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-q2",
+        "pl": "Wie heißt die Hauptstadt von Österreich?",
+        "steps": [
+          { "correct": "Wien", "distractor": "Berlin" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-q3",
+        "pl": "Welche Sprache sprechen die Menschen in Österreich?",
+        "steps": [
+          { "correct": "Deutsch", "distractor": "Französisch" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-q4",
+        "pl": "Wie viele Menschen leben ungefähr in Österreich?",
+        "steps": [
+          { "correct": "etwa 9 Millionen", "distractor": "etwa 84 Millionen" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-q5",
+        "pl": "Welche Berge gibt es in Österreich?",
+        "steps": [
+          { "correct": "die Alpen", "distractor": "die Tatra" }
+        ]
+      },
+      {
+        "id": "de-exam-austria-q6",
+        "pl": "Was ist typisches Essen aus Österreich?",
+        "steps": [
+          { "correct": "Wiener Schnitzel und Apfelstrudel", "distractor": "Pizza und Pasta" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "de-exam-switzerland",
+    "title": "Die Schweiz",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-country", "de-intro-city"],
+    "sentences": [
+      {
+        "id": "de-exam-switzerland-s1",
+        "pl": "Szwajcaria to kraj w Europie.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Schweiz", "distractor": "Österreich" },
+          { "correct": "ist", "distractor": "sind" },
+          { "correct": "ein", "distractor": "eine" },
+          { "correct": "Land", "distractor": "Stadt" },
+          { "correct": "in", "distractor": "auf" },
+          { "correct": "Europa", "distractor": "Afrika" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-s2",
+        "pl": "Ma około 8 milionów mieszkańców.",
+        "steps": [
+          { "correct": "Sie", "distractor": "Er" },
+          { "correct": "hat", "distractor": "ist" },
+          { "correct": "etwa", "distractor": "viele" },
+          { "correct": "8", "distractor": "84" },
+          { "correct": "Millionen", "distractor": "Menschen" },
+          { "correct": "Einwohner", "distractor": "Berge" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-s3",
+        "pl": "Stolicą jest Berno.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Hauptstadt", "distractor": "Stadt" },
+          { "correct": "ist", "distractor": "sind" },
+          { "correct": "Bern", "distractor": "Berlin" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-s4",
+        "pl": "Szwajcaria jest znana z gór.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Schweiz", "distractor": "Österreich" },
+          { "correct": "ist", "distractor": "sind" },
+          { "correct": "bekannt", "distractor": "berühmt" },
+          { "correct": "für", "distractor": "aus" },
+          { "correct": "die", "distractor": "der" },
+          { "correct": "Berge", "distractor": "Seen" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-q1",
+        "pl": "Wie viele Einwohner hat die Schweiz ungefähr?",
+        "steps": [
+          { "correct": "etwa 8 Millionen", "distractor": "etwa 84 Millionen" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-q2",
+        "pl": "Was ist die Hauptstadt der Schweiz?",
+        "steps": [
+          { "correct": "Bern", "distractor": "Berlin" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-q3",
+        "pl": "Welche vier Landessprachen gibt es in der Schweiz?",
+        "steps": [
+          { "correct": "Deutsch, Französisch, Italienisch und Rätoromanisch", "distractor": "Deutsch, Polnisch, Italienisch und Englisch" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-q4",
+        "pl": "Für welche Berge ist die Schweiz bekannt?",
+        "steps": [
+          { "correct": "für die Alpen", "distractor": "für die Tatra" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-q5",
+        "pl": "Wofür ist die Schweiz besonders berühmt?",
+        "steps": [
+          { "correct": "für Schokolade, Käse und Uhren", "distractor": "für Pizza, Pasta und Wein" }
+        ]
+      }
+    ]
+  }
+]

@@ -1,7 +1,8 @@
 import Phaser from 'phaser';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import type { ListeningSentence } from '../systems/UnlockGates';
-import { cancelSpeak, isTtsSupported, speak } from '../systems/speech';
+import { cancelSpeak, isTtsSupported, sourceLangCode, speak } from '../systems/speech';
+import { curriculumCatalog } from '../systems/CurriculumCatalog';
 
 // Listening gate — opens for branches with gate.kind === 'listening'
 // (Water / Biblioteka Magii). Shows each English sentence with the
@@ -151,8 +152,9 @@ export class ListeningTask {
     this.root.querySelector('.wt-cancel')!.addEventListener('click', () => this.close());
     this.root.querySelector('.wt-submit')!.addEventListener('click', () => this.advance());
 
+    const lang = sourceLangCode(curriculumCatalog.getActiveSelection().source);
     this.root.querySelector('.lt-speak')?.addEventListener('click', () =>
-      speak(s.en, { lang: 'en-US', rate: 0.85 }),
+      speak(s.en, { lang, rate: 0.85 }),
     );
 
     this.root.querySelectorAll<HTMLButtonElement>('.lt-chip:not([disabled])').forEach((btn) => {
@@ -167,7 +169,7 @@ export class ListeningTask {
     });
 
     if (autoSpeak && isTtsSupported()) {
-      window.setTimeout(() => speak(s.en, { lang: 'en-US', rate: 0.85 }), 120);
+      window.setTimeout(() => speak(s.en, { lang, rate: 0.85 }), 120);
     }
   }
 

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "de-intro-s1",
+    "pl": "Nazywam się Marek.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Du" },
+      { "correct": "heiße", "distractor": "wohne" },
+      { "correct": "Marek", "distractor": "Berlin" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-name"]
+  },
+  {
+    "id": "de-intro-s2",
+    "pl": "Mam dziesięć lat.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Er" },
+      { "correct": "bin", "distractor": "habe" },
+      { "correct": "zehn", "distractor": "zwanzig" },
+      { "correct": "Jahre", "distractor": "Tage" },
+      { "correct": "alt", "distractor": "neu" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-age", "de-intro-year"]
+  },
+  {
+    "id": "de-intro-s3",
+    "pl": "Mieszkam w Warszawie.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Wir" },
+      { "correct": "wohne", "distractor": "heiße" },
+      { "correct": "in", "distractor": "auf" },
+      { "correct": "Warschau", "distractor": "Berlin" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-city"]
+  },
+  {
+    "id": "de-intro-s4",
+    "pl": "Pochodzę z Polski.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Sie" },
+      { "correct": "komme", "distractor": "gehe" },
+      { "correct": "aus", "distractor": "in" },
+      { "correct": "Polen", "distractor": "Deutschland" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-poland"]
+  },
+  {
+    "id": "de-intro-s5",
+    "pl": "Moja mama ma na imię Anna.",
+    "steps": [
+      { "correct": "Meine", "distractor": "Mein" },
+      { "correct": "Mutter", "distractor": "Vater" },
+      { "correct": "heißt", "distractor": "wohnt" },
+      { "correct": "Anna", "distractor": "Berlin" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-mother", "de-intro-name"]
+  },
+  {
+    "id": "de-intro-s6",
+    "pl": "Mój tata ma na imię Piotr.",
+    "steps": [
+      { "correct": "Mein", "distractor": "Meine" },
+      { "correct": "Vater", "distractor": "Mutter" },
+      { "correct": "heißt", "distractor": "wohnt" },
+      { "correct": "Piotr", "distractor": "Polen" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-father", "de-intro-name"]
+  },
+  {
+    "id": "de-intro-s7",
+    "pl": "Mam brata i siostrę.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Er" },
+      { "correct": "habe", "distractor": "bin" },
+      { "correct": "einen", "distractor": "eine" },
+      { "correct": "Bruder", "distractor": "Schwester" },
+      { "correct": "und", "distractor": "oder" },
+      { "correct": "eine", "distractor": "einen" },
+      { "correct": "Schwester", "distractor": "Bruder" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-brother", "de-intro-sister"]
+  },
+  {
+    "id": "de-intro-s8",
+    "pl": "Chodzę do szkoły.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Sie" },
+      { "correct": "gehe", "distractor": "komme" },
+      { "correct": "in", "distractor": "aus" },
+      { "correct": "die", "distractor": "der" },
+      { "correct": "Schule", "distractor": "Klasse" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-school"]
+  },
+  {
+    "id": "de-intro-s9",
+    "pl": "Jestem w czwartej klasie.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Du" },
+      { "correct": "bin", "distractor": "habe" },
+      { "correct": "in", "distractor": "auf" },
+      { "correct": "der", "distractor": "die" },
+      { "correct": "vierten", "distractor": "ersten" },
+      { "correct": "Klasse", "distractor": "Schule" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-class"]
+  },
+  {
+    "id": "de-intro-s10",
+    "pl": "Moim hobby jest piłka nożna.",
+    "steps": [
+      { "correct": "Mein", "distractor": "Meine" },
+      { "correct": "Hobby", "distractor": "Sport" },
+      { "correct": "ist", "distractor": "sind" },
+      { "correct": "Fußball", "distractor": "Musik" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-hobby", "de-intro-football"]
+  },
+  {
+    "id": "de-intro-s11",
+    "pl": "Lubię grać w piłkę nożną.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Er" },
+      { "correct": "spiele", "distractor": "höre" },
+      { "correct": "gern", "distractor": "nicht" },
+      { "correct": "Fußball", "distractor": "Musik" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-football"]
+  },
+  {
+    "id": "de-intro-s12",
+    "pl": "Lubię słuchać muzyki.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Wir" },
+      { "correct": "höre", "distractor": "spiele" },
+      { "correct": "gern", "distractor": "nicht" },
+      { "correct": "Musik", "distractor": "Fußball" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-music"]
+  },
+  {
+    "id": "de-intro-s13",
+    "pl": "Lubię jeść pizzę.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Du" },
+      { "correct": "esse", "distractor": "trinke" },
+      { "correct": "gern", "distractor": "nicht" },
+      { "correct": "Pizza", "distractor": "Brot" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-pizza", "de-intro-food"]
+  },
+  {
+    "id": "de-intro-s14",
+    "pl": "Mój ulubiony kolor to niebieski.",
+    "steps": [
+      { "correct": "Meine", "distractor": "Mein" },
+      { "correct": "Lieblingsfarbe", "distractor": "Lieblingsessen" },
+      { "correct": "ist", "distractor": "sind" },
+      { "correct": "blau", "distractor": "rot" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-color", "de-intro-blue"]
+  },
+  {
+    "id": "de-intro-s15",
+    "pl": "Mam psa.",
+    "steps": [
+      { "correct": "Ich", "distractor": "Sie" },
+      { "correct": "habe", "distractor": "bin" },
+      { "correct": "einen", "distractor": "eine" },
+      { "correct": "Hund", "distractor": "Katze" }
+    ],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-dog"]
+  }
+]
