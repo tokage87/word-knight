@@ -1,14 +1,14 @@
 [
   {
-    "id": "de-exam-germany",
-    "title": "Deutschland",
+    "id": "de-exam-germany-opis",
+    "title": "Deutschland – opis",
     "tier": 1,
     "cefr": "a1",
     "category": "all",
     "vocabIds": ["de-intro-germany", "de-intro-country", "de-intro-city"],
     "sentences": [
       {
-        "id": "de-exam-germany-s1",
+        "id": "de-exam-germany-opis-s1",
         "pl": "Niemcy to kraj w Europie.",
         "steps": [
           { "correct": "Deutschland", "distractor": "Österreich" },
@@ -20,7 +20,7 @@
         ]
       },
       {
-        "id": "de-exam-germany-s2",
+        "id": "de-exam-germany-opis-s2",
         "pl": "Stolicą Niemiec jest Berlin.",
         "steps": [
           { "correct": "Die", "distractor": "Der" },
@@ -32,7 +32,28 @@
         ]
       },
       {
-        "id": "de-exam-germany-s3",
+        "id": "de-exam-germany-opis-s3",
+        "pl": "W Niemczech mówi się po niemiecku.",
+        "steps": [
+          { "correct": "In", "distractor": "Aus" },
+          { "correct": "Deutschland", "distractor": "Österreich" },
+          { "correct": "spricht", "distractor": "sprechen" },
+          { "correct": "man", "distractor": "wir" },
+          { "correct": "Deutsch", "distractor": "Polnisch" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "de-exam-germany-mieszkancy",
+    "title": "Deutschland – mieszkańcy",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-germany"],
+    "sentences": [
+      {
+        "id": "de-exam-germany-mieszkancy-s1",
         "pl": "W Niemczech mieszka około 84 milionów ludzi.",
         "steps": [
           { "correct": "In", "distractor": "Auf" },
@@ -45,60 +66,69 @@
         ]
       },
       {
-        "id": "de-exam-germany-s4",
-        "pl": "W Niemczech mówi się po niemiecku.",
+        "id": "de-exam-germany-mieszkancy-q1",
+        "pl": "Wie viele Menschen leben ungefähr in Deutschland?",
         "steps": [
-          { "correct": "In", "distractor": "Aus" },
-          { "correct": "Deutschland", "distractor": "Österreich" },
-          { "correct": "spricht", "distractor": "sprechen" },
-          { "correct": "man", "distractor": "wir" },
-          { "correct": "Deutsch", "distractor": "Polnisch" }
+          { "correct": "etwa 84 Millionen", "distractor": "etwa 9 Millionen" }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "de-exam-germany-pytania-1",
+    "title": "Deutschland – pytania 1",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-germany"],
+    "sentences": [
       {
-        "id": "de-exam-germany-q1",
+        "id": "de-exam-germany-pytania-1-q1",
         "pl": "Wo liegt Deutschland?",
         "steps": [
           { "correct": "in Europa", "distractor": "in Asien" }
         ]
       },
       {
-        "id": "de-exam-germany-q2",
+        "id": "de-exam-germany-pytania-1-q2",
         "pl": "Wie heißt die Hauptstadt von Deutschland?",
         "steps": [
           { "correct": "Berlin", "distractor": "Wien" }
         ]
       },
       {
-        "id": "de-exam-germany-q3",
-        "pl": "Wie viele Menschen leben ungefähr in Deutschland?",
-        "steps": [
-          { "correct": "etwa 84 Millionen", "distractor": "etwa 9 Millionen" }
-        ]
-      },
-      {
-        "id": "de-exam-germany-q4",
+        "id": "de-exam-germany-pytania-1-q3",
         "pl": "Welche Farben hat die deutsche Flagge?",
         "steps": [
           { "correct": "schwarz, rot und goldig", "distractor": "blau, weiß und rot" }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "de-exam-germany-pytania-2",
+    "title": "Deutschland – pytania 2",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-germany"],
+    "sentences": [
       {
-        "id": "de-exam-germany-q5",
+        "id": "de-exam-germany-pytania-2-q1",
         "pl": "Welche Sprache spricht man in Deutschland?",
         "steps": [
           { "correct": "Deutsch", "distractor": "Polnisch" }
         ]
       },
       {
-        "id": "de-exam-germany-q6",
+        "id": "de-exam-germany-pytania-2-q2",
         "pl": "Welcher Sport ist in Deutschland beliebt?",
         "steps": [
           { "correct": "Fußball", "distractor": "Basketball" }
         ]
       },
       {
-        "id": "de-exam-germany-q7",
+        "id": "de-exam-germany-pytania-2-q3",
         "pl": "Was ist typisches Essen in Deutschland?",
         "steps": [
           { "correct": "Wurst und Brot", "distractor": "Pizza und Pasta" }
@@ -107,15 +137,15 @@
     ]
   },
   {
-    "id": "de-exam-austria",
-    "title": "Österreich",
+    "id": "de-exam-austria-opis",
+    "title": "Österreich – opis",
     "tier": 1,
     "cefr": "a1",
     "category": "all",
     "vocabIds": ["de-intro-country", "de-intro-city"],
     "sentences": [
       {
-        "id": "de-exam-austria-s1",
+        "id": "de-exam-austria-opis-s1",
         "pl": "Austria leży w Europie.",
         "steps": [
           { "correct": "Österreich", "distractor": "Deutschland" },
@@ -125,7 +155,7 @@
         ]
       },
       {
-        "id": "de-exam-austria-s2",
+        "id": "de-exam-austria-opis-s2",
         "pl": "Stolicą jest Wiedeń.",
         "steps": [
           { "correct": "Die", "distractor": "Der" },
@@ -135,7 +165,27 @@
         ]
       },
       {
-        "id": "de-exam-austria-s3",
+        "id": "de-exam-austria-opis-s3",
+        "pl": "Ludzie mówią po niemiecku.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Menschen", "distractor": "Millionen" },
+          { "correct": "sprechen", "distractor": "spricht" },
+          { "correct": "Deutsch", "distractor": "Polnisch" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "de-exam-austria-mieszkancy",
+    "title": "Österreich – mieszkańcy",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-country"],
+    "sentences": [
+      {
+        "id": "de-exam-austria-mieszkancy-s1",
         "pl": "W Austrii mieszka około 9 milionów ludzi.",
         "steps": [
           { "correct": "In", "distractor": "Auf" },
@@ -148,52 +198,62 @@
         ]
       },
       {
-        "id": "de-exam-austria-s4",
-        "pl": "Ludzie mówią po niemiecku.",
+        "id": "de-exam-austria-mieszkancy-q1",
+        "pl": "Wie viele Menschen leben ungefähr in Österreich?",
         "steps": [
-          { "correct": "Die", "distractor": "Der" },
-          { "correct": "Menschen", "distractor": "Millionen" },
-          { "correct": "sprechen", "distractor": "spricht" },
-          { "correct": "Deutsch", "distractor": "Polnisch" }
+          { "correct": "etwa 9 Millionen", "distractor": "etwa 84 Millionen" }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "de-exam-austria-pytania-1",
+    "title": "Österreich – pytania 1",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-country"],
+    "sentences": [
       {
-        "id": "de-exam-austria-q1",
+        "id": "de-exam-austria-pytania-1-q1",
         "pl": "In welchem Kontinent liegt Österreich?",
         "steps": [
           { "correct": "in Europa", "distractor": "in Afrika" }
         ]
       },
       {
-        "id": "de-exam-austria-q2",
+        "id": "de-exam-austria-pytania-1-q2",
         "pl": "Wie heißt die Hauptstadt von Österreich?",
         "steps": [
           { "correct": "Wien", "distractor": "Berlin" }
         ]
       },
       {
-        "id": "de-exam-austria-q3",
+        "id": "de-exam-austria-pytania-1-q3",
         "pl": "Welche Sprache sprechen die Menschen in Österreich?",
         "steps": [
           { "correct": "Deutsch", "distractor": "Französisch" }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "de-exam-austria-pytania-2",
+    "title": "Österreich – góry i kuchnia",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-country"],
+    "sentences": [
       {
-        "id": "de-exam-austria-q4",
-        "pl": "Wie viele Menschen leben ungefähr in Österreich?",
-        "steps": [
-          { "correct": "etwa 9 Millionen", "distractor": "etwa 84 Millionen" }
-        ]
-      },
-      {
-        "id": "de-exam-austria-q5",
+        "id": "de-exam-austria-pytania-2-q1",
         "pl": "Welche Berge gibt es in Österreich?",
         "steps": [
           { "correct": "die Alpen", "distractor": "die Tatra" }
         ]
       },
       {
-        "id": "de-exam-austria-q6",
+        "id": "de-exam-austria-pytania-2-q2",
         "pl": "Was ist typisches Essen aus Österreich?",
         "steps": [
           { "correct": "Wiener Schnitzel und Apfelstrudel", "distractor": "Pizza und Pasta" }
@@ -202,15 +262,15 @@
     ]
   },
   {
-    "id": "de-exam-switzerland",
-    "title": "Die Schweiz",
+    "id": "de-exam-switzerland-opis",
+    "title": "Die Schweiz – opis",
     "tier": 1,
     "cefr": "a1",
     "category": "all",
     "vocabIds": ["de-intro-country", "de-intro-city"],
     "sentences": [
       {
-        "id": "de-exam-switzerland-s1",
+        "id": "de-exam-switzerland-opis-s1",
         "pl": "Szwajcaria to kraj w Europie.",
         "steps": [
           { "correct": "Die", "distractor": "Der" },
@@ -223,7 +283,40 @@
         ]
       },
       {
-        "id": "de-exam-switzerland-s2",
+        "id": "de-exam-switzerland-opis-s2",
+        "pl": "Stolicą jest Berno.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Hauptstadt", "distractor": "Stadt" },
+          { "correct": "ist", "distractor": "sind" },
+          { "correct": "Bern", "distractor": "Berlin" }
+        ]
+      },
+      {
+        "id": "de-exam-switzerland-opis-s3",
+        "pl": "Szwajcaria jest znana z gór.",
+        "steps": [
+          { "correct": "Die", "distractor": "Der" },
+          { "correct": "Schweiz", "distractor": "Österreich" },
+          { "correct": "ist", "distractor": "sind" },
+          { "correct": "bekannt", "distractor": "berühmt" },
+          { "correct": "für", "distractor": "aus" },
+          { "correct": "die", "distractor": "der" },
+          { "correct": "Berge", "distractor": "Seen" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "de-exam-switzerland-mieszkancy",
+    "title": "Die Schweiz – mieszkańcy",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-country"],
+    "sentences": [
+      {
+        "id": "de-exam-switzerland-mieszkancy-s1",
         "pl": "Ma około 8 milionów mieszkańców.",
         "steps": [
           { "correct": "Sie", "distractor": "Er" },
@@ -235,58 +328,45 @@
         ]
       },
       {
-        "id": "de-exam-switzerland-s3",
-        "pl": "Stolicą jest Berno.",
-        "steps": [
-          { "correct": "Die", "distractor": "Der" },
-          { "correct": "Hauptstadt", "distractor": "Stadt" },
-          { "correct": "ist", "distractor": "sind" },
-          { "correct": "Bern", "distractor": "Berlin" }
-        ]
-      },
-      {
-        "id": "de-exam-switzerland-s4",
-        "pl": "Szwajcaria jest znana z gór.",
-        "steps": [
-          { "correct": "Die", "distractor": "Der" },
-          { "correct": "Schweiz", "distractor": "Österreich" },
-          { "correct": "ist", "distractor": "sind" },
-          { "correct": "bekannt", "distractor": "berühmt" },
-          { "correct": "für", "distractor": "aus" },
-          { "correct": "die", "distractor": "der" },
-          { "correct": "Berge", "distractor": "Seen" }
-        ]
-      },
-      {
-        "id": "de-exam-switzerland-q1",
+        "id": "de-exam-switzerland-mieszkancy-q1",
         "pl": "Wie viele Einwohner hat die Schweiz ungefähr?",
         "steps": [
           { "correct": "etwa 8 Millionen", "distractor": "etwa 84 Millionen" }
         ]
       },
       {
-        "id": "de-exam-switzerland-q2",
+        "id": "de-exam-switzerland-mieszkancy-q2",
+        "pl": "Welche vier Landessprachen gibt es in der Schweiz?",
+        "steps": [
+          { "correct": "Deutsch, Französisch, Italienisch und Rätoromanisch", "distractor": "Deutsch, Polnisch, Italienisch und Englisch" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "de-exam-switzerland-pytania",
+    "title": "Die Schweiz – pytania",
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all",
+    "vocabIds": ["de-intro-country"],
+    "sentences": [
+      {
+        "id": "de-exam-switzerland-pytania-q1",
         "pl": "Was ist die Hauptstadt der Schweiz?",
         "steps": [
           { "correct": "Bern", "distractor": "Berlin" }
         ]
       },
       {
-        "id": "de-exam-switzerland-q3",
-        "pl": "Welche vier Landessprachen gibt es in der Schweiz?",
-        "steps": [
-          { "correct": "Deutsch, Französisch, Italienisch und Rätoromanisch", "distractor": "Deutsch, Polnisch, Italienisch und Englisch" }
-        ]
-      },
-      {
-        "id": "de-exam-switzerland-q4",
+        "id": "de-exam-switzerland-pytania-q2",
         "pl": "Für welche Berge ist die Schweiz bekannt?",
         "steps": [
           { "correct": "für die Alpen", "distractor": "für die Tatra" }
         ]
       },
       {
-        "id": "de-exam-switzerland-q5",
+        "id": "de-exam-switzerland-pytania-q3",
         "pl": "Wofür ist die Schweiz besonders berühmt?",
         "steps": [
           { "correct": "für Schokolade, Käse und Uhren", "distractor": "für Pizza, Pasta und Wein" }
