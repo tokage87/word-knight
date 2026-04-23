@@ -56,8 +56,8 @@
   {
     "id": "de-intro-mother",
     "pl": "mama",
-    "en": "Mutter",
-    "distractors": ["Vater", "Schwester", "Oma"],
+    "en": "Mama",
+    "distractors": ["Papa", "Schwester", "Oma"],
     "tier": 1,
     "cefr": "a1",
     "category": "all"
@@ -65,8 +65,8 @@
   {
     "id": "de-intro-father",
     "pl": "tata",
-    "en": "Vater",
-    "distractors": ["Mutter", "Bruder", "Opa"],
+    "en": "Papa",
+    "distractors": ["Mama", "Bruder", "Opa"],
     "tier": 1,
     "cefr": "a1",
     "category": "all"
@@ -701,9 +701,27 @@
   },
   {
     "id": "de-greet-good-morning",
-    "pl": "dzień dobry (rano)",
+    "pl": "dzień dobry rano",
     "en": "Guten Morgen",
     "distractors": ["Guten Tag", "Guten Abend", "Gute Nacht"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-greet-good-night",
+    "pl": "dobranoc",
+    "en": "Gute Nacht",
+    "distractors": ["Guten Morgen", "Guten Abend", "Guten Tag"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-greet-good-evening",
+    "pl": "dobry wieczór",
+    "en": "Guten Abend",
+    "distractors": ["Guten Morgen", "Gute Nacht", "Guten Tag"],
     "tier": 1,
     "cefr": "a1",
     "category": "all"
@@ -814,8 +832,17 @@
   {
     "id": "de-school-bag",
     "pl": "plecak",
-    "en": "Schultasche",
-    "distractors": ["Buch", "Heft", "Stift"],
+    "en": "Rucksack",
+    "distractors": ["Schultasche", "Heft", "Stift"],
+    "tier": 1,
+    "cefr": "a1",
+    "category": "all"
+  },
+  {
+    "id": "de-school-notebook",
+    "pl": "zeszyt",
+    "en": "Heft",
+    "distractors": ["Buch", "Stift", "Tafel"],
     "tier": 1,
     "cefr": "a1",
     "category": "all"
