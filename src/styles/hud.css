@@ -203,6 +203,17 @@
   z-index: 3;
   font-weight: bold;
 }
+/* Ultimate slot — same size as the ally slots so the row fits, but
+   a golden inner border + spacing to the right so it reads as its
+   own class of ability. Ready-state gets a thicker glow. */
+.ability--ult {
+  margin-right: 6px;
+  box-shadow: 0 0 0 2px #ffd75a inset, 0 0 6px rgba(255, 215, 90, 0.5);
+}
+.ability--ult.ability--ready {
+  box-shadow: 0 0 0 2px #ffd75a inset, 0 0 10px #ffd75a;
+}
+
 .ability--ready { animation: readyGlow 1.4s ease-in-out infinite alternate; }
 @keyframes readyGlow {
   from { filter: drop-shadow(0 0 0 transparent); }

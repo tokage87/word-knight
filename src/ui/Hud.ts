@@ -33,6 +33,9 @@ export class Hud {
   // companion-driven. Each key is an AllyKind; the values mirror the
   // element refs we need to update per frame.
   private allyIcons: Record<string, { root: HTMLElement; overlay: HTMLElement; text: HTMLElement; lock?: HTMLElement }> = {};
+  // Ultimate badge — separate slot to the left of the ally row. Stays
+  // hidden until GameScene publishes ultCdBase (i.e. level 10 hit).
+  private ultIcon?: { root: HTMLElement; overlay: HTMLElement; text: HTMLElement };
   private bossBar?: HTMLElement;
   private bossFill?: HTMLElement;
   private expText?: HTMLElement;
@@ -109,6 +112,15 @@ export class Hud {
       const lock = ic.querySelector<HTMLElement>('.ability-lock') ?? undefined;
       this.allyIcons[kind] = { root: ic, overlay, text, lock };
     });
+
+    const ult = root.querySelector<HTMLElement>('.ability[data-role="ult"]');
+    if (ult) {
+      this.ultIcon = {
+        root: ult,
+        overlay: ult.querySelector<HTMLElement>('.ability-cd-overlay')!,
+        text: ult.querySelector<HTMLElement>('.ability-cd-text')!,
+      };
+    }
   }
 
   tick(registry: Phaser.Data.DataManager) {
@@ -162,6 +174,7 @@ export class Hud {
     ).forEach((k) => {
       this.updateAlly(registry, k);
     });
+    this.updateUlt(registry);
 
     const expPct = (registry.get('expPct') as number | undefined) ?? 0;
     if (this.expFill) this.expFill.style.width = `${Math.min(100, expPct)}%`;
@@ -401,6 +414,35 @@ export class Hud {
     );
   }
 
+  // Ultimate badge. Hidden (as locked padlock) until GameScene publishes
+  // `ultCdBase` — which happens the first tick after the player hits
+  // level ULT_UNLOCK_LEVEL. After that it tracks like any other ability:
+  // overlay height = remaining / base, label counts down, ready-glow at 0.
+  private updateUlt(registry: Phaser.Data.DataManager) {
+    if (!this.ultIcon) return;
+    const total = registry.get('ultCdBase') as number | undefined;
+    if (total === undefined) {
+      this.ultIcon.root.classList.add('ability--locked');
+      this.ultIcon.root.classList.remove('ability--ready');
+      this.ultIcon.overlay.style.height = '100%';
+      this.ultIcon.text.textContent = '';
+      return;
+    }
+    this.ultIcon.root.classList.remove('ability--locked');
+    const lock = this.ultIcon.root.querySelector<HTMLElement>('.ability-lock');
+    if (lock) lock.style.display = 'none';
+    const remaining = (registry.get('ultCdMs') as number | undefined) ?? 0;
+    const frac = total > 0 ? remaining / total : 0;
+    this.ultIcon.overlay.style.height = `${Math.max(0, Math.min(1, frac)) * 100}%`;
+    this.ultIcon.text.textContent = remaining <= 0 ? '' : `${(remaining / 1000).toFixed(0)}s`;
+    this.ultIcon.root.classList.toggle('ability--ready', remaining <= 0);
+    const status = remaining <= 0 ? 'Gotowy' : `${(remaining / 1000).toFixed(1)}s`;
+    this.ultIcon.root.setAttribute(
+      'data-tooltip',
+      `Ultimate — masowe obrażenia wszystkim wrogom na ekranie.\nOdnowienie: ${(total / 1000).toFixed(0)}s · ${status}\nPoprawna odpowiedź: −3 s · błędna: +1 s`,
+    );
+  }
+
   // Unused; reserved for HP number reads if needed externally.
   getHp(): number {
     return this.hpNum;
@@ -477,6 +519,12 @@ const HTML = `
 
   <div class="hud-bottom-center">
     <div class="abilities-row">
+      <div class="ability ability--ult ability--locked" data-role="ult" data-tooltip="Ultimate — odblokowuje się na poziomie 10. Masowe obrażenia.">
+        <span class="ability-glyph">⚡</span>
+        <div class="ability-cd-overlay"></div>
+        <span class="ability-cd-text"></span>
+        <span class="ability-lock">🔒</span>
+      </div>
       <div class="ability ability--locked" data-ally="fire-archer" data-tooltip="Ognisty Łucznik — zablokowany. Odblokuj w Sali Bojowej.">
         <span class="ability-glyph">🏹</span>
         <div class="ability-cd-overlay"></div>
