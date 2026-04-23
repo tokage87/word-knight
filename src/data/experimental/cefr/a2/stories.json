@@ -1,7 +1,7 @@
 [
   {
     "id": "animals_nature-a2-story-01",
-    "title": "The Storm and Thunder",
+    "title": "Storm and Thunder",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -13,79 +13,67 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-01-s1",
-        "pl": "Pierwsza wskazówka to burza.",
+        "pl": "Burza jest głośna.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "storm",
+            "distractor": "meadow"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "storm",
-            "distractor": "sky"
+            "correct": "loud",
+            "distractor": "quiet"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-01-s2",
-        "pl": "Kolejna wskazówka to grzmot.",
+        "pl": "Grzmot jest głośny.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "thunder",
+            "distractor": "sky"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "thunder",
-            "distractor": "island"
+            "correct": "loud",
+            "distractor": "quiet"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-01-s3",
-        "pl": "Trzecia wskazówka to błyskawica.",
+        "pl": "Błyskawica jest jasna.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "lightning",
+            "distractor": "island"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "lightning",
-            "distractor": "valley"
+            "correct": "bright",
+            "distractor": "orchard"
           }
         ]
       }
@@ -93,7 +81,7 @@
   },
   {
     "id": "animals_nature-a2-story-02",
-    "title": "The Branch and Bush",
+    "title": "A Day with Branch",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -105,79 +93,91 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-02-s1",
-        "pl": "Pierwsza wskazówka to gałąź.",
+        "pl": "Gałąź jest w lesie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "branch",
+            "distractor": "ocean"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "branch",
-            "distractor": "path"
+            "correct": "in",
+            "distractor": "jungle"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "forest",
+            "distractor": "rainbow"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-02-s2",
-        "pl": "Kolejna wskazówka to krzak.",
+        "pl": "Krzak jest na łące.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "bush",
+            "distractor": "path"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "bush",
-            "distractor": "storm"
+            "correct": "in",
+            "distractor": "rainbow"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "meadow",
+            "distractor": "lightning"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-02-s3",
-        "pl": "Trzecia wskazówka to korzeń.",
+        "pl": "Korzeń jest nad rzeką.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "root",
+            "distractor": "storm"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "root",
-            "distractor": "branch"
+            "correct": "by",
+            "distractor": "lightning"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "river",
+            "distractor": "root"
           }
         ]
       }
@@ -185,7 +185,7 @@
   },
   {
     "id": "animals_nature-a2-story-03",
-    "title": "The Seed and Petal",
+    "title": "Seed Meets Petal",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -197,79 +197,91 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-03-s1",
-        "pl": "Pierwsza wskazówka to nasiono.",
+        "pl": "Nasiono jest na łące.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "seed",
+            "distractor": "root"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "seed",
-            "distractor": "wolf"
+            "correct": "in",
+            "distractor": "petal"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "meadow",
+            "distractor": "deer"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-03-s2",
-        "pl": "Kolejna wskazówka to płatek.",
+        "pl": "Płatek jest nad rzeką.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "petal",
+            "distractor": "wolf"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "petal",
-            "distractor": "squirrel"
+            "correct": "by",
+            "distractor": "deer"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "river",
+            "distractor": "hedgehog"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-03-s3",
-        "pl": "Trzecia wskazówka to lis.",
+        "pl": "Lis jest nad jeziorem.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "fox",
+            "distractor": "squirrel"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "fox",
-            "distractor": "dolphin"
+            "correct": "by",
+            "distractor": "hedgehog"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "lake",
+            "distractor": "whale"
           }
         ]
       }
@@ -277,7 +289,7 @@
   },
   {
     "id": "animals_nature-a2-story-04",
-    "title": "The Wolf and Deer",
+    "title": "Wolf near Deer",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -289,79 +301,91 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-04-s1",
-        "pl": "Pierwsza wskazówka to wilk.",
+        "pl": "Wilk jest nad rzeką.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "wolf",
+            "distractor": "parrot"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "wolf",
-            "distractor": "campfire"
+            "correct": "by",
+            "distractor": "farmer"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "river",
+            "distractor": "feather"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-04-s2",
-        "pl": "Kolejna wskazówka to jeleń.",
+        "pl": "Jeleń jest nad jeziorem.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "deer",
+            "distractor": "campfire"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "deer",
-            "distractor": "spring"
+            "correct": "by",
+            "distractor": "feather"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "lake",
+            "distractor": "summer"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-04-s3",
-        "pl": "Trzecia wskazówka to sowa.",
+        "pl": "Sowa jest w lesie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "owl",
+            "distractor": "spring"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "owl",
-            "distractor": "winter"
+            "correct": "in",
+            "distractor": "summer"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "forest",
+            "distractor": "chatty"
           }
         ]
       }
@@ -369,7 +393,7 @@
   },
   {
     "id": "animals_nature-a2-story-05",
-    "title": "The Squirrel and Hedgehog",
+    "title": "Squirrel Today",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -381,79 +405,91 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-05-s1",
-        "pl": "Pierwsza wskazówka to wiewiórka.",
+        "pl": "Wiewiórka jest w dolinie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "squirrel",
+            "distractor": "sunrise"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "squirrel",
-            "distractor": "sky"
+            "correct": "in",
+            "distractor": "rain"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "valley",
+            "distractor": "walks"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-05-s2",
-        "pl": "Kolejna wskazówka to jeż.",
+        "pl": "Jeż jest przy stawie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "hedgehog",
+            "distractor": "duck"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "hedgehog",
-            "distractor": "island"
+            "correct": "by",
+            "distractor": "walks"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "pond",
+            "distractor": "acts"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-05-s3",
-        "pl": "Trzecia wskazówka to żółw.",
+        "pl": "Żółw jest w sadzie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "turtle",
+            "distractor": "owns"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "turtle",
-            "distractor": "valley"
+            "correct": "in",
+            "distractor": "acts"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "orchard",
+            "distractor": "turns"
           }
         ]
       }
@@ -461,7 +497,7 @@
   },
   {
     "id": "animals_nature-a2-story-06",
-    "title": "The Dolphin and Whale",
+    "title": "Dolphin and Whale",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -473,79 +509,91 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-06-s1",
-        "pl": "Pierwsza wskazówka to delfin.",
+        "pl": "Delfin jest przy stawie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "dolphin",
+            "distractor": "every"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "dolphin",
-            "distractor": "path"
+            "correct": "by",
+            "distractor": "splash"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "pond",
+            "distractor": "everything"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-06-s2",
-        "pl": "Kolejna wskazówka to wieloryb.",
+        "pl": "Wieloryb jest w sadzie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "whale",
+            "distractor": "watches"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "whale",
-            "distractor": "storm"
+            "correct": "in",
+            "distractor": "everything"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "orchard",
+            "distractor": "mila"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-06-s3",
-        "pl": "Trzecia wskazówka to papuga.",
+        "pl": "Papuga czeka nad rzeką.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
             "correct": "parrot",
-            "distractor": "branch"
+            "distractor": "detective"
+          },
+          {
+            "correct": "waits",
+            "distractor": "detective"
+          },
+          {
+            "correct": "by",
+            "distractor": "mila"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "river",
+            "distractor": "kuba"
           }
         ]
       }
@@ -553,7 +601,7 @@
   },
   {
     "id": "animals_nature-a2-story-07",
-    "title": "The Farmer and Gardener",
+    "title": "A Day with Farmer",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -565,79 +613,91 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-07-s1",
-        "pl": "Pierwsza wskazówka to rolnik.",
+        "pl": "Rolnik jest w sadzie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "farmer",
+            "distractor": "lena"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "farmer",
-            "distractor": "fox"
+            "correct": "in",
+            "distractor": "bartek"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "orchard",
+            "distractor": "silly"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-07-s2",
-        "pl": "Kolejna wskazówka to ogrodnik.",
+        "pl": "Ogrodnik czeka nad rzeką.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
             "correct": "gardener",
-            "distractor": "owl"
+            "distractor": "witty"
+          },
+          {
+            "correct": "waits",
+            "distractor": "witty"
+          },
+          {
+            "correct": "by",
+            "distractor": "silly"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "river",
+            "distractor": "dramatic"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-07-s3",
-        "pl": "Trzecia wskazówka to ognisko.",
+        "pl": "Ognisko jest na łące.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "campfire",
+            "distractor": "legendary"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "campfire",
-            "distractor": "turtle"
+            "correct": "in",
+            "distractor": "dramatic"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "meadow",
+            "distractor": "mission"
           }
         ]
       }
@@ -645,7 +705,7 @@
   },
   {
     "id": "animals_nature-a2-story-08",
-    "title": "The Feather and Season",
+    "title": "Feather Meets Season",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -657,79 +717,91 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-08-s1",
-        "pl": "Pierwsza wskazówka to pióro.",
+        "pl": "Pióro jest w lesie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "feather",
+            "distractor": "quest"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "feather",
-            "distractor": "gardener"
+            "correct": "in",
+            "distractor": "story"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "forest",
+            "distractor": "show"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-08-s2",
-        "pl": "Kolejna wskazówka to pora roku.",
+        "pl": "Pora roku jest na łące.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "season",
+            "distractor": "comedy"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "season",
-            "distractor": "spring"
+            "correct": "in",
+            "distractor": "show"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "meadow",
+            "distractor": "superhero"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-08-s3",
-        "pl": "Trzecia wskazówka to wiosna.",
+        "pl": "Wiosna jest nad rzeką.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "spring",
+            "distractor": "cape"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "spring",
-            "distractor": "winter"
+            "correct": "by",
+            "distractor": "superhero"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "river",
+            "distractor": "expert"
           }
         ]
       }
@@ -737,7 +809,7 @@
   },
   {
     "id": "animals_nature-a2-story-09",
-    "title": "The Summer and Autumn",
+    "title": "Summer near Autumn",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
@@ -749,79 +821,91 @@
     "sentences": [
       {
         "id": "animals_nature-a2-story-09-s1",
-        "pl": "Pierwsza wskazówka to lato.",
+        "pl": "Lato jest na łące.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "summer",
+            "distractor": "instincts"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "summer",
-            "distractor": "sky"
+            "correct": "in",
+            "distractor": "scene"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "meadow",
+            "distractor": "club"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-09-s2",
-        "pl": "Kolejna wskazówka to jesień.",
+        "pl": "Jesień jest nad rzeką.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "autumn",
+            "distractor": "side"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "autumn",
-            "distractor": "island"
+            "correct": "by",
+            "distractor": "club"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "river",
+            "distractor": "laughs"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-09-s3",
-        "pl": "Trzecia wskazówka to zima.",
+        "pl": "Zima jest nad jeziorem.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "winter",
+            "distractor": "laugh"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "winter",
-            "distractor": "valley"
+            "correct": "by",
+            "distractor": "laughs"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "lake",
+            "distractor": "whole"
           }
         ]
       }
@@ -829,91 +913,87 @@
   },
   {
     "id": "animals_nature-a2-story-10",
-    "title": "The Ocean and Desert",
+    "title": "Waterfall Today",
     "tier": 2,
     "cefr": "a2",
     "category": "animals_nature",
     "vocabIds": [
-      "animals_nature-a2-ocean",
-      "animals_nature-a2-desert",
-      "animals_nature-a2-jungle"
+      "animals_nature-a2-waterfall",
+      "animals_nature-a2-rainbow",
+      "animals_nature-a2-ocean"
     ],
     "sentences": [
       {
         "id": "animals_nature-a2-story-10-s1",
-        "pl": "Pierwsza wskazówka to ocean.",
+        "pl": "Wodospad jest nad rzeką.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "waterfall",
+            "distractor": "day"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "ocean",
-            "distractor": "waterfall"
+            "correct": "by",
+            "distractor": "problem"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "river",
+            "distractor": "original"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-10-s2",
-        "pl": "Kolejna wskazówka to pustynia.",
+        "pl": "Tęcza jest jasna.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "rainbow",
+            "distractor": "ridiculous"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "desert",
-            "distractor": "thunder"
+            "correct": "bright",
+            "distractor": "original"
           }
         ]
       },
       {
         "id": "animals_nature-a2-story-10-s3",
-        "pl": "Trzecia wskazówka to dżungla.",
+        "pl": "Ocean jest duży.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "ocean",
+            "distractor": "comic"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "jungle",
-            "distractor": "bush"
+            "correct": "big",
+            "distractor": "timing"
           }
         ]
       }
@@ -921,7 +1001,7 @@
   },
   {
     "id": "fantasy_adventure-a2-story-01",
-    "title": "The Carriage and Gate Guard",
+    "title": "Carriage and Gate Guard",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
@@ -933,83 +1013,87 @@
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-01-s1",
-        "pl": "Pierwsza wskazówka to powóz.",
+        "pl": "Powóz jest przy bramie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "carriage",
+            "distractor": "tower"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "carriage",
-            "distractor": "cavern"
+            "correct": "at",
+            "distractor": "chamber"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "gateway",
+            "distractor": "watchtower"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-01-s2",
-        "pl": "Kolejna wskazówka to strażnik bramy.",
+        "pl": "Strażnik bramy jest szczęśliwy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
+            "correct": "gate",
+            "distractor": "cavern"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "guard",
+            "distractor": "gateway"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "gate",
+            "correct": "happy",
             "distractor": "camp"
-          },
-          {
-            "correct": "guard",
-            "distractor": "altar"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-01-s3",
-        "pl": "Trzecia wskazówka to płomień.",
+        "pl": "Płomień jest przy latarni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "flame",
+            "distractor": "camp"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "flame",
-            "distractor": "stronghold"
+            "correct": "by",
+            "distractor": "battlefield"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "lantern",
+            "distractor": "kingdom"
           }
         ]
       }
@@ -1017,7 +1101,7 @@
   },
   {
     "id": "fantasy_adventure-a2-story-02",
-    "title": "The Beast and Spear",
+    "title": "A Day with Beast",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
@@ -1029,79 +1113,91 @@
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-02-s1",
-        "pl": "Pierwsza wskazówka to bestia.",
+        "pl": "Bestia jest w obozie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "beast",
+            "distractor": "kingdom"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "beast",
-            "distractor": "amulet"
+            "correct": "in",
+            "distractor": "ring"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "camp",
+            "distractor": "cauldron"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-02-s2",
-        "pl": "Kolejna wskazówka to włócznia.",
+        "pl": "Włócznia jest przy latarni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "spear",
+            "distractor": "amulet"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "spear",
-            "distractor": "maze"
+            "correct": "by",
+            "distractor": "cauldron"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "lantern",
+            "distractor": "gate"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-02-s3",
-        "pl": "Trzecia wskazówka to sztylet.",
+        "pl": "Sztylet jest w wieży.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "dagger",
+            "distractor": "maze"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "dagger",
-            "distractor": "guard"
+            "correct": "in",
+            "distractor": "gate"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tower",
+            "distractor": "beast"
           }
         ]
       }
@@ -1109,7 +1205,7 @@
   },
   {
     "id": "fantasy_adventure-a2-story-03",
-    "title": "The Mask and Portal Stone",
+    "title": "Mask Meets Portal Stone",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
@@ -1121,83 +1217,95 @@
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-03-s1",
-        "pl": "Pierwsza wskazówka to maska.",
+        "pl": "Maska jest przy latarni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "mask",
+            "distractor": "beast"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "mask",
-            "distractor": "portal"
+            "correct": "by",
+            "distractor": "dagger"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "lantern",
+            "distractor": "stone"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-03-s2",
-        "pl": "Kolejna wskazówka to kamień portalu.",
+        "pl": "Kamień portalu jest w wieży.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
+            "correct": "portal",
+            "distractor": "mask"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "stone",
+            "distractor": "portal"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "portal",
-            "distractor": "magic"
+            "correct": "in",
+            "distractor": "archer"
           },
           {
-            "correct": "stone",
-            "distractor": "bird"
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tower",
+            "distractor": "fire"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-03-s3",
-        "pl": "Trzecia wskazówka to łucznik.",
+        "pl": "Łucznik jest w komnacie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "archer",
+            "distractor": "magic"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "archer",
-            "distractor": "mermaid"
+            "correct": "in",
+            "distractor": "bird"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "chamber",
+            "distractor": "unicorn"
           }
         ]
       }
@@ -1205,7 +1313,7 @@
   },
   {
     "id": "fantasy_adventure-a2-story-04",
-    "title": "The Magic Bird and Fire Bird",
+    "title": "Magic Bird near Fire Bird",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
@@ -1217,87 +1325,99 @@
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-04-s1",
-        "pl": "Pierwsza wskazówka to magiczny ptak.",
+        "pl": "Magiczny ptak jest w warowni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
+            "correct": "magic",
+            "distractor": "witch"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "bird",
+            "distractor": "villain"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "magic",
-            "distractor": "escape"
+            "correct": "in",
+            "distractor": "battle"
           },
           {
-            "correct": "bird",
-            "distractor": "guardian"
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "stronghold",
+            "distractor": "shadow"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-04-s2",
-        "pl": "Kolejna wskazówka to ognisty ptak.",
+        "pl": "Ognisty ptak śpi w zamku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
             "correct": "fire",
-            "distractor": "secret"
+            "distractor": "escape"
           },
           {
             "correct": "bird",
-            "distractor": "curse"
+            "distractor": "guardian"
+          },
+          {
+            "correct": "sleeps",
+            "distractor": "guardian"
+          },
+          {
+            "correct": "in",
+            "distractor": "shadow"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "castle",
+            "distractor": "champion"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-04-s3",
-        "pl": "Trzecia wskazówka to syrena.",
+        "pl": "Syrena jest przy bramie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "mermaid",
+            "distractor": "secret"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "mermaid",
-            "distractor": "puzzle"
+            "correct": "at",
+            "distractor": "curse"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "gateway",
+            "distractor": "captain"
           }
         ]
       }
@@ -1305,7 +1425,7 @@
   },
   {
     "id": "fantasy_adventure-a2-story-05",
-    "title": "The Unicorn and Witch",
+    "title": "Unicorn Today",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
@@ -1317,79 +1437,91 @@
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-05-s1",
-        "pl": "Pierwsza wskazówka to jednorożec.",
+        "pl": "Jednorożec jest w komnacie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "unicorn",
+            "distractor": "messenger"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "unicorn",
-            "distractor": "dungeon"
+            "correct": "in",
+            "distractor": "grumpy"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "chamber",
+            "distractor": "spell"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-05-s2",
-        "pl": "Kolejna wskazówka to czarownica.",
+        "pl": "Czarownica jest przy bramie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "witch",
+            "distractor": "dawn"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "witch",
-            "distractor": "gateway"
+            "correct": "at",
+            "distractor": "spell"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "gateway",
+            "distractor": "about"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-05-s3",
-        "pl": "Trzecia wskazówka to czarny charakter.",
+        "pl": "Czarny charakter jest w obozie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "villain",
+            "distractor": "complains"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "villain",
-            "distractor": "altar"
+            "correct": "in",
+            "distractor": "about"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "camp",
+            "distractor": "paints"
           }
         ]
       }
@@ -1397,7 +1529,7 @@
   },
   {
     "id": "fantasy_adventure-a2-story-06",
-    "title": "The Battle and Escape",
+    "title": "Battle and Escape",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
@@ -1409,79 +1541,91 @@
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-06-s1",
-        "pl": "Pierwsza wskazówka to bitwa.",
+        "pl": "Bitwa jest przy bramie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "battle",
+            "distractor": "soup"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "battle",
-            "distractor": "banner"
+            "correct": "at",
+            "distractor": "blue"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "gateway",
+            "distractor": "like"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-06-s2",
-        "pl": "Kolejna wskazówka to ucieczka.",
+        "pl": "Ucieczka jest w obozie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "escape",
+            "distractor": "snores"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "escape",
-            "distractor": "trident"
+            "correct": "in",
+            "distractor": "like"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "camp",
+            "distractor": "wizard"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-06-s3",
-        "pl": "Trzecia wskazówka to strażnik.",
+        "pl": "Strażnik jest w komnacie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "guardian",
+            "distractor": "band"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "guardian",
-            "distractor": "carriage"
+            "correct": "in",
+            "distractor": "wizard"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "chamber",
+            "distractor": "heroic"
           }
         ]
       }
@@ -1489,7 +1633,7 @@
   },
   {
     "id": "fantasy_adventure-a2-story-07",
-    "title": "The Shadow and Secret",
+    "title": "A Day with Shadow",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
@@ -1501,79 +1645,91 @@
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-07-s1",
-        "pl": "Pierwsza wskazówka to cień.",
+        "pl": "Cień jest w obozie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "shadow",
+            "distractor": "quest"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "shadow",
-            "distractor": "spear"
+            "correct": "in",
+            "distractor": "mila"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "camp",
+            "distractor": "kuba"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-07-s2",
-        "pl": "Kolejna wskazówka to sekret.",
+        "pl": "Sekret jest przy latarni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "secret",
+            "distractor": "zosia"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "secret",
-            "distractor": "portal"
+            "correct": "by",
+            "distractor": "kuba"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "lantern",
+            "distractor": "funny"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-07-s3",
-        "pl": "Trzecia wskazówka to klątwa.",
+        "pl": "Klątwa jest w wieży.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "curse",
+            "distractor": "bartek"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "curse",
-            "distractor": "magic"
+            "correct": "in",
+            "distractor": "funny"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tower",
+            "distractor": "brave"
           }
         ]
       }
@@ -1581,7 +1737,7 @@
   },
   {
     "id": "fantasy_adventure-a2-story-08",
-    "title": "The Champion and Puzzle",
+    "title": "Champion Meets Puzzle",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
@@ -1593,79 +1749,91 @@
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-08-s1",
-        "pl": "Pierwsza wskazówka to mistrz.",
+        "pl": "Mistrz jest w komnacie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "champion",
+            "distractor": "legendary"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "champion",
-            "distractor": "witch"
+            "correct": "in",
+            "distractor": "dramatic"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "chamber",
+            "distractor": "mission"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-08-s2",
-        "pl": "Kolejna wskazówka to łamigłówka.",
+        "pl": "Łamigłówka jest w wieży.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "puzzle",
+            "distractor": "plan"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "puzzle",
-            "distractor": "escape"
+            "correct": "in",
+            "distractor": "mission"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tower",
+            "distractor": "comedy"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-08-s3",
-        "pl": "Trzecia wskazówka to kapitan.",
+        "pl": "Kapitan śpi przy bramie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
             "correct": "captain",
-            "distractor": "secret"
+            "distractor": "joke"
+          },
+          {
+            "correct": "sleeps",
+            "distractor": "joke"
+          },
+          {
+            "correct": "at",
+            "distractor": "comedy"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "gateway",
+            "distractor": "cape"
           }
         ]
       }
@@ -1673,91 +1841,103 @@
   },
   {
     "id": "fantasy_adventure-a2-story-09",
-    "title": "The Messenger and Kingdom",
+    "title": "Messenger near Banner",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
     "vocabIds": [
       "fantasy_adventure-a2-messenger",
-      "fantasy_adventure-a2-kingdom",
-      "fantasy_adventure-a2-banner"
+      "fantasy_adventure-a2-banner",
+      "fantasy_adventure-a2-ring"
     ],
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-09-s1",
-        "pl": "Pierwsza wskazówka to posłaniec.",
+        "pl": "Posłaniec jest w grocie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "messenger",
+            "distractor": "superhero"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "messenger",
-            "distractor": "castle"
+            "correct": "in",
+            "distractor": "boss"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "cavern",
+            "distractor": "instincts"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-09-s2",
-        "pl": "Kolejna wskazówka to królestwo.",
+        "pl": "Sztandar jest w komnacie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "banner",
+            "distractor": "expert"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "kingdom",
-            "distractor": "chamber"
+            "correct": "in",
+            "distractor": "instincts"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "chamber",
+            "distractor": "side"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-09-s3",
-        "pl": "Trzecia wskazówka to sztandar.",
+        "pl": "Pierścień jest przy bramie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "ring",
+            "distractor": "adventure"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "banner",
-            "distractor": "watchtower"
+            "correct": "at",
+            "distractor": "side"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "gateway",
+            "distractor": "laugh"
           }
         ]
       }
@@ -1765,91 +1945,103 @@
   },
   {
     "id": "fantasy_adventure-a2-story-10",
-    "title": "The Ring and Amulet",
+    "title": "Amulet Today",
     "tier": 2,
     "cefr": "a2",
     "category": "fantasy_adventure",
     "vocabIds": [
-      "fantasy_adventure-a2-ring",
       "fantasy_adventure-a2-amulet",
-      "fantasy_adventure-a2-trident"
+      "fantasy_adventure-a2-trident",
+      "fantasy_adventure-a2-cauldron"
     ],
     "sentences": [
       {
         "id": "fantasy_adventure-a2-story-10-s1",
-        "pl": "Pierwsza wskazówka to pierścień.",
+        "pl": "Amulet jest w komnacie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "amulet",
+            "distractor": "laughs"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "ring",
-            "distractor": "lantern"
+            "correct": "in",
+            "distractor": "advice"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "chamber",
+            "distractor": "day"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-10-s2",
-        "pl": "Kolejna wskazówka to amulet.",
+        "pl": "Trójząb jest przy bramie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "trident",
+            "distractor": "whole"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "amulet",
-            "distractor": "ring"
+            "correct": "at",
+            "distractor": "day"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "gateway",
+            "distractor": "ridiculous"
           }
         ]
       },
       {
         "id": "fantasy_adventure-a2-story-10-s3",
-        "pl": "Trzecia wskazówka to trójząb.",
+        "pl": "Kocioł jest w obozie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "cauldron",
+            "distractor": "method"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "trident",
-            "distractor": "maze"
+            "correct": "in",
+            "distractor": "ridiculous"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "camp",
+            "distractor": "comic"
           }
         ]
       }
@@ -1857,7 +2049,7 @@
   },
   {
     "id": "food_kitchen-a2-story-01",
-    "title": "The Menu and Pasta",
+    "title": "Menu and Pasta",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -1869,79 +2061,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-01-s1",
-        "pl": "Pierwsza wskazówka to menu.",
+        "pl": "Menu jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "menu",
+            "distractor": "fridge"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "menu",
-            "distractor": "table"
+            "correct": "on",
+            "distractor": "bowl"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "cafeteria"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-01-s2",
-        "pl": "Kolejna wskazówka to makaron.",
+        "pl": "Makaron jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "pasta",
+            "distractor": "table"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "pasta",
-            "distractor": "buffet"
+            "correct": "on",
+            "distractor": "cafeteria"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "saucepan"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-01-s3",
-        "pl": "Trzecia wskazówka to płatki.",
+        "pl": "Płatki są w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "cereal",
+            "distractor": "buffet"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "cereal",
-            "distractor": "picnic"
+            "correct": "in",
+            "distractor": "saucepan"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "blender"
           }
         ]
       }
@@ -1949,7 +2153,7 @@
   },
   {
     "id": "food_kitchen-a2-story-02",
-    "title": "The Pancake and Jam",
+    "title": "A Day with Pancake",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -1961,79 +2165,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-02-s1",
-        "pl": "Pierwsza wskazówka to naleśnik.",
+        "pl": "Naleśnik jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "pancake",
+            "distractor": "blender"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "pancake",
-            "distractor": "board"
+            "correct": "on",
+            "distractor": "chopping"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "bottle"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-02-s2",
-        "pl": "Kolejna wskazówka to dżem.",
+        "pl": "Dżem jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "jam",
+            "distractor": "board"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "jam",
-            "distractor": "napkin"
+            "correct": "in",
+            "distractor": "bottle"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "menu"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-02-s3",
-        "pl": "Trzecia wskazówka to miód.",
+        "pl": "Miód jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "honey",
+            "distractor": "napkin"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "honey",
-            "distractor": "pasta"
+            "correct": "on",
+            "distractor": "menu"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "pancake"
           }
         ]
       }
@@ -2041,7 +2257,7 @@
   },
   {
     "id": "food_kitchen-a2-story-03",
-    "title": "The Pepper and Salt",
+    "title": "Pepper Meets Salt",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -2053,79 +2269,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-03-s1",
-        "pl": "Pierwsza wskazówka to pieprz.",
+        "pl": "Pieprz jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "pepper",
+            "distractor": "pancake"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "pepper",
-            "distractor": "salt"
+            "correct": "in",
+            "distractor": "honey"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "onion"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-03-s2",
-        "pl": "Kolejna wskazówka to sól.",
+        "pl": "Sól jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "salt",
+            "distractor": "pepper"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "salt",
-            "distractor": "mushroom"
+            "correct": "on",
+            "distractor": "onion"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "lemonade"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-03-s3",
-        "pl": "Trzecia wskazówka to cebula.",
+        "pl": "Cebula jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "onion",
+            "distractor": "mushroom"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "onion",
-            "distractor": "snack"
+            "correct": "on",
+            "distractor": "lemonade"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "dessert"
           }
         ]
       }
@@ -2133,7 +2361,7 @@
   },
   {
     "id": "food_kitchen-a2-story-04",
-    "title": "The Garlic and Mushroom",
+    "title": "Garlic near Mushroom",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -2145,79 +2373,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-04-s1",
-        "pl": "Pierwsza wskazówka to czosnek.",
+        "pl": "Czosnek jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "garlic",
+            "distractor": "lemon"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "garlic",
-            "distractor": "sausage"
+            "correct": "on",
+            "distractor": "grape"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "ham"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-04-s2",
-        "pl": "Kolejna wskazówka to grzyb.",
+        "pl": "Grzyb jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "mushroom",
+            "distractor": "sausage"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "mushroom",
-            "distractor": "lettuce"
+            "correct": "on",
+            "distractor": "ham"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "bean"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-04-s3",
-        "pl": "Trzecia wskazówka to lemoniada.",
+        "pl": "Lemoniada jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "lemonade",
+            "distractor": "lettuce"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "lemonade",
-            "distractor": "sauce"
+            "correct": "in",
+            "distractor": "bean"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "hungry"
           }
         ]
       }
@@ -2225,7 +2465,7 @@
   },
   {
     "id": "food_kitchen-a2-story-05",
-    "title": "The Yogurt and Snack",
+    "title": "Yogurt Today",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -2237,79 +2477,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-05-s1",
-        "pl": "Pierwsza wskazówka to jogurt.",
+        "pl": "Jogurt jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "yogurt",
+            "distractor": "spoon"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "yogurt",
-            "distractor": "table"
+            "correct": "on",
+            "distractor": "lunch"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "like"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-05-s2",
-        "pl": "Kolejna wskazówka to przekąska.",
+        "pl": "Przekąska jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "snack",
+            "distractor": "drums"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "snack",
-            "distractor": "buffet"
+            "correct": "in",
+            "distractor": "like"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "lands"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-05-s3",
-        "pl": "Trzecia wskazówka to deser.",
+        "pl": "Deser jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "dessert",
+            "distractor": "star"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "dessert",
-            "distractor": "picnic"
+            "correct": "on",
+            "distractor": "lands"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "sounds"
           }
         ]
       }
@@ -2317,7 +2569,7 @@
   },
   {
     "id": "food_kitchen-a2-story-06",
-    "title": "The Lemon and Grape",
+    "title": "Lemon and Grape",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -2329,79 +2581,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-06-s1",
-        "pl": "Pierwsza wskazówka to cytryna.",
+        "pl": "Cytryna jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "lemon",
+            "distractor": "tiny"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "lemon",
-            "distractor": "board"
+            "correct": "in",
+            "distractor": "helicopter"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "last"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-06-s2",
-        "pl": "Kolejna wskazówka to winogrono.",
+        "pl": "Winogrono jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "grape",
+            "distractor": "guards"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "grape",
-            "distractor": "napkin"
+            "correct": "on",
+            "distractor": "last"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "mila"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-06-s3",
-        "pl": "Trzecia wskazówka to ananas.",
+        "pl": "Ananas jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "pineapple",
+            "distractor": "treasure"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "pineapple",
-            "distractor": "pasta"
+            "correct": "on",
+            "distractor": "mila"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "kuba"
           }
         ]
       }
@@ -2409,7 +2673,7 @@
   },
   {
     "id": "food_kitchen-a2-story-07",
-    "title": "The Sausage and Ham",
+    "title": "A Day with Sausage",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -2421,79 +2685,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-07-s1",
-        "pl": "Pierwsza wskazówka to kiełbasa.",
+        "pl": "Kiełbasa jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "sausage",
+            "distractor": "lena"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "sausage",
-            "distractor": "pepper"
+            "correct": "on",
+            "distractor": "bartek"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "silly"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-07-s2",
-        "pl": "Kolejna wskazówka to szynka.",
+        "pl": "Szynka jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "ham",
+            "distractor": "witty"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "ham",
-            "distractor": "garlic"
+            "correct": "on",
+            "distractor": "silly"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "dramatic"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-07-s3",
-        "pl": "Trzecia wskazówka to szpinak.",
+        "pl": "Szpinak jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "spinach",
+            "distractor": "legendary"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "spinach",
-            "distractor": "yogurt"
+            "correct": "in",
+            "distractor": "dramatic"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "mission"
           }
         ]
       }
@@ -2501,7 +2777,7 @@
   },
   {
     "id": "food_kitchen-a2-story-08",
-    "title": "The Lettuce and Bean",
+    "title": "Lettuce Meets Bean",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -2513,79 +2789,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-08-s1",
-        "pl": "Pierwsza wskazówka to sałata.",
+        "pl": "Sałata jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "lettuce",
+            "distractor": "quest"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "lettuce",
-            "distractor": "pineapple"
+            "correct": "on",
+            "distractor": "story"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "show"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-08-s2",
-        "pl": "Kolejna wskazówka to fasola.",
+        "pl": "Fasola jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "bean",
+            "distractor": "comedy"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "bean",
-            "distractor": "spinach"
+            "correct": "in",
+            "distractor": "show"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "superhero"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-08-s3",
-        "pl": "Trzecia wskazówka to groszek.",
+        "pl": "Groszek jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "pea",
+            "distractor": "cape"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "pea",
-            "distractor": "sauce"
+            "correct": "on",
+            "distractor": "superhero"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "expert"
           }
         ]
       }
@@ -2593,7 +2881,7 @@
   },
   {
     "id": "food_kitchen-a2-story-09",
-    "title": "The Sauce and Picnic",
+    "title": "Sauce near Picnic",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -2605,79 +2893,91 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-09-s1",
-        "pl": "Pierwsza wskazówka to sos.",
+        "pl": "Sos jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "sauce",
+            "distractor": "instincts"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "sauce",
-            "distractor": "table"
+            "correct": "in",
+            "distractor": "scene"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "club"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-09-s2",
-        "pl": "Kolejna wskazówka to piknik.",
+        "pl": "Piknik jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "picnic",
+            "distractor": "side"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "picnic",
-            "distractor": "buffet"
+            "correct": "on",
+            "distractor": "club"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "laughs"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-09-s3",
-        "pl": "Trzecia wskazówka to patelnia.",
+        "pl": "Patelnia jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "pan",
+            "distractor": "laugh"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "pan",
-            "distractor": "picnic"
+            "correct": "on",
+            "distractor": "laughs"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "whole"
           }
         ]
       }
@@ -2685,7 +2985,7 @@
   },
   {
     "id": "food_kitchen-a2-story-10",
-    "title": "The Chopping Board and Kettle",
+    "title": "Chopping Board Today",
     "tier": 2,
     "cefr": "a2",
     "category": "food_kitchen",
@@ -2697,83 +2997,95 @@
     "sentences": [
       {
         "id": "food_kitchen-a2-story-10-s1",
-        "pl": "Pierwsza wskazówka to deska do krojenia.",
+        "pl": "Deska do krojenia jest na stole.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
+            "correct": "chopping",
+            "distractor": "day"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "board",
+            "distractor": "problem"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "chopping",
-            "distractor": "kettle"
+            "correct": "on",
+            "distractor": "method"
           },
           {
-            "correct": "board",
-            "distractor": "bottle"
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "table",
+            "distractor": "celebrity"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-10-s2",
-        "pl": "Kolejna wskazówka to czajnik.",
+        "pl": "Czajnik jest na tacy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "kettle",
+            "distractor": "ridiculous"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "kettle",
-            "distractor": "recipe"
+            "correct": "on",
+            "distractor": "original"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "tray",
+            "distractor": "timing"
           }
         ]
       },
       {
         "id": "food_kitchen-a2-story-10-s3",
-        "pl": "Trzecia wskazówka to butelka.",
+        "pl": "Butelka jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "bottle",
+            "distractor": "comic"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "bottle",
-            "distractor": "cereal"
+            "correct": "in",
+            "distractor": "timing"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "steal"
           }
         ]
       }
@@ -2781,7 +3093,7 @@
   },
   {
     "id": "household-a2-story-01",
-    "title": "The Dishwasher and Freezer",
+    "title": "Dishwasher and Freezer",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
@@ -2793,79 +3105,91 @@
     "sentences": [
       {
         "id": "household-a2-story-01-s1",
-        "pl": "Pierwsza wskazówka to zmywarka.",
+        "pl": "Zmywarka jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "dishwasher",
+            "distractor": "room"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "dishwasher",
-            "distractor": "bedroom"
+            "correct": "in",
+            "distractor": "bathroom"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "window"
           }
         ]
       },
       {
         "id": "household-a2-story-01-s2",
-        "pl": "Kolejna wskazówka to zamrażarka.",
+        "pl": "Zamrażarka jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "freezer",
+            "distractor": "bedroom"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "freezer",
-            "distractor": "floor"
+            "correct": "in",
+            "distractor": "window"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "garden"
           }
         ]
       },
       {
         "id": "household-a2-story-01-s3",
-        "pl": "Trzecia wskazówka to piekarnik.",
+        "pl": "Piekarnik jest w kuchni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "oven",
+            "distractor": "floor"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "oven",
-            "distractor": "garage"
+            "correct": "in",
+            "distractor": "garden"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "kitchen",
+            "distractor": "apartment"
           }
         ]
       }
@@ -2873,7 +3197,7 @@
   },
   {
     "id": "household-a2-story-02",
-    "title": "The Microwave and Sink",
+    "title": "A Day with Microwave",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
@@ -2885,79 +3209,91 @@
     "sentences": [
       {
         "id": "household-a2-story-02-s1",
-        "pl": "Pierwsza wskazówka to mikrofalówka.",
+        "pl": "Mikrofalówka jest przy drzwiach.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "microwave",
+            "distractor": "apartment"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "microwave",
-            "distractor": "carpet"
+            "correct": "by",
+            "distractor": "staircase"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "door",
+            "distractor": "basket"
           }
         ]
       },
       {
         "id": "household-a2-story-02-s2",
-        "pl": "Kolejna wskazówka to zlew.",
+        "pl": "Zlew jest na półce.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "sink",
+            "distractor": "carpet"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "sink",
-            "distractor": "drawer"
+            "correct": "on",
+            "distractor": "basket"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "shelf",
+            "distractor": "dishwasher"
           }
         ]
       },
       {
         "id": "household-a2-story-02-s3",
-        "pl": "Trzecia wskazówka to kran.",
+        "pl": "Kran jest przy oknie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "faucet",
+            "distractor": "drawer"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "faucet",
-            "distractor": "freezer"
+            "correct": "near",
+            "distractor": "dishwasher"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "window",
+            "distractor": "microwave"
           }
         ]
       }
@@ -2965,7 +3301,7 @@
   },
   {
     "id": "household-a2-story-03",
-    "title": "The Mop and Broom",
+    "title": "Mop Meets Broom",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
@@ -2977,79 +3313,91 @@
     "sentences": [
       {
         "id": "household-a2-story-03-s1",
-        "pl": "Pierwsza wskazówka to mop.",
+        "pl": "Mop jest na półce.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "mop",
+            "distractor": "microwave"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "mop",
-            "distractor": "broom"
+            "correct": "on",
+            "distractor": "faucet"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "shelf",
+            "distractor": "hanger"
           }
         ]
       },
       {
         "id": "household-a2-story-03-s2",
-        "pl": "Kolejna wskazówka to miotła.",
+        "pl": "Miotła jest przy oknie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "broom",
+            "distractor": "mop"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "broom",
-            "distractor": "corridor"
+            "correct": "near",
+            "distractor": "hanger"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "window",
+            "distractor": "attic"
           }
         ]
       },
       {
         "id": "household-a2-story-03-s3",
-        "pl": "Trzecia wskazówka to wieszak.",
+        "pl": "Wieszak jest na podłodze.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "hanger",
+            "distractor": "corridor"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "hanger",
-            "distractor": "chimney"
+            "correct": "on",
+            "distractor": "attic"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "floor",
+            "distractor": "gate"
           }
         ]
       }
@@ -3057,91 +3405,103 @@
   },
   {
     "id": "household-a2-story-04",
-    "title": "The Doormat and Corridor",
+    "title": "Doormat near Chimney",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
     "vocabIds": [
       "household-a2-doormat",
-      "household-a2-corridor",
-      "household-a2-attic"
+      "household-a2-chimney",
+      "household-a2-gate"
     ],
     "sentences": [
       {
         "id": "household-a2-story-04-s1",
-        "pl": "Pierwsza wskazówka to wycieraczka.",
+        "pl": "Wycieraczka jest przy oknie.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "doormat",
+            "distractor": "mailbox"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "doormat",
-            "distractor": "needle"
+            "correct": "near",
+            "distractor": "candle"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "window",
+            "distractor": "thread"
           }
         ]
       },
       {
         "id": "household-a2-story-04-s2",
-        "pl": "Kolejna wskazówka to korytarz.",
+        "pl": "Komin jest na podłodze.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "chimney",
+            "distractor": "needle"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "corridor",
-            "distractor": "ladder"
+            "correct": "on",
+            "distractor": "thread"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "floor",
+            "distractor": "parent"
           }
         ]
       },
       {
         "id": "household-a2-story-04-s3",
-        "pl": "Trzecia wskazówka to strych.",
+        "pl": "Brama jest przy drzwiach.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "gate",
+            "distractor": "ladder"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "attic",
-            "distractor": "uncle"
+            "correct": "by",
+            "distractor": "parent"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "door",
+            "distractor": "aunt"
           }
         ]
       }
@@ -3149,99 +3509,7 @@
   },
   {
     "id": "household-a2-story-05",
-    "title": "The Basement and Chimney",
-    "tier": 2,
-    "cefr": "a2",
-    "category": "household",
-    "vocabIds": [
-      "household-a2-basement",
-      "household-a2-chimney",
-      "household-a2-gate"
-    ],
-    "sentences": [
-      {
-        "id": "household-a2-story-05-s1",
-        "pl": "Pierwsza wskazówka to piwnica.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "basement",
-            "distractor": "kitchen"
-          }
-        ]
-      },
-      {
-        "id": "household-a2-story-05-s2",
-        "pl": "Kolejna wskazówka to komin.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "chimney",
-            "distractor": "shelf"
-          }
-        ]
-      },
-      {
-        "id": "household-a2-story-05-s3",
-        "pl": "Trzecia wskazówka to brama.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "gate",
-            "distractor": "door"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "household-a2-story-06",
-    "title": "The Mailbox and Candle",
+    "title": "Mailbox Today",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
@@ -3252,88 +3520,100 @@
     ],
     "sentences": [
       {
-        "id": "household-a2-story-06-s1",
-        "pl": "Pierwsza wskazówka to skrzynka pocztowa.",
+        "id": "household-a2-story-05-s1",
+        "pl": "Skrzynka pocztowa jest na podłodze.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
-          },
-          {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
           },
           {
             "correct": "mailbox",
-            "distractor": "balcony"
-          }
-        ]
-      },
-      {
-        "id": "household-a2-story-06-s2",
-        "pl": "Kolejna wskazówka to świeca.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "distractor": "neighbour"
           },
           {
             "correct": "is",
             "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "cat"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "floor",
+            "distractor": "dinner"
+          }
+        ]
+      },
+      {
+        "id": "household-a2-story-05-s2",
+        "pl": "Świeca jest przy drzwiach.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
           },
           {
             "correct": "candle",
-            "distractor": "curtain"
-          }
-        ]
-      },
-      {
-        "id": "household-a2-story-06-s3",
-        "pl": "Trzecia wskazówka to fartuch.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "distractor": "chores"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
+            "correct": "by",
+            "distractor": "dinner"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "door",
+            "distractor": "steals"
+          }
+        ]
+      },
+      {
+        "id": "household-a2-story-05-s3",
+        "pl": "Fartuch jest na półce.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
             "correct": "apron",
-            "distractor": "vacuum"
+            "distractor": "day"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "steals"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "shelf",
+            "distractor": "grandma"
           }
         ]
       }
     ]
   },
   {
-    "id": "household-a2-story-07",
-    "title": "The Needle and Thread",
+    "id": "household-a2-story-06",
+    "title": "Needle and Thread",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
@@ -3344,88 +3624,100 @@
     ],
     "sentences": [
       {
-        "id": "household-a2-story-07-s1",
-        "pl": "Pierwsza wskazówka to igła.",
+        "id": "household-a2-story-06-s1",
+        "pl": "Igła jest przy drzwiach.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
-          },
-          {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
           },
           {
             "correct": "needle",
-            "distractor": "sink"
-          }
-        ]
-      },
-      {
-        "id": "household-a2-story-07-s2",
-        "pl": "Kolejna wskazówka to nić.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "distractor": "starts"
           },
           {
             "correct": "is",
             "distractor": "are"
+          },
+          {
+            "correct": "by",
+            "distractor": "secret"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "door",
+            "distractor": "someone"
+          }
+        ]
+      },
+      {
+        "id": "household-a2-story-06-s2",
+        "pl": "Nić jest na półce.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
           },
           {
             "correct": "thread",
-            "distractor": "broom"
-          }
-        ]
-      },
-      {
-        "id": "household-a2-story-07-s3",
-        "pl": "Trzecia wskazówka to wiadro.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "distractor": "contest"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
+            "correct": "on",
+            "distractor": "someone"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "shelf",
+            "distractor": "eyes"
+          }
+        ]
+      },
+      {
+        "id": "household-a2-story-06-s3",
+        "pl": "Wiadro jest przy oknie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
             "correct": "bucket",
-            "distractor": "corridor"
+            "distractor": "googly"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "near",
+            "distractor": "eyes"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "window",
+            "distractor": "like"
           }
         ]
       }
     ]
   },
   {
-    "id": "household-a2-story-08",
-    "title": "The Ladder and Parent",
+    "id": "household-a2-story-07",
+    "title": "A Day with Ladder",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
@@ -3436,88 +3728,100 @@
     ],
     "sentences": [
       {
-        "id": "household-a2-story-08-s1",
-        "pl": "Pierwsza wskazówka to drabina.",
+        "id": "household-a2-story-07-s1",
+        "pl": "Drabina jest na półce.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
-          },
-          {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
           },
           {
             "correct": "ladder",
-            "distractor": "mailbox"
-          }
-        ]
-      },
-      {
-        "id": "household-a2-story-08-s2",
-        "pl": "Kolejna wskazówka to rodzic.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "distractor": "marching"
           },
           {
             "correct": "is",
             "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "band"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "shelf",
+            "distractor": "zosia"
+          }
+        ]
+      },
+      {
+        "id": "household-a2-story-07-s2",
+        "pl": "Rodzic jest w sypialni.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
           },
           {
             "correct": "parent",
-            "distractor": "needle"
-          }
-        ]
-      },
-      {
-        "id": "household-a2-story-08-s3",
-        "pl": "Trzecia wskazówka to kuzyn.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "distractor": "olek"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
+            "correct": "in",
+            "distractor": "zosia"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "bedroom",
+            "distractor": "bartek"
+          }
+        ]
+      },
+      {
+        "id": "household-a2-story-07-s3",
+        "pl": "Kuzyn jest w ogrodzie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
             "correct": "cousin",
-            "distractor": "ladder"
+            "distractor": "lena"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "in",
+            "distractor": "bartek"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "garden",
+            "distractor": "witty"
           }
         ]
       }
     ]
   },
   {
-    "id": "household-a2-story-09",
-    "title": "The Uncle and Aunt",
+    "id": "household-a2-story-08",
+    "title": "Uncle Meets Aunt",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
@@ -3528,80 +3832,196 @@
     ],
     "sentences": [
       {
-        "id": "household-a2-story-09-s1",
-        "pl": "Pierwsza wskazówka to wujek.",
+        "id": "household-a2-story-08-s1",
+        "pl": "Wujek jest w sypialni.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "uncle",
+            "distractor": "silly"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "uncle",
-            "distractor": "house"
+            "correct": "in",
+            "distractor": "brave"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "bedroom",
+            "distractor": "chaos"
+          }
+        ]
+      },
+      {
+        "id": "household-a2-story-08-s2",
+        "pl": "Ciocia jest w ogrodzie.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "aunt",
+            "distractor": "dramatic"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "in",
+            "distractor": "chaos"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "garden",
+            "distractor": "quest"
+          }
+        ]
+      },
+      {
+        "id": "household-a2-story-08-s3",
+        "pl": "Sąsiad śpi w przedpokoju.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "neighbour",
+            "distractor": "mission"
+          },
+          {
+            "correct": "sleeps",
+            "distractor": "mission"
+          },
+          {
+            "correct": "in",
+            "distractor": "quest"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "hallway",
+            "distractor": "comedy"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "household-a2-story-09",
+    "title": "Carpet near Curtain",
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-carpet",
+      "household-a2-curtain",
+      "household-a2-basket"
+    ],
+    "sentences": [
+      {
+        "id": "household-a2-story-09-s1",
+        "pl": "Dywan jest na podłodze.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "carpet",
+            "distractor": "show"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "applause"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "floor",
+            "distractor": "boss"
           }
         ]
       },
       {
         "id": "household-a2-story-09-s2",
-        "pl": "Kolejna wskazówka to ciocia.",
+        "pl": "Zasłona jest przy drzwiach.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "curtain",
+            "distractor": "superhero"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "aunt",
-            "distractor": "bathroom"
+            "correct": "by",
+            "distractor": "boss"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "door",
+            "distractor": "instincts"
           }
         ]
       },
       {
         "id": "household-a2-story-09-s3",
-        "pl": "Trzecia wskazówka to sąsiad.",
+        "pl": "Koszyk jest na półce.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "basket",
+            "distractor": "expert"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "neighbour",
-            "distractor": "window"
+            "correct": "on",
+            "distractor": "instincts"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "shelf",
+            "distractor": "side"
           }
         ]
       }
@@ -3609,91 +4029,95 @@
   },
   {
     "id": "household-a2-story-10",
-    "title": "The Apartment and Balcony",
+    "title": "Drawer Today",
     "tier": 2,
     "cefr": "a2",
     "category": "household",
     "vocabIds": [
-      "household-a2-apartment",
-      "household-a2-balcony",
-      "household-a2-staircase"
+      "household-a2-drawer",
+      "household-a2-vacuum",
+      "household-a2-corridor"
     ],
     "sentences": [
       {
         "id": "household-a2-story-10-s1",
-        "pl": "Pierwsza wskazówka to mieszkanie.",
+        "pl": "Szuflada jest przy drzwiach.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "drawer",
+            "distractor": "club"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "apartment",
-            "distractor": "hallway"
+            "correct": "by",
+            "distractor": "meeting"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "door",
+            "distractor": "advice"
           }
         ]
       },
       {
         "id": "household-a2-story-10-s2",
-        "pl": "Kolejna wskazówka to balkon.",
+        "pl": "Odkurzacz jest na półce.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "vacuum",
+            "distractor": "laughs"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "balcony",
-            "distractor": "carpet"
+            "correct": "on",
+            "distractor": "advice"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "shelf",
+            "distractor": "problem"
           }
         ]
       },
       {
         "id": "household-a2-story-10-s3",
-        "pl": "Trzecia wskazówka to klatka schodowa.",
+        "pl": "Korytarz jest mały.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "corridor",
+            "distractor": "whole"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "staircase",
-            "distractor": "drawer"
+            "correct": "small",
+            "distractor": "problem"
           }
         ]
       }
@@ -3701,7 +4125,7 @@
   },
   {
     "id": "school-a2-story-01",
-    "title": "The Printer and Poster",
+    "title": "Printer and Poster",
     "tier": 2,
     "cefr": "a2",
     "category": "school",
@@ -3713,79 +4137,91 @@
     "sentences": [
       {
         "id": "school-a2-story-01-s1",
-        "pl": "Pierwsza wskazówka to drukarka.",
+        "pl": "Drukarka jest na biurku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "printer",
+            "distractor": "classroom"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "printer",
-            "distractor": "backpack"
+            "correct": "on",
+            "distractor": "desk"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "whiteboard"
           }
         ]
       },
       {
         "id": "school-a2-story-01-s2",
-        "pl": "Kolejna wskazówka to plakat.",
+        "pl": "Plakat jest w plecaku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "poster",
+            "distractor": "backpack"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "poster",
-            "distractor": "page"
+            "correct": "in",
+            "distractor": "whiteboard"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "auditorium"
           }
         ]
       },
       {
         "id": "school-a2-story-01-s3",
-        "pl": "Trzecia wskazówka to plan lekcji.",
+        "pl": "Plan lekcji jest przy tablicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "timetable",
+            "distractor": "page"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "timetable",
-            "distractor": "campus"
+            "correct": "by",
+            "distractor": "auditorium"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "dictionary"
           }
         ]
       }
@@ -3793,7 +4229,7 @@
   },
   {
     "id": "school-a2-story-02",
-    "title": "The Workbook and Worksheet",
+    "title": "A Day with Workbook",
     "tier": 2,
     "cefr": "a2",
     "category": "school",
@@ -3805,79 +4241,91 @@
     "sentences": [
       {
         "id": "school-a2-story-02-s1",
-        "pl": "Pierwsza wskazówka to ćwiczeniówka.",
+        "pl": "Ćwiczeniówka jest w plecaku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "workbook",
+            "distractor": "dictionary"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "workbook",
-            "distractor": "exercise"
+            "correct": "in",
+            "distractor": "paragraph"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "calculator"
           }
         ]
       },
       {
         "id": "school-a2-story-02-s2",
-        "pl": "Kolejna wskazówka to karta pracy.",
+        "pl": "Karta pracy jest przy tablicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "worksheet",
+            "distractor": "exercise"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "worksheet",
-            "distractor": "keyboard"
+            "correct": "by",
+            "distractor": "calculator"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "poster"
           }
         ]
       },
       {
         "id": "school-a2-story-02-s3",
-        "pl": "Trzecia wskazówka to głośnik.",
+        "pl": "Głośnik jest na biurku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "speaker",
+            "distractor": "keyboard"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "speaker",
-            "distractor": "timetable"
+            "correct": "on",
+            "distractor": "poster"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "worksheet"
           }
         ]
       }
@@ -3885,7 +4333,7 @@
   },
   {
     "id": "school-a2-story-03",
-    "title": "The Microphone and Tablet",
+    "title": "Microphone Meets Tablet",
     "tier": 2,
     "cefr": "a2",
     "category": "school",
@@ -3897,79 +4345,91 @@
     "sentences": [
       {
         "id": "school-a2-story-03-s1",
-        "pl": "Pierwsza wskazówka to mikrofon.",
+        "pl": "Mikrofon jest przy tablicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "microphone",
+            "distractor": "worksheet"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "microphone",
-            "distractor": "locker"
+            "correct": "by",
+            "distractor": "microphone"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "uniform"
           }
         ]
       },
       {
         "id": "school-a2-story-03-s2",
-        "pl": "Kolejna wskazówka to tablet.",
+        "pl": "Tablet jest na biurku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "tablet",
+            "distractor": "locker"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "tablet",
-            "distractor": "subject"
+            "correct": "on",
+            "distractor": "uniform"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "science"
           }
         ]
       },
       {
         "id": "school-a2-story-03-s3",
-        "pl": "Trzecia wskazówka to szafka szkolna.",
+        "pl": "Szafka szkolna jest w plecaku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "locker",
+            "distractor": "subject"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "locker",
-            "distractor": "geography"
+            "correct": "in",
+            "distractor": "science"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "project"
           }
         ]
       }
@@ -3977,7 +4437,7 @@
   },
   {
     "id": "school-a2-story-04",
-    "title": "The Uniform and Archive",
+    "title": "Uniform near Archive",
     "tier": 2,
     "cefr": "a2",
     "category": "school",
@@ -3989,79 +4449,91 @@
     "sentences": [
       {
         "id": "school-a2-story-04-s1",
-        "pl": "Pierwsza wskazówka to mundurek.",
+        "pl": "Mundurek jest na biurku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "uniform",
+            "distractor": "team"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "uniform",
-            "distractor": "grade"
+            "correct": "on",
+            "distractor": "presentation"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "pronunciation"
           }
         ]
       },
       {
         "id": "school-a2-story-04-s2",
-        "pl": "Kolejna wskazówka to archiwum.",
+        "pl": "Archiwum jest w plecaku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "archive",
+            "distractor": "grade"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "archive",
-            "distractor": "grammar"
+            "correct": "in",
+            "distractor": "pronunciation"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "trip"
           }
         ]
       },
       {
         "id": "school-a2-story-04-s3",
-        "pl": "Trzecia wskazówka to przedmiot.",
+        "pl": "Przedmiot jest przy tablicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "subject",
+            "distractor": "grammar"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "subject",
-            "distractor": "debate"
+            "correct": "by",
+            "distractor": "trip"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "class"
           }
         ]
       }
@@ -4069,99 +4541,7 @@
   },
   {
     "id": "school-a2-story-05",
-    "title": "The Science and History",
-    "tier": 2,
-    "cefr": "a2",
-    "category": "school",
-    "vocabIds": [
-      "school-a2-science",
-      "school-a2-history",
-      "school-a2-geography"
-    ],
-    "sentences": [
-      {
-        "id": "school-a2-story-05-s1",
-        "pl": "Pierwsza wskazówka to nauka.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "science",
-            "distractor": "backpack"
-          }
-        ]
-      },
-      {
-        "id": "school-a2-story-05-s2",
-        "pl": "Kolejna wskazówka to historia.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "history",
-            "distractor": "page"
-          }
-        ]
-      },
-      {
-        "id": "school-a2-story-05-s3",
-        "pl": "Trzecia wskazówka to geografia.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "geography",
-            "distractor": "campus"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "school-a2-story-06",
-    "title": "The Project and Team",
+    "title": "Project Today",
     "tier": 2,
     "cefr": "a2",
     "category": "school",
@@ -4172,80 +4552,196 @@
     ],
     "sentences": [
       {
-        "id": "school-a2-story-06-s1",
-        "pl": "Pierwsza wskazówka to projekt.",
+        "id": "school-a2-story-05-s1",
+        "pl": "Projekt jest w plecaku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "project",
+            "distractor": "hamster"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "project",
-            "distractor": "exercise"
+            "correct": "in",
+            "distractor": "bell"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "homework"
+          }
+        ]
+      },
+      {
+        "id": "school-a2-story-05-s2",
+        "pl": "Zespół jest przy tablicy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "team",
+            "distractor": "work"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "by",
+            "distractor": "homework"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "across"
+          }
+        ]
+      },
+      {
+        "id": "school-a2-story-05-s3",
+        "pl": "Prezentacja jest na biurku.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "presentation",
+            "distractor": "runs"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "across"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "makes"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-a2-story-06",
+    "title": "Schedule and Grade",
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-schedule",
+      "school-a2-grade",
+      "school-a2-trip"
+    ],
+    "sentences": [
+      {
+        "id": "school-a2-story-06-s1",
+        "pl": "Harmonogram jest przy tablicy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "schedule",
+            "distractor": "teacher"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "by",
+            "distractor": "sneeze"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "back"
           }
         ]
       },
       {
         "id": "school-a2-story-06-s2",
-        "pl": "Kolejna wskazówka to zespół.",
+        "pl": "Ocena jest na biurku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "grade",
+            "distractor": "dragon"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "team",
-            "distractor": "keyboard"
+            "correct": "on",
+            "distractor": "back"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "pirate"
           }
         ]
       },
       {
         "id": "school-a2-story-06-s3",
-        "pl": "Trzecia wskazówka to prezentacja.",
+        "pl": "Wyjazd szkolny jest w plecaku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "trip",
+            "distractor": "starts"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "presentation",
-            "distractor": "timetable"
+            "correct": "in",
+            "distractor": "pirate"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "paper"
           }
         ]
       }
@@ -4253,191 +4749,7 @@
   },
   {
     "id": "school-a2-story-07",
-    "title": "The Schedule and Grade",
-    "tier": 2,
-    "cefr": "a2",
-    "category": "school",
-    "vocabIds": [
-      "school-a2-schedule",
-      "school-a2-grade",
-      "school-a2-pronunciation"
-    ],
-    "sentences": [
-      {
-        "id": "school-a2-story-07-s1",
-        "pl": "Pierwsza wskazówka to harmonogram.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "schedule",
-            "distractor": "tablet"
-          }
-        ]
-      },
-      {
-        "id": "school-a2-story-07-s2",
-        "pl": "Kolejna wskazówka to ocena.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "grade",
-            "distractor": "archive"
-          }
-        ]
-      },
-      {
-        "id": "school-a2-story-07-s3",
-        "pl": "Trzecia wskazówka to wymowa.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "pronunciation",
-            "distractor": "history"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "school-a2-story-08",
-    "title": "The Spelling and Grammar",
-    "tier": 2,
-    "cefr": "a2",
-    "category": "school",
-    "vocabIds": [
-      "school-a2-spelling",
-      "school-a2-grammar",
-      "school-a2-trip"
-    ],
-    "sentences": [
-      {
-        "id": "school-a2-story-08-s1",
-        "pl": "Pierwsza wskazówka to pisownia.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "spelling",
-            "distractor": "schedule"
-          }
-        ]
-      },
-      {
-        "id": "school-a2-story-08-s2",
-        "pl": "Kolejna wskazówka to gramatyka.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "grammar",
-            "distractor": "spelling"
-          }
-        ]
-      },
-      {
-        "id": "school-a2-story-08-s3",
-        "pl": "Trzecia wskazówka to wyjazd szkolny.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
-            "correct": "trip",
-            "distractor": "debate"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "school-a2-story-09",
-    "title": "The Certificate and Debate",
+    "title": "A Day with Certificate",
     "tier": 2,
     "cefr": "a2",
     "category": "school",
@@ -4448,88 +4760,100 @@
     ],
     "sentences": [
       {
-        "id": "school-a2-story-09-s1",
-        "pl": "Pierwsza wskazówka to certyfikat.",
+        "id": "school-a2-story-07-s1",
+        "pl": "Certyfikat jest na biurku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
-          },
-          {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
           },
           {
             "correct": "certificate",
-            "distractor": "backpack"
-          }
-        ]
-      },
-      {
-        "id": "school-a2-story-09-s2",
-        "pl": "Kolejna wskazówka to debata.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "distractor": "airplane"
           },
           {
             "correct": "is",
             "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "lands"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "mila"
+          }
+        ]
+      },
+      {
+        "id": "school-a2-story-07-s2",
+        "pl": "Debata jest w plecaku.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
           },
           {
             "correct": "debate",
-            "distractor": "page"
-          }
-        ]
-      },
-      {
-        "id": "school-a2-story-09-s3",
-        "pl": "Trzecia wskazówka to słownik.",
-        "steps": [
-          {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "distractor": "box"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
+            "correct": "in",
+            "distractor": "mila"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "kuba"
+          }
+        ]
+      },
+      {
+        "id": "school-a2-story-07-s3",
+        "pl": "Słownik jest przy tablicy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
             "correct": "dictionary",
-            "distractor": "campus"
+            "distractor": "zosia"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "by",
+            "distractor": "kuba"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "tiny"
           }
         ]
       }
     ]
   },
   {
-    "id": "school-a2-story-10",
-    "title": "The Sentence and Paragraph",
+    "id": "school-a2-story-08",
+    "title": "Sentence Meets Paragraph",
     "tier": 2,
     "cefr": "a2",
     "category": "school",
@@ -4540,80 +4864,288 @@
     ],
     "sentences": [
       {
-        "id": "school-a2-story-10-s1",
-        "pl": "Pierwsza wskazówka to zdanie.",
+        "id": "school-a2-story-08-s1",
+        "pl": "Zdanie jest w plecaku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "sentence",
+            "distractor": "funny"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "sentence",
-            "distractor": "quiz"
+            "correct": "in",
+            "distractor": "witty"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "legendary"
+          }
+        ]
+      },
+      {
+        "id": "school-a2-story-08-s2",
+        "pl": "Akapit jest przy tablicy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "paragraph",
+            "distractor": "brave"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "by",
+            "distractor": "legendary"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "plan"
+          }
+        ]
+      },
+      {
+        "id": "school-a2-story-08-s3",
+        "pl": "Ćwiczenie jest na biurku.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "exercise",
+            "distractor": "chaos"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "plan"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "story"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-a2-story-09",
+    "title": "Quiz near Calculator",
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-quiz",
+      "school-a2-calculator",
+      "school-a2-keyboard"
+    ],
+    "sentences": [
+      {
+        "id": "school-a2-story-09-s1",
+        "pl": "Quiz jest przy tablicy.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "quiz",
+            "distractor": "joke"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "by",
+            "distractor": "comedy"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "cape"
+          }
+        ]
+      },
+      {
+        "id": "school-a2-story-09-s2",
+        "pl": "Kalkulator jest na biurku.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "calculator",
+            "distractor": "applause"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "cape"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "giggle"
+          }
+        ]
+      },
+      {
+        "id": "school-a2-story-09-s3",
+        "pl": "Klawiatura jest w plecaku.",
+        "steps": [
+          {
+            "correct": "The",
+            "distractor": "A"
+          },
+          {
+            "correct": "keyboard",
+            "distractor": "boss"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "in",
+            "distractor": "giggle"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "scene"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "school-a2-story-10",
+    "title": "Science Today",
+    "tier": 2,
+    "cefr": "a2",
+    "category": "school",
+    "vocabIds": [
+      "school-a2-science",
+      "school-a2-history",
+      "school-a2-geography"
+    ],
+    "sentences": [
+      {
+        "id": "school-a2-story-10-s1",
+        "pl": "Nauka jest na biurku.",
+        "steps": [
+          {
+            "correct": "Science",
+            "distractor": "Scene"
+          },
+          {
+            "correct": "is",
+            "distractor": "are"
+          },
+          {
+            "correct": "on",
+            "distractor": "adventure"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "desk",
+            "distractor": "meeting"
           }
         ]
       },
       {
         "id": "school-a2-story-10-s2",
-        "pl": "Kolejna wskazówka to akapit.",
+        "pl": "Historia jest w plecaku.",
         "steps": [
           {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "History",
+            "distractor": "Club"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "paragraph",
-            "distractor": "printer"
+            "correct": "in",
+            "distractor": "meeting"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "backpack",
+            "distractor": "advice"
           }
         ]
       },
       {
         "id": "school-a2-story-10-s3",
-        "pl": "Trzecia wskazówka to ćwiczenie.",
+        "pl": "Geografia jest przy tablicy.",
         "steps": [
           {
-            "correct": "The",
-            "distractor": "A"
-          },
-          {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "Geography",
+            "distractor": "Laughs"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "exercise",
-            "distractor": "workbook"
+            "correct": "by",
+            "distractor": "advice"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "whiteboard",
+            "distractor": "problem"
           }
         ]
       }
@@ -4621,7 +5153,7 @@
   },
   {
     "id": "town_places-a2-story-01",
-    "title": "The Stadium and Flower Shop",
+    "title": "Stadium and Flower Shop",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -4633,87 +5165,83 @@
     "sentences": [
       {
         "id": "town_places-a2-story-01-s1",
-        "pl": "Pierwsza wskazówka to stadion.",
+        "pl": "Stadion jest w parku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "stadium",
+            "distractor": "street"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "stadium",
-            "distractor": "bridge"
+            "correct": "in",
+            "distractor": "station"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "park",
+            "distractor": "square"
           }
         ]
       },
       {
         "id": "town_places-a2-story-01-s2",
-        "pl": "Kolejna wskazówka to kwiaciarnia.",
+        "pl": "Kwiaciarnia jest nowa.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
+            "correct": "flower",
+            "distractor": "bridge"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "shop",
+            "distractor": "museum"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "flower",
+            "correct": "new",
             "distractor": "terminal"
-          },
-          {
-            "correct": "shop",
-            "distractor": "tunnel"
           }
         ]
       },
       {
         "id": "town_places-a2-story-01-s3",
-        "pl": "Trzecia wskazówka to sklep mięsny.",
+        "pl": "Sklep mięsny jest ruchliwy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
+            "correct": "butcher",
+            "distractor": "terminal"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "shop",
+            "distractor": "tunnel"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "butcher",
+            "correct": "busy",
             "distractor": "market"
-          },
-          {
-            "correct": "shop",
-            "distractor": "hotel"
           }
         ]
       }
@@ -4721,7 +5249,7 @@
   },
   {
     "id": "town_places-a2-story-02",
-    "title": "The Crossroads and Petrol Station",
+    "title": "A Day with Crossroads",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -4733,83 +5261,87 @@
     "sentences": [
       {
         "id": "town_places-a2-story-02-s1",
-        "pl": "Pierwsza wskazówka to rozstaje.",
+        "pl": "Rozstaje są na stacji.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
             "correct": "crossroads",
-            "distractor": "swimming"
+            "distractor": "airport"
+          },
+          {
+            "correct": "are",
+            "distractor": "is"
+          },
+          {
+            "correct": "at",
+            "distractor": "theatre"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "station",
+            "distractor": "office"
           }
         ]
       },
       {
         "id": "town_places-a2-story-02-s2",
-        "pl": "Kolejna wskazówka to stacja benzynowa.",
+        "pl": "Stacja benzynowa jest ruchliwa.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
+            "correct": "petrol",
+            "distractor": "swimming"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "station",
+            "distractor": "office"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "petrol",
+            "correct": "busy",
             "distractor": "factory"
-          },
-          {
-            "correct": "station",
-            "distractor": "tower"
           }
         ]
       },
       {
         "id": "town_places-a2-story-02-s3",
-        "pl": "Trzecia wskazówka to tramwaj.",
+        "pl": "Tramwaj jest na rynku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "tram",
+            "distractor": "factory"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "tram",
-            "distractor": "stadium"
+            "correct": "in",
+            "distractor": "tower"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "market",
+            "distractor": "shop"
           }
         ]
       }
@@ -4817,7 +5349,7 @@
   },
   {
     "id": "town_places-a2-story-03",
-    "title": "The Elevator and Monument",
+    "title": "Elevator Meets Monument",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -4829,79 +5361,91 @@
     "sentences": [
       {
         "id": "town_places-a2-story-03-s1",
-        "pl": "Pierwsza wskazówka to winda.",
+        "pl": "Winda jest przy moście.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "elevator",
+            "distractor": "shop"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "elevator",
-            "distractor": "petrol"
+            "correct": "by",
+            "distractor": "crossroads"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "bridge",
+            "distractor": "elevator"
           }
         ]
       },
       {
         "id": "town_places-a2-story-03-s2",
-        "pl": "Kolejna wskazówka to pomnik.",
+        "pl": "Pomnik jest na rynku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "monument",
+            "distractor": "petrol"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "monument",
-            "distractor": "crosswalk"
+            "correct": "in",
+            "distractor": "elevator"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "market",
+            "distractor": "bicycle"
           }
         ]
       },
       {
         "id": "town_places-a2-story-03-s3",
-        "pl": "Trzecia wskazówka to przejście dla pieszych.",
+        "pl": "Przejście dla pieszych jest na ulicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "crosswalk",
+            "distractor": "monument"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "crosswalk",
-            "distractor": "traffic"
+            "correct": "on",
+            "distractor": "bicycle"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "street",
+            "distractor": "jam"
           }
         ]
       }
@@ -4909,7 +5453,7 @@
   },
   {
     "id": "town_places-a2-story-04",
-    "title": "The Bicycle Lane and Traffic Jam",
+    "title": "Bicycle Lane near Traffic Jam",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -4921,87 +5465,91 @@
     "sentences": [
       {
         "id": "town_places-a2-story-04-s1",
-        "pl": "Pierwsza wskazówka to ścieżka rowerowa.",
+        "pl": "Ścieżka rowerowa jest duża.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
+            "correct": "bicycle",
+            "distractor": "ambulance"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "lane",
+            "distractor": "fire"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "bicycle",
-            "distractor": "police"
-          },
-          {
-            "correct": "lane",
-            "distractor": "car"
+            "correct": "big",
+            "distractor": "engine"
           }
         ]
       },
       {
         "id": "town_places-a2-story-04-s2",
-        "pl": "Kolejna wskazówka to korek.",
+        "pl": "Korek jest na ulicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
+            "correct": "traffic",
+            "distractor": "police"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "jam",
+            "distractor": "car"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "traffic",
-            "distractor": "suitcase"
+            "correct": "on",
+            "distractor": "passenger"
           },
           {
-            "correct": "jam",
-            "distractor": "driver"
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "street",
+            "distractor": "queue"
           }
         ]
       },
       {
         "id": "town_places-a2-story-04-s3",
-        "pl": "Trzecia wskazówka to karetka.",
+        "pl": "Karetka jest w parku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "ambulance",
+            "distractor": "suitcase"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "ambulance",
-            "distractor": "ticket"
+            "correct": "in",
+            "distractor": "driver"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "park",
+            "distractor": "booth"
           }
         ]
       }
@@ -5009,7 +5557,7 @@
   },
   {
     "id": "town_places-a2-story-05",
-    "title": "The Fire Engine and Police Car",
+    "title": "Fire Engine Today",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -5021,87 +5569,99 @@
     "sentences": [
       {
         "id": "town_places-a2-story-05-s1",
-        "pl": "Pierwsza wskazówka to wóz strażacki.",
+        "pl": "Wóz strażacki jest na ulicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
+            "correct": "fire",
+            "distractor": "newsstand"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "engine",
+            "distractor": "neighbourhood"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "fire",
-            "distractor": "journey"
+            "correct": "on",
+            "distractor": "suburb"
           },
           {
-            "correct": "engine",
-            "distractor": "tourist"
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "street",
+            "distractor": "guide"
           }
         ]
       },
       {
         "id": "town_places-a2-story-05-s2",
-        "pl": "Kolejna wskazówka to radiowóz.",
+        "pl": "Radiowóz jest w parku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
+            "correct": "police",
+            "distractor": "journey"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "car",
+            "distractor": "tourist"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "police",
-            "distractor": "stall"
+            "correct": "in",
+            "distractor": "guide"
           },
           {
-            "correct": "car",
-            "distractor": "city"
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "park",
+            "distractor": "hall"
           }
         ]
       },
       {
         "id": "town_places-a2-story-05-s3",
-        "pl": "Trzecia wskazówka to pasażer.",
+        "pl": "Pasażer jest na stacji.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "passenger",
+            "distractor": "stall"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "passenger",
-            "distractor": "town"
+            "correct": "at",
+            "distractor": "city"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "station",
+            "distractor": "bus"
           }
         ]
       }
@@ -5109,7 +5669,7 @@
   },
   {
     "id": "town_places-a2-story-06",
-    "title": "The Suitcase and Driver",
+    "title": "Suitcase and Driver",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -5121,79 +5681,91 @@
     "sentences": [
       {
         "id": "town_places-a2-story-06-s1",
-        "pl": "Pierwsza wskazówka to walizka.",
+        "pl": "Walizka jest w parku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "suitcase",
+            "distractor": "arrives"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "suitcase",
-            "distractor": "museum"
+            "correct": "in",
+            "distractor": "school"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "park",
+            "distractor": "shoe"
           }
         ]
       },
       {
         "id": "town_places-a2-story-06-s2",
-        "pl": "Kolejna wskazówka to kierowca.",
+        "pl": "Kierowca czeka na rynku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
-          },
-          {
-            "correct": "is",
-            "distractor": "are"
-          },
-          {
             "correct": "driver",
-            "distractor": "tunnel"
+            "distractor": "every"
+          },
+          {
+            "correct": "waits",
+            "distractor": "every"
+          },
+          {
+            "correct": "in",
+            "distractor": "shoe"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "market",
+            "distractor": "turns"
           }
         ]
       },
       {
         "id": "town_places-a2-story-06-s3",
-        "pl": "Trzecia wskazówka to kolejka.",
+        "pl": "Kolejka jest przy moście.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "queue",
+            "distractor": "busker"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "queue",
-            "distractor": "hotel"
+            "correct": "by",
+            "distractor": "turns"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "bridge",
+            "distractor": "superhero"
           }
         ]
       }
@@ -5201,7 +5773,7 @@
   },
   {
     "id": "town_places-a2-story-07",
-    "title": "The Ticket Booth and Newsstand",
+    "title": "A Day with Ticket Booth",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -5213,83 +5785,87 @@
     "sentences": [
       {
         "id": "town_places-a2-story-07-s1",
-        "pl": "Pierwsza wskazówka to kasa biletowa.",
+        "pl": "Kasa biletowa jest na stacji.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
+            "correct": "ticket",
+            "distractor": "timing"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "booth",
+            "distractor": "someone"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "ticket",
-            "distractor": "pool"
+            "correct": "at",
+            "distractor": "drops"
           },
           {
-            "correct": "booth",
-            "distractor": "office"
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "station",
+            "distractor": "olek"
           }
         ]
       },
       {
         "id": "town_places-a2-story-07-s2",
-        "pl": "Kolejna wskazówka to kiosk.",
+        "pl": "Kiosk jest nowy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "newsstand",
+            "distractor": "balloons"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "newsstand",
-            "distractor": "harbour"
+            "correct": "new",
+            "distractor": "mila"
           }
         ]
       },
       {
         "id": "town_places-a2-story-07-s3",
-        "pl": "Trzecia wskazówka to okolica.",
+        "pl": "Okolica jest na rynku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "neighbourhood",
+            "distractor": "zosia"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "neighbourhood",
-            "distractor": "flower"
+            "correct": "in",
+            "distractor": "kuba"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "market",
+            "distractor": "tiny"
           }
         ]
       }
@@ -5297,7 +5873,7 @@
   },
   {
     "id": "town_places-a2-story-08",
-    "title": "The Suburb and Journey",
+    "title": "Suburb Meets Journey",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -5309,79 +5885,91 @@
     "sentences": [
       {
         "id": "town_places-a2-story-08-s1",
-        "pl": "Pierwsza wskazówka to przedmieście.",
+        "pl": "Przedmieście jest przy moście.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "suburb",
+            "distractor": "funny"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "suburb",
-            "distractor": "tram"
+            "correct": "by",
+            "distractor": "witty"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "bridge",
+            "distractor": "legendary"
           }
         ]
       },
       {
         "id": "town_places-a2-story-08-s2",
-        "pl": "Kolejna wskazówka to podróż.",
+        "pl": "Podróż jest na rynku.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "journey",
+            "distractor": "brave"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "journey",
-            "distractor": "crosswalk"
+            "correct": "in",
+            "distractor": "legendary"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "market",
+            "distractor": "plan"
           }
         ]
       },
       {
         "id": "town_places-a2-story-08-s3",
-        "pl": "Trzecia wskazówka to turysta.",
+        "pl": "Turysta jest na ulicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "tourist",
+            "distractor": "chaos"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "tourist",
-            "distractor": "traffic"
+            "correct": "on",
+            "distractor": "plan"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "street",
+            "distractor": "story"
           }
         ]
       }
@@ -5389,7 +5977,7 @@
   },
   {
     "id": "town_places-a2-story-09",
-    "title": "The Guide and Market Stall",
+    "title": "Guide near Market Stall",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -5401,87 +5989,91 @@
     "sentences": [
       {
         "id": "town_places-a2-story-09-s1",
-        "pl": "Pierwsza wskazówka to przewodnik.",
+        "pl": "Przewodnik jest w mieście.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "guide",
+            "distractor": "joke"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "guide",
-            "distractor": "police"
+            "correct": "in",
+            "distractor": "comedy"
+          },
+          {
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "town",
+            "distractor": "cape"
           }
         ]
       },
       {
         "id": "town_places-a2-story-09-s2",
-        "pl": "Kolejna wskazówka to stoisko.",
+        "pl": "Stoisko jest na ulicy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
+            "correct": "market",
+            "distractor": "applause"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "stall",
+            "distractor": "cape"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "market",
-            "distractor": "driver"
+            "correct": "on",
+            "distractor": "boss"
           },
           {
-            "correct": "stall",
-            "distractor": "driver"
+            "correct": "the",
+            "distractor": "a"
+          },
+          {
+            "correct": "street",
+            "distractor": "instincts"
           }
         ]
       },
       {
         "id": "town_places-a2-story-09-s3",
-        "pl": "Trzecia wskazówka to ratusz.",
+        "pl": "Ratusz jest nowy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
+            "correct": "city",
+            "distractor": "giggle"
           },
           {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "hall",
+            "distractor": "expert"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "city",
-            "distractor": "ticket"
-          },
-          {
-            "correct": "hall",
-            "distractor": "booth"
+            "correct": "new",
+            "distractor": "instincts"
           }
         ]
       }
@@ -5489,7 +6081,7 @@
   },
   {
     "id": "town_places-a2-story-10",
-    "title": "The Airport and Platform",
+    "title": "Airport Today",
     "tier": 2,
     "cefr": "a2",
     "category": "town_places",
@@ -5501,79 +6093,67 @@
     "sentences": [
       {
         "id": "town_places-a2-story-10-s1",
-        "pl": "Pierwsza wskazówka to lotnisko.",
+        "pl": "Lotnisko jest duże.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "first",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "airport",
+            "distractor": "side"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "airport",
-            "distractor": "tourist"
+            "correct": "big",
+            "distractor": "club"
           }
         ]
       },
       {
         "id": "town_places-a2-story-10-s2",
-        "pl": "Kolejna wskazówka to peron.",
+        "pl": "Peron jest nowy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "next",
-            "distractor": "last"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "platform",
+            "distractor": "laugh"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "platform",
-            "distractor": "city"
+            "correct": "new",
+            "distractor": "laughs"
           }
         ]
       },
       {
         "id": "town_places-a2-story-10-s3",
-        "pl": "Trzecia wskazówka to teatr.",
+        "pl": "Teatr jest ruchliwy.",
         "steps": [
           {
             "correct": "The",
             "distractor": "A"
           },
           {
-            "correct": "third",
-            "distractor": "second"
-          },
-          {
-            "correct": "clue",
-            "distractor": "word"
+            "correct": "theatre",
+            "distractor": "boring"
           },
           {
             "correct": "is",
             "distractor": "are"
           },
           {
-            "correct": "theatre",
-            "distractor": "street"
+            "correct": "busy",
+            "distractor": "whole"
           }
         ]
       }

@@ -1,143 +1,31 @@
 [
   {
     "id": "animals_nature-a2-sentence-01",
-    "pl": "To słowo to ocean.",
+    "pl": "Wodospad jest nad jeziorem.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "waterfall",
+        "distractor": "meadow"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "ocean",
+        "correct": "by",
         "distractor": "lake"
-      }
-    ],
-    "tier": 2,
-    "cefr": "a2",
-    "category": "animals_nature",
-    "vocabIds": [
-      "animals_nature-a2-ocean"
-    ]
-  },
-  {
-    "id": "animals_nature-a2-sentence-02",
-    "pl": "Ten wyraz to pustynia.",
-    "steps": [
-      {
-        "correct": "This",
-        "distractor": "That"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
-      },
-      {
-        "correct": "is",
-        "distractor": "are"
-      },
-      {
-        "correct": "desert",
-        "distractor": "valley"
-      }
-    ],
-    "tier": 2,
-    "cefr": "a2",
-    "category": "animals_nature",
-    "vocabIds": [
-      "animals_nature-a2-desert"
-    ]
-  },
-  {
-    "id": "animals_nature-a2-sentence-03",
-    "pl": "Teraz to słowo to dżungla.",
-    "steps": [
-      {
-        "correct": "Now",
-        "distractor": "Then"
       },
       {
         "correct": "the",
         "distractor": "a"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
-      },
-      {
-        "correct": "is",
-        "distractor": "are"
-      },
-      {
-        "correct": "jungle",
-        "distractor": "thunder"
-      }
-    ],
-    "tier": 2,
-    "cefr": "a2",
-    "category": "animals_nature",
-    "vocabIds": [
-      "animals_nature-a2-jungle"
-    ]
-  },
-  {
-    "id": "animals_nature-a2-sentence-04",
-    "pl": "Następne słowo to ścieżka.",
-    "steps": [
-      {
-        "correct": "The",
-        "distractor": "A"
-      },
-      {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
-      },
-      {
-        "correct": "is",
-        "distractor": "are"
-      },
-      {
-        "correct": "path",
-        "distractor": "fox"
-      }
-    ],
-    "tier": 2,
-    "cefr": "a2",
-    "category": "animals_nature",
-    "vocabIds": [
-      "animals_nature-a2-path"
-    ]
-  },
-  {
-    "id": "animals_nature-a2-sentence-05",
-    "pl": "To słowo to wodospad.",
-    "steps": [
-      {
-        "correct": "The",
-        "distractor": "A"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
-      },
-      {
-        "correct": "is",
-        "distractor": "are"
-      },
-      {
-        "correct": "waterfall",
-        "distractor": "turtle"
+        "correct": "lake",
+        "distractor": "cave"
       }
     ],
     "tier": 2,
@@ -148,24 +36,24 @@
     ]
   },
   {
-    "id": "animals_nature-a2-sentence-06",
-    "pl": "Ten wyraz to tęcza.",
+    "id": "animals_nature-a2-sentence-02",
+    "pl": "Tęcza jest jasna.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "rainbow",
+        "distractor": "pond"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "rainbow",
-        "distractor": "feather"
+        "correct": "bright",
+        "distractor": "valley"
       }
     ],
     "tier": 2,
@@ -176,28 +64,24 @@
     ]
   },
   {
-    "id": "animals_nature-a2-sentence-07",
-    "pl": "Teraz to słowo to burza.",
+    "id": "animals_nature-a2-sentence-03",
+    "pl": "Burza jest głośna.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "storm",
+        "distractor": "path"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "storm",
-        "distractor": "river"
+        "correct": "loud",
+        "distractor": "quiet"
       }
     ],
     "tier": 2,
@@ -208,28 +92,24 @@
     ]
   },
   {
-    "id": "animals_nature-a2-sentence-08",
-    "pl": "Następne słowo to grzmot.",
+    "id": "animals_nature-a2-sentence-04",
+    "pl": "Grzmot jest głośny.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "thunder",
+        "distractor": "root"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "thunder",
-        "distractor": "orchard"
+        "correct": "loud",
+        "distractor": "quiet"
       }
     ],
     "tier": 2,
@@ -240,24 +120,24 @@
     ]
   },
   {
-    "id": "animals_nature-a2-sentence-09",
-    "pl": "To słowo to błyskawica.",
+    "id": "animals_nature-a2-sentence-05",
+    "pl": "Błyskawica jest jasna.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "lightning",
+        "distractor": "squirrel"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "lightning",
-        "distractor": "path"
+        "correct": "bright",
+        "distractor": "hedgehog"
       }
     ],
     "tier": 2,
@@ -268,24 +148,32 @@
     ]
   },
   {
-    "id": "animals_nature-a2-sentence-10",
-    "pl": "Ten wyraz to gałąź.",
+    "id": "animals_nature-a2-sentence-06",
+    "pl": "Gałąź jest nad rzeką.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "branch",
+        "distractor": "gardener"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "branch",
-        "distractor": "root"
+        "correct": "by",
+        "distractor": "campfire"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "river",
+        "distractor": "spring"
       }
     ],
     "tier": 2,
@@ -296,28 +184,32 @@
     ]
   },
   {
-    "id": "animals_nature-a2-sentence-11",
-    "pl": "Teraz to słowo to krzak.",
+    "id": "animals_nature-a2-sentence-07",
+    "pl": "Krzak jest nad jeziorem.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "bush",
+        "distractor": "winter"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "bush",
-        "distractor": "hedgehog"
+        "correct": "by",
+        "distractor": "chatty"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "lake",
+        "distractor": "sunset"
       }
     ],
     "tier": 2,
@@ -328,28 +220,32 @@
     ]
   },
   {
-    "id": "animals_nature-a2-sentence-12",
-    "pl": "Następne słowo to korzeń.",
+    "id": "animals_nature-a2-sentence-08",
+    "pl": "Korzeń jest przy stawie.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "root",
+        "distractor": "like"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "root",
-        "distractor": "campfire"
+        "correct": "by",
+        "distractor": "owns"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "pond",
+        "distractor": "guide"
       }
     ],
     "tier": 2,
@@ -360,52 +256,176 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-01",
-    "pl": "To słowo to królestwo.",
+    "id": "animals_nature-a2-sentence-09",
+    "pl": "Nasiono jest w sadzie.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "seed",
+        "distractor": "splash"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "kingdom",
-        "distractor": "chamber"
+        "correct": "in",
+        "distractor": "contest"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "orchard",
+        "distractor": "tiny"
       }
     ],
     "tier": 2,
     "cefr": "a2",
-    "category": "fantasy_adventure",
+    "category": "animals_nature",
     "vocabIds": [
-      "fantasy_adventure-a2-kingdom"
+      "animals_nature-a2-seed"
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-02",
-    "pl": "Ten wyraz to sztandar.",
+    "id": "animals_nature-a2-sentence-10",
+    "pl": "Płatek jest w lesie.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "petal",
+        "distractor": "olek"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
+        "correct": "in",
+        "distractor": "zosia"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "forest",
+        "distractor": "bartek"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-petal"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-11",
+    "pl": "Lis jest na łące.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "fox",
+        "distractor": "silly"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "in",
+        "distractor": "brave"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "meadow",
+        "distractor": "chaos"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-fox"
+    ]
+  },
+  {
+    "id": "animals_nature-a2-sentence-12",
+    "pl": "Wilk jest nad rzeką.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "wolf",
+        "distractor": "quest"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "by",
+        "distractor": "story"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "river",
+        "distractor": "show"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "animals_nature",
+    "vocabIds": [
+      "animals_nature-a2-wolf"
+    ]
+  },
+  {
+    "id": "fantasy_adventure-a2-sentence-01",
+    "pl": "Sztandar jest w komnacie.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
         "correct": "banner",
-        "distractor": "stronghold"
+        "distractor": "tower"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "in",
+        "distractor": "chamber"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "chamber",
+        "distractor": "watchtower"
       }
     ],
     "tier": 2,
@@ -416,28 +436,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-03",
-    "pl": "Teraz to słowo to pierścień.",
+    "id": "fantasy_adventure-a2-sentence-02",
+    "pl": "Pierścień jest przy bramie.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "ring",
+        "distractor": "altar"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "ring",
-        "distractor": "carriage"
+        "correct": "at",
+        "distractor": "stronghold"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "gateway",
+        "distractor": "banner"
       }
     ],
     "tier": 2,
@@ -448,28 +472,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-04",
-    "pl": "Następne słowo to amulet.",
+    "id": "fantasy_adventure-a2-sentence-03",
+    "pl": "Amulet jest w obozie.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "amulet",
+        "distractor": "trident"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "amulet",
-        "distractor": "mask"
+        "correct": "in",
+        "distractor": "cauldron"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "camp",
+        "distractor": "gate"
       }
     ],
     "tier": 2,
@@ -480,24 +508,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-05",
-    "pl": "To słowo to trójząb.",
+    "id": "fantasy_adventure-a2-sentence-04",
+    "pl": "Trójząb jest przy latarni.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "trident",
+        "distractor": "beast"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "trident",
-        "distractor": "fire"
+        "correct": "by",
+        "distractor": "spear"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "lantern",
+        "distractor": "portal"
       }
     ],
     "tier": 2,
@@ -508,24 +544,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-06",
-    "pl": "Ten wyraz to kocioł.",
+    "id": "fantasy_adventure-a2-sentence-05",
+    "pl": "Kocioł jest w wieży.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "cauldron",
+        "distractor": "magic"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "cauldron",
-        "distractor": "guardian"
+        "correct": "in",
+        "distractor": "bird"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "tower",
+        "distractor": "unicorn"
       }
     ],
     "tier": 2,
@@ -536,28 +580,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-07",
-    "pl": "Teraz to słowo to labirynt.",
+    "id": "fantasy_adventure-a2-sentence-06",
+    "pl": "Labirynt jest w komnacie.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "maze",
+        "distractor": "battle"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "maze",
-        "distractor": "castle"
+        "correct": "in",
+        "distractor": "escape"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "chamber",
+        "distractor": "secret"
       }
     ],
     "tier": 2,
@@ -568,28 +616,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-08",
-    "pl": "Następne słowo to powóz.",
+    "id": "fantasy_adventure-a2-sentence-07",
+    "pl": "Powóz jest przy bramie.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "carriage",
+        "distractor": "puzzle"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "carriage",
-        "distractor": "camp"
+        "correct": "at",
+        "distractor": "captain"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "gateway",
+        "distractor": "goblin"
       }
     ],
     "tier": 2,
@@ -600,28 +652,28 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-09",
-    "pl": "To słowo to strażnik bramy.",
+    "id": "fantasy_adventure-a2-sentence-08",
+    "pl": "Strażnik bramy jest szczęśliwy.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "gate",
+        "distractor": "duty"
+      },
+      {
+        "correct": "guard",
+        "distractor": "complains"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "gate",
-        "distractor": "banner"
-      },
-      {
-        "correct": "guard",
-        "distractor": "ring"
+        "correct": "happy",
+        "distractor": "about"
       }
     ],
     "tier": 2,
@@ -632,24 +684,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-10",
-    "pl": "Ten wyraz to płomień.",
+    "id": "fantasy_adventure-a2-sentence-09",
+    "pl": "Płomień jest przy latarni.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "flame",
+        "distractor": "blue"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "flame",
-        "distractor": "gate"
+        "correct": "by",
+        "distractor": "dragon"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "lantern",
+        "distractor": "brass"
       }
     ],
     "tier": 2,
@@ -660,28 +720,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-11",
-    "pl": "Teraz to słowo to bestia.",
+    "id": "fantasy_adventure-a2-sentence-10",
+    "pl": "Bestia jest w wieży.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "beast",
+        "distractor": "treats"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "beast",
-        "distractor": "archer"
+        "correct": "in",
+        "distractor": "chores"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "tower",
+        "distractor": "mila"
       }
     ],
     "tier": 2,
@@ -692,28 +756,32 @@
     ]
   },
   {
-    "id": "fantasy_adventure-a2-sentence-12",
-    "pl": "Następne słowo to włócznia.",
+    "id": "fantasy_adventure-a2-sentence-11",
+    "pl": "Włócznia jest w komnacie.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "spear",
+        "distractor": "kuba"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "spear",
-        "distractor": "villain"
+        "correct": "in",
+        "distractor": "lena"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "chamber",
+        "distractor": "witty"
       }
     ],
     "tier": 2,
@@ -724,24 +792,68 @@
     ]
   },
   {
-    "id": "food_kitchen-a2-sentence-01",
-    "pl": "To słowo to patelnia.",
+    "id": "fantasy_adventure-a2-sentence-12",
+    "pl": "Sztylet jest przy bramie.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "dagger",
+        "distractor": "legendary"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
+        "correct": "at",
+        "distractor": "dramatic"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "gateway",
+        "distractor": "mission"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "fantasy_adventure",
+    "vocabIds": [
+      "fantasy_adventure-a2-dagger"
+    ]
+  },
+  {
+    "id": "food_kitchen-a2-sentence-01",
+    "pl": "Patelnia jest na tacy.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
         "correct": "pan",
+        "distractor": "fridge"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "on",
         "distractor": "bowl"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "tray",
+        "distractor": "bakery"
       }
     ],
     "tier": 2,
@@ -753,27 +865,35 @@
   },
   {
     "id": "food_kitchen-a2-sentence-02",
-    "pl": "Ten wyraz to deska do krojenia.",
+    "pl": "Deska do krojenia jest w kuchni.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "chopping",
+        "distractor": "tray"
+      },
+      {
+        "correct": "board",
+        "distractor": "saucepan"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "chopping",
-        "distractor": "picnic"
+        "correct": "in",
+        "distractor": "basket"
       },
       {
-        "correct": "board",
-        "distractor": "basket"
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "kitchen",
+        "distractor": "chopping"
       }
     ],
     "tier": 2,
@@ -785,27 +905,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-03",
-    "pl": "Teraz to słowo to czajnik.",
+    "pl": "Czajnik jest na stole.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "kettle",
+        "distractor": "board"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "kettle",
-        "distractor": "recipe"
+        "correct": "on",
+        "distractor": "bottle"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "table",
+        "distractor": "menu"
       }
     ],
     "tier": 2,
@@ -817,27 +941,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-04",
-    "pl": "Następne słowo to butelka.",
+    "pl": "Butelka jest na tacy.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "bottle",
+        "distractor": "pancake"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "bottle",
-        "distractor": "pepper"
+        "correct": "on",
+        "distractor": "jam"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "tray",
+        "distractor": "salt"
       }
     ],
     "tier": 2,
@@ -849,23 +977,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-05",
-    "pl": "To słowo to serwetka.",
+    "pl": "Serwetka jest w kuchni.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "napkin",
+        "distractor": "mushroom"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "napkin",
-        "distractor": "yogurt"
+        "correct": "in",
+        "distractor": "lemonade"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "kitchen",
+        "distractor": "dessert"
       }
     ],
     "tier": 2,
@@ -877,23 +1013,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-06",
-    "pl": "Ten wyraz to przepis.",
+    "pl": "Przepis jest na stole.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "recipe",
+        "distractor": "pineapple"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "recipe",
-        "distractor": "ham"
+        "correct": "on",
+        "distractor": "sausage"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "table",
+        "distractor": "lettuce"
       }
     ],
     "tier": 2,
@@ -905,27 +1049,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-07",
-    "pl": "Teraz to słowo to menu.",
+    "pl": "Menu jest na tacy.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "menu",
+        "distractor": "sauce"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "menu",
-        "distractor": "plate"
+        "correct": "on",
+        "distractor": "hungry"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "tray",
+        "distractor": "cooking"
       }
     ],
     "tier": 2,
@@ -937,27 +1085,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-08",
-    "pl": "Następne słowo to makaron.",
+    "pl": "Makaron jest w kuchni.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "pasta",
+        "distractor": "rock"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "pasta",
-        "distractor": "saucepan"
+        "correct": "in",
+        "distractor": "star"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "kitchen",
+        "distractor": "hat"
       }
     ],
     "tier": 2,
@@ -969,23 +1121,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-09",
-    "pl": "To słowo to płatki.",
+    "pl": "Płatki są na stole.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "cereal",
+        "distractor": "helicopter"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "cereal",
-        "distractor": "board"
+        "correct": "on",
+        "distractor": "somebody"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "table",
+        "distractor": "cookie"
       }
     ],
     "tier": 2,
@@ -997,23 +1157,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-10",
-    "pl": "Ten wyraz to naleśnik.",
+    "pl": "Naleśnik jest na tacy.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "pancake",
+        "distractor": "olek"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "pancake",
-        "distractor": "cereal"
+        "correct": "on",
+        "distractor": "zosia"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "tray",
+        "distractor": "bartek"
       }
     ],
     "tier": 2,
@@ -1025,27 +1193,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-11",
-    "pl": "Teraz to słowo to dżem.",
+    "pl": "Dżem jest w kuchni.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "jam",
+        "distractor": "silly"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "jam",
-        "distractor": "lemonade"
+        "correct": "in",
+        "distractor": "brave"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "kitchen",
+        "distractor": "chaos"
       }
     ],
     "tier": 2,
@@ -1057,27 +1229,31 @@
   },
   {
     "id": "food_kitchen-a2-sentence-12",
-    "pl": "Następne słowo to miód.",
+    "pl": "Miód jest na stole.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "honey",
+        "distractor": "quest"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "honey",
-        "distractor": "sausage"
+        "correct": "on",
+        "distractor": "story"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "table",
+        "distractor": "show"
       }
     ],
     "tier": 2,
@@ -1089,115 +1265,31 @@
   },
   {
     "id": "household-a2-sentence-01",
-    "pl": "To słowo to mieszkanie.",
+    "pl": "Dywan jest na podłodze.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "carpet",
+        "distractor": "room"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "apartment",
+        "correct": "on",
         "distractor": "bathroom"
-      }
-    ],
-    "tier": 2,
-    "cefr": "a2",
-    "category": "household",
-    "vocabIds": [
-      "household-a2-apartment"
-    ]
-  },
-  {
-    "id": "household-a2-sentence-02",
-    "pl": "Ten wyraz to balkon.",
-    "steps": [
-      {
-        "correct": "This",
-        "distractor": "That"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
-      },
-      {
-        "correct": "is",
-        "distractor": "are"
-      },
-      {
-        "correct": "balcony",
-        "distractor": "garage"
-      }
-    ],
-    "tier": 2,
-    "cefr": "a2",
-    "category": "household",
-    "vocabIds": [
-      "household-a2-balcony"
-    ]
-  },
-  {
-    "id": "household-a2-sentence-03",
-    "pl": "Teraz to słowo to klatka schodowa.",
-    "steps": [
-      {
-        "correct": "Now",
-        "distractor": "Then"
       },
       {
         "correct": "the",
         "distractor": "a"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
-      },
-      {
-        "correct": "is",
-        "distractor": "are"
-      },
-      {
-        "correct": "staircase",
-        "distractor": "vacuum"
-      }
-    ],
-    "tier": 2,
-    "cefr": "a2",
-    "category": "household",
-    "vocabIds": [
-      "household-a2-staircase"
-    ]
-  },
-  {
-    "id": "household-a2-sentence-04",
-    "pl": "Następne słowo to dywan.",
-    "steps": [
-      {
-        "correct": "The",
-        "distractor": "A"
-      },
-      {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
-      },
-      {
-        "correct": "is",
-        "distractor": "are"
-      },
-      {
-        "correct": "carpet",
-        "distractor": "mop"
+        "correct": "floor",
+        "distractor": "shelf"
       }
     ],
     "tier": 2,
@@ -1208,24 +1300,32 @@
     ]
   },
   {
-    "id": "household-a2-sentence-05",
-    "pl": "To słowo to zasłona.",
+    "id": "household-a2-sentence-02",
+    "pl": "Zasłona jest przy drzwiach.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "curtain",
+        "distractor": "door"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "curtain",
-        "distractor": "basement"
+        "correct": "by",
+        "distractor": "garage"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "door",
+        "distractor": "balcony"
       }
     ],
     "tier": 2,
@@ -1236,24 +1336,32 @@
     ]
   },
   {
-    "id": "household-a2-sentence-06",
-    "pl": "Ten wyraz to koszyk.",
+    "id": "household-a2-sentence-03",
+    "pl": "Koszyk jest na półce.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "basket",
+        "distractor": "carpet"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "basket",
-        "distractor": "thread"
+        "correct": "on",
+        "distractor": "basket"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "shelf",
+        "distractor": "dishwasher"
       }
     ],
     "tier": 2,
@@ -1264,28 +1372,32 @@
     ]
   },
   {
-    "id": "household-a2-sentence-07",
-    "pl": "Teraz to słowo to szuflada.",
+    "id": "household-a2-sentence-04",
+    "pl": "Szuflada jest przy oknie.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "drawer",
+        "distractor": "microwave"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "drawer",
-        "distractor": "house"
+        "correct": "near",
+        "distractor": "sink"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "window",
+        "distractor": "broom"
       }
     ],
     "tier": 2,
@@ -1296,28 +1408,32 @@
     ]
   },
   {
-    "id": "household-a2-sentence-08",
-    "pl": "Następne słowo to odkurzacz.",
+    "id": "household-a2-sentence-05",
+    "pl": "Odkurzacz jest na podłodze.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "vacuum",
+        "distractor": "corridor"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "vacuum",
-        "distractor": "floor"
+        "correct": "on",
+        "distractor": "attic"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "floor",
+        "distractor": "gate"
       }
     ],
     "tier": 2,
@@ -1328,24 +1444,32 @@
     ]
   },
   {
-    "id": "household-a2-sentence-09",
-    "pl": "To słowo to zmywarka.",
+    "id": "household-a2-sentence-06",
+    "pl": "Zmywarka jest w kuchni.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "dishwasher",
+        "distractor": "apron"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "dishwasher",
-        "distractor": "balcony"
+        "correct": "in",
+        "distractor": "needle"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "kitchen",
+        "distractor": "ladder"
       }
     ],
     "tier": 2,
@@ -1356,24 +1480,32 @@
     ]
   },
   {
-    "id": "household-a2-sentence-10",
-    "pl": "Ten wyraz to zamrażarka.",
+    "id": "household-a2-sentence-07",
+    "pl": "Zamrażarka jest w kuchni.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "freezer",
+        "distractor": "uncle"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "freezer",
-        "distractor": "dishwasher"
+        "correct": "in",
+        "distractor": "aunt"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "kitchen",
+        "distractor": "breakfast"
       }
     ],
     "tier": 2,
@@ -1384,28 +1516,32 @@
     ]
   },
   {
-    "id": "household-a2-sentence-11",
-    "pl": "Teraz to słowo to piekarnik.",
+    "id": "household-a2-sentence-08",
+    "pl": "Piekarnik jest w kuchni.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "oven",
+        "distractor": "laundry"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "oven",
-        "distractor": "doormat"
+        "correct": "in",
+        "distractor": "day"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "kitchen",
+        "distractor": "again"
       }
     ],
     "tier": 2,
@@ -1416,28 +1552,32 @@
     ]
   },
   {
-    "id": "household-a2-sentence-12",
-    "pl": "Następne słowo to mikrofalówka.",
+    "id": "household-a2-sentence-09",
+    "pl": "Mikrofalówka jest na podłodze.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "microwave",
+        "distractor": "secret"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "microwave",
-        "distractor": "candle"
+        "correct": "on",
+        "distractor": "pancake"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "floor",
+        "distractor": "puts"
       }
     ],
     "tier": 2,
@@ -1448,24 +1588,140 @@
     ]
   },
   {
-    "id": "school-a2-sentence-01",
-    "pl": "To słowo to słownik.",
+    "id": "household-a2-sentence-10",
+    "pl": "Zlew jest przy drzwiach.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "sink",
+        "distractor": "toaster"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
+        "correct": "by",
+        "distractor": "sounds"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "door",
+        "distractor": "band"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-sink"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-11",
+    "pl": "Kran jest na półce.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "faucet",
+        "distractor": "zosia"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "on",
+        "distractor": "kuba"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "shelf",
+        "distractor": "tiny"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-faucet"
+    ]
+  },
+  {
+    "id": "household-a2-sentence-12",
+    "pl": "Mop jest przy oknie.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
+        "correct": "mop",
+        "distractor": "silly"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "near",
+        "distractor": "brave"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "window",
+        "distractor": "chaos"
+      }
+    ],
+    "tier": 2,
+    "cefr": "a2",
+    "category": "household",
+    "vocabIds": [
+      "household-a2-mop"
+    ]
+  },
+  {
+    "id": "school-a2-sentence-01",
+    "pl": "Słownik jest w plecaku.",
+    "steps": [
+      {
+        "correct": "The",
+        "distractor": "A"
+      },
+      {
         "correct": "dictionary",
+        "distractor": "classroom"
+      },
+      {
+        "correct": "is",
+        "distractor": "are"
+      },
+      {
+        "correct": "in",
         "distractor": "desk"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "backpack",
+        "distractor": "whiteboard"
       }
     ],
     "tier": 2,
@@ -1477,23 +1733,31 @@
   },
   {
     "id": "school-a2-sentence-02",
-    "pl": "Ten wyraz to zdanie.",
+    "pl": "Zdanie jest przy tablicy.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "sentence",
+        "distractor": "screen"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "sentence",
+        "correct": "by",
         "distractor": "campus"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "whiteboard",
+        "distractor": "sentence"
       }
     ],
     "tier": 2,
@@ -1505,27 +1769,31 @@
   },
   {
     "id": "school-a2-sentence-03",
-    "pl": "Teraz to słowo to akapit.",
+    "pl": "Akapit jest na biurku.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "paragraph",
+        "distractor": "quiz"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "paragraph",
-        "distractor": "printer"
+        "correct": "on",
+        "distractor": "calculator"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "desk",
+        "distractor": "poster"
       }
     ],
     "tier": 2,
@@ -1537,27 +1805,31 @@
   },
   {
     "id": "school-a2-sentence-04",
-    "pl": "Następne słowo to ćwiczenie.",
+    "pl": "Ćwiczenie jest w plecaku.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "exercise",
+        "distractor": "worksheet"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "exercise",
-        "distractor": "tablet"
+        "correct": "in",
+        "distractor": "speaker"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "backpack",
+        "distractor": "locker"
       }
     ],
     "tier": 2,
@@ -1569,23 +1841,31 @@
   },
   {
     "id": "school-a2-sentence-05",
-    "pl": "To słowo to quiz.",
+    "pl": "Quiz jest przy tablicy.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "quiz",
+        "distractor": "subject"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "quiz",
-        "distractor": "history"
+        "correct": "by",
+        "distractor": "science"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "whiteboard",
+        "distractor": "project"
       }
     ],
     "tier": 2,
@@ -1597,23 +1877,31 @@
   },
   {
     "id": "school-a2-sentence-06",
-    "pl": "Ten wyraz to kalkulator.",
+    "pl": "Kalkulator jest na biurku.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "calculator",
+        "distractor": "schedule"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "calculator",
-        "distractor": "pronunciation"
+        "correct": "on",
+        "distractor": "grade"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "desk",
+        "distractor": "grammar"
       }
     ],
     "tier": 2,
@@ -1625,27 +1913,31 @@
   },
   {
     "id": "school-a2-sentence-07",
-    "pl": "Teraz to słowo to klawiatura.",
+    "pl": "Klawiatura jest w plecaku.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "keyboard",
+        "distractor": "debate"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "keyboard",
-        "distractor": "library"
+        "correct": "in",
+        "distractor": "class"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "backpack",
+        "distractor": "group"
       }
     ],
     "tier": 2,
@@ -1657,27 +1949,31 @@
   },
   {
     "id": "school-a2-sentence-08",
-    "pl": "Następne słowo to drukarka.",
+    "pl": "Drukarka jest przy tablicy.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "printer",
+        "distractor": "day"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "printer",
-        "distractor": "auditorium"
+        "correct": "by",
+        "distractor": "runs"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "whiteboard",
+        "distractor": "dust"
       }
     ],
     "tier": 2,
@@ -1689,23 +1985,31 @@
   },
   {
     "id": "school-a2-sentence-09",
-    "pl": "To słowo to plakat.",
+    "pl": "Plakat jest na biurku.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "poster",
+        "distractor": "sneeze"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "poster",
-        "distractor": "exercise"
+        "correct": "on",
+        "distractor": "like"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "desk",
+        "distractor": "row"
       }
     ],
     "tier": 2,
@@ -1717,23 +2021,31 @@
   },
   {
     "id": "school-a2-sentence-10",
-    "pl": "Ten wyraz to plan lekcji.",
+    "pl": "Plan lekcji jest w plecaku.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "timetable",
+        "distractor": "accent"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "timetable",
-        "distractor": "worksheet"
+        "correct": "in",
+        "distractor": "challenge"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "backpack",
+        "distractor": "lands"
       }
     ],
     "tier": 2,
@@ -1745,27 +2057,31 @@
   },
   {
     "id": "school-a2-sentence-11",
-    "pl": "Teraz to słowo to ćwiczeniówka.",
+    "pl": "Ćwiczeniówka jest przy tablicy.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "workbook",
+        "distractor": "mila"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "workbook",
-        "distractor": "science"
+        "correct": "by",
+        "distractor": "olek"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "whiteboard",
+        "distractor": "lena"
       }
     ],
     "tier": 2,
@@ -1777,27 +2093,31 @@
   },
   {
     "id": "school-a2-sentence-12",
-    "pl": "Następne słowo to karta pracy.",
+    "pl": "Karta pracy jest na biurku.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "worksheet",
+        "distractor": "funny"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "worksheet",
-        "distractor": "grade"
+        "correct": "on",
+        "distractor": "witty"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "desk",
+        "distractor": "legendary"
       }
     ],
     "tier": 2,
@@ -1809,22 +2129,22 @@
   },
   {
     "id": "town_places-a2-sentence-01",
-    "pl": "To słowo to lotnisko.",
+    "pl": "Lotnisko jest nowe.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "airport",
+        "distractor": "street"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "airport",
+        "correct": "new",
         "distractor": "station"
       }
     ],
@@ -1837,22 +2157,22 @@
   },
   {
     "id": "town_places-a2-sentence-02",
-    "pl": "Ten wyraz to peron.",
+    "pl": "Peron jest ruchliwy.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "platform",
+        "distractor": "tunnel"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "platform",
+        "correct": "busy",
         "distractor": "market"
       }
     ],
@@ -1865,27 +2185,23 @@
   },
   {
     "id": "town_places-a2-sentence-03",
-    "pl": "Teraz to słowo to teatr.",
+    "pl": "Teatr jest duży.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "theatre",
+        "distractor": "pool"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "theatre",
-        "distractor": "harbour"
+        "correct": "big",
+        "distractor": "office"
       }
     ],
     "tier": 2,
@@ -1897,31 +2213,27 @@
   },
   {
     "id": "town_places-a2-sentence-04",
-    "pl": "Następne słowo to basen.",
+    "pl": "Basen jest nowy.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
+        "correct": "swimming",
+        "distractor": "shop"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "pool",
+        "distractor": "butcher"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "swimming",
-        "distractor": "petrol"
-      },
-      {
-        "correct": "pool",
-        "distractor": "tram"
+        "correct": "new",
+        "distractor": "crossroads"
       }
     ],
     "tier": 2,
@@ -1933,23 +2245,23 @@
   },
   {
     "id": "town_places-a2-sentence-05",
-    "pl": "To słowo to biuro.",
+    "pl": "Biuro jest ruchliwe.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "office",
+        "distractor": "crosswalk"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "office",
-        "distractor": "lane"
+        "correct": "busy",
+        "distractor": "bicycle"
       }
     ],
     "tier": 2,
@@ -1961,23 +2273,23 @@
   },
   {
     "id": "town_places-a2-sentence-06",
-    "pl": "Ten wyraz to fabryka.",
+    "pl": "Fabryka jest duża.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "factory",
+        "distractor": "engine"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "factory",
-        "distractor": "car"
+        "correct": "big",
+        "distractor": "police"
       }
     ],
     "tier": 2,
@@ -1989,27 +2301,31 @@
   },
   {
     "id": "town_places-a2-sentence-07",
-    "pl": "Teraz to słowo to port.",
+    "pl": "Port jest w parku.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "harbour",
+        "distractor": "ticket"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "harbour",
-        "distractor": "neighbourhood"
+        "correct": "in",
+        "distractor": "booth"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "park",
+        "distractor": "suburb"
       }
     ],
     "tier": 2,
@@ -2021,27 +2337,23 @@
   },
   {
     "id": "town_places-a2-sentence-08",
-    "pl": "Następne słowo to wieża.",
+    "pl": "Wieża jest ruchliwa.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "tower",
+        "distractor": "guide"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "tower",
-        "distractor": "hall"
+        "correct": "busy",
+        "distractor": "stall"
       }
     ],
     "tier": 2,
@@ -2053,23 +2365,31 @@
   },
   {
     "id": "town_places-a2-sentence-09",
-    "pl": "To słowo to stadion.",
+    "pl": "Stadion jest przy moście.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "stadium",
+        "distractor": "school"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "stadium",
-        "distractor": "museum"
+        "correct": "by",
+        "distractor": "judges"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "bridge",
+        "distractor": "sight"
       }
     ],
     "tier": 2,
@@ -2081,27 +2401,27 @@
   },
   {
     "id": "town_places-a2-sentence-10",
-    "pl": "Ten wyraz to kwiaciarnia.",
+    "pl": "Kwiaciarnia jest nowa.",
     "steps": [
       {
-        "correct": "This",
-        "distractor": "That"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "flower",
+        "distractor": "dance"
+      },
+      {
+        "correct": "shop",
+        "distractor": "beat"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "flower",
-        "distractor": "airport"
-      },
-      {
-        "correct": "shop",
-        "distractor": "platform"
+        "correct": "new",
+        "distractor": "superhero"
       }
     ],
     "tier": 2,
@@ -2113,31 +2433,27 @@
   },
   {
     "id": "town_places-a2-sentence-11",
-    "pl": "Teraz to słowo to sklep mięsny.",
+    "pl": "Sklep mięsny jest ruchliwy.",
     "steps": [
       {
-        "correct": "Now",
-        "distractor": "Then"
+        "correct": "The",
+        "distractor": "A"
       },
       {
-        "correct": "the",
-        "distractor": "a"
+        "correct": "butcher",
+        "distractor": "mila"
       },
       {
-        "correct": "word",
-        "distractor": "clue"
+        "correct": "shop",
+        "distractor": "olek"
       },
       {
         "correct": "is",
         "distractor": "are"
       },
       {
-        "correct": "butcher",
-        "distractor": "tower"
-      },
-      {
-        "correct": "shop",
-        "distractor": "stadium"
+        "correct": "busy",
+        "distractor": "zosia"
       }
     ],
     "tier": 2,
@@ -2149,27 +2465,31 @@
   },
   {
     "id": "town_places-a2-sentence-12",
-    "pl": "Następne słowo to rozstaje.",
+    "pl": "Rozstaje są w parku.",
     "steps": [
       {
         "correct": "The",
         "distractor": "A"
       },
       {
-        "correct": "next",
-        "distractor": "last"
-      },
-      {
-        "correct": "word",
-        "distractor": "clue"
-      },
-      {
-        "correct": "is",
-        "distractor": "are"
-      },
-      {
         "correct": "crossroads",
-        "distractor": "elevator"
+        "distractor": "funny"
+      },
+      {
+        "correct": "are",
+        "distractor": "is"
+      },
+      {
+        "correct": "in",
+        "distractor": "witty"
+      },
+      {
+        "correct": "the",
+        "distractor": "a"
+      },
+      {
+        "correct": "park",
+        "distractor": "legendary"
       }
     ],
     "tier": 2,
