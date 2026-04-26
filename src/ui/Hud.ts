@@ -191,6 +191,23 @@ export class Hud {
     }
   }
 
+  // One-shot "ULTIMATE GOTOWY!" banner. Wired from UIScene to the
+  // GameScene `ult:unlocked` event, which fires the first time the
+  // player crosses ULT_UNLOCK_LEVEL in a run. Re-fires on every fresh
+  // run since GameScene.create() resets `ultUnlocked` to false.
+  showUltUnlockBanner() {
+    if (!this.root) return;
+    const banner = document.createElement('div');
+    banner.className = 'ult-unlock-banner';
+    banner.innerHTML = `
+      <div class="ult-unlock-title">ULTIMATE GOTOWY!</div>
+      <div class="ult-unlock-sub">Uderza w każdego wroga · 120 s</div>
+    `;
+    this.root.appendChild(banner);
+    requestAnimationFrame(() => banner.classList.add('ult-unlock-banner--in'));
+    setTimeout(() => banner.remove(), 1800);
+  }
+
   flashCooldownBadge(ms: number) {
     if (!this.root) return;
     const badge = document.createElement('div');

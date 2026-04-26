@@ -375,6 +375,44 @@
   color: #ffe0e0;
 }
 
+/* One-shot "ULTIMATE GOTOWY!" banner. Pops in centered when the
+   player first crosses level 10. Auto-removed by Hud.showUltUnlockBanner
+   after 1.8s, so no exit animation is needed — the in-tween is the
+   whole show. */
+.ult-unlock-banner {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.7);
+  opacity: 0;
+  padding: 14px 32px;
+  background: rgba(40, 28, 8, 0.85);
+  border: 2px solid #ffd75a;
+  box-shadow: 0 0 24px #ffd75a, 0 0 60px rgba(255, 215, 90, 0.5);
+  border-radius: 6px;
+  text-align: center;
+  z-index: 30;
+  pointer-events: none;
+  transition: transform 320ms cubic-bezier(.2,1.2,.4,1), opacity 320ms ease-out;
+}
+.ult-unlock-banner--in {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+.ult-unlock-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffd75a;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 0 #1a1404;
+}
+.ult-unlock-sub {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
 /* ───── Pause button + overlay ───── */
 /* Top-right corner so the boss HP bar (top-center) has room to render
    without being covered. */

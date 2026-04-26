@@ -623,14 +623,61 @@ export class GameScene extends Phaser.Scene {
   }
 
   // Screen-wide ultimate. Applies ULT_DAMAGE to every active enemy in
-  // the passed list, plus a strong camera flash + shake so the player
-  // feels the payoff. Skips enemies that are already off-screen to the
-  // left (they're despawning anyway).
+  // the passed list, plus a layered visual: yellow screen-flash, a
+  // lightning bolt + impact ring on each target, an oversized gold
+  // damage popup, and the existing camera flash + shake. Skips
+  // enemies already off-screen so the bolts don't whiff into the void.
   private castUlt(enemies: Enemy[]) {
+    // Screen-wide yellow flash — same pattern as SpellCaster.castFire.
+    const flash = this.add
+      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xfff080, 0.55)
+      .setOrigin(0, 0)
+      .setDepth(80);
+    this.tweens.add({
+      targets: flash,
+      alpha: 0,
+      duration: 320,
+      onComplete: () => flash.destroy(),
+    });
+
+    // Snapshot the list before iterating — `takeDamage` can lethal an
+    // enemy and remove it from the underlying group array mid-loop,
+    // which would skip the next index. Slice gives us a stable view.
+    const targets = enemies.slice();
     let hitCount = 0;
-    for (const e of enemies) {
+    for (const e of targets) {
       if (!e.active) continue;
       if (e.x < -20 || e.x > LOGICAL_WIDTH + 40) continue;
+
+      // Lightning bolt from above the screen down onto the enemy.
+      const bolt = this.add.graphics().setDepth(70);
+      bolt.lineStyle(3, 0xfff080, 1);
+      bolt.lineBetween(e.x, -10, e.x, e.y - 4);
+      bolt.lineStyle(1, 0xffffff, 1);
+      bolt.lineBetween(e.x - 1, -10, e.x - 1, e.y - 4);
+      this.tweens.add({
+        targets: bolt,
+        alpha: 0,
+        duration: 220,
+        onComplete: () => bolt.destroy(),
+      });
+
+      // Impact ring expands at the strike point.
+      const ring = this.add
+        .circle(e.x, e.y - 8, 18, 0xfff080, 0.7)
+        .setDepth(71);
+      ring.setScale(0.3);
+      this.tweens.add({
+        targets: ring,
+        scale: 1.5,
+        alpha: 0,
+        duration: 320,
+        onComplete: () => ring.destroy(),
+      });
+
+      // Big gold popup BEFORE takeDamage — the enemy may destroy itself
+      // on lethal damage, and we need a live `this` to spawn from.
+      e.popBigDamageNumber(this.ULT_DAMAGE);
       e.takeDamage(this.ULT_DAMAGE);
       hitCount += 1;
     }

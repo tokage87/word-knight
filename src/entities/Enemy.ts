@@ -208,6 +208,29 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     });
   }
 
+  // Oversized gold damage popup for ULT hits. Same tween shape as
+  // popDamageNumber but bigger, gold, with stroke + slower lift so the
+  // standard yellow popup that takeDamage just spawned doesn't crowd it.
+  popBigDamageNumber(n: number) {
+    const t = this.scene.add
+      .text(this.x, this.y - 38, `-${n}`, {
+        fontFamily: 'monospace',
+        fontSize: '20px',
+        color: '#ffd75a',
+        stroke: '#3a2a10',
+        strokeThickness: 3,
+      })
+      .setOrigin(0.5)
+      .setDepth(60);
+    this.scene.tweens.add({
+      targets: t,
+      y: t.y - 28,
+      alpha: 0,
+      duration: 850,
+      onComplete: () => t.destroy(),
+    });
+  }
+
   private setStateRun() {
     this.animState = 'run';
     this.play(this.profile.run);
