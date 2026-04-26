@@ -116,6 +116,11 @@ export class GameScene extends Phaser.Scene {
   private flowActive = false;
   private readonly FLOW_THRESHOLD = 5;
   private readonly FLOW_TICK_MULT = 2;
+  // Playtime accumulator — flushed to metaStore every PLAYTIME_FLUSH_MS
+  // so the dashboard's day/total numbers stay current without writing
+  // localStorage every frame.
+  private playMsBuffer = 0;
+  private readonly PLAYTIME_FLUSH_MS = 1000;
   // Roguelite-style curve: early levels come quickly so the player hits
   // the full skill pool, then upgrades get progressively rarer.
   //   L1→L2: 40 XP  (2 kills)
@@ -160,6 +165,7 @@ export class GameScene extends Phaser.Scene {
     this.ultCdMs = 0;
     this.quizStreak = 0;
     this.flowActive = false;
+    this.playMsBuffer = 0;
     this.stats = {
       quizCorrect: 0,
       quizWrong: 0,
@@ -302,6 +308,16 @@ export class GameScene extends Phaser.Scene {
 
     this.registry.set('quizStreak', this.quizStreak);
     this.registry.set('flowActive', this.flowActive);
+
+    // Buffer playtime and flush every PLAYTIME_FLUSH_MS so the parent
+    // dashboard's day/total numbers update without writing localStorage
+    // every frame. Pause and overlays don't reach update() so paused
+    // time naturally drops out.
+    this.playMsBuffer += delta;
+    if (this.playMsBuffer >= this.PLAYTIME_FLUSH_MS) {
+      metaStore.recordPlayMs(this.playMsBuffer);
+      this.playMsBuffer = 0;
+    }
 
     this.registry.set('hp', this.knight.hp);
     this.registry.set('hpMax', this.knight.hpMax);

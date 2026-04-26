@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { BRANCH_DEFS, type BranchDef, type BranchId, gateCta } from '../systems/CityBranches';
-import { metaStore, type WritingSubmission } from '../systems/MetaStore';
+import { localDateKey, metaStore, type WritingSubmission } from '../systems/MetaStore';
 import { curriculumCatalog } from '../systems/CurriculumCatalog';
 import {
   ALL_CATEGORIES,
@@ -15,6 +15,9 @@ import {
   type CurriculumTier,
 } from '../systems/CurriculumTypes';
 import { SkillTreeView } from './SkillTreeView';
+
+// Sun-first matches Date.getDay()'s 0–6 indexing.
+const WEEKDAY_LABELS_PL = ['Nd', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'];
 
 // HTML overlay for the City's branch-detail view. Lives in
 // #city-overlay-root. Opens on `city:branchClick`, renders the
@@ -43,12 +46,14 @@ export class CityOverlay {
     this.scene.game.events.on('city:openJournal', this.onOpenJournal, this);
     this.scene.game.events.on('city:openCurriculum', this.onOpenCurriculum, this);
     this.scene.game.events.on('city:stallClick', this.onStallClick, this);
+    this.scene.game.events.on('city:openParentDashboard', this.onOpenParentDashboard, this);
     this.scene.game.events.on('writing:completed', this.onWritingCompleted, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.scene.game.events.off('city:branchClick', this.onBranchClick, this);
       this.scene.game.events.off('city:openJournal', this.onOpenJournal, this);
       this.scene.game.events.off('city:openCurriculum', this.onOpenCurriculum, this);
       this.scene.game.events.off('city:stallClick', this.onStallClick, this);
+      this.scene.game.events.off('city:openParentDashboard', this.onOpenParentDashboard, this);
       this.scene.game.events.off('writing:completed', this.onWritingCompleted, this);
       window.removeEventListener('keydown', this.onKey);
       if (this.root) this.root.innerHTML = '';
@@ -104,6 +109,106 @@ export class CityOverlay {
     this.renderStall();
     this.root.classList.add('city-overlay--visible');
     window.addEventListener('keydown', this.onKey);
+  }
+
+  // Parent dashboard. Pulls every persistent number metaStore knows
+  // (lifetime totals + last-7-days bucket) and renders a static HTML
+  // report. No drilldown / interactivity beyond closing — this is a
+  // glance-and-go view for the parent who's checking how the kid's
+  // doing this week.
+  private onOpenParentDashboard() {
+    if (!this.root || !document.body.contains(this.root)) {
+      this.root = document.getElementById('city-overlay-root') ?? undefined;
+    }
+    if (!this.root) return;
+    this.renderParentDashboard();
+    this.root.classList.add('city-overlay--visible');
+    window.addEventListener('keydown', this.onKey);
+  }
+
+  private renderParentDashboard() {
+    if (!this.root) return;
+    const state = metaStore.get();
+    const lifetime = state.lifetime;
+    const wordsKnown = lifetime.distinctWordIds.length;
+    const streak = metaStore.getDayStreak();
+    const totalMs = metaStore.getTotalPlayMs();
+    const totalMin = Math.round(totalMs / 60000);
+    const activity = metaStore.getDailyActivity();
+
+    // Last 7 days, including today, oldest → newest.
+    const today = new Date();
+    const days: { key: string; label: string; correct: number; ms: number }[] = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(today);
+      d.setDate(today.getDate() - i);
+      const key = localDateKey(d);
+      const bucket = activity[key] ?? { msPlayed: 0, quizCorrect: 0, newWords: 0 };
+      days.push({
+        key,
+        label: WEEKDAY_LABELS_PL[d.getDay()] ?? '',
+        correct: bucket.quizCorrect,
+        ms: bucket.msPlayed,
+      });
+    }
+    const peak = Math.max(1, ...days.map((d) => d.correct));
+    const todayKey = localDateKey(today);
+
+    const bars = days
+      .map((d) => {
+        const heightPct = Math.round((d.correct / peak) * 100);
+        const isToday = d.key === todayKey;
+        const cls = `pd-bar${isToday ? ' pd-bar--today' : ''}${d.correct === 0 ? ' pd-bar--empty' : ''}`;
+        return `
+          <div class="${cls}" data-tooltip="${d.key} · ${d.correct} poprawnych · ${Math.round(d.ms / 60000)} min">
+            <div class="pd-bar-count">${d.correct || ''}</div>
+            <div class="pd-bar-fill" style="height: ${heightPct}%"></div>
+            <div class="pd-bar-label">${escapeHtml(d.label)}</div>
+          </div>`;
+      })
+      .join('');
+
+    this.root.innerHTML = `
+      <div class="city-panel paper-scroll pd-panel">
+        <div class="city-panel-header">
+          <div class="city-panel-icon-slot"><span class="city-panel-icon">📊</span></div>
+          <div class="city-panel-title">Dla rodzica</div>
+          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+        </div>
+        <div class="pd-stats">
+          <div class="pd-stat">
+            <div class="pd-stat-num">${wordsKnown}</div>
+            <div class="pd-stat-label">Słów poznanych</div>
+          </div>
+          <div class="pd-stat">
+            <div class="pd-stat-num">${streak}</div>
+            <div class="pd-stat-label">Dni z rzędu</div>
+          </div>
+          <div class="pd-stat">
+            <div class="pd-stat-num">${totalMin}</div>
+            <div class="pd-stat-label">Minut zabawy</div>
+          </div>
+          <div class="pd-stat">
+            <div class="pd-stat-num">${lifetime.runs}</div>
+            <div class="pd-stat-label">Przygód</div>
+          </div>
+        </div>
+        <div class="pd-section-label">Aktywność tygodnia (poprawne odpowiedzi)</div>
+        <div class="pd-bars">${bars}</div>
+        <div class="pd-section-label">Łącznie</div>
+        <div class="pd-totals">
+          <div>✅ ${lifetime.quizCorrect} poprawnych odpowiedzi</div>
+          <div>👹 ${lifetime.bossesKilled} bossów pokonanych</div>
+          <div>📚 ${lifetime.perfectStories} historii ułożonych bezbłędnie</div>
+          <div>✍️ ${lifetime.writingTasksDone} zadań pisemnych</div>
+        </div>
+        <div class="city-panel-footer">
+          <button class="city-panel-back" type="button">WRÓĆ</button>
+        </div>
+      </div>
+    `;
+    this.root.querySelector('.city-panel-close')!.addEventListener('click', () => this.hide());
+    this.root.querySelector('.city-panel-back')!.addEventListener('click', () => this.hide());
   }
 
   private renderStall() {

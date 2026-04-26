@@ -1234,3 +1234,106 @@
 }
 .cu-save:hover { background: #5a90c5; }
 .cu-save:active { transform: translateY(1px); }
+
+
+/* ───── Parent Dashboard ───── */
+
+.pd-panel {
+  max-width: 540px;
+}
+.pd-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 12px 0;
+}
+.pd-stat {
+  text-align: center;
+  padding: 10px 6px;
+  background: rgba(245, 232, 200, 0.5);
+  border: 1px solid rgba(58, 42, 16, 0.2);
+  border-radius: 4px;
+}
+.pd-stat-num {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: monospace;
+  color: #6b3e7a;
+  line-height: 1;
+}
+.pd-stat-label {
+  font-size: 10px;
+  color: var(--paper-text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.4px;
+}
+.pd-section-label {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  color: var(--paper-text);
+  margin: 12px 0 6px;
+  text-transform: uppercase;
+}
+.pd-bars {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  height: 110px;
+  align-items: end;
+  padding: 0 4px;
+}
+.pd-bar {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2px;
+}
+.pd-bar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, #8a5a99 0%, #6b3e7a 100%);
+  border: 1px solid #3a1f48;
+  border-radius: 2px 2px 0 0;
+  min-height: 2px;
+  transition: height 200ms ease-out;
+}
+.pd-bar--today .pd-bar-fill {
+  background: linear-gradient(180deg, #ffd75a 0%, #c9a020 100%);
+  border-color: #6b4f00;
+}
+.pd-bar--empty .pd-bar-fill {
+  background: rgba(120, 100, 120, 0.18);
+  border-color: rgba(58, 42, 16, 0.18);
+}
+.pd-bar-count {
+  font-size: 10px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #6b3e7a;
+  height: 12px;
+  line-height: 12px;
+}
+.pd-bar--today .pd-bar-count {
+  color: #6b4f00;
+}
+.pd-bar-label {
+  font-size: 10px;
+  color: var(--paper-text-muted);
+  margin-top: 2px;
+  font-family: monospace;
+  letter-spacing: 0.3px;
+}
+.pd-totals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 16px;
+  font-size: 12px;
+  color: var(--paper-text);
+  padding: 0 4px;
+}
+.pd-totals > div {
+  font-family: monospace;
+}

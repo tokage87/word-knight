@@ -128,6 +128,7 @@ export class CityScene extends Phaser.Scene {
     this.drawAmbientLife();
     this.drawMarketStall();
     this.drawTitleBanner();
+    this.drawParentDashboardButton();
     this.drawNewRunButton();
     this.drawJournalButton();
     this.drawSettingsButton();
@@ -586,6 +587,33 @@ export class CityScene extends Phaser.Scene {
     bg.on('pointerout',  () => bg.setFillStyle(0x3a6fa6, 1));
     bg.on('pointerdown', () => {
       this.game.events.emit('city:openJournal');
+    });
+  }
+
+  // Quaternary button — opens the parent dashboard (weekly bars,
+  // streak, words mastered, total play time). Sits between the
+  // settings button on the left and the NOWA PRZYGODA centre button.
+  private drawParentDashboardButton() {
+    const btnX = 170;
+    const btnY = LOGICAL_HEIGHT - 22;
+    const bg = this.add
+      .rectangle(btnX, btnY, 110, 30, 0x6b3e7a, 1)
+      .setStrokeStyle(2, 0x3a1f48)
+      .setDepth(30)
+      .setInteractive({ useHandCursor: true });
+    this.add
+      .text(btnX, btnY, 'DLA RODZICA', {
+        fontFamily: 'monospace',
+        fontSize: '11px',
+        fontStyle: 'bold',
+        color: '#fff',
+      })
+      .setOrigin(0.5)
+      .setDepth(31);
+    bg.on('pointerover', () => bg.setFillStyle(0x8a5a99, 1));
+    bg.on('pointerout',  () => bg.setFillStyle(0x6b3e7a, 1));
+    bg.on('pointerdown', () => {
+      this.game.events.emit('city:openParentDashboard');
     });
   }
 

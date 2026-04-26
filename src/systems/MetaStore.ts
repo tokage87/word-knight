@@ -29,6 +29,15 @@ export interface BranchState {
   treeRanks: Record<string, number>;
 }
 
+export interface DayActivity {
+  // ms accumulated in GameScene for that calendar date
+  msPlayed: number;
+  // # of correct quiz answers on that date
+  quizCorrect: number;
+  // # of distinct word IDs first-seen-correct on that date
+  newWords: number;
+}
+
 export interface MetaState {
   version: 3;
   gold: number;
@@ -39,6 +48,9 @@ export interface MetaState {
     perfectStories: number;
     writingTasksDone: number;
     distinctWordIds: string[];
+    // YYYY-MM-DD (local date) → activity. Optional so v3 saves
+    // hydrate without migration; missing reads as `{}`.
+    dailyActivity?: Record<string, DayActivity>;
   };
   branches: Record<BranchId, BranchState>;
   writingSubmissions: WritingSubmission[];
@@ -72,6 +84,7 @@ function freshState(): MetaState {
       perfectStories: 0,
       writingTasksDone: 0,
       distinctWordIds: [],
+      dailyActivity: {},
     },
     branches: {
       combat:  freshBranch(),
@@ -246,8 +259,64 @@ export class MetaStore {
 
   incrementQuizCorrect(wordId?: string) {
     this.state.lifetime.quizCorrect += 1;
+    const wasNewWord = wordId ? !this.distinctWordsSet.has(wordId) : false;
     if (wordId) this.distinctWordsSet.add(wordId);
+    const today = this.todayBucket();
+    today.quizCorrect += 1;
+    if (wasNewWord) today.newWords += 1;
     this.save();
+  }
+
+  // Add `ms` of playtime to today's bucket. Called from GameScene's
+  // update loop on a 1s flush cadence so we don't write localStorage
+  // every frame.
+  recordPlayMs(ms: number) {
+    if (ms <= 0) return;
+    this.todayBucket().msPlayed += ms;
+    this.save();
+  }
+
+  getDailyActivity(): Record<string, DayActivity> {
+    return this.state.lifetime.dailyActivity ?? {};
+  }
+
+  // Consecutive days ending today (or yesterday — grace for kids who
+  // play before midnight then check the next morning) with at least one
+  // quiz answer logged. Returns 0 if there's no activity today/yesterday.
+  getDayStreak(): number {
+    const activity = this.getDailyActivity();
+    let streak = 0;
+    let day = new Date();
+    // Allow 1-day grace: if today is empty but yesterday isn't, start
+    // counting from yesterday so the streak doesn't break the moment
+    // the date rolls over.
+    if (!activity[localDateKey(day)]?.quizCorrect) {
+      day.setDate(day.getDate() - 1);
+      if (!activity[localDateKey(day)]?.quizCorrect) return 0;
+    }
+    while (activity[localDateKey(day)]?.quizCorrect) {
+      streak += 1;
+      day.setDate(day.getDate() - 1);
+    }
+    return streak;
+  }
+
+  // Total ms played across every recorded day. Stable across runs.
+  getTotalPlayMs(): number {
+    let total = 0;
+    for (const v of Object.values(this.getDailyActivity())) total += v.msPlayed;
+    return total;
+  }
+
+  private todayBucket(): DayActivity {
+    if (!this.state.lifetime.dailyActivity) this.state.lifetime.dailyActivity = {};
+    const key = localDateKey(new Date());
+    let bucket = this.state.lifetime.dailyActivity[key];
+    if (!bucket) {
+      bucket = { msPlayed: 0, quizCorrect: 0, newWords: 0 };
+      this.state.lifetime.dailyActivity[key] = bucket;
+    }
+    return bucket;
   }
 
   incrementBossKill() {
@@ -325,3 +394,12 @@ export class MetaStore {
 }
 
 export const metaStore = new MetaStore();
+
+// Local-time YYYY-MM-DD so a kid playing at 23:50 doesn't get
+// counted as the next day's session. Avoids UTC date drift entirely.
+export function localDateKey(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
