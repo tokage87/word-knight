@@ -36,6 +36,7 @@ export class UIScene extends Phaser.Scene {
     this.game.events.on('enemy:killed', this.hud.onEnemyKilled, this.hud);
     this.game.events.on('boss:spawned', this.hud.onBossSpawned, this.hud);
     this.game.events.on('ult:unlocked', this.hud.showUltUnlockBanner, this.hud);
+    this.game.events.on('flow:activated', this.hud.showFlowBanner, this.hud);
     this.game.events.on('ui:pauseChanged', this.onPauseChanged, this);
     this.game.events.on('ui:gameOver', this.onGameOver, this);
     this.hud.onPauseButtonClick(() => this.game.events.emit('ui:togglePause'));
@@ -58,6 +59,7 @@ export class UIScene extends Phaser.Scene {
       this.game.events.off('enemy:killed', this.hud.onEnemyKilled, this.hud);
       this.game.events.off('boss:spawned', this.hud.onBossSpawned, this.hud);
       this.game.events.off('ult:unlocked', this.hud.showUltUnlockBanner, this.hud);
+      this.game.events.off('flow:activated', this.hud.showFlowBanner, this.hud);
       this.game.events.off('ui:pauseChanged', this.onPauseChanged, this);
       this.game.events.off('ui:gameOver', this.onGameOver, this);
       // Tear down the HUD's HTML so the game-over / pause overlays

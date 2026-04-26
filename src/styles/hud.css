@@ -265,6 +265,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  position: relative; /* anchor for .streak-chip on the EXP row */
 }
 .bar-ico {
   width: 24px;
@@ -373,6 +374,100 @@
 .cd-badge--penalty {
   border-image-source: url('/assets/ui/button-red-9s.png');
   color: #ffe0e0;
+}
+
+/* Streak / flow chip — sits at the right end of the EXP bar, opacity
+   0 when streak is 0 so it doesn't clutter early. Below threshold:
+   subdued grey-orange. In flow: gold glow + slow pulse. */
+.streak-chip {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px 2px 6px;
+  border-radius: 10px;
+  background: rgba(60, 30, 10, 0.7);
+  border: 1px solid rgba(255, 180, 80, 0.4);
+  color: #ffd75a;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out;
+  pointer-events: auto;
+  z-index: 4;
+}
+.streak-chip--visible { opacity: 1; }
+.streak-chip--flow {
+  border-color: #ffd75a;
+  box-shadow: 0 0 8px rgba(255, 215, 90, 0.8), 0 0 14px rgba(255, 100, 30, 0.5);
+  animation: streakPulse 1.1s ease-in-out infinite alternate;
+}
+@keyframes streakPulse {
+  from { box-shadow: 0 0 6px rgba(255, 215, 90, 0.6); }
+  to   { box-shadow: 0 0 14px #ffd75a, 0 0 22px rgba(255, 120, 30, 0.7); }
+}
+.streak-flame {
+  font-size: 14px;
+  filter: drop-shadow(0 0 2px rgba(255, 100, 30, 0.7));
+}
+.streak-chip--flow .streak-flame {
+  animation: streakFlameWiggle 0.55s ease-in-out infinite alternate;
+}
+@keyframes streakFlameWiggle {
+  from { transform: rotate(-6deg) scale(1); }
+  to   { transform: rotate(6deg) scale(1.15); }
+}
+.streak-count {
+  min-width: 12px;
+  text-align: center;
+  text-shadow: 0 1px 0 #1a0e04;
+}
+
+/* One-shot "FLOW!" banner — same pop pattern as ULT unlock, smaller
+   and orange-toned so it reads distinct. Plays once when the streak
+   first hits the flow threshold. */
+.flow-banner {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.6);
+  opacity: 0;
+  padding: 10px 22px;
+  background: rgba(60, 22, 6, 0.88);
+  border: 2px solid #ff9b3a;
+  box-shadow: 0 0 18px #ff9b3a, 0 0 40px rgba(255, 155, 58, 0.4);
+  border-radius: 6px;
+  text-align: center;
+  z-index: 30;
+  pointer-events: none;
+  transition: transform 280ms cubic-bezier(.2,1.3,.4,1), opacity 280ms ease-out;
+}
+.flow-banner--in {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+.flow-banner-flame {
+  font-size: 22px;
+  filter: drop-shadow(0 0 4px #ff9b3a);
+}
+.flow-banner-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffd75a;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 0 #1a0e04;
+  line-height: 1;
+  margin-top: 2px;
+}
+.flow-banner-sub {
+  font-size: 11px;
+  color: #fff;
+  opacity: 0.85;
+  margin-top: 2px;
 }
 
 /* One-shot "ULTIMATE GOTOWY!" banner. Pops in centered when the

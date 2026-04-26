@@ -36,6 +36,9 @@ export class Hud {
   // Ultimate badge — separate slot to the left of the ally row. Stays
   // hidden until GameScene publishes ultCdBase (i.e. level 10 hit).
   private ultIcon?: { root: HTMLElement; overlay: HTMLElement; text: HTMLElement };
+  // Streak / flow chip — small flame next to the EXP bar. Idle when
+  // streak < FLOW_THRESHOLD, glowing when in flow.
+  private streakChip?: { root: HTMLElement; count: HTMLElement };
   private bossBar?: HTMLElement;
   private bossFill?: HTMLElement;
   private expText?: HTMLElement;
@@ -121,6 +124,14 @@ export class Hud {
         text: ult.querySelector<HTMLElement>('.ability-cd-text')!,
       };
     }
+
+    const chip = root.querySelector<HTMLElement>('.streak-chip');
+    if (chip) {
+      this.streakChip = {
+        root: chip,
+        count: chip.querySelector<HTMLElement>('.streak-count')!,
+      };
+    }
   }
 
   tick(registry: Phaser.Data.DataManager) {
@@ -175,6 +186,7 @@ export class Hud {
       this.updateAlly(registry, k);
     });
     this.updateUlt(registry);
+    this.updateStreak(registry);
 
     const expPct = (registry.get('expPct') as number | undefined) ?? 0;
     if (this.expFill) this.expFill.style.width = `${Math.min(100, expPct)}%`;
@@ -191,6 +203,37 @@ export class Hud {
     }
   }
 
+  // Streak chip: shows the current correct-answer streak. Hidden when
+  // the streak is 0; idle (subdued) below the flow threshold; glowing
+  // gold when flow is active.
+  private updateStreak(registry: Phaser.Data.DataManager) {
+    if (!this.streakChip) return;
+    const streak = (registry.get('quizStreak') as number | undefined) ?? 0;
+    const flowActive = (registry.get('flowActive') as boolean | undefined) ?? false;
+    this.streakChip.count.textContent = String(streak);
+    this.streakChip.root.classList.toggle('streak-chip--visible', streak > 0);
+    this.streakChip.root.classList.toggle('streak-chip--flow', flowActive);
+  }
+
+  // One-shot "FLOW!" banner — pops the moment the player crosses the
+  // streak threshold (5). Re-fires only after a break and re-build.
+  showFlowBanner() {
+    if (!this.root) return;
+    const banner = document.createElement('div');
+    banner.className = 'flow-banner';
+    banner.innerHTML = `
+      <div class="flow-banner-flame">🔥</div>
+      <div class="flow-banner-title">FLOW!</div>
+      <div class="flow-banner-sub">Cooldowny 2× szybciej</div>
+    `;
+    this.root.appendChild(banner);
+    // setTimeout(0) instead of rAF — rAF is throttled to 0 in
+    // headless / backgrounded tabs so the in-transition would never
+    // run and the banner would stay invisible until removal.
+    setTimeout(() => banner.classList.add('flow-banner--in'));
+    setTimeout(() => banner.remove(), 1500);
+  }
+
   // One-shot "ULTIMATE GOTOWY!" banner. Wired from UIScene to the
   // GameScene `ult:unlocked` event, which fires the first time the
   // player crosses ULT_UNLOCK_LEVEL in a run. Re-fires on every fresh
@@ -204,7 +247,10 @@ export class Hud {
       <div class="ult-unlock-sub">Uderza w każdego wroga · 120 s</div>
     `;
     this.root.appendChild(banner);
-    requestAnimationFrame(() => banner.classList.add('ult-unlock-banner--in'));
+    // setTimeout(0) instead of rAF — rAF is throttled to 0 in
+    // headless / backgrounded tabs so the in-transition would never
+    // run and the banner would stay invisible until removal.
+    setTimeout(() => banner.classList.add('ult-unlock-banner--in'));
     setTimeout(() => banner.remove(), 1800);
   }
 
@@ -606,6 +652,10 @@ const HTML = `
       <div class="bar-line" data-tooltip="Doświadczenie do następnego poziomu">
         <span class="bar-ico bar-badge badge-exp">EXP</span>
         <div class="bar-track bar-exp"><div class="bar-fill bar-exp-fill"></div><span class="bar-text bar-exp-text">LV: 1</span></div>
+        <div class="streak-chip" data-tooltip="Seria poprawnych odpowiedzi. 5+ = FLOW (cooldowny 2× szybciej)">
+          <span class="streak-flame">🔥</span>
+          <span class="streak-count">0</span>
+        </div>
       </div>
     </div>
   </div>

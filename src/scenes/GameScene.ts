@@ -108,6 +108,14 @@ export class GameScene extends Phaser.Scene {
   private readonly ULT_DAMAGE = 200;
   private ultUnlocked = false;
   private ultCdMs = 0;
+  // Flow / streak — every consecutive correct quiz answer raises this.
+  // Once it crosses FLOW_THRESHOLD, ally + ULT cooldowns tick at 2× the
+  // normal rate, until the player misses (resets to 0) or the run ends.
+  // Visualised by a small flame chip next to the EXP bar.
+  private quizStreak = 0;
+  private flowActive = false;
+  private readonly FLOW_THRESHOLD = 5;
+  private readonly FLOW_TICK_MULT = 2;
   // Roguelite-style curve: early levels come quickly so the player hits
   // the full skill pool, then upgrades get progressively rarer.
   //   L1→L2: 40 XP  (2 kills)
@@ -150,6 +158,8 @@ export class GameScene extends Phaser.Scene {
     this.pendingNewSkillRollover = false;
     this.ultUnlocked = false;
     this.ultCdMs = 0;
+    this.quizStreak = 0;
+    this.flowActive = false;
     this.stats = {
       quizCorrect: 0,
       quizWrong: 0,
@@ -247,9 +257,14 @@ export class GameScene extends Phaser.Scene {
     // Tier-2 ally tick. Allies move toward a follow-slot behind the
     // knight and auto-fire at the nearest enemy in range. Projectiles
     // are a separate group so they outlive the ally that spawned them
-    // (e.g. ally dies offscreen — the arrow still hits).
+    // (e.g. ally dies offscreen — the arrow still hits). Flow doubles
+    // the cooldown-tick rate so allies fire faster while the streak
+    // is up (movement speed unaffected).
     const allyList = this.allies.getChildren() as unknown as Ally[];
-    allyList.forEach((a) => a.tick(delta, this.knight, enemies, this.projectiles));
+    const cooldownMult = this.flowActive ? this.FLOW_TICK_MULT : 1;
+    allyList.forEach((a) =>
+      a.tick(delta, this.knight, enemies, this.projectiles, cooldownMult),
+    );
 
     // Projectile collision pass. `tick()` returns false when the
     // projectile hit something or timed out — destroy on next frame
@@ -272,9 +287,10 @@ export class GameScene extends Phaser.Scene {
 
     // Ultimate tick. Only ticks once unlocked; when it reaches 0 it
     // auto-casts, blasts every on-screen enemy, and resets to base.
+    // Flow doubles the tick rate same as ally cooldowns.
     if (this.ultUnlocked) {
       if (this.ultCdMs > 0) {
-        this.ultCdMs = Math.max(0, this.ultCdMs - delta);
+        this.ultCdMs = Math.max(0, this.ultCdMs - delta * cooldownMult);
       }
       if (this.ultCdMs <= 0) {
         this.castUlt(enemies);
@@ -283,6 +299,9 @@ export class GameScene extends Phaser.Scene {
       this.registry.set('ultCdMs', this.ultCdMs);
       this.registry.set('ultCdBase', this.ULT_BASE_CD_MS);
     }
+
+    this.registry.set('quizStreak', this.quizStreak);
+    this.registry.set('flowActive', this.flowActive);
 
     this.registry.set('hp', this.knight.hp);
     this.registry.set('hpMax', this.knight.hpMax);
@@ -479,6 +498,14 @@ export class GameScene extends Phaser.Scene {
     if (this.ultUnlocked && this.ultCdMs > 0) {
       this.ultCdMs = Math.max(0, this.ultCdMs - this.ULT_CORRECT_CUT_MS);
     }
+    this.quizStreak += 1;
+    // Just crossed the threshold — fire the one-shot "FLOW!" event so
+    // the HUD can flash a banner. Stays active through subsequent
+    // correct answers without re-emitting.
+    if (!this.flowActive && this.quizStreak >= this.FLOW_THRESHOLD) {
+      this.flowActive = true;
+      this.game.events.emit('flow:activated', { streak: this.quizStreak });
+    }
     this.gainExp(this.EXP_PER_QUIZ_CORRECT);
     this.stats.quizCorrect += 1;
     if (payload?.id) this.distinctWords.add(payload.id);
@@ -509,6 +536,12 @@ export class GameScene extends Phaser.Scene {
     if (this.ultUnlocked) {
       this.ultCdMs = Math.min(this.ULT_BASE_CD_MS, this.ultCdMs + this.ULT_WRONG_PENALTY_MS);
     }
+    // Break the streak — flow drops back to idle.
+    if (this.flowActive) {
+      this.game.events.emit('flow:broken', { streak: this.quizStreak });
+    }
+    this.quizStreak = 0;
+    this.flowActive = false;
     this.stats.quizWrong += 1;
     this.publishStats();
   }

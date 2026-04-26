@@ -251,8 +251,14 @@ export class Ally extends Phaser.GameObjects.Sprite {
   get cooldownRemaining(): number { return Math.max(0, this.attackTimerMs); }
   get cooldownTotal(): number { return this.profile.attackCooldownMs; }
 
-  tick(delta: number, knight: Knight, enemies: Enemy[], projectiles: Phaser.GameObjects.Group) {
-    if (this.attackTimerMs > 0) this.attackTimerMs -= delta;
+  tick(
+    delta: number,
+    knight: Knight,
+    enemies: Enemy[],
+    projectiles: Phaser.GameObjects.Group,
+    cooldownMult: number = 1,
+  ) {
+    if (this.attackTimerMs > 0) this.attackTimerMs -= delta * cooldownMult;
 
     // Solo allies (archers) wander ±14 px around a home slot slightly
     // ahead of the knight — reads as a unit walking on its own rather
