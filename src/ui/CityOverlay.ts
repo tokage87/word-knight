@@ -42,11 +42,13 @@ export class CityOverlay {
     this.scene.game.events.on('city:branchClick', this.onBranchClick, this);
     this.scene.game.events.on('city:openJournal', this.onOpenJournal, this);
     this.scene.game.events.on('city:openCurriculum', this.onOpenCurriculum, this);
+    this.scene.game.events.on('city:stallClick', this.onStallClick, this);
     this.scene.game.events.on('writing:completed', this.onWritingCompleted, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       this.scene.game.events.off('city:branchClick', this.onBranchClick, this);
       this.scene.game.events.off('city:openJournal', this.onOpenJournal, this);
       this.scene.game.events.off('city:openCurriculum', this.onOpenCurriculum, this);
+      this.scene.game.events.off('city:stallClick', this.onStallClick, this);
       this.scene.game.events.off('writing:completed', this.onWritingCompleted, this);
       window.removeEventListener('keydown', this.onKey);
       if (this.root) this.root.innerHTML = '';
@@ -89,6 +91,46 @@ export class CityOverlay {
     const branch = BRANCH_DEFS[payload.id];
     if (!branch) return;
     this.show(branch);
+  }
+
+  // Market stall — placeholder content. Real shop arrives once we
+  // have items to sell; for now it acknowledges the player's gold and
+  // teases what's coming, so the click target isn't a dead end.
+  private onStallClick() {
+    if (!this.root || !document.body.contains(this.root)) {
+      this.root = document.getElementById('city-overlay-root') ?? undefined;
+    }
+    if (!this.root) return;
+    this.renderStall();
+    this.root.classList.add('city-overlay--visible');
+    window.addEventListener('keydown', this.onKey);
+  }
+
+  private renderStall() {
+    if (!this.root) return;
+    const gold = metaStore.getGold();
+    this.root.innerHTML = `
+      <div class="city-panel paper-scroll">
+        <div class="city-panel-header">
+          <div class="city-panel-icon-slot"><span class="city-panel-icon">🪙</span></div>
+          <div class="city-panel-title">Targowisko</div>
+          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+        </div>
+        <div class="city-challenge">
+          <div class="city-challenge-label">Sklep wkrótce</div>
+          <div class="city-challenge-body">Kupiec szykuje pierwsze towary. Wpadnij za parę przygód.</div>
+        </div>
+        <div class="city-tree-locked-hint" style="text-align: center; line-height: 1.6;">
+          Złoto zdobywasz pokonując wrogów. Im dłuższe pasmo poprawnych odpowiedzi w quizie, tym szybciej zdobywasz monety dzięki przyspieszonym aliantom.
+        </div>
+        <div class="city-panel-footer">
+          <span class="city-gold"><span class="city-gold-coin" aria-hidden="true"></span><span class="city-gold-val">${gold}</span></span>
+          <button class="city-panel-back" type="button">WRÓĆ</button>
+        </div>
+      </div>
+    `;
+    this.root.querySelector('.city-panel-close')!.addEventListener('click', () => this.hide());
+    this.root.querySelector('.city-panel-back')!.addEventListener('click', () => this.hide());
   }
 
   private show(branch: BranchDef) {

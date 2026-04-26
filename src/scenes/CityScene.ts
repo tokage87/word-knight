@@ -76,16 +76,25 @@ const SOLDIERS: Soldier[] = [
   { x: 205, y: 200, drift: 6 },
 ];
 
-// Civilian pawns wandering the streets.
+// Civilian pawns wandering the streets. Pumped the drift on a couple
+// of them so it reads as a patrol/walk rather than a sway-in-place.
 interface Villager { key: string; anim: string; x: number; y: number; drift: number }
 const VILLAGERS: Villager[] = [
-  { key: AK.pawnYellow, anim: ANIM.pawnYellowIdle, x: 360, y: 215, drift: 20 },
-  { key: AK.pawnRed,    anim: ANIM.pawnRedIdle,    x: 470, y: 250, drift: 22 },
-  { key: AK.pawnPurple, anim: ANIM.pawnPurpleIdle, x: 155, y: 260, drift: 18 },
-  { key: AK.pawnBlack,  anim: ANIM.pawnBlackIdle,  x: 595, y: 260, drift: 14 },
+  // Bigger drifts = visible walking. Smaller drifts stay as sway.
+  { key: AK.pawnRed,    anim: ANIM.pawnRedIdle,    x: 420, y: 250, drift: 70 },
+  { key: AK.pawnPurple, anim: ANIM.pawnPurpleIdle, x: 195, y: 260, drift: 60 },
+  { key: AK.pawnBlack,  anim: ANIM.pawnBlackIdle,  x: 555, y: 260, drift: 14 },
+  { key: AK.pawnRed,    anim: ANIM.pawnRedIdle,    x: 320, y: 218, drift: 45 },
 ];
 
 export class CityScene extends Phaser.Scene {
+  // Hero sprite stays a class field so the click handler can tween it
+  // toward the picked building before opening the overlay. Home spot
+  // is the centre point we route him back from when re-entering.
+  private hero?: Phaser.GameObjects.Sprite;
+  private heroHomeX = 350;
+  private heroHomeY = 260;
+
   constructor() {
     super('City');
   }
@@ -117,6 +126,7 @@ export class CityScene extends Phaser.Scene {
     this.drawDecoBuildings();
     this.drawBranchBuildings();
     this.drawAmbientLife();
+    this.drawMarketStall();
     this.drawTitleBanner();
     this.drawNewRunButton();
     this.drawJournalButton();
@@ -294,6 +304,31 @@ export class CityScene extends Phaser.Scene {
     });
   }
 
+  // Tween the hero sprite horizontally toward `targetX`, then call
+  // `onArrive`. Distance scales the duration so close buildings feel
+  // snappy and far ones still feel deliberate. Falls back to firing
+  // the callback immediately if the hero hasn't been spawned yet.
+  private walkHeroTo(targetX: number, onArrive: () => void) {
+    if (!this.hero) {
+      onArrive();
+      return;
+    }
+    const dx = targetX - this.hero.x;
+    if (Math.abs(dx) < 4) {
+      onArrive();
+      return;
+    }
+    this.hero.setFlipX(dx < 0);
+    this.tweens.killTweensOf(this.hero);
+    this.tweens.add({
+      targets: this.hero,
+      x: targetX,
+      duration: Math.min(900, 250 + Math.abs(dx) * 2),
+      ease: 'Sine.InOut',
+      onComplete: () => onArrive(),
+    });
+  }
+
   private drawBranchBuildings() {
     BRANCH_SPOTS.forEach((spot) => {
       const img = this.add
@@ -305,7 +340,9 @@ export class CityScene extends Phaser.Scene {
       img.on('pointerover', () => img.setTint(0xfff0c0));
       img.on('pointerout', () => img.clearTint());
       img.on('pointerdown', () => {
-        this.game.events.emit('city:branchClick', { id: spot.id });
+        this.walkHeroTo(spot.x, () => {
+          this.game.events.emit('city:branchClick', { id: spot.id });
+        });
       });
       const source = this.textures.get(spot.textureKey).getSourceImage() as HTMLImageElement;
       const topY = spot.y - source.height * spot.scale - 4;
@@ -362,12 +399,15 @@ export class CityScene extends Phaser.Scene {
 
     // "Player knight" standing in the centre of town, idling — echoes
     // the single shield-and-sword hero in the middle of the reference.
+    // Stored on the scene so click handlers can walk him toward the
+    // building the player just picked.
     const hero = this.add
-      .sprite(350, 260, AK.knightIdle, 0)
+      .sprite(this.heroHomeX, this.heroHomeY, AK.knightIdle, 0)
       .setOrigin(0.5, 0.72)
       .setScale(0.32)
       .setDepth(9);
     hero.play(ANIM.knightIdle);
+    this.hero = hero;
 
     // Sheep grazing near the house cluster (reference shows 3-4 sheep).
     const sheepSpots = [
@@ -407,6 +447,61 @@ export class CityScene extends Phaser.Scene {
         .setScale(d.scale)
         .setDepth(8);
       if (d.anim) spr.play(d.anim);
+    });
+  }
+
+  // Market stall — placeholder vendor at a fixed plaza spot. Yellow
+  // pawn stands behind a small wooden plank (a pair of stacked rocks
+  // serves as the counter — Tiny Swords has no stall asset). Label
+  // floats above. Click → city:stallClick so CityOverlay can pop a
+  // "shop coming soon" notice with the player's persistent gold.
+  private drawMarketStall() {
+    const sx = 360;
+    const sy = 218;
+
+    // Stacked rocks as a make-do counter.
+    this.add
+      .image(sx - 8, sy - 2, AK.cityRock1)
+      .setOrigin(0.5, 1)
+      .setScale(0.32)
+      .setDepth(8);
+    this.add
+      .image(sx + 8, sy - 2, AK.cityRock2)
+      .setOrigin(0.5, 1)
+      .setScale(0.30)
+      .setDepth(8);
+
+    // Vendor pawn.
+    const vendor = this.add
+      .sprite(sx, sy - 4, AK.pawnYellow, 0)
+      .setOrigin(0.5, 0.72)
+      .setScale(0.28)
+      .setDepth(9);
+    vendor.play(ANIM.pawnYellowIdle);
+
+    // Label above the stall.
+    this.add
+      .text(sx, sy - 30, '🪙 Targowisko', {
+        fontFamily: 'monospace',
+        fontSize: '9px',
+        color: '#3a2a10',
+        backgroundColor: '#f5e8c8',
+        padding: { left: 4, right: 4, top: 1, bottom: 1 },
+      })
+      .setOrigin(0.5, 1)
+      .setDepth(11);
+
+    // Hit-zone covering vendor + counter so the kid doesn't have to
+    // pixel-target the pawn itself. Reuses the same walk-then-emit
+    // flow as branch buildings.
+    const hit = this.add
+      .zone(sx, sy - 12, 44, 30)
+      .setOrigin(0.5, 1)
+      .setInteractive({ useHandCursor: true });
+    hit.on('pointerdown', () => {
+      this.walkHeroTo(sx, () => {
+        this.game.events.emit('city:stallClick');
+      });
     });
   }
 
