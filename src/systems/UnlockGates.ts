@@ -67,17 +67,3 @@ export interface GateDef {
   kind: GateKind;
   payload: GatePayload;
 }
-
-// Convenience guards.
-export function isWritingPayload(p: GatePayload): p is WritingPayload {
-  return p.kind === 'writing';
-}
-export function isListeningPayload(p: GatePayload): p is ListeningPayload {
-  return p.kind === 'listening';
-}
-export function isReadAloudPayload(p: GatePayload): p is ReadAloudPayload {
-  return p.kind === 'readAloud';
-}
-export function isClozePayload(p: GatePayload): p is ClozePayload {
-  return p.kind === 'cloze';
-}

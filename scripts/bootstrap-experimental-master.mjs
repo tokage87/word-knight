@@ -6,13 +6,9 @@ import {
   CEFR_BY_TIER,
   EXPERIMENTAL_DIR,
   MASTER_DIR,
-  ROOT,
-  SNAPSHOT_DIR,
   VOCAB_BANKS,
   slugify,
 } from './experimental-catalog-seed.mjs';
-
-const SOURCE_FILES = ['vocab.json', 'sentences.json', 'stories.json'];
 const TIERS = [1, 2, 3];
 const STOPWORDS = new Set([
   'the',
@@ -969,14 +965,7 @@ function makeStory(category, tier, entries, storyIndex, tokenPool) {
 
 function bootstrap() {
   ensureDir(EXPERIMENTAL_DIR);
-  ensureDir(SNAPSHOT_DIR);
   ensureDir(MASTER_DIR);
-
-  for (const fileName of SOURCE_FILES) {
-    const sourcePath = path.join(ROOT, 'src/data', fileName);
-    const targetPath = path.join(SNAPSHOT_DIR, fileName);
-    fs.copyFileSync(sourcePath, targetPath);
-  }
 
   const vocab = [];
   const sentences = [];

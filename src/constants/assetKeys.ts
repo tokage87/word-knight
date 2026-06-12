@@ -34,13 +34,10 @@ export const AK = {
   archerRun: 'archer-run',
   archerShoot: 'archer-shoot',
   arrow: 'arrow',
-  // Monk: 192px frame. Idle 6f, Run 4f, Heal 11f. Heal_Effect is an
-  // overlay sprite (not currently rendered — kept for future cleric
-  // polish).
+  // Monk: 192px frame. Idle 6f, Run 4f, Heal 11f.
   monkIdle: 'monk-idle',
   monkRun: 'monk-run',
   monkHeal: 'monk-heal',
-  monkHealEffect: 'monk-heal-effect',
   // Lancer: larger 320px frame. Idle 12f, Run 6f, Right_Attack 3f.
   // Shared by Wind Lancer and Earth Lancer — differ by projectile
   // tint and stats.

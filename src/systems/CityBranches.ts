@@ -214,8 +214,7 @@ export function gateCta(id: BranchId) {
   return GATE_CTA[BRANCH_DEFS[id].gate.kind];
 }
 
-// Narrow a branch's payload by kind (reads nicer at call-sites than
-// chained `isWritingPayload` etc. checks). For non-English curricula
+// Narrow a branch's payload by kind. For non-English curricula
 // the hardcoded English payload in BRANCH_DEFS isn't useful, so we
 // build a fresh payload from the active curriculum pool.
 export function payloadFor<K extends GatePayload['kind']>(

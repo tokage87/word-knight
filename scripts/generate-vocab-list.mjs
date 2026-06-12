@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
-const outputPath = path.join(repoRoot, "Vacab_list.html");
+const outputPath = path.join(repoRoot, "Vocab_list.html");
 
 const datasetSpecs = [
   {
@@ -280,7 +280,7 @@ function buildHtml(records) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vacab List</title>
+    <title>Vocab List</title>
     <style>
       :root {
         --paper: #f7f1e4;
@@ -634,7 +634,7 @@ function buildHtml(records) {
   <body>
     <main class="shell">
       <section class="hero">
-        <h1>Vacab List</h1>
+        <h1>Vocab List</h1>
         <p>
           Browser view for the experimental curriculum files. You can inspect vocab, sentence tasks, and stories from the
           editable master set plus the generated tiered, A2, and B1 exports. Click any visible tag to filter faster.

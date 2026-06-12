@@ -1,8 +1,8 @@
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-export const ROOT = '/Users/michalmatlosz/Language_dungeon';
+export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const EXPERIMENTAL_DIR = path.join(ROOT, 'src/data/experimental');
-export const SNAPSHOT_DIR = path.join(EXPERIMENTAL_DIR, 'source_snapshot');
 export const MASTER_DIR = path.join(EXPERIMENTAL_DIR, 'master');
 export const TIERED_DIR = path.join(EXPERIMENTAL_DIR, 'tiered');
 export const CEFR_DIR = path.join(EXPERIMENTAL_DIR, 'cefr');

@@ -192,10 +192,6 @@ export class BootScene extends Phaser.Scene {
       frameWidth: UNIT_FRAME,
       frameHeight: UNIT_FRAME,
     });
-    this.load.spritesheet(AK.monkHealEffect, 'assets/monk/Heal_Effect.png', {
-      frameWidth: UNIT_FRAME,
-      frameHeight: UNIT_FRAME,
-    });
 
     // Lancer ally sprites — 320px frame (same size family as the
     // minotaur enemy). Used by Wind Lancer and Earth Lancer.
