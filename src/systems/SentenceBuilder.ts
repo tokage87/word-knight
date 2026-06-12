@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import { gameEvents } from './events';
 import { DomOverlay } from './DomOverlay';
 import { curriculumCatalog } from './CurriculumCatalog';
+import { escapeHtml, escapeAttr } from './escape';
 import type {
   CurriculumSentence,
   CurriculumStory,
@@ -117,9 +118,11 @@ export class SentenceBuilder extends DomOverlay {
     const rightWord = optionsInLeftFirst ? step.distractor : step.correct;
 
     // Progressive sentence preview: resolved words + blank for the current step.
+    // Only the picked word values are curriculum-derived; the span markup itself
+    // is structural and must NOT be escaped.
     const preview = this.current.steps
       .map((_s, i) => {
-        if (i < this.stepIndex) return `<span class="sentence-word sentence-word--done">${this.picked[i]}</span>`;
+        if (i < this.stepIndex) return `<span class="sentence-word sentence-word--done">${escapeHtml(this.picked[i] ?? '')}</span>`;
         if (i === this.stepIndex) return `<span class="sentence-word sentence-word--active">____</span>`;
         return `<span class="sentence-word sentence-word--pending">____</span>`;
       })
@@ -129,26 +132,30 @@ export class SentenceBuilder extends DomOverlay {
     // swaps the subtitle so the player knows they're inside a multi-part
     // gate. The inner sentence UI is identical to single-sentence mode.
     const storyHeader = this.story
-      ? `<div class="sentence-story-title">${this.story.title}</div>
+      ? `<div class="sentence-story-title">${escapeHtml(this.story.title)}</div>
          <div class="sentence-story-progress">Zdanie ${this.storyIndex + 1} / ${this.story.sentences.length}${this.mistakes > 0 ? ` · błędy: ${this.mistakes}` : ''}</div>`
       : '';
     const kindLabel = this.story ? 'STORY' : 'TASK';
     const subtitle = this.story ? 'Ułóż opowieść' : 'Ułóż zdanie';
 
+    // data-word stores the raw word in an attribute position (escapeAttr).
+    // The browser decodes HTML entities when reading dataset.word, so the
+    // value compared against step.correct in pick() / handleKey() is the
+    // original unescaped string — answer matching is unaffected.
     this.root.innerHTML = `
       <div class="sentence${this.story ? ' sentence--story' : ''}">
         <div class="sentence-kind">${kindLabel}</div>
         ${storyHeader}
         <div class="sentence-title">${subtitle}</div>
-        <div class="sentence-pl">${this.current.pl}</div>
+        <div class="sentence-pl">${escapeHtml(this.current.pl)}</div>
         <div class="sentence-preview">${preview}</div>
         <div class="sentence-grid">
-          <button class="sentence-opt" data-key="W" data-word="${leftWord}" type="button">
-            <span class="sentence-opt-text">${leftWord}</span>
+          <button class="sentence-opt" data-key="W" data-word="${escapeAttr(leftWord)}" type="button">
+            <span class="sentence-opt-text">${escapeHtml(leftWord)}</span>
             <span class="sentence-opt-key">W</span>
           </button>
-          <button class="sentence-opt" data-key="E" data-word="${rightWord}" type="button">
-            <span class="sentence-opt-text">${rightWord}</span>
+          <button class="sentence-opt" data-key="E" data-word="${escapeAttr(rightWord)}" type="button">
+            <span class="sentence-opt-text">${escapeHtml(rightWord)}</span>
             <span class="sentence-opt-key">E</span>
           </button>
         </div>

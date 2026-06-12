@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { gameEvents } from './events';
 import { DomOverlay } from './DomOverlay';
+import { escapeAttr } from './escape';
 
 // Roguelite-style level-up picker. Listens for `skillpicker:show` on the
 // global event bus and renders up to 3 cards the player chooses between
@@ -108,15 +109,4 @@ export class SkillPicker extends DomOverlay {
       </div>
     `;
   }
-}
-
-// Minimal HTML-attribute escape so a card title / desc with quotes or
-// angle brackets can't break the `data-tooltip="…"` wrapper we're
-// inlining via a template string.
-function escapeAttr(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
 }
