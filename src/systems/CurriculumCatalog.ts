@@ -43,6 +43,9 @@ class CurriculumCatalog {
   private sentencesMemo?: CurriculumSentence[];
   private storiesMemo?: CurriculumStory[];
   private lastKey = '';
+  // All-sources id → vocab index for findVocabById(). Built lazily,
+  // never invalidated (static JSON).
+  private vocabByIdMemo?: Map<string, CurriculumVocab>;
 
   getActiveSelection(): CurriculumSelection {
     return metaStore.getCurriculum();
@@ -66,6 +69,25 @@ class CurriculumCatalog {
   getStoryPool(): CurriculumStory[] {
     this.ensureFresh();
     return this.storiesMemo!;
+  }
+
+  // Read-only id → vocab lookup across EVERY source, not just the
+  // active selection — the parent dashboard resolves words the kid
+  // practiced under a previously selected curriculum too. Lazy-built
+  // once; the underlying JSON bundles never change at runtime, so no
+  // invalidation needed. Unknown ids return undefined (caller skips).
+  findVocabById(id: string): CurriculumVocab | undefined {
+    if (!this.vocabByIdMemo) {
+      const map = new Map<string, CurriculumVocab>();
+      const pools: AnyRecord[][] = [LEGACY_VOCAB, TIERED_VOCAB, A2_VOCAB, B1_VOCAB, DE_EXAM_VOCAB];
+      for (const pool of pools) {
+        for (const r of this.normalize('vocab', pool) as CurriculumVocab[]) {
+          if (!map.has(r.id)) map.set(r.id, r);
+        }
+      }
+      this.vocabByIdMemo = map;
+    }
+    return this.vocabByIdMemo.get(id);
   }
 
   // Used by the picker UI to preview how a candidate selection would

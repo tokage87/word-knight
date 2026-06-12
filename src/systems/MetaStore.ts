@@ -36,6 +36,13 @@ export interface BranchState {
   treeRanks: Record<string, number>;
 }
 
+export interface WordStat {
+  // correct answers
+  c: number;
+  // wrong answers
+  w: number;
+}
+
 export interface DayActivity {
   // ms accumulated in GameScene for that calendar date
   msPlayed: number;
@@ -58,6 +65,10 @@ export interface MetaState {
     // YYYY-MM-DD (local date) → activity. Optional so v3 saves
     // hydrate without migration; missing reads as `{}`.
     dailyActivity?: Record<string, DayActivity>;
+    // wordId → correct/wrong answer counts, feeding the parent
+    // dashboard's "trudne słowa" view. Same optional-without-bump
+    // pattern as dailyActivity: missing reads as `{}`.
+    wordStats?: Record<string, WordStat>;
   };
   branches: Record<BranchId, BranchState>;
   writingSubmissions: WritingSubmission[];
@@ -92,6 +103,7 @@ function freshState(): MetaState {
       writingTasksDone: 0,
       distinctWordIds: [],
       dailyActivity: {},
+      wordStats: {},
     },
     branches: {
       combat:  freshBranch(),
@@ -313,10 +325,34 @@ export class MetaStore {
     this.state.lifetime.quizCorrect += 1;
     const wasNewWord = wordId ? !this.distinctWordsSet.has(wordId) : false;
     if (wordId) this.distinctWordsSet.add(wordId);
+    if (wordId) this.wordBucket(wordId).c += 1;
     const today = this.todayBucket();
     today.quizCorrect += 1;
     if (wasNewWord) today.newWords += 1;
     this.save();
+  }
+
+  // Wrong-answer counterpart. Only the per-word bucket moves — wrong
+  // answers deliberately don't touch dailyActivity (the weekly bars
+  // chart *correct* answers) or any lifetime total.
+  incrementQuizWrong(wordId?: string) {
+    if (!wordId) return;
+    this.wordBucket(wordId).w += 1;
+    this.save();
+  }
+
+  getWordStats(): Record<string, WordStat> {
+    return this.state.lifetime.wordStats ?? {};
+  }
+
+  private wordBucket(wordId: string): WordStat {
+    if (!this.state.lifetime.wordStats) this.state.lifetime.wordStats = {};
+    let bucket = this.state.lifetime.wordStats[wordId];
+    if (!bucket) {
+      bucket = { c: 0, w: 0 };
+      this.state.lifetime.wordStats[wordId] = bucket;
+    }
+    return bucket;
   }
 
   // Add `ms` of playtime to today's bucket. Called from GameScene's

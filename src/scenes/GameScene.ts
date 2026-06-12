@@ -317,8 +317,11 @@ export class GameScene extends Phaser.Scene {
     this.publishStats();
   }
 
-  private onQuizWrong() {
+  private onQuizWrong(payload?: { id?: string }) {
     if (import.meta.env.DEV) console.log('[xp] quiz:wrong (no xp granted)');
+    // Feed the parent dashboard's "trudne słowa" view — the event
+    // already carries the word id, mirroring onQuizCorrect.
+    metaStore.incrementQuizWrong(payload?.id);
     // Inverse of the correct-answer reward: every spell's cooldown gets
     // pushed back QUIZ_WRONG_PENALTY_MS, teaching the player that silence
     // or wrong picks are dangerous instead of neutral. Capped in

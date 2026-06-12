@@ -132,6 +132,27 @@ export class CityOverlay extends DomOverlay {
     const peak = Math.max(1, ...days.map((d) => d.correct));
     const todayKey = localDateKey(today);
 
+    // "Trudne słowa" — words the kid keeps getting wrong. Threshold of
+    // 2 wrongs filters out one-off misclicks; ids that no longer
+    // resolve in any curriculum source are silently skipped (stale
+    // saves after data regeneration). Top 8 by wrong count, ties
+    // broken by worse accuracy first.
+    const hardWords: { pl: string; en: string; c: number; w: number }[] = [];
+    for (const [id, stat] of Object.entries(metaStore.getWordStats())) {
+      if (stat.w < 2) continue;
+      const vocab = curriculumCatalog.findVocabById(id);
+      if (!vocab) continue;
+      hardWords.push({ pl: vocab.pl, en: vocab.en, c: stat.c, w: stat.w });
+    }
+    hardWords.sort((a, b) => b.w - a.w || a.c / (a.c + a.w) - b.c / (b.c + b.w));
+    const hardWordRows =
+      hardWords.length === 0
+        ? '<div>Brak trudnych słów — świetna robota!</div>'
+        : hardWords
+            .slice(0, 8)
+            .map((hw) => `<div>⚠️ ${escapeHtml(hw.pl)} (${escapeHtml(hw.en)}) — ${hw.c}/${hw.c + hw.w} poprawnie</div>`)
+            .join('');
+
     const bars = days
       .map((d) => {
         const heightPct = Math.round((d.correct / peak) * 100);
@@ -173,6 +194,8 @@ export class CityOverlay extends DomOverlay {
         </div>
         <div class="pd-section-label">Aktywność tygodnia (poprawne odpowiedzi)</div>
         <div class="pd-bars">${bars}</div>
+        <div class="pd-section-label">Trudne słowa</div>
+        <div class="pd-totals">${hardWordRows}</div>
         <div class="pd-section-label">Łącznie</div>
         <div class="pd-totals">
           <div>✅ ${lifetime.quizCorrect} poprawnych odpowiedzi</div>
