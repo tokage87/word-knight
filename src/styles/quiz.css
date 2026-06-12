@@ -68,8 +68,12 @@
   border-image-repeat: stretch;
   image-rendering: pixelated;
 }
-.quiz-opt:hover {
-  filter: brightness(1.15);
+/* Hover only on devices that actually hover — on touch screens the
+   brightness boost would stick to the last-tapped button. */
+@media (hover: hover) {
+  .quiz-opt:hover {
+    filter: brightness(1.15);
+  }
 }
 .quiz-opt:active {
   transform: translateY(1px);
@@ -108,4 +112,19 @@
   line-height: 13px;
   font-family: monospace;
   z-index: 2;
+}
+
+/* Touch devices: no keyboard, so the W/E badges are noise — hide them
+   and grow the tap targets. Overlay px are real CSS px (overlay-inner
+   matches the letterboxed canvas, no scaling on the quiz panel), so
+   min-height 56px comfortably clears the ~44px touch minimum. The
+   asymmetric right padding existed only to clear the key badge. */
+@media (pointer: coarse) {
+  .quiz-opt-key {
+    display: none;
+  }
+  .quiz-opt {
+    min-height: 56px;
+    padding: 10px 8px;
+  }
 }

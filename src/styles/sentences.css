@@ -138,7 +138,11 @@
   image-rendering: pixelated;
   transition: transform 60ms, filter 60ms;
 }
-.sentence-opt:hover { filter: brightness(1.15); }
+/* Hover only on devices that actually hover — avoids sticky hover
+   highlight on the last-tapped option on touch screens. */
+@media (hover: hover) {
+  .sentence-opt:hover { filter: brightness(1.15); }
+}
 .sentence-opt:active { transform: translateY(1px); }
 
 .sentence-opt.sentence-correct::after {
@@ -176,4 +180,17 @@
   line-height: 15px;
   font-family: monospace;
   z-index: 2;
+}
+
+/* Touch devices: hide the W/E key badges (no keyboard) and grow the
+   tap targets. The asymmetric right padding existed only to clear the
+   badge, so it becomes symmetric. */
+@media (pointer: coarse) {
+  .sentence-opt-key {
+    display: none;
+  }
+  .sentence-opt {
+    min-height: 60px;
+    padding: 14px 12px;
+  }
 }

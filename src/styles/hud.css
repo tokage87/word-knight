@@ -536,6 +536,21 @@
 }
 .pause-btn:active { transform: scale(calc(var(--hud-scale) * 0.95)); }
 
+/* Touch devices: the pause button is the only always-on-screen tap
+   target in the HUD — grow it past the ~44px touch minimum (it sits
+   at 1x --hud-scale on most tablets), and hide the "Naciśnij P aby
+   kontynuować" keyboard hint — touch players resume with the
+   KONTYNUUJ button right below it. */
+@media (pointer: coarse) {
+  .pause-btn {
+    font-size: 20px;
+    padding: 8px 16px;
+  }
+  .pause-sub {
+    display: none;
+  }
+}
+
 .pause-overlay {
   position: absolute;
   inset: 0;
@@ -839,6 +854,9 @@
 :where([data-tooltip]:not([data-tooltip=""])) {
   position: relative;
 }
+/* Hover-capable devices only: on touch screens a tap would "stick"
+   the tooltip open on the tapped element with no way to dismiss it. */
+@media (hover: hover) {
 [data-tooltip]:not([data-tooltip=""]):hover::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -864,6 +882,7 @@
   border-image-width: 14px;
   border-image-repeat: stretch;
   animation: tooltip-fade-in 120ms ease-out;
+}
 }
 @keyframes tooltip-fade-in {
   from { opacity: 0; transform: translate(-50%, 4px); }

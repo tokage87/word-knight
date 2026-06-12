@@ -470,7 +470,9 @@
   border-radius: 10px;
   cursor: pointer;
 }
-.wt-hint-chip:hover { background: #fff6dc; }
+@media (hover: hover) {
+  .wt-hint-chip:hover { background: #fff6dc; }
+}
 
 .wt-textarea {
   width: 100%;
@@ -859,7 +861,13 @@
   image-rendering: pixelated;
   transition: transform 120ms;
 }
-.st-node:hover { transform: scale(1.08); }
+/* Hover-capable only — a tapped node would otherwise stay scaled up
+   (and show its hover tooltip, below) until the next tap elsewhere.
+   Touch/keyboard paths still get the grown z-index + tooltip via
+   :focus-visible and the JS-driven .st-node--hovering class. */
+@media (hover: hover) {
+  .st-node:hover { transform: scale(1.08); }
+}
 .st-node-icon {
   width: 40px; height: 40px;
   image-rendering: pixelated;
@@ -882,9 +890,11 @@
 .st-node--maxed { filter: drop-shadow(0 0 4px #f0c020); }
 .st-node--unlockable { filter: drop-shadow(0 0 4px #6acfff); }
 .st-node { z-index: 1; }
-.st-node:hover,
 .st-node:focus-visible,
 .st-node.st-node--hovering { z-index: 20; }
+@media (hover: hover) {
+  .st-node:hover { z-index: 20; }
+}
 
 /* Price / state badge sitting above each node. Shows cost to buy, or
    MAX, or a padlock when prereqs are unmet. */
@@ -961,10 +971,14 @@
   border: 6px solid transparent;
   border-bottom-color: #2a1a08;
 }
-.st-node:hover .st-node-tooltip,
 .st-node:focus-visible .st-node-tooltip,
 .st-node.st-node--hovering .st-node-tooltip {
   display: block;
+}
+@media (hover: hover) {
+  .st-node:hover .st-node-tooltip {
+    display: block;
+  }
 }
 .st-tt-title { display: inline; font-weight: bold; font-size: 14px; }
 .st-tt-rank { display: inline; margin-left: 4px; color: #c2a060; font-size: 11px; }
@@ -1057,8 +1071,12 @@
   cursor: pointer;
   transition: background-color 0.15s;
 }
-.city-journal-card:hover {
-  background: rgba(245, 232, 200, 0.85);
+/* Hover-capable devices only — on touch the highlight would stick to
+   the last-tapped card after expanding/collapsing it. */
+@media (hover: hover) {
+  .city-journal-card:hover {
+    background: rgba(245, 232, 200, 0.85);
+  }
 }
 .city-journal-card-header {
   display: flex;
@@ -1183,7 +1201,11 @@
   cursor: pointer;
   color: var(--paper-text);
 }
-.cu-tier-btn:hover { background: rgba(245, 232, 200, 1); }
+/* Hover-capable only: :hover outspecifies --active, so a sticky hover
+   on touch would visually mask the just-selected state. */
+@media (hover: hover) {
+  .cu-tier-btn:hover { background: rgba(245, 232, 200, 1); }
+}
 .cu-tier-btn--active {
   background: #a43d1a;
   color: #fff;
@@ -1206,7 +1228,9 @@
   cursor: pointer;
   color: var(--paper-text);
 }
-.cu-cat-chip:hover { background: rgba(245, 232, 200, 1); }
+@media (hover: hover) {
+  .cu-cat-chip:hover { background: rgba(245, 232, 200, 1); }
+}
 .cu-cat-chip--active {
   background: #3a6fa6;
   color: #fff;
@@ -1240,7 +1264,9 @@
   border-radius: 3px;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
-.cu-save:hover { background: #5a90c5; }
+@media (hover: hover) {
+  .cu-save:hover { background: #5a90c5; }
+}
 .cu-save:active { transform: translateY(1px); }
 
 
@@ -1393,8 +1419,10 @@
   border-radius: 3px;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
-.pd-backup-export:hover,
-.pd-backup-import:hover { background: #5a90c5; }
+@media (hover: hover) {
+  .pd-backup-export:hover,
+  .pd-backup-import:hover { background: #5a90c5; }
+}
 .pd-backup-export:active,
 .pd-backup-import:active { transform: translateY(1px); }
 .pd-backup-msg {
