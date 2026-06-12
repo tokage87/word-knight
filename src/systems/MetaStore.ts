@@ -16,7 +16,14 @@
 import type { SpellId } from './SpellCaster';
 import { DEFAULT_CURRICULUM, type CurriculumSelection } from './CurriculumTypes';
 
-export const STORAGE_KEY = 'wk.meta.v1';
+// Version-neutral key — the payload's own `version` field drives
+// migrations, so baking "v1" into the key name was just confusing.
+export const STORAGE_KEY = 'wk.meta';
+// Pre-rename key. readFromStorage() falls back to it once; the next
+// save() writes under STORAGE_KEY. We deliberately leave the legacy
+// entry in place after migration — it's a few KB of cheap insurance
+// against a bad deploy, and wipe() clears it anyway.
+export const LEGACY_STORAGE_KEY = 'wk.meta.v1';
 export const SCHEMA_VERSION = 3;
 
 export type BranchId = 'combat' | 'spells' | 'scholar' | 'writer';
@@ -212,7 +219,11 @@ export class MetaStore {
 
   private readFromStorage(): MetaState {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      // Current key first; fall back to the legacy 'wk.meta.v1' key for
+      // saves written before the rename. The migrated data lands under
+      // STORAGE_KEY on the next save(); the legacy entry stays behind
+      // on purpose (cheap insurance — see LEGACY_STORAGE_KEY).
+      const raw = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(LEGACY_STORAGE_KEY);
       if (!raw) return freshState();
       return hydrate(JSON.parse(raw));
     } catch {
@@ -234,8 +245,46 @@ export class MetaStore {
     this.distinctWordsSet = new Set();
     try {
       localStorage.removeItem(STORAGE_KEY);
+      // A full wipe is the one case where keeping the legacy entry
+      // would be wrong — it would resurrect on the next reload.
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
     } catch {
       // ignore
+    }
+  }
+
+  // ── save export / import ──
+  // The "backup code" surfaced in the parent dashboard: the full state
+  // JSON, base64-encoded so it survives copy-paste through chat apps
+  // and email without whitespace/quote mangling.
+
+  exportSave(): string {
+    // Mirror save(): fold the live word set back into the array so the
+    // exported snapshot is complete even if save() hasn't run yet.
+    this.state.lifetime.distinctWordIds = Array.from(this.distinctWordsSet);
+    try {
+      return base64EncodeUtf8(JSON.stringify(this.state));
+    } catch {
+      return '';
+    }
+  }
+
+  // Restore from an exportSave() code. Decoded payload goes through
+  // hydrate(), so old-version codes get the same migration path as
+  // localStorage reads. Never throws — false on any malformed input.
+  importSave(code: string): boolean {
+    try {
+      const json = base64DecodeUtf8(code.trim());
+      const raw: unknown = JSON.parse(json);
+      // hydrate() silently turns garbage into a fresh state; for an
+      // explicit import we'd rather reject than wipe progress.
+      if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return false;
+      this.state = hydrate(raw);
+      this.distinctWordsSet = new Set(this.state.lifetime.distinctWordIds);
+      this.save();
+      return true;
+    } catch {
+      return false;
     }
   }
 
@@ -244,12 +293,15 @@ export class MetaStore {
   distinctWordCount(): number { return this.distinctWordsSet.size; }
 
   addGold(amount: number) {
-    if (amount <= 0) return;
+    // Non-finite (NaN/Infinity) would corrupt the persisted balance — no-op.
+    if (!Number.isFinite(amount) || amount <= 0) return;
     this.state.gold += amount;
     this.save();
   }
 
   spendGold(amount: number): boolean {
+    // Non-finite is a refused transaction, not a free one.
+    if (!Number.isFinite(amount)) return false;
     if (amount <= 0) return true;
     if (this.state.gold < amount) return false;
     this.state.gold -= amount;
@@ -271,7 +323,8 @@ export class MetaStore {
   // update loop on a 1s flush cadence so we don't write localStorage
   // every frame.
   recordPlayMs(ms: number) {
-    if (ms <= 0) return;
+    // NaN/Infinity would poison the daily bucket forever — clamp out.
+    if (!Number.isFinite(ms) || ms <= 0) return;
     this.todayBucket().msPlayed += ms;
     this.save();
   }
@@ -391,6 +444,24 @@ export class MetaStore {
     this.save();
     return true;
   }
+}
+
+// btoa/atob only handle Latin-1; route through percent-encoding so
+// Polish characters in writing submissions survive the round-trip.
+function base64EncodeUtf8(s: string): string {
+  const bytes = encodeURIComponent(s).replace(/%([0-9A-F]{2})/g, (_m, hex: string) =>
+    String.fromCharCode(parseInt(hex, 16)),
+  );
+  return btoa(bytes);
+}
+
+function base64DecodeUtf8(b64: string): string {
+  const bytes = atob(b64);
+  let pct = '';
+  for (let i = 0; i < bytes.length; i++) {
+    pct += '%' + bytes.charCodeAt(i).toString(16).padStart(2, '0');
+  }
+  return decodeURIComponent(pct);
 }
 
 export const metaStore = new MetaStore();

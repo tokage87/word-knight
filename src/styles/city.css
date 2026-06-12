@@ -571,6 +571,14 @@
   flex-wrap: wrap;
 }
 .wt-deep-feedback { font-size: 12px; line-height: 1.35; }
+.wt-deep-error {
+  padding: 8px 10px;
+  background: rgba(168, 64, 32, 0.1);
+  border: 1px solid rgba(168, 64, 32, 0.4);
+  border-radius: 3px;
+}
+.wt-deep-error-text { font-size: 12px; line-height: 1.35; }
+.wt-deep-retry { margin-top: 6px; }
 
 .wt-footer {
   display: flex;
@@ -1337,3 +1345,61 @@
 .pd-totals > div {
   font-family: monospace;
 }
+
+/* Backup (export/import) section at the bottom of the dashboard. */
+.pd-backup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 4px;
+}
+.pd-backup-hint {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--paper-text-muted);
+}
+.pd-backup-code {
+  width: 100%;
+  resize: vertical;
+  padding: 6px 8px;
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #1c0a05;
+  background: #fff8e4;
+  border: 1px solid #3a2a10;
+  border-radius: 3px;
+  box-sizing: border-box;
+  outline: none;
+  word-break: break-all;
+}
+.pd-backup-code:focus { background: #fffbec; }
+.pd-backup-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pd-backup-export,
+.pd-backup-import {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  color: #fff;
+  background: #3a6fa6;
+  padding: 5px 14px;
+  cursor: pointer;
+  border: 2px solid #1e3a57;
+  border-radius: 3px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.pd-backup-export:hover,
+.pd-backup-import:hover { background: #5a90c5; }
+.pd-backup-export:active,
+.pd-backup-import:active { transform: translateY(1px); }
+.pd-backup-msg {
+  font-size: 11px;
+  font-weight: bold;
+  color: #2c6e31;
+}
+.pd-backup-msg--error { color: #a84020; }

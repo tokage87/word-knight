@@ -101,7 +101,10 @@ export class CityOverlay extends DomOverlay {
     this.attachWindowKeydown(this.onKey);
   }
 
-  private renderParentDashboard() {
+  // `backupNotice` carries the import-success message across the
+  // re-render that refreshes the numbers (innerHTML replacement would
+  // otherwise wipe the feedback the parent needs to see).
+  private renderParentDashboard(backupNotice?: string) {
     if (!this.root) return;
     const state = metaStore.get();
     const lifetime = state.lifetime;
@@ -177,6 +180,16 @@ export class CityOverlay extends DomOverlay {
           <div>📚 ${lifetime.perfectStories} historii ułożonych bezbłędnie</div>
           <div>✍️ ${lifetime.writingTasksDone} zadań pisemnych</div>
         </div>
+        <div class="pd-section-label">Kopia zapasowa</div>
+        <div class="pd-backup">
+          <div class="pd-backup-hint">Eksportuj kod, żeby zachować postęp lub przenieść go na inne urządzenie. Wklej kod i naciśnij „Wczytaj", żeby przywrócić.</div>
+          <textarea class="pd-backup-code" rows="3" spellcheck="false" placeholder="Tu pojawi się kod kopii — albo wklej swój, żeby przywrócić postęp."></textarea>
+          <div class="pd-backup-row">
+            <button class="pd-backup-export" type="button">Eksportuj postęp</button>
+            <button class="pd-backup-import" type="button">Wczytaj</button>
+            <span class="pd-backup-msg" aria-live="polite">${backupNotice ? escapeHtml(backupNotice) : ''}</span>
+          </div>
+        </div>
         <div class="city-panel-footer">
           <button class="city-panel-back" type="button">WRÓĆ</button>
         </div>
@@ -184,6 +197,59 @@ export class CityOverlay extends DomOverlay {
     `;
     this.root.querySelector('.city-panel-close')!.addEventListener('click', () => this.hide());
     this.root.querySelector('.city-panel-back')!.addEventListener('click', () => this.hide());
+    this.wireBackupControls();
+  }
+
+  // Backup section listeners. Same convention as every other panel:
+  // direct listeners on innerHTML children, re-attached on each render
+  // (they die with the markup, so no tracking needed).
+  private wireBackupControls() {
+    if (!this.root) return;
+    const textarea = this.root.querySelector<HTMLTextAreaElement>('.pd-backup-code');
+    const msg = this.root.querySelector<HTMLElement>('.pd-backup-msg');
+    const showMsg = (text: string, isError: boolean) => {
+      if (!msg) return;
+      msg.textContent = text;
+      msg.classList.toggle('pd-backup-msg--error', isError);
+    };
+
+    this.root.querySelector('.pd-backup-export')?.addEventListener('click', () => {
+      const code = metaStore.exportSave();
+      if (!code) {
+        showMsg('Nie udało się utworzyć kodu.', true);
+        return;
+      }
+      if (textarea) {
+        textarea.value = code;
+        textarea.select();
+      }
+      // Clipboard is best-effort (insecure contexts / older browsers
+      // lack it) — the selected textarea is always there as fallback.
+      const clipboard = navigator.clipboard;
+      if (clipboard?.writeText) {
+        clipboard.writeText(code).then(
+          () => showMsg('Skopiowano! Zachowaj kod w bezpiecznym miejscu.', false),
+          () => showMsg('Kod gotowy — skopiuj go z pola powyżej.', false),
+        );
+      } else {
+        showMsg('Kod gotowy — skopiuj go z pola powyżej.', false);
+      }
+    });
+
+    this.root.querySelector('.pd-backup-import')?.addEventListener('click', () => {
+      const code = textarea?.value.trim() ?? '';
+      if (!code) {
+        showMsg('Najpierw wklej kod w polu powyżej.', true);
+        return;
+      }
+      if (metaStore.importSave(code)) {
+        // Re-render so the stat tiles reflect the restored save; the
+        // notice rides along so the confirmation survives the redraw.
+        this.renderParentDashboard('Wczytano! Postęp przywrócony.');
+      } else {
+        showMsg('Nieprawidłowy kod.', true);
+      }
+    });
   }
 
   private renderStall() {
