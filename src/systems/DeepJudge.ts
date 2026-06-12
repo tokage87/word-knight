@@ -33,6 +33,14 @@ type ProgressCallback = (p: DeepProgress) => void;
 const MODEL = 'Llama-3.2-3B-Instruct-q4f16_1-MLC';
 
 export class DeepJudge {
+  // WebLLM is WebGPU-only — without it CreateMLCEngine fails after the
+  // student has already clicked and waited. Cheap synchronous capability
+  // check (no adapter probing) so the UI can hide the button up front
+  // instead of offering a guaranteed failure.
+  static isWebGpuSupported(): boolean {
+    return typeof navigator !== 'undefined' && 'gpu' in navigator;
+  }
+
   private enginePromise?: Promise<MLCEngineInterface>;
   private progressListeners = new Set<ProgressCallback>();
   private lastProgress: DeepProgress = { phase: 'download', percent: 0, text: '' };

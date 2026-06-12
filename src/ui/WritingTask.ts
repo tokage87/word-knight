@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { gameEvents } from '../systems/events';
 import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchId, countWords, payloadFor, submitGate } from '../systems/CityBranches';
-import { deepJudge } from '../systems/DeepJudge';
+import { DeepJudge, deepJudge } from '../systems/DeepJudge';
 
 // Full-screen writing overlay: prompt + textarea + live meters +
 // optional deep feedback via WebLLM. Active only for branches whose
@@ -22,6 +22,9 @@ export class WritingTask extends DomOverlay {
   private branch?: BranchId;
   private text = '';
   private deepVerdict?: { score: number; feedback: string };
+  // Set instead of deepVerdict when the deep evaluation fails — renders
+  // an error state with a retry button rather than a fake 3/5 verdict.
+  private deepError?: string;
   private deepBusy = false;
   private onKey = (e: KeyboardEvent) => {
     if (e.key === 'Escape') this.close();
@@ -47,6 +50,7 @@ export class WritingTask extends DomOverlay {
     this.branch = payload.branchId;
     this.text = '';
     this.deepVerdict = undefined;
+    this.deepError = undefined;
     this.deepBusy = false;
     if (this.stopDeepListener) {
       this.stopDeepListener();
@@ -62,6 +66,7 @@ export class WritingTask extends DomOverlay {
     this.branch = undefined;
     this.text = '';
     this.deepVerdict = undefined;
+    this.deepError = undefined;
     this.deepBusy = false;
     if (this.stopDeepListener) {
       this.stopDeepListener();
@@ -190,12 +195,39 @@ export class WritingTask extends DomOverlay {
     }
     if (this.deepBusy) {
       const p = deepJudge.isReady() ? { phase: 'ready', percent: 100, text: 'Oceniam…' } : deepJudge.getProgress();
+      // Model load failed mid-flight: show the error text instead of a
+      // meter stuck at a stale percent. runDeep's catch re-renders with
+      // the retry button a microtask later, so no button is needed here.
+      if (p.phase === 'error') {
+        host.innerHTML = `
+          <div class="wt-deep-error">
+            <div class="wt-deep-error-text">Nie udało się ocenić: ${escapeHtml(p.text || 'nieznany błąd')}</div>
+          </div>`;
+        return;
+      }
       host.innerHTML = `
         <div class="wt-deep-loading">
           <div class="wt-deep-label"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>Szczegółowa ocena — ładuję model (~2 GB przy pierwszym uruchomieniu, potem cache)</span></div>
           <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${p.percent}%"></div></div>
           <div class="wt-meter-val">${escapeHtml(p.text || `${p.percent}%`)}</div>
         </div>`;
+      return;
+    }
+    if (this.deepError) {
+      host.innerHTML = `
+        <div class="wt-deep-error">
+          <div class="wt-deep-error-text">Nie udało się ocenić: ${escapeHtml(this.deepError)}</div>
+          <button class="wt-deep-start wt-deep-retry" type="button"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>Spróbuj ponownie</span></button>
+        </div>`;
+      host.querySelector('.wt-deep-retry')!.addEventListener('click', () => this.runDeep());
+      return;
+    }
+    // No point offering the AI check when WebGPU is missing — the model
+    // load would fail every time. Explain instead of presenting a trap.
+    if (!DeepJudge.isWebGpuSupported()) {
+      host.innerHTML = `
+        <div class="wt-deep-note">Szczegółowa ocena AI wymaga przeglądarki z WebGPU (np. Chrome lub Edge).</div>
+      `;
       return;
     }
     host.innerHTML = `
@@ -212,6 +244,7 @@ export class WritingTask extends DomOverlay {
     const text = this.text.trim();
     if (!text) return;
     this.deepBusy = true;
+    this.deepError = undefined;
     this.stopDeepListener?.();
     this.stopDeepListener = deepJudge.onProgress(() => this.renderDeepSection());
     this.renderDeepSection();
@@ -223,7 +256,10 @@ export class WritingTask extends DomOverlay {
       });
       this.deepVerdict = verdict;
     } catch (e) {
-      this.deepVerdict = { score: 3, feedback: `Nie udało się ocenić: ${(e as Error).message}` };
+      // Not a verdict — an error state with a retry button. DeepJudge
+      // drops its cached promise on load failure, so runDeep() can be
+      // re-run cleanly after e.g. a transient network error.
+      this.deepError = (e as Error)?.message || 'nieznany błąd';
     }
     this.deepBusy = false;
     this.renderDeepSection();
