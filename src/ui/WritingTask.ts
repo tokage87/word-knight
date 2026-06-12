@@ -3,6 +3,7 @@ import { gameEvents } from '../systems/events';
 import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchId, countWords, payloadFor, submitGate } from '../systems/CityBranches';
 import { DeepJudge, deepJudge } from '../systems/DeepJudge';
+import { STR } from '../i18n/strings';
 
 // Full-screen writing overlay: prompt + textarea + live meters +
 // optional deep feedback via WebLLM. Active only for branches whose
@@ -88,11 +89,11 @@ export class WritingTask extends DomOverlay {
         <div class="wt-header">
           <div class="wt-icon-slot"><span class="wt-icon">${branch.icon}</span></div>
           <div class="wt-title-block">
-            <div class="wt-title">${branch.label} — zadanie pisemne</div>
+            <div class="wt-title">${STR.writing.title(branch.label)}</div>
             <div class="wt-prompt-pl">${escapeHtml(p.prompt)}</div>
             <div class="wt-prompt-en">${escapeHtml(p.promptEn)}</div>
           </div>
-          <button class="wt-close" type="button" aria-label="Zamknij"></button>
+          <button class="wt-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
 
         <div class="wt-hint">
@@ -100,15 +101,15 @@ export class WritingTask extends DomOverlay {
           <div class="wt-hint-chips">${hintChips}</div>
         </div>
 
-        <textarea class="wt-textarea" placeholder="Pisz po angielsku, ile tylko możesz…" spellcheck="true"></textarea>
+        <textarea class="wt-textarea" placeholder="${STR.writing.placeholder}" spellcheck="true"></textarea>
 
         <div class="wt-meters"></div>
 
         <div class="wt-deep"></div>
 
         <div class="wt-footer">
-          <button class="wt-cancel" type="button">ANULUJ</button>
-          <button class="wt-submit" type="button" disabled>GOTOWE</button>
+          <button class="wt-cancel" type="button">${STR.common.cancel}</button>
+          <button class="wt-submit" type="button" disabled>${STR.common.done}</button>
         </div>
       </div>
     `;
@@ -162,16 +163,16 @@ export class WritingTask extends DomOverlay {
     const tick = '<span class="wt-tick" aria-hidden="true"></span>';
     meters.innerHTML = `
       <div class="wt-meter ${wordOk ? 'wt-meter--ok' : 'wt-meter--bad'}">
-        <div class="wt-meter-label"><span class="wt-chip wt-chip--words" aria-hidden="true"></span><span>Liczba słów</span></div>
+        <div class="wt-meter-label"><span class="wt-chip wt-chip--words" aria-hidden="true"></span><span>${STR.writing.wordCountLabel}</span></div>
         <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${Math.min(100, (total / UNLOCK_MIN_WORDS) * 100)}%"></div></div>
         <div class="wt-meter-val">${total} / ${UNLOCK_MIN_WORDS} ${wordOk ? tick : ''}</div>
       </div>
       <div class="wt-meter ${hintsOk ? 'wt-meter--ok' : 'wt-meter--bad'}">
-        <div class="wt-meter-label"><span class="wt-chip wt-chip--hint" aria-hidden="true"></span><span>Słowa z podpowiedzi</span></div>
+        <div class="wt-meter-label"><span class="wt-chip wt-chip--hint" aria-hidden="true"></span><span>${STR.writing.hintWordsLabel}</span></div>
         <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${Math.min(100, (hintsHit / UNLOCK_MIN_HINTS) * 100)}%"></div></div>
         <div class="wt-meter-val">${hintsHit} / ${UNLOCK_MIN_HINTS} ${hintsOk ? tick : ''}</div>
       </div>
-      <div class="wt-meter-info">Różne słowa: <b>${distinct}</b></div>
+      <div class="wt-meter-info">${STR.writing.distinctWordsLabel} <b>${distinct}</b></div>
     `;
 
     const submit = this.root.querySelector<HTMLButtonElement>('.wt-submit');
@@ -188,26 +189,26 @@ export class WritingTask extends DomOverlay {
       const empty = '<span class="wt-score-pip wt-score-pip--off" aria-hidden="true"></span>';
       host.innerHTML = `
         <div class="wt-deep-verdict">
-          <div class="wt-deep-score"><span>Ocena:</span><span class="wt-score-row">${filled.repeat(v.score)}${empty.repeat(5 - v.score)}</span><span class="wt-score-num">${v.score}/5</span></div>
+          <div class="wt-deep-score"><span>${STR.writing.scoreLabel}</span><span class="wt-score-row">${filled.repeat(v.score)}${empty.repeat(5 - v.score)}</span><span class="wt-score-num">${v.score}/5</span></div>
           <div class="wt-deep-feedback">${escapeHtml(v.feedback)}</div>
         </div>`;
       return;
     }
     if (this.deepBusy) {
-      const p = deepJudge.isReady() ? { phase: 'ready', percent: 100, text: 'Oceniam…' } : deepJudge.getProgress();
+      const p = deepJudge.isReady() ? { phase: 'ready', percent: 100, text: STR.writing.evaluating } : deepJudge.getProgress();
       // Model load failed mid-flight: show the error text instead of a
       // meter stuck at a stale percent. runDeep's catch re-renders with
       // the retry button a microtask later, so no button is needed here.
       if (p.phase === 'error') {
         host.innerHTML = `
           <div class="wt-deep-error">
-            <div class="wt-deep-error-text">Nie udało się ocenić: ${escapeHtml(p.text || 'nieznany błąd')}</div>
+            <div class="wt-deep-error-text">${STR.writing.evalFailed(escapeHtml(p.text || STR.writing.unknownError))}</div>
           </div>`;
         return;
       }
       host.innerHTML = `
         <div class="wt-deep-loading">
-          <div class="wt-deep-label"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>Szczegółowa ocena — ładuję model (~2 GB przy pierwszym uruchomieniu, potem cache)</span></div>
+          <div class="wt-deep-label"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>${STR.writing.deepLoading}</span></div>
           <div class="wt-meter-bar"><div class="wt-meter-fill" style="width:${p.percent}%"></div></div>
           <div class="wt-meter-val">${escapeHtml(p.text || `${p.percent}%`)}</div>
         </div>`;
@@ -216,8 +217,8 @@ export class WritingTask extends DomOverlay {
     if (this.deepError) {
       host.innerHTML = `
         <div class="wt-deep-error">
-          <div class="wt-deep-error-text">Nie udało się ocenić: ${escapeHtml(this.deepError)}</div>
-          <button class="wt-deep-start wt-deep-retry" type="button"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>Spróbuj ponownie</span></button>
+          <div class="wt-deep-error-text">${STR.writing.evalFailed(escapeHtml(this.deepError))}</div>
+          <button class="wt-deep-start wt-deep-retry" type="button"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>${STR.writing.retry}</span></button>
         </div>`;
       host.querySelector('.wt-deep-retry')!.addEventListener('click', () => this.runDeep());
       return;
@@ -226,13 +227,13 @@ export class WritingTask extends DomOverlay {
     // load would fail every time. Explain instead of presenting a trap.
     if (!DeepJudge.isWebGpuSupported()) {
       host.innerHTML = `
-        <div class="wt-deep-note">Szczegółowa ocena AI wymaga przeglądarki z WebGPU (np. Chrome lub Edge).</div>
+        <div class="wt-deep-note">${STR.writing.webGpuNote}</div>
       `;
       return;
     }
     host.innerHTML = `
-      <button class="wt-deep-start" type="button"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>Sprawdź szczegółowo (AI)</span></button>
-      <div class="wt-deep-note">Pobierze jednorazowo ~2&nbsp;GB przy pierwszym użyciu — potem odpowiedź w kilka sekund.</div>
+      <button class="wt-deep-start" type="button"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>${STR.writing.deepStart}</span></button>
+      <div class="wt-deep-note">${STR.writing.deepNote}</div>
     `;
     host.querySelector('.wt-deep-start')!.addEventListener('click', () => this.runDeep());
   }
@@ -259,7 +260,7 @@ export class WritingTask extends DomOverlay {
       // Not a verdict — an error state with a retry button. DeepJudge
       // drops its cached promise on load failure, so runDeep() can be
       // re-run cleanly after e.g. a transient network error.
-      this.deepError = (e as Error)?.message || 'nieznany błąd';
+      this.deepError = (e as Error)?.message || STR.writing.unknownError;
     }
     this.deepBusy = false;
     this.renderDeepSection();

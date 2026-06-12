@@ -3,6 +3,7 @@ import { metaStore } from '../systems/MetaStore';
 import { SKILL_TREES } from '../systems/SkillTreeDefs';
 import type { TreeNode } from '../systems/SkillTree';
 import { costAtRank } from '../systems/SkillTreeBalance';
+import { STR } from '../i18n/strings';
 
 // Hexagonal skill-tree renderer (DOM + SVG). One instance per open
 // branch panel — instantiated by CityOverlay.render() and torn down
@@ -114,18 +115,18 @@ export class SkillTreeView {
 
     // Short next-step description shown in the hover tooltip so the
     // student doesn't have to click each node to read its effect.
-    const nextDesc = maxed ? 'Maks.' : n.desc(Math.min(rank + 1, n.maxRank));
+    const nextDesc = maxed ? STR.skillTree.maxShort : n.desc(Math.min(rank + 1, n.maxRank));
     const costLine = maxed
-      ? 'Maks.'
+      ? STR.skillTree.maxShort
       : !prereqsMet
-        ? 'Zablokowane'
-        : `${nextCost} złota`;
+        ? STR.skillTree.locked
+        : STR.skillTree.goldCost(nextCost);
     const tooltipText = `${n.label} (${rank}/${n.maxRank})\n${nextDesc}\n${costLine}`;
 
     // Inline price/state badge — greyed when locked, gold when buyable.
     let badgeHtml = '';
     if (maxed) {
-      badgeHtml = '<span class="st-node-badge st-node-badge--max">MAX</span>';
+      badgeHtml = `<span class="st-node-badge st-node-badge--max">${STR.skillTree.maxBadge}</span>`;
     } else if (!prereqsMet) {
       badgeHtml = '<span class="st-node-badge st-node-badge--locked" aria-hidden="true"></span>';
     } else {
@@ -163,7 +164,7 @@ export class SkillTreeView {
     const canBuy = !maxed && prereqsMet && affordable;
 
     const prereqLines = n.requires.length
-      ? `<div class="st-pop-prereq">Wymaga: ${n.requires.map((r) => {
+      ? `<div class="st-pop-prereq">${STR.skillTree.requires} ${n.requires.map((r) => {
           const rn = tree.nodes.find((x) => x.id === r);
           const rRank = metaStore.getRank(this.branchId, r);
           const ok = rRank > 0;
@@ -172,12 +173,12 @@ export class SkillTreeView {
       : '';
 
     const buyBlock = maxed
-      ? '<div class="st-pop-max">Osiągnięto maks. poziom.</div>'
+      ? `<div class="st-pop-max">${STR.skillTree.maxReached}</div>`
       : !prereqsMet
-        ? '<div class="st-pop-locked">Najpierw odblokuj wymagane umiejętności.</div>'
+        ? `<div class="st-pop-locked">${STR.skillTree.unlockPrereqsFirst}</div>`
         : !affordable
-          ? `<div class="st-pop-poor">Potrzebujesz <b>${nextCost}</b> złota. Masz ${gold}.</div>`
-          : `<button class="st-pop-buy" type="button">KUP (${nextCost}<span class="st-pop-coin" aria-hidden="true"></span>)</button>`;
+          ? `<div class="st-pop-poor">${STR.skillTree.needGold(nextCost, gold)}</div>`
+          : `<button class="st-pop-buy" type="button">${STR.skillTree.buy} (${nextCost}<span class="st-pop-coin" aria-hidden="true"></span>)</button>`;
 
     // Remove any existing popover, then mount a new one.
     this.popover?.remove();
@@ -187,7 +188,7 @@ export class SkillTreeView {
       <div class="st-pop-head">
         <img class="st-pop-icon" src="${escapeAttr(n.icon)}" alt="" />
         <div class="st-pop-title">${escapeHtml(n.label)}<span class="st-pop-rank">${rank}/${n.maxRank}</span></div>
-        <button class="st-pop-close" type="button" aria-label="Zamknij">×</button>
+        <button class="st-pop-close" type="button" aria-label="${STR.common.close}">×</button>
       </div>
       <div class="st-pop-body">
         <div class="st-pop-desc">${escapeHtml(n.desc(Math.min(rank + 1, n.maxRank)))}</div>

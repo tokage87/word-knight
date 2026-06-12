@@ -9,6 +9,7 @@ import { WritingTask } from '../ui/WritingTask';
 import { ListeningTask } from '../ui/ListeningTask';
 import { ReadAloudTask } from '../ui/ReadAloudTask';
 import { ClozeTask } from '../ui/ClozeTask';
+import { STR } from '../i18n/strings';
 
 // MIASTO scene — aims to reproduce the Tiny Swords map reference as
 // closely as our asset set allows. Key visual beats from that image:
@@ -47,13 +48,13 @@ interface BranchSpot {
 // one faction (matching the reference). Branch identity comes from
 // building type (castle / tower / barracks / house) + label.
 const BRANCH_SPOTS: BranchSpot[] = [
-  { id: 'combat',  label: 'Sala Bojowa',      textureKey: AK.cityCastleBlue,
+  { id: 'combat',  label: STR.city.branchLabels.combat,  textureKey: AK.cityCastleBlue,
     x: 130, y: 175, scale: 0.55 },
-  { id: 'scholar', label: 'Krąg Uczonych',    textureKey: AK.cityBarracksBlue,
+  { id: 'scholar', label: STR.city.branchLabels.scholar, textureKey: AK.cityBarracksBlue,
     x: 295, y: 195, scale: 0.48 },
-  { id: 'writer',  label: 'Gildia Pisarzy',   textureKey: AK.houseBlue3,
+  { id: 'writer',  label: STR.city.branchLabels.writer,  textureKey: AK.houseBlue3,
     x: 475, y: 200, scale: 0.45 },
-  { id: 'spells',  label: 'Biblioteka Magii', textureKey: AK.cityTowerBlue,
+  { id: 'spells',  label: STR.city.branchLabels.spells,  textureKey: AK.cityTowerBlue,
     x: 590, y: 200, scale: 0.42 },
 ];
 
@@ -480,7 +481,7 @@ export class CityScene extends Phaser.Scene {
 
     // Label above the stall.
     this.add
-      .text(sx, sy - 30, '🪙 Targowisko', {
+      .text(sx, sy - 30, STR.city.scene.stallLabel, {
         fontFamily: 'monospace',
         fontSize: '9px',
         color: '#3a2a10',
@@ -512,7 +513,7 @@ export class CityScene extends Phaser.Scene {
       .setStrokeStyle(2, 0x3a2a10)
       .setDepth(30);
     this.add
-      .text(LOGICAL_WIDTH / 2, 24, 'MIASTO', {
+      .text(LOGICAL_WIDTH / 2, 24, STR.city.scene.title, {
         fontFamily: 'monospace',
         fontSize: '14px',
         fontStyle: 'bold',
@@ -542,7 +543,7 @@ export class CityScene extends Phaser.Scene {
       .setDepth(30)
       .setInteractive({ useHandCursor: true });
     this.add
-      .text(btnX, btnY, 'NOWA PRZYGODA', {
+      .text(btnX, btnY, STR.city.scene.newRun, {
         fontFamily: 'monospace',
         fontSize: '11px',
         fontStyle: 'bold',
@@ -573,7 +574,7 @@ export class CityScene extends Phaser.Scene {
       .setDepth(30)
       .setInteractive({ useHandCursor: true });
     this.add
-      .text(btnX, btnY, 'DZIENNIK', {
+      .text(btnX, btnY, STR.city.scene.journal, {
         fontFamily: 'monospace',
         fontSize: '11px',
         fontStyle: 'bold',
@@ -600,7 +601,7 @@ export class CityScene extends Phaser.Scene {
       .setDepth(30)
       .setInteractive({ useHandCursor: true });
     this.add
-      .text(btnX, btnY, 'DLA RODZICA', {
+      .text(btnX, btnY, STR.city.scene.parentDashboard, {
         fontFamily: 'monospace',
         fontSize: '11px',
         fontStyle: 'bold',
@@ -628,7 +629,7 @@ export class CityScene extends Phaser.Scene {
       .setDepth(30)
       .setInteractive({ useHandCursor: true });
     this.add
-      .text(btnX, btnY, 'USTAWIENIA', {
+      .text(btnX, btnY, STR.city.scene.settings, {
         fontFamily: 'monospace',
         fontSize: '11px',
         fontStyle: 'bold',

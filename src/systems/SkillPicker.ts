@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import { gameEvents } from './events';
 import { DomOverlay } from './DomOverlay';
 import { escapeAttr } from './escape';
+import { STR } from '../i18n/strings';
 
 // Roguelite-style level-up picker. Listens for `skillpicker:show` on the
 // global event bus and renders up to 3 cards the player chooses between
@@ -77,10 +78,10 @@ export class SkillPicker extends DomOverlay {
         const iconHtml = opt.icon.endsWith('.png')
           ? `<img class="skill-card-icon-img" src="${opt.icon}" alt="" />`
           : `<span class="skill-card-icon">${opt.icon}</span>`;
-        const kindLabel = opt.kind === 'new' ? 'NEW' : 'UPGRADE';
+        const kindLabel = opt.kind === 'new' ? STR.skillPicker.kindNew : STR.skillPicker.kindUpgrade;
         const weakCls = opt.weakened ? ' skill-card--weak' : '';
         const weakBadge = opt.weakened
-          ? '<div class="skill-card-weak-badge">WEAKENED −50%</div>'
+          ? `<div class="skill-card-weak-badge">${STR.skillPicker.weakenedBadge}</div>`
           : '';
         // Tooltip on each card: title + description + WEAKENED note.
         // The card already shows desc inline, but the hover tooltip
@@ -88,7 +89,7 @@ export class SkillPicker extends DomOverlay {
         // truncated. HTML-escape the pieces before inlining into the
         // data-tooltip attribute.
         const tipParts = [opt.title, opt.desc];
-        if (opt.weakened) tipParts.push('OSŁABIONE −50%');
+        if (opt.weakened) tipParts.push(STR.skillPicker.weakenedTooltip);
         const tooltip = escapeAttr(tipParts.join('\n'));
         return `
           <button class="skill-card skill-card--${opt.kind}${weakCls}" data-i="${i}" data-tooltip="${tooltip}">
@@ -103,8 +104,8 @@ export class SkillPicker extends DomOverlay {
       .join('');
     return `
       <div class="skill-picker">
-        <div class="skill-picker-title">LEVEL UP!</div>
-        <div class="skill-picker-subtitle">Choose your reward</div>
+        <div class="skill-picker-title">${STR.skillPicker.title}</div>
+        <div class="skill-picker-subtitle">${STR.skillPicker.subtitle}</div>
         <div class="skill-picker-grid">${cards}</div>
       </div>
     `;

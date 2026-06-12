@@ -3,6 +3,7 @@ import { gameEvents } from './events';
 import { DomOverlay } from './DomOverlay';
 import { curriculumCatalog } from './CurriculumCatalog';
 import type { CurriculumVocab } from './CurriculumTypes';
+import { STR } from '../i18n/strings';
 
 type VocabEntry = CurriculumVocab;
 
@@ -44,7 +45,7 @@ export class QuizManager extends DomOverlay {
     this.onGameEvent('skillpicker:picked', this.resumeInput);
     root.innerHTML = `
       <div class="quiz">
-        <div class="quiz-prompt">Przetłumacz</div>
+        <div class="quiz-prompt">${STR.quiz.prompt}</div>
         <div class="quiz-word"></div>
         <div class="quiz-grid">
           <button class="quiz-opt" data-key="W" data-idx="0" type="button">

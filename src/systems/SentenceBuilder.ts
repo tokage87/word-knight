@@ -3,6 +3,7 @@ import { gameEvents } from './events';
 import { DomOverlay } from './DomOverlay';
 import { curriculumCatalog } from './CurriculumCatalog';
 import { escapeHtml, escapeAttr } from './escape';
+import { STR } from '../i18n/strings';
 import type {
   CurriculumSentence,
   CurriculumStory,
@@ -133,10 +134,10 @@ export class SentenceBuilder extends DomOverlay {
     // gate. The inner sentence UI is identical to single-sentence mode.
     const storyHeader = this.story
       ? `<div class="sentence-story-title">${escapeHtml(this.story.title)}</div>
-         <div class="sentence-story-progress">Zdanie ${this.storyIndex + 1} / ${this.story.sentences.length}${this.mistakes > 0 ? ` · błędy: ${this.mistakes}` : ''}</div>`
+         <div class="sentence-story-progress">${STR.common.sentenceProgress(this.storyIndex + 1, this.story.sentences.length)}${this.mistakes > 0 ? STR.sentence.mistakesSuffix(this.mistakes) : ''}</div>`
       : '';
-    const kindLabel = this.story ? 'STORY' : 'TASK';
-    const subtitle = this.story ? 'Ułóż opowieść' : 'Ułóż zdanie';
+    const kindLabel = this.story ? STR.sentence.kindStory : STR.sentence.kindTask;
+    const subtitle = this.story ? STR.sentence.subtitleStory : STR.sentence.subtitleSentence;
 
     // data-word stores the raw word in an attribute position (escapeAttr).
     // The browser decodes HTML entities when reading dataset.word, so the

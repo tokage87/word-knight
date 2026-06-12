@@ -95,32 +95,5 @@ export const ALL_CATEGORIES: CurriculumCategory[] = [
 
 export const ALL_TIERS: CurriculumTier[] = [1, 2, 3];
 
-export const CATEGORY_LABELS_PL: Record<CurriculumCategory, string> = {
-  all: 'Wszystko',
-  household: 'Dom',
-  school: 'Szkoła',
-  food_kitchen: 'Jedzenie',
-  animals_nature: 'Zwierzęta',
-  town_places: 'Miasto',
-  fantasy_adventure: 'Fantasy',
-};
-
-export const SOURCE_LABELS_PL: Record<CurriculumSource, string> = {
-  legacy: 'Klasyczny',
-  'experimental-tiered': 'Rozszerzony',
-  'experimental-a1': 'CEFR A1',
-  'experimental-a2': 'CEFR A2',
-  'experimental-b1': 'CEFR B1',
-  'experimental-de-exam': 'Niemiecki (egzamin)',
-};
-
-// One-line explanations shown under each source radio. Keep under ~60
-// chars so they fit inline under the label without wrapping.
-export const SOURCE_DESCRIPTIONS_PL: Record<CurriculumSource, string> = {
-  legacy: 'oryginalna lista słówek bez poziomów i tematów',
-  'experimental-tiered': 'nowa lista z trzema poziomami i tematami',
-  'experimental-a1': 'tylko słownictwo A1 (początkujący)',
-  'experimental-a2': 'tylko słownictwo A2 (podstawowy)',
-  'experimental-b1': 'tylko słownictwo B1 (średnio zaawansowany)',
-  'experimental-de-exam': 'ćwiczenia do egzaminu z niemieckiego',
-};
+// Polish display labels for sources/categories live with the rest of
+// the interface strings: see STR.curriculum in src/i18n/strings.ts.

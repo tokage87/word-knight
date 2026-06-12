@@ -5,6 +5,7 @@ import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/C
 import type { ListeningSentence } from '../systems/UnlockGates';
 import { cancelSpeak, isTtsSupported, sourceLangCode, speak } from '../systems/speech';
 import { curriculumCatalog } from '../systems/CurriculumCatalog';
+import { STR } from '../i18n/strings';
 
 // Listening gate — opens for branches with gate.kind === 'listening'
 // (Water / Biblioteka Magii). Shows each English sentence with the
@@ -102,29 +103,29 @@ export class ListeningTask extends DomOverlay {
     let statusLine: string;
     if (!allFilled) {
       const emptyCount = this.filled.filter((v) => v === null).length;
-      statusLine = `<span class="lt-status">Uzupełnij ${emptyCount} ${emptyCount === 1 ? 'brakujące słowo' : 'brakujące słowa'}.</span>`;
+      statusLine = `<span class="lt-status">${STR.listening.fillStatus(emptyCount)}</span>`;
     } else if (allCorrect) {
-      statusLine = '<span class="lt-status lt-status--ok">Świetnie! Możesz iść dalej.</span>';
+      statusLine = `<span class="lt-status lt-status--ok">${STR.listening.allCorrect}</span>`;
     } else {
-      statusLine = '<span class="lt-status lt-status--bad">Jedno lub więcej słów jest złe — kliknij w czerwone pole, żeby je wyczyścić.</span>';
+      statusLine = `<span class="lt-status lt-status--bad">${STR.listening.hasWrong}</span>`;
     }
 
     const speakHtml = isTtsSupported()
-      ? `<button class="lt-speak" type="button"><span class="lt-speak-ico" aria-hidden="true">🔊</span><span>Odsłuchaj zdanie</span></button>`
-      : `<div class="lt-no-tts">Twoja przeglądarka nie obsługuje odtwarzania mowy.</div>`;
+      ? `<button class="lt-speak" type="button"><span class="lt-speak-ico" aria-hidden="true">🔊</span><span>${STR.listening.listenButton}</span></button>`
+      : `<div class="lt-no-tts">${STR.listening.noTts}</div>`;
 
-    const nextLabel = this.idx + 1 < total ? 'DALEJ' : 'GOTOWE';
+    const nextLabel = this.idx + 1 < total ? STR.common.next : STR.common.done;
 
     this.root.innerHTML = `
       <div class="wt-panel paper-scroll">
         <div class="wt-header">
           <div class="wt-icon-slot"><span class="wt-icon">${branch.icon}</span></div>
           <div class="wt-title-block">
-            <div class="wt-title">${escapeHtml(branch.label)} — słuchanie</div>
-            <div class="wt-prompt-pl">Posłuchaj zdania i uzupełnij brakujące słowa z puli poniżej.</div>
-            <div class="wt-prompt-en">Zdanie ${this.idx + 1} / ${total}</div>
+            <div class="wt-title">${STR.listening.title(escapeHtml(branch.label))}</div>
+            <div class="wt-prompt-pl">${STR.listening.instruction}</div>
+            <div class="wt-prompt-en">${STR.common.sentenceProgress(this.idx + 1, total)}</div>
           </div>
-          <button class="wt-close" type="button" aria-label="Zamknij"></button>
+          <button class="wt-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
         <div class="lt-body">
           ${speakHtml}
@@ -133,7 +134,7 @@ export class ListeningTask extends DomOverlay {
           ${statusLine}
         </div>
         <div class="wt-footer">
-          <button class="wt-cancel" type="button">ANULUJ</button>
+          <button class="wt-cancel" type="button">${STR.common.cancel}</button>
           <button class="wt-submit" type="button"${allCorrect ? '' : ' disabled'}>${nextLabel}</button>
         </div>
       </div>

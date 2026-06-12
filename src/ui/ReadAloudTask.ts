@@ -4,6 +4,7 @@ import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import { isSrSupported, listen, sourceLangCode, tokenizeEn, tokenOverlap } from '../systems/speech';
 import { curriculumCatalog } from '../systems/CurriculumCatalog';
+import { STR } from '../i18n/strings';
 
 // Read-aloud gate — opens for branches with gate.kind === 'readAloud'
 // (Fire / Sala Bojowa). Shows an English sentence and asks the student
@@ -80,24 +81,24 @@ export class ReadAloudTask extends DomOverlay {
         <div class="ra-body">
           <div class="ra-sentence">${wordsHtml}</div>
           ${hintBlock}
-          <div class="ra-type-note">Wpisz zdanie dokładnie tak, jak je widzisz:</div>
-          <textarea class="ra-input" spellcheck="false" placeholder="Wpisz po angielsku…">${escapeHtml(this.typed)}</textarea>
+          <div class="ra-type-note">${STR.readAloud.typeNote}</div>
+          <textarea class="ra-input" spellcheck="false" placeholder="${STR.readAloud.typePlaceholder}">${escapeHtml(this.typed)}</textarea>
         </div>
       `;
     } else {
       const statusLine = this.busy
-        ? '<span class="ra-status ra-status--busy">Słucham… powiedz zdanie wyraźnie i kliknij, gdy skończysz.</span>'
+        ? `<span class="ra-status ra-status--busy">${STR.readAloud.listeningStatus}</span>`
         : this.lastTranscript
-          ? `<span class="ra-status">Usłyszałem: <b>${escapeHtml(this.lastTranscript)}</b></span>`
-          : '<span class="ra-status">Kliknij mikrofon i przeczytaj zdanie na głos.</span>';
+          ? `<span class="ra-status">${STR.readAloud.heardPrefix} <b>${escapeHtml(this.lastTranscript)}</b></span>`
+          : `<span class="ra-status">${STR.readAloud.clickMic}</span>`;
 
       const attemptsLine =
         this.attempts > 0 && this.attempts < MAX_ATTEMPTS
-          ? `<div class="ra-attempts">Próba ${this.attempts} / ${MAX_ATTEMPTS}</div>`
+          ? `<div class="ra-attempts">${STR.readAloud.attempts(this.attempts, MAX_ATTEMPTS)}</div>`
           : '';
       const maxedOut = this.attempts >= MAX_ATTEMPTS;
       const fallbackBtn = maxedOut
-        ? `<button class="ra-fallback" type="button">Wolę wpisać zdanie</button>`
+        ? `<button class="ra-fallback" type="button">${STR.readAloud.preferTyping}</button>`
         : '';
 
       body = `
@@ -106,7 +107,7 @@ export class ReadAloudTask extends DomOverlay {
           ${hintBlock}
           <button class="ra-mic${this.busy ? ' ra-mic--busy' : ''}" type="button"${this.busy ? ' disabled' : ''}>
             <span class="ra-mic-ico" aria-hidden="true">🎤</span>
-            <span>${this.busy ? 'Słucham…' : 'Naciśnij i mów'}</span>
+            <span>${this.busy ? STR.readAloud.micBusy : STR.readAloud.micIdle}</span>
           </button>
           ${statusLine}
           ${attemptsLine}
@@ -124,16 +125,16 @@ export class ReadAloudTask extends DomOverlay {
         <div class="wt-header">
           <div class="wt-icon-slot"><span class="wt-icon">${branch.icon}</span></div>
           <div class="wt-title-block">
-            <div class="wt-title">${escapeHtml(branch.label)} — czytanie na głos</div>
-            <div class="wt-prompt-pl">${this.typingFallback ? 'Mikrofon niedostępny. Wpisz zdanie ręcznie, żeby przejść.' : 'Naciśnij mikrofon i przeczytaj angielskie zdanie na głos.'}</div>
-            <div class="wt-prompt-en">${this.typingFallback ? 'Typing mode' : 'Speak aloud'}</div>
+            <div class="wt-title">${STR.readAloud.title(escapeHtml(branch.label))}</div>
+            <div class="wt-prompt-pl">${this.typingFallback ? STR.readAloud.typingPrompt : STR.readAloud.micPrompt}</div>
+            <div class="wt-prompt-en">${this.typingFallback ? STR.readAloud.typingMode : STR.readAloud.speakAloud}</div>
           </div>
-          <button class="wt-close" type="button" aria-label="Zamknij"></button>
+          <button class="wt-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
         ${body}
         <div class="wt-footer">
-          <button class="wt-cancel" type="button">ANULUJ</button>
-          <button class="wt-submit" type="button"${submitDisabled ? ' disabled' : ''}>GOTOWE</button>
+          <button class="wt-cancel" type="button">${STR.common.cancel}</button>
+          <button class="wt-submit" type="button"${submitDisabled ? ' disabled' : ''}>${STR.common.done}</button>
         </div>
       </div>
     `;

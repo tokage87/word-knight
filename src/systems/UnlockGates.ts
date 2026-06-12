@@ -10,16 +10,14 @@
 // new kind = one entry in GateKind + a new payload interface + one new
 // task UI class that listens on `writing:start` and handles its own kind.
 
+import { STR } from '../i18n/strings';
+
 export type GateKind = 'writing' | 'listening' | 'readAloud' | 'cloze';
 
 // Call-to-action label shown on the city branch panel before the player
-// starts the gate. Keeps wording consistent across buildings.
-export const GATE_CTA: Record<GateKind, { label: string; sublabel: string }> = {
-  writing:   { label: 'NAPISZ KRÓTKI TEKST',  sublabel: 'Zadanie pisemne po angielsku' },
-  listening: { label: 'POSŁUCHAJ I WYBIERZ',  sublabel: 'Słuchanie + wybieranie słów' },
-  readAloud: { label: 'PRZECZYTAJ NA GŁOS',   sublabel: 'Czytanie na głos z mikrofonem' },
-  cloze:     { label: 'UZUPEŁNIJ ZDANIA',     sublabel: 'Gramatyka — wstaw brakujące słowo' },
-};
+// starts the gate. Keeps wording consistent across buildings. The
+// actual strings live in the i18n module with the rest of the UI text.
+export const GATE_CTA: Record<GateKind, { label: string; sublabel: string }> = STR.gates.cta;
 
 export interface WritingPayload {
   kind: 'writing';

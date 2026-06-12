@@ -8,18 +8,13 @@ import {
   ALL_CATEGORIES,
   ALL_SOURCES,
   ALL_TIERS,
-  CATEGORY_LABELS_PL,
-  SOURCE_DESCRIPTIONS_PL,
-  SOURCE_LABELS_PL,
   type CurriculumCategory,
   type CurriculumSelection,
   type CurriculumSource,
   type CurriculumTier,
 } from '../systems/CurriculumTypes';
 import { SkillTreeView } from './SkillTreeView';
-
-// Sun-first matches Date.getDay()'s 0–6 indexing.
-const WEEKDAY_LABELS_PL = ['Nd', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'];
+import { STR } from '../i18n/strings';
 
 // HTML overlay for the City's branch-detail view. Lives in
 // #city-overlay-root. Opens on `city:branchClick`, renders the
@@ -124,7 +119,7 @@ export class CityOverlay extends DomOverlay {
       const bucket = activity[key] ?? { msPlayed: 0, quizCorrect: 0, newWords: 0 };
       days.push({
         key,
-        label: WEEKDAY_LABELS_PL[d.getDay()] ?? '',
+        label: STR.dashboard.weekdayLabels[d.getDay()] ?? '',
         correct: bucket.quizCorrect,
         ms: bucket.msPlayed,
       });
@@ -147,10 +142,10 @@ export class CityOverlay extends DomOverlay {
     hardWords.sort((a, b) => b.w - a.w || a.c / (a.c + a.w) - b.c / (b.c + b.w));
     const hardWordRows =
       hardWords.length === 0
-        ? '<div>Brak trudnych słów — świetna robota!</div>'
+        ? `<div>${STR.dashboard.noHardWords}</div>`
         : hardWords
             .slice(0, 8)
-            .map((hw) => `<div>⚠️ ${escapeHtml(hw.pl)} (${escapeHtml(hw.en)}) — ${hw.c}/${hw.c + hw.w} poprawnie</div>`)
+            .map((hw) => `<div>${STR.dashboard.hardWordRow(escapeHtml(hw.pl), escapeHtml(hw.en), hw.c, hw.c + hw.w)}</div>`)
             .join('');
 
     const bars = days
@@ -159,7 +154,7 @@ export class CityOverlay extends DomOverlay {
         const isToday = d.key === todayKey;
         const cls = `pd-bar${isToday ? ' pd-bar--today' : ''}${d.correct === 0 ? ' pd-bar--empty' : ''}`;
         return `
-          <div class="${cls}" data-tooltip="${d.key} · ${d.correct} poprawnych · ${Math.round(d.ms / 60000)} min">
+          <div class="${cls}" data-tooltip="${STR.dashboard.barTooltip(d.key, d.correct, Math.round(d.ms / 60000))}">
             <div class="pd-bar-count">${d.correct || ''}</div>
             <div class="pd-bar-fill" style="height: ${heightPct}%"></div>
             <div class="pd-bar-label">${escapeHtml(d.label)}</div>
@@ -171,50 +166,50 @@ export class CityOverlay extends DomOverlay {
       <div class="city-panel paper-scroll pd-panel">
         <div class="city-panel-header">
           <div class="city-panel-icon-slot"><span class="city-panel-icon">📊</span></div>
-          <div class="city-panel-title">Dla rodzica</div>
-          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+          <div class="city-panel-title">${STR.dashboard.title}</div>
+          <button class="city-panel-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
         <div class="pd-stats">
           <div class="pd-stat">
             <div class="pd-stat-num">${wordsKnown}</div>
-            <div class="pd-stat-label">Słów poznanych</div>
+            <div class="pd-stat-label">${STR.dashboard.wordsKnown}</div>
           </div>
           <div class="pd-stat">
             <div class="pd-stat-num">${streak}</div>
-            <div class="pd-stat-label">Dni z rzędu</div>
+            <div class="pd-stat-label">${STR.dashboard.dayStreak}</div>
           </div>
           <div class="pd-stat">
             <div class="pd-stat-num">${totalMin}</div>
-            <div class="pd-stat-label">Minut zabawy</div>
+            <div class="pd-stat-label">${STR.dashboard.minutesPlayed}</div>
           </div>
           <div class="pd-stat">
             <div class="pd-stat-num">${lifetime.runs}</div>
-            <div class="pd-stat-label">Przygód</div>
+            <div class="pd-stat-label">${STR.dashboard.runs}</div>
           </div>
         </div>
-        <div class="pd-section-label">Aktywność tygodnia (poprawne odpowiedzi)</div>
+        <div class="pd-section-label">${STR.dashboard.weekActivity}</div>
         <div class="pd-bars">${bars}</div>
-        <div class="pd-section-label">Trudne słowa</div>
+        <div class="pd-section-label">${STR.dashboard.hardWords}</div>
         <div class="pd-totals">${hardWordRows}</div>
-        <div class="pd-section-label">Łącznie</div>
+        <div class="pd-section-label">${STR.dashboard.totals}</div>
         <div class="pd-totals">
-          <div>✅ ${lifetime.quizCorrect} poprawnych odpowiedzi</div>
-          <div>👹 ${lifetime.bossesKilled} bossów pokonanych</div>
-          <div>📚 ${lifetime.perfectStories} historii ułożonych bezbłędnie</div>
-          <div>✍️ ${lifetime.writingTasksDone} zadań pisemnych</div>
+          <div>${STR.dashboard.totalCorrect(lifetime.quizCorrect)}</div>
+          <div>${STR.dashboard.totalBosses(lifetime.bossesKilled)}</div>
+          <div>${STR.dashboard.totalStories(lifetime.perfectStories)}</div>
+          <div>${STR.dashboard.totalWriting(lifetime.writingTasksDone)}</div>
         </div>
-        <div class="pd-section-label">Kopia zapasowa</div>
+        <div class="pd-section-label">${STR.dashboard.backupSection}</div>
         <div class="pd-backup">
-          <div class="pd-backup-hint">Eksportuj kod, żeby zachować postęp lub przenieść go na inne urządzenie. Wklej kod i naciśnij „Wczytaj", żeby przywrócić.</div>
-          <textarea class="pd-backup-code" rows="3" spellcheck="false" placeholder="Tu pojawi się kod kopii — albo wklej swój, żeby przywrócić postęp."></textarea>
+          <div class="pd-backup-hint">${STR.dashboard.backupHint}</div>
+          <textarea class="pd-backup-code" rows="3" spellcheck="false" placeholder="${STR.dashboard.backupPlaceholder}"></textarea>
           <div class="pd-backup-row">
-            <button class="pd-backup-export" type="button">Eksportuj postęp</button>
-            <button class="pd-backup-import" type="button">Wczytaj</button>
+            <button class="pd-backup-export" type="button">${STR.dashboard.backupExport}</button>
+            <button class="pd-backup-import" type="button">${STR.dashboard.backupImport}</button>
             <span class="pd-backup-msg" aria-live="polite">${backupNotice ? escapeHtml(backupNotice) : ''}</span>
           </div>
         </div>
         <div class="city-panel-footer">
-          <button class="city-panel-back" type="button">WRÓĆ</button>
+          <button class="city-panel-back" type="button">${STR.common.back}</button>
         </div>
       </div>
     `;
@@ -239,7 +234,7 @@ export class CityOverlay extends DomOverlay {
     this.root.querySelector('.pd-backup-export')?.addEventListener('click', () => {
       const code = metaStore.exportSave();
       if (!code) {
-        showMsg('Nie udało się utworzyć kodu.', true);
+        showMsg(STR.dashboard.backupExportFailed, true);
         return;
       }
       if (textarea) {
@@ -251,26 +246,26 @@ export class CityOverlay extends DomOverlay {
       const clipboard = navigator.clipboard;
       if (clipboard?.writeText) {
         clipboard.writeText(code).then(
-          () => showMsg('Skopiowano! Zachowaj kod w bezpiecznym miejscu.', false),
-          () => showMsg('Kod gotowy — skopiuj go z pola powyżej.', false),
+          () => showMsg(STR.dashboard.backupCopied, false),
+          () => showMsg(STR.dashboard.backupCopyManually, false),
         );
       } else {
-        showMsg('Kod gotowy — skopiuj go z pola powyżej.', false);
+        showMsg(STR.dashboard.backupCopyManually, false);
       }
     });
 
     this.root.querySelector('.pd-backup-import')?.addEventListener('click', () => {
       const code = textarea?.value.trim() ?? '';
       if (!code) {
-        showMsg('Najpierw wklej kod w polu powyżej.', true);
+        showMsg(STR.dashboard.backupPasteFirst, true);
         return;
       }
       if (metaStore.importSave(code)) {
         // Re-render so the stat tiles reflect the restored save; the
         // notice rides along so the confirmation survives the redraw.
-        this.renderParentDashboard('Wczytano! Postęp przywrócony.');
+        this.renderParentDashboard(STR.dashboard.backupImported);
       } else {
-        showMsg('Nieprawidłowy kod.', true);
+        showMsg(STR.dashboard.backupInvalid, true);
       }
     });
   }
@@ -282,19 +277,19 @@ export class CityOverlay extends DomOverlay {
       <div class="city-panel paper-scroll">
         <div class="city-panel-header">
           <div class="city-panel-icon-slot"><span class="city-panel-icon">🪙</span></div>
-          <div class="city-panel-title">Targowisko</div>
-          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+          <div class="city-panel-title">${STR.city.stall.title}</div>
+          <button class="city-panel-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
         <div class="city-challenge">
-          <div class="city-challenge-label">Sklep wkrótce</div>
-          <div class="city-challenge-body">Kupiec szykuje pierwsze towary. Wpadnij za parę przygód.</div>
+          <div class="city-challenge-label">${STR.city.stall.comingSoonLabel}</div>
+          <div class="city-challenge-body">${STR.city.stall.comingSoonBody}</div>
         </div>
         <div class="city-tree-locked-hint" style="text-align: center; line-height: 1.6;">
-          Złoto zdobywasz pokonując wrogów. Im dłuższe pasmo poprawnych odpowiedzi w quizie, tym szybciej zdobywasz monety dzięki przyspieszonym aliantom.
+          ${STR.city.stall.goldHint}
         </div>
         <div class="city-panel-footer">
           <span class="city-gold"><span class="city-gold-coin" aria-hidden="true"></span><span class="city-gold-val">${gold}</span></span>
-          <button class="city-panel-back" type="button">WRÓĆ</button>
+          <button class="city-panel-back" type="button">${STR.common.back}</button>
         </div>
       </div>
     `;
@@ -331,11 +326,11 @@ export class CityOverlay extends DomOverlay {
 
     const challengeBlock = unlocked
       ? `<div class="city-challenge">
-           <div class="city-challenge-label">Drzewo umiejętności odblokowane</div>
-           <div class="city-challenge-body"><span class="city-challenge-done">✓ Odblokowane</span></div>
+           <div class="city-challenge-label">${STR.city.panel.treeUnlockedLabel}</div>
+           <div class="city-challenge-body"><span class="city-challenge-done">${STR.city.panel.treeUnlockedBody}</span></div>
          </div>`
       : `<div class="city-challenge">
-           <div class="city-challenge-label">Wyzwanie:</div>
+           <div class="city-challenge-label">${STR.city.panel.challengeLabel}</div>
            <div class="city-challenge-body"><b>${escapeHtml(cta.sublabel)}</b></div>
            <button class="city-task-start" type="button" data-branch="${branch.id}">
              <span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>${escapeHtml(cta.label)}</span>
@@ -344,20 +339,20 @@ export class CityOverlay extends DomOverlay {
 
     const bodyBlock = unlocked
       ? `<div class="city-tree-host" data-branch="${branch.id}"></div>`
-      : `<div class="city-tree-locked-hint">Odblokuj to wyzwanie, żeby zobaczyć drzewo umiejętności.</div>`;
+      : `<div class="city-tree-locked-hint">${STR.city.panel.lockedHint}</div>`;
 
     this.root.innerHTML = `
       <div class="city-panel paper-scroll">
         <div class="city-panel-header">
           <div class="city-panel-icon-slot"><span class="city-panel-icon">${branch.icon}</span></div>
           <div class="city-panel-title">${escapeHtml(branch.label)}</div>
-          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+          <button class="city-panel-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
         ${challengeBlock}
         ${bodyBlock}
         <div class="city-panel-footer">
           <span class="city-gold"><span class="city-gold-coin" aria-hidden="true"></span><span class="city-gold-val">${gold}</span></span>
-          <button class="city-panel-back" type="button">WRÓĆ</button>
+          <button class="city-panel-back" type="button">${STR.common.back}</button>
         </div>
       </div>
     `;
@@ -391,25 +386,25 @@ export class CityOverlay extends DomOverlay {
     const submissions = metaStore.getWritingSubmissions();
     const bodyBlock =
       submissions.length === 0
-        ? `<div class="city-journal-empty">Ukończ pierwsze wyzwanie, żeby zobaczyć wpisy tutaj.</div>`
+        ? `<div class="city-journal-empty">${STR.city.journal.empty}</div>`
         : `<div class="city-journal-list">${submissions.map(renderSubmissionCard).join('')}</div>`;
 
     const summary =
       submissions.length === 0
-        ? 'Brak wpisów'
-        : `${submissions.length} ${submissionCountWord(submissions.length)} · ostatni ${relativeTime(submissions[0]!.submittedAt)}`;
+        ? STR.city.journal.noEntries
+        : `${submissions.length} ${STR.city.journal.entryCountWord(submissions.length)} · ${STR.city.journal.lastEntryPrefix} ${relativeTime(submissions[0]!.submittedAt)}`;
 
     this.root.innerHTML = `
       <div class="city-panel city-journal-panel paper-scroll">
         <div class="city-panel-header">
           <div class="city-panel-icon-slot"><span class="city-panel-icon">📖</span></div>
-          <div class="city-panel-title">Dziennik postępów</div>
-          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+          <div class="city-panel-title">${STR.city.journal.title}</div>
+          <button class="city-panel-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
         <div class="city-journal-summary">${escapeHtml(summary)}</div>
         ${bodyBlock}
         <div class="city-panel-footer">
-          <button class="city-panel-back" type="button">WRÓĆ</button>
+          <button class="city-panel-back" type="button">${STR.common.back}</button>
         </div>
       </div>
     `;
@@ -447,8 +442,8 @@ export class CityOverlay extends DomOverlay {
         <label class="cu-source-row">
           <input type="radio" name="cu-source" value="${s}" ${checked} />
           <span class="cu-source-text">
-            <span class="cu-source-label">${escapeHtml(SOURCE_LABELS_PL[s])}</span>
-            <span class="cu-source-desc">${escapeHtml(SOURCE_DESCRIPTIONS_PL[s])}</span>
+            <span class="cu-source-label">${escapeHtml(STR.curriculum.sourceLabels[s])}</span>
+            <span class="cu-source-desc">${escapeHtml(STR.curriculum.sourceDescriptions[s])}</span>
           </span>
         </label>
       `;
@@ -457,7 +452,7 @@ export class CityOverlay extends DomOverlay {
     const tierBlock =
       draft.source === 'experimental-tiered'
         ? `<div class="cu-row">
-             <div class="cu-row-label">Poziom:</div>
+             <div class="cu-row-label">${STR.curriculum.tierLabel}</div>
              <div class="cu-tier-row">
                ${ALL_TIERS.map((t) => {
                  const active = draft.tier === t ? 'cu-tier-btn--active' : '';
@@ -473,11 +468,11 @@ export class CityOverlay extends DomOverlay {
     const showCategories = draft.source !== 'legacy';
     const categoryChips = ALL_CATEGORIES.map((c) => {
       const active = c === draft.category ? 'cu-cat-chip--active' : '';
-      return `<button type="button" class="cu-cat-chip ${active}" data-cat="${c}">${escapeHtml(CATEGORY_LABELS_PL[c])}</button>`;
+      return `<button type="button" class="cu-cat-chip ${active}" data-cat="${c}">${escapeHtml(STR.curriculum.categoryLabels[c])}</button>`;
     }).join('');
     const categoryBlock = showCategories
       ? `<div class="cu-row">
-           <div class="cu-row-label">Kategoria:</div>
+           <div class="cu-row-label">${STR.curriculum.categoryLabel}</div>
            <div class="cu-cat-row">${categoryChips}</div>
          </div>`
       : '';
@@ -486,25 +481,25 @@ export class CityOverlay extends DomOverlay {
       <div class="city-panel city-curriculum-panel paper-scroll">
         <div class="city-panel-header">
           <div class="city-panel-icon-slot"><span class="city-panel-icon">⚙️</span></div>
-          <div class="city-panel-title">Ustawienia — Plan nauki</div>
-          <button class="city-panel-close" type="button" aria-label="Zamknij"></button>
+          <div class="city-panel-title">${STR.curriculum.title}</div>
+          <button class="city-panel-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
         <div class="cu-body">
           <div class="cu-row">
-            <div class="cu-row-label">Źródło:</div>
+            <div class="cu-row-label">${STR.curriculum.sourceLabel}</div>
             <div class="cu-source-list">${sourceRows}</div>
           </div>
           ${tierBlock}
           ${categoryBlock}
           <div class="cu-summary">
-            Aktywna pula: <b>${summary.vocab}</b> słówek ·
-            <b>${summary.sentences}</b> zdań ·
-            <b>${summary.stories}</b> opowieści
+            ${STR.curriculum.poolPrefix} <b>${summary.vocab}</b> ${STR.curriculum.poolVocabWord} ·
+            <b>${summary.sentences}</b> ${STR.curriculum.poolSentencesWord} ·
+            <b>${summary.stories}</b> ${STR.curriculum.poolStoriesWord}
           </div>
         </div>
         <div class="city-panel-footer">
-          <button class="cu-save" type="button">ZAPISZ</button>
-          <button class="city-panel-back" type="button">WRÓĆ</button>
+          <button class="cu-save" type="button">${STR.common.save}</button>
+          <button class="city-panel-back" type="button">${STR.common.back}</button>
         </div>
       </div>
     `;
@@ -561,35 +556,25 @@ function renderSubmissionCard(s: WritingSubmission): string {
       </div>
       <div class="city-journal-prompt"><b>${escapeHtml(s.prompt)}</b></div>
       <div class="city-journal-meters">
-        <span class="city-journal-meter">Słów: <b>${s.wordCount}</b></span>
-        <span class="city-journal-meter">Różnych: <b>${s.distinctCount}</b></span>
+        <span class="city-journal-meter">${STR.city.journal.wordsLabel} <b>${s.wordCount}</b></span>
+        <span class="city-journal-meter">${STR.city.journal.distinctLabel} <b>${s.distinctCount}</b></span>
       </div>
       <div class="city-journal-text">${escapeHtml(s.text)}</div>
     </div>
   `;
 }
 
-function submissionCountWord(n: number): string {
-  // Polish plural: 1 wpis, 2-4 wpisy, 5+ wpisów. Handles teens
-  // correctly (12 wpisów, not 12 wpisy).
-  const abs = Math.abs(n);
-  if (abs === 1) return 'wpis';
-  const last = abs % 10;
-  const last2 = abs % 100;
-  if (last >= 2 && last <= 4 && (last2 < 12 || last2 > 14)) return 'wpisy';
-  return 'wpisów';
-}
-
 function relativeTime(ts: number): string {
+  const t = STR.city.journal.relTime;
   const diff = Date.now() - ts;
   const mins = Math.floor(diff / 60_000);
-  if (mins < 1) return 'przed chwilą';
-  if (mins < 60) return `${mins} min temu`;
+  if (mins < 1) return t.justNow;
+  if (mins < 60) return t.minutesAgo(mins);
   const hours = Math.floor(mins / 60);
-  if (hours < 24) return `${hours} godz. temu`;
+  if (hours < 24) return t.hoursAgo(hours);
   const days = Math.floor(hours / 24);
-  if (days < 30) return `${days} dni temu`;
-  return `${Math.floor(days / 30)} mies. temu`;
+  if (days < 30) return t.daysAgo(days);
+  return t.monthsAgo(Math.floor(days / 30));
 }
 
 function formatAbsoluteDate(ts: number): string {

@@ -14,6 +14,7 @@
 // who never click "Sprawdź szczegółowo" don't pay for it in the main
 // bundle.
 import type { MLCEngineInterface, InitProgressReport } from '@mlc-ai/web-llm';
+import { STR } from '../i18n/strings';
 
 export interface DeepProgress {
   phase: 'download' | 'ready' | 'error';
@@ -64,7 +65,7 @@ export class DeepJudge {
           });
         },
       });
-      this.emitProgress({ phase: 'ready', percent: 100, text: 'Gotowe' });
+      this.emitProgress({ phase: 'ready', percent: 100, text: STR.deep.ready });
       return engine;
     } catch (e) {
       // Surface the failure to progress listeners (so the UI bar doesn't
@@ -74,7 +75,7 @@ export class DeepJudge {
       this.emitProgress({
         phase: 'error',
         percent: 0,
-        text: (e as Error)?.message ?? 'Nie udało się załadować modelu',
+        text: (e as Error)?.message ?? STR.deep.loadFailed,
       });
       this.enginePromise = undefined;
       throw e;
@@ -142,7 +143,7 @@ function parseVerdict(raw: string): DeepVerdict {
     : 3;
   const commentMatch = raw.match(/KOMENTARZ\s*[:\-]\s*([\s\S]*)/i);
   const feedback = (commentMatch ? commentMatch[1] : raw).trim();
-  return { score, feedback: feedback || 'Brak komentarza.' };
+  return { score, feedback: feedback || STR.deep.noComment };
 }
 
 export const deepJudge = new DeepJudge();

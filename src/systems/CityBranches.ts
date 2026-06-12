@@ -11,6 +11,7 @@
 
 import { metaStore, type WritingSubmission } from './MetaStore';
 import { curriculumCatalog } from './CurriculumCatalog';
+import { STR } from '../i18n/strings';
 import type { CurriculumSentence } from './CurriculumTypes';
 import {
   GATE_CTA,
@@ -67,7 +68,7 @@ export function countWords(text: string): { total: number; distinct: number } {
 // ─────────────────────────────────────────────────────────────────
 const combat: BranchDef = {
   id: 'combat',
-  label: 'Sala Bojowa',
+  label: STR.city.branchLabels.combat,
   icon: '🛡',
   gate: {
     kind: 'readAloud',
@@ -87,7 +88,7 @@ const combat: BranchDef = {
 // ─────────────────────────────────────────────────────────────────
 const spells: BranchDef = {
   id: 'spells',
-  label: 'Biblioteka Magii',
+  label: STR.city.branchLabels.spells,
   icon: '🔮',
   gate: {
     kind: 'listening',
@@ -127,7 +128,7 @@ const spells: BranchDef = {
 // ─────────────────────────────────────────────────────────────────
 const scholar: BranchDef = {
   id: 'scholar',
-  label: 'Krąg Uczonych',
+  label: STR.city.branchLabels.scholar,
   icon: '📚',
   gate: {
     kind: 'cloze',
@@ -183,7 +184,7 @@ const scholar: BranchDef = {
 // ─────────────────────────────────────────────────────────────────
 const writer: BranchDef = {
   id: 'writer',
-  label: 'Gildia Pisarzy',
+  label: STR.city.branchLabels.writer,
   icon: '✍',
   gate: {
     kind: 'writing',

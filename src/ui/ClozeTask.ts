@@ -3,6 +3,7 @@ import { gameEvents } from '../systems/events';
 import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import type { ClozeItem } from '../systems/UnlockGates';
+import { STR } from '../i18n/strings';
 
 // Cloze gate — opens for branches with gate.kind === 'cloze'
 // (Wind / Krąg Uczonych). Renders a sentence with a visible GAP and
@@ -75,11 +76,11 @@ export class ClozeTask extends DomOverlay {
         <div class="wt-header">
           <div class="wt-icon-slot"><span class="wt-icon">${branch.icon}</span></div>
           <div class="wt-title-block">
-            <div class="wt-title">${escapeHtml(branch.label)} — uzupełnij zdania</div>
-            <div class="wt-prompt-pl">Wybierz poprawne słowo, żeby uzupełnić zdanie.</div>
-            <div class="wt-prompt-en">Zdanie ${this.idx + 1} / ${total}</div>
+            <div class="wt-title">${STR.cloze.title(escapeHtml(branch.label))}</div>
+            <div class="wt-prompt-pl">${STR.cloze.instruction}</div>
+            <div class="wt-prompt-en">${STR.common.sentenceProgress(this.idx + 1, total)}</div>
           </div>
-          <button class="wt-close" type="button" aria-label="Zamknij"></button>
+          <button class="wt-close" type="button" aria-label="${STR.common.close}"></button>
         </div>
         <div class="cz-body">
           <div class="cz-sentence">
@@ -91,8 +92,8 @@ export class ClozeTask extends DomOverlay {
           <div class="cz-opts">${optionsHtml}</div>
         </div>
         <div class="wt-footer">
-          <button class="wt-cancel" type="button">ANULUJ</button>
-          <button class="wt-submit" type="button" disabled>${this.idx + 1 < total ? 'DALEJ' : 'GOTOWE'}</button>
+          <button class="wt-cancel" type="button">${STR.common.cancel}</button>
+          <button class="wt-submit" type="button" disabled>${this.idx + 1 < total ? STR.common.next : STR.common.done}</button>
         </div>
       </div>
     `;

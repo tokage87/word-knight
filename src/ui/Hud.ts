@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { STR } from '../i18n/strings';
 
 // Plain HTML HUD overlay. Keeps all HUD elements in `#hud-root` in
 // index.html and mutates live values per frame from the game registry.
@@ -190,7 +191,7 @@ export class Hud {
 
     const expPct = (registry.get('expPct') as number | undefined) ?? 0;
     if (this.expFill) this.expFill.style.width = `${Math.min(100, expPct)}%`;
-    if (this.expText) this.expText.textContent = `LV: ${level}`;
+    if (this.expText) this.expText.textContent = STR.hud.levelLabel(level);
 
     const bossAlive = registry.get('bossAlive') as boolean | undefined;
     if (this.bossBar) {
@@ -223,8 +224,8 @@ export class Hud {
     banner.className = 'flow-banner';
     banner.innerHTML = `
       <div class="flow-banner-flame">🔥</div>
-      <div class="flow-banner-title">FLOW!</div>
-      <div class="flow-banner-sub">Cooldowny 2× szybciej</div>
+      <div class="flow-banner-title">${STR.hud.flowTitle}</div>
+      <div class="flow-banner-sub">${STR.hud.flowSub}</div>
     `;
     this.root.appendChild(banner);
     // setTimeout(0) instead of rAF — rAF is throttled to 0 in
@@ -243,8 +244,8 @@ export class Hud {
     const banner = document.createElement('div');
     banner.className = 'ult-unlock-banner';
     banner.innerHTML = `
-      <div class="ult-unlock-title">ULTIMATE GOTOWY!</div>
-      <div class="ult-unlock-sub">Uderza w każdego wroga · 120 s</div>
+      <div class="ult-unlock-title">${STR.hud.ultReadyTitle}</div>
+      <div class="ult-unlock-sub">${STR.hud.ultReadySub}</div>
     `;
     this.root.appendChild(banner);
     // setTimeout(0) instead of rAF — rAF is throttled to 0 in
@@ -279,13 +280,13 @@ export class Hud {
       // meaning of the counter — so the pause readout feels like an
       // in-game ledger rather than a plain debug dump.
       const quizLines: [string, string, number | string][] = [
-        ['ico-ok', 'Poprawne quizy', stats.quizCorrect ?? 0],
-        ['ico-bad', 'Błędne quizy', stats.quizWrong ?? 0],
-        ['ico-word', 'Poznane słowa', stats.distinctWords ?? 0],
-        ['ico-sentence', 'Zdania bez błędu', stats.sentenceCorrect ?? 0],
-        ['ico-sentence-bad', 'Zdania z błędem', stats.sentenceWrong ?? 0],
-        ['ico-story', 'Opowieści ukończone', stats.storiesPerfect ?? 0],
-        ['ico-story-bad', 'Opowieści nieudane', stats.storiesFailed ?? 0],
+        ['ico-ok', STR.hud.stats.quizCorrect, stats.quizCorrect ?? 0],
+        ['ico-bad', STR.hud.stats.quizWrong, stats.quizWrong ?? 0],
+        ['ico-word', STR.hud.stats.distinctWords, stats.distinctWords ?? 0],
+        ['ico-sentence', STR.hud.stats.sentenceCorrect, stats.sentenceCorrect ?? 0],
+        ['ico-sentence-bad', STR.hud.stats.sentenceWrong, stats.sentenceWrong ?? 0],
+        ['ico-story', STR.hud.stats.storiesPerfect, stats.storiesPerfect ?? 0],
+        ['ico-story-bad', STR.hud.stats.storiesFailed, stats.storiesFailed ?? 0],
       ];
       const quizHtml = quizLines
         .map(([ico, k, v]) =>
@@ -310,29 +311,29 @@ export class Hud {
     };
 
     // HP max — always shown (baseline 100, earned ranks bump it).
-    push('ico-heart', 'Życie (maks.)', String(s.hpMax ?? 100));
+    push('ico-heart', STR.hud.stats.hpMax, String(s.hpMax ?? 100));
 
     // Melee dmg — always shown (baseline 10).
-    push('ico-sword', 'Obrażenia ataku', String(s.meleeDamage ?? 10));
+    push('ico-sword', STR.hud.stats.meleeDamage, String(s.meleeDamage ?? 10));
 
     // Attack speed % — 100% baseline; anything off 100 means a rank
     // was earned.
     if (s.meleeCooldownMs && s.meleeCooldownMs !== BASE_MELEE_COOLDOWN_MS) {
       const pct = Math.round((BASE_MELEE_COOLDOWN_MS / Math.max(1, s.meleeCooldownMs)) * 100);
-      push('ico-speed', 'Szybkość ataku', `${pct}%`);
+      push('ico-speed', STR.hud.stats.attackSpeed, `${pct}%`);
     }
 
     // Earned stats — only show when > 0 to keep the panel tight.
-    if ((s.critChance ?? 0) > 0) push('ico-ok', 'Krytyk', `${Math.round((s.critChance ?? 0) * 100)}%`);
-    if ((s.armor ?? 0) > 0) push('ico-armor', 'Pancerz', `${Math.round((s.armor ?? 0) * 100)}%`);
-    if ((s.lifesteal ?? 0) > 0) push('ico-heart', 'Wampiryzm', `${Math.round((s.lifesteal ?? 0) * 100)}%`);
-    if ((s.dodgeChance ?? 0) > 0) push('ico-ghost', 'Unik', `${Math.round((s.dodgeChance ?? 0) * 100)}%`);
-    if ((s.hpRegen ?? 0) > 0) push('ico-leaf', 'Regeneracja', `${s.hpRegen} HP/s`);
+    if ((s.critChance ?? 0) > 0) push('ico-ok', STR.hud.stats.crit, `${Math.round((s.critChance ?? 0) * 100)}%`);
+    if ((s.armor ?? 0) > 0) push('ico-armor', STR.hud.stats.armor, `${Math.round((s.armor ?? 0) * 100)}%`);
+    if ((s.lifesteal ?? 0) > 0) push('ico-heart', STR.hud.stats.lifesteal, `${Math.round((s.lifesteal ?? 0) * 100)}%`);
+    if ((s.dodgeChance ?? 0) > 0) push('ico-ghost', STR.hud.stats.dodge, `${Math.round((s.dodgeChance ?? 0) * 100)}%`);
+    if ((s.hpRegen ?? 0) > 0) push('ico-leaf', STR.hud.stats.regen, STR.hud.stats.regenValue(s.hpRegen ?? 0));
 
     if (rows.length === 0) return '';
     return `
       <div class="pause-stats-divider"></div>
-      <div class="pause-stats-heading">Twoje statystyki</div>
+      <div class="pause-stats-heading">${STR.hud.stats.heading}</div>
       ${rows.join('')}
     `;
   }
@@ -351,14 +352,14 @@ export class Hud {
       // Same iconified row pattern as the pause panel, with "level
       // reached" pinned to the top and shown with the EXP ribbon chip.
       const lines: [string, string, number | string][] = [
-        ['ico-level', 'Zdobyty poziom', stats.level ?? 1],
-        ['ico-ok', 'Poprawne quizy', stats.quizCorrect ?? 0],
-        ['ico-bad', 'Błędne quizy', stats.quizWrong ?? 0],
-        ['ico-word', 'Poznane słowa', stats.distinctWords ?? 0],
-        ['ico-sentence', 'Zdania bez błędu', stats.sentenceCorrect ?? 0],
-        ['ico-sentence-bad', 'Zdania z błędem', stats.sentenceWrong ?? 0],
-        ['ico-story', 'Opowieści ukończone', stats.storiesPerfect ?? 0],
-        ['ico-story-bad', 'Opowieści nieudane', stats.storiesFailed ?? 0],
+        ['ico-level', STR.hud.stats.level, stats.level ?? 1],
+        ['ico-ok', STR.hud.stats.quizCorrect, stats.quizCorrect ?? 0],
+        ['ico-bad', STR.hud.stats.quizWrong, stats.quizWrong ?? 0],
+        ['ico-word', STR.hud.stats.distinctWords, stats.distinctWords ?? 0],
+        ['ico-sentence', STR.hud.stats.sentenceCorrect, stats.sentenceCorrect ?? 0],
+        ['ico-sentence-bad', STR.hud.stats.sentenceWrong, stats.sentenceWrong ?? 0],
+        ['ico-story', STR.hud.stats.storiesPerfect, stats.storiesPerfect ?? 0],
+        ['ico-story-bad', STR.hud.stats.storiesFailed, stats.storiesFailed ?? 0],
       ];
       this.gameOverStats.innerHTML = lines
         .map(([ico, k, v]) =>
@@ -468,12 +469,12 @@ export class Hud {
     icon.overlay.style.height = `${Math.max(0, Math.min(1, frac)) * 100}%`;
     icon.text.textContent = snap.remainingMs <= 0 ? '' : `${(snap.remainingMs / 1000).toFixed(1)}s`;
     icon.root.classList.toggle('ability--ready', snap.remainingMs <= 0);
-    const status = snap.remainingMs <= 0 ? 'Gotowy' : `${(snap.remainingMs / 1000).toFixed(1)}s`;
+    const status = snap.remainingMs <= 0 ? STR.hud.ready : `${(snap.remainingMs / 1000).toFixed(1)}s`;
     const label = ALLY_LABELS[kind] ?? kind;
     const desc = ALLY_DESCS[kind] ?? '';
     icon.root.setAttribute(
       'data-tooltip',
-      `${label}\n${desc}\nOdnowienie: ${(snap.totalMs / 1000).toFixed(0)}s · ${status}`,
+      STR.hud.allyTooltip(label, desc, (snap.totalMs / 1000).toFixed(0), status),
     );
   }
 
@@ -499,10 +500,10 @@ export class Hud {
     this.ultIcon.overlay.style.height = `${Math.max(0, Math.min(1, frac)) * 100}%`;
     this.ultIcon.text.textContent = remaining <= 0 ? '' : `${(remaining / 1000).toFixed(0)}s`;
     this.ultIcon.root.classList.toggle('ability--ready', remaining <= 0);
-    const status = remaining <= 0 ? 'Gotowy' : `${(remaining / 1000).toFixed(1)}s`;
+    const status = remaining <= 0 ? STR.hud.ready : `${(remaining / 1000).toFixed(1)}s`;
     this.ultIcon.root.setAttribute(
       'data-tooltip',
-      `Ultimate — masowe obrażenia wszystkim wrogom na ekranie.\nOdnowienie: ${(total / 1000).toFixed(0)}s · ${status}\nPoprawna odpowiedź: −3 s · błędna: +1 s`,
+      STR.hud.ultTooltip((total / 1000).toFixed(0), status),
     );
   }
 
@@ -512,55 +513,37 @@ export class Hud {
   }
 }
 
-// Ally labels + short descriptions used by the ability-row tooltip.
-// Keep these in sync with src/entities/Ally.ts AllyKind / PROFILES.
-const ALLY_LABELS: Record<string, string> = {
-  'fire-archer':  'Ognisty Łucznik',
-  'fire-monk':    'Ognisty Mnich',
-  'ice-archer':   'Lodowy Łucznik',
-  'ice-monk':     'Lodowy Mnich',
-  cleric:         'Uzdrowiciel',
-  'wind-monk':    'Wietrzny Mnich',
-  'wind-lancer':  'Wietrzny Lansjer',
-  'earth-pawn':   'Ziemny Pionek',
-  'earth-lancer': 'Ziemny Lansjer',
-};
-const ALLY_DESCS: Record<string, string> = {
-  'fire-archer':  'Strzela ognistymi strzałami w najbliższego wroga.',
-  'fire-monk':    'Rzuca ciężką kulą ognia w pojedynczego wroga.',
-  'ice-archer':   'Strzela lodowymi strzałami, spowalnia wrogów.',
-  'ice-monk':     'Ciska lodowym pociskiem z silnym spowolnieniem.',
-  cleric:         'Regularnie leczy rycerza podczas walki.',
-  'wind-monk':    'Szybko rzuca lekkie pociski wiatru.',
-  'wind-lancer':  'Szybkie pchnięcie przeszywające trzech wrogów.',
-  'earth-pawn':   'Rąbie toporem blisko rycerza.',
-  'earth-lancer': 'Ciężki kamienny pocisk, spowalnia uderzonego wroga.',
-};
+// Ally labels + short descriptions used by the ability-row tooltip
+// (string-indexable views over the typed STR records, since ally kinds
+// arrive here as plain strings from the registry snapshot).
+const ALLY_LABELS: Record<string, string> = STR.hud.allyLabels;
+const ALLY_DESCS: Record<string, string> = STR.hud.allyDescs;
+const ALLY_LOCKED_TIPS = STR.hud.allyLockedTooltips;
 
 const HTML = `
-  <div class="hud-top-right gold-panel" data-tooltip="Złoto zdobyte za zabicia">
+  <div class="hud-top-right gold-panel" data-tooltip="${STR.hud.goldTooltip}">
     <span class="gold-ico"></span>
     <span class="gold-count">x0</span>
   </div>
 
-  <div class="hud-top-center boss-bar" data-tooltip="HP bossa">
-    <div class="boss-label">BOSS</div>
+  <div class="hud-top-center boss-bar" data-tooltip="${STR.hud.bossTooltip}">
+    <div class="boss-label">${STR.hud.bossLabel}</div>
     <div class="boss-track"><div class="boss-fill"></div></div>
   </div>
 
-  <button type="button" class="pause-btn" data-tooltip="Pauza (P)">⏸</button>
+  <button type="button" class="pause-btn" data-tooltip="${STR.hud.pauseBtnTooltip}">⏸</button>
 
   <div class="pause-overlay">
     <div class="pause-panel paper-scroll">
       <div class="panel-title-row">
         <div class="panel-title-icon" aria-hidden="true"></div>
-        <div class="pause-title">PAUZA</div>
+        <div class="pause-title">${STR.hud.pauseTitle}</div>
       </div>
-      <div class="pause-sub">Naciśnij P aby kontynuować</div>
+      <div class="pause-sub">${STR.hud.pauseSub}</div>
       <div class="pause-stats"></div>
       <div class="pause-actions">
-        <button type="button" class="pause-resume">KONTYNUUJ</button>
-        <button type="button" class="pause-city">MIASTO</button>
+        <button type="button" class="pause-resume">${STR.hud.resume}</button>
+        <button type="button" class="pause-city">${STR.hud.toCity}</button>
       </div>
     </div>
   </div>
@@ -569,74 +552,74 @@ const HTML = `
     <div class="gameover-panel paper-scroll">
       <div class="panel-title-row">
         <div class="panel-title-icon panel-title-icon--fallen" aria-hidden="true"></div>
-        <div class="gameover-title">KONIEC GRY</div>
+        <div class="gameover-title">${STR.hud.gameOverTitle}</div>
       </div>
-      <div class="gameover-sub">Twój bieg dobiegł końca — oto jak ci poszło</div>
+      <div class="gameover-sub">${STR.hud.gameOverSub}</div>
       <div class="gameover-stats"></div>
       <div class="gameover-actions">
-        <button type="button" class="gameover-restart">RESTART</button>
-        <button type="button" class="gameover-city">MIASTO</button>
+        <button type="button" class="gameover-restart">${STR.hud.restart}</button>
+        <button type="button" class="gameover-city">${STR.hud.toCity}</button>
       </div>
     </div>
   </div>
 
   <div class="hud-bottom-center">
     <div class="abilities-row">
-      <div class="ability ability--ult ability--locked" data-role="ult" data-tooltip="Ultimate — odblokowuje się na poziomie 10. Masowe obrażenia.">
+      <div class="ability ability--ult ability--locked" data-role="ult" data-tooltip="${STR.hud.ultLockedTooltip}">
         <span class="ability-glyph">⚡</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="fire-archer" data-tooltip="Ognisty Łucznik — zablokowany. Odblokuj w Sali Bojowej.">
+      <div class="ability ability--locked" data-ally="fire-archer" data-tooltip="${ALLY_LOCKED_TIPS['fire-archer']}">
         <span class="ability-glyph">🏹</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="fire-monk" data-tooltip="Ognisty Mnich — zablokowany. Odblokuj w Sali Bojowej.">
+      <div class="ability ability--locked" data-ally="fire-monk" data-tooltip="${ALLY_LOCKED_TIPS['fire-monk']}">
         <span class="ability-glyph">🔥</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="ice-archer" data-tooltip="Lodowy Łucznik — zablokowany. Odblokuj w Bibliotece Magii.">
+      <div class="ability ability--locked" data-ally="ice-archer" data-tooltip="${ALLY_LOCKED_TIPS['ice-archer']}">
         <span class="ability-glyph">❄</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="ice-monk" data-tooltip="Lodowy Mnich — zablokowany. Odblokuj w Bibliotece Magii.">
+      <div class="ability ability--locked" data-ally="ice-monk" data-tooltip="${ALLY_LOCKED_TIPS['ice-monk']}">
         <span class="ability-glyph">🧊</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="cleric" data-tooltip="Uzdrowiciel — zablokowany. Odblokuj w Bibliotece Magii.">
+      <div class="ability ability--locked" data-ally="cleric" data-tooltip="${ALLY_LOCKED_TIPS.cleric}">
         <span class="ability-glyph">✨</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="wind-monk" data-tooltip="Wietrzny Mnich — zablokowany. Odblokuj w Kręgu Uczonych.">
+      <div class="ability ability--locked" data-ally="wind-monk" data-tooltip="${ALLY_LOCKED_TIPS['wind-monk']}">
         <span class="ability-glyph">🌀</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="wind-lancer" data-tooltip="Wietrzny Lansjer — zablokowany. Odblokuj w Kręgu Uczonych.">
+      <div class="ability ability--locked" data-ally="wind-lancer" data-tooltip="${ALLY_LOCKED_TIPS['wind-lancer']}">
         <span class="ability-glyph">🗡</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="earth-pawn" data-tooltip="Ziemny Pionek — zablokowany. Odblokuj w Gildii Pisarzy.">
+      <div class="ability ability--locked" data-ally="earth-pawn" data-tooltip="${ALLY_LOCKED_TIPS['earth-pawn']}">
         <span class="ability-glyph">🪓</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
         <span class="ability-lock">🔒</span>
       </div>
-      <div class="ability ability--locked" data-ally="earth-lancer" data-tooltip="Ziemny Lansjer — zablokowany. Odblokuj w Gildii Pisarzy.">
+      <div class="ability ability--locked" data-ally="earth-lancer" data-tooltip="${ALLY_LOCKED_TIPS['earth-lancer']}">
         <span class="ability-glyph">🪨</span>
         <div class="ability-cd-overlay"></div>
         <span class="ability-cd-text"></span>
@@ -645,14 +628,14 @@ const HTML = `
     </div>
 
     <div class="bars-col">
-      <div class="bar-line" data-tooltip="Zdrowie">
+      <div class="bar-line" data-tooltip="${STR.hud.hpTooltip}">
         <span class="bar-ico bar-ico-img ico-heart"></span>
         <div class="bar-track bar-hp"><div class="bar-fill bar-hp-fill"></div><span class="bar-text bar-hp-text">100 / 100</span></div>
       </div>
-      <div class="bar-line" data-tooltip="Doświadczenie do następnego poziomu">
-        <span class="bar-ico bar-badge badge-exp">EXP</span>
-        <div class="bar-track bar-exp"><div class="bar-fill bar-exp-fill"></div><span class="bar-text bar-exp-text">LV: 1</span></div>
-        <div class="streak-chip" data-tooltip="Seria poprawnych odpowiedzi. 5+ = FLOW (cooldowny 2× szybciej)">
+      <div class="bar-line" data-tooltip="${STR.hud.expTooltip}">
+        <span class="bar-ico bar-badge badge-exp">${STR.hud.expBadge}</span>
+        <div class="bar-track bar-exp"><div class="bar-fill bar-exp-fill"></div><span class="bar-text bar-exp-text">${STR.hud.levelLabel(1)}</span></div>
+        <div class="streak-chip" data-tooltip="${STR.hud.streakTooltip}">
           <span class="streak-flame">🔥</span>
           <span class="streak-count">0</span>
         </div>
