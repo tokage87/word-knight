@@ -6,6 +6,6 @@
 
 Commands:
 
-- `npm run curriculum:bootstrap`
+- `npm run curriculum:bootstrap` — regenerates `master/` from the in-script word banks; aborts if `master/` has uncommitted changes (use `--force` to override)
 - `npm run curriculum:build`
 - `npm run curriculum:validate`

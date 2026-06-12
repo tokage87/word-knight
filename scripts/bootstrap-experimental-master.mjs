@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 import {
   CATEGORY_CONTEXTS,
   CATEGORY_IDS,
@@ -9,6 +10,29 @@ import {
   VOCAB_BANKS,
   slugify,
 } from './experimental-catalog-seed.mjs';
+
+const FORCE = process.argv.includes('--force');
+
+function checkForUncommittedMasterChanges() {
+  if (FORCE) return;
+  try {
+    const output = execSync('git status --porcelain -- src/data/experimental/master', {
+      encoding: 'utf8',
+    }).trim();
+    if (output.length > 0) {
+      console.error(
+        'Error: src/data/experimental/master/ has uncommitted local changes.\n' +
+          'Bootstrapping would overwrite your manual edits.\n' +
+          'Please commit or stash your changes first, or re-run with --force to skip this check.',
+      );
+      process.exit(1);
+    }
+  } catch {
+    console.warn(
+      'Warning: could not run git status (git may not be available). Proceeding anyway.',
+    );
+  }
+}
 const TIERS = [1, 2, 3];
 const STOPWORDS = new Set([
   'the',
@@ -964,6 +988,7 @@ function makeStory(category, tier, entries, storyIndex, tokenPool) {
 }
 
 function bootstrap() {
+  checkForUncommittedMasterChanges();
   ensureDir(EXPERIMENTAL_DIR);
   ensureDir(MASTER_DIR);
 
