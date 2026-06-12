@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import { isSrSupported, listen, sourceLangCode, tokenizeEn, tokenOverlap } from '../systems/speech';
 import { curriculumCatalog } from '../systems/CurriculumCatalog';
@@ -30,9 +31,9 @@ export class ReadAloudTask {
     const root = document.getElementById('writing-task-root');
     if (!root) return;
     this.root = root;
-    this.scene.game.events.on('writing:start', this.open, this);
+    gameEvents(this.scene.game).on('writing:start', this.open, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('writing:start', this.open, this);
+      gameEvents(this.scene.game).off('writing:start', this.open, this);
       window.removeEventListener('keydown', this.onKey);
     });
   }
@@ -209,7 +210,7 @@ export class ReadAloudTask {
     const p = payloadFor(this.branch, 'readAloud')!;
     const record = `SPOKE: "${p.sentence}" heard as "${this.lastTranscript || this.typed}"`;
     submitGate(this.branch, record);
-    this.scene.game.events.emit('writing:completed', { branchId: this.branch });
+    gameEvents(this.scene.game).emit('writing:completed', { branchId: this.branch });
     this.close();
   }
 }

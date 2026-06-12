@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { QuizManager } from '../systems/QuizManager';
 import { SkillPicker } from '../systems/SkillPicker';
 import { SentenceBuilder } from '../systems/SentenceBuilder';
@@ -31,37 +32,37 @@ export class UIScene extends Phaser.Scene {
     this.sentence = new SentenceBuilder(this);
     this.sentence.mount();
 
-    this.game.events.on('spell:reduced', this.hud.flashCooldownBadge, this.hud);
-    this.game.events.on('spell:penalized', this.hud.flashCooldownPenalty, this.hud);
-    this.game.events.on('enemy:killed', this.hud.onEnemyKilled, this.hud);
-    this.game.events.on('boss:spawned', this.hud.onBossSpawned, this.hud);
-    this.game.events.on('ult:unlocked', this.hud.showUltUnlockBanner, this.hud);
-    this.game.events.on('flow:activated', this.hud.showFlowBanner, this.hud);
-    this.game.events.on('ui:pauseChanged', this.onPauseChanged, this);
-    this.game.events.on('ui:gameOver', this.onGameOver, this);
-    this.hud.onPauseButtonClick(() => this.game.events.emit('ui:togglePause'));
-    this.hud.onRestartButtonClick(() => this.game.events.emit('ui:restart'));
-    this.hud.onCityButtonClick(() => this.game.events.emit('ui:openCity'));
-    this.hud.onPauseResumeClick(() => this.game.events.emit('ui:togglePause'));
-    this.hud.onPauseCityClick(() => this.game.events.emit('ui:openCity'));
+    gameEvents(this.game).on('spell:reduced', this.hud.flashCooldownBadge, this.hud);
+    gameEvents(this.game).on('spell:penalized', this.hud.flashCooldownPenalty, this.hud);
+    gameEvents(this.game).on('enemy:killed', this.hud.onEnemyKilled, this.hud);
+    gameEvents(this.game).on('boss:spawned', this.hud.onBossSpawned, this.hud);
+    gameEvents(this.game).on('ult:unlocked', this.hud.showUltUnlockBanner, this.hud);
+    gameEvents(this.game).on('flow:activated', this.hud.showFlowBanner, this.hud);
+    gameEvents(this.game).on('ui:pauseChanged', this.onPauseChanged, this);
+    gameEvents(this.game).on('ui:gameOver', this.onGameOver, this);
+    this.hud.onPauseButtonClick(() => gameEvents(this.game).emit('ui:togglePause'));
+    this.hud.onRestartButtonClick(() => gameEvents(this.game).emit('ui:restart'));
+    this.hud.onCityButtonClick(() => gameEvents(this.game).emit('ui:openCity'));
+    this.hud.onPauseResumeClick(() => gameEvents(this.game).emit('ui:togglePause'));
+    this.hud.onPauseCityClick(() => gameEvents(this.game).emit('ui:openCity'));
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.game.events.off(
+      gameEvents(this.game).off(
         'spell:reduced',
         this.hud.flashCooldownBadge,
         this.hud,
       );
-      this.game.events.off(
+      gameEvents(this.game).off(
         'spell:penalized',
         this.hud.flashCooldownPenalty,
         this.hud,
       );
-      this.game.events.off('enemy:killed', this.hud.onEnemyKilled, this.hud);
-      this.game.events.off('boss:spawned', this.hud.onBossSpawned, this.hud);
-      this.game.events.off('ult:unlocked', this.hud.showUltUnlockBanner, this.hud);
-      this.game.events.off('flow:activated', this.hud.showFlowBanner, this.hud);
-      this.game.events.off('ui:pauseChanged', this.onPauseChanged, this);
-      this.game.events.off('ui:gameOver', this.onGameOver, this);
+      gameEvents(this.game).off('enemy:killed', this.hud.onEnemyKilled, this.hud);
+      gameEvents(this.game).off('boss:spawned', this.hud.onBossSpawned, this.hud);
+      gameEvents(this.game).off('ult:unlocked', this.hud.showUltUnlockBanner, this.hud);
+      gameEvents(this.game).off('flow:activated', this.hud.showFlowBanner, this.hud);
+      gameEvents(this.game).off('ui:pauseChanged', this.onPauseChanged, this);
+      gameEvents(this.game).off('ui:gameOver', this.onGameOver, this);
       // Tear down the HUD's HTML so the game-over / pause overlays
       // don't linger over the City scene (or any scene that follows).
       this.hud.unmount();

@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from './events';
 import { curriculumCatalog } from './CurriculumCatalog';
 import type { CurriculumVocab } from './CurriculumTypes';
 
@@ -38,10 +39,10 @@ export class QuizManager {
     // story gate reuses the sentence UI but emits a different event, so
     // it needs its own pause trigger — otherwise W/E would register
     // both as a story pick AND a quiz answer.
-    this.scene.game.events.on('sentence:show', this.pauseInput);
-    this.scene.game.events.on('story:show', this.pauseInput);
-    this.scene.game.events.on('skillpicker:show', this.pauseInput);
-    this.scene.game.events.on('skillpicker:picked', this.resumeInput);
+    gameEvents(this.scene.game).on('sentence:show', this.pauseInput);
+    gameEvents(this.scene.game).on('story:show', this.pauseInput);
+    gameEvents(this.scene.game).on('skillpicker:show', this.pauseInput);
+    gameEvents(this.scene.game).on('skillpicker:picked', this.resumeInput);
     root.innerHTML = `
       <div class="quiz">
         <div class="quiz-prompt">Przetłumacz</div>
@@ -72,10 +73,10 @@ export class QuizManager {
     window.addEventListener('keydown', this.keydownHandler);
 
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('sentence:show', this.pauseInput);
-      this.scene.game.events.off('story:show', this.pauseInput);
-      this.scene.game.events.off('skillpicker:show', this.pauseInput);
-      this.scene.game.events.off('skillpicker:picked', this.resumeInput);
+      gameEvents(this.scene.game).off('sentence:show', this.pauseInput);
+      gameEvents(this.scene.game).off('story:show', this.pauseInput);
+      gameEvents(this.scene.game).off('skillpicker:show', this.pauseInput);
+      gameEvents(this.scene.game).off('skillpicker:picked', this.resumeInput);
       root.removeEventListener('click', this.clickHandler);
       if (this.keydownHandler) {
         window.removeEventListener('keydown', this.keydownHandler);
@@ -118,13 +119,13 @@ export class QuizManager {
 
     if (isCorrect) {
       btn.classList.add('quiz-correct');
-      this.scene.game.events.emit('quiz:correct', { id: this.current.id });
+      gameEvents(this.scene.game).emit('quiz:correct', { id: this.current.id });
       // Moderate slowdown pass: 400→900 ms so the green flash lingers
       // long enough to feel like feedback, not a flicker.
       this.scene.time.delayedCall(900, () => this.loadNext());
     } else {
       btn.classList.add('quiz-wrong');
-      this.scene.game.events.emit('quiz:wrong', { id: this.current.id });
+      gameEvents(this.scene.game).emit('quiz:wrong', { id: this.current.id });
       buttons.forEach((b) => {
         const t = b.querySelector<HTMLElement>('.quiz-opt-text');
         if (t?.textContent?.trim() === this.current!.en) {

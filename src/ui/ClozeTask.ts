@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import type { ClozeItem } from '../systems/UnlockGates';
 
@@ -23,9 +24,9 @@ export class ClozeTask {
     const root = document.getElementById('writing-task-root');
     if (!root) return;
     this.root = root;
-    this.scene.game.events.on('writing:start', this.open, this);
+    gameEvents(this.scene.game).on('writing:start', this.open, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('writing:start', this.open, this);
+      gameEvents(this.scene.game).off('writing:start', this.open, this);
       window.removeEventListener('keydown', this.onKey);
     });
   }
@@ -144,7 +145,7 @@ export class ClozeTask {
     } else {
       const transcript = this.items.map((it) => it.sentence.replace('{{GAP}}', `[${it.correct}]`)).join('\n');
       submitGate(this.branch, `${transcript}\nWrong picks: ${this.wrongPicks}`);
-      this.scene.game.events.emit('writing:completed', { branchId: this.branch });
+      gameEvents(this.scene.game).emit('writing:completed', { branchId: this.branch });
       this.close();
     }
   }

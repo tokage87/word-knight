@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { AK, ANIM } from '../constants/assetKeys';
 import type { Enemy } from './Enemy';
 
@@ -151,7 +152,7 @@ export class Knight extends Phaser.GameObjects.Sprite {
     this.scene.cameras.main.shake(60, 0.003);
     if (this.hp <= 0) {
       this.hp = 0;
-      this.scene.game.events.emit('knight:died');
+      gameEvents(this.scene.game).emit('knight:died');
     }
   }
 

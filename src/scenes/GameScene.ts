@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { AK, GRASS_CENTER_FRAME } from '../constants/assetKeys';
 import {
   LOGICAL_WIDTH,
@@ -225,30 +226,30 @@ export class GameScene extends Phaser.Scene {
     this.publishSpellRegistry();
     this.registry.set('gold', metaStore.getGold());
 
-    this.game.events.on('quiz:correct', this.onQuizCorrect, this);
-    this.game.events.on('quiz:wrong', this.onQuizWrong, this);
+    gameEvents(this.game).on('quiz:correct', this.onQuizCorrect, this);
+    gameEvents(this.game).on('quiz:wrong', this.onQuizWrong, this);
     // P key toggles manual pause. Ignored while a gate (sentence, story,
     // picker) is already pausing the game — those have their own flow.
     this.input.keyboard?.on('keydown-P', () => this.toggleManualPause());
-    this.game.events.on('ui:togglePause', this.toggleManualPause, this);
-    this.game.events.on('knight:died', this.onKnightDied, this);
-    this.game.events.on('ui:restart', this.onUiRestart, this);
-    this.game.events.on('ui:openCity', this.onOpenCity, this);
-    this.game.events.on('enemy:killed', this.onEnemyKilled, this);
-    this.game.events.on('skillpicker:picked', this.onSkillPicked, this);
-    this.game.events.on('sentence:complete', this.onSentenceComplete, this);
-    this.game.events.on('story:complete', this.onStoryComplete, this);
+    gameEvents(this.game).on('ui:togglePause', this.toggleManualPause, this);
+    gameEvents(this.game).on('knight:died', this.onKnightDied, this);
+    gameEvents(this.game).on('ui:restart', this.onUiRestart, this);
+    gameEvents(this.game).on('ui:openCity', this.onOpenCity, this);
+    gameEvents(this.game).on('enemy:killed', this.onEnemyKilled, this);
+    gameEvents(this.game).on('skillpicker:picked', this.onSkillPicked, this);
+    gameEvents(this.game).on('sentence:complete', this.onSentenceComplete, this);
+    gameEvents(this.game).on('story:complete', this.onStoryComplete, this);
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.game.events.off('quiz:correct', this.onQuizCorrect, this);
-      this.game.events.off('quiz:wrong', this.onQuizWrong, this);
-      this.game.events.off('knight:died', this.onKnightDied, this);
-      this.game.events.off('ui:restart', this.onUiRestart, this);
-      this.game.events.off('ui:openCity', this.onOpenCity, this);
-      this.game.events.off('enemy:killed', this.onEnemyKilled, this);
-      this.game.events.off('skillpicker:picked', this.onSkillPicked, this);
-      this.game.events.off('sentence:complete', this.onSentenceComplete, this);
-      this.game.events.off('story:complete', this.onStoryComplete, this);
+      gameEvents(this.game).off('quiz:correct', this.onQuizCorrect, this);
+      gameEvents(this.game).off('quiz:wrong', this.onQuizWrong, this);
+      gameEvents(this.game).off('knight:died', this.onKnightDied, this);
+      gameEvents(this.game).off('ui:restart', this.onUiRestart, this);
+      gameEvents(this.game).off('ui:openCity', this.onOpenCity, this);
+      gameEvents(this.game).off('enemy:killed', this.onEnemyKilled, this);
+      gameEvents(this.game).off('skillpicker:picked', this.onSkillPicked, this);
+      gameEvents(this.game).off('sentence:complete', this.onSentenceComplete, this);
+      gameEvents(this.game).off('story:complete', this.onStoryComplete, this);
     });
   }
 
@@ -527,7 +528,7 @@ export class GameScene extends Phaser.Scene {
     // correct answers without re-emitting.
     if (!this.flowActive && this.quizStreak >= this.FLOW_THRESHOLD) {
       this.flowActive = true;
-      this.game.events.emit('flow:activated', { streak: this.quizStreak });
+      gameEvents(this.game).emit('flow:activated', { streak: this.quizStreak });
     }
     this.gainExp(this.EXP_PER_QUIZ_CORRECT);
     this.stats.quizCorrect += 1;
@@ -545,7 +546,7 @@ export class GameScene extends Phaser.Scene {
     if (!this.manuallyPaused && this.paused) return;
     this.manuallyPaused = !this.manuallyPaused;
     this.paused = this.manuallyPaused;
-    this.game.events.emit('ui:pauseChanged', { paused: this.manuallyPaused });
+    gameEvents(this.game).emit('ui:pauseChanged', { paused: this.manuallyPaused });
     this.publishStats();
   }
 
@@ -561,7 +562,7 @@ export class GameScene extends Phaser.Scene {
     }
     // Break the streak — flow drops back to idle.
     if (this.flowActive) {
-      this.game.events.emit('flow:broken', { streak: this.quizStreak });
+      gameEvents(this.game).emit('flow:broken', { streak: this.quizStreak });
     }
     this.quizStreak = 0;
     this.flowActive = false;
@@ -585,11 +586,11 @@ export class GameScene extends Phaser.Scene {
       this.pendingLevelUps += 1;
       this.levelUpCount += 1;
       this.registry.set('level', this.level);
-      this.game.events.emit('level:up', { level: this.level });
+      gameEvents(this.game).emit('level:up', { level: this.level });
       if (!this.ultUnlocked && this.level >= this.ULT_UNLOCK_LEVEL) {
         this.ultUnlocked = true;
         this.ultCdMs = this.ULT_BASE_CD_MS;
-        this.game.events.emit('ult:unlocked');
+        gameEvents(this.game).emit('ult:unlocked');
       }
     }
     this.registry.set('expPct', (this.exp / this.xpForNextLevel()) * 100);
@@ -738,7 +739,7 @@ export class GameScene extends Phaser.Scene {
     }
     this.cameras.main.flash(650, 255, 210, 80);
     this.cameras.main.shake(320, 0.012);
-    this.game.events.emit('ult:cast', { hitCount });
+    gameEvents(this.game).emit('ult:cast', { hitCount });
   }
 
   // Spawns an ally into the scene. Solo allies (archers) walk ahead
@@ -774,7 +775,7 @@ export class GameScene extends Phaser.Scene {
     this.allies.getChildren().forEach((a) => a.destroy());
     this.projectiles.getChildren().forEach((p) => p.destroy());
     this.time.delayedCall(500, () => {
-      this.game.events.emit('ui:gameOver', {
+      gameEvents(this.game).emit('ui:gameOver', {
         level: this.level,
         ...this.stats,
         distinctWords: this.distinctWords.size,
@@ -845,13 +846,13 @@ export class GameScene extends Phaser.Scene {
     // single-sentence gate for speed.
     const hasNewCard = options.some((o) => o.kind === 'new');
     if (hasNewCard) {
-      this.game.events.emit('story:show', SentenceBuilder.pickRandomStory());
+      gameEvents(this.game).emit('story:show', SentenceBuilder.pickRandomStory());
     } else {
-      this.game.events.emit('sentence:show', SentenceBuilder.pickRandom());
+      gameEvents(this.game).emit('sentence:show', SentenceBuilder.pickRandom());
     }
   }
 
-  private onSentenceComplete(payload: { id: string; perfect: boolean }) {
+  private onSentenceComplete(payload: { id: string | undefined; perfect: boolean }) {
     let options = this.pendingCardOptions;
     if (!options) return;
     if (payload.perfect) this.stats.sentenceCorrect += 1;
@@ -863,7 +864,7 @@ export class GameScene extends Phaser.Scene {
       options = this.buildCardOptions(3, { weakened: true });
       this.pendingCardOptions = options;
     }
-    this.game.events.emit('skillpicker:show', options);
+    gameEvents(this.game).emit('skillpicker:show', options);
   }
 
   private onStoryComplete(payload: {
@@ -895,7 +896,7 @@ export class GameScene extends Phaser.Scene {
       });
       this.pendingCardOptions = options;
     }
-    this.game.events.emit('skillpicker:show', options);
+    gameEvents(this.game).emit('skillpicker:show', options);
   }
 
   // `overrides.allowNew`, if set, bypasses the default every-other-levelup

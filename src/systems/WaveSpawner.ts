@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from './events';
 import { Enemy } from '../entities/Enemy';
 import { LOGICAL_WIDTH, GROUND_Y } from '../constants/layout';
 
@@ -28,9 +29,9 @@ export class WaveSpawner {
     private readonly group: Phaser.GameObjects.Group,
   ) {
     this.resetInterval();
-    this.scene.game.events.on('enemy:killed', this.onEnemyKilled, this);
+    gameEvents(this.scene.game).on('enemy:killed', this.onEnemyKilled, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('enemy:killed', this.onEnemyKilled, this);
+      gameEvents(this.scene.game).off('enemy:killed', this.onEnemyKilled, this);
     });
   }
 
@@ -56,7 +57,7 @@ export class WaveSpawner {
     });
     e.setDepth(50);
     this.group.add(e);
-    if (isBoss) this.scene.game.events.emit('boss:spawned', e);
+    if (isBoss) gameEvents(this.scene.game).emit('boss:spawned', e);
   }
 
   getTier(): number {

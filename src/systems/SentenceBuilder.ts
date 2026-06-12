@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from './events';
 import { curriculumCatalog } from './CurriculumCatalog';
 import type {
   CurriculumSentence,
@@ -66,11 +67,11 @@ export class SentenceBuilder {
     root.innerHTML = '';
     root.classList.remove('sentence--visible');
 
-    this.scene.game.events.on('sentence:show', this.show, this);
-    this.scene.game.events.on('story:show', this.showStory, this);
+    gameEvents(this.scene.game).on('sentence:show', this.show, this);
+    gameEvents(this.scene.game).on('story:show', this.showStory, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('sentence:show', this.show, this);
-      this.scene.game.events.off('story:show', this.showStory, this);
+      gameEvents(this.scene.game).off('sentence:show', this.show, this);
+      gameEvents(this.scene.game).off('story:show', this.showStory, this);
       window.removeEventListener('keydown', this.onKeyDown);
     });
   }
@@ -240,7 +241,7 @@ export class SentenceBuilder {
     const id = this.story.id;
     this.story = undefined;
     this.hide();
-    this.scene.game.events.emit('story:complete', {
+    gameEvents(this.scene.game).emit('story:complete', {
       id,
       perfect: false,
       weakened: true,
@@ -267,7 +268,7 @@ export class SentenceBuilder {
       const perfect = this.mistakes === 0;
       this.story = undefined;
       this.hide();
-      this.scene.game.events.emit('story:complete', {
+      gameEvents(this.scene.game).emit('story:complete', {
         id,
         perfect,
         weakened: false,
@@ -278,6 +279,6 @@ export class SentenceBuilder {
     const id = this.current?.id;
     const perfect = this.mistakes === 0;
     this.hide();
-    this.scene.game.events.emit('sentence:complete', { id, perfect });
+    gameEvents(this.scene.game).emit('sentence:complete', { id, perfect });
   }
 }

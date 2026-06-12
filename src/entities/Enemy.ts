@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { AK, ANIM } from '../constants/assetKeys';
 import type { Knight } from './Knight';
 
@@ -167,7 +168,7 @@ export class Enemy extends Phaser.GameObjects.Sprite {
     this.scene.time.delayedCall(50, () => this.restoreBaseTint());
     this.popDamageNumber(n);
     if (this.hp <= 0) {
-      this.scene.game.events.emit('enemy:killed', {
+      gameEvents(this.scene.game).emit('enemy:killed', {
         isBoss: this.isBoss,
         tier: this.tier,
         x: this.x,

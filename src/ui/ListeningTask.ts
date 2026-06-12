@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import type { ListeningSentence } from '../systems/UnlockGates';
 import { cancelSpeak, isTtsSupported, sourceLangCode, speak } from '../systems/speech';
@@ -32,9 +33,9 @@ export class ListeningTask {
     const root = document.getElementById('writing-task-root');
     if (!root) return;
     this.root = root;
-    this.scene.game.events.on('writing:start', this.open, this);
+    gameEvents(this.scene.game).on('writing:start', this.open, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('writing:start', this.open, this);
+      gameEvents(this.scene.game).off('writing:start', this.open, this);
       window.removeEventListener('keydown', this.onKey);
       cancelSpeak();
     });
@@ -195,7 +196,7 @@ export class ListeningTask {
     } else {
       const transcript = this.sentences.map((s) => `HEARD: "${s.en}"`).join('\n');
       submitGate(this.branch, transcript);
-      this.scene.game.events.emit('writing:completed', { branchId: this.branch });
+      gameEvents(this.scene.game).emit('writing:completed', { branchId: this.branch });
       this.close();
     }
   }

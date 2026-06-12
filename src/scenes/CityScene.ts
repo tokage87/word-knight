@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { AK, ANIM, TILE, GRASS_CENTER_FRAME } from '../constants/assetKeys';
 import { LOGICAL_WIDTH, LOGICAL_HEIGHT } from '../constants/layout';
 import { metaStore } from '../systems/MetaStore';
@@ -168,7 +169,7 @@ export class CityScene extends Phaser.Scene {
     cloze.mount();
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.game.events.emit('city:closed');
+      gameEvents(this.game).emit('city:closed');
       // Wipe every city-side HTML overlay so leaving the city doesn't
       // leak DOM into the next scene.
       ['city-overlay-root', 'writing-task-root'].forEach((id) => {
@@ -176,7 +177,7 @@ export class CityScene extends Phaser.Scene {
         if (el) el.innerHTML = '';
       });
     });
-    this.game.events.emit('city:opened', { gold: metaStore.getGold() });
+    gameEvents(this.game).emit('city:opened', { gold: metaStore.getGold() });
   }
 
   // ───── backdrop ─────
@@ -342,7 +343,7 @@ export class CityScene extends Phaser.Scene {
       img.on('pointerout', () => img.clearTint());
       img.on('pointerdown', () => {
         this.walkHeroTo(spot.x, () => {
-          this.game.events.emit('city:branchClick', { id: spot.id });
+          gameEvents(this.game).emit('city:branchClick', { id: spot.id });
         });
       });
       const source = this.textures.get(spot.textureKey).getSourceImage() as HTMLImageElement;
@@ -501,7 +502,7 @@ export class CityScene extends Phaser.Scene {
       .setInteractive({ useHandCursor: true });
     hit.on('pointerdown', () => {
       this.walkHeroTo(sx, () => {
-        this.game.events.emit('city:stallClick');
+        gameEvents(this.game).emit('city:stallClick');
       });
     });
   }
@@ -586,7 +587,7 @@ export class CityScene extends Phaser.Scene {
     bg.on('pointerover', () => bg.setFillStyle(0x5a90c5, 1));
     bg.on('pointerout',  () => bg.setFillStyle(0x3a6fa6, 1));
     bg.on('pointerdown', () => {
-      this.game.events.emit('city:openJournal');
+      gameEvents(this.game).emit('city:openJournal');
     });
   }
 
@@ -613,7 +614,7 @@ export class CityScene extends Phaser.Scene {
     bg.on('pointerover', () => bg.setFillStyle(0x8a5a99, 1));
     bg.on('pointerout',  () => bg.setFillStyle(0x6b3e7a, 1));
     bg.on('pointerdown', () => {
-      this.game.events.emit('city:openParentDashboard');
+      gameEvents(this.game).emit('city:openParentDashboard');
     });
   }
 
@@ -641,7 +642,7 @@ export class CityScene extends Phaser.Scene {
     bg.on('pointerover', () => bg.setFillStyle(0x7a7a7a, 1));
     bg.on('pointerout',  () => bg.setFillStyle(0x5a5a5a, 1));
     bg.on('pointerdown', () => {
-      this.game.events.emit('city:openCurriculum');
+      gameEvents(this.game).emit('city:openCurriculum');
     });
   }
 }

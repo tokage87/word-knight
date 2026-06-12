@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from './events';
 
 // Roguelite-style level-up picker. Listens for `skillpicker:show` on the
 // global event bus and renders up to 3 cards the player chooses between
@@ -34,9 +35,9 @@ export class SkillPicker {
     root.innerHTML = '';
     root.classList.remove('skill-picker--visible');
 
-    this.scene.game.events.on('skillpicker:show', this.show, this);
+    gameEvents(this.scene.game).on('skillpicker:show', this.show, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('skillpicker:show', this.show, this);
+      gameEvents(this.scene.game).off('skillpicker:show', this.show, this);
       window.removeEventListener('keydown', this.onKeyDown);
     });
   }
@@ -73,7 +74,7 @@ export class SkillPicker {
     const option = this.current[i];
     if (!option) return;
     this.hide();
-    this.scene.game.events.emit('skillpicker:picked', option);
+    gameEvents(this.scene.game).emit('skillpicker:picked', option);
   }
 
   private render(options: SkillCardOption[]): string {

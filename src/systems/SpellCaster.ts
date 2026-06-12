@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from './events';
 import { LOGICAL_WIDTH, LOGICAL_HEIGHT } from '../constants/layout';
 import type { Enemy } from '../entities/Enemy';
 import type { Knight } from '../entities/Knight';
@@ -239,7 +240,7 @@ export class SpellCaster {
     (Object.keys(this.spells) as SpellId[]).forEach((id) => {
       this.spells[id].current = Math.max(0, this.spells[id].current - ms);
     });
-    this.scene.game.events.emit('spell:reduced', ms);
+    gameEvents(this.scene.game).emit('spell:reduced', ms);
   }
 
   // Wrong-quiz penalty: bumps every spell's current cooldown so it takes
@@ -253,7 +254,7 @@ export class SpellCaster {
         this.spells[id].current + ms,
       );
     });
-    this.scene.game.events.emit('spell:penalized', ms);
+    gameEvents(this.scene.game).emit('spell:penalized', ms);
   }
 
   getCooldown(id: SpellId): number {
@@ -282,7 +283,7 @@ export class SpellCaster {
       onComplete: () => flash.destroy(),
     });
     this.scene.cameras.main.shake(140, 0.006);
-    this.scene.game.events.emit('spell:cast', { id: 'fire' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'fire' });
   }
 
   private castIce(targets: Enemy[]) {
@@ -301,7 +302,7 @@ export class SpellCaster {
       duration: 260,
       onComplete: () => flash.destroy(),
     });
-    this.scene.game.events.emit('spell:cast', { id: 'ice' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'ice' });
   }
 
   private castHeal(knight: Knight) {
@@ -315,7 +316,7 @@ export class SpellCaster {
       duration: 300,
       onComplete: () => flash.destroy(),
     });
-    this.scene.game.events.emit('spell:cast', { id: 'heal' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'heal' });
   }
 
   // Single-target fast projectile. Picks the closest visible enemy and
@@ -325,7 +326,7 @@ export class SpellCaster {
     if (visible.length === 0) return;
     const closest = visible.reduce((a, b) => (Math.abs(a.x) < Math.abs(b.x) ? a : b));
     closest.takeDamage(this.fireArrowDamage());
-    this.scene.game.events.emit('spell:cast', { id: 'fireArrow' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'fireArrow' });
   }
 
   // Piercing line projectile — damages up to 3 visible enemies.
@@ -333,7 +334,7 @@ export class SpellCaster {
     const targets = visible.slice(0, 3);
     const dmg = this.windSlashDamage();
     targets.forEach((t) => t.takeDamage(dmg));
-    this.scene.game.events.emit('spell:cast', { id: 'windSlash' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'windSlash' });
   }
 
   // Big chill AoE — damages all visible and applies a long slow.
@@ -354,7 +355,7 @@ export class SpellCaster {
       onComplete: () => flash.destroy(),
     });
     this.scene.cameras.main.shake(110, 0.004);
-    this.scene.game.events.emit('spell:cast', { id: 'blizzard' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'blizzard' });
   }
 
   // Sustained AoE — hits all visible enemies twice over ~2s.
@@ -376,7 +377,7 @@ export class SpellCaster {
       duration: 1600,
       onComplete: () => flash.destroy(),
     });
-    this.scene.game.events.emit('spell:cast', { id: 'tornado' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'tornado' });
   }
 
   // Self-buff — grant Knight a brief invulnerability window.
@@ -392,7 +393,7 @@ export class SpellCaster {
       duration: 320,
       onComplete: () => flash.destroy(),
     });
-    this.scene.game.events.emit('spell:cast', { id: 'stoneShield' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'stoneShield' });
   }
 
   // AoE damage + brief stun — reuses Enemy.applySlow for the slow part
@@ -413,6 +414,6 @@ export class SpellCaster {
       onComplete: () => flash.destroy(),
     });
     this.scene.cameras.main.shake(220, 0.012);
-    this.scene.game.events.emit('spell:cast', { id: 'earthquake' });
+    gameEvents(this.scene.game).emit('spell:cast', { id: 'earthquake' });
   }
 }

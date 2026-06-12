@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { BRANCH_DEFS, type BranchId, countWords, payloadFor, submitGate } from '../systems/CityBranches';
 import { deepJudge } from '../systems/DeepJudge';
 
@@ -36,9 +37,9 @@ export class WritingTask {
     root.innerHTML = '';
     root.classList.remove('writing-task--visible');
 
-    this.scene.game.events.on('writing:start', this.open, this);
+    gameEvents(this.scene.game).on('writing:start', this.open, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('writing:start', this.open, this);
+      gameEvents(this.scene.game).off('writing:start', this.open, this);
       window.removeEventListener('keydown', this.onKey);
       this.stopDeepListener?.();
       if (this.root) this.root.innerHTML = '';
@@ -246,7 +247,7 @@ export class WritingTask {
     const text = this.text.trim();
     if (!text) return;
     submitGate(this.branch, text);
-    this.scene.game.events.emit('writing:completed', { branchId: this.branch });
+    gameEvents(this.scene.game).emit('writing:completed', { branchId: this.branch });
     this.close();
   }
 }

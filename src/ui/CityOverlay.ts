@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameEvents } from '../systems/events';
 import { BRANCH_DEFS, type BranchDef, type BranchId, gateCta } from '../systems/CityBranches';
 import { localDateKey, metaStore, type WritingSubmission } from '../systems/MetaStore';
 import { curriculumCatalog } from '../systems/CurriculumCatalog';
@@ -42,19 +43,19 @@ export class CityOverlay {
     root.innerHTML = '';
     root.classList.remove('city-overlay--visible');
 
-    this.scene.game.events.on('city:branchClick', this.onBranchClick, this);
-    this.scene.game.events.on('city:openJournal', this.onOpenJournal, this);
-    this.scene.game.events.on('city:openCurriculum', this.onOpenCurriculum, this);
-    this.scene.game.events.on('city:stallClick', this.onStallClick, this);
-    this.scene.game.events.on('city:openParentDashboard', this.onOpenParentDashboard, this);
-    this.scene.game.events.on('writing:completed', this.onWritingCompleted, this);
+    gameEvents(this.scene.game).on('city:branchClick', this.onBranchClick, this);
+    gameEvents(this.scene.game).on('city:openJournal', this.onOpenJournal, this);
+    gameEvents(this.scene.game).on('city:openCurriculum', this.onOpenCurriculum, this);
+    gameEvents(this.scene.game).on('city:stallClick', this.onStallClick, this);
+    gameEvents(this.scene.game).on('city:openParentDashboard', this.onOpenParentDashboard, this);
+    gameEvents(this.scene.game).on('writing:completed', this.onWritingCompleted, this);
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.scene.game.events.off('city:branchClick', this.onBranchClick, this);
-      this.scene.game.events.off('city:openJournal', this.onOpenJournal, this);
-      this.scene.game.events.off('city:openCurriculum', this.onOpenCurriculum, this);
-      this.scene.game.events.off('city:stallClick', this.onStallClick, this);
-      this.scene.game.events.off('city:openParentDashboard', this.onOpenParentDashboard, this);
-      this.scene.game.events.off('writing:completed', this.onWritingCompleted, this);
+      gameEvents(this.scene.game).off('city:branchClick', this.onBranchClick, this);
+      gameEvents(this.scene.game).off('city:openJournal', this.onOpenJournal, this);
+      gameEvents(this.scene.game).off('city:openCurriculum', this.onOpenCurriculum, this);
+      gameEvents(this.scene.game).off('city:stallClick', this.onStallClick, this);
+      gameEvents(this.scene.game).off('city:openParentDashboard', this.onOpenParentDashboard, this);
+      gameEvents(this.scene.game).off('writing:completed', this.onWritingCompleted, this);
       window.removeEventListener('keydown', this.onKey);
       if (this.root) this.root.innerHTML = '';
     });
@@ -316,7 +317,7 @@ export class CityOverlay {
     }
     const startBtn = this.root.querySelector<HTMLButtonElement>('.city-task-start');
     startBtn?.addEventListener('click', () => {
-      this.scene.game.events.emit('writing:start', { branchId: branch.id });
+      gameEvents(this.scene.game).emit('writing:start', { branchId: branch.id });
     });
   }
 
