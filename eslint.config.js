@@ -57,7 +57,7 @@ export default tseslint.config(
 
   // ── Node generator scripts + Vite config (no type info) ──
   {
-    files: ['scripts/**/*.{mjs,cjs}', 'vite.config.ts'],
+    files: ['scripts/**/*.{mjs,cjs}', 'vite.config.ts', 'vitest.config.ts'],
     extends: [js.configs.recommended],
     languageOptions: {
       globals: {
@@ -73,7 +73,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['vite.config.ts'],
+    files: ['vite.config.ts', 'vitest.config.ts'],
     extends: [...tseslint.configs.recommended],
   },
 
