@@ -313,7 +313,7 @@ export class Ally extends Phaser.GameObjects.Sprite {
   // Heal behavior — the Cleric only acts on the knight. Fires when the
   // knight is below max HP and the cooldown is ready. No projectiles;
   // a subtle green camera flash sells the cast and the monk plays its
-  // Heal animation.
+  // Heal animation while the Heal_Effect overlay plays on the knight.
   private tickHealBehavior(knight: Knight, absDx: number) {
     const canHeal =
       this.attackTimerMs <= 0 && knight.hp > 0 && knight.hp < knight.hpMax;
@@ -325,6 +325,7 @@ export class Ally extends Phaser.GameObjects.Sprite {
       this.setAnim('attack');
       // Small green flash so the player notices the heal landed.
       this.scene.cameras.main.flash(120, 120, 255, 160);
+      this.spawnHealEffect(knight);
     } else if (this.animState === 'attack') {
       if (!this.anims.isPlaying) this.setAnim(absDx > 1 ? 'run' : 'idle');
     } else if (absDx > 1) {
@@ -332,6 +333,23 @@ export class Ally extends Phaser.GameObjects.Sprite {
     } else {
       this.setAnim('idle');
     }
+  }
+
+  // One-shot Heal_Effect overlay on the heal target. Matches the
+  // knight's render scale/origin so the 192px frames line up over his
+  // body, sits one depth step above him, and cleans itself up when
+  // the animation finishes — same fire-and-forget style as the ult's
+  // bolt/ring VFX in GameScene.castUlt.
+  private spawnHealEffect(knight: Knight) {
+    const fx = this.scene.add
+      .sprite(knight.x, knight.y - 4, AK.monkHealEffect, 0)
+      .setOrigin(0.5, 0.71)
+      .setScale(0.32) // knight's SPRITE_SCALE
+      .setDepth(51); // knight renders at depth 50
+    fx.play(ANIM.monkHealEffect);
+    fx.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+      if (fx.active) fx.destroy();
+    });
   }
 
   private setAnim(state: 'idle' | 'run' | 'attack') {

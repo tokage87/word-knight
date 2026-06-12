@@ -35,9 +35,11 @@ export const AK = {
   archerShoot: 'archer-shoot',
   arrow: 'arrow',
   // Monk: 192px frame. Idle 6f, Run 4f, Heal 11f.
+  // Heal_Effect is the 11f companion overlay played on the heal target.
   monkIdle: 'monk-idle',
   monkRun: 'monk-run',
   monkHeal: 'monk-heal',
+  monkHealEffect: 'monk-heal-effect',
   // Lancer: larger 320px frame. Idle 12f, Run 6f, Right_Attack 3f.
   // Shared by Wind Lancer and Earth Lancer — differ by projectile
   // tint and stats.
@@ -113,6 +115,7 @@ export const ANIM = {
   monkIdle: 'monk-idle-loop',
   monkRun: 'monk-run-loop',
   monkCast: 'monk-cast-once',
+  monkHealEffect: 'monk-heal-effect-once',
   lancerIdle: 'lancer-idle-loop',
   lancerRun: 'lancer-run-loop',
   lancerAttack: 'lancer-attack-once',

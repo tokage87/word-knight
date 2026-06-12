@@ -192,6 +192,12 @@ export class BootScene extends Phaser.Scene {
       frameWidth: UNIT_FRAME,
       frameHeight: UNIT_FRAME,
     });
+    // Companion overlay to Heal.png — played on the heal target, not
+    // the monk. Same 192px frame size, 11 frames.
+    this.load.spritesheet(AK.monkHealEffect, 'assets/monk/Heal_Effect.png', {
+      frameWidth: UNIT_FRAME,
+      frameHeight: UNIT_FRAME,
+    });
 
     // Lancer ally sprites — 320px frame (same size family as the
     // minotaur enemy). Used by Wind Lancer and Earth Lancer.
@@ -270,6 +276,9 @@ export class BootScene extends Phaser.Scene {
     this.buildAnim(ANIM.monkIdle, AK.monkIdle, 6, 7, -1);
     this.buildAnim(ANIM.monkRun, AK.monkRun, 4, 10, -1);
     this.buildAnim(ANIM.monkCast, AK.monkHeal, 11, 14, 0);
+    // Heal_Effect overlay: one-shot, matched to the cast's tempo so
+    // the sparkle on the target lines up with the monk's animation.
+    this.buildAnim(ANIM.monkHealEffect, AK.monkHealEffect, 11, 14, 0);
     // Lancer ally animations (320px frames). Idle 12f, Run 6f, Attack 3f.
     this.buildAnim(ANIM.lancerIdle, AK.lancerIdle, 12, 8, -1);
     this.buildAnim(ANIM.lancerRun, AK.lancerRun, 6, 10, -1);
