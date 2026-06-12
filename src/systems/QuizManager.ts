@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { gameEvents } from './events';
+import { DomOverlay } from './DomOverlay';
 import { curriculumCatalog } from './CurriculumCatalog';
 import type { CurriculumVocab } from './CurriculumTypes';
 
@@ -9,9 +10,8 @@ type KeyCode = 'W' | 'E';
 
 // Compact 2-option quiz in the bottom-right. W = left button, E = right button.
 // Click is supported as a fallback, but keyboard is the primary input path.
-export class QuizManager {
+export class QuizManager extends DomOverlay {
   private current?: VocabEntry;
-  private root?: HTMLElement;
   private locked = false;
   private inputPaused = false;
   // Keyboard anti-mash grace: when a new word renders, ignore W/E
@@ -19,30 +19,29 @@ export class QuizManager {
   // isn't mashing, and swallowing legitimate clicks made the quiz feel
   // unresponsive.
   private newWordGraceUntilMs = 0;
-  private keydownHandler?: (ev: KeyboardEvent) => void;
   // Stable references so SHUTDOWN can unregister them — the UI scene
   // restarts on every death, and anonymous closures left on the global
   // game.events bus (or on the persistent #quiz-root element) would
-  // accumulate and double-fire quiz:correct/quiz:wrong.
+  // accumulate and double-fire quiz:correct/quiz:wrong. The base class
+  // tracks the off()/removeEventListener() halves automatically.
   private pauseInput = () => { this.inputPaused = true; };
   private resumeInput = () => { this.inputPaused = false; };
   private clickHandler = (ev: Event) => this.onClick(ev);
 
-  constructor(private readonly scene: Phaser.Scene) {}
+  constructor(scene: Phaser.Scene) {
+    super(scene, 'quiz-root', 'quiz--visible');
+  }
 
-  mount() {
-    const root = document.getElementById('quiz-root');
-    if (!root) return;
-
+  protected onMount(root: HTMLElement) {
     // Freeze quiz input while the SentenceBuilder / SkillPicker modals
     // are up; otherwise W/E would answer multiple things at once. The
     // story gate reuses the sentence UI but emits a different event, so
     // it needs its own pause trigger — otherwise W/E would register
     // both as a story pick AND a quiz answer.
-    gameEvents(this.scene.game).on('sentence:show', this.pauseInput);
-    gameEvents(this.scene.game).on('story:show', this.pauseInput);
-    gameEvents(this.scene.game).on('skillpicker:show', this.pauseInput);
-    gameEvents(this.scene.game).on('skillpicker:picked', this.resumeInput);
+    this.onGameEvent('sentence:show', this.pauseInput);
+    this.onGameEvent('story:show', this.pauseInput);
+    this.onGameEvent('skillpicker:show', this.pauseInput);
+    this.onGameEvent('skillpicker:picked', this.resumeInput);
     root.innerHTML = `
       <div class="quiz">
         <div class="quiz-prompt">Przetłumacz</div>
@@ -59,27 +58,14 @@ export class QuizManager {
         </div>
       </div>
     `;
-    this.root = root;
 
-    root.addEventListener('click', this.clickHandler);
+    this.addRootListener('click', this.clickHandler);
 
-    this.keydownHandler = (ev: KeyboardEvent) => {
+    this.attachWindowKeydown((ev: KeyboardEvent) => {
       const k = ev.key.toUpperCase();
       if (k === 'W' || k === 'E') {
         ev.preventDefault();
         this.pressKey(k);
-      }
-    };
-    window.addEventListener('keydown', this.keydownHandler);
-
-    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.scene.game).off('sentence:show', this.pauseInput);
-      gameEvents(this.scene.game).off('story:show', this.pauseInput);
-      gameEvents(this.scene.game).off('skillpicker:show', this.pauseInput);
-      gameEvents(this.scene.game).off('skillpicker:picked', this.resumeInput);
-      root.removeEventListener('click', this.clickHandler);
-      if (this.keydownHandler) {
-        window.removeEventListener('keydown', this.keydownHandler);
       }
     });
 

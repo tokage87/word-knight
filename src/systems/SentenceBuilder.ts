@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { gameEvents } from './events';
+import { DomOverlay } from './DomOverlay';
 import { curriculumCatalog } from './CurriculumCatalog';
 import type {
   CurriculumSentence,
@@ -42,8 +43,7 @@ function equivalentStoryWord(picked: string, correct: string): boolean {
 //     to back; wrong answers accumulate. Resolves to `story:complete`
 //     with `{ perfect }`. The scene uses that flag to gate whether
 //     "new" spell cards can be offered in the picker.
-export class SentenceBuilder {
-  private root?: HTMLElement;
+export class SentenceBuilder extends DomOverlay {
   private current?: Sentence;
   private stepIndex = 0;
   private picked: string[] = [];
@@ -58,22 +58,13 @@ export class SentenceBuilder {
   private storyIndex = 0;
   private mistakes = 0;
 
-  constructor(private readonly scene: Phaser.Scene) {}
+  constructor(scene: Phaser.Scene) {
+    super(scene, 'sentence-root', 'sentence--visible');
+  }
 
-  mount() {
-    const root = document.getElementById('sentence-root');
-    if (!root) return;
-    this.root = root;
-    root.innerHTML = '';
-    root.classList.remove('sentence--visible');
-
-    gameEvents(this.scene.game).on('sentence:show', this.show, this);
-    gameEvents(this.scene.game).on('story:show', this.showStory, this);
-    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.scene.game).off('sentence:show', this.show, this);
-      gameEvents(this.scene.game).off('story:show', this.showStory, this);
-      window.removeEventListener('keydown', this.onKeyDown);
-    });
+  protected onMount() {
+    this.onGameEvent('sentence:show', this.show, this);
+    this.onGameEvent('story:show', this.showStory, this);
   }
 
   static pickRandom(): Sentence {
@@ -94,9 +85,9 @@ export class SentenceBuilder {
     this.picked = [];
     this.locked = false;
     this.mistakes = 0;
-    this.root.classList.add('sentence--visible');
+    this.showRoot();
     this.render();
-    window.addEventListener('keydown', this.onKeyDown);
+    this.attachWindowKeydown(this.onKeyDown);
   }
 
   private showStory(story: Story) {
@@ -108,17 +99,14 @@ export class SentenceBuilder {
     this.stepIndex = 0;
     this.picked = [];
     this.locked = false;
-    this.root.classList.add('sentence--visible');
+    this.showRoot();
     this.render();
-    window.addEventListener('keydown', this.onKeyDown);
+    this.attachWindowKeydown(this.onKeyDown);
   }
 
   private hide() {
-    if (!this.root) return;
-    this.root.classList.remove('sentence--visible');
-    this.root.innerHTML = '';
+    this.hideRoot();
     this.current = undefined;
-    window.removeEventListener('keydown', this.onKeyDown);
   }
 
   private render() {

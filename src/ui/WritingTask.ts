@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { gameEvents } from '../systems/events';
+import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchId, countWords, payloadFor, submitGate } from '../systems/CityBranches';
 import { deepJudge } from '../systems/DeepJudge';
 
@@ -17,8 +18,7 @@ import { deepJudge } from '../systems/DeepJudge';
 const UNLOCK_MIN_WORDS = 15;
 const UNLOCK_MIN_HINTS = 3;
 
-export class WritingTask {
-  private root?: HTMLElement;
+export class WritingTask extends DomOverlay {
   private branch?: BranchId;
   private text = '';
   private deepVerdict?: { score: number; feedback: string };
@@ -28,32 +28,22 @@ export class WritingTask {
   };
   private stopDeepListener?: () => void;
 
-  constructor(private readonly scene: Phaser.Scene) {}
+  constructor(scene: Phaser.Scene) {
+    super(scene, 'writing-task-root', 'writing-task--visible');
+  }
 
-  mount() {
-    const root = document.getElementById('writing-task-root');
-    if (!root) return;
-    this.root = root;
-    root.innerHTML = '';
-    root.classList.remove('writing-task--visible');
-
-    gameEvents(this.scene.game).on('writing:start', this.open, this);
-    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.scene.game).off('writing:start', this.open, this);
-      window.removeEventListener('keydown', this.onKey);
-      this.stopDeepListener?.();
-      if (this.root) this.root.innerHTML = '';
-    });
+  protected onMount() {
+    this.onGameEvent('writing:start', this.open, this);
+    // The deep-judge progress subscription isn't a DOM/bus listener, so
+    // the base class can't track it — release it explicitly on shutdown.
+    this.addDisposer(() => this.stopDeepListener?.());
   }
 
   private open(payload: { branchId: BranchId }) {
     // Only respond to writing-kind gates. Other kinds have their own
     // task class listening on the same event.
     if (BRANCH_DEFS[payload.branchId].gate.kind !== 'writing') return;
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('writing-task-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     this.branch = payload.branchId;
     this.text = '';
     this.deepVerdict = undefined;
@@ -63,19 +53,16 @@ export class WritingTask {
       this.stopDeepListener = undefined;
     }
     this.render();
-    this.root.classList.add('writing-task--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   private close() {
-    if (!this.root) return;
-    this.root.classList.remove('writing-task--visible');
-    this.root.innerHTML = '';
+    this.hideRoot();
     this.branch = undefined;
     this.text = '';
     this.deepVerdict = undefined;
     this.deepBusy = false;
-    window.removeEventListener('keydown', this.onKey);
     if (this.stopDeepListener) {
       this.stopDeepListener();
       this.stopDeepListener = undefined;

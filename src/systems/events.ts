@@ -77,7 +77,7 @@ export interface GameEventMap {
 
 // `void` payloads emit with zero arguments; everything else with exactly
 // one. Tuple-spread keeps Phaser's variadic emit signature intact.
-type EventArgs<K extends keyof GameEventMap> =
+export type EventArgs<K extends keyof GameEventMap> =
   GameEventMap[K] extends void ? [] : [GameEventMap[K]];
 
 // Typed facade over Phaser.Events.EventEmitter. The optional `context`

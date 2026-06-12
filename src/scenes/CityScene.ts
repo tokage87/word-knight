@@ -168,14 +168,11 @@ export class CityScene extends Phaser.Scene {
     const cloze = new ClozeTask(this);
     cloze.mount();
 
+    // No manual overlay wipe here — DomOverlay blanks #city-overlay-root
+    // and #writing-task-root on shutdown, so leaving the city doesn't
+    // leak DOM into the next scene.
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
       gameEvents(this.game).emit('city:closed');
-      // Wipe every city-side HTML overlay so leaving the city doesn't
-      // leak DOM into the next scene.
-      ['city-overlay-root', 'writing-task-root'].forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = '';
-      });
     });
     gameEvents(this.game).emit('city:opened', { gold: metaStore.getGold() });
   }

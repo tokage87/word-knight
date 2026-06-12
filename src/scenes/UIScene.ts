@@ -65,17 +65,10 @@ export class UIScene extends Phaser.Scene {
       gameEvents(this.game).off('ui:gameOver', this.onGameOver, this);
       // Tear down the HUD's HTML so the game-over / pause overlays
       // don't linger over the City scene (or any scene that follows).
+      // The QuizManager / SentenceBuilder / SkillPicker roots blank
+      // themselves — DomOverlay clears innerHTML and drops the visible
+      // class on scene shutdown.
       this.hud.unmount();
-      // Blank every other HTML overlay root too — the QuizManager /
-      // SentenceBuilder / SkillPicker each own their own #*-root and
-      // leaving any of them populated leaks into the next scene.
-      ['quiz-root', 'sentence-root', 'skill-picker-root'].forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.innerHTML = '';
-          el.classList.remove('quiz--visible', 'sentence--visible', 'skill-picker--visible');
-        }
-      });
     });
   }
 

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { gameEvents } from './events';
+import { DomOverlay } from './DomOverlay';
 
 // Roguelite-style level-up picker. Listens for `skillpicker:show` on the
 // global event bus and renders up to 3 cards the player chooses between
@@ -21,44 +22,32 @@ export interface SkillCardOption {
 
 const HOTKEYS = ['w', 'e', 'r'] as const;
 
-export class SkillPicker {
-  private root?: HTMLElement;
+export class SkillPicker extends DomOverlay {
   private onKeyDown = (ev: KeyboardEvent) => this.handleKey(ev);
   private current: SkillCardOption[] = [];
 
-  constructor(private readonly scene: Phaser.Scene) {}
+  constructor(scene: Phaser.Scene) {
+    super(scene, 'skill-picker-root', 'skill-picker--visible');
+  }
 
-  mount() {
-    const root = document.getElementById('skill-picker-root');
-    if (!root) return;
-    this.root = root;
-    root.innerHTML = '';
-    root.classList.remove('skill-picker--visible');
-
-    gameEvents(this.scene.game).on('skillpicker:show', this.show, this);
-    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.scene.game).off('skillpicker:show', this.show, this);
-      window.removeEventListener('keydown', this.onKeyDown);
-    });
+  protected onMount() {
+    this.onGameEvent('skillpicker:show', this.show, this);
   }
 
   private show(options: SkillCardOption[]) {
     if (!this.root) return;
     this.current = options.slice(0, 3);
     this.root.innerHTML = this.render(this.current);
-    this.root.classList.add('skill-picker--visible');
-    window.addEventListener('keydown', this.onKeyDown);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKeyDown);
     this.root.querySelectorAll<HTMLElement>('.skill-card').forEach((el, i) => {
       el.addEventListener('click', () => this.pick(i));
     });
   }
 
   private hide() {
-    if (!this.root) return;
-    this.root.classList.remove('skill-picker--visible');
-    this.root.innerHTML = '';
+    this.hideRoot();
     this.current = [];
-    window.removeEventListener('keydown', this.onKeyDown);
   }
 
   private handleKey(ev: KeyboardEvent) {

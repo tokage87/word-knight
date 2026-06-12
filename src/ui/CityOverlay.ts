@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { gameEvents } from '../systems/events';
+import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchDef, type BranchId, gateCta } from '../systems/CityBranches';
 import { localDateKey, metaStore, type WritingSubmission } from '../systems/MetaStore';
 import { curriculumCatalog } from '../systems/CurriculumCatalog';
@@ -24,8 +25,7 @@ const WEEKDAY_LABELS_PL = ['Nd', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'];
 // #city-overlay-root. Opens on `city:branchClick`, renders the
 // unlock-gate CTA (if locked) or the skill-tree (if unlocked).
 // Pure DOM — the Phaser city scene beneath keeps animating.
-export class CityOverlay {
-  private root?: HTMLElement;
+export class CityOverlay extends DomOverlay {
   private tree?: SkillTreeView;
   // Draft for the curriculum picker — populated on open, committed by
   // ZAPISZ, discarded on WRÓĆ/Escape.
@@ -34,54 +34,34 @@ export class CityOverlay {
     if (e.key === 'Escape') this.hide();
   };
 
-  constructor(private readonly scene: Phaser.Scene) {}
+  constructor(scene: Phaser.Scene) {
+    super(scene, 'city-overlay-root', 'city-overlay--visible');
+  }
 
-  mount() {
-    const root = document.getElementById('city-overlay-root');
-    if (!root) return;
-    this.root = root;
-    root.innerHTML = '';
-    root.classList.remove('city-overlay--visible');
-
-    gameEvents(this.scene.game).on('city:branchClick', this.onBranchClick, this);
-    gameEvents(this.scene.game).on('city:openJournal', this.onOpenJournal, this);
-    gameEvents(this.scene.game).on('city:openCurriculum', this.onOpenCurriculum, this);
-    gameEvents(this.scene.game).on('city:stallClick', this.onStallClick, this);
-    gameEvents(this.scene.game).on('city:openParentDashboard', this.onOpenParentDashboard, this);
-    gameEvents(this.scene.game).on('writing:completed', this.onWritingCompleted, this);
-    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.scene.game).off('city:branchClick', this.onBranchClick, this);
-      gameEvents(this.scene.game).off('city:openJournal', this.onOpenJournal, this);
-      gameEvents(this.scene.game).off('city:openCurriculum', this.onOpenCurriculum, this);
-      gameEvents(this.scene.game).off('city:stallClick', this.onStallClick, this);
-      gameEvents(this.scene.game).off('city:openParentDashboard', this.onOpenParentDashboard, this);
-      gameEvents(this.scene.game).off('writing:completed', this.onWritingCompleted, this);
-      window.removeEventListener('keydown', this.onKey);
-      if (this.root) this.root.innerHTML = '';
-    });
+  protected onMount() {
+    this.onGameEvent('city:branchClick', this.onBranchClick, this);
+    this.onGameEvent('city:openJournal', this.onOpenJournal, this);
+    this.onGameEvent('city:openCurriculum', this.onOpenCurriculum, this);
+    this.onGameEvent('city:stallClick', this.onStallClick, this);
+    this.onGameEvent('city:openParentDashboard', this.onOpenParentDashboard, this);
+    this.onGameEvent('writing:completed', this.onWritingCompleted, this);
   }
 
   private onOpenCurriculum() {
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('city-overlay-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     // Draft state starts as a clone of the persisted selection; edits
     // stay in-memory until the player hits ZAPISZ.
     this.curriculumDraft = { ...curriculumCatalog.getActiveSelection() };
     this.renderCurriculum();
-    this.root.classList.add('city-overlay--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   private onOpenJournal() {
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('city-overlay-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     this.renderJournal();
-    this.root.classList.add('city-overlay--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   // Re-render the city panel when a gate unlocks a branch, so the
@@ -103,13 +83,10 @@ export class CityOverlay {
   // have items to sell; for now it acknowledges the player's gold and
   // teases what's coming, so the click target isn't a dead end.
   private onStallClick() {
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('city-overlay-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     this.renderStall();
-    this.root.classList.add('city-overlay--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   // Parent dashboard. Pulls every persistent number metaStore knows
@@ -118,13 +95,10 @@ export class CityOverlay {
   // glance-and-go view for the parent who's checking how the kid's
   // doing this week.
   private onOpenParentDashboard() {
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('city-overlay-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     this.renderParentDashboard();
-    this.root.classList.add('city-overlay--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   private renderParentDashboard() {
@@ -240,21 +214,15 @@ export class CityOverlay {
   }
 
   private show(branch: BranchDef) {
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('city-overlay-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     this.render(branch);
-    this.root.classList.add('city-overlay--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   private hide() {
-    if (!this.root) return;
-    this.root.classList.remove('city-overlay--visible');
-    this.root.innerHTML = '';
+    this.hideRoot();
     this.tree = undefined;
-    window.removeEventListener('keydown', this.onKey);
   }
 
   private render(branch: BranchDef) {

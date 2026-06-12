@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { gameEvents } from '../systems/events';
+import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import type { ClozeItem } from '../systems/UnlockGates';
 
@@ -8,8 +9,7 @@ import type { ClozeItem } from '../systems/UnlockGates';
 // three option buttons. Wrong click: shake + turn red, stay on the
 // item. Right click: flash green, advance. Finishes after every item
 // has been correctly answered once.
-export class ClozeTask {
-  private root?: HTMLElement;
+export class ClozeTask extends DomOverlay {
   private branch?: BranchId;
   private items: ClozeItem[] = [];
   private idx = 0;
@@ -18,25 +18,17 @@ export class ClozeTask {
   private wrongPicks = 0;
   private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.close(); };
 
-  constructor(private readonly scene: Phaser.Scene) {}
+  constructor(scene: Phaser.Scene) {
+    super(scene, 'writing-task-root', 'writing-task--visible');
+  }
 
-  mount() {
-    const root = document.getElementById('writing-task-root');
-    if (!root) return;
-    this.root = root;
-    gameEvents(this.scene.game).on('writing:start', this.open, this);
-    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.scene.game).off('writing:start', this.open, this);
-      window.removeEventListener('keydown', this.onKey);
-    });
+  protected onMount() {
+    this.onGameEvent('writing:start', this.open, this);
   }
 
   private open(payload: { branchId: BranchId }) {
     if (BRANCH_DEFS[payload.branchId].gate.kind !== 'cloze') return;
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('writing-task-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     const p = payloadFor(payload.branchId, 'cloze');
     if (!p) return;
     this.branch = payload.branchId;
@@ -46,17 +38,14 @@ export class ClozeTask {
     this.lastPick = undefined;
     this.wrongPicks = 0;
     this.render();
-    this.root.classList.add('writing-task--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   private close() {
-    if (!this.root) return;
-    this.root.classList.remove('writing-task--visible');
-    this.root.innerHTML = '';
+    this.hideRoot();
     this.branch = undefined;
     this.items = [];
-    window.removeEventListener('keydown', this.onKey);
   }
 
   private render() {

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { gameEvents } from '../systems/events';
+import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import { isSrSupported, listen, sourceLangCode, tokenizeEn, tokenOverlap } from '../systems/speech';
 import { curriculumCatalog } from '../systems/CurriculumCatalog';
@@ -14,8 +15,7 @@ import { curriculumCatalog } from '../systems/CurriculumCatalog';
 const PASS_THRESHOLD = 0.7;
 const MAX_ATTEMPTS = 3;
 
-export class ReadAloudTask {
-  private root?: HTMLElement;
+export class ReadAloudTask extends DomOverlay {
   private branch?: BranchId;
   private busy = false;
   private typingFallback = false;
@@ -25,25 +25,17 @@ export class ReadAloudTask {
   private attempts = 0;
   private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.close(); };
 
-  constructor(private readonly scene: Phaser.Scene) {}
+  constructor(scene: Phaser.Scene) {
+    super(scene, 'writing-task-root', 'writing-task--visible');
+  }
 
-  mount() {
-    const root = document.getElementById('writing-task-root');
-    if (!root) return;
-    this.root = root;
-    gameEvents(this.scene.game).on('writing:start', this.open, this);
-    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.scene.game).off('writing:start', this.open, this);
-      window.removeEventListener('keydown', this.onKey);
-    });
+  protected onMount() {
+    this.onGameEvent('writing:start', this.open, this);
   }
 
   private open(payload: { branchId: BranchId }) {
     if (BRANCH_DEFS[payload.branchId].gate.kind !== 'readAloud') return;
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('writing-task-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     this.branch = payload.branchId;
     this.busy = false;
     this.typingFallback = !isSrSupported();
@@ -52,16 +44,13 @@ export class ReadAloudTask {
     this.lastHits = [];
     this.attempts = 0;
     this.render();
-    this.root.classList.add('writing-task--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   private close() {
-    if (!this.root) return;
-    this.root.classList.remove('writing-task--visible');
-    this.root.innerHTML = '';
+    this.hideRoot();
     this.branch = undefined;
-    window.removeEventListener('keydown', this.onKey);
   }
 
   private render() {

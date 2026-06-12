@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { gameEvents } from '../systems/events';
+import { DomOverlay } from '../systems/DomOverlay';
 import { BRANCH_DEFS, type BranchId, payloadFor, submitGate } from '../systems/CityBranches';
 import type { ListeningSentence } from '../systems/UnlockGates';
 import { cancelSpeak, isTtsSupported, sourceLangCode, speak } from '../systems/speech';
@@ -18,8 +19,7 @@ interface Segment {
   gapIndex?: number; // position in the correctWords array (for gap segments)
 }
 
-export class ListeningTask {
-  private root?: HTMLElement;
+export class ListeningTask extends DomOverlay {
   private branch?: BranchId;
   private sentences: ListeningSentence[] = [];
   private idx = 0;
@@ -27,34 +27,27 @@ export class ListeningTask {
   private filled: Array<string | null> = []; // filled[gapIndex] = chosen word or null
   private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.close(); };
 
-  constructor(private readonly scene: Phaser.Scene) {}
+  constructor(scene: Phaser.Scene) {
+    super(scene, 'writing-task-root', 'writing-task--visible');
+  }
 
-  mount() {
-    const root = document.getElementById('writing-task-root');
-    if (!root) return;
-    this.root = root;
-    gameEvents(this.scene.game).on('writing:start', this.open, this);
-    this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.scene.game).off('writing:start', this.open, this);
-      window.removeEventListener('keydown', this.onKey);
-      cancelSpeak();
-    });
+  protected onMount() {
+    this.onGameEvent('writing:start', this.open, this);
+    // Stop any in-flight TTS utterance when the scene goes away.
+    this.addDisposer(() => cancelSpeak());
   }
 
   private open(payload: { branchId: BranchId }) {
     if (BRANCH_DEFS[payload.branchId].gate.kind !== 'listening') return;
-    if (!this.root || !document.body.contains(this.root)) {
-      this.root = document.getElementById('writing-task-root') ?? undefined;
-    }
-    if (!this.root) return;
+    if (!this.ensureRoot()) return;
     const p = payloadFor(payload.branchId, 'listening');
     if (!p) return;
     this.branch = payload.branchId;
     this.sentences = p.sentences;
     this.idx = 0;
     this.loadSentence(true);
-    this.root.classList.add('writing-task--visible');
-    window.addEventListener('keydown', this.onKey);
+    this.showRoot();
+    this.attachWindowKeydown(this.onKey);
   }
 
   private loadSentence(autoSpeak: boolean) {
@@ -65,15 +58,12 @@ export class ListeningTask {
   }
 
   private close() {
-    if (!this.root) return;
     cancelSpeak();
-    this.root.classList.remove('writing-task--visible');
-    this.root.innerHTML = '';
+    this.hideRoot();
     this.branch = undefined;
     this.sentences = [];
     this.segments = [];
     this.filled = [];
-    window.removeEventListener('keydown', this.onKey);
   }
 
   private render(autoSpeak = false) {
