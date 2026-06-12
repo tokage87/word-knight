@@ -19,6 +19,13 @@ export class QuizManager {
   // unresponsive.
   private newWordGraceUntilMs = 0;
   private keydownHandler?: (ev: KeyboardEvent) => void;
+  // Stable references so SHUTDOWN can unregister them — the UI scene
+  // restarts on every death, and anonymous closures left on the global
+  // game.events bus (or on the persistent #quiz-root element) would
+  // accumulate and double-fire quiz:correct/quiz:wrong.
+  private pauseInput = () => { this.inputPaused = true; };
+  private resumeInput = () => { this.inputPaused = false; };
+  private clickHandler = (ev: Event) => this.onClick(ev);
 
   constructor(private readonly scene: Phaser.Scene) {}
 
@@ -31,18 +38,10 @@ export class QuizManager {
     // story gate reuses the sentence UI but emits a different event, so
     // it needs its own pause trigger — otherwise W/E would register
     // both as a story pick AND a quiz answer.
-    this.scene.game.events.on('sentence:show', () => {
-      this.inputPaused = true;
-    });
-    this.scene.game.events.on('story:show', () => {
-      this.inputPaused = true;
-    });
-    this.scene.game.events.on('skillpicker:show', () => {
-      this.inputPaused = true;
-    });
-    this.scene.game.events.on('skillpicker:picked', () => {
-      this.inputPaused = false;
-    });
+    this.scene.game.events.on('sentence:show', this.pauseInput);
+    this.scene.game.events.on('story:show', this.pauseInput);
+    this.scene.game.events.on('skillpicker:show', this.pauseInput);
+    this.scene.game.events.on('skillpicker:picked', this.resumeInput);
     root.innerHTML = `
       <div class="quiz">
         <div class="quiz-prompt">Przetłumacz</div>
@@ -61,7 +60,7 @@ export class QuizManager {
     `;
     this.root = root;
 
-    root.addEventListener('click', (ev) => this.onClick(ev));
+    root.addEventListener('click', this.clickHandler);
 
     this.keydownHandler = (ev: KeyboardEvent) => {
       const k = ev.key.toUpperCase();
@@ -73,6 +72,11 @@ export class QuizManager {
     window.addEventListener('keydown', this.keydownHandler);
 
     this.scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.scene.game.events.off('sentence:show', this.pauseInput);
+      this.scene.game.events.off('story:show', this.pauseInput);
+      this.scene.game.events.off('skillpicker:show', this.pauseInput);
+      this.scene.game.events.off('skillpicker:picked', this.resumeInput);
+      root.removeEventListener('click', this.clickHandler);
       if (this.keydownHandler) {
         window.removeEventListener('keydown', this.keydownHandler);
       }

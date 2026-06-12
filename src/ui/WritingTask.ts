@@ -201,7 +201,7 @@ export class WritingTask {
       return;
     }
     if (this.deepBusy) {
-      const p = deepJudge.isReady() ? { phase: 'ready', percent: 100, text: 'Oceniam…' } : (deepJudge as any).lastProgress ?? { percent: 0, text: '' };
+      const p = deepJudge.isReady() ? { phase: 'ready', percent: 100, text: 'Oceniam…' } : deepJudge.getProgress();
       host.innerHTML = `
         <div class="wt-deep-loading">
           <div class="wt-deep-label"><span class="wt-chip wt-chip--ai" aria-hidden="true"></span><span>Szczegółowa ocena — ładuję model (~2 GB przy pierwszym uruchomieniu, potem cache)</span></div>

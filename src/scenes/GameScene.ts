@@ -11,7 +11,7 @@ import { Ally, isSoloAlly, type AllyKind } from '../entities/Ally';
 import { Projectile } from '../entities/Projectile';
 import { Enemy } from '../entities/Enemy';
 import { WaveSpawner } from '../systems/WaveSpawner';
-import { SpellCaster, MAX_RANK, ALL_SPELL_IDS, type SpellId } from '../systems/SpellCaster';
+import { SpellCaster, ALL_SPELL_IDS, type SpellId } from '../systems/SpellCaster';
 import type { SkillCardOption } from '../systems/SkillPicker';
 import { SentenceBuilder } from '../systems/SentenceBuilder';
 import { metaStore, type BranchId } from '../systems/MetaStore';
@@ -176,6 +176,13 @@ export class GameScene extends Phaser.Scene {
     };
     this.distinctWords.clear();
     this.lastBgScroll = 0;
+    // Parallax collections must reset too — restart re-runs the spawn
+    // methods, and stale entries would keep destroyed sprites alive in
+    // the per-frame scroll loop while the arrays grow without bound.
+    this.clouds = [];
+    this.midProps = [];
+    this.villagers = [];
+    this.bushes = [];
 
     this.drawSky();
     this.drawMountains();
@@ -620,7 +627,6 @@ export class GameScene extends Phaser.Scene {
     if (this.globalCooldownReduction > 0) {
       this.spellCaster.reduceAll(this.globalCooldownReduction * 20_000);
     }
-    void ALL_SPELL_IDS;
   }
 
   // Single dispatch for every tree-node effect kind. Extend here when
@@ -1041,5 +1047,3 @@ function shuffleInPlace<T>(arr: T[]): void {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
 }
-
-void MAX_RANK;

@@ -9,11 +9,11 @@
 // to UI listeners so the student sees a real progress bar instead
 // of wondering why nothing is happening.
 
-import {
-  CreateMLCEngine,
-  type MLCEngineInterface,
-  type InitProgressReport,
-} from '@mlc-ai/web-llm';
+// Type-only import — the web-llm runtime (~5 MB of JS before the model
+// weights) is loaded lazily via dynamic import() in build(), so players
+// who never click "Sprawdź szczegółowo" don't pay for it in the main
+// bundle.
+import type { MLCEngineInterface, InitProgressReport } from '@mlc-ai/web-llm';
 
 export interface DeepProgress {
   phase: 'download' | 'ready' | 'error';
@@ -45,17 +45,32 @@ export class DeepJudge {
   }
 
   private async build(): Promise<MLCEngineInterface> {
-    const engine = await CreateMLCEngine(MODEL, {
-      initProgressCallback: (report: InitProgressReport) => {
-        this.emitProgress({
-          phase: 'download',
-          percent: Math.round((report.progress ?? 0) * 100),
-          text: report.text ?? '',
-        });
-      },
-    });
-    this.emitProgress({ phase: 'ready', percent: 100, text: 'Gotowe' });
-    return engine;
+    try {
+      const { CreateMLCEngine } = await import('@mlc-ai/web-llm');
+      const engine = await CreateMLCEngine(MODEL, {
+        initProgressCallback: (report: InitProgressReport) => {
+          this.emitProgress({
+            phase: 'download',
+            percent: Math.round((report.progress ?? 0) * 100),
+            text: report.text ?? '',
+          });
+        },
+      });
+      this.emitProgress({ phase: 'ready', percent: 100, text: 'Gotowe' });
+      return engine;
+    } catch (e) {
+      // Surface the failure to progress listeners (so the UI bar doesn't
+      // hang at a stale percent) and drop the cached promise — otherwise
+      // every later init() would await the same rejection forever and
+      // the feature could never recover from a transient network error.
+      this.emitProgress({
+        phase: 'error',
+        percent: 0,
+        text: (e as Error)?.message ?? 'Nie udało się załadować modelu',
+      });
+      this.enginePromise = undefined;
+      throw e;
+    }
   }
 
   async evaluate(params: {
@@ -97,6 +112,10 @@ Rules:
 
   isReady(): boolean {
     return this.lastProgress.phase === 'ready';
+  }
+
+  getProgress(): DeepProgress {
+    return this.lastProgress;
   }
 
   private emitProgress(p: DeepProgress) {

@@ -134,20 +134,20 @@ export class Knight extends Phaser.GameObjects.Sprite {
     // Invulnerability window from Stone Shield etc.
     if (this.scene.time.now < this.invulnUntilMs) {
       this.setTint(0xffe2a0);
-      this.scene.time.delayedCall(80, () => this.clearTint());
+      this.scene.time.delayedCall(80, () => { if (this.active) this.clearTint(); });
       return;
     }
     // Dodge roll.
     if (this.dodgeChance > 0 && Math.random() < this.dodgeChance) {
       this.setTint(0xa0e0ff);
-      this.scene.time.delayedCall(80, () => this.clearTint());
+      this.scene.time.delayedCall(80, () => { if (this.active) this.clearTint(); });
       return;
     }
     // Armor reduction.
     const applied = this.armor > 0 ? Math.max(1, Math.round(n * (1 - this.armor))) : n;
     this.hp -= applied;
     this.setTint(0xff7070);
-    this.scene.time.delayedCall(80, () => this.clearTint());
+    this.scene.time.delayedCall(80, () => { if (this.active) this.clearTint(); });
     this.scene.cameras.main.shake(60, 0.003);
     if (this.hp <= 0) {
       this.hp = 0;
