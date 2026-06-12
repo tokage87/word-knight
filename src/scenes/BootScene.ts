@@ -118,16 +118,16 @@ export class BootScene extends Phaser.Scene {
     // post-death meta scene. Sheep + bush are animated spritesheets
     // (128px and 64px frames respectively), everything else is a
     // single image.
-    this.load.image(AK.cityCastleBlue,   'assets/city/castle-blue.png');
-    this.load.image(AK.cityCastleRed,    'assets/city/castle-red.png');
+    this.load.image(AK.cityCastleBlue, 'assets/city/castle-blue.png');
+    this.load.image(AK.cityCastleRed, 'assets/city/castle-red.png');
     this.load.image(AK.cityCastleYellow, 'assets/city/castle-yellow.png');
     this.load.image(AK.cityCastlePurple, 'assets/city/castle-purple.png');
-    this.load.image(AK.cityTowerBlue,    'assets/city/tower-blue.png');
-    this.load.image(AK.cityTowerRed,     'assets/city/tower-red.png');
+    this.load.image(AK.cityTowerBlue, 'assets/city/tower-blue.png');
+    this.load.image(AK.cityTowerRed, 'assets/city/tower-red.png');
     this.load.image(AK.cityBarracksBlue, 'assets/city/barracks-blue.png');
-    this.load.image(AK.houseBlue3,       'assets/city/house-blue-3.png');
-    this.load.image(AK.cityRock1,        'assets/city/rock-1.png');
-    this.load.image(AK.cityRock2,        'assets/city/rock-2.png');
+    this.load.image(AK.houseBlue3, 'assets/city/house-blue-3.png');
+    this.load.image(AK.cityRock1, 'assets/city/rock-1.png');
+    this.load.image(AK.cityRock2, 'assets/city/rock-2.png');
     this.load.spritesheet(AK.citySheepIdle, 'assets/city/sheep-idle.png', {
       frameWidth: 128,
       frameHeight: 128,
@@ -292,13 +292,7 @@ export class BootScene extends Phaser.Scene {
     this.scene.launch('UI');
   }
 
-  private buildAnim(
-    key: string,
-    textureKey: string,
-    frameCount: number,
-    frameRate: number,
-    repeat: number,
-  ) {
+  private buildAnim(key: string, textureKey: string, frameCount: number, frameRate: number, repeat: number) {
     if (this.anims.exists(key)) return;
     this.anims.create({
       key,

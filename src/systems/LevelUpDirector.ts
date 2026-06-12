@@ -95,10 +95,7 @@ export class LevelUpDirector {
     // then clear the flag. A subsequent story-fail will set it again.
     const rolloverActive = this.pendingNewSkillRollover;
     this.pendingNewSkillRollover = false;
-    const options = this.buildOptions(
-      3,
-      rolloverActive ? { allowNew: true } : {},
-    );
+    const options = this.buildOptions(3, rolloverActive ? { allowNew: true } : {});
     if (options.length === 0) {
       // No new skills available and nothing to upgrade — drop remaining
       // level-ups silently so the bar still flows.
@@ -134,11 +131,7 @@ export class LevelUpDirector {
     gameEvents(this.scene.game).emit('skillpicker:show', options);
   }
 
-  onStoryComplete(payload: {
-    id: string;
-    perfect: boolean;
-    weakened: boolean;
-  }) {
+  onStoryComplete(payload: { id: string; perfect: boolean; weakened: boolean }) {
     let options = this.pendingCardOptions;
     if (!options) return;
     this.hooks.onStoryResult(payload.perfect);
@@ -189,13 +182,8 @@ export class LevelUpDirector {
 
   // Thin instance wrapper over the pure builder — supplies the live
   // level-up count and the MetaStore-backed rank lookup.
-  private buildOptions(
-    count: number,
-    overrides: { allowNew?: boolean; weakened?: boolean } = {},
-  ): SkillCardOption[] {
-    return buildCardOptions(count, overrides, this.levelUpCount, (b, n) =>
-      metaStore.getRank(b, n),
-    );
+  private buildOptions(count: number, overrides: { allowNew?: boolean; weakened?: boolean } = {}): SkillCardOption[] {
+    return buildCardOptions(count, overrides, this.levelUpCount, (b, n) => metaStore.getRank(b, n));
   }
 }
 
@@ -255,8 +243,7 @@ export function buildCardOptions(
   // upgrade pool is empty so the picker still shows something.
   // `overrides.allowNew` forces the value (used by the story gate on
   // failure to guarantee upgrade-only cards).
-  const allowNew =
-    overrides.allowNew ?? (levelUpCount % 4 === 1);
+  const allowNew = overrides.allowNew ?? levelUpCount % 4 === 1;
   const pool: SkillCardOption[] = [];
 
   if (allowNew) {
@@ -279,19 +266,11 @@ export function buildCardOptions(
 // picks. Ally unlocks are binary (join or don't) — weakening them is
 // a no-op. Returning the effect unchanged means "nothing to soften".
 function canWeaken(node: TreeNode): boolean {
-  return (
-    node.effect.kind === 'stat' ||
-    node.effect.kind === 'runStat' ||
-    node.effect.kind === 'spellRank'
-  );
+  return node.effect.kind === 'stat' || node.effect.kind === 'runStat' || node.effect.kind === 'spellRank';
 }
 
 function weakenEffect(effect: TreeNode['effect']): TreeNode['effect'] {
-  if (
-    effect.kind === 'stat' ||
-    effect.kind === 'runStat' ||
-    effect.kind === 'spellRank'
-  ) {
+  if (effect.kind === 'stat' || effect.kind === 'runStat' || effect.kind === 'spellRank') {
     return { ...effect, perRank: halve(effect.perRank) };
   }
   return effect;

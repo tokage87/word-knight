@@ -219,9 +219,7 @@ export class GameScene extends Phaser.Scene {
     // is up (movement speed unaffected).
     const allyList = this.allies.getChildren() as unknown as Ally[];
     const cooldownMult = this.flowActive ? this.FLOW_TICK_MULT : 1;
-    allyList.forEach((a) =>
-      a.tick(delta, this.knight, enemies, this.projectiles, cooldownMult),
-    );
+    allyList.forEach((a) => a.tick(delta, this.knight, enemies, this.projectiles, cooldownMult));
 
     // Projectile collision pass. `tick()` returns false when the
     // projectile hit something or timed out — destroy on next frame
@@ -432,14 +430,9 @@ export class GameScene extends Phaser.Scene {
   // single pixel.
   private spawnAlly(kind: AllyKind) {
     const solo = isSoloAlly(kind);
-    const soloCount = this.allies
-      .getChildren()
-      .filter((a) => (a as Ally).kind && isSoloAlly((a as Ally).kind))
-      .length;
+    const soloCount = this.allies.getChildren().filter((a) => (a as Ally).kind && isSoloAlly((a as Ally).kind)).length;
     const trailCount = this.nextAllyIndex - soloCount;
-    const offset = solo
-      ? 60 + soloCount * 18
-      : -20 - trailCount * 22;
+    const offset = solo ? 60 + soloCount * 18 : -20 - trailCount * 22;
     const a = new Ally(this, kind, this.knight, offset);
     a.setDepth(49); // just behind the knight (50)
     this.allies.add(a);
@@ -509,11 +502,7 @@ export class GameScene extends Phaser.Scene {
     this.levelUps.onSentenceComplete(payload);
   }
 
-  private onStoryComplete(payload: {
-    id: string;
-    perfect: boolean;
-    weakened: boolean;
-  }) {
+  private onStoryComplete(payload: { id: string; perfect: boolean; weakened: boolean }) {
     this.levelUps.onStoryComplete(payload);
   }
 
@@ -528,8 +517,9 @@ export class GameScene extends Phaser.Scene {
     const unlocked: SpellId[] = ALL_SPELL_IDS.filter((id) => this.spellCaster.isUnlocked(id));
     this.registry.set('spellsUnlocked', unlocked);
     const ranks: Record<string, number> = {};
-    ALL_SPELL_IDS.forEach((id) => { ranks[id] = this.spellCaster.getRank(id); });
+    ALL_SPELL_IDS.forEach((id) => {
+      ranks[id] = this.spellCaster.getRank(id);
+    });
     this.registry.set('spellsRank', ranks);
   }
-
 }

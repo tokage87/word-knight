@@ -87,7 +87,8 @@ const STATIC_DISTRACTORS = {
   word: 'clue',
   clue: 'word',
   next: 'last',
-  first: 'second',
+  // (`first` is mapped below, next to `start`/`end`; an earlier
+  // duplicate `first: 'second'` entry was shadowed and removed.)
   third: 'second',
   final: 'first',
   now: 'then',
@@ -997,7 +998,6 @@ function bootstrap() {
   const stories = [];
 
   for (const category of CATEGORY_IDS) {
-    const frames = CATEGORY_CONTEXTS[category].frames;
     for (const tier of TIERS) {
       const bucket = VOCAB_BANKS[category][tier];
       const tokenPool = tokenPoolForBucket(category, bucket);

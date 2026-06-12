@@ -51,7 +51,7 @@ const TIER_PROFILES: TierProfile[] = [
     idle: ANIM.enemyIdle,
     run: ANIM.enemyRun,
     attack: ANIM.enemyAttack,
-    scale: 0.30,
+    scale: 0.3,
     originY: 0.672,
   },
   // Tier 1 — goblin
@@ -60,7 +60,7 @@ const TIER_PROFILES: TierProfile[] = [
     idle: ANIM.goblinIdle,
     run: ANIM.goblinRun,
     attack: ANIM.goblinAttack,
-    scale: 0.30,
+    scale: 0.3,
     originY: 0.72,
   },
   // Tier 2 — spider (low silhouette)

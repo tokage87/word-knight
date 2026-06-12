@@ -195,7 +195,9 @@ export class WritingTask extends DomOverlay {
       return;
     }
     if (this.deepBusy) {
-      const p = deepJudge.isReady() ? { phase: 'ready', percent: 100, text: STR.writing.evaluating } : deepJudge.getProgress();
+      const p = deepJudge.isReady()
+        ? { phase: 'ready', percent: 100, text: STR.writing.evaluating }
+        : deepJudge.getProgress();
       // Model load failed mid-flight: show the error text instead of a
       // meter stuck at a stale percent. runDeep's catch re-renders with
       // the retry button a microtask later, so no button is needed here.
@@ -292,9 +294,5 @@ function countHintWordsUsed(text: string, hints: string[]): number {
 }
 
 function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }

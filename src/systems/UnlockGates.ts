@@ -21,17 +21,17 @@ export const GATE_CTA: Record<GateKind, { label: string; sublabel: string }> = S
 
 export interface WritingPayload {
   kind: 'writing';
-  prompt: string;      // PL prompt
-  promptEn: string;    // EN prompt
-  hint: string;        // teacher guidance
+  prompt: string; // PL prompt
+  promptEn: string; // EN prompt
+  hint: string; // teacher guidance
   hintWords: string[]; // clickable chips (~12)
   referenceEn: string; // kept for DeepJudge context
 }
 
 export interface ListeningSentence {
-  en: string;              // sentence spoken by TTS
-  correctWords: string[];  // words that must be picked (order-free)
-  distractors: string[];   // plausible-but-wrong chips
+  en: string; // sentence spoken by TTS
+  correctWords: string[]; // words that must be picked (order-free)
+  distractors: string[]; // plausible-but-wrong chips
 }
 export interface ListeningPayload {
   kind: 'listening';
@@ -40,26 +40,22 @@ export interface ListeningPayload {
 
 export interface ReadAloudPayload {
   kind: 'readAloud';
-  sentence: string;        // ~8-12 word English sentence
-  hintPl?: string;         // optional Polish translation shown as help
+  sentence: string; // ~8-12 word English sentence
+  hintPl?: string; // optional Polish translation shown as help
 }
 
 export interface ClozeItem {
-  sentence: string;        // contains "{{GAP}}" where the word should go
-  options: string[];       // 3 choices
-  correct: string;         // must be one of `options`
-  hintPl?: string;         // optional Polish translation clue
+  sentence: string; // contains "{{GAP}}" where the word should go
+  options: string[]; // 3 choices
+  correct: string; // must be one of `options`
+  hintPl?: string; // optional Polish translation clue
 }
 export interface ClozePayload {
   kind: 'cloze';
   items: ClozeItem[];
 }
 
-export type GatePayload =
-  | WritingPayload
-  | ListeningPayload
-  | ReadAloudPayload
-  | ClozePayload;
+export type GatePayload = WritingPayload | ListeningPayload | ReadAloudPayload | ClozePayload;
 
 export interface GateDef {
   kind: GateKind;

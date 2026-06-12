@@ -26,32 +26,6 @@ const sectionOrder = [
   "Deco",
 ];
 
-const motionHints = [
-  "run",
-  "walk",
-  "move",
-  "attack",
-  "shoot",
-  "throw",
-  "heal",
-  "idle",
-  "guard",
-  "bounce",
-  "bouncing",
-  "spin",
-  "spinning",
-  "explosion",
-  "fire",
-  "spawn",
-  "construction",
-  "windup",
-  "recovery",
-  "dead",
-  "row",
-  "fuselit",
-  "active",
-];
-
 const staticPenaltyHints = [
   "projectile",
   "arrow",

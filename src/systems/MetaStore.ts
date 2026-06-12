@@ -106,10 +106,10 @@ function freshState(): MetaState {
       wordStats: {},
     },
     branches: {
-      combat:  freshBranch(),
-      spells:  freshBranch(),
+      combat: freshBranch(),
+      spells: freshBranch(),
       scholar: freshBranch(),
-      writer:  freshBranch(),
+      writer: freshBranch(),
     },
     writingSubmissions: [],
     curriculum: { ...DEFAULT_CURRICULUM },
@@ -118,10 +118,10 @@ function freshState(): MetaState {
 
 // v1 shape, referenced only by the migration path.
 interface V1Branches {
-  combat?:  { unlocked?: boolean; ranks?: { hp?: number; dmg?: number; spd?: number } };
-  spells?:  { unlocked?: boolean; chosenStartSpell?: SpellId | null };
+  combat?: { unlocked?: boolean; ranks?: { hp?: number; dmg?: number; spd?: number } };
+  spells?: { unlocked?: boolean; chosenStartSpell?: SpellId | null };
   scholar?: { unlocked?: boolean; ranks?: { xpPerQuiz?: number; cdCutPerQuiz?: number } };
-  writer?:  { unlocked?: boolean; ranks?: { xpBonus?: number } };
+  writer?: { unlocked?: boolean; ranks?: { xpBonus?: number } };
 }
 
 // Map old v1 fields onto new tree-node IDs. spd — which lived on
@@ -154,7 +154,7 @@ function migrateV1(raw: { branches?: V1Branches; unlocked?: boolean } & Record<s
   const waterRanks: Record<string, number> = {};
   const chosen = b.spells?.chosenStartSpell;
   if (chosen === 'fire') waterRanks['water.ice.unlock'] = 0; // fire isn't a water-tree node; silently drop
-  if (chosen === 'ice')  waterRanks['water.ice.unlock'] = 1;
+  if (chosen === 'ice') waterRanks['water.ice.unlock'] = 1;
   if (chosen === 'heal') waterRanks['water.heal.unlock'] = 1;
   fresh.branches.spells = {
     unlockedAt: b.spells?.unlocked ? Date.now() : null,
@@ -191,10 +191,14 @@ function hydrate(raw: unknown): MetaState {
   if (r.version === 2 || r.version === 3) {
     const rbranches = (r.branches ?? {}) as Partial<Record<BranchId, Partial<BranchState>>>;
     const branches: Record<BranchId, BranchState> = {
-      combat:  { ...freshBranch(), ...(rbranches.combat  ?? {}), treeRanks: { ...(rbranches.combat?.treeRanks  ?? {}) } },
-      spells:  { ...freshBranch(), ...(rbranches.spells  ?? {}), treeRanks: { ...(rbranches.spells?.treeRanks  ?? {}) } },
-      scholar: { ...freshBranch(), ...(rbranches.scholar ?? {}), treeRanks: { ...(rbranches.scholar?.treeRanks ?? {}) } },
-      writer:  { ...freshBranch(), ...(rbranches.writer  ?? {}), treeRanks: { ...(rbranches.writer?.treeRanks  ?? {}) } },
+      combat: { ...freshBranch(), ...(rbranches.combat ?? {}), treeRanks: { ...(rbranches.combat?.treeRanks ?? {}) } },
+      spells: { ...freshBranch(), ...(rbranches.spells ?? {}), treeRanks: { ...(rbranches.spells?.treeRanks ?? {}) } },
+      scholar: {
+        ...freshBranch(),
+        ...(rbranches.scholar ?? {}),
+        treeRanks: { ...(rbranches.scholar?.treeRanks ?? {}) },
+      },
+      writer: { ...freshBranch(), ...(rbranches.writer ?? {}), treeRanks: { ...(rbranches.writer?.treeRanks ?? {}) } },
     };
     const rawCurriculum = r.curriculum as CurriculumSelection | undefined;
     return {
@@ -204,9 +208,10 @@ function hydrate(raw: unknown): MetaState {
       writingSubmissions: Array.isArray(r.writingSubmissions) ? (r.writingSubmissions as WritingSubmission[]) : [],
       lifetime: { ...fresh.lifetime, ...((r.lifetime as object) ?? {}) },
       branches,
-      curriculum: rawCurriculum && typeof rawCurriculum === 'object'
-        ? { ...DEFAULT_CURRICULUM, ...rawCurriculum }
-        : { ...DEFAULT_CURRICULUM },
+      curriculum:
+        rawCurriculum && typeof rawCurriculum === 'object'
+          ? { ...DEFAULT_CURRICULUM, ...rawCurriculum }
+          : { ...DEFAULT_CURRICULUM },
     };
   }
   if (r.version === 1 || r.version === undefined) {
@@ -300,9 +305,15 @@ export class MetaStore {
     }
   }
 
-  get(): MetaState { return this.state; }
-  getGold(): number { return this.state.gold; }
-  distinctWordCount(): number { return this.distinctWordsSet.size; }
+  get(): MetaState {
+    return this.state;
+  }
+  getGold(): number {
+    return this.state.gold;
+  }
+  distinctWordCount(): number {
+    return this.distinctWordsSet.size;
+  }
 
   addGold(amount: number) {
     // Non-finite (NaN/Infinity) would corrupt the persisted balance — no-op.
@@ -375,7 +386,7 @@ export class MetaStore {
   getDayStreak(): number {
     const activity = this.getDailyActivity();
     let streak = 0;
-    let day = new Date();
+    const day = new Date();
     // Allow 1-day grace: if today is empty but yesterday isn't, start
     // counting from yesterday so the streak doesn't break the moment
     // the date rolls over.

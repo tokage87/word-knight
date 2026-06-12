@@ -145,7 +145,10 @@ export class CityOverlay extends DomOverlay {
         ? `<div>${STR.dashboard.noHardWords}</div>`
         : hardWords
             .slice(0, 8)
-            .map((hw) => `<div>${STR.dashboard.hardWordRow(escapeHtml(hw.pl), escapeHtml(hw.en), hw.c, hw.c + hw.w)}</div>`)
+            .map(
+              (hw) =>
+                `<div>${STR.dashboard.hardWordRow(escapeHtml(hw.pl), escapeHtml(hw.en), hw.c, hw.c + hw.w)}</div>`,
+            )
             .join('');
 
     const bars = days
@@ -584,9 +587,5 @@ function formatAbsoluteDate(ts: number): string {
 }
 
 function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }

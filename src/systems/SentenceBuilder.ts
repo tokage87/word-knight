@@ -4,10 +4,7 @@ import { DomOverlay } from './DomOverlay';
 import { curriculumCatalog } from './CurriculumCatalog';
 import { escapeHtml, escapeAttr } from './escape';
 import { STR } from '../i18n/strings';
-import type {
-  CurriculumSentence,
-  CurriculumStory,
-} from './CurriculumTypes';
+import type { CurriculumSentence, CurriculumStory } from './CurriculumTypes';
 
 // Keep the old public names so the rest of the codebase (scene event
 // payloads) reads cleanly — `Sentence` and `Story` are now aliases for
@@ -19,9 +16,7 @@ export type Story = CurriculumStory;
 // Words that are treated as equivalent for story-mode scoring. Picking
 // "the" when the correct answer was "a" (or vice versa) does NOT count
 // as a mistake. Extend if we hit similar easy-confusion pairs later.
-const ARTICLE_EQUIVALENTS: ReadonlyArray<ReadonlySet<string>> = [
-  new Set(['a', 'the']),
-];
+const ARTICLE_EQUIVALENTS: ReadonlyArray<ReadonlySet<string>> = [new Set(['a', 'the'])];
 
 function equivalentStoryWord(picked: string, correct: string): boolean {
   if (picked === correct) return true;
@@ -123,7 +118,8 @@ export class SentenceBuilder extends DomOverlay {
     // is structural and must NOT be escaped.
     const preview = this.current.steps
       .map((_s, i) => {
-        if (i < this.stepIndex) return `<span class="sentence-word sentence-word--done">${escapeHtml(this.picked[i] ?? '')}</span>`;
+        if (i < this.stepIndex)
+          return `<span class="sentence-word sentence-word--done">${escapeHtml(this.picked[i] ?? '')}</span>`;
         if (i === this.stepIndex) return `<span class="sentence-word sentence-word--active">____</span>`;
         return `<span class="sentence-word sentence-word--pending">____</span>`;
       })
@@ -172,9 +168,7 @@ export class SentenceBuilder extends DomOverlay {
     const k = ev.key.toUpperCase();
     if (k !== 'W' && k !== 'E') return;
     ev.preventDefault();
-    const btn = this.root.querySelector<HTMLButtonElement>(
-      `.sentence-opt[data-key="${k}"]`,
-    );
+    const btn = this.root.querySelector<HTMLButtonElement>(`.sentence-opt[data-key="${k}"]`);
     if (!btn) return;
     this.pick(btn.dataset.word ?? '', btn);
   }
@@ -186,9 +180,7 @@ export class SentenceBuilder extends DomOverlay {
     // (case-insensitive) — kids at A1-A2 frequently swap definite /
     // indefinite articles and we don't want to punish that in the
     // narrative gate. Single-sentence gate stays strict.
-    const correct = this.story
-      ? equivalentStoryWord(word, step.correct)
-      : word === step.correct;
+    const correct = this.story ? equivalentStoryWord(word, step.correct) : word === step.correct;
     this.locked = true;
 
     if (correct) {

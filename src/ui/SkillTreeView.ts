@@ -15,9 +15,9 @@ import { STR } from '../i18n/strings';
 // <button> absolutely positioned above the SVG. Click → popover with
 // cost + description + Buy/Zamknij.
 
-const HEX_DX = 110;    // horizontal distance between adjacent nodes
-const HEX_DY = 96;     // vertical distance between rows
-const NODE_SIZE = 72;  // rendered node width/height
+const HEX_DX = 110; // horizontal distance between adjacent nodes
+const HEX_DY = 96; // vertical distance between rows
+const NODE_SIZE = 72; // rendered node width/height
 // Asymmetric padding — horizontal is very generous so hover tooltips
 // at edge nodes stay inside the canvas, vertical is tight so the tree
 // starts near the top of the panel.
@@ -38,7 +38,10 @@ export class SkillTreeView {
     const gold = metaStore.getGold();
 
     const positions = new Map<string, { x: number; y: number }>();
-    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    let minX = Infinity,
+      minY = Infinity,
+      maxX = -Infinity,
+      maxY = -Infinity;
     for (const n of tree.nodes) {
       const x = n.position.q * HEX_DX + n.position.r * (HEX_DX / 2);
       const y = n.position.r * HEX_DY;
@@ -50,21 +53,24 @@ export class SkillTreeView {
     }
     const offsetX = PADDING_X - minX;
     const offsetY = PADDING_Y - minY;
-    const canvasW = (maxX - minX) + PADDING_X * 2;
-    const canvasH = (maxY - minY) + PADDING_Y * 2;
+    const canvasW = maxX - minX + PADDING_X * 2;
+    const canvasH = maxY - minY + PADDING_Y * 2;
 
     // Edges: one <line> per edge. Colored brighter when both endpoints
     // have at least rank 1 (i.e. the chain is "lit").
-    const edgeLines = tree.edges.map(([from, to]) => {
-      const a = positions.get(from); const b = positions.get(to);
-      if (!a || !b) return '';
-      const fromRank = metaStore.getRank(this.branchId, from);
-      const toRank = metaStore.getRank(this.branchId, to);
-      const lit = fromRank > 0 && toRank > 0;
-      const color = lit ? '#d3a145' : '#5a4428';
-      const opacity = lit ? '0.95' : '0.55';
-      return `<line x1="${a.x + offsetX}" y1="${a.y + offsetY}" x2="${b.x + offsetX}" y2="${b.y + offsetY}" stroke="${color}" stroke-width="${lit ? 4 : 3}" stroke-opacity="${opacity}" stroke-linecap="round"/>`;
-    }).join('');
+    const edgeLines = tree.edges
+      .map(([from, to]) => {
+        const a = positions.get(from);
+        const b = positions.get(to);
+        if (!a || !b) return '';
+        const fromRank = metaStore.getRank(this.branchId, from);
+        const toRank = metaStore.getRank(this.branchId, to);
+        const lit = fromRank > 0 && toRank > 0;
+        const color = lit ? '#d3a145' : '#5a4428';
+        const opacity = lit ? '0.95' : '0.55';
+        return `<line x1="${a.x + offsetX}" y1="${a.y + offsetY}" x2="${b.x + offsetX}" y2="${b.y + offsetY}" stroke="${color}" stroke-width="${lit ? 4 : 3}" stroke-opacity="${opacity}" stroke-linecap="round"/>`;
+      })
+      .join('');
 
     const nodeButtons = tree.nodes.map((n) => this.renderNode(n, positions, offsetX, offsetY, gold)).join('');
 
@@ -110,8 +116,8 @@ export class SkillTreeView {
     else if (!affordable) state = 'poor';
     else state = 'unlockable';
 
-    const left = (pos.x + offsetX) - NODE_SIZE / 2;
-    const top = (pos.y + offsetY) - NODE_SIZE / 2;
+    const left = pos.x + offsetX - NODE_SIZE / 2;
+    const top = pos.y + offsetY - NODE_SIZE / 2;
 
     // Short next-step description shown in the hover tooltip so the
     // student doesn't have to click each node to read its effect.
@@ -124,7 +130,7 @@ export class SkillTreeView {
     const tooltipText = `${n.label} (${rank}/${n.maxRank})\n${nextDesc}\n${costLine}`;
 
     // Inline price/state badge — greyed when locked, gold when buyable.
-    let badgeHtml = '';
+    let badgeHtml: string;
     if (maxed) {
       badgeHtml = `<span class="st-node-badge st-node-badge--max">${STR.skillTree.maxBadge}</span>`;
     } else if (!prereqsMet) {
@@ -164,12 +170,14 @@ export class SkillTreeView {
     const canBuy = !maxed && prereqsMet && affordable;
 
     const prereqLines = n.requires.length
-      ? `<div class="st-pop-prereq">${STR.skillTree.requires} ${n.requires.map((r) => {
-          const rn = tree.nodes.find((x) => x.id === r);
-          const rRank = metaStore.getRank(this.branchId, r);
-          const ok = rRank > 0;
-          return `<span class="st-pop-prereq-item ${ok ? 'ok' : 'missing'}">${escapeHtml(rn?.label ?? r)}</span>`;
-        }).join(' · ')}</div>`
+      ? `<div class="st-pop-prereq">${STR.skillTree.requires} ${n.requires
+          .map((r) => {
+            const rn = tree.nodes.find((x) => x.id === r);
+            const rRank = metaStore.getRank(this.branchId, r);
+            const ok = rRank > 0;
+            return `<span class="st-pop-prereq-item ${ok ? 'ok' : 'missing'}">${escapeHtml(rn?.label ?? r)}</span>`;
+          })
+          .join(' · ')}</div>`
       : '';
 
     const buyBlock = maxed

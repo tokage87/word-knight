@@ -10,11 +10,11 @@ import { STR } from '../i18n/strings';
 // and hides itself.
 
 export interface SkillCardOption {
-  key: string;           // unique pick id ("fire.new", "fire.upgrade", …)
+  key: string; // unique pick id ("fire.new", "fire.upgrade", …)
   kind: 'new' | 'upgrade';
-  title: string;         // "Fire" / "Ice II"
+  title: string; // "Fire" / "Ice II"
   desc: string;
-  icon: string;          // emoji or /assets/ url
+  icon: string; // emoji or /assets/ url
   // True when the player made at least one mistake in the level-up
   // sentence/story gate. Upgrade effects for weakened cards are halved
   // (rounded down) on pick. Rendered with a "WEAKENED" badge so the

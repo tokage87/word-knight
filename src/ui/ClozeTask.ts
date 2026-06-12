@@ -17,7 +17,9 @@ export class ClozeTask extends DomOverlay {
   private locked = false;
   private lastPick?: { chosen: string; correct: boolean };
   private wrongPicks = 0;
-  private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.close(); };
+  private onKey = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') this.close();
+  };
 
   constructor(scene: Phaser.Scene) {
     super(scene, 'writing-task-root', 'writing-task--visible');
@@ -56,17 +58,17 @@ export class ClozeTask extends DomOverlay {
     const item = this.items[this.idx]!;
     const [before, after] = splitGap(item.sentence);
 
-    const optionsHtml = item.options.map((opt) => {
-      let cls = 'cz-opt';
-      if (this.lastPick && this.lastPick.chosen === opt) {
-        cls += this.lastPick.correct ? ' cz-opt--correct' : ' cz-opt--wrong';
-      }
-      return `<button class="${cls}" data-opt="${escapeAttr(opt)}" type="button">${escapeHtml(opt)}</button>`;
-    }).join('');
+    const optionsHtml = item.options
+      .map((opt) => {
+        let cls = 'cz-opt';
+        if (this.lastPick && this.lastPick.chosen === opt) {
+          cls += this.lastPick.correct ? ' cz-opt--correct' : ' cz-opt--wrong';
+        }
+        return `<button class="${cls}" data-opt="${escapeAttr(opt)}" type="button">${escapeHtml(opt)}</button>`;
+      })
+      .join('');
 
-    const hintBlock = item.hintPl
-      ? `<div class="cz-hint-pl">${escapeHtml(item.hintPl)}</div>`
-      : '';
+    const hintBlock = item.hintPl ? `<div class="cz-hint-pl">${escapeHtml(item.hintPl)}</div>` : '';
 
     const gapText = this.lastPick?.correct ? escapeHtml(this.lastPick.chosen) : '___';
     const gapCls = this.lastPick?.correct ? 'cz-gap cz-gap--filled' : 'cz-gap';

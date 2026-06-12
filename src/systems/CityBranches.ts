@@ -194,8 +194,20 @@ const writer: BranchDef = {
       promptEn: 'Write about your last holiday',
       hint: 'Gdzie byłeś/byłaś? Z kim? Co robiliście? Jaka była pogoda? Co ci się podobało?',
       hintWords: [
-        'last', 'summer', 'holiday', 'family', 'sea', 'mountain', 'swim',
-        'play', 'visit', 'eat', 'beach', 'sun', 'happy', 'beautiful',
+        'last',
+        'summer',
+        'holiday',
+        'family',
+        'sea',
+        'mountain',
+        'swim',
+        'play',
+        'visit',
+        'eat',
+        'beach',
+        'sun',
+        'happy',
+        'beautiful',
       ],
       referenceEn:
         'Last summer I went on holiday with my family. We travelled to the sea. The weather was hot and sunny. Every day we swam in the blue water and built big sand castles on the beach. In the evening we ate dinner and played games. It was a beautiful and happy holiday.',
@@ -207,7 +219,10 @@ const writer: BranchDef = {
 };
 
 export const BRANCH_DEFS: Record<BranchId, BranchDef> = {
-  combat, spells, scholar, writer,
+  combat,
+  spells,
+  scholar,
+  writer,
 };
 
 // Helper for UI surfaces that want to show the gate's CTA text.
@@ -238,17 +253,19 @@ export function payloadFor<K extends GatePayload['kind']>(
 // future non-English curriculum can reuse this path.
 
 function activeLanguage(): 'en' | 'de' {
-  return curriculumCatalog.getActiveSelection().source === 'experimental-de-exam'
-    ? 'de'
-    : 'en';
+  return curriculumCatalog.getActiveSelection().source === 'experimental-de-exam' ? 'de' : 'en';
 }
 
 function buildLocalizedPayload(kind: GateKind): GatePayload {
   switch (kind) {
-    case 'listening': return buildListeningPayload();
-    case 'cloze':     return buildClozePayload();
-    case 'readAloud': return buildReadAloudPayload();
-    case 'writing':   return buildWritingPayload();
+    case 'listening':
+      return buildListeningPayload();
+    case 'cloze':
+      return buildClozePayload();
+    case 'readAloud':
+      return buildReadAloudPayload();
+    case 'writing':
+      return buildWritingPayload();
   }
 }
 
@@ -301,9 +318,7 @@ function buildClozePayload(): ClozePayload {
   const items: ClozeItem[] = sample.map((s) => {
     const gapIdx = Math.floor(Math.random() * s.steps.length);
     const gap = s.steps[gapIdx]!;
-    const sentence = s.steps
-      .map((st, i) => (i === gapIdx ? '{{GAP}}' : st.correct))
-      .join(' ');
+    const sentence = s.steps.map((st, i) => (i === gapIdx ? '{{GAP}}' : st.correct)).join(' ');
     const options = [gap.correct, gap.distractor];
     // Pad to 3 options by borrowing a distractor from another step.
     const pads = s.steps
@@ -339,10 +354,7 @@ function buildWritingPayload(): WritingPayload {
 // response for writing-gates; for listening/read-aloud/cloze we store
 // a short machine-generated transcript so the parent can still see
 // what the student answered.
-export function submitGate(
-  branchId: BranchId,
-  text: string,
-): WritingSubmission {
+export function submitGate(branchId: BranchId, text: string): WritingSubmission {
   const { total, distinct } = countWords(text);
   const gate = BRANCH_DEFS[branchId].gate;
   // "Prompt" field in the submission record is the human-readable
@@ -364,7 +376,7 @@ export function submitGate(
   };
   metaStore.addWritingSubmission(submission);
   metaStore.unlockBranch(branchId); // persists unlockedAt timestamp
-  markUnlockedThisVisit(branchId);  // session-scoped gate flag
+  markUnlockedThisVisit(branchId); // session-scoped gate flag
   return submission;
 }
 

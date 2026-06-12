@@ -1,0 +1,13 @@
+# Build output
+dist/
+
+# Generated curriculum data (written by scripts/*.mjs generators —
+# formatting them creates huge diffs that get clobbered on regeneration).
+src/data/
+
+# Hand-formatted CSS with deliberate one-line rules and mixed quote
+# styles; Prettier would rewrite ~50% of city.css/hud.css for zero gain.
+src/styles/
+
+# Generated vocab-list report (scripts/generate-vocab-list.mjs output).
+Vocab_list*.html

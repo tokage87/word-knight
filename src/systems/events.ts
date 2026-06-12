@@ -77,29 +77,16 @@ export interface GameEventMap {
 
 // `void` payloads emit with zero arguments; everything else with exactly
 // one. Tuple-spread keeps Phaser's variadic emit signature intact.
-export type EventArgs<K extends keyof GameEventMap> =
-  GameEventMap[K] extends void ? [] : [GameEventMap[K]];
+export type EventArgs<K extends keyof GameEventMap> = GameEventMap[K] extends void ? [] : [GameEventMap[K]];
 
 // Typed facade over Phaser.Events.EventEmitter. The optional `context`
 // mirrors Phaser's on/off signature — Phaser matches listener+context
 // pairs on removal, so wrappers must forward it for cleanup to work.
 export interface TypedGameEvents {
   emit<K extends keyof GameEventMap>(event: K, ...args: EventArgs<K>): boolean;
-  on<K extends keyof GameEventMap>(
-    event: K,
-    fn: (...args: EventArgs<K>) => void,
-    context?: unknown,
-  ): this;
-  once<K extends keyof GameEventMap>(
-    event: K,
-    fn: (...args: EventArgs<K>) => void,
-    context?: unknown,
-  ): this;
-  off<K extends keyof GameEventMap>(
-    event: K,
-    fn: (...args: EventArgs<K>) => void,
-    context?: unknown,
-  ): this;
+  on<K extends keyof GameEventMap>(event: K, fn: (...args: EventArgs<K>) => void, context?: unknown): this;
+  once<K extends keyof GameEventMap>(event: K, fn: (...args: EventArgs<K>) => void, context?: unknown): this;
+  off<K extends keyof GameEventMap>(event: K, fn: (...args: EventArgs<K>) => void, context?: unknown): this;
 }
 
 // The runtime object IS the plain `game.events` emitter — this cast only

@@ -6,15 +6,15 @@ import type { Enemy } from './Enemy';
 // Ships with ally unlocks (Fire Archer first) but is deliberately
 // generic so future allies can fire arrows, bolts, darts, etc.
 export interface ProjectileConfig {
-  textureKey: string;    // Phaser texture key for the projectile sprite
-  targetX: number;       // where the projectile is aiming (world coords)
+  textureKey: string; // Phaser texture key for the projectile sprite
+  targetX: number; // where the projectile is aiming (world coords)
   targetY: number;
-  speed: number;         // px per second
+  speed: number; // px per second
   damage: number;
-  tint?: number;         // optional color tint (Fire Archer = red)
-  scale?: number;        // render scale (Arrow.png is 64x64, too big at 1.0)
-  ttlMs?: number;        // max flight time before self-destruct
-  slowMs?: number;       // optional slow duration applied on hit
+  tint?: number; // optional color tint (Fire Archer = red)
+  scale?: number; // render scale (Arrow.png is 64x64, too big at 1.0)
+  ttlMs?: number; // max flight time before self-destruct
+  slowMs?: number; // optional slow duration applied on hit
   // How many distinct enemies the projectile can hit before despawning.
   // Default 1 (classic single-target shot). Wind Lancer uses a pierce
   // count >1 so its strike chains through the enemy line.

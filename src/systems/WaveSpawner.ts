@@ -65,7 +65,6 @@ export class WaveSpawner {
   }
 
   private resetInterval() {
-    this.interval =
-      MIN_INTERVAL_MS + Math.random() * (MAX_INTERVAL_MS - MIN_INTERVAL_MS);
+    this.interval = MIN_INTERVAL_MS + Math.random() * (MAX_INTERVAL_MS - MIN_INTERVAL_MS);
   }
 }

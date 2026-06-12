@@ -67,14 +67,11 @@ export function pickVoice(lang: string): SpeechSynthesisVoice | undefined {
     cands.length === 0
       ? undefined
       : [...cands].sort(
-          (a, b) =>
-            Number(b.localService) - Number(a.localService) ||
-            Number(b.default) - Number(a.default),
+          (a, b) => Number(b.localService) - Number(a.localService) || Number(b.default) - Number(a.default),
         )[0];
 
   return (
-    best(voices.filter((v) => norm(v) === want)) ??
-    best(voices.filter((v) => norm(v).split('-')[0] === wantPrefix))
+    best(voices.filter((v) => norm(v) === want)) ?? best(voices.filter((v) => norm(v).split('-')[0] === wantPrefix))
   );
 }
 
@@ -134,6 +131,10 @@ export function cancelSpeak() {
 
 // ── SpeechRecognition (ASR) ──
 
+// Deliberate `any`: the SpeechRecognition API has no lib.dom types in
+// our TS version and is vendor-prefixed; SrAny is the single escape
+// hatch for the whole ASR surface.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SrAny = any;
 
 function getSrCtor(): SrAny {

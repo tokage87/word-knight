@@ -24,7 +24,9 @@ export class ReadAloudTask extends DomOverlay {
   private lastTranscript = '';
   private lastHits: boolean[] = [];
   private attempts = 0;
-  private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.close(); };
+  private onKey = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') this.close();
+  };
 
   constructor(scene: Phaser.Scene) {
     super(scene, 'writing-task-root', 'writing-task--visible');
@@ -71,9 +73,7 @@ export class ReadAloudTask extends DomOverlay {
       })
       .join(' ');
 
-    const hintBlock = p.hintPl
-      ? `<div class="ra-hint-pl">${escapeHtml(p.hintPl)}</div>`
-      : '';
+    const hintBlock = p.hintPl ? `<div class="ra-hint-pl">${escapeHtml(p.hintPl)}</div>` : '';
 
     let body: string;
     if (this.typingFallback) {
@@ -116,9 +116,7 @@ export class ReadAloudTask extends DomOverlay {
       `;
     }
 
-    const submitDisabled = this.typingFallback
-      ? !this.typedPasses(p.sentence)
-      : true; // auto-submit on pass in mic mode
+    const submitDisabled = this.typingFallback ? !this.typedPasses(p.sentence) : true; // auto-submit on pass in mic mode
 
     this.root.innerHTML = `
       <div class="wt-panel paper-scroll">

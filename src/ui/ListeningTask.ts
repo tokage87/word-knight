@@ -16,7 +16,7 @@ import { STR } from '../i18n/strings';
 
 interface Segment {
   type: 'text' | 'gap';
-  value: string;    // for 'text': literal text; for 'gap': the expected word (canonical form)
+  value: string; // for 'text': literal text; for 'gap': the expected word (canonical form)
   gapIndex?: number; // position in the correctWords array (for gap segments)
 }
 
@@ -26,7 +26,9 @@ export class ListeningTask extends DomOverlay {
   private idx = 0;
   private segments: Segment[] = [];
   private filled: Array<string | null> = []; // filled[gapIndex] = chosen word or null
-  private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.close(); };
+  private onKey = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') this.close();
+  };
 
   constructor(scene: Phaser.Scene) {
     super(scene, 'writing-task-root', 'writing-task--visible');
@@ -78,27 +80,33 @@ export class ListeningTask extends DomOverlay {
     const chipWords = shuffleStable([...s.correctWords, ...s.distractors]);
     const usedLc = new Set(this.filled.filter((v): v is string => !!v).map(lc));
 
-    const chipsHtml = chipWords.map((w) => {
-      const isUsed = usedLc.has(lc(w));
-      return `<button class="lt-chip${isUsed ? ' lt-chip--used' : ''}" data-word="${escapeAttr(w)}"${isUsed ? ' disabled' : ''} type="button">${escapeHtml(w)}</button>`;
-    }).join('');
+    const chipsHtml = chipWords
+      .map((w) => {
+        const isUsed = usedLc.has(lc(w));
+        return `<button class="lt-chip${isUsed ? ' lt-chip--used' : ''}" data-word="${escapeAttr(w)}"${isUsed ? ' disabled' : ''} type="button">${escapeHtml(w)}</button>`;
+      })
+      .join('');
 
-    const sentenceHtml = this.segments.map((seg) => {
-      if (seg.type === 'text') return `<span class="lt-word">${escapeHtml(seg.value)}</span>`;
-      const gi = seg.gapIndex!;
-      const chosen = this.filled[gi];
-      if (chosen === null || chosen === undefined) {
-        return `<button class="lt-gap lt-gap--empty" data-gap="${gi}" type="button">___</button>`;
-      }
-      const correct = lc(chosen) === lc(seg.value);
-      const cls = correct ? 'lt-gap lt-gap--correct' : 'lt-gap lt-gap--wrong';
-      return `<button class="${cls}" data-gap="${gi}" type="button">${escapeHtml(chosen)}</button>`;
-    }).join(' ');
+    const sentenceHtml = this.segments
+      .map((seg) => {
+        if (seg.type === 'text') return `<span class="lt-word">${escapeHtml(seg.value)}</span>`;
+        const gi = seg.gapIndex!;
+        const chosen = this.filled[gi];
+        if (chosen === null || chosen === undefined) {
+          return `<button class="lt-gap lt-gap--empty" data-gap="${gi}" type="button">___</button>`;
+        }
+        const correct = lc(chosen) === lc(seg.value);
+        const cls = correct ? 'lt-gap lt-gap--correct' : 'lt-gap lt-gap--wrong';
+        return `<button class="${cls}" data-gap="${gi}" type="button">${escapeHtml(chosen)}</button>`;
+      })
+      .join(' ');
 
     const allFilled = this.filled.every((v) => v !== null);
-    const allCorrect = allFilled && this.filled.every((v, i) =>
-      lc(v!) === lc((this.segments.find((s) => s.type === 'gap' && s.gapIndex === i) as Segment).value),
-    );
+    const allCorrect =
+      allFilled &&
+      this.filled.every(
+        (v, i) => lc(v!) === lc((this.segments.find((s) => s.type === 'gap' && s.gapIndex === i) as Segment).value),
+      );
 
     let statusLine: string;
     if (!allFilled) {
@@ -145,9 +153,7 @@ export class ListeningTask extends DomOverlay {
     this.root.querySelector('.wt-submit')!.addEventListener('click', () => this.advance());
 
     const lang = sourceLangCode(curriculumCatalog.getActiveSelection().source);
-    this.root.querySelector('.lt-speak')?.addEventListener('click', () =>
-      speak(s.en, { lang, rate: 0.85 }),
-    );
+    this.root.querySelector('.lt-speak')?.addEventListener('click', () => speak(s.en, { lang, rate: 0.85 }));
 
     this.root.querySelectorAll<HTMLButtonElement>('.lt-chip:not([disabled])').forEach((btn) => {
       btn.addEventListener('click', () => this.fillNextGap(btn.dataset.word ?? ''));
@@ -220,7 +226,10 @@ function buildSegments(sentence: string, correctWords: string[]): Segment[] {
 }
 
 function lc(s: string): string {
-  return s.toLowerCase().replace(/[.,!?]/g, '').trim();
+  return s
+    .toLowerCase()
+    .replace(/[.,!?]/g, '')
+    .trim();
 }
 
 // Seeded shuffle keyed on the words so re-renders don't reshuffle the

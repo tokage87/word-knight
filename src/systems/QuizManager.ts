@@ -25,8 +25,12 @@ export class QuizManager extends DomOverlay {
   // game.events bus (or on the persistent #quiz-root element) would
   // accumulate and double-fire quiz:correct/quiz:wrong. The base class
   // tracks the off()/removeEventListener() halves automatically.
-  private pauseInput = () => { this.inputPaused = true; };
-  private resumeInput = () => { this.inputPaused = false; };
+  private pauseInput = () => {
+    this.inputPaused = true;
+  };
+  private resumeInput = () => {
+    this.inputPaused = false;
+  };
   private clickHandler = (ev: Event) => this.onClick(ev);
 
   constructor(scene: Phaser.Scene) {
@@ -75,9 +79,7 @@ export class QuizManager extends DomOverlay {
 
   private onClick(ev: Event) {
     if (this.locked || this.inputPaused) return;
-    const t = (ev.target as HTMLElement).closest(
-      '.quiz-opt',
-    ) as HTMLButtonElement | null;
+    const t = (ev.target as HTMLElement).closest('.quiz-opt') as HTMLButtonElement | null;
     if (!t) return;
     const idx = Number(t.dataset.idx);
     this.answer(idx, t);
@@ -86,9 +88,7 @@ export class QuizManager extends DomOverlay {
   private pressKey(key: KeyCode) {
     if (this.locked || this.inputPaused || !this.root) return;
     if (this.scene.time.now < this.newWordGraceUntilMs) return;
-    const btn = this.root.querySelector<HTMLButtonElement>(
-      `.quiz-opt[data-key="${key}"]`,
-    );
+    const btn = this.root.querySelector<HTMLButtonElement>(`.quiz-opt[data-key="${key}"]`);
     if (!btn) return;
     const idx = Number(btn.dataset.idx);
     this.answer(idx, btn);
@@ -97,9 +97,7 @@ export class QuizManager extends DomOverlay {
   private answer(idx: number, btn: HTMLButtonElement) {
     if (!this.current || !this.root) return;
     const buttons = this.root.querySelectorAll<HTMLButtonElement>('.quiz-opt');
-    const chosen = buttons[idx]
-      .querySelector<HTMLElement>('.quiz-opt-text')
-      ?.textContent?.trim();
+    const chosen = buttons[idx].querySelector<HTMLElement>('.quiz-opt-text')?.textContent?.trim();
     const isCorrect = chosen === this.current.en;
 
     this.locked = true;
@@ -129,10 +127,7 @@ export class QuizManager extends DomOverlay {
     if (!this.root) return;
     const pool = curriculumCatalog.getVocabPool();
     this.current = pool[Math.floor(Math.random() * pool.length)];
-    const distractor =
-      this.current.distractors[
-        Math.floor(Math.random() * this.current.distractors.length)
-      ];
+    const distractor = this.current.distractors[Math.floor(Math.random() * this.current.distractors.length)];
     const opts = [this.current.en, distractor];
     if (Math.random() < 0.5) opts.reverse();
 

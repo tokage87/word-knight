@@ -150,7 +150,7 @@ const PROFILES: Record<AllyKind, AllyProfile> = {
     // meaningful but not an i-win button.
     attackCooldownMs: 5000,
     attackDamage: 12, // reused field = heal amount for heal behavior
-    rangePx: 0,       // unused for heal
+    rangePx: 0, // unused for heal
     scale: 0.28,
   },
   'wind-lancer': {
@@ -230,10 +230,10 @@ export class Ally extends Phaser.GameObjects.Sprite {
       profile.idleAnim === ANIM.monkIdle
         ? AK.monkIdle
         : profile.idleAnim === ANIM.lancerIdle
-        ? AK.lancerIdle
-        : profile.idleAnim === ANIM.pawnAxeIdle
-        ? AK.pawnAxeIdle
-        : AK.archerIdle;
+          ? AK.lancerIdle
+          : profile.idleAnim === ANIM.pawnAxeIdle
+            ? AK.pawnAxeIdle
+            : AK.archerIdle;
     super(scene, knight.x + offsetX, knight.y, idleTexture, 0);
     scene.add.existing(this);
     this.kind = kind;
@@ -248,8 +248,12 @@ export class Ally extends Phaser.GameObjects.Sprite {
 
   // Read-only getters so the HUD / cooldown publishing can show a
   // progress sweep that matches the Ally's internal timer.
-  get cooldownRemaining(): number { return Math.max(0, this.attackTimerMs); }
-  get cooldownTotal(): number { return this.profile.attackCooldownMs; }
+  get cooldownRemaining(): number {
+    return Math.max(0, this.attackTimerMs);
+  }
+  get cooldownTotal(): number {
+    return this.profile.attackCooldownMs;
+  }
 
   tick(
     delta: number,
@@ -263,9 +267,7 @@ export class Ally extends Phaser.GameObjects.Sprite {
     // Solo allies (archers) wander ±14 px around a home slot slightly
     // ahead of the knight — reads as a unit walking on its own rather
     // than a shadow glued behind. Non-solo allies still trail.
-    const wander = this.profile.solo
-      ? Math.sin((this.scene.time.now / 700) + this.walkPhase) * 14
-      : 0;
+    const wander = this.profile.solo ? Math.sin(this.scene.time.now / 700 + this.walkPhase) * 14 : 0;
     const targetX = knight.x + this.followOffsetX + wander;
     const dx = targetX - this.x;
     const absDx = Math.abs(dx);
@@ -315,8 +317,7 @@ export class Ally extends Phaser.GameObjects.Sprite {
   // a subtle green camera flash sells the cast and the monk plays its
   // Heal animation while the Heal_Effect overlay plays on the knight.
   private tickHealBehavior(knight: Knight, absDx: number) {
-    const canHeal =
-      this.attackTimerMs <= 0 && knight.hp > 0 && knight.hp < knight.hpMax;
+    const canHeal = this.attackTimerMs <= 0 && knight.hp > 0 && knight.hp < knight.hpMax;
 
     if (canHeal) {
       const healed = Math.min(this.profile.attackDamage, knight.hpMax - knight.hp);

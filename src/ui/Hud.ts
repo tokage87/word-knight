@@ -17,11 +17,11 @@ export interface PlayerStats {
   hpMax?: number;
   meleeDamage?: number;
   meleeCooldownMs?: number;
-  critChance?: number;   // 0..1
-  armor?: number;        // 0..1 (damage-reduction fraction)
-  lifesteal?: number;    // 0..1
-  dodgeChance?: number;  // 0..1
-  hpRegen?: number;      // HP per second
+  critChance?: number; // 0..1
+  armor?: number; // 0..1 (damage-reduction fraction)
+  lifesteal?: number; // 0..1
+  dodgeChance?: number; // 0..1
+  hpRegen?: number; // HP per second
 }
 
 export class Hud {
@@ -33,7 +33,10 @@ export class Hud {
   // Ally ability slots — the post-rework ability row is entirely
   // companion-driven. Each key is an AllyKind; the values mirror the
   // element refs we need to update per frame.
-  private allyIcons: Record<string, { root: HTMLElement; overlay: HTMLElement; text: HTMLElement; lock?: HTMLElement }> = {};
+  private allyIcons: Record<
+    string,
+    { root: HTMLElement; overlay: HTMLElement; text: HTMLElement; lock?: HTMLElement }
+  > = {};
   // Ultimate badge — separate slot to the left of the ally row. Stays
   // hidden until GameScene publishes ultCdBase (i.e. level 10 hit).
   private ultIcon?: { root: HTMLElement; overlay: HTMLElement; text: HTMLElement };
@@ -140,10 +143,8 @@ export class Hud {
     const hpMax = registry.get('hpMax') ?? 100;
     this.hpNum = hp;
 
-    if (this.hpFill)
-      this.hpFill.style.width = `${Math.max(0, (hp / hpMax) * 100)}%`;
-    if (this.hpText)
-      this.hpText.textContent = `${Math.max(0, Math.floor(hp))} / ${hpMax}`;
+    if (this.hpFill) this.hpFill.style.width = `${Math.max(0, (hp / hpMax) * 100)}%`;
+    if (this.hpText) this.hpText.textContent = `${Math.max(0, Math.floor(hp))} / ${hpMax}`;
 
     // Gold now persists across runs via MetaStore; the registry is the
     // source of truth. The old `onEnemyKilled` per-run counter is
@@ -289,8 +290,9 @@ export class Hud {
         ['ico-story-bad', STR.hud.stats.storiesFailed, stats.storiesFailed ?? 0],
       ];
       const quizHtml = quizLines
-        .map(([ico, k, v]) =>
-          `<div class="pause-stat-row"><span class="stat-chip ${ico}" aria-hidden="true"></span><span class="pause-stat-label">${k}</span><span class="pause-stat-val">${v}</span></div>`,
+        .map(
+          ([ico, k, v]) =>
+            `<div class="pause-stat-row"><span class="stat-chip ${ico}" aria-hidden="true"></span><span class="pause-stat-label">${k}</span><span class="pause-stat-val">${v}</span></div>`,
         )
         .join('');
       this.pauseStats.innerHTML = quizHtml + this.renderPlayerStatsHtml();
@@ -362,8 +364,9 @@ export class Hud {
         ['ico-story-bad', STR.hud.stats.storiesFailed, stats.storiesFailed ?? 0],
       ];
       this.gameOverStats.innerHTML = lines
-        .map(([ico, k, v]) =>
-          `<div class="gameover-stat-row"><span class="stat-chip ${ico}" aria-hidden="true"></span><span class="gameover-stat-label">${k}</span><span class="gameover-stat-val">${v}</span></div>`,
+        .map(
+          ([ico, k, v]) =>
+            `<div class="gameover-stat-row"><span class="stat-chip ${ico}" aria-hidden="true"></span><span class="gameover-stat-label">${k}</span><span class="gameover-stat-val">${v}</span></div>`,
         )
         .join('');
     }
@@ -448,11 +451,14 @@ export class Hud {
   private updateAlly(registry: Phaser.Data.DataManager, kind: string) {
     const icon = this.allyIcons[kind];
     if (!icon) return;
-    const snapshots = (registry.get('allyCooldowns') as Array<{
-      allyKind: string;
-      remainingMs: number;
-      totalMs: number;
-    }> | undefined) ?? [];
+    const snapshots =
+      (registry.get('allyCooldowns') as
+        | Array<{
+            allyKind: string;
+            remainingMs: number;
+            totalMs: number;
+          }>
+        | undefined) ?? [];
     const snap = snapshots.find((s) => s.allyKind === kind);
     if (!snap) {
       // Not unlocked this run — show the locked state.
@@ -472,10 +478,7 @@ export class Hud {
     const status = snap.remainingMs <= 0 ? STR.hud.ready : `${(snap.remainingMs / 1000).toFixed(1)}s`;
     const label = ALLY_LABELS[kind] ?? kind;
     const desc = ALLY_DESCS[kind] ?? '';
-    icon.root.setAttribute(
-      'data-tooltip',
-      STR.hud.allyTooltip(label, desc, (snap.totalMs / 1000).toFixed(0), status),
-    );
+    icon.root.setAttribute('data-tooltip', STR.hud.allyTooltip(label, desc, (snap.totalMs / 1000).toFixed(0), status));
   }
 
   // Ultimate badge. Hidden (as locked padlock) until GameScene publishes
@@ -501,10 +504,7 @@ export class Hud {
     this.ultIcon.text.textContent = remaining <= 0 ? '' : `${(remaining / 1000).toFixed(0)}s`;
     this.ultIcon.root.classList.toggle('ability--ready', remaining <= 0);
     const status = remaining <= 0 ? STR.hud.ready : `${(remaining / 1000).toFixed(1)}s`;
-    this.ultIcon.root.setAttribute(
-      'data-tooltip',
-      STR.hud.ultTooltip((total / 1000).toFixed(0), status),
-    );
+    this.ultIcon.root.setAttribute('data-tooltip', STR.hud.ultTooltip((total / 1000).toFixed(0), status));
   }
 
   // Unused; reserved for HP number reads if needed externally.

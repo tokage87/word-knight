@@ -7,21 +7,30 @@ import type { Knight } from '../entities/Knight';
 export type SpellId =
   // Existing three spells (back-compat): heal, fire (full-screen AoE),
   // ice (full-screen slow+damage).
-  | 'heal' | 'fire' | 'ice'
+  | 'heal'
+  | 'fire'
+  | 'ice'
   // Fire-tree additions — fast single-target projectile, full AoE alt.
   | 'fireArrow'
   // Water-tree additions — bigger chill AoE.
   | 'blizzard'
   // Wind-tree additions — piercing projectile, brief orbiting AoE.
-  | 'windSlash' | 'tornado'
+  | 'windSlash'
+  | 'tornado'
   // Earth-tree additions — short invulnerability, stun AoE.
-  | 'stoneShield' | 'earthquake';
+  | 'stoneShield'
+  | 'earthquake';
 
 export const ALL_SPELL_IDS: SpellId[] = [
-  'fire','ice','heal',
-  'fireArrow','blizzard',
-  'windSlash','tornado',
-  'stoneShield','earthquake',
+  'fire',
+  'ice',
+  'heal',
+  'fireArrow',
+  'blizzard',
+  'windSlash',
+  'tornado',
+  'stoneShield',
+  'earthquake',
 ];
 
 export const MAX_RANK = 3;
@@ -48,15 +57,43 @@ export class SpellCaster {
   private readonly spells: Record<SpellId, SpellState> = {
     // Cooldowns tuned so the opener usually lands within ~15s of the
     // spell being picked (new skills start "ready to cast").
-    heal:        { id: 'heal',        baseCooldownAtRank1: 35_000, current: 35_000, unlocked: false, rank: 0, weakenedRanks: 0 },
-    fire:        { id: 'fire',        baseCooldownAtRank1: 30_000, current: 30_000, unlocked: false, rank: 0, weakenedRanks: 0 },
-    ice:         { id: 'ice',         baseCooldownAtRank1: 22_000, current: 22_000, unlocked: false, rank: 0, weakenedRanks: 0 },
-    fireArrow:   { id: 'fireArrow',   baseCooldownAtRank1:  3_000, current:      0, unlocked: false, rank: 0, weakenedRanks: 0 },
-    blizzard:    { id: 'blizzard',    baseCooldownAtRank1: 26_000, current: 26_000, unlocked: false, rank: 0, weakenedRanks: 0 },
-    windSlash:   { id: 'windSlash',   baseCooldownAtRank1:  2_500, current:      0, unlocked: false, rank: 0, weakenedRanks: 0 },
-    tornado:     { id: 'tornado',     baseCooldownAtRank1: 18_000, current: 18_000, unlocked: false, rank: 0, weakenedRanks: 0 },
-    stoneShield: { id: 'stoneShield', baseCooldownAtRank1: 24_000, current: 24_000, unlocked: false, rank: 0, weakenedRanks: 0 },
-    earthquake:  { id: 'earthquake',  baseCooldownAtRank1: 26_000, current: 26_000, unlocked: false, rank: 0, weakenedRanks: 0 },
+    heal: { id: 'heal', baseCooldownAtRank1: 35_000, current: 35_000, unlocked: false, rank: 0, weakenedRanks: 0 },
+    fire: { id: 'fire', baseCooldownAtRank1: 30_000, current: 30_000, unlocked: false, rank: 0, weakenedRanks: 0 },
+    ice: { id: 'ice', baseCooldownAtRank1: 22_000, current: 22_000, unlocked: false, rank: 0, weakenedRanks: 0 },
+    fireArrow: { id: 'fireArrow', baseCooldownAtRank1: 3_000, current: 0, unlocked: false, rank: 0, weakenedRanks: 0 },
+    blizzard: {
+      id: 'blizzard',
+      baseCooldownAtRank1: 26_000,
+      current: 26_000,
+      unlocked: false,
+      rank: 0,
+      weakenedRanks: 0,
+    },
+    windSlash: { id: 'windSlash', baseCooldownAtRank1: 2_500, current: 0, unlocked: false, rank: 0, weakenedRanks: 0 },
+    tornado: {
+      id: 'tornado',
+      baseCooldownAtRank1: 18_000,
+      current: 18_000,
+      unlocked: false,
+      rank: 0,
+      weakenedRanks: 0,
+    },
+    stoneShield: {
+      id: 'stoneShield',
+      baseCooldownAtRank1: 24_000,
+      current: 24_000,
+      unlocked: false,
+      rank: 0,
+      weakenedRanks: 0,
+    },
+    earthquake: {
+      id: 'earthquake',
+      baseCooldownAtRank1: 26_000,
+      current: 26_000,
+      unlocked: false,
+      rank: 0,
+      weakenedRanks: 0,
+    },
   };
 
   constructor(private readonly scene: Phaser.Scene) {}
@@ -94,9 +131,7 @@ export class SpellCaster {
   }
 
   getLocked(): SpellId[] {
-    return (Object.keys(this.spells) as SpellId[]).filter(
-      (id) => !this.spells[id].unlocked,
-    );
+    return (Object.keys(this.spells) as SpellId[]).filter((id) => !this.spells[id].unlocked);
   }
 
   getUpgradable(): SpellId[] {
@@ -174,14 +209,9 @@ export class SpellCaster {
       if (s.current > 0) s.current = Math.max(0, s.current - delta);
     });
 
-    const visible = enemies.filter(
-      (e) => e.active && e.x > 0 && e.x < LOGICAL_WIDTH + 20,
-    );
+    const visible = enemies.filter((e) => e.active && e.x > 0 && e.x < LOGICAL_WIDTH + 20);
     const hpFraction = knight.hp / knight.hpMax;
-    const closestDist = visible.reduce(
-      (min, e) => Math.min(min, Math.abs(e.x - knight.x)),
-      Infinity,
-    );
+    const closestDist = visible.reduce((min, e) => Math.min(min, Math.abs(e.x - knight.x)), Infinity);
 
     // Priority order: defensive > AoE > projectile. Self-buffs first
     // so the player doesn't die mid-frame waiting for offensive spells.
@@ -249,10 +279,7 @@ export class SpellCaster {
   penalizeAll(ms: number) {
     (Object.keys(this.spells) as SpellId[]).forEach((id) => {
       const base = this.getBaseCooldown(id);
-      this.spells[id].current = Math.min(
-        base * 2,
-        this.spells[id].current + ms,
-      );
+      this.spells[id].current = Math.min(base * 2, this.spells[id].current + ms);
     });
     gameEvents(this.scene.game).emit('spell:penalized', ms);
   }
@@ -264,18 +291,14 @@ export class SpellCaster {
   getBaseCooldown(id: SpellId): number {
     const s = this.spells[id];
     // If locked, return rank-1 base so HUD shows a consistent fill value.
-    const refState: SpellState = s.rank < 1
-      ? { ...s, rank: 1, weakenedRanks: 0 }
-      : s;
+    const refState: SpellState = s.rank < 1 ? { ...s, rank: 1, weakenedRanks: 0 } : s;
     return s.baseCooldownAtRank1 * this.cooldownScale(refState);
   }
 
   private castFire(targets: Enemy[]) {
     const dmg = this.fireDamage();
     targets.forEach((t) => t.takeDamage(dmg));
-    const flash = this.scene.add
-      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xff6a30, 0.5)
-      .setOrigin(0, 0);
+    const flash = this.scene.add.rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xff6a30, 0.5).setOrigin(0, 0);
     this.scene.tweens.add({
       targets: flash,
       alpha: 0,
@@ -293,9 +316,7 @@ export class SpellCaster {
       t.takeDamage(dmg);
       if (t.active) t.applySlow(slowMs);
     });
-    const flash = this.scene.add
-      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x6ac8ff, 0.45)
-      .setOrigin(0, 0);
+    const flash = this.scene.add.rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x6ac8ff, 0.45).setOrigin(0, 0);
     this.scene.tweens.add({
       targets: flash,
       alpha: 0,
@@ -307,9 +328,7 @@ export class SpellCaster {
 
   private castHeal(knight: Knight) {
     knight.heal(this.healAmount(knight.hpMax));
-    const flash = this.scene.add
-      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x80ff90, 0.35)
-      .setOrigin(0, 0);
+    const flash = this.scene.add.rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x80ff90, 0.35).setOrigin(0, 0);
     this.scene.tweens.add({
       targets: flash,
       alpha: 0,
@@ -345,9 +364,7 @@ export class SpellCaster {
       t.takeDamage(dmg);
       if (t.active) t.applySlow(slow);
     });
-    const flash = this.scene.add
-      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xb0e4ff, 0.55)
-      .setOrigin(0, 0);
+    const flash = this.scene.add.rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xb0e4ff, 0.55).setOrigin(0, 0);
     this.scene.tweens.add({
       targets: flash,
       alpha: 0,
@@ -363,14 +380,14 @@ export class SpellCaster {
     const dmg = this.tornadoTickDamage();
     const snapshot = [...targets];
     const tick = () => {
-      snapshot.forEach((t) => { if (t.active) t.takeDamage(dmg); });
+      snapshot.forEach((t) => {
+        if (t.active) t.takeDamage(dmg);
+      });
     };
     tick();
     this.scene.time.delayedCall(700, tick);
     this.scene.time.delayedCall(1400, tick);
-    const flash = this.scene.add
-      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xd0ffd0, 0.3)
-      .setOrigin(0, 0);
+    const flash = this.scene.add.rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xd0ffd0, 0.3).setOrigin(0, 0);
     this.scene.tweens.add({
       targets: flash,
       alpha: 0,
@@ -384,9 +401,7 @@ export class SpellCaster {
   private castStoneShield(knight: Knight) {
     const ms = 2000;
     knight.setInvulnUntil(this.scene.time.now + ms);
-    const flash = this.scene.add
-      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xc2a060, 0.4)
-      .setOrigin(0, 0);
+    const flash = this.scene.add.rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0xc2a060, 0.4).setOrigin(0, 0);
     this.scene.tweens.add({
       targets: flash,
       alpha: 0,
@@ -404,9 +419,7 @@ export class SpellCaster {
       t.takeDamage(dmg);
       if (t.active) t.applySlow(500);
     });
-    const flash = this.scene.add
-      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x8b6030, 0.5)
-      .setOrigin(0, 0);
+    const flash = this.scene.add.rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x8b6030, 0.5).setOrigin(0, 0);
     this.scene.tweens.add({
       targets: flash,
       alpha: 0,

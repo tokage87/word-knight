@@ -23,7 +23,7 @@ export interface DeepProgress {
 }
 
 export interface DeepVerdict {
-  score: number;   // 1-5
+  score: number; // 1-5
   feedback: string; // 2-3 Polish sentences
 }
 
@@ -82,10 +82,7 @@ export class DeepJudge {
     }
   }
 
-  async evaluate(params: {
-    prompt: string;
-    text: string;
-  }): Promise<DeepVerdict> {
+  async evaluate(params: { prompt: string; text: string }): Promise<DeepVerdict> {
     const engine = await this.enginePromise;
     if (!engine) throw new Error('DeepJudge not initialised');
 
@@ -137,11 +134,9 @@ Rules:
 // for. If the model goes off-script we still extract as much as we
 // can and fall back to score 3 + raw text so the UI has something.
 function parseVerdict(raw: string): DeepVerdict {
-  const scoreMatch = raw.match(/OCENA\s*[:\-]\s*(\d)/i);
-  const score = scoreMatch
-    ? Math.min(5, Math.max(1, Number(scoreMatch[1])))
-    : 3;
-  const commentMatch = raw.match(/KOMENTARZ\s*[:\-]\s*([\s\S]*)/i);
+  const scoreMatch = raw.match(/OCENA\s*[:-]\s*(\d)/i);
+  const score = scoreMatch ? Math.min(5, Math.max(1, Number(scoreMatch[1]))) : 3;
+  const commentMatch = raw.match(/KOMENTARZ\s*[:-]\s*([\s\S]*)/i);
   const feedback = (commentMatch ? commentMatch[1] : raw).trim();
   return { score, feedback: feedback || STR.deep.noComment };
 }

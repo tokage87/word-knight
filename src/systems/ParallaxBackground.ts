@@ -70,13 +70,7 @@ export class ParallaxBackground {
       Phaser.Display.Color.HexStringToColor('#c8eaff').color,
       Phaser.Display.Color.HexStringToColor('#e8f4ff').color,
     ];
-    this.skyGradient.fillGradientStyle(
-      colors[0],
-      colors[0],
-      colors[2],
-      colors[2],
-      1,
-    );
+    this.skyGradient.fillGradientStyle(colors[0], colors[0], colors[2], colors[2], 1);
     this.skyGradient.fillRect(0, 0, LOGICAL_WIDTH, GROUND_Y);
   }
 
@@ -137,8 +131,8 @@ export class ParallaxBackground {
       { key: AK.houseBlue1, x: 40, scale: 0.42, depth: 15 },
       { key: AK.houseYellow1, x: 210, scale: 0.38, depth: 15 },
       { key: AK.houseRed1, x: 300, scale: 0.44, depth: 15 },
-      { key: AK.tree, x: 360, scale: 0.30, depth: 16 },
-      { key: AK.houseBlue2, x: 430, scale: 0.40, depth: 15 },
+      { key: AK.tree, x: 360, scale: 0.3, depth: 16 },
+      { key: AK.houseBlue2, x: 430, scale: 0.4, depth: 15 },
       { key: AK.houseYellow1, x: 520, scale: 0.38, depth: 15 },
       { key: AK.tree, x: 590, scale: 0.26, depth: 16 },
       { key: AK.houseBlue1, x: 640, scale: 0.42, depth: 15 },
@@ -146,17 +140,11 @@ export class ParallaxBackground {
     const props = [...base, ...base.map((p) => ({ ...p, x: p.x + LOGICAL_WIDTH }))];
     const wrapWidth = LOGICAL_WIDTH * 2;
     props.forEach((p) => {
-      const originY = p.key === AK.tree ? 0.938 : 0.90;
+      const originY = p.key === AK.tree ? 0.938 : 0.9;
       const sprite =
         p.key === AK.tree
-          ? this.scene.add
-              .sprite(p.x, GROUND_Y, p.key, 0)
-              .setOrigin(0.5, originY)
-              .setScale(p.scale)
-          : this.scene.add
-              .image(p.x, GROUND_Y, p.key)
-              .setOrigin(0.5, originY)
-              .setScale(p.scale);
+          ? this.scene.add.sprite(p.x, GROUND_Y, p.key, 0).setOrigin(0.5, originY).setScale(p.scale)
+          : this.scene.add.image(p.x, GROUND_Y, p.key).setOrigin(0.5, originY).setScale(p.scale);
       sprite.setDepth(p.depth);
       this.midProps.push({ sprite, scrollFactor: 0.4, wrapWidth });
     });
@@ -167,15 +155,11 @@ export class ParallaxBackground {
     // during parallax scroll (matches wrapWidth = 2*LOGICAL_WIDTH).
     const keys = [AK.pawnBlack, AK.pawnPurple, AK.pawnYellow, AK.pawnRed];
     const count = 28;
-    const scale = 0.20;
+    const scale = 0.2;
     for (let i = 0; i < count; i++) {
       const x = 20 + i * 45 + Math.random() * 14;
       const key = keys[Math.floor(Math.random() * keys.length)];
-      const sprite = this.scene.add
-        .sprite(x, GROUND_Y, key, 0)
-        .setOrigin(0.5, 0.71)
-        .setScale(scale)
-        .setDepth(20);
+      const sprite = this.scene.add.sprite(x, GROUND_Y, key, 0).setOrigin(0.5, 0.71).setScale(scale).setDepth(20);
       if (Math.random() < 0.5) sprite.setFlipX(true);
       this.villagers.push({ sprite, baseScrollFactor: 0.55 });
     }
@@ -185,7 +169,7 @@ export class ParallaxBackground {
     const base = [
       { x: 20, scale: 0.38 },
       { x: 250, scale: 0.34 },
-      { x: 480, scale: 0.40 },
+      { x: 480, scale: 0.4 },
       { x: 600, scale: 0.34 },
     ];
     const positions = [...base, ...base.map((p) => ({ ...p, x: p.x + LOGICAL_WIDTH }))];
@@ -211,10 +195,7 @@ export class ParallaxBackground {
     this.clouds.forEach((c) => this.driftSprite(c, px));
     this.midProps.forEach((c) => this.driftSprite(c, px));
     this.villagers.forEach((v) =>
-      this.driftSprite(
-        { sprite: v.sprite, scrollFactor: v.baseScrollFactor, wrapWidth: LOGICAL_WIDTH * 2 },
-        px,
-      ),
+      this.driftSprite({ sprite: v.sprite, scrollFactor: v.baseScrollFactor, wrapWidth: LOGICAL_WIDTH * 2 }, px),
     );
     this.bushes.forEach((b) => this.driftSprite(b, px));
   }

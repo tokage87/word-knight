@@ -9,10 +9,10 @@ export type ElementId = 'fire' | 'water' | 'wind' | 'earth';
 
 // Mapping between branches and elements — single source of truth.
 export const BRANCH_ELEMENT: Record<BranchId, ElementId> = {
-  combat:  'fire',
-  spells:  'water',
+  combat: 'fire',
+  spells: 'water',
   scholar: 'wind',
-  writer:  'earth',
+  writer: 'earth',
 };
 
 // Every tree node produces one of these effects when ranked up. Adding
@@ -20,7 +20,11 @@ export const BRANCH_ELEMENT: Record<BranchId, ElementId> = {
 // plus a dispatch branch in `applyNodeEffect` — no other changes.
 export type NodeEffect =
   | { kind: 'stat'; stat: KnightStat; perRank: number }
-  | { kind: 'runStat'; stat: 'xpMult' | 'goldMult' | 'xpPerQuiz' | 'cdCutPerQuiz' | 'globalCooldown' | 'spellDmg'; perRank: number }
+  | {
+      kind: 'runStat';
+      stat: 'xpMult' | 'goldMult' | 'xpPerQuiz' | 'cdCutPerQuiz' | 'globalCooldown' | 'spellDmg';
+      perRank: number;
+    }
   | { kind: 'spellUnlock'; spellId: SpellId }
   | { kind: 'spellRank'; spellId: SpellId; perRank: number }
   // Tier-2 ally follower system. Spawns a unit behind the knight on
@@ -28,14 +32,14 @@ export type NodeEffect =
   | { kind: 'allyUnlock'; allyKind: AllyKind };
 
 export interface TreeNode {
-  id: string;                // stable; NEVER rename post-ship
-  label: string;             // Polish display label
+  id: string; // stable; NEVER rename post-ship
+  label: string; // Polish display label
   desc: (nextRank: number) => string; // Polish flavor for the next rank
-  icon: string;              // /assets/ui path (relative, no leading slash)
+  icon: string; // /assets/ui path (relative, no leading slash)
   maxRank: number;
   costCurve: CurveName;
   effect: NodeEffect;
-  requires: string[];        // node IDs at ≥1 rank (or maxed if requiresMaxed)
+  requires: string[]; // node IDs at ≥1 rank (or maxed if requiresMaxed)
   requiresMaxed?: boolean;
   position: { q: number; r: number }; // hex axial coords for layout
 }
@@ -44,5 +48,5 @@ export interface SkillTree {
   element: ElementId;
   nodes: TreeNode[];
   edges: [string, string][]; // from → to for the SVG underlay
-  rootIds: string[];         // always purchasable (no prereqs)
+  rootIds: string[]; // always purchasable (no prereqs)
 }

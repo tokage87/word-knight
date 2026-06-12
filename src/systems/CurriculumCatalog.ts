@@ -140,23 +140,34 @@ class CurriculumCatalog {
 
   private baseArray(kind: PoolKind, src: CurriculumSource): AnyRecord[] {
     if (src === 'legacy') {
-      return ({ vocab: LEGACY_VOCAB, sentences: LEGACY_SENTENCES, stories: LEGACY_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+      return (
+        { vocab: LEGACY_VOCAB, sentences: LEGACY_SENTENCES, stories: LEGACY_STORIES } as Record<PoolKind, AnyRecord[]>
+      )[kind];
     }
     if (src === 'experimental-tiered') {
-      return ({ vocab: TIERED_VOCAB, sentences: TIERED_SENTENCES, stories: TIERED_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+      return (
+        { vocab: TIERED_VOCAB, sentences: TIERED_SENTENCES, stories: TIERED_STORIES } as Record<PoolKind, AnyRecord[]>
+      )[kind];
     }
     if (src === 'experimental-a1') {
       // No pre-generated a1 bundle exists — derive it from the tiered
       // export by CEFR level. Cheaper than shipping another JSON and
       // guarantees parity with whatever the tiered build produced.
-      const base = ({ vocab: TIERED_VOCAB, sentences: TIERED_SENTENCES, stories: TIERED_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+      const base = (
+        { vocab: TIERED_VOCAB, sentences: TIERED_SENTENCES, stories: TIERED_STORIES } as Record<PoolKind, AnyRecord[]>
+      )[kind];
       return base.filter((r) => r.cefr === 'a1');
     }
     if (src === 'experimental-a2') {
       return ({ vocab: A2_VOCAB, sentences: A2_SENTENCES, stories: A2_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
     }
     if (src === 'experimental-de-exam') {
-      return ({ vocab: DE_EXAM_VOCAB, sentences: DE_EXAM_SENTENCES, stories: DE_EXAM_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
+      return (
+        { vocab: DE_EXAM_VOCAB, sentences: DE_EXAM_SENTENCES, stories: DE_EXAM_STORIES } as Record<
+          PoolKind,
+          AnyRecord[]
+        >
+      )[kind];
     }
     return ({ vocab: B1_VOCAB, sentences: B1_SENTENCES, stories: B1_STORIES } as Record<PoolKind, AnyRecord[]>)[kind];
   }

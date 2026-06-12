@@ -102,9 +102,7 @@ export class UltimateSystem {
       });
 
       // Impact ring expands at the strike point.
-      const ring = this.scene.add
-        .circle(e.x, e.y - 8, 18, 0xfff080, 0.7)
-        .setDepth(71);
+      const ring = this.scene.add.circle(e.x, e.y - 8, 18, 0xfff080, 0.7).setDepth(71);
       ring.setScale(0.3);
       this.scene.tweens.add({
         targets: ring,

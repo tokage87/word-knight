@@ -47,16 +47,8 @@ export class UIScene extends Phaser.Scene {
     this.hud.onPauseCityClick(() => gameEvents(this.game).emit('ui:openCity'));
 
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      gameEvents(this.game).off(
-        'spell:reduced',
-        this.hud.flashCooldownBadge,
-        this.hud,
-      );
-      gameEvents(this.game).off(
-        'spell:penalized',
-        this.hud.flashCooldownPenalty,
-        this.hud,
-      );
+      gameEvents(this.game).off('spell:reduced', this.hud.flashCooldownBadge, this.hud);
+      gameEvents(this.game).off('spell:penalized', this.hud.flashCooldownPenalty, this.hud);
       gameEvents(this.game).off('enemy:killed', this.hud.onEnemyKilled, this.hud);
       gameEvents(this.game).off('boss:spawned', this.hud.onBossSpawned, this.hud);
       gameEvents(this.game).off('ult:unlocked', this.hud.showUltUnlockBanner, this.hud);

@@ -29,18 +29,27 @@ import { STR } from '../i18n/strings';
 // (stone wall). We stack row-2 tiles on top of row-3 tiles to get the
 // "thick" 2-tile cliff look the reference uses.
 const T = {
-  NW: 0,  N: 1,  NE: 2,
-  W:  9,  C: GRASS_CENTER_FRAME, E: 11,
-  SW: 18, S: 19, SE: 20,
+  NW: 0,
+  N: 1,
+  NE: 2,
+  W: 9,
+  C: GRASS_CENTER_FRAME,
+  E: 11,
+  SW: 18,
+  S: 19,
+  SE: 20,
   // Stone wall front, used BELOW south edges to thicken the cliff.
-  WALL_W: 27, WALL: 28, WALL_E: 29,
+  WALL_W: 27,
+  WALL: 28,
+  WALL_E: 29,
 };
 
 interface BranchSpot {
   id: 'combat' | 'spells' | 'scholar' | 'writer';
   label: string;
   textureKey: string;
-  x: number; y: number;
+  x: number;
+  y: number;
   scale: number;
 }
 
@@ -48,19 +57,20 @@ interface BranchSpot {
 // one faction (matching the reference). Branch identity comes from
 // building type (castle / tower / barracks / house) + label.
 const BRANCH_SPOTS: BranchSpot[] = [
-  { id: 'combat',  label: STR.city.branchLabels.combat,  textureKey: AK.cityCastleBlue,
-    x: 130, y: 175, scale: 0.55 },
-  { id: 'scholar', label: STR.city.branchLabels.scholar, textureKey: AK.cityBarracksBlue,
-    x: 295, y: 195, scale: 0.48 },
-  { id: 'writer',  label: STR.city.branchLabels.writer,  textureKey: AK.houseBlue3,
-    x: 475, y: 200, scale: 0.45 },
-  { id: 'spells',  label: STR.city.branchLabels.spells,  textureKey: AK.cityTowerBlue,
-    x: 590, y: 200, scale: 0.42 },
+  { id: 'combat', label: STR.city.branchLabels.combat, textureKey: AK.cityCastleBlue, x: 130, y: 175, scale: 0.55 },
+  { id: 'scholar', label: STR.city.branchLabels.scholar, textureKey: AK.cityBarracksBlue, x: 295, y: 195, scale: 0.48 },
+  { id: 'writer', label: STR.city.branchLabels.writer, textureKey: AK.houseBlue3, x: 475, y: 200, scale: 0.45 },
+  { id: 'spells', label: STR.city.branchLabels.spells, textureKey: AK.cityTowerBlue, x: 590, y: 200, scale: 0.42 },
 ];
 
 // Purely decorative houses — reference has a cluster of 4 blue houses
 // in the upper-right, we echo that to the right of the barracks.
-interface DecoBuilding { key: string; x: number; y: number; scale: number }
+interface DecoBuilding {
+  key: string;
+  x: number;
+  y: number;
+  scale: number;
+}
 const DECO_BUILDINGS: DecoBuilding[] = [
   { key: AK.houseBlue1, x: 420, y: 200, scale: 0.42 },
   { key: AK.houseBlue2, x: 525, y: 210, scale: 0.42 },
@@ -69,7 +79,11 @@ const DECO_BUILDINGS: DecoBuilding[] = [
 
 // Soldier-like blue-faction warriors flanking the castle, echoing the
 // row of spearmen in the reference. Tweens give them a gentle sway.
-interface Soldier { x: number; y: number; drift: number }
+interface Soldier {
+  x: number;
+  y: number;
+  drift: number;
+}
 const SOLDIERS: Soldier[] = [
   { x: 190, y: 155, drift: 8 },
   { x: 220, y: 160, drift: 8 },
@@ -80,13 +94,19 @@ const SOLDIERS: Soldier[] = [
 
 // Civilian pawns wandering the streets. Pumped the drift on a couple
 // of them so it reads as a patrol/walk rather than a sway-in-place.
-interface Villager { key: string; anim: string; x: number; y: number; drift: number }
+interface Villager {
+  key: string;
+  anim: string;
+  x: number;
+  y: number;
+  drift: number;
+}
 const VILLAGERS: Villager[] = [
   // Bigger drifts = visible walking. Smaller drifts stay as sway.
-  { key: AK.pawnRed,    anim: ANIM.pawnRedIdle,    x: 420, y: 250, drift: 70 },
+  { key: AK.pawnRed, anim: ANIM.pawnRedIdle, x: 420, y: 250, drift: 70 },
   { key: AK.pawnPurple, anim: ANIM.pawnPurpleIdle, x: 195, y: 260, drift: 60 },
-  { key: AK.pawnBlack,  anim: ANIM.pawnBlackIdle,  x: 555, y: 260, drift: 14 },
-  { key: AK.pawnRed,    anim: ANIM.pawnRedIdle,    x: 320, y: 218, drift: 45 },
+  { key: AK.pawnBlack, anim: ANIM.pawnBlackIdle, x: 555, y: 260, drift: 14 },
+  { key: AK.pawnRed, anim: ANIM.pawnRedIdle, x: 320, y: 218, drift: 45 },
 ];
 
 export class CityScene extends Phaser.Scene {
@@ -181,10 +201,7 @@ export class CityScene extends Phaser.Scene {
   // ───── backdrop ─────
 
   private drawWater() {
-    this.add
-      .rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x3fb0be)
-      .setOrigin(0, 0)
-      .setDepth(0);
+    this.add.rectangle(0, 0, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0x3fb0be).setOrigin(0, 0).setDepth(0);
   }
 
   // Rectangular grass island with cliff-tile borders AND a thick
@@ -230,15 +247,18 @@ export class CityScene extends Phaser.Scene {
   // islands read as connected.
   private drawLandRow(x: number, y: number, cols: number) {
     for (let i = 0; i < cols; i++) {
-      this.add.image(x + i * TILE, y, AK.tilemap, T.C).setOrigin(0, 0).setDepth(1);
+      this.add
+        .image(x + i * TILE, y, AK.tilemap, T.C)
+        .setOrigin(0, 0)
+        .setDepth(1);
     }
   }
 
   private drawWaterDeco() {
     const spots = [
-      { x: 14,  y: 50 },
+      { x: 14, y: 50 },
       { x: 620, y: 60 },
-      { x: 80,  y: 340 },
+      { x: 80, y: 340 },
       { x: 260, y: 60 },
       { x: 300, y: 330 },
       { x: 460, y: 50 },
@@ -260,47 +280,35 @@ export class CityScene extends Phaser.Scene {
     // forest behind the Tiny Swords logo in the reference).
     const pines: Array<{ x: number; y: number; scale: number }> = [
       { x: 350, y: 118, scale: 0.28 },
-      { x: 395, y: 115, scale: 0.30 },
-      { x: 560, y: 125, scale: 0.30 },
+      { x: 395, y: 115, scale: 0.3 },
+      { x: 560, y: 125, scale: 0.3 },
       { x: 600, y: 120, scale: 0.26 },
       // Scattered solo pines
-      { x: 40,  y: 135, scale: 0.26 },
-      { x: 75,  y: 145, scale: 0.28 },
+      { x: 40, y: 135, scale: 0.26 },
+      { x: 75, y: 145, scale: 0.28 },
     ];
     pines.forEach((t) => {
-      const spr = this.add
-        .sprite(t.x, t.y, AK.cityTreePine, 0)
-        .setOrigin(0.5, 1)
-        .setScale(t.scale)
-        .setDepth(7);
+      const spr = this.add.sprite(t.x, t.y, AK.cityTreePine, 0).setOrigin(0.5, 1).setScale(t.scale).setDepth(7);
       spr.play(ANIM.cityTreePineSway);
     });
 
     // Leafy (autumn) trees — rounder silhouette, dotted around the
     // border like in the reference.
     const leafy: Array<{ x: number; y: number; scale: number }> = [
-      { x: 35,  y: 220, scale: 0.28 },
+      { x: 35, y: 220, scale: 0.28 },
       { x: 625, y: 260, scale: 0.28 },
       { x: 100, y: 315, scale: 0.26 },
       { x: 440, y: 320, scale: 0.28 },
     ];
     leafy.forEach((t) => {
-      const spr = this.add
-        .sprite(t.x, t.y, AK.cityTreeLeafy, 0)
-        .setOrigin(0.5, 1)
-        .setScale(t.scale)
-        .setDepth(7);
+      const spr = this.add.sprite(t.x, t.y, AK.cityTreeLeafy, 0).setOrigin(0.5, 1).setScale(t.scale).setDepth(7);
       spr.play(ANIM.cityTreeLeafySway);
     });
   }
 
   private drawDecoBuildings() {
     DECO_BUILDINGS.forEach((b) => {
-      this.add
-        .image(b.x, b.y, b.key)
-        .setOrigin(0.5, 1)
-        .setScale(b.scale)
-        .setDepth(10);
+      this.add.image(b.x, b.y, b.key).setOrigin(0.5, 1).setScale(b.scale).setDepth(10);
     });
   }
 
@@ -363,11 +371,7 @@ export class CityScene extends Phaser.Scene {
     // Soldier guards (Tiny Swords Blue Warrior idle) stationed around
     // the castle — the row of spearmen in the reference.
     SOLDIERS.forEach((s) => {
-      const spr = this.add
-        .sprite(s.x, s.y, AK.citySoldierIdle, 0)
-        .setOrigin(0.5, 0.72)
-        .setScale(0.28)
-        .setDepth(9);
+      const spr = this.add.sprite(s.x, s.y, AK.citySoldierIdle, 0).setOrigin(0.5, 0.72).setScale(0.28).setDepth(9);
       spr.play(ANIM.citySoldierIdle);
       this.tweens.add({
         targets: spr,
@@ -381,11 +385,7 @@ export class CityScene extends Phaser.Scene {
 
     // Civilian pawns.
     VILLAGERS.forEach((v) => {
-      const spr = this.add
-        .sprite(v.x, v.y, v.key, 0)
-        .setOrigin(0.5, 0.72)
-        .setScale(0.28)
-        .setDepth(9);
+      const spr = this.add.sprite(v.x, v.y, v.key, 0).setOrigin(0.5, 0.72).setScale(0.28).setDepth(9);
       spr.play(v.anim);
       this.tweens.add({
         targets: spr,
@@ -411,14 +411,13 @@ export class CityScene extends Phaser.Scene {
 
     // Sheep grazing near the house cluster (reference shows 3-4 sheep).
     const sheepSpots = [
-      { x: 395, y: 270 }, { x: 500, y: 270 }, { x: 570, y: 270 }, { x: 520, y: 340 },
+      { x: 395, y: 270 },
+      { x: 500, y: 270 },
+      { x: 570, y: 270 },
+      { x: 520, y: 340 },
     ];
     sheepSpots.forEach((p) => {
-      const sheep = this.add
-        .sprite(p.x, p.y, AK.citySheepIdle, 0)
-        .setOrigin(0.5, 0.72)
-        .setScale(0.30)
-        .setDepth(9);
+      const sheep = this.add.sprite(p.x, p.y, AK.citySheepIdle, 0).setOrigin(0.5, 0.72).setScale(0.3).setDepth(9);
       sheep.play(ANIM.citySheepIdle);
       this.tweens.add({
         targets: sheep,
@@ -432,20 +431,16 @@ export class CityScene extends Phaser.Scene {
 
     // Swaying bushes and static rocks sprinkled on every island.
     const deco: Array<{ x: number; y: number; key: string; scale: number; anim?: string }> = [
-      { x: 120, y: 260, key: AK.cityBush,  scale: 0.30, anim: ANIM.cityBushSway },
-      { x: 330, y: 180, key: AK.cityBush,  scale: 0.26, anim: ANIM.cityBushSway },
-      { x: 390, y: 260, key: AK.cityBush,  scale: 0.30, anim: ANIM.cityBushSway },
-      { x: 440, y: 170, key: AK.cityBush,  scale: 0.26, anim: ANIM.cityBushSway },
+      { x: 120, y: 260, key: AK.cityBush, scale: 0.3, anim: ANIM.cityBushSway },
+      { x: 330, y: 180, key: AK.cityBush, scale: 0.26, anim: ANIM.cityBushSway },
+      { x: 390, y: 260, key: AK.cityBush, scale: 0.3, anim: ANIM.cityBushSway },
+      { x: 440, y: 170, key: AK.cityBush, scale: 0.26, anim: ANIM.cityBushSway },
       { x: 280, y: 260, key: AK.cityRock1, scale: 0.45 },
-      { x: 170, y: 175, key: AK.cityRock2, scale: 0.40 },
-      { x: 480, y: 170, key: AK.cityRock1, scale: 0.40 },
+      { x: 170, y: 175, key: AK.cityRock2, scale: 0.4 },
+      { x: 480, y: 170, key: AK.cityRock1, scale: 0.4 },
     ];
     deco.forEach((d) => {
-      const spr = this.add
-        .sprite(d.x, d.y, d.key, 0)
-        .setOrigin(0.5, 1)
-        .setScale(d.scale)
-        .setDepth(8);
+      const spr = this.add.sprite(d.x, d.y, d.key, 0).setOrigin(0.5, 1).setScale(d.scale).setDepth(8);
       if (d.anim) spr.play(d.anim);
     });
   }
@@ -468,7 +463,7 @@ export class CityScene extends Phaser.Scene {
     this.add
       .image(sx + 8, sy - 2, AK.cityRock2)
       .setOrigin(0.5, 1)
-      .setScale(0.30)
+      .setScale(0.3)
       .setDepth(8);
 
     // Vendor pawn.
@@ -552,7 +547,7 @@ export class CityScene extends Phaser.Scene {
       .setOrigin(0.5)
       .setDepth(31);
     bg.on('pointerover', () => bg.setFillStyle(0xc85020, 1));
-    bg.on('pointerout',  () => bg.setFillStyle(0xa43d1a, 1));
+    bg.on('pointerout', () => bg.setFillStyle(0xa43d1a, 1));
     bg.on('pointerdown', () => {
       this.scene.stop('UI');
       this.scene.stop('City');
@@ -583,7 +578,7 @@ export class CityScene extends Phaser.Scene {
       .setOrigin(0.5)
       .setDepth(31);
     bg.on('pointerover', () => bg.setFillStyle(0x5a90c5, 1));
-    bg.on('pointerout',  () => bg.setFillStyle(0x3a6fa6, 1));
+    bg.on('pointerout', () => bg.setFillStyle(0x3a6fa6, 1));
     bg.on('pointerdown', () => {
       gameEvents(this.game).emit('city:openJournal');
     });
@@ -610,7 +605,7 @@ export class CityScene extends Phaser.Scene {
       .setOrigin(0.5)
       .setDepth(31);
     bg.on('pointerover', () => bg.setFillStyle(0x8a5a99, 1));
-    bg.on('pointerout',  () => bg.setFillStyle(0x6b3e7a, 1));
+    bg.on('pointerout', () => bg.setFillStyle(0x6b3e7a, 1));
     bg.on('pointerdown', () => {
       gameEvents(this.game).emit('city:openParentDashboard');
     });
@@ -638,7 +633,7 @@ export class CityScene extends Phaser.Scene {
       .setOrigin(0.5)
       .setDepth(31);
     bg.on('pointerover', () => bg.setFillStyle(0x7a7a7a, 1));
-    bg.on('pointerout',  () => bg.setFillStyle(0x5a5a5a, 1));
+    bg.on('pointerout', () => bg.setFillStyle(0x5a5a5a, 1));
     bg.on('pointerdown', () => {
       gameEvents(this.game).emit('city:openCurriculum');
     });

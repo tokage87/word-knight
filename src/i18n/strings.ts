@@ -28,7 +28,7 @@ import type { CurriculumCategory, CurriculumSource } from '../systems/Curriculum
 export const STR = {
   // Shared buttons / labels reused across several panels.
   common: {
-    close: 'Zamknij',           // aria-label on every panel close button
+    close: 'Zamknij', // aria-label on every panel close button
     back: 'WRÓĆ',
     cancel: 'ANULUJ',
     done: 'GOTOWE',
@@ -118,37 +118,37 @@ export const STR = {
     // Ally labels + short descriptions used by the ability-row tooltip.
     // Keep these in sync with src/entities/Ally.ts AllyKind / PROFILES.
     allyLabels: {
-      'fire-archer':  'Ognisty Łucznik',
-      'fire-monk':    'Ognisty Mnich',
-      'ice-archer':   'Lodowy Łucznik',
-      'ice-monk':     'Lodowy Mnich',
-      cleric:         'Uzdrowiciel',
-      'wind-monk':    'Wietrzny Mnich',
-      'wind-lancer':  'Wietrzny Lansjer',
-      'earth-pawn':   'Ziemny Pionek',
+      'fire-archer': 'Ognisty Łucznik',
+      'fire-monk': 'Ognisty Mnich',
+      'ice-archer': 'Lodowy Łucznik',
+      'ice-monk': 'Lodowy Mnich',
+      cleric: 'Uzdrowiciel',
+      'wind-monk': 'Wietrzny Mnich',
+      'wind-lancer': 'Wietrzny Lansjer',
+      'earth-pawn': 'Ziemny Pionek',
       'earth-lancer': 'Ziemny Lansjer',
     },
     allyDescs: {
-      'fire-archer':  'Strzela ognistymi strzałami w najbliższego wroga.',
-      'fire-monk':    'Rzuca ciężką kulą ognia w pojedynczego wroga.',
-      'ice-archer':   'Strzela lodowymi strzałami, spowalnia wrogów.',
-      'ice-monk':     'Ciska lodowym pociskiem z silnym spowolnieniem.',
-      cleric:         'Regularnie leczy rycerza podczas walki.',
-      'wind-monk':    'Szybko rzuca lekkie pociski wiatru.',
-      'wind-lancer':  'Szybkie pchnięcie przeszywające trzech wrogów.',
-      'earth-pawn':   'Rąbie toporem blisko rycerza.',
+      'fire-archer': 'Strzela ognistymi strzałami w najbliższego wroga.',
+      'fire-monk': 'Rzuca ciężką kulą ognia w pojedynczego wroga.',
+      'ice-archer': 'Strzela lodowymi strzałami, spowalnia wrogów.',
+      'ice-monk': 'Ciska lodowym pociskiem z silnym spowolnieniem.',
+      cleric: 'Regularnie leczy rycerza podczas walki.',
+      'wind-monk': 'Szybko rzuca lekkie pociski wiatru.',
+      'wind-lancer': 'Szybkie pchnięcie przeszywające trzech wrogów.',
+      'earth-pawn': 'Rąbie toporem blisko rycerza.',
       'earth-lancer': 'Ciężki kamienny pocisk, spowalnia uderzonego wroga.',
     },
     // Locked-slot tooltips in the static ability row (one per ally).
     allyLockedTooltips: {
-      'fire-archer':  'Ognisty Łucznik — zablokowany. Odblokuj w Sali Bojowej.',
-      'fire-monk':    'Ognisty Mnich — zablokowany. Odblokuj w Sali Bojowej.',
-      'ice-archer':   'Lodowy Łucznik — zablokowany. Odblokuj w Bibliotece Magii.',
-      'ice-monk':     'Lodowy Mnich — zablokowany. Odblokuj w Bibliotece Magii.',
-      cleric:         'Uzdrowiciel — zablokowany. Odblokuj w Bibliotece Magii.',
-      'wind-monk':    'Wietrzny Mnich — zablokowany. Odblokuj w Kręgu Uczonych.',
-      'wind-lancer':  'Wietrzny Lansjer — zablokowany. Odblokuj w Kręgu Uczonych.',
-      'earth-pawn':   'Ziemny Pionek — zablokowany. Odblokuj w Gildii Pisarzy.',
+      'fire-archer': 'Ognisty Łucznik — zablokowany. Odblokuj w Sali Bojowej.',
+      'fire-monk': 'Ognisty Mnich — zablokowany. Odblokuj w Sali Bojowej.',
+      'ice-archer': 'Lodowy Łucznik — zablokowany. Odblokuj w Bibliotece Magii.',
+      'ice-monk': 'Lodowy Mnich — zablokowany. Odblokuj w Bibliotece Magii.',
+      cleric: 'Uzdrowiciel — zablokowany. Odblokuj w Bibliotece Magii.',
+      'wind-monk': 'Wietrzny Mnich — zablokowany. Odblokuj w Kręgu Uczonych.',
+      'wind-lancer': 'Wietrzny Lansjer — zablokowany. Odblokuj w Kręgu Uczonych.',
+      'earth-pawn': 'Ziemny Pionek — zablokowany. Odblokuj w Gildii Pisarzy.',
       'earth-lancer': 'Ziemny Lansjer — zablokowany. Odblokuj w Gildii Pisarzy.',
     },
   },
@@ -300,10 +300,10 @@ export const STR = {
   // src/systems/UnlockGates.ts).
   gates: {
     cta: {
-      writing:   { label: 'NAPISZ KRÓTKI TEKST',  sublabel: 'Zadanie pisemne po angielsku' },
-      listening: { label: 'POSŁUCHAJ I WYBIERZ',  sublabel: 'Słuchanie + wybieranie słów' },
-      readAloud: { label: 'PRZECZYTAJ NA GŁOS',   sublabel: 'Czytanie na głos z mikrofonem' },
-      cloze:     { label: 'UZUPEŁNIJ ZDANIA',     sublabel: 'Gramatyka — wstaw brakujące słowo' },
+      writing: { label: 'NAPISZ KRÓTKI TEKST', sublabel: 'Zadanie pisemne po angielsku' },
+      listening: { label: 'POSŁUCHAJ I WYBIERZ', sublabel: 'Słuchanie + wybieranie słów' },
+      readAloud: { label: 'PRZECZYTAJ NA GŁOS', sublabel: 'Czytanie na głos z mikrofonem' },
+      cloze: { label: 'UZUPEŁNIJ ZDANIA', sublabel: 'Gramatyka — wstaw brakujące słowo' },
     },
   },
 
@@ -330,8 +330,7 @@ export const STR = {
   listening: {
     title: (branchLabel: string) => `${branchLabel} — słuchanie`,
     instruction: 'Posłuchaj zdania i uzupełnij brakujące słowa z puli poniżej.',
-    fillStatus: (n: number) =>
-      `Uzupełnij ${n} ${n === 1 ? 'brakujące słowo' : 'brakujące słowa'}.`,
+    fillStatus: (n: number) => `Uzupełnij ${n} ${n === 1 ? 'brakujące słowo' : 'brakujące słowa'}.`,
     allCorrect: 'Świetnie! Możesz iść dalej.',
     hasWrong: 'Jedno lub więcej słów jest złe — kliknij w czerwone pole, żeby je wyczyścić.',
     listenButton: 'Odsłuchaj zdanie',
@@ -372,8 +371,7 @@ export const STR = {
     requires: 'Wymaga:',
     maxReached: 'Osiągnięto maks. poziom.',
     unlockPrereqsFirst: 'Najpierw odblokuj wymagane umiejętności.',
-    needGold: (cost: number, have: number) =>
-      `Potrzebujesz <b>${cost}</b> złota. Masz ${have}.`,
+    needGold: (cost: number, have: number) => `Potrzebujesz <b>${cost}</b> złota. Masz ${have}.`,
     buy: 'KUP',
   },
 
